@@ -1,0 +1,97 @@
+<!DOCTYPE html> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+  <style>
+	  table {
+  width: 100%;
+  border-collapse: collapse;
+}
+    td:first-child, td:nth-child(2) { width: 10ch; }
+    td { border: 1px solid purple; }
+  </style>
+</head>
+<body>
+<table id="TABL"></table>
+<div id="TABL2"></div>
+<script>
+function get_v(id){var d=document.getElementById(id);if(d)return d.value+'';}
+function make_tabl(){var rows,row,out,url,text,word;
+	 url = new URL(window.location.href);
+     word = url.searchParams.get("word");
+            rows = g_dict.split("\n");text='';g_dict='';
+            for(row of rows){
+                row=row.replace('[','</td><td>[');row=row.replace(']',']</td><td>');
+                if(row.indexOf('[')>0)text+='<tr><td>'+row+'</td></tr>';
+                else text+='<tr><td colspan="3">'+row+'</td></tr>';
+            }
+            let TABL = document.getElementById("TABL");
+            TABL.innerHTML=text;text='';
+
+            let cells = document.getElementsByTagName("td");
+            for (let cell of cells) {
+              if (cell.textContent == word) {
+                cell.style.backgroundColor = "blue";
+                cell.style.color = "yellow";
+                cell.scrollIntoView();
+                break;
+              }
+            }
+}
+function make_tabl2(){var rows,row,out,url,text,word;
+	 url = new URL(window.location.href);
+     word = url.searchParams.get("word");
+            // Надо из текста сделать таблицу, (сроки в <tr>*</tr>, столбцы в <td></td>) Квадратные скобки оставить, но разбить по ним на клетки
+            let table = document.createElement("table");
+            rows = g_dict.split("\n");g_dict='';
+            for (let row of rows) {
+              let tr = document.createElement("tr");
+              let cells = row.split("[");
+              for (let cell of cells) {
+                let td = document.createElement("td");
+                td.textContent = cell;
+                tr.appendChild(td);
+              }
+              table.appendChild(tr);
+            }
+            // Вывести эту таблицу , (создать элемент TABL и записать в него)
+            let TABL = document.getElementById("TABL");
+            TABL.appendChild(table);
+ 
+            let cells = table.getElementsByTagName("td");
+            for (let cell of cells) {
+              if (cell.textContent == word) {
+                cell.style.backgroundColor = "blue";
+                cell.style.color = "yellow";
+                 cell.scrollIntoView();
+                break;
+              }
+            }
+}
+function run_js(vPathScript,fun1){var sc;
+  sc=document.createElement('script');sc.async=true;
+ sc.src=''+vPathScript; document.head.appendChild(sc);
+ sc.onerror=function(){console.log('no file='+vPathScript+': error in run_js');}
+ sc.onload=function(){
+  if(!this.executed){
+   this.executed=true;
+   if(fun1)setTimeout(fun1,0);
+  }
+ }
+ sc.onreadystatechange=function(){var self=this;
+  if(this.readyState == "complete" || this.readyState == "loaded"){
+   setTimeout(function(){self.onload()}, 0);
+  }
+ }
+}
+
+function start1(){var url,word,w,xhr;
+     url = new URL(window.location.href);
+     word = url.searchParams.get("word");
+     console.log(word);
+     if(word){ w = word.charAt(0);run_js(w + "_big.txt",make_tabl); }
+}
+window.onload =start1;
+
+  </script>
+</body>
+</html>
