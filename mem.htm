@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<body> 
+<noscript>
+ Для работы меню включите скрипты! <br>
+ please turn on javascripts!
+</noscript>
+<style>
+@import url('bootstrap.min.css');
+
+a { outline: none; }
+ul li a[aria-controls="profile"]:hover{ color:red;}
+.ot2 {margin: 2px 1px;}
+i {color: red;}
+</style>
+
+<script src='jquery.min.js'></script>
+<script src='bootstrap.min.js'></script>
+<script src='vue.js'></script>
+<script src='en-ru-dict.js'></script>
+<script>
+ if(window['g_api']!=undefined)console.log('g_api in use!');g_api='error';//global 
+g_name='mem';//global 
+g_page='';//global
+</script> 
+
+
+ 
+<!-- Содержимое вкладок -->
+<div class="tab-content" >
+
+ <div role="tabpanel" class="tab-pane fade in active" id="tem" align="center">
+   <div class="panel panel-primary">
+	<div class="panel-heading"><h3 >ВСТУПЛЕНИЕ (mem)</h3></div>
+   </div>
+
+<p>
+Проект для изучения английского языка по ассоциациям. Открытый. Бесплатный.<br>
+Использование в комерческих целях запрещено. Помощь в развитии сайта и БД приветствуется.<br>
+Пишите в телеграм чат EnglSpaceChat
+</p>
+<hr>
+<textarea id='id_text1' cols="80" rows="20"></textarea>
+<hr>
+<script>
+g_page="";
+load_A();
+</script>
+</div>
+
+</body>

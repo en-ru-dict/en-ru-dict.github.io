@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<html>
+name-page=<input id="id_name" value="mem"><br>
+adr-cell=<input id="id_adr" value="1:1">(00-A_stolbik/x:y-one_cell/s1,s3/s2-s4 stroki)<br> 
+<hr>
+<textarea id='te1' cols="80" rows="20"></textarea>
+<hr>
+<button id='bu1' onclick="ss()">load_str</button>
+<script>
+ if(window['g_api']!=undefined)alert('g_api in use!');g_api='error';//global 
+var g_ss='https://script.google.com/macros/s/AKfycbxK-RRzIuK_jDiHqChJosqBSgIjE9BwAMneDMIw_HiRBGNWDYdPNW_273eOISmpciZq/exec';
+
+//при загрузке данных через внешний скрипт нет кроссдоменных ограничений!
+function run_js(vPathScript){var sc;
+  sc=document.createElement('script');
+ sc.src=''+vPathScript; document.head.appendChild(sc);
+ sc.onerror=function(){console.log('нет файла='+vPathScript+': error in run_js');}
+ sc.onload=function(){
+  if(!this.executed){ 
+   this.executed=true;
+   if(1)setTimeout(ok_js,0);
+  }
+ }
+ sc.onreadystatechange=function(){var self=this;
+  if(this.readyState == "complete" || this.readyState == "loaded"){
+   setTimeout(function(){self.onload()}, 0);
+  }
+ }
+}
+
+
+function ok_js(){var t1,t2;
+ document.getElementById('te1').value=g_api;
+ document.getElementById('bu1').disabled=false;
+}
+
+function ss(){var name,adr;
+	g_api='error';
+ document.getElementById('te1').value='Loading...';
+ document.getElementById('bu1').disabled=true;
+ name=document.getElementById('id_name').value;
+ adr=document.getElementById('id_adr').value;
+ run_js(g_ss+'?name='+name+'&adr='+adr);
+}
+</script>
+</html>
