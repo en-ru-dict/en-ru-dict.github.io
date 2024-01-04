@@ -1,6 +1,5 @@
 <!DOCTYPE html> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 <script src="en-ru-dict.js"></script>
 <style>
 #id_input{background-color: aliceblue;}
@@ -16,39 +15,26 @@ h2 {  font-size: 24px;  color: gray;  line-height: 1;}
 .autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
 .autocomplete-suggestion b { font-weight: normal; color: #1f8dd6; }
 .autocomplete-suggestion.selected { background: #f0f0f0; }
-.pace {
-  -webkit-pointer-events: none;
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-.pace-inactive {  display: none;}
-.pace .pace-progress {
-  background: #29d;
-  position: fixed;
-  z-index: 2000;
-  top: 0;
-  right: 100%;
-  width: 100%;
-  height: 2px;
-}
 </style>
-  <body>
-    <center>
-      <h1>Большой словарь английских слов 50к</h1>
-      (Г.П. Шалаева Большой современный АНГЛО-РУССКИЙ СЛОВАРЬ с транскрипцией UK)<br>
-      может работать локально без интернета, иногда есть ошибки в транскрипции<br>
-      из-за сканирования, правильную можно посмотреть здесь: <a href="tran-us.htm">(tran-us)</a><br>
-       <input type="text" size="35" id="id_input" placeholder="word" value="" /><br>
-       <button type="button" onclick="show_perevod();"> перевод </button>||<button type="button" onclick="font_small();"> шрифт мельче </button><hr>
-      <div id="id_output">&nbsp;</div>
-      <div id="id_player">&nbsp;</div>
-    <script>
-      window.onload = function(){ var d=document.getElementById('id_input');d.focus();d.oninput=loader;}
-      var keys;//global
-      var g_dict='--';//global
-    </script>
-    </center>
-  </body>
+<body>
+<center>
+<div id="id_info">
+<h1>Большой словарь английских слов 50к</h1>
+(источник Г.П. Шалаева Большой современный АНГЛО-РУССКИЙ СЛОВАРЬ с транскр UK)<br>
+может работать локально без интернета, иногда есть ошибки в транскрипции из-за сканирования, правильную можно посмотреть здесь: <a href="tran-us.htm">(tran-us)</a><br>
+</div>
+
+<input type="text" size="35" id="id_input" placeholder="word" value="" /><br>
+<button type="button" onclick="show_perevod();"> перевод </button>||<button type="button" onclick="font_small();"> шрифт мельче </button><hr>
+<div id="id_output">&nbsp;</div>
+
+<script>
+ document.getElementById('id_input').oninput=loader;
+ var keys;//global
+ var g_dict='--';//global
+ setTimeout("document.getElementById('id_info').remove()",9000);
+</script>
+
+</center>
+</body>
 </html>
