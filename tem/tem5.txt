@@ -1,0 +1,246 @@
+//245
+g_api=`
+Money, Shopping - Деньги, покупки 5
+×
+1. a bakery[beikəri]булочная||?
+2. a bank[bæŋk]банк||?
+3. a butcher shop[buʧər-ʃɑp]мясной магазин||?
+4. a check[ʧek]чек||?
+5. a coin[kɔin]монета||?
+6. a counter[kauntər/kauntə]прилавок||?
+7. a credit card[kredət-kɑrd]кредитная карта||?
+8. a department store[di'pɑrtmənt-stɔr]торговый центр||?
+9. a dollar[dɑlər/dɔlər]доллар||?
+10. a flea market[fli-mɑrkət]блошиный рынок||?
+11. a grocery store[grousəri-stɔr]бакалея||?
+12. a kiosk[ki,ɔsk/ki(:)ɔsk]киоск||?
+13. a list[list]список||?
+14. a mall[mɔl]торговый центр||?
+15. a market[mɑrkət/mɑrkit/ma:kit]рынок||?
+16. a newsstand[nuz,stænd/nju:zstænd]газетный киоск||?
+17. a pastry shop[peistri-ʃɑp]булочная||?
+18. a purchase[pərʧəs/pə:ʧəs]покупка||?
+19. a receipt[ri'sit/ri'si:t]квитанция||?
+20. a shopping cart[ʃɑpiŋ-kɑrt]тележка||?
+21. a store[stɔr/stɔ:]магазин||?
+22. a supermarket[supər,mɑrkit/sju:pə'ma:kit]супермаркет||?
+23. a vending machine[vendiŋ-mə'ʃin]торговый автомат||?
+24. a withdrawal[wið'drɔəl/wiθ'drɔəl/wið'drɔ:(ə)l]снятие денег со счета||?
+25. an euro[jurou/jurə]евро||?
+26. cash[kæʃ]наличные деньги||?
+27. change[ʧeinʤ]сдача||?
+28. cheap[ʧip/ʧi:p]дешевый||?
+29. credit[kredət/kredit]кредит||?
+30. dear[dir/diə]дорогой||?
+31. groceries[grousəriz/grousriz/grous(ə)ris]бакалея||?
+32. money[məni/mʌni]деньги||?
+33. price[prais]цена||?
+34. to borrow[bɑ,rou/bɔrou]занимать||?
+35. to buy[bai]покупать||?
+36. to cost[kɑst/kɔst]стоить||?
+37. to get in line[get-in-lain]встать в очередь||?
+38. to give back[giv-bæk]возвращать||?
+39. to make out a check[meik-aut-ei-ʧek]выписать чек||?
+40. to pay[pei]платить||?
+41. to sell[sel]продавать||?
+42. to withdraw[wið'drɔ/wiθ'drɔ/wið'drɔ:]отзывать (деньги из банка)||?
+
+Movement, Directions - Движение, направления
+×
+1. a trip[trip]поездка||?
+2. a turn[tərn/tə:n]поворот||?
+3. down there[daun-ðer]там внизу||?
+4. far[fɑr/fa]далеко||?
+5. fast[fæst/fast]быстрый||?
+6. motionless[mouʃənləs/mouʃ(ə)nlis]неподвижный||?
+7. quickly[kwikli]быстро||?
+8. rapid[ræpəd/ræpid]быстрый||?
+9. rapidly[ræpədli/ræpidli]быстро||?
+10. slow[slou]медленный||?
+11. slowly[slouli/sləuli]медленно||?
+12. speed[spid]скорость||?
+13. straight ahead[streit-ə'hed]прямо||?
+14. to arrive[ər'aiv/ə'raiv]прибывать||?
+15. to bounce[bauns]подпрыгивать||?
+16. to come[kəm/kʌm]приходить||?
+17. to come back[kəm-bæk]возвращаться||?
+18. to come out[kəm-aut]выходить||?
+19. to cross[krɔs]пересекать||?
+20. to drive[draiv]вести (машину)||?
+21. to enter[enər/entər/entə]входить||?
+22. to fall[fɑl/fɔl/fɔ:l]падать||?
+23. to go[gou]идти||?
+24. to go down[gou-daun]спускаться||?
+25. to go up[gou-əp]подниматься||?
+26. to hurry[həri/hʌn]спешить||?
+27. to lift[lift]поднимать||?
+28. to mount[maunt]залезать||?
+29. to move[muv]двигаться||?
+30. to overturn[ouvər,tərn/ouvətə:n]перевернуться||?
+31. to pull[pul]тянуть||?
+32. to push[puʃ]толкать||?
+33. to reach[riʧ/ri:ʧ]достигать||?
+34. to return[ri'tərn/ri'tə:n]возвращаться||?
+35. to slide[slaid]скользить||?
+36. to stay[stei]оставаться||?
+37. to stop[stɑp/stɔp]останавливаться||?
+38. to stumble[stəmbəl/stʌmbl]спотыкаться||?
+39. to take a trip[teik-ei-trip]ехать||?
+40. to the left[ðə-left]налево||?
+41. to the right[ðə-rait]направо||?
+42. to travel[trævəl/trævl]путешествовать||?
+43. to turn[tərn/tə:n]поворачивать||?
+44. which way?[hwiʧ-?]куда?||?
+
+Nature - Природа
+×
+1. a beach[biʧ/bi:ʧ]пляж||?
+2. a cloud[klaud]облако||?
+3. a coast[koust]берег||?
+4. a desert[dezərt/di'zərt/dezət]пустыня||?
+5. a forest[fɔrəst/fɔrist/fɔnst]лес||?
+6. a hill[hil]холм||?
+7. a lake[leik]озеро||?
+8. a mountain[mauntən/mauntin]гора||?
+9. a planet[plænət/plænit]планета||?
+10. a river[rivər/nvə]река||?
+11. a rock[rɑk/rɔk]скала||?
+12. a sea[si/si:]море||?
+13. a star[stɑr/sta:]звезда||?
+14. a stone[stoun]камень||?
+15. a volcano[vɑl'keinou/vɔl'keinou]вулкан||?
+16. air[er/eə]воздух||?
+17. an island[ailənd]остров||?
+18. an ocean[ouʃən/ouʃ(ə)n]океан||?
+19. fire[faiər/fair/faiə]огонь||?
+20. flame[fleim]пламя||?
+21. grass[græs/gras]трава||?
+22. ice[ais]лед||?
+23. light[lait]свет||?
+24. rain[rein]дождь||?
+25. sand[sænd]песок||?
+26. sky[skai]небо||?
+27. smoke[smouk]дым||?
+28. snow[snou]снег||?
+29. space[speis]космос||?
+30. sun[sən/sʌn]солнце||?
+31. surface[sərfəs/sə:fis]поверхность||?
+
+Numbers - Числа
+×
+1. a digit[diʤət/diʤit]цифра||?
+2. a number[nəmbər/nʌmbə]номер||?
+3. billion[biljən]миллиард||?
+4. eight[eit]восемь||?
+5. eighty[eiti]восемьдесят||?
+6. eleven[ilevən/i'levən/i'levn]одиннадцать||?
+7. fifty[fifti]пятьдесят||?
+8. first[fərst/fəst]первый||?
+9. five[faiv]пять||?
+10. forty[fɔrti/fɔ:ti]сорок||?
+11. four[fɔr/fɔ:]четыре||?
+12. hundred[həndərd/həndrəd/həndrid/hənərd/hʌndrəd]сто||?
+13. million[miljən]миллион||?
+14. nine[nain]девять||?
+15. ninety[nainti]девяносто||?
+16. one[wən/wʌn]один||?
+17. ordinal[ɔ:dinl]порядковый||?
+18. second[sekənd/sek(ə)nd]второй||?
+19. seven[sevən/sevn]семь||?
+20. seventy[sevəni/sevənti/sevnti]семьдесят||?
+21. six[siks]шесть||?
+22. sixty[siksti]шестьдесят||?
+23. ten[ten]десять||?
+24. third[θərd/θəd]третий||?
+25. thirteen[θər'tin/θə:'ti:n]тринадцать||?
+26. thirty[θər,di/θər,ti/θə:ti]тридцать||?
+27. thousand[θauzən/θauzənd/θauz(ə)nd]тысяча||?
+28. three[θri]три||?
+29. twelve[twelv]двенадцать||?
+30. twenty[tweni/twenti]двадцать||?
+31. two[tu/tu:]два||?
+
+People: Relatives, Friends, Enemies... - Люди: родственники, друзья, враги...
+×
+1. (piece of) advice[pis-əv-æd'vais]совет||?
+2. a baby[beibi]малыш||?
+3. a bouquet[bu'kei/bukei]букет||?
+4. a boy[bɔi]мальчик||?
+5. a crowd[kraud]толпа||?
+6. a fellow[felou]парень||?
+7. a first name[fərst-neim]имя||?
+8. a fool[ful/fu:l]дурак||?
+9. a friend[frend]друг||?
+10. a gift[gift]подарок||?
+11. a girl[gərl/gə:l]девочка||?
+12. a guest[gest]гость||?
+13. a kiss[kis]поцелуй||?
+14. a last name[læs-neim]фамилия||?
+15. a lie[lai]ложь||?
+16. a man[mæn]мужчина||?
+17. a name[neim]имя||?
+18. a neighbor[neibər/neibə]сосед||?
+19. a person[pərsən/pə:sn]персона||?
+20. a postcard[pou,skɑrd/poust,kɑrd/poustka:d]открытка||?
+21. a voice[vɔis]голос||?
+22. a woman[wumən]женщина||?
+23. an enemy[enəmi/enimi]враг||?
+24. feminine[femənən/feminin]женский||?
+25. help[help]помощь||?
+26. like a crazy person[laik-ei-kreizi-pərsən]как дурак||?
+27. love[ləv/lʌv]любовь||?
+28. masculine[mæskjələn/ma:skjulin]мужской||?
+29. people[pipəl/pi:pl]люди||?
+30. the truth[ðə-truθ]правда||?
+31. to adore[ə'dɔr/ə'dɔ:]обожать||?
+32. to be right[bi-rait]быть правым||?
+33. to be wrong[bi-rɔŋ]быть неправым||?
+34. to hate[heit]ненавидеть||?
+35. to hope[houp]надеяться||?
+36. to kiss[kis]целоваться||?
+37. to kiss each other[kis-iʧ-əðər]целоваться||?
+38. to lie[lai]лгать||?
+39. to love[ləv/lʌv]любить||?
+40. to shake hands[ʃeik-hændz]пожимать руку||?
+41. to understand[,əndər'stænd/,ʌndə'stænd]понимать||?
+42. widowed[widoud]вдовец||?
+
+Plants - Растения
+×
+1. a birch[bərʧ/bə:ʧ]берёза||?
+2. a bluebell[blu,bel/blu:bel]колокольчик||?
+3. a bouquet[bu'kei/bukei]букет||?
+4. a branch[brænʧ/bra:nʧ]ветка||?
+5. a bush[buʃ]куст||?
+6. a cactus[kæktəs]кактус||?
+7. a chestnut[ʧes,nət/ʧest,nət/ʧesnʌt]каштан||?
+8. a christmas tree[krisməs-tri]новогодняя елка||?
+9. a daffodil[dæfə,dil/dæfədil]нарцисс||?
+10. a daisy[deizi]маргаритка||?
+11. a dandelion[dændə,laiən/dændilɑiən]одуванчик||?
+12. a fir[fər/fə:]ель||?
+13. a flower[flauər/flauə]цветок||?
+14. a geranium[ʤər'einiəm/ʤi'reinjəm]герань||?
+15. a linden[lindən]липа||?
+16. a lotus[loutəs]лилия||?
+17. a maple[meipəl/meipl]клён||?
+18. a palm tree[pɑlm-tri]пальма||?
+19. a petal[petəl/petl]пестик||?
+20. a pine[pain]сосна||?
+21. a poplar[pɑplər/pɔplə]тополь||?
+22. a poppy[pɑpi/pɔpi]мак||?
+23. a rose[rouz]роза||?
+24. a rowan[rouən/rauən,'rouən]рябина||?
+25. a snowdrop[snoudrɔp]подснежник||?
+26. a stem[stem]стебель||?
+27. a thorn[θɔrn/θɔn]колючка||?
+28. a tree[tri]дерево||?
+29. a tulip[tuləp/tju:lip]тюльпан||?
+30. a violet[vaiəlit/vailit]фиалка||?
+31. a willow[wi,lou/wilou]ива||?
+32. an ash tree[æʃ-tri]ясень||?
+33. an iris[airəs/airis/aiəris]ирис||?
+34. an oak[ouk]дуб||?
+35. seaweed[si,wid/si:wi:d]водоросли||?
+36. to plant[plant/plɑ:nt]сажать||?
+`;
