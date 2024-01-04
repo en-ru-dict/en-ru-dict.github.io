@@ -1,0 +1,255 @@
+//известные ~250
+g_api=`
+about[ə'baut]о,примерно,про %
+above[ə'bəv/ə'bʌv]над %
+add[æd]добавлять %||/Арифмитическое-Действие /ДобАвить
+after[æftər/aftə]после %
+afternoon[,æftər'nun/a:ftə'nu:n]после полудня %
+again[ə'gein/ə'gen]еще,снова %
+all[ɔl]все %
+already[ɔ'redi/ɔl'redi/ɔ:l'redi]уже %||/(ready-)
+alright[,ɔl'rait/ɔl'rait]в порядке %||/(right-прав)
+also[ɔlsou/ɔ:lsou]также,тоже %
+always[ɔl,weiz/ɔlwiz/ɔ:lwəz]всегда %||/(way-путь)
+and[ænd/ənd]и %
+any[eni/em]любой %
+back[bæk]назад,спина,поддерживать %||/ ехал на *спине быка на родео
+bad[bæd]плохой %||/~быдло
+be[bi/bi:]быть %
+become[bi'kəm/bi'kʌm]становиться %
+bed[bed]кровать||/ БЕДная *кровать,что на ней только не вытворяли / оБЕД в *кровать принесли
+bedroom[be,drum/bedru:m]спальня %||/=кровать+комната
+before[,bi'fɔr/bi'fɔr/bi'fɔ]перед %
+begin[bi'gin]начинать %
+beginner[bi'ginər/bi'ginə]новичок %
+beginning[bi'giniŋ]начало %
+best[best]лучший %
+between[bit'win/bi'twi:n]между %
+big[big]большой %||/+ БИГимот бежал на нас (страшно)
+birthday[bərθ,dei/bə:θdei]день рождения %
+blue[blu/blu:]голубой,синий %||/гоЛУБая БЛУзка
+bluebell[blu,bel/blu:bel]колокольчик %
+body[bɑdi/bɔdi]тело %||/~боди-арт
+bookshelf[buk,ʃelf/bukʃelf]книжный шкаф %||/ на шельфе у шефа
+bookstore[buk,stɔr/bukstɔ:]книжный магазин %||/ БУКвари и СТОРож
+boy[bɔi]мальчик %||/~ковбой
+briefcase[brif,keis/bri:fkeis]портфель,чемодан-дипломат %
+but[bət]но %
+daily[deili]ежедневно,ежедневный %||/(day-день)
+do[du/du:]делать %
+down[daun]вниз %||/даун с низким iq
+each[iʧ/i:ʧ]каждый %
+easy[izi/i:zi]легко %
+edit[edət/edit]редактировать,монтировать %
+editor[edətər/editər/editə]редактор %
+else[els]еще %
+end[end]завершать,конец %||/~хэпи-енд
+enter[enər/entər/entə]войти,входить %||/ЕНот выТЕР ноги и вошел в ракету
+error[erər/erə]ошибка %
+every[evəri/evri/evn]каждый %
+everybody[evri,bɑdi/evribɔdi]все,каждый %
+everyone[evri,wən/evriwʌn]каждый %
+everything[evri,θiŋ/evriθiŋ]всё %
+everywhere[evri,wer/evrih,wer/evriweə]везде %
+exit[egzit/eksət/eksit]выход,выходить %||/ ЭКСкурсиИ к *выходу из лабиринТа
+false[fɔls]ложный,неверный %
+first[fərst/fəst]первый %
+for[fɔr/fər/frər/fɔ:]для %
+free[fri/fri:]бесплатный,свободный,освобождать %||/аФРИку
+freedom[fridəm/fri:dəm]свобода %
+freeway[fri,wei/fri:wei]автострада %
+friend[frend]друг %||/~бойфренд
+friendly[frendli/frenli]дружелюбный %
+from[frəm/frɔm]из,от %
+full[ful]полный %
+fully[fuli]полностью %
+game[geim]игра %||/~геймер
+general[ʤenərəl/ʤenrəl/ʤen(ə)r(ə)l]генерал % 2.общий||/генеральный план
+generally[ʤenərəli/ʤenrəli/ʤen(ə)rəli]в общем-то,в основном %
+get[get/git]получить,становиться %
+gift[gift]подарок %
+girl[gərl/gə:l]девочка,девушка %||/герл
+girlfriend[gərl,frend/gə:lfrend]девушка %||/парня
+go[gou]идти %
+good[gud/gid]хороший %||/+ робин ГУД грабил *хороших богатых
+ground[graund/grɑund]земля %||/~грунт
+hand[hænd]вручать,кисть %||/ хэндэ-хох=руки-вверх (из кино) /~КАНДалы /~секонд-хэнд=вторые-руки
+handbook[hænd,buk/hændbuk]руководство,справочник %
+have[hæv]иметь %
+he[hi]он %
+help[help]помогать,помощь %||/ХИЛому *Помогите
+her[hər/hə:]её %
+here[hir/hiə]здесь %
+hers[hərz/hə:z]её %
+herself[hər'self/hə:'self]сама %
+hi[hai]привет! %||/ хай гитлер (из кино)
+himself[him'self/himself]он сам %
+his[hiz]его %
+hour[auər/aur/auə]час %
+how[hau]как %
+if[if]если %
+in[in]в %
+inner[inər/inə]внутренний %
+input[in,put/input]ввод,вход %
+into[intu/in'tu/intə]в %
+itself[,it'self/it'self]сам %
+keyboard[ki,bɔrd/ki:bɔ:d]клавиатура||/=ключ+доска %
+lady[leidi]дама %
+large[lɑrʤ/laʤ]большой,широкий %||/ларь
+left[left]левый %
+lesson[lesən/lesn]урок %||/на уроке про лес тянуло в сон
+like[laik]как,любить %||/лайк если нравиться
+little[litəl/litl]маленький,немного %
+live[laiv/liv]живой,жить %||/*жить в ливии под ливнем
+living[liviŋ]живущий %
+love[ləv/lʌv]любить,любовь %
+lovely[ləvli/lʌvli]прекрасный,чудесный,милый %
+lover[ləvər/lʌvə]любовник %
+low[lou]низкий %||/~лоукостер низкая стоимость
+mailbox[meil,bɑks/meilbɔks]почтовый ящик||/~мыло %
+mailman[meil,mæn/meilmæn]почтальон %
+main[mein]главный %||/+ майнер
+mainland[mein,lænd/meinlənd]материк,большой остров %
+make[meik]делать %
+many[meni]много %
+map[mæp]карта %
+market[mɑrkət/mɑrkit/ma:kit]рынок %||/~супермаркет
+may[mei/mel]мочь,пусть %
+maybe[meibi]может быть %
+media[midiə/mediə]средства массовой информации %||/масс медиа
+memory[meməri/memən]память %||/мемориал
+midnight[mid,nait/midnait]полночь %
+month[mənθ/mʌnθ]месяц %||/манс
+morning[mɔrniŋ/mɔ:niŋ]утро %
+mouse[maus]мышь %||/~микки МАУС
+move[muv]двигать,двигаться,движение,переезжать %
+much[məʧ/mʌʧ]много %
+must[məst/mʌst]должен %
+myself[,mai'self/mai'self]себя %
+name[neim]имя,называть %
+near[nir/niə]около %
+network[net,wərk/netwə:k]сеть %
+never[nevər/nevə]никогда,так и не %
+new[nju/nu]Новый %
+news[njuz/nuz/nju:z]новости %
+newspaper[nuz,peipər/nju:s,peipə]газета %
+next[neks/nekst]затем,следующий %
+night[nait]ночь %%
+no[nou]нет %
+nobody[nou,bɑ,di/noubədi/noub(ə)di]никто %
+none[nən/nʌn]никакой,ни один,никто %
+nor[nɔr/nɔ:]ни %
+not[nɑt/nɔt]не %
+nothing[nəθiŋ/nʌθiŋ]ничто %
+now[nau]сейчас %
+nowhere[nou,wer/nouh,wer/nouweə]нигде %
+often[ɔfən/ɔftən/ɔfn]часто %
+okay[,ou'kei/,əu'kei]ладно % 2.все в порядке?
+on[ɑn/ɔn]на %
+once[wəns/wʌns]один раз,однажды,когда-либо %
+one[wən/wʌn]один %
+only[ounli]только %
+open[oupən/oup(ə)n]открывать,открыто,открытый %
+or[ɔr/ər/ɔ:]или %
+other[əðər/ʌðə]другой %
+our[auər/aur/ɑr/auə]наш %
+ourselves[auər'selvz/ɑr'selvz/,auə'selvz]мы сами %
+out[aut]вне %
+outdoor[aut,dɔr/autdɔ:](outdoors) на улице %
+over[ouvər/ouvə]заново,через %
+page[peiʤ]страница %
+past[pæst/past]мимо,Прошлое,прошлый,прошедший %
+peace[pis]мир %
+people[pipəl/pi:pl]люди %
+player[pleiər/pleiə]игрок %||/плеер
+playground[plei,graun/plei,graund/pleigraund]детская площадка %
+read[red/rid]читать %
+reader[ridər/ri:də]читатель %
+return[ri'tərn/ri'tə:n]возвращать,возвращаться,возвращение %
+right[rait]право,правый % 2.не так-ли?
+river[rivər/nvə]река %||/+ ревет
+run[rən/rʌn]бег,управлять,бежать %
+running[rəniŋ/rʌniŋ]бег %
+save[seiv]сохранить %||/ ~сейф
+say[sei]сказать %||/+ СЕледке ЭЙ плыви сюда
+sea[si/si:]море %||/в СИнем *море купались до поСИнения
+second[sekənd/sek(ə)nd]секунда %||/второй
+secondary[sekən,deri/sek(ə)nd(ə)n]вторичный %
+secondly[sekəndli/sek(ə)ndli]во-вторых %
+see[si/si:]видеть %||/синее море
+send[send](sent,sent) отправить,отправлять,посылать %||/за песком в сандалях
+she[ʃi/ʃi:]она %||/шила и шипела
+size[saiz]размер %||/кинг сайз
+small[smɔl/smɔ:l]маленький %%||/ С *МАЛеньким и удаленьким
+smile[smail]улыбаться,улыбка %||/~смайлик
+so[sou]итак,поэтому %
+software[sɔf,wer/sɔft,wer/sɔftweə]программное обеспечение %
+somebody[səm,bɑdi/səmbə,di/sʌmbədi]кто-то %
+someone[səm,wən/sʌmwʌn]кто то,кто-то %
+something[səmθiŋ/sʌmθiŋ]что-то %
+stepfather[step,fɑðər]отчим%
+stepmother[step,məðər/step,mʌðər]мачеха %
+sun[sən/sʌn]солнце %
+swimsuit[swim,sut/swimsu:t]купальный костюм %
+take[teik]брать,воспринимать %
+tea[ti]чай %||/+ ТИхо пили в ТИшине
+tell[tel]говорить %||/+ по телефону
+than[ðæn/ðən]чем %
+thank[θæŋk]благодарить %
+that[ðæt/ðət/pæt]тот %
+their[ðer/ðeə(r)]их %
+them[ðem/ðəm]им %
+themselves[ðəm'selvz/ðem'selvz]самих себя %
+then[ðen]тогда %
+there[ðer/ðeə(r)]там %
+these[ðiz/ði:z]эти %
+they[ðei]они %
+this[ðis]этот %
+those[ðouz/ðəuz]те %
+thus[ðəs/ðʌs]таким образом,поэтому %
+time[taim]время %
+to[tu/tə/ti/tu:]к %
+today[tə'dei/tu'dei]сегодня %
+together[tə'geðər/tə'geðə]вместе %
+tomorrow[tə'mɑ,rou/tu'mɑ,rou/tə'mɔrəu]завтра %
+tonight[tə'nait/tu'nait]сегодня вечером %
+too[tu/tu:]тоже %
+top[tɑp/tɔp]верхний %||/~топ модель
+train[trein]поезд,тренировать||/*поезд с ТРЕНерами ехал на соревнования  %
+tree[tri]дерево %||/три ветки у дерева
+true[tru/tru:]истинный %
+type[taip]печатать,набирать текст,тип %||/~типография
+under[əndər/ʌndə]под %
+up[əp/ʌp]вверх %
+us[əs/,ju'es/ʌs]нАС %
+very[veri]очень %
+victory[viktəri/viktri/vikt(ə)ri]победа %
+want[wɑnt/wɔnt]хотеть %
+war[wɔr/wɔ]война %
+we[wi]мы %
+weather[weðər/weðə]погода %
+week[wik/wi:k]неделя %
+weekend[wi,kend/wi,kind/,wi:k'end]выходные дни %
+welcome[welkəm]желанный,приятный,приветствовать %||/~великан
+what[hwət/wət/wɔt]что %
+when[hwen/hwin/wen/win]когда %
+where[hwer/wer/weə](+to) куда, где%
+which[hwiʧ/wiʧ]который %
+while[hwail/wail]пока %
+who[hu/hu:]кто %
+whom[hum/hu:m]кого %
+whose[huz/hu:z]чей %
+why[hwai/wai]почему %
+with[wið/wiθ]с %
+woman[wumən]женщина %||/вумная
+write[rait]писать %
+writer[raitər/raitə]писатель %
+year[jir/jə:]год %
+yes[jes]да %
+yesterday[jestər,dei/jestərdi/jestədi]вчера %
+yet[jet]все ещё,всё же,пока ещё (отриц) %
+you[ju]вы %
+your[jɔr/jur/jæ]ваш %
+yours[jɔrz/jurz/jərz/jɔz]твой %
+yourself[jɔrself/jər'self/jur'self/jɔ'self]сам %
+`;

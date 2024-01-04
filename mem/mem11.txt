@@ -1,0 +1,461 @@
+//трудные8 ~460 , хорошие ФА
+g_api=`
+surrender[sər'endər/sə'rendə]сдаваться,капитулировать||/с арендой
+surround[sər'aund/sə'raund]окружать,окружить
+surveillance[sər'veiləns/sə:'veiləns]наблюдение
+survival[sər'vaivəl/sə'vaiv(ə)l]выживание
+survive[sər'vaiv/sə'vaiv]выживать,выжить
+susceptible[sə'septəbəl/sə'septəbl]восприимчивый,подверженный
+suspect[səs,pekt/sə'spekt/sʌspekt]подозревать,подозреваемый||/инСПЕКТор
+suspend[sə'spend/səs'pend]приостановить,подвесить
+suspicious[sə'spiʃəs/səs'piʃəs]подозрительный
+sustain[sə'stein/səs'tein]выдерживать,поддерживать
+swallow[swɑlou/swɔlou]глотать,проглатывать,глоток||/ СВОЛОчь Утром *глотала СВОю сЛюнУ
+swamp[swɑmp/swɔmp]болото,топь
+swan[swɑn/swɔn]лебедь||/+ С ВАНей на спине летел в далекие страны
+swap[swɑp/swɔp]менять,обмен
+swarm[swɔrm/swɔm]рой,роиться,толпиться
+sway[swei]раскачивать
+swear[swer/sweə]клясться,ругаться
+sweat[swet]пот,потеть||/в СВИТере
+sweep[swip/swi:p](swept,swept) подметать,мести,размах,охват
+sweet[swit]сладкий||/+ СВИТер ели С ВИТей,вите надо выйти
+sweetheart[swit,hɑrt/swi:tha:t]возлюбленный(-ая),милый||/сладкое сердце
+swell[swel](swelled,swollen) раздуваться,распухать||/свел с ума *распухшийся
+swim[swim]плавать,плыть||/ СВИньи Мило *плавали в реке с крокодилами
+swimming[swimiŋ]плавание
+swing[swiŋ](swung,swung) качать,махать,качаться||/СВИН *махал хвостом
+switch[swiʧ]переключать,переключатель,переключить||/свеча
+swoop[swup/swu:p]кинуться,напасть
+sword[sɔrd/sɔ:d]меч||/С ОРДой пошел сражаться с *мечом
+syllable[siləbəl/siləbl]слог
+syringe[sirinʤ/sər'inʤ]шприц||/+ сиреневый у джо
+
+tablet[tæblət/tæblit]плитка,пластина
+tack[tæk]канцелярская кнопка,гвоздик,курс,линия поведения
+tackle[tækəl/tækl]взяться за что-л.,принадлежности,снаряжение||/такелаж
+tail[teil]хвост||/ритейл с *хвостом
+tailor[teilər/teilə]портной,кроить||/*портной смотрел ТЕЛевизОР и крутил хвостом
+taint[teint]загрязнить,испортить
+tale[teil]сказка||/по телеку
+talkative[tɔkətiv/tɔ:kətiv]болтливый||/+ тип на ТОЛКучкЕ очень болТлИВ
+tally[tæli]подсчитывать,подсчёт,итог
+tame[teim]ручной,приручать
+tan[tæn]загар,загорать||/ ТАНя *загорала на ТАНке, а ТАНкисты рассказывали ей сказки про ТАНки
+tangible[tænʤəbəl/tænʤ(ə)bl]осязаемый
+tangle[tæŋgəl/tæŋgl]запутывать
+tap[tæp]кран,стучать,постукивать||/*стучать ТАПком по *крану
+tape[teip]лента,записывать на ленту
+tar[tɑr/tn]смола||/+ лежит в ТАРе
+target[tɑrgət/tərgət/tagit]цель,мишень
+task[tæsk/task]задание,задача||/таскал
+tattered[tætərd/tætəd]оборванный
+taunt[tɔnt/tɔ:nt]насмехаться,насмешка
+tax[tæks]налог||/такса
+teacher[tiʧər/ti:ʧə]учитель||/+ тихо чертит на доске
+teaching[tiʧiŋ/ti:ʧiŋ]преподавание
+tear[ter/tir/teə](tore,torn) рвать,разрывать 2.слеза||/тер в тире
+tease[tiz]дразнить
+teddybear[tedi,ber]плюшевый медведь||/+ тедди в БЕРлоге (устроил тройничек)
+tedious[tidiəs/ti:djəs]утомительный,нудный
+temple[tempəl/templ]висок,храм||/ ТЕМ Плох *храм что никому давно не надо
+temporary[tempər,eri/temp(ə)rəri]временный
+tempt[tempt]искушать
+tenant[tenənt]арендатор,жилец
+tense[tens]напряжённый,напрягать
+tension[tenʃən/tenʃ(ə)n]напряжение
+tentative[tenətiv/tentətiv]пробный,экспериментальный
+terminate[tərmə,neit/təmineit]прекратить,завершить (офиц)||/терминатор
+terrify[terə,fai/terifai]устрашать
+testament[testəmənt]завет,завещание
+testify[testə,fai/testifai]свидетельствовать
+testimony[testə,mouni/testiməni]показание,свидетельство
+theft[θeft]кража||/+ из сейфа тонны золота
+thereafter[ðe'ræftər/,ðeə'rɑ:ftər]впоследствии
+thereby[ðer'bai/,ðeə'bai]тем самым
+therefore[ðer,fɔr/ðeəfɔ:]следовательно
+thick[θik]густой,толстый||/пеСИК
+thickness[θiknəs/θiknis]толщина
+thief[θif]вор (thieves-воры)||/+ украл сифу
+thigh[θai]бедро
+thin[θin]тонкий,худой||/ сын
+thing[θiŋ]вещь||/син
+think[θiŋk]думать
+thirst[θərst/θəst]жажда||/СИРота СТонал от *жажды и напился из лужи, потом от козленочка нашли рожки да ножки
+thorough[θərou/θɔrou/θʌrə]основательный,полный
+though[ðou](even-) хотя
+thought[θɔt/θɔ:t]мысль
+thoughtful[θɔtfəl/θɔ:tful]заботливый
+thread[θred]нить||/средняя
+threat[θret]угроза
+threaten[θretən/θretn]угрожать
+threshold[θre,ʃould/θreʃhould]порог
+thrift[θrift]бережливость
+thrill[θril]трепет,дрожь,дрожать
+thrive[θraiv]процветать,преуспевать
+throat[θrout]горло||/+ у СоРОки сТрашно болело,орать меньше надо
+throng[θrɔŋ]толпа,толчея,толпиться
+through[θru/θru:]сквозь,через||/дырку *
+throughout[θru'aut/θru(:)'aut]на протяжении
+throw[θrou](threw,thrown) бросать
+thrust[θrəst/θrʌst]сунуть,пихнуть (быстро)
+thud[θəd/θʌd]глухой удар
+thug[θəg/θʌg]бандит,головорез
+thumb[θəm/θʌm]большой палец||/САМый +
+thump[θəmp/θʌmp]колотить
+thunder[θəndər/θʌndə]гром
+thwart[θwɔrt/θwɔt]помешать,сорвать
+tick[tik]галочка,поставить галочку,клещ||/*клещ снимался в тик токе
+ticket[tikət/tikit]билет,талон||/+ как эТИКЕТка / уТЕКаЕТ без *билетник от контролёра
+tickle[tikəl/tikl]щекотать
+tide[taid]волна,поток,прилив
+tie[tai]галстук,завязка,связывать,завязывать,связать||/*галстук ТАЙный в ТАЙнике
+tier[tir/taiə]ярус
+tiger[taigər/taigə]тигр||/+ в ТАЙГЕ прятался от медведя
+tight[tait]туго,тугой,тесный
+tile[tail]плитка,черепица
+till[til]до
+tilt[tilt]наклонять,наклон
+timber[timbər/timbə]древесина,лесоматериалы
+timely[taimli]своевременный
+timetable[taim,teibəl/taimteibl]расписание
+timid[timid]робкий,пугливый
+tin[tin]банка,олово,жесть||/тина
+tint[tint]оттенок||/ тинто брас снял кино про 50 оттенков черного
+tiny[taini]крошечный||/тайный
+tip[tip]кончик,верхушка,наконечник,совет,рекомендация,(tips)чаевые||/ дали подозрительному ТИПу
+tire[taiər/taiə]колесо||/ в ТИРЕ стреляли по *колесам и шинам
+tired[taiərd/taiəd]усталый||/ + килер в ТИРЕ Дремал
+tissue[tis,ju/tiʃu/tisju:]бумажная салфетка,ткань||/тесьма
+title[taitəl/taitl]заглавие,заголовок
+toddler[tɑdlər/tɔdlər]малыш (1- года)
+toe[tou]палец (ноги)
+toil[tɔil]тяжело трудиться
+toll[toul]плата,пошлина,тариф
+tomb[tum/tu:m]надгробие,склеп
+tongue[təŋ/tʌŋ]язык
+topple[tɑpəl/tɔpl]опрокинуть(-ся)
+tops[tɑps/tɔps]самое большое
+torment[tɔr,ment/tɔr'ment/tɔ:ment]мучение
+torture[tɔrʧər/tɔ:ʧə]пытка,мучить
+tough[təf/tʌf]жесткий,жёсткий,крепкий,тяжёлый
+tout[taut]рекламировать,навязывать
+toward[tɔrd/tə'wɔrd/tə'wɔ:d](towards) к,по направлению к
+towel[tauəl/taul]полотенце||/ осТАВИЛ + у ТОго ВЕЛикана
+tower[tauər/tauə]башня,возвышаться||/ ТОВАРная *башня / таверна в *башне
+town[taun]город
+toy[tɔi]игрушка||/ любимая *игрушка ТОЙ девочки сломалась и она рыдала весь день, а мальчик который ей нравился,подошёл и пожалел её и подарил свою новую *игрушку,она была счастлива
+trail[treil]след,тропа,тропинка||/ ехал ТРЕЙЛер со разбойниками по *тропинке в лес
+training[treiniŋ]обучение
+trait[treit]черта,характеристика
+traitor[treitər/treitə]изменник
+transcend[træn'send]преодолеть (пределы)
+trap[træp]ловушка,ловить||/трап тропа
+tray[trei]лоток,поднос,поддон||/*поднос неси бысТРЕЙ
+treachery[treʧəri]предательство,вероломство
+tread[tred]ступать,шагать
+treasure[treʒər/treʒə]сокровище
+treat[trit]лечить,обращаться,иметь дело||/*лечить ТРИТона кусачего
+treatment[tritmənt/tri:tmənt]лечение
+treaty[triti/tri:ti]договор (между гос-вами)
+trek[trek]поход,переход
+tremble[trembəl/trembl]дрожать
+tremendous[trə'mendəs/tri'mendəs]громадный,страшный
+tribe[traib]племя||/трибунал
+tribute[tribjut/tribju:t]дань||/требовать
+trickle[trikəl/trikl]струйка,капать,сочиться
+trip[trip]поездка
+triple[tripəl/tripl]тройной
+trouble[trəbəl/trʌbl]неприятность
+troublesome[trəbəlsəm/trʌblsəm]хлопотный,беспокойный
+trout[traut]форель||/+ в ТРАУре Третий день ТРАУлером ловили
+truly[truli/tru:li]действительно||/труляля
+trumpet[trəmpət/trʌmpit]труба||/ ТРАМП играл на *трубе и хотел ПЕТь
+trunk[trəŋk/trʌŋk]багажник,ствол дерева,чемодан,сундук||/ ТаРАНКул залез в *багажник и перегрыз провода
+truth[truθ/tru:θ]правда
+try[trai]пытаться
+tuck[tək/tʌk]подоткнуть,заправить
+tug[təg/tʌg]тянуть,рывок||/тяга
+tuition[tju'iʃən/tju(:)'iʃən]обучение,плата за обучение
+tumble[təmbəl/tʌmbl]перевернуться,кувыркнуться
+tumor[tumər/tju:mə](-our) опухоль
+turkey[tərki/tə:ki]индейка,индюк||/ *индейку ели ТУРКИ
+turmoil[tər,mɔil/tə:mɔil]смятение,беспорядок
+turnover[tər,nouvər/tə:n,ouvə]оборот (экон)
+turquoise[tərkwɔiz/tə:kwɔiz]бирюзовый||/+ туркмен
+tutor[tutər/tju:tə]репетитор,преподаватель
+tuxedo[,tək'sidou/tʌk'si:dəu]смокинг||/ в ТАКСИ еДУ в *смокинге
+tweak[twik/twi:k]доделать,настроить (разг)
+twice[twais]дважды
+twig[twig]прут,веточка
+twilight[twai,lait/twailait]сумерки
+twin[twin]близнец||/+ в ТВИттере Нашел близнеца
+twinkle[twiŋkəl/twiŋkl]блеск,мерцание
+twist[twist]скручивать
+twitch[twiʧ]дёргаться
+tyre[]шина =tire
+
+ugly[əgli/ʌgli]безобразный,уродливый||/*уродливый урод разжигал УГЛИ
+ultimately[əltəmətli/ʌltimitli]в конечном итоге
+umbrella[əm,brelə/əm'brelə/ʌm'brelə]зонт,зонтик||/ А Мы БРЕЛИ с *зонтом по лужам
+unable[ə'neibəl/ʌn'eibl]неспособный
+unanimous[ju'nænəməs/ju(:)næniməs]единогласный
+unbelievable[,ənbə'livəbəl/,ʌnbi'li:vəbl]невероятный
+uncertainty[ən'sərtənti/ʌn'sə:tnti]неопределенность
+uncle[əŋkəl/ʌŋkl]дядя||/+ АНКи КЛептоманки ел на ужин анклбенс
+undergo[,əndər'gou/,ʌndə'gəu]пройти через,подвергнуться
+underlie[,əndər'lai/,ʌndə'lai]лежать в основе
+underline[əndər,lain/ʌndəlain]подчеркивать
+undermine[əndər,main/,ʌndə'main]подрывать
+underneath[,əndər'niθ/,ʌndə'nl:θ]под
+underpants[əndər,pænts/ʌndə'pænts]трусы
+underscore[,əndər'skɔr/,ʌndə'skɔ:]нижнее подчеркивание
+understand[,əndər'stænd/,ʌndə'stænd]понимать||/+ о чем сказки андерсона на стенде
+understanding[,əndər'stændiŋ/,ʌndə'stændiŋ]понимание,понимающий
+undertake[əndər,teik/,ʌndə'teik]предпринимать
+underwear[əndər,wer/ʌndəweə(r)]нижнее белье
+undo[ən'du/ʌn'du:]расстегнуть,развязать,открыть
+unemployed[,ənem'plɔid/ʌnim'plɔid]безработный
+unemployment[,ənim'plɔimənt/ʌnim'plɔimənt]безработица
+unfold[ən'fould/ʌnfould]разворачивать
+unfortunately[ən'fɔrʧənətli/ən'fɔrʧunətli/ʌnfɔ:ʧnitli]к несчастью
+unhappy[ən'hæpi/ʌn'hæpi]несчастный,несчастливый||/=не+счастливый
+union[junjən/ju:njən]союз
+united[ju'naitid/ju:'naitid]объединенный
+unity[junəti/juniti/ju:niti]единство
+unkind[ən'kaind/ʌnkaind]злой||/=не-добрый
+unknot[ʌn'nɔt]развязать||/+ еноту шнурки
+unknown[ən'noun/ʌn'noun]неизвестный
+unless[ən'les/ənles]если не,если только не
+unlike[ən'laik/ʌn'laik]в отличие от
+unlikely[ən'laikli/ʌn'laikli]навряд ли
+until[ən'til/əntil]до
+unusual[ən'ju,ʒuəl/ən'juʒwəl/ʌnju:ʒuəl]необычный
+upcoming[əp,kəmiŋ/ʌp'kʌmiŋ]предстоящий,наступающий
+uphill[əp'hil/ʌp'hil]в гору
+uphold[əp'hould/ʌp'hould]соблюдать,поддерживать
+upon[ə'pɑn/ə'pɔn]на
+upper[əpər/ʌpə]верхний
+upright[ə,prait/ə'prait/ʌprait]вертикальный,стоячий,честный
+uprising[ə,praiziŋ/ə'praiziŋ/ʌp'raiziŋ](rising) восстание
+upset[əp,set/əp'set/ʌp'set]расстраивать,расстроенный||/*расстроенный генерал пошел в АПтеку за СЕТкой на голову от боевых комаров
+upwards[əpwərdz/ʌpwədz](upward) вверх
+urge[ərʤ/ə:ʤ]побуждать,гнать,призвать
+usage[jusəʤ/jusiʤ/ju:ziʤ]применение
+used[juzd/ju:st]использованный,используемый
+useful[jusfəl/ju:sful]полезный
+useless[jusləs/ju:slis]бесполезный
+usual[juʒəwəl/juʒuəl/ju:ʒuəl]обычный
+usually[juʒəli/juʒəwəli/ju:ʒuəli]обычно||/+ly наречие
+utter[ətər/ʌtə]издать,произнести,полный,абсолютный
+vague[veig]смутный
+vain[vein]напрасный,безрезультатный,тщеславный,самолюбивый
+valley[væli]долина||/великанов
+valuable[væljəbəl/væljubəl/væljuəbl]ценный
+valve[vælv]задвижка,вентиль||/протерли вельветом
+vanish[væniʃ]исчезнуть
+vapor[veipər]пар||/выпаривать
+variable[veriəbəl/veəriəbl]переменная
+variety[vər'aiəti/və'raiəti]разнообразие,множество
+various[veriəs/veənəs]различный,разнообразный
+varnish[vɑrniʃ/va:niʃ]лак,лакировать
+vast[væst/vast]обширный,просторный,простор
+vault[vɔlt]свод,небосвод,хранилище,об. в подвале
+veer[vir/viə]резко свернуть
+vehicle[vihikəl/viikəl/viikl]транспортное средство||/ ВЕрХом на мотоцИКЛЕ
+vendor[vendər/vendɔ:]продавец,торговец
+verge[vərʤ/və:ʤ]грань,предел,обочина
+versatile[vərsətəl/vərsə'tail/və:sətail]универсальный,разносторонний
+vessel[vesəl/vesl]сосуд,судно||/нет весел
+vest[vest]жилет||/+ носят бандиты в ВЕСТернах
+via[vaiə/viə]через
+viable[vaiəbəl/vaiəbl]жизнеспособный
+vice[vais]порок,недостаток
+vicinity[və'sinəti/vi'siniti]окрестность,близость
+vicious[viʃəs]злобный,жестокий
+victim[viktəm/viktim]жертва
+vigil[viʤəl/viʤil]дежурство,бдение
+vigor[vigər]сила,энергия,здоровье
+violate[vaiəleit]нарушать||/фиолет
+violence[vaiələns]насилие
+violent[vaiələnt/vailənt]насильственный,яростный,жестокий
+virtually[vərʧuəli/vərʧuli/və:tjuəli]фактически
+virtue[vərʧu/və:tju:]добродетель,достоинство
+visible[vizəbəl/vizəbl]видимый
+vital[vaitəl/vaitl]жизненно важный,жизненный||/витал в облаках
+vivid[vivəd/vivid]яркий||/индивид
+vocabulary[vou'kæbjə,leri/və'kæbjuləri]словарный запас
+vocation[vou'keiʃən/vou'keiʃ(ə)n]призвание,профессия
+voice[vɔis]голос||/ у нее + как ВОЙ Сирены
+void[vɔid]недействительный,пустой||/войду
+volume[vɑljum/vɔljum]громкость,объём,том,книга
+voluntarily[,vɑlən'terəli/vɔləntərili]добровольно
+voluntary[vɑlənteri/vɔlənt(ə)ri]добровольный
+vomit[vɑmət/vɔmit]рвота,блевать
+vote[vout]голос,голосовать||/вотум доверия
+vow[vau]клятва,торжественное обещание||/вау
+vulnerable[vəlnərəbəl/vʌln(ə)rəbl]уязвимый,чувствительный
+wad[wɑd/wɔd]комок,пачка (денег)||/плавает в воде
+wade[weid]брод,переходить вброд||/дарт вейдер с ведром
+wag[wæg]махать,вилять||/вагон
+wage[weiʤ]заработная плата,заработок,оплата
+wail[weil]вопить,вопль
+waist[weist]талия
+wait[weit/waft]ждать
+waiter[weitər/weitə]официант||/ ожидатель,ждун / *официант ВЫТЕР стол и выбросил на ВЕТЕР
+waive[weiv]отказаться,воздержаться от
+wake[weik]разбудить
+walk[wɑk/wɔk/wɔ:k]прогулка,ходить||/ с волком в лес
+wall[wɔl]стена||/вол пробил *стену
+wallet[wɔlət/wɔlit]бумажник,кошелек||/ ВАЛЕТ нашёл *кошелек дамы у туза в кармане
+walnut[wɔl,nət/wɔ:lnʌt]грецкий орех
+wander[wɑndər/wɔndə]бродить,блуждать
+wane[wein]убывать
+ward[wɔrd/wɔd]округ,район,палата,отделение,камера
+warden[wɔrdən/wɔ:dn]смотритель,надзиратель
+warehouse[wer,haus/weəhaus]склад
+warfare[wɔr,fer/wɔ:feə]военные действия
+warm[wɔrm/wɔm]теплый
+warmth[wɔrmθ/wɔ:mθ]тепло
+warn[wɔrn/wɔ:n]предостерегать,предупреждать
+warning[wɔrniŋ/wɔ:niŋ]предупреждение
+warp[wɔrp/wɔ:p]деформироваться
+warrior[wɔriər/wɔrjər/wɔnə]воин
+wary[weri/weəri]осторожный,настороженный
+wash[wɑʃ/wɔʃ]мыть||/ вшивый думал о бане и *мыл ВОШь
+waste[weist]отходы,обрезки,потери,тратить (впустую),тратить впустую
+watch[wɑʧ/wɔʧ]наручные часы,смотреть||/*наручные-часы У ОЧкарика 007 были с телевизором,лазером и атомной бомбой
+watchful[wɑʧfəl/wɔʧful]бдительный
+watercolor[wɔtər,kələr/wɔtər,kʌlər]акварель
+watermelon[wɔtər,melən/wɔ:tə,melən]арбуз||/=вода+дыня
+wave[weiv]волна,махать,колебаться
+waver[weivər/weivə]дрогнуть
+way[wei]способ,путь
+weak[wik/wi:k]слабый||/+ ВИКтор вампир нёс на руках *слабую ВИКу целую *неделю (week) в тёмный лес на УИКенд
+weakness[wiknəs/wi:knis]слабость
+wealth[welθ]богатство
+weapon[wepən]оружие
+wear[wer/weə]надевать,носить||/ веер в кармане *носить
+weary[wiri/wiən]утомленный
+weave[wiv]плести,ткать
+wedding[wediŋ]свадьба||/+ ВЕДьмы и ДИНозавра
+wedge[weʤ]клин,клиновидный
+weed[wid/wi:d]сорняк,пропалывать
+weigh[wei]весить,взвешивать||/ веер
+weight[weit]вес||/+ веера тяжелый
+weird[wird/wiəd]нереальный,странный
+weld[weld]сварка,сваривать
+welfare[wel,fer/welfeə]благополучие,благосостояние,пособие,мат.помощь
+well[wel]хорошо 2.колодец
+wet[wet]мокрый,мочить,намочить||/*намочить ВЕТки и бросить в костёр
+whack[hwæk/wæk]удар,сильно бить
+whale[hweil/weil]кит
+whatever[,hwə'tevər/,wə'tevər/wɔtevə]без разницы
+whatsoever[,hwətsou'evər/,wətsou'evər/,wɔtsəu'evər]совсем (не)
+wheat[hwit/wit]пшеница
+whenever[hwe'nevər/we'nevər/wen'evə]всякий раз,когда
+whereabouts[hwerə,bauts/werə,bauts/weərəbauts]местонахождение
+whereas[hwe'ræz/we'ræz/weər'æz]в то время как,тогда как
+whereby[hwer'bai/wer'bai/weə'bai]посредством чего
+whether[hweðər/weðər/weðə]ли
+whilst[wailst]пока
+whim[hwim/wim]каприз,прихоть
+whine[hwain/wain]ныть,скулить
+whip[hwip/wip]кнут,хлестать
+whisk[hwisk/wisk]сделать быстрое движение
+whisper[hwispər/wispər/wispə]шепот,шептать||/ ВЫСПРосил *шепотом в чём смысл жизни / *шептать что король не ВЫСПался и сЕРдитый ходит
+whistle[hwisəl/wisəl/wisl]свист,свистеть,свисток||/ ВЫСЛедил шпиона и *засвистел в *свисток
+white[hwait/wait]белый||/ вата *белая
+whiz[hwiz/wiz]ловкач,умелец (в области),просвистеть,пронестись
+whole[houl]весь,целый
+wholesale[houl,seil/houlseil]опт
+whore[hɔr/hɔ]шлюха
+wicked[wikəd/wikid]злобный,безнравственный
+wide[waid]широкий,просторный||/*широкий вадик не влазит в *просторный трамвай
+widely[waidli]широко
+widespread[waids'pred/,waid'spred]распространенный,широко распространенный
+widow[widou]вдова
+widowed[widoud]вдовец
+width[widθ]ширина
+wield[wild]владеть,управляться
+wife[waif]жена||/+ включила вай-фай
+wiggle[wigəl/wigl]шевелить
+wild[waild]дикий||/+ псих с ВИЛкой по Дому бегал
+wilderness[wildərnəs/wildənis]глушь,дикая местность
+wildlife[waild,laif/waildlaif]дикая природа
+will[wil/wəl]воля,желание
+willing[wiliŋ]желающий
+willow[wi,lou/wilou]ива
+win[win]побеждать
+wince[wins]поморщиться,поёжиться
+wind[waind/wind](wound,wound) наматывать,виться,петлять 2. ветер
+window[windou]окно||/ вид удивительный из *окна
+windowpane[windou,pein/windəupein]оконное стекло
+wing[wiŋ]крыло||/ ВИкиНГ с *крыльями пил ВИНо Горькое и ел ВИНоГрад
+wink[wiŋk]подмигивать
+winner[winər/winə]победитель
+winter[wintər/wintə]зима
+wipe[waip]вытирать,салфетка
+wire[waiər/wair/waiə(r)]провод,проволока
+wish[wiʃ]желание,желать
+wit[wit]ум,остроумие
+witch[wiʧ]ведьма
+withdraw[wið'drɔ/wiθ'drɔ/wið'drɔ:]отводить,убирать,отзывать (деньги из банка),отозвать
+withdrawal[wið'drɔəl/wiθ'drɔəl/wið'drɔ:(ə)l]снятие денег со счета
+wither[wiðər/wiðə]увянуть,засохнуть
+withhold[wiθ'hould/wið'hould]утаивать,удерживать
+within[wi'ðin/wi'θin]в пределах,внутри,в течение
+without[wi'ðaut/wi'θaut]без
+withstand[wiθ'stænd/wið'stænd]выдерживать
+witness[witnəs/witnis]свидетель
+wizard[wizərd/wizəd]волшебник
+wobble[wɑbəl/wɔbl]качаться,шататься||/вобла
+woe[wou]горе
+wonder[wəndər/wʌndə]удивление,удивляться,хотеть знать,чудо
+wonderful[wəndərfəl/wʌndəful]замечательно
+woo[wu/wu:]ухаживать,добиваться
+wood[wud]древесина,лес||/*древесина в голиВУДе закончилась
+wooden[wudən/wudn]деревянный
+wool[wul]шерсть,шерстяной||/ волк на ВУЛкане стриг *шерсть с овец
+woollen[wulən]шерстяной||/+ свитер носит снежный чел на ВУЛкаНе
+word[wərd/wəd]слово||/+ из трех букв написал вилами на ВОДе
+work[wərk/wək]работа,работать||/в ВОРКуте с волками
+worker[wərkər/wə:kə]рабочий
+working[wərkiŋ/wə:kiŋ]работающий
+workshop[wərk,ʃɑp/wə:kʃɔp]мастерская,студия
+world[wərld/wə:ld]мир||/ вольдемар пил валидол когда захватил *мир
+worldwide[wərld'waid/,wə:ld'waid]всемирный
+worried[wərid/wʌrid]обеспокоенная,озабоченный||/*обеспокоенная ВАРя Долго искала ВАРЕжку поД фонарём, там светлее
+worry[wəri/wʌri]беспокоиться,волновать(-ся)||/донт уори би хэпии (песня)
+worse[wərs/wə:s]хуже
+worsen[wərsən/wə:sn]ухудшать
+worship[wərʃəp/wərʃip/wə:ʃip]почитать,поклоняться
+worth[wərθ/wə:θ]стоимость,стоящий,ценность
+worthwhile[wərθ'wail/,wə:θ'wail]стоящий
+wound[waund/wund/wu:nd]рана,ранить
+wrap[ræp]заворачивать||/рэп
+wrath[ræθ/rɔ:θ]ярость
+wreath[riθ/ri:θ]венок
+wreck[rek]разрушать,крушение,развалина
+wrench[renʧ]гаечный ключ
+wrestle[resəl/resl]бороться
+wretched[reʧid]жалкий,несчастный
+wrinkle[riŋkəl/riŋkl]морщина,сморщиваться
+writing[raitiŋ]письмо
+written[ritən/ritn]написанный
+wrongdoing[rɔŋduiŋ/rɔŋ,du:iŋ]проступок,правонарушение
+
+yank[jæŋk]дергать
+yard[jɑrd/jad]двор
+yawn[jɔn]зевать||/ яна *зевала на уроке
+yeah[jæ/jeə]ага
+yearn[jərn/jə:n]тосковать,жаждать
+yell[jel]кричать,вопить
+yellow[jelou]желтый||/ ЕЛ ЛОвко *жёлтый желудь
+yield[jild]приносить (доход),уступать
+youngster[jəŋstər/jʌŋstə]юноша,ребёнок
+yuck[]фу!
+
+zeal[zil/zi:l]рвение,усердие||/ЗИЛ грузовик с *усердием возил слонов
+zipper[zipər/zipə]застежка молния||/ ЗИна ПЕРвая расстегнула *молнию
+`;

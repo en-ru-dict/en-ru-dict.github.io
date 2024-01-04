@@ -1,0 +1,833 @@
+//похожие ~800 , ФА не надо
+g_api=`
+abnormal[æb'nɔrməl/æb'nɔ:məl]ненормальный,аномальный %%
+aboard[ə'bɔrd/ə'bɔd]на борту %
+absolute[æbsə,lut/æbs(ə)lu:t]абсолютный %
+absolutely[,æbsə'lutli/æbsəlu:tli]абсолютно % (+ly=наречие)
+academic[,ækə'demik]академический %
+accessory[æk'sesəri]принадлежность,аксессуар %
+accordion[ə'kɔrdiən/ə'kɔ:djən]аккордеон %
+active[æktiv]активный %
+actor[æktər/æktə]актер %
+actress[æktrəs/æktris]актриса %
+actual[ækʃəl/ækʧəwəl/ækʧuəl]актуальный %
+adapt[ə'dæpt]адаптировать %
+address[æ,dres/ə'dres]адрес,адресовать %
+adequate[ædə,kweit/ædəkwət/ædikwit]адекватный %%
+administration[æd,mini'streiʃən/əd,minis'treiʃən]администрация %
+administrative[əd'minə,streitiv/əd'ministrətiv]административный %
+aerobics[ər'oubiks/eə'roubiks]аэробика %
+affiliate[ə'fili,eit/ə'filiət/ə'filieit]ФИЛИАл %%,отделение,мл.партнёр
+agency[eiʤənsi]агентство %%
+airline[er,lain/eəlain]авиалиния %
+airport[er,pɔrt/eəpɔ:t]аэропорт %
+alternative[ɔl'tərnətiv/ɔ:l'tə:nətiv]альтернатива,альтернативный %
+amaze[ə'meiz]поражать,иЗуМлять %%
+analyse[ænəlaiz]анализировать %
+analysis[ə'næləsəs/ə'nælisis/ənæləsis]анализ %
+anchor[æŋkər/æŋkə]якорь %%,закреплять
+angle[æŋgəl/æŋgl]угол %%,угловой||/ АНГЕЛа поставили в *угол за прогулы
+announce[ə'nauns]анонсировать %,объявлять
+applause[ə'plɔz/ə'plɔ:z]аплодисменты %%
+apricot[eiprə,kɑt/eipnkɔt]абрикос %%||/+ в апреле ел кот
+arch[ɑrʧ/a:ʧ]арка %%,изгибать
+architect[ɑrkə,tekt/akitekt]архитектор %
+architecture[ɑrkə,tekʧər/akitekʧ(ə)]архитектура %
+archive[ɑr,kaiv/a:kaiv]архив %
+army[ɑrmi/ami]армия %
+artistic[ɑr'tistik/a'tistik]артистичный %
+astronomy[ə'strɑnəmi/əs'trɔnəmi]астрономия %
+athlete[æθ,lit/æθli:t]атлет %%
+attack[ə'tæk]атака %,нападать,нападение,атаковать
+attempt[ə'tempt/ə'tem(p)t]поПыТка %%,пытаться
+audience[ɑdiəns/ɔdiəns/ɔ:djəns]аудитория,аудитория (люди) %%
+author[ɔθər/ɔ:θə]автор %
+authority[ə'θɔrəti/ɔ:'θɔriti]авторитет %,власть
+automatically[,ɔtə'mætikli/,ɔtou'mætikli/,ɔ:tə'mætikəli]автоматически %
+avocado[,ævə'kɑdou]авокадо %
+
+bachelor[bæʧələr/bæʧlər/bæʧələ]бакалавр %,холостяк
+balance[bæləns]баланс %
+balcony[bælkəni]балкон %
+banana[bə'nænə/bə'na:nə]банан %
+bandage[bændiʤ]бандаж %,повязка
+bank[bæŋk]банк %,берег (реки,озера)
+banker[bæŋkər]банкир %
+bankrupt[bæŋkrəpt]банкрот %,неплатежеспособный
+bar[bɑr/bn]бар %,загораживать,пластина,брусок,прут
+barrier[bæriər/beriər/bæriə]барьер %
+baseball[beis'bɔl/beisbal]бейсбол %
+basketball[bæskət,bɔl/baskitbɔ:l]баскетбол %||/=корзина+мяч
+bathroom[bæ,θrum/bɑ:θru:m]ванная,ванная комната %||/~БАСсейн
+beard[bird/biəd]борода %%
+beat[bit](beat,beaten) бить %,победить,биение
+beige[beiʒ]бежевый %
+biology[bai'ɑləʤi/bai'ɔləʤi]биология %
+birch[bərʧ/bə:ʧ]БеРёза %%
+bit[bit]бит %
+bleat[blit]блеять %%
+block[blɑk/blɔk]блок %,квартал,кусок,глыба,блокировать
+blonde[blɑnd/blɔnd]блондин %,блондинка
+blouse[blaus/blauz]блузка % (голубая)
+bluff[bləf/blʌf]блеф %%
+board[bɔrd/bɔ:d]борт %,подниматься на борт,доска,совет,коллегия
+bomb[bɑm/bɔm]бомба %
+boot[but]БОТинок %,сапог||/~бутцы
+boots[buts/bu:ts]БОТинки %
+booth[buθ/bu:ð]будка %,кабина
+borrow[bɑ,rou/bɔrou]БРать %% взаймы,занимать,заимствовать
+boss[bɑs/bɔs]босс %,начальник
+bottle[bɑtəl/bɔtl]бутылка %
+bouquet[bu'kei/bukei]букет %%
+boxing[bɑksiŋ/bɔksiŋ]бокс %
+bracelet[breislət/breislit]браслет %
+breach[briʧ/bri:ʧ]брешь %%,прорывать,пробивать
+broccoli[brɑkəli/brɑkli]брокколи %
+bronze[brɑnz/brɔnz]бронзовый %
+brooch[brouʧ/bruʧ]брошь %%
+brother[brəðər/brʌðə]брат %%
+brow[brau]бровь %%
+budget[bəʤit/bʌʤit]бюджет %
+bullet[bulət/bulit]пУЛя %%
+business[biznəs/biznis]бизнес %
+businessman[biznəs,mæn/biznis,mæn/biznəsmən]бизнесмен %
+buzz[bəz/bʌz]жужжать %%
+
+cabinet[kæbənət/kæbnət/kæbinit]кабинет %
+cable[keibəl/keibl]кабель %,канат,трос
+cactus[kæktəs]кактус %
+cafeteria[,kæfə'tiriə/,kæfi'tiənə]кафетерий %
+calculator[kælkjə,leitər/kælkjuleitə]калькулятор %
+calendar[kæləndər/kælində]календарь %
+camera[kæmərə/kæmrə/kæm(ə)rə]камера %
+campaign[kæm'pein]кампания %%
+candidate[kændədeit/kænədit/kændidit]кандидат %
+captain[kæptən/kæptin]капитан %%
+card[kɑrd/ka:d]карта %%
+cards[kɑrdz]карты %%
+career[kər'ir/kə'riə]карьера %%
+catalogue[kætə,lɔg/kætəlɔg]каталог %%
+category[kætə,gɔri/kætigəri]категория %
+cedar[sidər/sidə]кедр %%||/СИДОРов привязал козу к кедру и выпил сидр
+censorship[sensər,ʃip/sensəʃip]цензура %%
+central[sentrəl/sentr(ə)l]центральный %%
+centre[sentər/sentə]центр %%
+champion[ʧæmpiən/ʧæmpjən]чемпион %
+championship[ʧæmpiən,ʃip/ʧæmpjənʃip]чемпионат %%
+chance[ʧæns/ʧans]шанс %
+chancellor[ʧænsələr/ʧænslər/ʧansələ]канцлер %%
+channel[ʧænəl/ʧænl]канал %%
+chaos[keiɑs/keiɔs]хаос %%
+character[keriktər/kæriktə]персонаж,характер %
+characteristic[,kerəktər'istik/,kæriktə'ristik]характеристика %
+charm[ʧɑrm/ʧam]обаяние,оЧАРовывать %
+charming[ʧɑrmiŋ/ʧɑ:miŋ]оЧАРовательНый %%
+check[ʧek]проверить,проверять,чек %
+cheek[ʧik/ʧi:k]щека %%
+chef[ʃef]ШЕФ-повар %
+chemical[keməkəl/kemikəl/kemik(ə)l]химический %%
+chemistry[keməstri/kemistri]химия %%
+cheque[ʧek]чек %%
+chip[ʧip]чип %,щепка %,стружка
+chocolate[ʧɔklət/ʧɔk(ə)lit]шоколад %
+choir[kwaiər/kwaiə]хор %
+chord[kɔrd/kɔd]акКОРД %%
+cigarette[,sigər'et/,sigə'ret]сигарета %
+circus[sərkəs/sə:kəs]цирк %
+clap[klæp]хлопать %% в ладоши
+class[klæs/klas]класс %
+classical[klæsikəl]классический %
+client[klaiənt]клиент %
+climate[klaimət/klaimit]климат %
+clinical[klinəkəl/klinikəl/klinik(ə)l]клинический %%
+clown[klaun]клоун %
+club[kləb/klʌb]клуб %
+cocoa[koukou]какао %
+coconut[koukə,nət/koukənʌt]КОКОс %||/коко+орех
+code[koud]код %
+coffee[kɑfi/kɔfi]кофе %
+cold[kould]простуда,ХОЛоДный %%
+colleague[kɑlig/kɔli:g]коллега %%
+collection[kə'lekʃən]коллекция %%
+college[kɑliʤ/kɔliʤ]колледж %%
+column[kɑləm/kɔləm]столб,КОЛОнна %,столбец||/ колэм
+combination[,kɑmbə'neiʃən/,kɔmbi'neiʃ(ə)n]комбинация %,сочетание
+comedy[kɑmədi/kɔmidi]комедия %
+comfort[kəmfərt/kʌmfət]комфорт % 2.утешать,утешение
+comfortable[kəmfərtəbəl/kʌmf(ə)təbl]комфортабельный %
+command[kə'mænd/kəma:nd]команда %
+commentary[kɑmən,teri/kɔməntən]комментарий %
+commercial[kə'mərʃəl/kə'mə:ʃəl]коммерческий %,реклама (на ТВ)
+commission[kə'miʃən]комиссия % 2.поручение,полномочие
+committee[kə'miti]комитет %%
+communist[kɑmjənəst/kɔmjunist]коммунист %
+company[kəmpə,ni/kʌmpəni]компания %
+compensation[,kɑmpən'seiʃən/,kɔmpen'seiʃən]компенсация %%
+component[kəm'pounənt]компонент %
+composition[,kɑmpə'ziʃən/,kɔmpə'ziʃən]композиция %%
+computer[kəm'pjutər/kəm'pju:tə]компьютер %
+concentration[,kɑnsən'treiʃən/,kɔns(ə)n'treiʃən]концентрация %%
+concept[kɑnsept/kɔnsept]концепция %,понятие,идея
+concert[kɑnsərt/kən'sərt/kɔnsə(:)t]концерт %
+cone[koun]КОНус %%
+conference[kɑnfərəns/kɑnfrəns/kɔnf(ə)r(ə)ns]конференция %
+conflict[kɑnflikt/kən'flikt/kɔnflikt]конфликт %
+congress[kɑŋgrəs/kɔŋgres]конгресс %
+conservative[kən'sərvətiv/kənsə:v(ə)tiv]консервативный %
+constitution[,kɑnstə'tuʃən/,kɔnsti'tju:ʃən]конституция %%
+constitutional[,kɑnstə'tuʃənəl/,kɔnsti'tju:ʃənl]конституционный %%
+construction[kən'strəkʃən/kən'strʌkʃən](+site) стройка,конструкция %
+consult[kən'səlt/kənsʌlt]консультировать %,советоваться
+consultant[kən'səltənt/kən'sʌltənt]консультант %
+consultation[,kɑnsəl'teiʃən/,kɔns(ə)l'teiʃ(ə)n]консультация %
+contact[kɑn,tækt/kɔntækt]контакт %,связаться
+context[kɑntekst/kɔntekst]контекст %
+contract[kɑn,trækt/kən'trækt/kɔntrækt]контракт % 2.сокращаться
+contrast[kɑntræst/kən'træst/kɔntra:st]контраст %
+control[kən'troul/kəntroul]контролировать,контроль %
+convert[kɑnvərt/kən'vərt/kənvə:t]конвертировать %%,преобразовывать
+copy[kɑpi/kɔpi]КОПИровать,копия %
+corporate[kɔrpərət/kɔrprət/kɔ:p(ə)nt]корпоративный %%
+corps[kɔr/kɔrz/kɔ:]корпус %%
+corridor[kɔrədər/kɔridər/kɔridɔ:]коридор %
+cottage[kɑtəʤ/kɑtiʤ/kɔtiʤ]коттедж %
+counsel[kaunsəl]совет,консультация %%
+course[kɔrs/kɔ:s]курс %
+crane[krein]подъёмный кран %%
+crash[kræʃ]горохот,крушение %%,разбивать
+cream[krim]крем %%,сливки
+credit[kredət/kredit]кредит %
+crisis[kraisəs/kraisis]кризис %
+criterion[krai'tiriən/krai'tiəriən]критерий %
+critic[kritik]критик %
+critical[kritikəl/kntik(ə)l]критический %
+crocodile[krɑkə,dail/krɔkədail]крокодил %
+crown[kraun]корона %%,короновать
+cultural[kəlʧərəl/kʌlʧ(ə)r(ə)l]культурный %%
+culture[kəlʧər/kʌlʧə]культура %
+curve[kərv/kə:v]изгибать,кривая %%
+cycle[saikəl/saikl]цикл %%
+
+data[dætə/deitə]данные %%
+database[dætə,beis/deitə,beis/deitəbeis]база данных %
+daughter[dɔtər/dɔ:tə]дочь %||/+ играет в доту2 вместо школы
+day[dei]ДЕнь %
+dead[ded]мертвый||/+ ДЕД ходил по улицам ночью с косой %%
+dealer[dilər/di:lə]дилер %
+dear[dir/diə]дорогой %%
+debate[də'beit/di'beit]дебаты %,обсуждать,спорить
+decree[di'kri/di'kri:]постановление,декрет %,указ
+democracy[di'mɑkrəsi/di'mɔkrəsi]демократия %
+democrat[demə,kræt/deməkræt]демократ %
+democratic[,demə'krætik]демократичный %
+demonstrate[demən,streit/demənstreit]демонстрировать %
+demonstration[,demən'streiʃən/,deməns'treiʃ(ə)n]демонстрация %
+dentist[denist/dentəst/dentist]дантист %
+department[di'pɑrtmənt/di'pɑ:tmənt]департамент %,отдел
+deposit[də'pɑzit/di'pɑzət/di'pɔzit]депозит %
+depressed[di'prest]в состоянии депрессии %
+deputy[depjəti/depjuti]депутат %,представитель,заместитель
+design[di'zain/dizain]дизайн %,проектировать
+designer[di'zainər/di'zainə]дизайнер %
+dessert[di'zərt/di'zə:t]десерт %
+detail[diteil/di'teil/di:teil]деталь %
+detective[di'tektiv]детектив %
+diet[daiət]диета %
+director[dai'rektər/dər'ektər/di'rektər/di'rektə]директор %
+discipline[disəplən/disiplin]дисциплина %
+disco[diskou]ДИСКОтека %
+dishwasher[diʃ,wɑʃər/diʃ,wɔʃər]посудомоечная машина %||/=тарелка-мытель
+disk[disk]диск %
+dock[dɑk/dɔk]причал,док %
+doctor[dɑktər/dɔktər/dɔktə]доктор %
+document[dɑkjəment/dɑkjument/dɔkjumənt]документ %
+dollar[dɑlər/dɔlər]доллар %
+dolphin[dɑlfən/dɔlfin]дельфин %
+dominant[dɑmənənt/dɔminənt]доминирующий %%
+dominate[dɑmə,neit/dɔmineit]доминировать %%
+dose[dous]доза %%
+dozen[dəzən/dʌzn]дюжина %%
+drama[drɑmə/dra:mə]драма %
+dramatic[drə'mætik]драматический %
+drift[drift]дрейфовать,ДРИФТовать %
+dub[dəb/dʌb]ДУБлировать %
+duo[duou/dju:əu]дуэт %%
+duplicate[duplə,keit/dupləkət/dju:plikit]дублировать,дубликат %
+eat[it]есть,Есть %% (ись,кушать жрать)||/~еда
+echo[ekou]эхо %,отголосок,отражаться
+ecology[i'kɑləʤi/i'kɔləʤi]экология %
+economic[,ekə'nɑmik/,ikə'nɑmik/,i:kə'nɔmik]экономический %
+economics[,ekə'nɑmiks/,ikə'nɑmiks/,i:kə'nɔmiks]экономика,экономика %
+economy[i'kɑnəmi/i(:)'kɔnəmi]экономика %
+effect[ifekt/ə'fekt/i'fekt]эффект %
+effective[ifektiv/i'fektiv]эффективный %
+effectively[ifektivli/i'fektivli]эффективно %
+efficiency[i'fiʃənsi/ifiʃ(ə)nsi]эффективность %%
+efficient[i'fiʃənt/ifiʃ(ə)nt]оптимальный,эффективный %
+electric[i'lektrik/i'lektnk]электрический %
+electricity[i,lek'trisəti/ilek'trisiti]электричество %
+electronic[,i,lek'trɑnik/ilek'trɔnik]электронный %
+element[eləmənt/elimənt]элемент %
+emotion[i,mouʃən/i'mouʃən/i'mouʃ(ə)n]эмоция %%
+emotional[i,mouʃənəl/i'mouʃənəl/i'mouʃənl]эмоциональный %
+emperor[empərər/emp(ə)rə]император %
+empire[empaiər/empaiə]империя %
+energy[enərʤi/enəʤi]энергия %
+engineer[enʤə'nir/,enʤi'niə]инженер %
+engineering[enʤə'niriŋ/,enʤi'niənŋ]инженерное дело %
+ensemble[ɑn'sɑmbəl/a:n'sa:mbl]ансамбль %
+enthusiasm[in'θuzi,æzəm/in'θju:ziæzm]энтузиазм %%
+equivalent[i'kwivələnt]эквивалент %
+euro[jurou/jurə]евро %
+exam[ig'zæm/igzæm]экзамен %
+experiment[ik'sperəmənt/iks'penmənt]эксперимент %
+expert[ekspərt/ekspə:t]эксперт %
+expertise[,ekspər'tiz/,ekspə:'ti:z]опыт,компетенция,экспертиза %
+exploit[eks,plɔit/,eks'plɔit/eksplɔit]использовать,эксплуатировать %
+export[ekspɔrt/ekspɔ:t]экспорт %
+eyebrow[ai,brau/aibrau]бровь %
+fact[fækt]факт %
+factor[fæktər/fæktə]фактор %
+fairy[feri/feəri]фея %%||/аФЕРИстка + купила ФЕраРИ
+farm[fɑrm/fam]ферма %%
+farmer[fɑrmər/famə]фермер %
+federal[fedərəl/fedrəl/fedər(ə)l]федеральный %
+festival[festəvəl/festivəl/festəv(ə)l]фестиваль %
+figure[figjər/figə]фигура %,полагать,думать,понять||/толстые *думают о *фигуре
+film[film]снимать кино,фильм %
+finance[fai,næns/fə'næns/fi'næns/fainæns]финансировать,финансы %
+financial[,fai'nænʃəl/fə'nænʃəl/fi'nænʃəl/fainænʃ(ə)l]финансовый %
+fireman[fairmən/faiəmæn]пожарный %||/=огонь+чел
+fireplace[faiər,pleis/faiəpleis]камин %||/=огонь+место
+firework[fair,wərk/faiəwə:k]фейерверк %,петарда
+firm[fərm/fəm]твердый,твёрдый 2.фирма %
+fixed[fikst]фиксированный %
+flag[flæg]флаг %
+flame[fleim]пЛАМя,пылать %%||/ф=п
+flank[flæŋk]бок,фланг %
+flap[flæp]створка,клапан,хлопать %||/ф=х
+flashlight[flæʃ,lait/flæʃiait]фонарик %
+fleet[flit]флот %%
+flute[flut]флейта %
+football[fut,bɔl/futbɔ:l]американский футбол,футбол %
+form[fɔrm/fɔm]форма,формировать %
+formal[fɔrməl/fɔ:m(ə)l]формальный %
+formation[fɔr'meiʃən/fɔ:'meif(ə)n]формирование %%
+formula[fɔrmjələ/fɔ:mjulə]формула %
+foundation[faun'deiʃən/faundeiʃ(ə)n]основа,фундамент %%
+fountain[fauntən/fauntin]фонтан %
+foyer[fɔiər/fɔiei]фойе %
+fruit[frut/fru:t]фрукт %
+fruitless[frutləs/fru:tlis]бесплодный %
+function[fəŋkʃən/fʌnŋkf(ə)n]функция %
+fund[fənd/fʌnd]финансировать,фонд %%
+fundamental[,fəndə'menəl/,fəndə'mentəl/,fʌndə'mentl]фундаментальный %
+gallery[gæləri]галерея %
+garage[gər'ɑʒ/gæra:ʒ]гараж %
+garnish[gɑrniʃ/ga:niʃ]гарнир %%,украшение
+gas[gæs]бензин,газ %
+gene[ʤin/ʤi:n]ген %
+generate[ʤenər,eit/ʤenəreit]генерировать %
+geography[ʤi'ɑgrəfi/ʤi'ɔgrəfi]география %
+geometry[ʤi'ɑmətri/ʤi'ɔmitri]геометрия %
+geranium[ʤər'einiəm/ʤi'reinjəm]герань %
+gesture[ʤesʧər/ʤesʧə]жест,жестикулировать %%
+giant[ʤaiənt]гигантский %%
+giraffe[ʤər'æf/ʤi'rnf]жираф %
+glaze[gleiz]глазурь %%,глянец
+global[gloubəl/gloub(ə)l]глобальный %
+gloss[glɔs]Глянец,ЛОСк %%
+glue[glu/glu:]клей %%,клеить||/~ГЛЮки от нюхания *клея
+golf[gɑlf/gɔlf]гольф %
+goose[gus/gu:s]гусь %
+governor[gəvərnər/gʌvənə]губернатор %||/=гувернер
+grammar[græmər/græmə]грамматика %%
+graph[græf]график %%
+gravel[grævəl/græv(ə)l]гравий %%
+grieve[griv]ГоРЕВать %%
+group[grup/gru:p]группа %
+guarantee[,gerən'ti/,gær(ə)n'ti:]гарантировать %%
+guitar[gi'tɑr/gi'ta:]гитара %
+gymnastics[ʤim'næstiks]гимнастика %
+
+harp[hɑrp/hap]арфа %%
+hero[hirou/hiərou]герой %%
+hierarchy[hai,rɑrki/haiər,ɑrki/haiəraki]иерархия %
+historian[hi'stɔriən/his'tɔ:riən]историк %%
+historical[hi'stɔrikəl/his'tɔrikəl]исторический %
+history[histəri/histri/hist(ə)ri]история %
+hockey[hɑki/hɔki]хоккей %
+horizon[hər'aizən/hə'raizn]горизонт %,кругозор
+hotel[hou'tel]гостиница,отель %
+hygienic[hai'ʤi:nik]гигиенический %
+
+idea[ai'diə]идея %
+ideal[ai'dil/ai'diəl]идеал %,идеальный
+identify[ai'dentə,fai/ai'dentifai]идентифицировать %%
+ignore[,ig'nɔr/ignɔ:]игнорировать %
+illustrate[ilə,streit/iləstreit]иллюстрировать %
+import[im,pɔrt/,im'pɔrt/impɔ:t]импорт %
+incident[insədənt/insid(ə)nt]инцидент %
+incline[inklain/,in'klain/in'klain]наКЛоНять %%,склонять (втч. перен)
+incubation[,iŋkju'beiʃən/,inkju'beiʃ(ə)n]инкубация %
+index[indeks]индекс %
+individual[,ində'viʤəwəl/,mdi'vidjuəl]индивидуальный %,личность
+infection[,in'fekʃən/infekʃ(ə)n]инфекция %
+inflation[,in'fleiʃən/infleiʃ(ə)n]инфляция %
+inform[,in'fɔrm/infɔ:m]ИНФОРМировать %
+informatics[,infər'mætiks/in'fɔr'mætiks/,infə'mætiks]информатика %
+information[,infər'meiʃən/in'fɔr'meiʃən/,infə'meiʃ(ə)n]информация %
+initiative[,i'niʃətiv/,i'niʃjətiv/iniʃiətiv]инициатива %
+insect[in,sekt/insekt]наСЕКомое %%||/+ жило в СЕКТоре горгаза и ненавидело с детства евр *насекомых
+institute[instə,tut/institju:t]институт %
+instruction[,in'strəkʃən/in'strʌkf(ə)n]инструкция %
+instrument[instrəmənt/instrumənt]инструмент %
+interest[intərəst/intərist/intrəst/intrist/intnst]интерес %%
+interested[intərəstəd/intəristid/intrəstid/intristid]заинтересованный %
+interesting[intərəstiŋ/intəristiŋ/intrəstiŋ/intristiŋ/intnstiŋ]интересный %
+interpretation[,in,tərpri'teiʃən/in,tə:pri'teiʃ(ə)n]интерпретация %
+interval[intərvəl/intəv(ə)l]интервал %
+interview[intərv,ju/intəvju]интервью %,интервьюировать
+invest[,in'vest/invest]инвестировать %
+investment[,in'vesmənt/,in'vestmənt/in'vestmənt]инвестиция %%
+investor[,in'vestər/investə]инвестор %
+iris[airəs/airis/aiəris]ирис %
+isolated[aisə,leitəd/aisə,leitid/aisəleitid]изолированный %
+
+jeans[ʤinz/ʤ:nz]джинсы %
+jelly[ʤeli]желе %
+journal[ʤərnəl/ʤə:nl]журнал %
+journalism[ʤərnə,lizəm/ʤə:nəlizm]журналистика %%
+journalist[ʤərnələst/ʤərnəlist/ʤə:nəlist]журналист %
+jumper[ʤəmpər/ʤʌmpə]джемпер %
+jury[ʤuri/ʤuəri]жюри %,присяжные
+
+kilogram[kilə,græm/kiləgræm]килограмм %
+kiosk[ki,ɔsk/ki(:)ɔsk]киоск %
+kitten[kitən/kitn]котенок %%
+
+laboratory[læbrə,tɔri/lə'bɔrət(ə)ri]лаборатория %
+lamp[læmp]лампа %
+leader[lidər/ll:də]лидер %
+leadership[lidər,ʃip/ll:dəʃip]лидерство %
+leading[lidiŋ/ll:diŋ]ведущий %||/+ лидер
+league[lig/li:g]лига %
+lecture[lekʧər/lekʧə]лекция %%||/лекторий
+lemon[lemən]лимон %
+lemonade[lemə'neid/,lemə'neid]лимонад %
+lens[lenz]линза %,объектив
+liberal[li,bərəl/lib(ə)r(ə)l]либеральный %
+licence[laisəns/lais(ə)ns](license) разрешение,лицензия %
+lift[lift]лифт %,поднимать
+line[lain]линия %,ряд,строка
+linen[linən/linin]бельё,льняная ткань %%
+liter[litər/li:tər]литр %
+literary[litər,eri/lit(ə)rəri]литературный %%,книжный
+literature[litərəʧər/lit(ə)riʧə]литература %
+lunar[lunər/lu:nə]лунный %%
+
+magistrate[mæʤə,streit/mæʤi,streit/mæʤistreit]магистрат %
+mammal[mæməl/mæm(ə)l]млекопитающее %%||/~мама малыша кормит молоком
+mammoth[mæməθ]мамонт %%
+manager[mænəʤər/mæniʤər/mæniʤə]менеджер %,управляющий
+mandarin[mændərən/mændərin]мандарин %
+mango[mæŋgou]манго %
+manner[mænər/mænə]манера %
+mantle[mæntəl/mæntl]мантия %%
+march[mɑrʧ/ma:ʧ]марш %%
+marketing[mɑrkətiŋ/ma:kitiŋ]маркетинг %
+mass[mæs]масса %%,массовый
+massive[mæsiv]массивный %
+master[mæstər/ma:stə]мастер %,хозяин,овладеть (напр. искусством)
+material[mə'tiriəl/mə'tiəriəl]материал %
+maternal[mə'tərnəl/mə'tə:nl]МАТЕРиНский %%
+mathematics[,mæθə'mætiks/,mæθi'mætiks]математика %
+maximum[mæksəməm/mæksiməm]максимум %
+mechanic[mə'kænik/mi'kænik]механик %
+mechanism[mekə,nizəm/mekənizm]механизм %
+medical[medəkəl/medikəl/medik(ə)l]медицинский %
+memoirs[mem,wɑrz/memwɑ:r]мемуары %%
+menu[menju/menju:]меню %
+metal[metəl/metl]металл %
+meter[mitər/mi:tə](metre) метр %
+method[meθəd]метод %,способ
+miaow[,mi'au]мяукать %%
+mile[mail]миля %
+milk[milk]молоко %%||/милки вей это молочный путь
+mill[mil]МЕЛьница %% ,фабрика
+mine[main]мина % 2.шахта,рудник||/~майнер
+minimum[minəməm/miniməm]минимум %
+ministry[minəstri/ministri]министерство %
+minus[mainəs]минус %
+minute[minət/mai'nut/main'jut/minit]минута %
+mission[miʃən/miʃ(ə)n]миссия %
+model[mɑdəl/mɔdl]модель %
+module[mɑʤul/mɔdju:l]модуль %
+moment[moumənt]момент %
+monastery[mɑnə,steri/mɔnəst(ə)ri]монастырь %
+monitor[mɑnətər/mɔnitə]контролировать,монитор %
+moo[mu/mu:]мычать %%||/му
+moral[mɔrəl/mɔr(ə)l]моральный %
+mother[məðər/mʌðə]МАть %%||/+ МАЗАла кремом дырявые руки
+mount[maunt]восходить,гора,залезать,монтировать %,устанавливать,подниматься,забираться||/мамонт *залез на *гору
+museum[mjuziəm/mju'ziəm/mju(:)'ziəm]музей %
+music[mjuzik/mju:zik]музыка %
+musical[mjuzikəl/mju:zik(ə)l]музыкальный %
+musician[mju'ziʃən/mju(:)'ziʃ(ə)n]музыкант %%
+
+naive[,nai'iv/na:'i:v]наивный %
+nanny[næni]няня %
+nation[neiʃən/neiʃ(ə)n]нация %%
+national[næʃənəl/næʃnəl/næʃənl]национальный %
+nationality[,næʃə'næləti/,næʃə'næliti]национальность %
+necklace[nekləs/neklis]ожерелье %||/=шея+кружево
+nervous[nərvəs/nə:vəs]нервный %
+net[net]НЕТто %%,чистый,конечный,без вычетов
+niche[niʧ]ниша %%
+nightmare[nait,mer/naitmeə]кошМАР %% ночной
+nominate[nɑmə,neit/nɑmənət/nɔmineit]выдвигать,номинировать %%
+nose[nouz]нос %
+nostril[nɑstril/nɔstril]ноздря %%
+numb[nəm/nʌm]оНЕМелый %%,окоченевший
+number[nəmbər/nʌmbə]номер %%
+
+object[ɑbʤekt/əb'ʤekt/ɔbʤikt]возражать,объект %
+ocean[ouʃən/ouʃ(ə)n]океан %
+office[ɔfis]офис %
+officer[ɔfəsər/ɔfisər/ɔfisə]офицер %,служащий,должностное лицо
+official[ə'fiʃəl/əfiʃ(ə)l]официальный %
+omelet[ɑmlət/ɔmlət]омлет %
+operation[,ɑpər'eiʃən/,ɔpə'reiʃ(ə)n]операция %
+operator[ɑpər,eitər/ɔpəreitə]оператор %
+opponent[ə'pounənt]оппонент %
+opposition[,ɑpə'ziʃən/,ɔpə'ziʃ(ə)n]оппозиция %
+orange[ɔrənʤ/ɔrinʤ]апельсин,оранжевый %
+organisation[,ɔrgəni'zeiʃən/,ɔ:gənai'zeiʃən](organization) организация %
+ounce[auns]унция %%
+oyster[ɔistər/ɔistə]устрица %%
+
+pack[pæk]ПАКет %%,пачка,связка,колода,упаковывать,собирать
+package[pækəʤ/pækiʤ]пакет %%
+pair[per/peə]пара %
+panel[pænəl/pænl]панель %
+panic[pænik]паника %
+paperwork[peipər,wərk/peipəwə:k]оформление бумаг %||/бумажная работа
+parade[pər'eid/pə'reid]парад %
+paragraph[pærə,græf/perə,græf/pærəgra:f]абзац,пункт,параграф %
+parcel[pɑrsəl/pasl]посылка %%
+park[pɑrk/pak]парк %,парковаться
+parliament[pɑrləmənt/pa:ləmənt]парламент %%
+parliamentary[,pɑrlə'menəri/,pɑrlə'mentəri/,pa:lə'ment(ə)ri]парламентский %%
+partner[pɑrtnər/pa:tnə]партнер %
+partnership[pɑrtnər,ʃip/pɑ:tnəʃip]партнерство %%
+passenger[pæsənʤər/pæsinʤə]пассажир %%
+patient[peiʃənt/peiʃ(ə)nt]пациент %,терпеливый||/*терпеливый *пациент сидит в очереди к врачу /~пациент
+patrol[pə'troul]патруль %%
+pee[pi/pi:]ПИсать %
+penguin[peŋgwən/peŋgwin]пингвин %
+pension[penʃən/penʃ(ə)n]пенсия %%
+percent[pər'sent/pə'sent]процент %
+percentage[pər'senəʤ/pər'seniʤ/pər'sentəʤ/pər'sentiʤ/pə'sentiʤ]процент %%
+period[piriəd/piəriəd]период %,точка (в предложении)
+person[pərsən/pə:sn]персона %
+personnel[,pərsə'nel/,pə:sə'nel]персонал %,личный состав
+perspective[pər'spektiv/pə'spektiv]перспектива %
+phase[feiz]фаза %
+philosopher[fə'lɑsəfər/fi'lɔsəfə]философ %
+philosophy[fə'lɑsəfi/fi'lɔsəfi]философия %
+phone[foun]звонить,телеФОН %
+photograph[foutə,græf/foutəgra:f]фотограф %,фотография
+photographer[fə'tɑgrəfər/fə'tɔgrəfə]фотограф %
+phrase[freiz]фраза %
+physical[fizikəl/fizik(ə)l]физический %
+physicist[fizisist]физик %%
+physics[fiziks]физика %
+piano[pi'ænə/pi'ænou/pjænou]пианино %
+picnic[pik,nik/piknik]пикник %
+pier[pir/piə]пристань,ПИРс %
+pill[pil]ПИЛюля %
+pilot[pailət]пилот %
+piss[pis]ПИСать %,моча
+pistol[pistəl/pistl]ПИСТОЛет %
+pizza[pitsə/pi:tsə]пицца %
+plan[plæn]план %,планировать
+planet[plænət/plænit]планета %
+plank[plæŋk]доска,планка %
+planning[plæniŋ]планирование %%
+plastic[plæstik]пластик %
+plate[pleit]плита %%,пластина,тарелка||/*тарелка на *плите стояла /~плато
+platform[plæt,fɔrm/plætfɔ:m]платформа %
+plus[pləs/plʌs]плюс %
+poem[pouəm/pouim]поэма %,стихотворение
+poet[pouət/pouit]поэт %
+poetry[pouətri/pouitri]поэзия %%||/поэтия
+point[pɔint]острие,кончик,очко,пункт %,смысл,суть,точка,указывать
+pole[poul]полюс %%,шест,столб
+police[pə'lis/pə'li:s]полиция %
+policeman[pə'lismən]полицейский %
+political[pə'litəkəl/pə'litikəl/pə'litik(ə)l]политический %
+politician[,pɑlə'tiʃən/,pɔli'tiʃ(ə)n]политик %||/политикан
+politics[pɑlə,tiks/pɔlitiks]политика %
+popular[pɑpjələr/pɔpjulə]популярный %
+port[pɔrt/pɔt]порт %
+portable[pɔrtəbəl/pɔ:təbl]ПОРТАтивный %%,переносной
+porter[pɔrtər/pɔ:tə]носильщик,портье %
+portrait[pɔrtrət/pɔ:tnt]портрет %
+pose[pouz]ПОЗИровать %%
+position[pə'ziʃən/pə'ziʃ(ə)n]позиция %
+potential[pə'tenʃəl/pou'tenʃ(ə)l]потенциал %,потенциальный
+practical[præktəkəl/præktikəl/præktik(ə)l]практичный %
+practice[præktəs/præktis]практика %%,практиковать
+practise[præktis]практиковать %
+prairie[preri/preən]степь,ПРЕРИя %
+presentation[,prezən'teiʃən/,prezen'teiʃ(ə)n]презентация %
+president[prezə,dent/prezidənt/prezid(ə)nt]президент %
+prince[prins]принц %
+principle[prinsəpəl/pnnsəpl]принцип %%
+printer[prinər/printər]принтер %
+priority[prai'ɔrəti/prai'ɔriti]приоритет %%
+privilege[priviləʤ/priviliʤ/privləʤ/privliʤ]привилегия %
+prize[praiz]приз %%
+problem[prɑbləm/prɔbləm]проблема %
+procedure[prə'siʤər/prou'siʤər/prə'si:ʤə]процедура %
+producer[prə'dusər/prədju:sə]продюсер %
+product[prɑdəkt/prɔdəkt]продукт %
+profession[prə'feʃən/prə'feʃ(ə)n]профессия %%
+professional[prə'feʃənəl/prə'feʃənl]профессионал %,профессиональный
+profile[prou,fail/proufail]профиль %
+program[prou,græm/prəugræm](programme) программа %
+progress[prɑ,gres/prə'gres/prou'gres/prougrəs]прогресс %,прогрессировать
+project[prɑʤekt/prə'ʤekt/prɔʤekt]проект %,проецировать||/~проектор
+projector[prə'ʤektər/prə'ʤektə]проектор %
+proportion[prə'pɔrʃən/prə'pɔ:ʃ(ə)n]пропорция %
+protest[prou,test/prə'test/proutest]протест %,протестовать
+province[prɑvəns/prɑvins/prɔvins]провинция %
+psychological[,saikə'lɑʤikəl/,saikə'lɔʤikəl]психологический %%
+psychology[sai'kɑləʤi/sai'kɔləʤi]психология %%
+pub[pəb/pʌb]паб %
+public[pəblik/pʌblik]публика %,публичный
+publication[,pəbli'keiʃən/,pʌbli'keij(ə)n]публикация %
+publish[pəbliʃ/pʌbliʃ]публиковать %%,издавать
+pulse[pəls/pʌls]пульс %
+purple[pərpəl/pə:pl]пурпурный %%,фиолетовый
+pyjamas[pə'ʤa:məz]пижама %
+
+qualification[,kwɑləfə'keiʃən/,kwɔlifi'keiʃ(ə)n]квалификация %
+qualify[kwɑlə,fai/kwɔlifai]квалифицировать %%
+
+radical[rædəkəl/rædikəl/rædik(ə)l]радикальный %
+radio[reidi,ou/reidiou]радио %
+radiography[,reidi'ɑgrəfi/,reidi'ɔgrəfi]рентгенология %%||/=радиография
+radish[rædiʃ]редька %%||/ и это не редиска
+radius[reidiəs/reidjəs]радиус %
+rail[reil]рельс %%,перила
+ram[ræm]баРАН %%||/+ купил ОЗУ
+rank[ræŋk]ранг %,разряд,звание
+raw[rɑ/rɔ]сыРОй,необработанный %
+reaction[ri'ækʃən/ri(:)'ækʃ(ə)n]реакция %
+realistic[,riə'listik/nə'listik]реалистичный %
+reality[,ri'ælə,ti/ri(:)'æliti]реальность %
+recession[,ri'seʃən/ri'seʃən/ri'seʃ(ə)n]рецессия %
+recipe[resəpi/resipi]рецепт %%
+recommend[,rekə'mend]рекомендовать %
+recommendation[,rekəmən'deiʃən/,rekəmen'deiʃ(ə)n]рекомендация %
+reflex[rifleks/ri:fleks]рефлекс %
+reform[rə'fɔrm/ri'fɔrm/ri:'fɔ:m]реформа %
+regime[rei'ʒim/rə'ʒim/reiʒi:m]режим %%
+region[riʤən/riʤ(ə)n]регион %
+regional[riʤənəl/ri:ʤənl]региональный %
+register[reʤistər/reʤistə]зарегистрироваться,касса (магазина),регистр %
+regulation[,regjə'leiʃən/,regju'leiʃ(ə)n]регулирование %
+religion[ri'liʤən/ri'liʤ(ə)n]религия %
+religious[ri'liʤəs]религиозный %
+rent[rent]аРЕНДа %%,арендовать,сдавать,арендная плата
+reptile[reptail]рептилия %
+republic[ri'pəblək/ri'pəblik/ri'pʌblik]республика %
+reputation[,repjə'teiʃən/,repju(:)'teiʃ(ə)n]репутация %
+resident[rezidənt/rezid(ə)nt]резидент %
+resource[risɔrs/ri'sɔ:s]ресурс %%
+restaurant[res,trɑnt/restər,ɑnt/rest(ə)rɔ:ŋ]ресторан %
+result[ri'zəlt/ri'zʌlt]заканчиваться (чем-то),результат %
+revolution[,revə'luʃən/,revə'lu:ʃ(ə)n]революция %
+rhyme[raim]РифМа %%
+rib[rib]ребро %%
+rice[rais]рис %
+risk[risk]риск %
+road[roud]дорога %||/ ДоРОгА похожа частично,перестановка букв
+rocket[rɑkət/rɔkit]ракета %%
+role[roul]роль %
+roll[roul]катиться,клубок,свиток,РУЛон %%||/~ролик
+rose[rouz]роза %
+route[raut/rut/ru:t]маршРУТ %%
+routine[ru'tin/ru:'ti:n]рутина %%
+rucksack[rək,sæk/ruksæk]рюкзак %
+rugby[rəgbi/rʌgbi]регби %
+
+saddle[sædəl/sædl]седло %%
+salad[sæləd]салат %
+salt[sɔlt]соль %%
+salty[sɔlti/sɔ:lti]соленый %
+same[seim]одинаковый %||/~(тот-же)САМый
+sandals[sændəlz]сандали %
+sardine[sɑr'din/sa:'di:n]сардина %
+sauce[sɔs]соус %
+saxophone[sæksə,foun/sæksəfoun]саксофон %
+scarf[skɑrf/skaf]шарф %%
+scene[sin]сцена %||/синяя
+scheme[skim]схема %
+scrape[skreip]СКРЕсти %%,чесать||/~скрести скребком
+seat[sit]место,сиденье %%
+secret[sikrət/sikrit]секрет %
+secretary[sekrə,teri/sekrətri]секретарь %
+section[sekʃən/sekʃ(ə)n]секция %
+sector[sektər/sektə]сектор %
+semester[sə'mestər/si'mestə]семестр %
+series[siriz/siəri:z]сериал,серия %%
+serious[siriəs/siəriəs]серьезный %
+service[sərvəs/sərvis/sə:vis]сервис %
+session[seʃən/seʃ(ə)n]сессия %
+settlement[setəlmənt/setlmənt]поСЕЛение %%||/ментов
+sex[seks]пол,секс %%
+sexual[sekʃuəl/seksjuəl]сексуальный %
+shaft[ʃæft/ʃa:ft]вал,ось,стержень,ШАхТа %% (напр. лифта)
+shampoo[ʃæm'pu/ʃæm'pu:]шампунь %
+shawl[ʃɔl]шаль %
+shock[ʃɑk/ʃɔk]шок %
+shorts[ʃɔrts/ʃɔts]шорты %
+signal[signəl/signl]сигнал %
+silk[silk]шелк %%||/СИЛКом одели в *шелк
+sister[sistər/sistə]сестра %||/+ мяСИСТАя ест соСИСки в ТЕсте
+sit[sit]сидеть %%
+site[sait]местоположение,сайт %
+situation[,siʧu'eiʃən/,sitju'eiʃ(ə)n]ситуация %
+slap[slæp]шлёпать,пощечина %%||/слэп шлеп
+smudge[sməʤ/smʌʤ]смазать %%
+snow[snou]СНег %
+social[souʃəl/souʃ(ə)l]социальный %
+sociology[,sousi'ɑləʤi/,sousi'ɔləʤi]социология %
+sock[sɑk/sɔk]ноСОК %
+soldier[soulʤər/soulʤə]солдат %%
+son[sən/sʌn]сын %%||/+ видел страшный СОН про САНки
+sort[sɔrt/sɔt]сорт %,сортировать
+soup[sup/su:p]суп %
+sovereign[sɑvrən/sɔvrin]суверенный %
+special[speʃəl/speʃ(ə)l]особенный,специальный %
+specialist[speʃələst/speʃəlist]специалист %
+spinach[spinəʧ/spiniʤ]шпинат %
+sport[spɔrt/spɔ:t]спорт %
+stadium[steidiəm/steidjəm]стадион %
+stage[steiʤ]стадия %%,ступень,сцена,этап
+stamp[stæmp]марка,печать,штамп %
+standard[stændərd/stændəd]стандарт %,стандартный
+start[stɑrt/stat]начинать,старт %
+state[steit]государство,заявить,отметить,состояние,штат %
+station[steiʃən/steiʃ(ə)n]станция %%
+statistics[stə'tistiks]статистика %%
+statue[stæ,ʧu/stætju:]статуя %
+status[stætəs/steitəs]статус %
+step[step]шаг,СТУПать %%,ступенька,шагнуть
+stethoscope[steθə,skoup/steθəskoup]стетоскоп %
+stew[stu/stju:]ТУшить %%,рагу
+stoop[stup/stu:p]крыльцо со СТУПеньками %%,наклоняться,сутулиться
+stop[stɑp/stɔp]останавливаться,стоп %,прекратить
+story[stɔri/stɔ:n]иСТОРИя %%
+strange[streinʤ]странный %%
+strategic[strə'tiʤik/strə'ti:ʤik]стратегический %
+strategy[strætəʤi/strætiʤi]стратегия %
+stress[stres]подчеркивать,подчеркнуть,заострить внимание,стресс %
+strict[strikt]СТРогИй,точный %%||/ак рестрикнули
+string[striŋ]СТРока %,струна,тетива,бечева
+structure[strəkʧər/strʌkʧə]структура %
+student[studənt/stju:d(ə)nt]студент %
+studio[studi,ou/stju:diou]студия %
+stupid[stupəd/stupid/stju:pid]глупый,ТУПой %%||/ С *ТУПым ИДиотом каши не сваришь
+style[stail]стиль %
+stylish[stailiʃ]стильный %
+subtitle[səb,taitəl/sʌb,taitl]СУБТИТры %%,подзаголовок
+sugar[ʃugər/ʃugə]сахар %%||/ шуга сугар сагар
+sum[səm/sʌm]СУМма,суммировать %
+supermarket[supər,mɑrkit/sju:pə'ma:kit]супермаркет %
+surfing[sərfiŋ/sə:fiŋ]серфинг %
+surprise[sə'praiz/sər'praiz]сюрприз %,удивлять,удивление
+sweater[swetər/swetə]свитер %
+symbol[simbəl/simb(ə)l]символ %
+symptom[simptəm]симптом %
+system[sistəm/sistim]система %
+
+table[teibəl/teibl]стол,таблица %||/ *таблица и таблетки на *столе
+talent[tælənt]талант %
+teach[tiʧ/ti:ʧ]преподавать,уЧИТь %%||/*учить пТИЧек летать
+technical[teknikəl/teknik(ə)l]технический %
+technique[tek'nik/tek'ni:k]техника %%
+technology[tek'nɑləʤi/teknɔləʤi]технология %
+telephone[telə,foun/telifoun]телефон %
+television[telə,viʒən/teli,viʒ(ə)n]телевидение,телевизор %
+temperature[tempərəʧər/temprəʧər/tempnʧə]температура %
+tend[tend]иметь склонность,ухаживать,иметь ТЕНДенцию %%
+tendency[tendənsi]тенденция %%
+tennis[tenəs/tenis]большой теннис,теннис %
+term[tərm/tə:m]срок,период,ТЕРМин %%
+terms[tərmz/tə:mz]отношения,ТЕРМины %,условия,соглашение
+territory[teri,tɔri/terit(ə)ri]территория %
+test[test]тест %,тестировать
+text[tekst]писать (сообщение),текст %
+theater[θiətər/θiətə](theatre) театр %
+theatrical[θi'ætrikəl/θi'ætrik(ə)l]театральный %%
+theme[θim]тема %
+theoretical[,θiər'etikəl/θiə'retikəl]теоретический %
+theory[θiəri/θiri/θiən]теория %
+toast[toust/təust]тост %
+tone[toun]тон %
+toothbrush[tuθbrəʃ/tu:θbrʌʃ]зубная щетка %
+toothpaste[tuθ,peist/tu:θpeist]зубная паста %
+tour[tur/tuə]путешествие,тур %
+tourist[turəst/turist/tuərist]турист %
+tournament[turnəmənt/tuənəmənt]турнир %%
+tradition[trə'diʃən]традиция %%
+traditional[trə'diʃənəl/trə'diʃənl]традиционный %%
+tram[træm]трамвай %
+transaction[træn'zækʃən]транзакция %
+transport[trænspɔrt/træn'spɔrt/trænspɔ:t]транспорт %
+trench[trenʧ]траншея %%
+triangle[trai,æŋgəl/traiæŋgl]треугольник %
+trick[trik]трюк %%,фокус,уловка
+trombone[trɑm'boun/trɔm'boun]тромбон %
+trophy[troufi]трофей %%,приз
+tube[tjub/tub/tju:b]метро (в Лондоне),труба,трубка,тюбик %%
+tulip[tuləp/tju:lip]тюльпан %%
+tuna[tjunə/tunə/tju:nə]тунец %%
+typical[tipəkəl/tipikəl]типичный %
+
+unique[ju'nik/ju:'ni:k]уникальный %%
+universal[,junə'vərsəl/,ju:ni'və:s(ə)l]универсальный %
+university[,junə'vərsəti/ju:ni'və:siti]университет %
+
+vacuum[vækjum/vækjuəm]вакуум %
+variation[,veri'eiʃən/,veəri'eiʃ(ə)n]вариация %%
+vase[vɑz/veis/va:z]ваза %
+veil[veil]вуаль %%,закрывать
+vein[vein]вена %%
+venture[venʧər/venʧə]аВАНТЮРА %%,предприятие,решиться
+version[vərʒən/və:ʃ(ə)n]версия %%
+video[vidiou]видео %
+view[vju/vju:]ВИд %%,взгляд,смотреть
+vine[vain]ВИНоград (растение) %%
+violet[vaiəlit/vailit]фиалка,фиолетовый %%
+visual[viʒəwəl/vizjuəl]визуальный %
+volcano[vɑl'keinou/vɔl'keinou]вулкан %
+
+waffle[wɑfəl/wɔfl]вафля %%,вафельный
+wallpaper[wɔl,peipər/wɔ:l,peipər]обои %||/=стена+бумага
+waltz[wɔls/wɔlts/wɔ:ls]вальс %
+wardrobe[wɔr,droub/wɔ:droub]шкаф,гардероб %%
+warrant[wɔrənt/wɔr(ə)nt]гАРАНТировать %%,ручаться
+water[wɔtər/wɔ:tə]вода %%||/~ВАТЕРлиния у корабля
+waterfall[wɔtər,fɔl/wɔ:təfɔ:l]водопад %||/=вода+падать
+wine[wain]вино %
+
+yacht[jɑt/jɔt]яхта %%
+yum[]ням-ням %
+
+zone[zoun]зона %
+zoo[zu/zu:]ЗООпарк %%
+`;

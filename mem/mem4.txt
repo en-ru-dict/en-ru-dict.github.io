@@ -1,0 +1,503 @@
+//трудные1 ~500 , хорошие ФА
+g_api=`
+abandon[ə'bændən]оставить,забросить,отказаться от
+abate[ə'beit]уменьшаться,ослабевать
+abduct[æb'dəkt/æb'dʌkt]похищать
+abide[ə'baid]смириться,выносить
+ability[ə'bilə,ti/ə'biliti]способность
+able[eibəl/eibl]способный,могущий
+abolish[ə'bɑliʃ/əbɔliʃ]упразднять
+abound[ə'baund]изобиловать
+abroad[ə'brɔd/ə'brɔ:d]за границей,за границу
+abrupt[ə'brəpt/ə'brʌpt]крутой,резкий
+absence[æbsəns]отсутствие
+absent[æbsənt]отсутствующий
+absorb[əb'zɔrb/əb'sɔb]впитывать,поглощать||/абсорбировать
+abundant[ə'bəndənt/ə'bʌndənt]обильный
+accept[æk'sept/ək'sept]принять
+acceptable[æk'septəbəl/ək'septəbəl/ək'septəbl]приемлемый (+able прил)
+acceptance[æk'septəns/ək'septəns]признание (+ance сущ)
+access[æk,ses/ækses]доступ
+acclaim[ə'kleim]приветствовать,аплодировать
+accommodate[ə'kɑmə,deit/ə'kɔmədeit]размещать,вмещать||/аккомодация (мед)
+accommodation[ə,kɑmə'deiʃən/ə,kɔmə'deiʃən]проживание
+accomplish[ə'kɑmpliʃ/ə'kɔmpliʃ]выполнить,завершить
+according[ə'kɔrdiŋ](-to) в соответствии
+account[ə'kaunt]отчёт,счёт (в банке),учитывать
+accountant[ə'kauntənt]бухгалтер
+accounting[ə'kauniŋ/ə'kauntiŋ]бухгалтерия
+accuse[ək'juz/ə'kju:z]обвинять
+accustom[ə'kəstəm/ə'kʌstəm]приучить
+ache[eik]боль,болеть
+achieve[ə'ʧiv/ə'ʧi:v]достигать||/ачивка сленг
+achievement[ə'ʧivmənt/ə'ʧi:vmənt]достижение
+acid[æsəd/æsid]кислота||/Этот СИДр как *кислота
+acknowledge[æk'nɑliʤ/ək'nɔliʤ]признавать,подтверждать,признать
+acquaint[ə'kweint]знакомить
+acquire[ə'kwaiər/ə'kwaiə]обретать,приобрести||/аквариум
+acquisition[,ækwə'ziʃən/,ækwi'ziʃən]приобретение (+tion сущ)
+acquit[ə'kwit]оправдать (в суде)
+action[ækʃən]действие||/экшен сленг
+activity[æk'tivəti/æk'tiviti]деятельность
+actually[æk,ʧuəli/ækʃəli/ækʧli/ækʧuəli]на самом деле (=актуально)
+acute[ək'jut/ə'kju:t]острый
+adamant[ædəmənt]непреклонный||/адам мент
+addict[æ,dikt/ə'dikt/ædikt]наркоман,привыкать||/ЭДИК То *наркоман *привык писАть ДИКТанты ночью.
+addition[ə'diʃən]добавление,дополнение,сложение||/ *сложение ЭДИк изучал в Школе Неделю
+additional[ə'diʃənəl/ə'diʃnəl/ə'diʃənl]дополнительный
+adhere[əd'hir/əd'hiə]придерживаться
+adjacent[ə'ʤeisənt]смежный,прилегающий
+adjective[æʤiktiv]прилагательное
+adjust[ə'ʤəst/ə'ʤʌst]настраивать,поправлять,приспособить
+admission[æd'miʃən/əd'miʃən]принятие
+admit[əd'mit]признавать,допускать||/наркомана ЭДика на МИТинг не хотели
+adolescent[,ædə'lesənt/,ædou'lesənt/,ædou'lesnt]подросток,подростковый
+adore[ə'dɔr/ə'dɔ:]обожать||/эту дорогую дорогу
+adorn[ə'dɔrn/ə'dɔ:n]украшать||/задорно
+adult[ædəlt/ə'dəlt/ædʌlt]взрослый||/дылда
+adultery[ə'dəltəri/ə'dʌltəri]прелюбодеяние,неверность
+advance[əd'væns/əd'va:ns]аванс 2.продвигаться,продвижение
+advanced[əd'vænst/əd'va:nst]продвинутый (+ed сделанный)
+advantage[æd'væntiʤ/əd'va:ntiʤ]преимущество
+adverb[ædvərb/ædvə:b]наречие (verb-глагол)
+adversary[ædvər,seri/ædvəs(ə)ri]противник,соперник
+adverse[æd,vərs/æd'vərs/əd'vərs/ædvə:s]неблагоприятный
+advertise[ædvər,taiz/ædvətaiz]рекламировать||/эдик с веркой *рекламировали тазики в бане
+advertisement[,ædvər'taizmənt/æd'vərtəzmənt/əd'və:tismənt]объявление||/ *объявление в аду повесил мент
+advertising[ædvər,taiziŋ/ædvətaiziŋ]реклама
+advice[æd'vais/əd'vais]совет (неисчисл!)||/одевайся теплее *советовали фоме, которого съел крокодил
+advise[æd'vaiz/əd'vaiz]советовать
+affection[ə'fekʃən/ə'fekʃ(ə)n]привязанность,влечение (+tion сущ)
+affirm[ə'fərm/ə'fə:m]утверждать,подтверждать
+afflict[ə'flikt]поражать,вредить||/конфликт
+affluent[æfluənt]обеспеченный,состоятельный
+afford[ə'fɔrd/ə'fɔ:d]позволить себе||/купить форд
+afraid[ə'freid]напуганный||/ *напуганный фреди-крюгер бежал по улице вязов
+aftermath[æftər,mæθ/ɑ:ftəmæθ]последствие,результат
+afterwards[æftərwərdz/a:ftəwədz]впоследствии
+against[ə'geinst/ə'genst]против||/*против брачного агенства этот гей настроен
+age[eiʤ]век,эпоха,возраст||/ эй джо скажи *возраст
+aged[eiʤd/eiʤid]пожилой||/(=в-возрасте)
+agenda[ə'ʤendə]повестка дня
+aggravate[ægrə,veit/ægrəveit]обострять
+aggregate[ægrəgeit/ægrəgət/ægrəgit/ægrigit]совокупный||/агрегат
+agile[æʤəl/æʤail]проворный,гибкий||/крокодил аджику любит
+ago[ə'gou/əgou]тому назад||/год *тому-назад эгоист был в агонии
+agree[ə'gri/ə'gri:]соглашаться||/Эдик и ГРИша *согласились летать как снЕГиРИ
+agreement[ə'grimənt/ə'gri:mənt]соглашение,договор (+ment сущ)
+ahead[ə'hed]впереди,вперёд (head-голова)
+aid[eid]помощь,помогать||/ушли в рЕЙД
+ailment[eilmənt]недомогание,болезнь||/заболЕЛ МЕНТ
+aim[eim]целиться,цель||/*цЕлиться ИМ в ж
+airborne[er,bɔrn/eəbɔ:n]находящийся в воздухе
+aircraft[er,kræft/eəkra:ft]самолет,авиация
+aisle[aiəl/ail]проход
+akin[eikin/ə'kin]похожий||/ Эдик *похожий на КИНг-конга снимАлся в КИНо
+alarm[ə'lɑrm/ə'la:m]тревога,сигнализация
+alas[ə'læs]увы
+albeit[ɔl'biit/ɔ:l'bi:it]хотя
+alert[ə'lərt/ələ:t]тревога,бдительный
+alien[eiliən/eiljən]чужак,пришелец,иммигрант
+alienate[eiljə,neit/eiljəneit]отчуждать,отдалять,отвергать
+align[ə'lain]выравнивать,выстраивать||/линия
+alike[ə'laik]подобно||/(like-похожий)
+alive[ə'laiv]живой||/ (life-жизнь) / нАЛИВАй *живой воды
+allege[ə'leʤ]утверждать,приписывать
+allegiance[ə'liʤəns/ə'li:ʤəns]верность
+allocate[ælə,keit/æləkeit]распределять (ресурсы)
+allot[ə'lɑt/ə'lɔt]выделять,отводить
+allow[ə'lau]позволять,разрешать
+allowance[ə'lauəns]выплата,пособие
+allude[ə'lud/ə'lu:d]намекать,указывать
+allure[ə'lur/ə'ljuə]очарование,очаровывать
+almost[ɔl,moust/ɔ:lmoust]почти
+alone[ə'loun]в одиночестве,один,одинокий||/*одинокий ален де лон пьет одеколон
+along[ə'lɔŋ]вдоль||/(long-)
+alongside[ə'lɔŋ'said]бок о бок,рядом
+aloud[ə'laud]вслух
+although[,ɔl'ðou/ɔ:l'ðou]несмотря на,хотя и
+altitude[æltə,tud/æltitju:d]высота
+altogether[,ɔltə'geðər/,ɔ:ltə'geðə]в целом
+amateur[æmə,tər/æmə,ʧər/æmətə:]любитель,любительский
+ambassador[æm'bæsədər/æm'bæsədə]посол
+amber[æmbər/æmbə]янтарь||/в амбаре прятал амбал
+ambiguous[æm'bigjuəs]двусмысленный,неоднозначный
+ambush[æm,buʃ/æmbuʃ]засада||/(bush-куст) /бушмены в *засаде в кустах поджидали буша
+amend[ə'mend]исправить,улучшить
+amendment[ə'mendmənt]поправка
+amenity[ə'menəti/ə'mi:niti]удобство,обустройство
+amid[ə'mid](amidst) среди
+among[ə'məŋ/ə'mʌŋ]между,среди||/*среди ароматных манго жил атаман с шаманом
+amongst[ə'məŋst/ə'mʌŋst]среди
+amount[ə'maunt]количество (неисчисл),составлять сумму
+amplify[æmplə,fai/æmplifai]усиливать
+amuse[əm'juz/ə'mju:z]развлечь,порадовать||/*развлечь музыкой про мусипуси
+amusing[əm'juziŋ/ə'mju:ziŋ]забавный||/ Этот *забавный МУСИН муж-пуся
+ancestor[æn,sestər/ænsistə]предок||/ *предок на антресоли лежит мясистый
+anew[ə'nu/ən'ju/ə'nju:]заново||/(new-новый)
+anger[æŋgər/æŋgə]гнев||/ангар
+angry[æŋgri/æŋgn]злой,сердитый||/ angry+birds *злые птички,известная игруля
+anguish[æŋgwiʃ]мука,страдание||/учить инглиш
+animal[ænəməl/æniməl]животное||/понимал
+ankle[æŋkəl/æŋkl]лодыжка,щиколотка,пятка||/у АНКи КЛЕптоманки зачесалась *пятка
+anniversary[,ænə'vərsəri/,æni'və:səri]годовщина||/анна вера и сара отмечали *годовщину
+announcement[ə'naunsmənt/ə'naunsment/ənaunsmənt]объявление
+annoy[ə'nɔi]надоедать,раздражать||/ не-ной
+annoying[ə'nɔiiŋ/ənɔiiŋ]надоедливый||/ не-ной
+annual[ænjuəl]годовой,ежегодный
+another[ə'nəðər/ə'nʌðə]другой
+answer[ænsər/a:nsə]ответ,отвечать
+ant[ænt]муравей||/ползет по тете с антеной
+anthem[ænθəm]гимн||/АНна СЕМенович пела *гимн
+anticipate[æn'tisə,peit/æn'tisipeit]ожидать
+anxiety[æŋ'zaiəti]беспокойство,тревога||/*беспокойство АНки ЗА ЭТИх ЗАЙцев и деда маЗАЯ
+anxious[æŋkʃəs/æŋʃəs]озабоченный,встревоженный,тревожный||/*озабоченный дед мазай принес АНКе ШЕСть зайцев и УСнул,
+anybody[enibədi/eni,bɔdi]кто угодно  (=любое тело)
+anymore[,eni'mɔr/,eni'mɔ:r]больше не||/будет ленивых в море
+anyone[eni,wən/eniwən/eniwʌn]кто угодно (=любой один)
+anything[eni,θiŋ/eniθiŋ]что-нибудь (=любая вещь)
+anytime[eni,taim/enitaim]в любой момент (=любое время)
+anyway[eni,wei/eniwei]в любом случае,тем не менее
+anywhere[eni,wer/enih,wer/eniweə]где угодно,куда угодно (=любое где)
+apart[ə'pɑrt/ə'pa:t]отдельно,врозь (part-часть)||/эти партизаны *отдельно жили, каждый в своей норе.
+ape[eip]обезьяна (крупная)||/в тейпе
+apiece[ə'pis/ə'pi:s]каждый,за штуку
+apology[ə'pɑlə,ʤi/ə'pɔləʤi]извинение(я)
+appal[ə'pɔ:l]потрясать,ужасать||/ополчение
+apparent[ə'perənt/ə'pærənt]очевидный,явный,видимый (parent-)
+apparently[ə'perəntli/ə'pærəntli]по всей видимости
+appeal[ə'pil/ə'prl]обращаться,взывать,обращение||/*взывать к эпиляции без наркоза
+appear[ə'pir/ə'piə]выглядеть,казаться,появиться
+appearance[ə'pirəns/ə'piərəns]внешний вид
+appliance[ə'plaiəns]прибор,приспособление
+application[,æplə'keiʃən/,æpli'keij(ə)n]приложение
+apply[ə'plai]обращаться (с заявлением),применять,применяться
+appoint[ə'pɔint]назначать,утверждать
+appointment[ə'pɔintmənt]встреча
+appraise[ə'preiz]оценивать
+appreciate[ə'priʃi,eit/ə'pri:ʃieit]ценить
+apprentice[ə'prentəs/ə'prentis]ученик,стажёр
+approach[ə'prouʧ]подход,приближаться,подходить
+appropriate[ə'proupri,eit/ə'proupriət/ə'proupriit]подходящий,присущий,присвоить,соответствующий
+approval[ə'pruvəl/ə'pru:vəl]утверждение
+approve[ə'pruv/ə'pru:v]утвердить,одобрить (офиц)
+apron[eiprən]фартук,передник
+apt[æpt]склонный,способный||/адепт
+arbitrary[ɑrbə,treri/ɑrbi,treri/a:bitrəri]произвольный||/арбитраж
+arise[ər'aiz/ə'raiz](arose,arisen) возникать,происходить
+armchair[ɑrm,ʧer/am'ʧeə]кресло||/=рука+стул
+armor[ɑrmər](armour) броня,доспехи||/армированный
+armpit[ɑrm,pit/ampit]подмышка||/=рука+яма
+arms[ɑrmz/ɑ:mz]оружие||/=руки
+around[ər'aun/ər'aund/ə'raund]вокруг||/раунд
+arouse[ər'auz/ə'rauz]вызывать,пробуждать
+arrangement[ər'einʤmənt/ə'reinʤmənt]расположение (+ment сущ)
+array[ər'ei/ə'rei]ряд,порядок,строй
+arrival[ər'aivəl/ə'raivəl]прибытие||/в рай на велике
+arrive[ər'aiv/ə'raiv]прибывать,прибыть||/орава
+arrogant[erəgənt/ærəgənt]высокомерный
+arrow[ærou/erou]стрела,стрелка
+arson[ɑrsən/a:sn]поджог
+ascend[ə'send]восходить
+ascertain[,æsər'tein/,æsə'tein]выяснить,установить
+ash[æʃ]пепел,зола
+ashamed[ə'ʃeimd]пристыженный||/(shame-стыдно)
+ashtray[æʃ,trei/æʃtrei]пепельница
+aside[ə'said]в стороне,в сторону
+ask[æsk/a:sk]спрашивать||/илон мАСКа скока денег прикарманил в пейпал
+asleep[ə'slip/ə'sli:p]спящий||/(sleep-спать)
+aspire[ə'spair/əs'paiə]стремиться
+ass[æs]попа||/*осел бежал ЭСтафету веляя *попой
+assassin[ə'sæsən/ə'sæsin]убийца||/асасин ел апельсин
+assault[ə'sɔlt/ə'sɔ:lt]нападение,нападать||/на этого солдата
+assemble[ə'sembəl/ə'sembl]собирать||/асеблер(комп)
+assembly[ə'sembli]сборка||/асамблея
+assert[ə'sərt/ə'sə:t]утверждать,отстаивать
+assess[ə'ses]оценивать,оценить||/этих сестер
+assessment[ə'sesmənt]оценка
+asset[æ,set/æset]актив,имущество,преимущество
+assign[ə'sain]назначать,присваивать
+assume[ə'sum/ə'sju:m]предпогалать,принимать на себя,предполагать
+assumption[ə'səmpʃən/ə'sʌmpʃən]предположение
+assure[ə'ʃur/ə'ʃuə]обеспечить,уверять
+astonish[ə'stɑniʃ/əs'tɔniʃ]изумлять||/эстонскими
+astound[ə'staund/əs'taund]изумлять
+asylum[ə'sailəm]убежище
+atop[ə'tɑp/ə'tɔp]наверху||/(top-вершина)
+atrocity[ə'trɑsəti/ə'trɔsiti]зверство,злодеяние
+attach[ə'tæʧ]прикрепить,привязать,присоединить,прикреплять
+attain[ə'tein]достигать
+attend[ə'tend]уделить внимание,посетить,участвовать
+attention[ə'tenʃən]внимание
+attentive[ə'tentiv]внимательный||/* антон на крыше чинил антену тв
+attic[ætik]чердак||/обклеян ЭТИКетками
+attitude[ætə,tud/ætitju:d]отношение
+attorney[ə'tərni/ə'tə:ni]адвокат,прокурор,поверенный
+attribute[ætrəb,jut/ə'trib,jut/ætribju:t]приписывать,относить||/атрибут
+augment[ɔg'ment/ɔ:gmənt]увеличить,нарастить
+aunt[ænt/ɔnt/ant]тётя||/ антеной ловит муравьев(ant)
+autumn[ɔtəm/ɔ:təm]осень||/ О ТЕМно *осенью стало по вечерам
+available[ə'veiləbəl/ə'veiləbl]доступный,в наличии
+avalanche[ævə,lænʧ/ævəla:nʃ]лавина
+average[ævəriʤ/ævrəʤ/ævriʤ]средний||/ на эвересте джон нашел средний балл
+avert[ə'vərt/ə'və:t]предотвращать,отводить||/вертел
+avid[ævəd/ævid]заядлый,рьяный,алчный||/завидно
+avoid[ə'vɔid]избегать||/воды
+await[ə'weit]ожидать (wait-ждать)
+awake[ə'weik]проснувшийся,проснуться,бодрствующий||/*проснувшийся эвенк на севере съел оленя
+award[ə'wɔrd/ə'wɔ:d]награда,премия,присуждать,наградить||/эту программу ворд, но ексель лучше
+aware[ə'wer/ə'weə]осведомленный,осведомлённый
+awareness[ə'wernəs/ə'weənəs]осознание
+away[ə'wei]прочь||/(way-путь)
+awe[ɑ/ɔ]трепет,благоговение||/аве мария вызывает трепет
+awesome[ɑsəm/ɔsəm/ɔ:səm]здорово,классно||/восемь
+awful[ɑfəl/ɔfəl/ɔ:ful]ужасный
+awhile[ə'wail]какое-то время||/(while-пока)
+awkward[ɑkwərd/ɔkwərd/ɔ:kwəd]неуклюжий
+axe[æks](ax) топор||/экс губернатор с *топором ходит на экскурсии
+axis[æksəs/æksis]ось
+
+baby[beibi]малыш,младенец||/ баба с *младенцем / бубнит
+backbone[bæk,boun/bækboun]хребет
+backdrop[bæk,drɑp/bækdrɔp]фон
+background[bæk,graund/bækgraund]происхождение,предыстория,фон
+backpack[bæk,pæk/bækpæk]рюкзак
+badge[bæʤ]значок||/бейджик
+baffled[bæfəld/bæfld]в неодумении,в тупике
+bail[beil]залог
+bait[beit]приманка
+bake[beik]печь (выпекать)
+baker[beikər/beikə]пекарь||/был байкер
+bakery[beikəri]булочная||/ байкеры заехали в *булочную
+bald[bɔld/bɔ:ld]лысый,плешивый||/ *плешивый БАЛДа работал у *лысого попа /болдинская осень
+bang[bæŋ]удар,взрыв||/в банкоке
+banish[bæniʃ]отгонять
+barb[bɑrb/ba:b]шип,зазубрина||/барби нашла *зазубрину на баобабе
+barber[bɑrbər/ba:bə]парикмахер||/баба яга работала *парикмахером у барби
+bare[ber/beə]голый||/ жил на берегу с колечком
+barefoot[ber,fut/beəfut]босиком||/по берегу
+barely[berli/beəli]едва,лишь только
+bargain[bɑrgən/bɑrgin/ba:gin]сделка,торговаться
+bark[bɑrk/bak]кора 2.лаять||/*лаять на БАК с тРупом /БАРКас из коры
+barn[bɑrn/ban]сарай||/БАНя в *саРае, через дорогу раздевалка
+barren[bærən/berən]бесплодный
+bartender[bɑr,tendər/ba,tendə]бармен
+base[beis]основа,основывать,основание||/басейн
+basement[beismənt]подвал||/ бес и мент сидят в *подвале
+bash[bæʃ]колотить||/башмаком по трибуне в оон
+basic[beisik]основной||/бейсик-основной язык в програмировании
+basically[beisikli/beisikəli]в принципе
+basket[bæskət/ba:skit]корзина
+bastard[bæstərd/bæstəd]ублюдок
+batch[bæʧ]партия,серия,группа
+batter[bætər/bætə]паста,тесто,взбивать
+bay[bei]залив
+beach[biʧ/bi:ʧ]пляж||/бич жил на пляже /брайтон-бич
+bead[bid]шарик,бусинка
+beak[bik]клюв
+beam[bim]балка,перекладина,луч
+bean[bin]боб
+bear[ber/beə](bore,born) нести (втч. перен),рожать,медведь||/маша *несла бред и *медведя на плече в БЕРлогу
+beautiful[bjutəfəl/bju:təful]прекрасный
+beauty[bjuti/bju:ti]красота,красавица||/бью тихо
+beaver[bivər/bi:və]бобр||/с бивнями как у мамонта
+because[bi'kɑz/bi'kəz/bi'kɔz/bikəz]потому что
+beckon[bekən]манить||/беконом кота
+bee[bi/bi:]пчела||/ в БИлайн летели сердитые *пчелы (разбираться с платными подписками)
+beep[bip/bi:p]гудок,гудеть,пищать||/биби
+beer[bir/biə]пиво||/ бее,какая гадость,терпеть не могу,потом заводятся зубастые пивные пьявки,они ползают под кожей,жрут мясо,пьют кровь,потом залезают в мозги и откладывают там яйца,из них вылупляются пивные мохнатые бабочки,они съедают мозги и вылетают ночью через нос,рот и уши и жрут всё подряд,шторы,обои,мебель,просто жуть :))
+beet[bit]свекла||/ БИТая *свекла на овощной базе лежала в куче
+beetle[bitəl/bitl]жук||/битлз жуки (муз)
+beforehand[bi'fɔr,hænd/bi'fɔ:hænd]заранее
+beg[beg]просить||/бегемота бегать по утрам
+behave[bi'heiv]вести себя
+behavior[bi'heivjər/bi'heivjə](behaviour) поведение
+behind[bi'haind]за,позади,сзади
+behold[bi'hould]созерцать,видеть
+being[biiŋ]будучи
+belief[bi'lif/bi'li:f]вера,убеждение
+believe[bi'liv/bi'lrv]верить
+bellow[belou]реветь,рёв
+belly[beli]живот||/набитый беляшами
+belong[bi'lɔŋ]принадлежать
+beloved[bi'ləvd/bi'ləvəd/bi'lʌvd]любимый
+below[bi'lou]ниже,под (low-низкий)
+belt[belt]пояс,ремень||/*ремень белый болтался
+bench[benʧ]скамейка,скамья||/ бедный БЕНя Чинил *скамейку в третий раз
+bend[bend](bent,bent) изгибать,изгиб,гнуть,согнуть
+beneath[bi'niθ/bfni:θ]ниже,под||/низ
+benefit[benəfit/benifit]выгода,польза,создавать пользу,получать пользу
+benevolent[bə'nevələnt/bi'nevələnt]благожелательный
+berry[beri]ягода||/бери *ягоды и ешь
+berth[bərθ/bə:θ]койка,место,полка в поезде
+beside[,bi'said/bi'said]рядом
+besides[,bi'saidz/bi'saidz]кроме
+bestow[bi'stou]даровать
+bet[bet]ставка,пари,держать пари
+betray[bi'trei]предавать
+better[betər/betə]лучше
+beverage[bevəriʤ/bevriʤ/bevənʤ]напиток
+beware[bi'wer/bi'weə]остерегаться
+bewilder[bi'wildər/bi'wildə]смущать,сбивать с толку
+beyond[,bi'ɔnd/bi'ɑnd/bi'ɔnd/bijɔnd]вне,свыше,за пределами
+bias[baiəs]склонность,предвзятость
+bicycle[baisikəl/baisikl]велосипед||/би это два (колеса) / БИбикал ЦИКЛоп на *велосипеде
+bid[bid]заявка,предложение цены,ставка
+bigot[bigət]фанатик
+billboard[bil,bɔrd/bilbɔ:d]рекламный щит||/билборд
+billion[biljən]миллиард||/билион
+bin[bin]ящик,ведро,ларь||/с бинтами /карабин
+bind[baind](bound,bound) связывать||/бармалей *связал индейца
+binge[binʤ]кутёж,загул,пьянка
+bird[bərd/bə:d]птица
+birth[bərθ/bə:θ]рождение||/ дети БЕСились на дне *рождение БЕСа
+bishop[biʃəp]епископ
+bitch[biʧ]сука||/бич это мужик в наколках
+bite[bait](bit,bitten) кусать,укус||/ злой вирус *кусал БАЙТ, *откусил три бита
+bitter[bitər/bitə]горький
+bizarre[bə'zɑr/bi'zɑr/bi'za]странный,причудливый||/базар
+blackberry[blæk,beri/blækbəri]ежевика||/=черная-ягода
+blackmail[blæk,meil/blækmeil]шантажировать
+blade[bleid]лезвие||/блестит и дрожит
+bland[blænd]пресный,мягкий
+blanket[blæŋkət/blæŋkit]одеяло,покрывало||/было у кита чистое
+blatant[bleitənt]явный,вопиющий
+blaze[bleiz]полыхать,пламя
+bleach[bliʧ/bli:ʧ]отбелить,обесцветить
+bleak[blik/bli:k]мрачный||/блеклый
+bleed[blid/bli:d](bled,bled) кровоточить
+bless[bles]благословлять||/блеск
+blind[blaind]слепой||/в блиндаже
+blink[bliŋk]мерцать,мигать
+bliss[blis]блаженство||/блистать
+blizzard[blizərd/blizəd]метель,буран
+bloat[blout]раздуваться
+blood[bləd/blʌd]кровь||/ БЛУДница в луже *крови / вирус заБЛУДился в *крови
+bloody[blədi/blʌdi]кровавый||/(+y-прил)
+bloom[blum/blu:m]расцвет,расцветать||/блумберг
+blossom[blɑsəm/blɔsəm]цвести,цвет
+blow[blou](blew blown) дуть 2.удар
+blush[bləʃ/blʌʃ]румянец,краснеть||/блажь
+boast[boust]хвастать,хвастовство
+boat[bout]лодка,судно||/бот
+bog[bɑg/bɔg]болото,трясина||/на багамах
+bold[bould]смелый,дерзкий,безрассудный
+bolster[boulstər/boulstə]укреплять,поддерживать
+bond[bɑnd/bɔnd]обязательство,облигация,связь,узы,соединение||/джеймс бонд
+bone[boun]кость||/бонифаций
+bonfire[bɑn,faiər/bɔnfaiər]костер||/(fire-огонь)
+boobs[bubz/bu:bs]титьки,груди||/ у баб
+boom[bum]заграждение,пояс||/бум
+booze[buz]выпивка||/бузил после *выпивки с бузовой
+bore[bɔr/bɔ]вгонять в скуку,надоедать||/боря всем *надоел и мухожук
+bored[bɔrd/bɔ:d]скучающий||/ *скучающий БОРЯ на заБОРЕ качал ногой
+boring[bɔriŋ]скучный||/ *скучный БОРЯ курил заБОРИстую траву
+borough[bər,ou/bʌrə]район,место
+both[bouθ]оба||/боса босиком закричали ай боюсь
+bother[bɑðər/bɔðə]беспокоить
+bottom[bɑtəm/bɔtəm]дно||/готэм это дно и бэтмен всех спасает
+boulder[bouldər/bouldə]валун||/ большой катился на деревню
+bounce[bauns]отскакивать,прыгать,подпрыгивать
+bound[baund]обязан
+boundary[baundəri/baundri/baund(ə)ri]граница,черта
+bounds[baundz/baunds]границы,рамки (перен)
+bounty[baunti]вознаграждение||/баунти
+bout[baut]бой,поединок,всплеск,приступ
+bow[bau/bou]бант,бабочка,лук 2.поклон,наклоняться
+bowel[bauəl]кишка||/баул с кишками
+bowl[boul]миска,чаша||/ *миска в бауле на боулинге / БОЛьшая *чаша
+box[bɑks/bɔks]коробка||/ бокс
+brag[bræg]хвастаться,кичиться||/брагой
+braid[breid]коса,оплётка
+brain[brein]мозг||/бреин ринг
+brake[breik]тормоз
+branch[brænʧ/bra:nʧ]ветвь,ветка,филиал,ответвление||/бренчал
+brass[bræs/bra:s]латунь||/браслет из латуни бросили
+brassiere[bræsieə](bra) бюстгальтер
+brawl[brɔl]шумная драка,скандал
+brazen[breizən/breizn]наглый
+breadth[bredθ]ширина,широта
+break[breik](broke,broken) нарушать,ломать,перерыв,перемена,сломать
+breakfast[brekfəst]завтрак||/=перерыв+быстро
+breakthrough[breikθru:]прорыв,достижение
+breast[brest]грудь||/ брест защищали *грудью
+breath[breθ]дыхание,вздох
+breathe[brið/brrð]дышать||/бриз (ветер)
+breathing[briðiŋ]дыхание||/ под брезентом
+breed[brid/bri:d](bred,bred) разводить,выращивать,порода,поколение||/бродячих дворняг
+brew[bru/bru:]заваривать,варить напиток||/с брусникой
+bribe[braib]взятка
+bride[braid]невеста
+bridge[briʤ]мост||/ БРИтни спирс с неуловимым ДЖо на *мосту целовались
+briefly[brifli/bri:fli]кратко||/(+ly-нар)
+bright[brait/bait]яркий||/ БРат попал в *яркий РАЙ /брайтон бич - яркий пляж
+brim[brim]край сосуда
+bring[briŋ](brought,brought) принести,приносить
+brink[briŋk]грань,край
+brisk[brisk]энергичный,оживлённый
+bristle[brisəl/brisl]щетина
+brittle[britəl/britl]ломкий
+broad[brɔd/brɔ:d]широкий||/брод
+broadcast[brɔd,kæst/brɔdka:st]транслировать,трансляция
+broom[brum]метла,веник
+broth[brɔθ]бульон,отвар||/бросай в *отвар
+brown[braun]коричневый||/ БРАвый солдат швейк УНес *коричневый плащ евы БРАУН в химчистку (а там в кармане нашли записку от штирлица)
+bruise[bruz/bru:z]синяк,ушиб
+brush[brəʃ/brʌʃ]кисть,щётка,чистить||/бараш чистил щеткой нюшу
+brute[brut/bru:t]животное,зверь,грубый||/брутальный
+bubble[bəbəl/bʌbl]пузырь
+buck[bək/bʌk]самец (обычно рогатых)||/залез в бак
+bucket[bəkət/bəkit/bʌkit]ведро,бадья||/бак
+buckle[bəkəl/bʌkl]пряжка
+bud[bəd/bʌd]бутон,почка растения
+buddy[bədi/bʌdi]дружище,парень
+budge[bəʤ/bʌʤ]сдвинуть
+buffalo[bəfə,lou/bʌfəlou]буйвол,бизон
+bug[bəg/bʌg]жук||/баг в программе
+build[bild]строить
+building[bildiŋ]здание||/ на *здании БИЛ ДИНозавр кингконГа (кино)
+bulb[bəlb/bʌlb]лампа,колба||/балбес сунул лампочку в рот
+bulge[bəlʤ/bʌlʤ]бугор,выпуклость
+bulk[bəlk/bʌlk]основная масса||/балка
+bullshit[bul,ʃit/bulʃit]ерунда,чушь
+bum[bəm/bʌm]бомж,бездельник||/поехал на бам
+bun[bən/bʌn]булочка
+bunch[bənʧ/bʌnʧ]связка,пучок,группа
+bundle[bəndəl/bʌndl]связка,пучок,пачка
+bunk[bəŋk/bʌŋk]койка,спальное место
+bunny[bəni/bʌni]кролик (разг,детск)||/в бане
+burden[bərdən/bædn]бремя,нагружать
+burglar[bərglər/bə:glər]вор взломщик
+burn[bərn/bə:n]гореть,жечь
+burrow[bərou/bʌrou]нора,зарываться
+burst[bərst/bə:st]взрыв,всплеск
+bury[beri]похоронить,хоронить||/берию
+bus[bəs/bʌs]автобус||/ БАСков ехал в автоБУСе на работу
+bush[buʃ]куст||/буш посадил кусты
+bustle[bəsəl/bʌsl]суета,суматоха
+busy[bizi]занятый
+butcher[buʧər/buʧə]мясник||/в буче прятал трупы
+butt[bət/bʌt]задница,торец,зад
+butterfly[bətər,flai/bʌtəflai]бабочка||/ fly-муха в масле
+button[bətən/bʌtn]пуговица,застёгивать||/ *пуговицу нашли в батоне
+buy[bai]верить,соглашаться (разг),покупать||/бабай
+buyer[baiər/baiə]покупатель
+bypass[bai,pæs/baipɑ:s]обходить,обход
+
+cabbage[kæbəʤ/kæbiʤ]капуста||/ *капусту ели в кебридже
+cage[keiʤ]клетка||/николас кейдж сидит в клетке
+calf[kæf/kaf](pl:calves) теленок||/+ в КАФе ел ХАЛВу курил КАЛьян и Фоткался с тёлками
+calm[kɑlm/kɑm/kam]спокойный,успокоить||/ *спокойный КАЛьМар КАЛыМил на КОЛыМе и копил на КАЛыМ
+camel[kæməl/kæm(ə)l]верблюд||/+ КАМни Лизал в пустыне /+ КОлючки МЕЛкие ел
+cancel[kænsəl/kæns(ə)l]отменять
+cancer[kænsər/kænsə]рак,рак (болезнь)||/консерва
+candle[kændəl/kændl]свеча||/+ в КАНаде ДЛинная ЛЕжит и горит
+candy[kændi]конфета,конфеты||/ кеннеди угощал *конфетами мэрлин монро (а потом у них был кекс)
+cane[kein]трость
+canopy[kænəpi]навес,тент,полог||/под *навесом конопля
+canvas[kænvəs]холст||/КОНь нарисовал ВАС на *холсте
+cap[kæp]кепка,шляпа,колпачок||/*кепка у КАПитана улетела в море
+capable[keipəbəl/keipəbl]способный к ч-л.
+capacity[kə'pæsəti/kə'pæsiti]вместимость,способность,возможность,ёмкость
+cape[keip]мыс
+`;

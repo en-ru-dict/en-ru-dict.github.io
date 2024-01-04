@@ -1,0 +1,499 @@
+//выражения месяцы числа
+//!не сделано. надо тран+формат
+g_api=`
+(Here's) to your health! - Ваше здоровье! / к вы здоровье 
+Allow me to introduce myself - Разрешите представиться
+Are you well? - С Вами все хорошо? / есть вы хороший?
+Can you tell me ... ? - Не подскажете ... ?
+Excuse me for bothering you - Извините за беспокойство
+Have a good day - всего доброго / иметь хороший день
+His name is ... - Его зовут ... / его имя есть ..
+How are you? - Как поживаете? / как есть вы ?
+How is it going? - Как дела? / как есть это идёт?
+How old are you? - Сколько Вам лет? / как старый есть ты?
+I am very well. - У меня все хорошо. / я есть очень хороший
+I beg your pardon ... - Извините ... / я прошу ваш прощение
+I don't care. - Мне все равно. / я делаю нет забота
+I don't know. - Я не знаю. / я делаю нет знать
+I live ... - Я живу ... / в ливии под ливнем
+I would like ... - я бы хотел ... / воду лакать
+I'm fine. - Все нормально. / фаИна фаинА
+It is noon. - Сейчас полдень
+It's cold. - Холодно.
+It's cool. - Прохладно.
+It's for you - Это для Вас
+It's hot (warm). - Жарко.
+It's nice out. - Хорошая погода.
+It's raining. - Идет дождь.
+It's snowing. - Идет снег.
+It's starting to get cold. - Становится холодно.
+It's sunny out. - Солнечно.
+It's windy. - Ветренно.
+Keep quiet! - Тихо! / кипел и квакал тихо
+Leave me alone! - Оставьте меня в покое! / сказал лев
+May I? - Разрешите? / фигней помаяться
+Mind your own business! - Не лезь не в свое дело! / (=бизнес
+Mr - господин / мистер твистер
+Mrs - госпожа / мисис из миссисипи
+My name is ... - Меня зовут ... / мое имя есть
+Nice to meet you! - Приятно познакомиться! / настя и митя
+Thanks. You too. - Спасибо. И Вам того-же.
+The weather is bad. - Плохая погода.
+Welcome! - Добро пожаловать! / великан
+What (did you say)? - Что (Вы сказали)?
+What a good surprise! - Какой сюрприз!
+What day is it? - Какой сегодня день?
+What do you need? - Что Вам нужно?
+What do you want? - Что Вы хотите?
+What is the weather like? - Какая сейчас погода?
+What is your name? - Как Вас зовут? / что есть ваш имя?
+What is your nationality? - Кто Вы по национальности?
+What time is it? - Сколько времени?
+What's his name? - Как его имя?
+What's new? - Что нового?
+What's the matter? - Что такое? / вот же мята
+What's wrong? - Что случилось? / (=что есть неправильно?
+Where are you from? - Вы откуда? / (=где есть вы от?
+Where do you live? - Где Вы живете? / (=где делать вы жить?
+Why not? - Почему бы и нет?
+With pleasure. - С удовольствием. / на пляже
+You are welcome - Пожалуйста / юра великан
+
+--месяцы--
+January - январь
+February - февраль
+March - март
+April - апрель
+May - май
+June - июнь
+July - июль
+August - август
+September - сентябрь
+October - октябрь
+November - ноябрь
+December - декабрь
+New Year - Новый Год
+
+Monday - понедельник
+Tuesday - вторник
+Wednesday - среда
+Thursday - четверг
+Friday - пятница
+Saturday - суббота
+Sunday - воскресенье
+
+--числа--
+billion - миллиард
+eighty - восемьдесят
+eleven - одиннадцать
+fifty - пятьдесят
+first - первый
+forty - сорок
+hundred - сто
+million - миллион
+ninety - девяносто
+second - второй
+seventy - семьдесят
+sixty - шестьдесят
+third - третий
+thirteen - тринадцать
+thirty - тридцать
+thousand - тысяча
+twelve - двенадцать
+twenty - двадцать
+
+one - один 1
+two - два 2
+three - три 3
+four - четыре 4
+five - пять 5
+six - шесть 6
+seven - семь 7
+eight - восемь 8
+nine - девять 9
+ten - десять 10
+
+--страны--
+American - американец
+Belgian - бельгиец
+Belgium - Бельгия
+Canada - Канада
+Canadian - канадец
+China - Китай / делает чайники
+Chinese - китаец
+England - Англия
+Englishman - англичанин
+France - Франция
+Frenchman - француз
+German - немец / анна герман
+Germany - Германия
+Ireland - Ирландия
+Israel - Израиль
+Italian - итальянец
+Italy - Италия
+Japan[ʤə'pæn] - Япония
+Japanese - японец
+London - Лондон
+Mexican - мексиканец
+Mexico - Мексика
+Moroccan - марокканец
+Morocco - Марокко
+Netherlands - Голландия /нидерланиды!
+Portugal - Португалия
+Russia - Россия / параша
+Russian - русский
+Spain - Испания
+Spaniard - испанец
+Swede - швед
+Sweden - Швеция
+Swiss - швейцарец / свистел и досвистелся
+Switzerland - Швейцария
+United States - Соединенные Штаты
+Gypsy - цыган, цыганский
+Jew - еврей
+Muslim - мусульманин, мусульманский
+
+Christmas - Рождество
+Easter - Пасха
+Middle Ages - Средние века
+Santa Claus - Дед Мороз
+
+---цвета------------------
+blue - голубой (БЛЮвотный)
+black - черный (БЛЭК джэк)
+brown - коричневый (ева БРАУН)
+green - зеленый (ГРИНпис)
+grey - серый (ГРЕЙп фрукт)
+pink - розовый (ПИНК флойд/сПИНКа поросенка)
+purple - пурпурный,фиолетовый %
+red - красный (РЕДиска)
+yellow - желтый (ЕЛ ЛОВко желуди)
+
+
+--2 очень разных значения-----
+bark - кора,лаять 
+fall - осень,падать
+fine - тонкий,хороший,штраф
+flat - квартира,плоский,ровный
+foil - расстаривать,разрушать,фольга
+general - генерал,общий 
+grave - могила,серьёзный
+just - справедливый,беспристрастный,только
+kind - добрый,тип,вид
+kite - воздушный змей,коршун
+last - длиться,последний
+lie - лежать 2,лгать,ложь 
+like - как,нравиться
+lot - жребий,судьба,2,много
+mine - мина,шахта,рудник
+miss - пропускать,упустить,скучать
+mold - плесень,форма,формировать
+mole - крот,родинка
+nail - гвоздь,прибивать,ноготь
+past - мимо,прошлый,прошедший
+pole - полюс,шест,столб 
+pupil - зрачок,ученик
+race - гонка,раса 
+rest - остаток,остальное,отдых,отдыхать,покоиться 
+row - грести,ряд
+scale - взбираться,масштаб,шкала,чешуя,шелуха 
+sound - звук,здоровый
+spring - источник,проистекать,прыгать,весна
+state - государство,заявить,отметить,состояние 
+still - еще,спокойный,неподвижный
+tear - рвать,разрывать,слеза 
+temple - висок,храм
+volume - громкость,объём,том,книга
+
+-------известные--(ФА-не надо и вредно!)-
+a - артикль, =какой-то
+because - потому что
+before - перед
+between - между
+but - но
+for - для
+from - от
+have - иметь
+have-to - быть должным
+here - здесь
+how - как
+how-many - сколько
+how-much - сколько
+I - я
+if - если
+in - в
+is - есть
+near - около
+now - сейчас
+often - часто
+on - на
+only - только
+other - другой
+the - артикл =этот
+then - тогда
+there - там
+they - они
+together - вместе
+too - тоже, слишком
+too-many - слишком много
+too-much - слишком много
+what - что
+when - когда
+where - где
+where-to - куда
+while - пока
+who - кто
+whole - весь,целый
+whose - чей
+why - почему
+with - с
+your
+yours
+yourself
+about - о,примерно
+above - над
+after - после
+almost - почти
+along - вдоль
+already - уже
+also - также,тоже
+am - есть
+are - есть
+another - другой
+
+----похожие по написанию или звучаанию или частично--(ФА-не надо!)---
+abnormal - ненормальный,аномальный %
+abort - прерывать ~аборт это прерывание беремености
+absolute - абсолютный %
+absolutely - абсолютно +ly
+abuse - (абузер-слэнг)злоупотреблять,насилие,домогательство,оскорблять,бранить
+academic - академический %
+accident - авария,происшествие,ДТП,случайность ~инцидент
+accordion - аккордеон %
+actor - актер %
+actress - актриса %
+actual - актуальный %
+add - прибавить {ЭДик в АДу *прибавил в весе, хорошо кормят}
+address - адрес %
+adequate - адекватный %
+administration - администрация %
+administrative - административный %
+adult - взрослый /~дылда
+aerobics - аэробика %
+agency - агентство %
+airline - авиалиния %
+airplane - самолет %
+airport - аэропорт %
+alternative - альтернатива,альтернативный %
+amber - янтарь /прятали в амбаре
+analysis - анализ %
+answer - ответ,отвечать
+architect - архитектор %
+architecture - архитектура %
+archive - архив %
+army - армия %
+artistic - артистичный %
+astronomy - астрономия %
+automatically - автоматически %
+
+balance - баланс %
+balcony - балкон %
+banana - банан %
+baseball - бейсбол %
+basketball - баскетбол %
+big - большой (бигимот бежит на нас. страшно)
+biology - биология %
+blonde - блондин,блондинка %
+bottle - бутылка %
+boy - мальчик (пошел в *бой с буржуями)
+boyfriend - парень девушки
+brother - брат %
+bus - автобус %
+bus-stop - автобусная остановка %
+
+cable - кабель,канат,трос %
+cafeteria - кафетерий %
+cards - карты %
+career - карьера %
+cat - кот,кошка %
+chaos - хаос %
+chocolate - шоколад %
+cocoa - какао %
+coffee - кофе %
+combination - комбинация %
+commentary - комментарий %
+computer - компьютер %
+computer-science - информатика
+copy - копировать %
+
+daughter - дочь %
+day - день
+dessert - десерт %
+do - делать
+dog - собака (бульДОГ это собака)
+dolphin - дельфин %
+
+ecology - экология %
+economics - экономика %
+engineer - инженер %
+
+farm - ферма %
+farmer - фермер %
+father - отец (нашел фазу и сунул два пальца в розетку)
+father-in-law - тесть,свёкр
+flag - флаг %
+football - американский футбол
+fountain - фонтан %
+fruit - фрукт %
+
+geography - география %
+geometry - геометрия %
+geranium - герань %
+giraffe - жираф %
+girl - девочка ~гёрла
+girlfriend - девушка парня
+go - идти
+golden - золотой
+golf - гольф %
+good - хороший
+goose - гусь %
+
+history - история %%
+hockey - хоккей %%
+
+informatics - информатика %
+iris - ирис %
+
+jeans - джинсы %
+jelly - желе %
+journalism - журналистика %%
+journalist - журналист %
+jumper - джемпер %
+
+laboratory - лаборатория %
+lamp - лампа %
+liter - литр %
+
+make - делать
+mammoth - мамонт %%
+man - мужчина (спортс-мен,шоу-мен,бизнес-мен)
+mathematics - математика %
+mechanic - механик %
+menu - меню %
+metal - металл %
+meter - метр %
+million - миллион %
+mineral-water - минералка %
+minus - минус %
+minute - минута %
+monitor - монитор
+mother - мать (мазала кремом дырявые руки)
+mother-in-law - теща,свекровь
+museum - музей %
+music - музыка %
+musician - музыкант %%
+number - номер %
+numeric (numerical) - числовой,цифровой ~номерной
+omelet - омлет %
+panama-hat - панамка %
+panic - паника %
+parade - парад %
+pardon - извинять,извинение ~пардон
+parents - родители
+park - парк,парковаться %
+penguin - пингвин %
+people - люди (пипл хавает)
+percent - процент %
+person - персона %
+personally - лично @
+personnel - персонал,личный состав %%
+philosopher - философ %%
+photograph - фотография %%
+photographer - фотограф %
+physicist - физик %%
+physics - физика %%
+piano - пианино %
+pizza - пицца %
+planet - планета %
+plus - плюс %
+poem - поэма %
+poet - поэт %
+poetry - поэзия @
+police-station - полицейский участок %
+policeman - полицейский %
+politician - политик @
+politics - политика %
+popular - популярный %
+population - население ~популяция
+problem - проблема %
+procedure - процедура %
+projector - проектор %
+province - провинция %
+psychology - психология %
+publish - публиковать,издавать %
+pulse - пульс %
+put - класть (ложить)
+pyjamas - пижама %
+realistic - реалистичный %
+reality - реальность %
+reflex - рефлекс %
+religious - религиозный %
+reptile - рептилия %
+salad - салат %%
+sandals - сандали %
+sandwich - бутерброд =сандвич
+sardine - сардина %
+saxophone - саксофон %
+sea - море (купался по поСИнения)
+secretary - секретарь %
+see - видеть (в *море золотую рыбку с тремя желаниями)
+semester - семестр %
+shampoo - шампунь %
+shock - шок %
+shorts - шорты %
+silver - серебряный (пират сильвер)
+sister - сестра %
+sister-in-law - сноха,золовка @
+sit - сидеть %
+snow - снег (снова шел)
+snowball - снежок (снег+мяч)
+sociology - социология %
+soldier - солдат %
+son - сын %
+spinach - шпинат %
+stadium - стадион %%
+statue - статуя %
+stepbrother - сводный брат @
+stepfather - отчим @
+stepmother - мачеха @
+stethoscope - стетоскоп %
+stop - останавливаться %
+stylish - стильный %
+sum - сумма,суммировать %
+surfing - серфинг %
+symbol - символ %
+system - система %
+table - стол,таблица
+tax - налог (такса)
+tea - чай
+telephone - телефон %
+television - телевизор %
+theater (-re) - театр %
+theatrical - театральный %
+theme - тема %
+tiger - тигр %
+today - сегодня
+tomorrow - завтра
+tree - дерево
+trombone - тромбон %
+university - университет %
+volcano - вулкан %
+waffle - вафля,вафельный %
+want - хотеть
+war - война
+wine - вино %
+woman - женщина
+year - год
+yesterday - вчера
+zoo - зоопарк %
+`;

@@ -1,0 +1,503 @@
+//трудные5 ~500 , хорошие ФА
+g_api=`
+involvement[,in'vɑlvmənt/in'vɔlvmənt]участие
+inward[inwərd/inwəd]внутрь
+iron[aiərn/aiən]утюг,гладить,железо,железный||/ *железный *утюг АЙ уРОНили на ногу, больно
+irritate[iri,teit/mteit]раздражать
+issue[iʃu/isju:,'iʃu:]вопрос,проблема,издать,выпустить,выпуск,издавать
+itch[iʧ]зуд
+item[aitəm]пункт,номер,предмет
+ivory[aivəri/aivri/aiv(ə)ri]слоновая кость||/варили
+ivy[aivi]плющ||/ивы
+
+jab[ʤæb]ударять,пихать||/джэб
+jail[ʤeil]тюрьма||/жалеть
+janitor[ʤænətər/ʤænitə]дворник,уборщик||/джэнитэ
+jar[ʤɑr/ʤa:]банка,кувшин,горшок||/ ЖАРкое в *горшке варили и жарили
+jealous[ʤeləs]ревнивый||/+ таракан ел ЖЕЛЕ и УСами шевелил
+jeopardy[ʤepərdi/ʤepədi]опасность (серьёзная)||/джепардье /леопард
+jerk[ʤərk/ʤə:k]дёргать,резкое движение,придурок||/джерк
+jet[ʤet]реактивный двигатель,реактивный самолет,струя||/ *рс сухой суперДЖЕТ летит на луну
+jingle[ʤiŋgəl/ʤiŋgl]звенеть,звон||/джингл бэнс
+job[ʤɑb/ʤoub/ʤɔb]работа||/джоб
+jog[ʤɑg/ʤɔg]бегать трусцой||/джог
+jogging[ʤɑgiŋ/ʤɔgiŋ]бег трусцой
+join[ʤɔin]присоединить (-ся),присоединиться||/джо иностранец *присоединился к партизанам
+joint[ʤɔint]совместный,объединённый,сустав,шарнир,стык||/джоинт
+joke[ʤouk]шутить,шутка||/ ДЖОКер *шутил про диск жокея бэтмэна
+jolly[ʤɑli/ʤɔli]веселый||/анДЖЕЛИна ДЖОЛИ была *веселая
+jolt[ʤoult]толчок,встряска||/джоулт
+joy[ʤɔi]радость||/ДЖОнс ИНдиана испытал + когда нашел грааль
+judge[ʤəʤ/ʤʌʤ]судья,судить (втч. перен)
+judgement[ʤəʤmənt/ʤʌʤmənt](judgment) суждение
+judicial[ʤu'diʃəl/ʤu(:)'diʃ(ə)l]судебная
+jug[ʤəg/ʤʌg]кувшин||/джаг
+jumble[ʤəmbəl/ʤʌmbl]перемешивать
+jump[ʤəmp/ʤʌmp]прыгать||/джамп
+junction[ʤəŋkʃən/ʤʌŋkʃ(ə)n]стык,узел,пересечение
+junk[ʤəŋk/ʤʌŋk]барахло,хлам||/джанк
+junkie[ʤəŋki/ʤʌŋki]наркоман||/джанки
+just[ʤəst/ʤist/ʤʌst]справедливый,беспристрастный 2.только||/джаст
+justice[ʤəstəs/ʤəstis/ʤʌstis]правосудие,справедливость
+justify[ʤəstə,fai/ʤʌstifai]оправдывать,обосновывать
+jut[ʤət/ʤʌt]выступать,выдаваться||/джат
+
+keen[kin]острый (часто перен),увлеченный||/КИНули *острым ножом в дерево
+keep[kip]сохранять,хранить||/*хранить КИПу документов в чулане
+key[ki]ключ||/КИкимора болотная потеряла *ключи от болота когда ходила на хокКЕЙ
+kick[kik]пинать||/+ КИКимору (за то что ключи потеряла)
+kid[kid]ребенок,ребёнок 2.шутить,разыгрывать||/КИнДер сюрприз
+kidnap[kid,næp/kidnæp]похищать||/киднэпинг
+kidney[kidni]почка
+kin[kin](pl:kin) родственник||/+ ходил в КИНо про *родственников
+kind[kaind]вид,тип 2.добрый||/*добрый дядя КИНул Деньги на ветер /КАманча ИНДеец был *добрый *тип
+kindergarten[kindər,gɑrtən/kmdə,ga:tn]детский сад
+kingdom[kiŋdəm]королевство||/дом короля
+kiss[kis]поцелуй,целоваться,целовать||/ *целовать киску (кошку)
+kit[kit]комплект,набор||/КИТ собрал *набор кастрюль на дне для кухни
+kitchen[kiʧən/kiʧin]кухня||/ КИТ ЧИНил *кухню после погрома / котенок на *кухне КИТа ЧИНил кран
+kite[kait]воздушный змей,коршун||/КАЙ леТел на *коршуне спасать герду
+knack[næk]умение,сноровка||/нэк
+knee[ni/ni:]колено||/ соГНИ *колени в другую сторону
+kneel[nil]стать на колени (колено)||/+ в реке НИЛ где плавал крокодил
+knife[naif]нож||/ НАЙти Фантастический *нож на дне
+knight[nait]рыцарь||/НАЙТи *рыцаря для поединка
+knob[nɑb/nɔb]ручка (круглая)||/НОБелевкую премию дали за открытие *круглой-ручки
+knock[nɑk/nɔk]стучать||/+ НОКтем по стеклу
+knot[nɑt/nɔt]узел||/ кнут завязали в +
+know[nou]знать||/ноу
+knowledge[nɑləʤ/nɑliʤ/nɔliʤ]знание,знания
+known[noun]известный||/ноун
+
+label[leibəl/leibl]метка,ярлык,метить,этикетка||/ЛЕЙ на *этикетку чтобы БЛестела
+lack[læk]испытывать недостаток,недостаток,нуждаться||/*недостаток ЛАКа в магазине
+lad[læd]парень||/ЛАДный + гулял с ЛЭДи
+ladder[lædər/lædə]лестница||/ЛИДЕР залез по *леснице на ладу и толкнул речь
+laden[leidən/leidn]груженный||/ бен ЛАДЕН *груженый взрывчаткой лез по небоскребу
+lag[læg]запаздывание||/лаг (временной) это + по времени
+lake[leik]озеро||/из *озера ЛАКали воду /ЛЕЙКу наполняли из *озера и поливали грядки
+lamb[læm]ягненок||/лэм
+lame[leim]хромой||/лейм
+lament[lə'ment]оплакивать,сожалеть
+land[lænd]земля,приземляться,высаживаться,приземлиться||/в диснейЛЕНД в исЛАНДии /в *земле растет ЛАНДыш
+landlord[lænd,lɔrd/lænlɔ:d]арендодатель,домовладелец||/=земля+лорд
+landmark[lænd,mɑrk/lændma:k]ориентир||/=земля+знак
+landscape[læn,skeip/lænd,skeip/lænskeip]ландшафт,пейзаж
+language[læŋgwəʤ/læŋgwiʤ]язык
+lantern[læntərn/læntən]фонарь||/лэнтэрн
+lap[læp]колени||/таракан согнул ЛАПы в *коленях /ЛАПал за *коленки в кино
+lapse[læps]промежуток времени,упущение,оплошность||/лапс
+laptop[læp,tɑp/læptɔp]ноутбук||/лэптоп
+largely[lɑrʤli/la:ʤli]во многом
+lash[læʃ](eyelash) ресница||/+ у ЛЕШего отвалилась
+last[læs/læst/last]длиться,последний||/ *последние ЛАСТы у дайвера съели акулы
+latch[læʧ]защёлка,засов||/лэч
+late[leit]поздний,поздно,покойный||/*покойный ЛЕИТенант *поздно ночью гулял по минному полю
+later[leitər/leitə]позже||/+ лейтенант наступил на мину
+lateral[lætərəl/læt(ə)r(ə)l]боковой
+latest[leitəst/leitist]последний
+latter[lætər/lætə]последний (из названных)
+laugh[læf/laf]смеяться||/лаф
+laughter[læftər/la:ftə]смех||/лафтер
+laundry[lɔndri/lɔ:ndri]прачечная,стирка||/*стирка лаунчера в ведре
+lavish[læviʃ]щедрый,роскошный||/лэвиш
+law[lɑ/lɔ]закон||/+ для лохов
+lawn[lɔn/lɔ:n]газон||/иЛОН маск спит на *газоне
+lawsuit[lɔ,sut/lɔ:sju:t]тяжба,судебное дело
+lawyer[lɔiər/lɔjər/lɔ:jə]адвокат,юрист
+lay[lei](laid,laid) класть,укладывать,лежать||/ЛЕЙ воду на *лежачего
+layer[leiər/leiə]слой||/=лежатель
+layout[lei,aut/leiaut]макет,расположение
+lazy[leizi]ленивый||/ *ленивый кот ЛАЗИл куда не надо
+leaf[lif](pl: leaves) лист||/ЛИФчик из пары *листьев сшил робинзон пятнице
+leak[lik/li:k]утечка,просачиваться,протекать||/ЛИКвидация *утечки
+lean[lin/li:n]наклоняться,худой||/*худой павЛИН *наклонился за червяком
+leap[lip]прыгать,прыжок||/*прыгнул на ЛИПу и приЛИП
+learn[lərn/lə:n]учить||/лерн
+lease[lis/li:s]сдавать в аренду||/ЛИС *сдавал-в-аренду курятник /лизинг
+leash[liʃ/li:ʃ]привязь,поводок||/ЛИШайную кошку *привязали *поводком к поезду
+least[list]меньший||/лист
+leather[leðər/leðə]кожа,кожаный||/ лизать лизе *кожу лёжа
+leave[liv](left,left) уйти,покинуть,покидать,уходить||/лив
+ledge[leʤ]уступ||/ледж
+leek[lik]лук-порей
+leftover[lef,touvər/left,əuvər]остаток
+legacy[legəsi]наследие,наследство
+legislation[,leʤə'sleiʃən/,leʤis'leiʃ(ə)n]законодательство||/легализация
+legitimate[lə'ʤitəmət/li'ʤitimit]законный,обоснованный||/легитимный
+leisure[leʒər/liʒər/leʒə]досуг,отдых||/+ лежа на диване
+less[les]меньше||/ чем дальше в ЛЕС тем *меньше лилипуты
+lessen[lesən/lesn]уменьшать(-ся)||/*уменьшать ЛЕСЕНку
+lest[lest]чтобы не,иначе||/лесть
+let[let]позволять||/+ ЛЕТать на солнце
+lettuce[letəs/letis]салат (латук)
+level[levəl/levl]уровень||/ ЛЕВ ЕЛ много и достиг высокого *уровня
+lever[levər/livər/ll:və]рычаг,ручка||/левер
+liability[,laiə'biliti]ответственность
+liable[laiəbəl/laiəbl]подлежащий
+liaison[lei,zɑn/li'ei,zɑn/li(:)'eizɔn]связь
+liberate[li,bər,eit/libəreit]освобождать||/+ либерала
+liberty[libər,ti/libəti]свобода||/либерал тихо вышел на *свободу
+librarian[lai'bre,riən/lai'breəriən]библиотекарь
+library[laibre,ri/laibrəri]библиотека||/либерал
+lick[lik]лизать||/ лиза *лизала леденец и ЛИКовала
+lid[lid]крышка||/ ЛИДа *крышки закручивала на банках / ЛИДер по собиранию *крышек от фанты женился на ЛИДе
+lie[lai](lay,lain) лежать 2.врать,лгать,ложь||/ЛАЙка *лежала и *врала
+lifelong[lai'flɔŋ/laiflɔŋ]пожизненный||/=жизнь+долго
+lifespan[laif,spæn/laifspæn]срок жизни||/спаниеля в испании
+light[lait](lit,lit) зажигать||/лайт
+light[lait]зажечь,легкий,свет,светлый||/ *светлая ЛАЙка Тащила *легкие сани по снегу
+lightning[laitniŋ]молния||/=светание
+likely[laikli]вероятно,скорее всего
+likewise[lai,kwaiz/laikwaiz]также
+limb[lim]конечность
+limp[limp]хромать||/лимпопо
+linden[lindən]липа||/*ЛИпа ЛИНяет весь ДЕНь
+lineage[liniəʤ/liniiʤ]родословная
+lineup[lai,nəp/lainip]расстановка,расположение
+linger[liŋər/liŋgər/liŋgə]задерживаться,медлить
+link[liŋk]связывать,связь,звено,ссылка||/линк сленг
+lipstick[lip,stik/lipstik]губная помада||/=губа+палка
+listen[lisən/lisn]слушать||/+ ЛИСу в ТЕНи
+literal[litərəl/lit(ə)r(ə)l]буквальный
+literate[litərət/litərit]грамотность
+litter[litər/litə]мусор (на улице)||/литер
+livelihood[laivli,hud/laivlihud]средства к существованию
+livestock[laiv,stɑk/laivstɔk]скот
+lizard[lizərd/lizəd]ящерица
+load[loud]грузить,груз,нагрузка||/*грузить *груз на ЛОДку
+loaf[louf]буханка,булка||/лоуф
+loan[loun]заём,ссуда||/клоуну на цирк
+loathe[louð]ненавидеть,питать отвращение
+lobby[lɑbi/lɔbi]вестибюль,фойе,прихожая||/лоби
+lobster[lɑbstər/lɔbstə]омар||/лоб стервы
+lock[lɑk/lɔk]замок,запирать,запереть||/ амбал сбил ЛОКтем *замок / шерЛОК хомса *заперли на ЛОКдаун
+locker[lɑkər/lɔkə]ящик,шкаф (закрывающийся)
+locus[loukəs]местоположение
+lodge[lɑʤ/lɔʤ]домик,поселиться,остановиться,подавать (документ)
+loft[lɔft]чердак,верхний нежилой этаж||/лофт
+log[lɔg]бревно||/лог
+lollipop[lɑli,pɑp/lɔlipɔp]леденец||/+ ЛОЛЯ ПОПробовала
+lone[loun]одинокий||/+кЛОУН работал в цирке
+longevity[lɔn'ʤevəti/lɔn'ʤeviti]долговечность,долголетие
+look[luk]взгляд,выглядеть,смотреть||/смотреть на ЛУК и плакать
+loom[lum/lu:m]маячить,виднеться||/лум
+loop[lup/lu:p]петля||/луп
+loose[lus/lu:s]свободный,болтающийся||/лус
+loot[lut/lu:t]грабить,добыча||/лут собирать в играх
+loss[lɔs]потеря||/ЛОСь *потерял рога
+lot[lɑt/lɔt]жребий,судьба 2.много||/лот
+lotus[loutəs]лилия||/лотус
+loud[laud]громкий||/лауд
+lounge[launʤ]гостиная,холл,комната отдыха,расслабляться,бездельничать
+lousy[lauzi]паршивый
+lower[louər/louə]нижний,снизить
+luck[lək/lʌk]удача||/купить ЛАК для волос это +
+lucky[ləki/lʌki]удачливый||/лаки
+lucrative[lukrətiv/lu:krətiv]прибыльный,выгодный
+ludicrous[ludəkrəs/lu:dikrəs]нелепый,смехотворный
+luggage[ləgəʤ/ləgiʤ/lʌgiʤ]багаж||/лэгидж
+lumber[ləmbər/lʌmbə]пиломатериалы||/ламбер
+lump[ləmp/lʌmp]кусок,глыба,ком||/*кусок *глыбы попал в ЛАМПу
+luncheon[lənʧən/lʌnʧ(ə)n]завтрак
+lung[ləŋ/lʌŋ]легкое||/лан
+lurch[lərʧ/lə:ʧ]крениться,шататься
+lure[lur/ljuə]приманка,манить
+lurk[lərk/lə:k]таиться
+lush[ləʃ/lʌʃ]пышный||/+ шаЛАШ
+lust[ləst/lʌst]вожделение,страсть||/лесть
+
+mad[mæd]безумный||/мэд
+magnificent[mæg'nifəsənt/mæg'nifisənt/mægnfisnt]великолепный,величественный
+magnify[mægnə,fai/mægnifai]увеличивать
+magnitude[mægnə,tud/mægnitju:d]величина,сила||/магнетуда
+maid[meid]служанка,горничная||/мейд /мадам
+maiden[meidən/meidn]дева,девственница||/пошла на майдан
+mainly[meinli]в основном
+maintain[mein'tein/meintein]поддерживать,сохранять
+maintenance[meintənəns/meintnəns]обслуживание
+majesty[mæʤəsti/mæʤisti]величие,величество
+majority[mə'ʤɔrəti/mə'ʤɔriti]большинство
+makeup[mei,kəp/meikʌp]макияж
+mall[mɔl]торговый центр,||/*торговый-центр слишком МАЛ для слона
+management[mænəʤmənt/mæniʤmənt]руководство
+mandatory[mændə,tɔri/mændət(ə)ri]обязательный
+mankind[mæn'kaind/,mæn'kaind]человечество||/=человек+вид
+manufacturer[,mænjə'fækʧərər/,mænju'fækʧ(ə)rə]производитель
+manure[mə'nur/mə'njuə]навоз
+maple[meipəl/meipl]клён
+marble[mɑrbəl/ma:bl]мрамор
+marital[merətəl/mæritl]супружеский
+maritime[merə,taim/mæritaim]морской
+marriage[meriʤ/mænʤ]брак||/+ мэри и джо бракованный
+married[merid/mærid]в браке,женатый||/ замаринованный женой
+marry[meri/mæri]жениться,выйти замуж||/сивый мерин *женился на мэри, какой ужас
+martial[mɑrʃəl/ma:ʃ(ə)l]боевой,военный||/маршал
+martyr[mɑrtər/ma:tə]мученик
+massacre[mæsəkər/mæsəkə]резня
+masterpiece[mæstər,pis/ma:stəpi:s]шедевр
+match[mæʧ]матч,соответствие,соответствующее,соответствовать,спичка||/ МАТерился Что *спичка погасла
+mate[meit]товарищ,компаньон||/мейт
+matter[mætər/mætə]вещество,материя,дело,вопрос,иметь значение
+maze[meiz]лабиринт||/мейз
+meager[migər/mi:gər]скудный,недостаточный
+meal[mil]еда||/ МИЛая девушка принесла *еду МЕЛьнику
+mean[min](meant,meant) иметь в виду,означать,предназначать 2.вредный,неважный,посредственный||/мина
+meaning[miniŋ]смысл
+means[minz]средство
+meantime[min,taim/mintaim]тем временем
+meanwhile[min,wail/mi:nwail]тем временем
+measurement[meʒərmənt/meʒəmənt]измерение
+meat[mit]мясо||/ МИТя ел *мясо на МИТинге, вот такую харю наел
+mediate[midi,eit/mi:diit]посредничать
+medieval[mi'divəl/mid'jivəl/,medi'i:v(ə)l]средневековый
+mediocre[,midi'oukər/mi:dioukə]посредственный
+melon[melən]дыня||/ МЕЛАНхолик красил *дыню мелом
+melt[melt]таять,плавить(-ся)||/ МЕЛ *Таял в известке и шипел
+member[membər/membə]член||/+ МЕМа нашли в БЕРлоге (пожеванный)
+membership[membər,ʃip/membəʃip]членство
+menace[menəs/menis]угроза,угрожать||/менис
+mend[mend]чинить,поправлять||/менд
+mention[menʃən/menʃ(ə)n]упоминать,упомянуть
+mentor[men,tɔr/mentər/mentɔ:]наставник
+merchandise[mərʧən,daiz/mə:ʧ(ə)ndaiz]товар
+merchant[mərʧənt/mə:ʧ(ə)nt]купец,торговец||/мерчант
+mercury[mərkjəri/mə:kjuri]ртуть||/меркурий
+mercy[mərsi/mə:si]милость,милосердие||/мирси
+mere[mir/miə]всего лишь
+merely[mirli/miəli]просто||/ширли мырли
+merge[mərʤ/mə:ʤ]соединять,сливать
+merit[merət/merit]заслуга,заслуживать
+merry[meri]веселый||/+ мерин
+mesh[meʃ]сетка||/мешок
+message[mesəʤ/mesiʤ]сообщение||/мисидж
+metropolitan[,metrə'pɑlətən/,metrə'pɔlit(ə)n]столичный||/метрополия
+mid[mid]середина,полу-
+middle[midəl/midl]середина,средний||/мидл
+midst[midst/mist]середина,среда
+midwife[mid,waif/midwaif]акушерка||/=средняя жена
+might[mait]мощь
+mild[maild]мягкий
+mileage[mailəʤ/mailiʤ]пробег
+millenium[mə'leniəm/mileniəm](millennium) тысячелетие||/милениум
+mimic[mimik]передразнивать,копировать||/мимика
+mince[mins]фарш,крошить,рубить
+mind[maind]возражать,ум||/маинд
+mindful[maindfəl/maindful]внимательный,помнящий
+mingle[miŋgəl/miŋgl]смешиваться
+minor[mainər/mainə]второстепенный,незначительный,несовершеннолетний||/минор
+minority[mai'nɔrəti/mə'nɔrəti/mai'nɔriti]меньшинство
+mint[mint]мята||/минтол
+mischief[misʧəf/misʧif]вред,безобразие
+miserable[mizərəbəl/mizrəbəl/miz(ə)r(ə)bl]несчастный,жалкий
+misery[mizəri/mizən]несчастье,страдание,нищета
+miss[mis]пропускать,упустить,скучать,скучать по
+missile[misəl/misail]ракета
+missing[misiŋ]пропавший,отсутствующий
+mistake[mi'steik/mis'teik]ошибка||/+ МИСТичЕсКая в программе, то есть то нет
+mistress[mistrəs/mistris]госпожа,хозяйка,любовница||/мистрис
+mitigate[mitə,geit/mitigeit]смягчить,сгладить
+moan[moun]стонать
+mock[mɑk/mɔk]издеваться,насмехаться
+mode[moud]режим,способ,вид||/мода
+modern[mɑdərn/mɔd(ə)n]современный||/модерн
+modest[mɑdəst/mɔdist]скромный,умеренный||/модест из городка
+moist[mɔist]влажный
+mold[mould](mould) плесень,форма,формировать
+mole[moul]крот,родинка||/моул
+molest[mə'lest/moulest]приставать,досаждать
+monk[məŋk/mʌŋk]монах||/+ ел манку
+mood[mud/mu:d]настроение||/+ испортил один мудак на букву Ч
+moose[mus/mu:s]лось||/мус
+mop[mɑp/mɔp]швабра,мыть пол||/моп
+more[mɔr/mɔ]больше,еще||/ море=много сленг
+moreover[mɔ'rouvər/mɔ:'rouvə]более того,сверх того
+moron[mɔ,rɑn/mɔ:rɔn]дебил||/морон
+mortal[mɔrtəl/mɔ:tl]смертельный,смертный||/мортал комбат
+mortgage[mɔrgəʤ/mɔrgiʤ/mɔ:giʤ]ипотека
+mosque[mɑsk/mɔsk]мечеть||/+ москитов в москве построили
+moss[mɔs]мох||/мос
+most[mous/moust]большинство
+mostly[mousli/moustli]в основном,главным образом
+moth[mɔθ]мотылёк,моль
+motion[mouʃən/mouʃ(ə)n]движение
+motionless[mouʃənləs/mouʃ(ə)nlis]неподвижный
+motto[mɑtou/mɔtou]девиз
+mound[maund]насыпь,бугор
+mountain[mauntən/mauntin]гора,горный
+mourn[mɔrn/mɔ:n]скорбеть,носить траур
+moustache[məs,tæʃ/məs'taj]усы||/ мики МАУС на ТАЧке проехал по *усам кота
+mouth[mauθ]рот||/ кот открыл *рот а там микки маус сидит
+mouthful[mauθ,ful/mauθful]полный рот||/+ мышей,фу
+movement[muvmənt]движение
+mow[mou/mau]косить||/МАУгли косил под волка
+mug[məg/mʌg]кружка||/маг
+multiply[məltə,plai/mʌltiplai]умножать,размножаться
+multitude[məltə,tud/məltət,jud/mʌltitju:d]множество
+mumble[məmbəl/mʌmbl]бормотать,бубнить
+mural[mjurəl/mjuər(ə)l]стенная роспись,фреска
+murky[mərki/mə:ki]мутный,тёмный||/мурка
+murmur[mərmər/mə:mə]шум,ропот,журчание||/мурмур
+mushrooms[məʃrumz/mʌʃrumz]грибы||/+ маршировали по лесу
+mustache[məs,tæʃ/mu'stɑ:ʃ](moustache) усы
+mustard[məstərd/mʌstəd]горчица||/ волк ел мустанга старого с *горчицей
+muster[məstər/mʌstə]собрать,согнать,мобилизовать||/мастер
+mute[mjut/mju:t]беззвучный,не говорящий||/мьют мутант
+mutter[mətər/mʌtə]бормотать,бурчать||/МАТЕРился
+mutual[mjuʧuəl/mju:tjuəl]взаимный||/мучил
+muzzle[məzəl/mʌzl]морда,намордник||/МАЗАЛ *морду зеленкой
+
+nail[neil]гвоздь,прибивать,ноготь||/*ногтем порвала НЕЙЛоновые чулки,ах
+naked[neikəd/neikid]голый||/накидка
+nap[næp]вздремнуть,дремота||/НАПрасно *вздремнул
+napkin[næpkin]салфетка||/*салфетку НА Пол КИНул
+narrate[ne,reit/nə'reit]повествовать,рассказывать||/нарротив
+narrow[nærou/nerou]узкий||/ НА РОвной и *Узкой тропинке в лесу рос пень
+native[neitiv]местный,туземный,родной||/нативный
+nature[neiʧər/neiʧə]природа||/натура
+naughty[nɔti/nɔ:ti]непослушный||/+ музыкант съел ноты
+nausea[nɔziə/nɔ:sjə]тошнота
+navel[neivəl/neiv(ə)l]пупок||/ новелла о том как *пупок развязался
+nearly[nirli/niəli]почти||/=близко
+neat[nit]аккуратный,опрятный||/НИТками пришили *аккуратно к полу
+necessarily[,nesə'serəli/nesis(ə)nli]обязательно
+necessary[nesə,seri/nesis(ə)n]необходимый,нужно||/несу серый
+neck[nek]шея||/ НЕКто сломал *шею (кино)
+need[nid/ni:d]необходимость,нужда,нуждаться в,нуждаться||/нид
+needle[nidəl/nidl]игла||/нитка длинная
+neglect[nə'glekt/ni'glekt]пренебрегать,не следить
+negligent[negləʤənt/negliʤənt/negliʤ(ə)nt]небрежный,халатный
+negotiate[nə'gouʃi,eit/ni'gouʃi,eit/ni'gouʃieit]вести переговоры
+negotiation[ni,gouʃi'eiʃən/ni,gouʃi'eiʃ(ə)n]переговоры
+neighbor[neibər/neibə](neighbour) сосед||/+ с НЕЙ БЕРлогу нашел
+neither[naiðər/niðər/naiðə]ни один из двух,ни тот,ни другой,тоже не
+nephew[nefju/nevju(:)]племянник||/+ сказал не пью, за рулём и напился до чертиков
+nerd[nərd/nə:d]ботан,задрот||/нерд
+nerve[nərv/nə:v]смелость||/нерв
+nest[nest]гнездо,гнездиться||/нест
+nevertheless[,nevərðə'les/,nevəð(ə)'les]тем не менее
+newcomer[nu,kəmər/nju:,kʌmər]новичок||/ньюкамер в камере
+newly[nuli/nju:li]недавно
+newsstand[nuz,stænd/nju:zstænd]газетный киоск
+nice[nais/nis]приятный,хороший||/+ чел навестил нас
+niece[nis/ni:s]племянница||/+ низкая просНИСь и пой
+nitrogen[naitrəʤən/naitnʤən]азот||/нитроген
+noble[noubəl/noubl]благородный||/+ ученый получил нобелевку
+nod[nɑd/nɔd]кивать,склонять||/нод
+noise[nɔiz]шум||/+ почуял носом /назойливый
+noisily[nɔizəli/nɔizili]шумно
+noisy[nɔizi]шумный
+nonetheless[,nənðə'les/,nʌnðə'les]тем не менее
+noodle[nudəl/nu:dl]лапша||/+ ну длинная / НУДные НУДисты еЛи *лапшу
+noodles[nudəlz/nudlz]лапша много
+noon[nun/nu:n]полдень
+normally[nɔrməli/nɔrmli/nɔ:məli]как обычно||/нормально
+northern[nɔrðərn/nɔ:ð(ə)n]северный
+notch[nɑʧ/nɔʧ]выемка||/ночь
+notebook[nout,buk/nəutbuk]тетрадь||/=заметка+книга ноутбук
+notice[noutəs/noutis]заметить,замечать,уведомление
+notify[noutə,fai/noutifai]известить
+notion[nouʃən/nouʃ(ə)n]понятие,представление
+notorious[nou'tɔriəs/nou'tɔnəs]известный,пресловутый
+notwithstanding[,nɑtwiθ'stændiŋ/,nɔtwiθ'stændiŋ]несмотря на
+noun[naun]существительное
+nourish[nəriʃ/nʌriʃ]питать,кормить,удобрять
+novelty[nɑvəlti/nɔv(ə)lti]новинка
+nowadays[nauə,deiz/nauədeiz]в настоящее время
+nuclear[nukliər/nju:kliə]ядерный||/нуклиер
+nudge[nəʤ/nʌʤ]подталкивать
+nuisance[nusəns/nju:sns]неприятность,неудобство
+numeric[nu'merik/nju:'merik](=numerical) числовой,цифровой||/номерной
+numerous[numərəs/nju:m(ə)rəs]многочисленные
+nun[nən/nʌn]монахиня||/нан
+nurse[nərs/nə:s]медсестра,нянька||/ доктор НЕС с базара любопытную *медсестру варвару без НОСа
+nurture[nərʧər/nə:ʧə]растить,питать
+nut[nət/nʌt]орех||/чокнутые из НАТо грызут *орехи по ночам
+nutrient[nutriənt/nju:triənt]питательный,пит.вещество
+nutrition[nu'triʃən/nju:'triʃən]питание
+nuts[nəts/nʌts]чокнутый||/+ ел орехи
+
+oak[ouk]дуб||/оук
+oath[ouθ]клятва,присяга
+oats[outs]овес,овсянка||/оутс
+obedience[ou'bidiəns/ə'bi:djəns]покорность
+obese[ə'bis/ou'bis/ou'bi:s]страдающий ожирением||/оубис
+obey[ou'bei/ə'bei]подчиняться,слушаться||/О УБЕЙ за то что не *послушался
+objection[əb'ʤekʃən/əb'ʤekʃ(ə)n]возражение
+objective[əb'ʤektiv]задача,цель
+obscene[ɑb'sin/əb'sin/ɔb'si:n]непристойный
+obscure[əb'skjur/əb'skjuə]неясный,тёмный||/камера обскура
+obsess[əb'ses]овладеть (разумом)
+obsolete[ɑbsə,lit/,ɑbsə'lit/ɔbsəlit]устарелый||/абсолютный
+obstacle[ɑbstəkəl/ɔbstəkl]препятствие
+obstruct[əb'strəkt/əb'strʌkt]препятствовать,загромождать
+obtain[əb'tein]получить,обрести
+obvious[ɑbviəs/ɔbviəs]очевидный
+obviously[ɑbviəsli/ɔbviəsli]очевидно||/+ly наречие
+occasional[ə'keiʒənəl/ə'keiʒənl]случайный
+occasionally[ə'keiʒənəli/ə'keiʒənli/ə'keiʒnəli]иногда
+occur[ə'kər/ə'kə:]происходить,случиться
+odd[ɑd/ɔd]необычный,неправильный,странный
+odds[ɑdz/ɔdz]шансы
+odor[oudər/əudər](-our) запах
+offence[əfens](=offense) преступление,нарушение,обида,правонарушение
+offend[ə'fend]обидеть,оскорбить
+offer[ɔfər/ɔfə]предлагать,предложение||/оферта
+offset[ɔf,set/ɔf'set/ɔfset]смещение
+offspring[ɔfs,priŋ/ɔ:fspriŋ]отпрыск или всё потомство
+ominous[ɑmənəs/ɔminəs]зловещий
+omit[ou'mit/ə'mit]пропускать
+omnivore[ɔmnivɔ:(r)]всеядный||/+ верхОМ НА ВОРЕ ел всё подряд
+ongoing[ɑn,gouiŋ/ɔn,gouiŋ]происходящий,продолжающий
+onion[ənjən/ʌnjən]лук,луковица||/ ОН НЕ ОН и она не она ели *лук с луком
+onset[ɑn,set/ɔn,set/ɔnset]начало,наступление
+onto[ɑntu/ɔntu]на
+onward[ɔnwərd/ɔnwəd](onwards) далее
+opaque[ou'peik]непрозрачный
+opening[oupəniŋ/oupniŋ]отверстие,открытие
+operating[ɑpər,eitiŋ/ɔpər,eitiŋ/ɔpəreitiŋ]действующий
+opinion[ə'pinjən/əpinjən]мнение
+opportunity[,ɑpər'tunəti/,ɔpə'tju:niti]возможность||/опортунисты
+oppress[ə'pres]угнетать,притеснять
+orchard[ɔrʧərd/ɔ:ʧəd]фруктовый сад
+ordinary[ɔrdə,neri/ɔ:dnn]обыкновенный,обычный||/ординарный
+organise[ɔrgə,naiz/ɔ:gənaiz](organize) организовывать
+oriental[,ɔri'enəl/,ɔri'entəl/,ɔ:n'entl]восточный,азиатский||/ориентация
+originally[ər'iʤənəli/ər'iʤnəli/ə'riʤinəli]изначально
+orphan[ɔrfən/ɔ:f(ə)n]сирота||/орфэн
+ostensibly[ɑ'stensəbli/ɔs'tensəbli]по видимости,якобы
+otherwise[əðər,waiz/ʌðəwaiz]в противном случае,иначе,иным образом
+ought[ɔt/ɔ:t]должен,обязан
+outcome[aut,kəm/autkʌm]результат,исход
+outdated[aut,deitid/aut'deitid]устаревший
+outer[autər/autə]внешний
+outfit[aut,fit/autfit]наряд,комплект,набор
+outgoing[aut,gouiŋ/aut'gouiŋ]общительный,уходящий||/=снаружи-ходящий
+outing[autiŋ]прогулка,пикник||/аутиста
+outlaw[aut,lɔ/autlɔ:]преступник (особ. на свободе)
+outlet[aut,let/autlet]выход  (отверстие)
+outline[aut,lain/autlain]контур,очертание,очертить,обрисовывать
+outlook[aut,luk/autluk]перспектива,вид,кругозор
+outnumber[aut'nəmbər/autnʌmbə]превосходить численно
+output[aut,put/autput]выпуск,выход,выход продукции
+outrage[au,treiʤ/autreiʤ]произвол,насилие,поругание
+outright[au'trait/autrait]прямой,откровенный
+outset[aut,set/autset]начало
+outside[aut'said]снаружи
+outskirts[aut,skərts/autskə:ts]окраина,окрестности
+outstanding[,aut'stændiŋ/aut'stændiŋ]выдающийся,неоплаченный,нерешённый
+outweigh[aut,wei/aut'wei]перевешивать
+oven[əvən/ʌvn]печь,духовка||/ ОВЕН и козерог купили *печь для гороскопов
+overall[ouvər,ɔl/ouvərɔ:l]в общем и целом,общий,целый
+overcome[ouvər,kəm/,ouvə'kʌm]преодолеть,побороть
+overflow[ouvər,flou/,ouvər'flou/ouvəflou]переполняться,разлиться
+overhead[ouvər'hed/ouve'hed]над головой
+overhear[ouvər'hir/,ouvə'hiə]подслушать,нечаянно услышать
+overlap[ouvər,læp/,ouvə'læp]перекрываться
+overlook[ouvər,luk/,ouvə'luk]не заметить
+overnight[ouvər'nait/ouvə'nait]ночной,с ночёвкой
+override[ouvər,raid/,ouvə'raid]перекрывать,отменять
+overseas[ouvər'siz/,ouvər'siz]за границей,за рубежом,особ. за морем
+oversee[ouvər,si/ouvə'si:]контролировать,надзирать
+oversight[ouvər,sait/ouvəsait]надзор
+`;

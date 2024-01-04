@@ -1,0 +1,503 @@
+//трудные2 ~500 , хорошие ФА
+g_api=`
+capital[kæpətəl/kæpitəl/kæpitl]главный,большой,высший,столица||/капитал весь в *большой *столице
+captive[kæptiv]пленник
+carbohydrate[,kɑrbou'hai,dreit/,kɑrbou'haidrət/ka:bou'haidreit]углевод||/карбо-гидрид
+carbon[kɑrbən/ka:bən]углерод,уголь,графит||/карбонат
+carcass[kɑrkəs/ka:kəs]туша||/каркас
+cardboard[kɑrd,bɔrd/ka:dbɔ:d]картон||/карта+доска
+cardigan[kɑrdigən/ka:digən]шерстянная кофта||/+ у кардинала
+care[ker/keə]забота,уход,переживать,интересоваться,заботиться||/КАРЕфан *заботится о КОРЕшах
+careful[kerfəl/keəful]осторожный||/*осторожный КАРЕФан вышел на УЛицу ночью
+carefully[kerfəli/keəfli]осторожно||/ (+ly-нар)
+caress[kər'es/kə'res]ласкать,гладить||/кариез
+cargo[kɑr,gou/ka:gou]груз,грузовой||/карга
+carnivore[kɑrni,vɔr/ka:nivɔ:]плотоядный||/+ на КАРНавале ВОРов ел плоть
+carpenter[kɑrpəntər/kapmtə]плотник||/карп на терке
+carpet[kɑrpət/ka:pit]ковер||/ КАРлик ПЕТя копит на +
+carriage[kæriʤ/kerəʤ]каретка
+carry[kæri/keri/kæn]нести,носить
+cartoon[kɑr'tun/ka:'tu:n]мультфильм||/ + из КАРТОНнных фигурок (раньше делали)
+carve[kɑrv/ka:v]вырезать (напр. из дерева)
+casket[kæskət/ka:skit]шкатулка,гроб (амер)
+cast[kæst/ka:st](cast,cast) бросать,метать,отливать||/кастет
+castle[kæsəl/ka:sl]замок||/ КОСТЛявого дракона /красивые решетки из КАСЛинского литья на окнах в *замке короля
+casual[kæʒəwəl/kæʒwəl/kæʒjuəl]случайный
+casualty[kæʒəlti/kæʒəwəlti/kæʒwəlti/kæʒjuəlti]жертва,потери
+catch[kæʧ](caught,caught) ловить,поймать,расслышать,уловить||/КАЧок *ловил и *поймал кота ч
+cater[keitər/keitə]обслуживать,угождать||/катер
+catering[keitəriŋ/keit(ə)riŋ]общественное питание||/екатерина 2
+cathedral[kə'θidrəl/kəθi:dr(ə)l]собор||/кафедральный
+cattle[kætəl/kætl]крупный рогатый скот||/*скот забили на КОТЛеты и сварили в КОТЛЕ
+cause[kɑz/kɔz/kɔ:z]вызывать,причина,быть причиной||/сидорова коза *причина всех проблем
+caution[kɑʃən/kɔʃən/kɔ:ʃ(ə)n]предосторожность,предостережение
+cautious[kɔʃəs/kɔ:ʃəs]осторожный
+cave[keiv]пещера,полость
+caviar[kævi,ɑr/kævia:]икра||/ кавалер угощал даму *икрой
+cavity[kævəti/kæviti]полость,впадина||/кавитация
+cease[sis]прекратить,прекращать
+ceiling[siliŋ/si:liŋ]потолок,перекрытие||/паук слинял и сел на *потолок
+celebrate[selə,breit/selibreit]праздновать||/+ сели братья
+celebrity[sə'lebriti/si'lebriti]знаменитость
+celestial[sə'lesʧəl/si'lestjəl]астрономический,небесный
+cell[sel]ячейка,клетка||/сел в *клетку
+cellar[selər/selə]подвал
+cellular[seljələr/seljulər]сотовый
+cemetery[semə,teri/semi,teri/semitri]кладбище||/симетричное
+census[sensəs]перепись
+century[senʧəri/senʧuri]век
+cereal[siriəl/siəriəl]злак,каша,хлопья||/СЕРИАЛ смотрят и едят *хлопья
+certain[sərtən/sə:tn]определенный,определённый,уверенный
+certainly[sərtənli/sə:tnli]конечно
+chain[ʧein]цепь||/блокчейн
+chair[ʧer/ʧeə]стул||/ ЧЕЙ это + ? ниЧЕЙ, будет мой
+chairman[ʧermən/ʧeəmən]председатель||/стул+человек
+chalk[ʧɑk/ʧɔk]мел||/ ЧОКнутый школьник с ЧЁЛКой съел весь + в школе
+chalkboard[ʧɔ:kbɔ:d]доска||/ мел+доска
+challenge[ʧælənʤ/ʧælinʤ]вызов,необычная задача||/челинджер
+chamber[ʧeimbər/ʧeimbə]кабинет,зал,палата,камера
+change[ʧeinʤ]изменение,изменять,сдача,мелочь,менять
+changing[ʧeinʤiŋ]переменный
+chant[ʧænt/ʧa:nt]петь,скандировать,песнопение
+chap[ʧæp]парень||/одел ЧЕПчик и поЧАПал
+chapel[ʧæpəl/ʧæp(ə)l]часовня||/парень(chap) пел в *часовне
+chapter[ʧæptər/ʧæptə]глава||/ ЧАПлин ТЕРпеливо доедал последнюю *главу книжки на аляске
+charge[ʧɑrʤ/ʧaʤ]заряд,заряжать,нагружать,обвинять,плата
+charity[ʧeriti/ʧænti]благотворительность
+chart[ʧɑrt/ʧat]график,схема,таблица||/в ЧАТе ЧЕРТил *схему (захвата земли)
+chase[ʧeis]погоня,гнаться
+chat[ʧæt]болтать||/чат
+chatter[ʧætər/ʧætə]болтать,болтовня||/*болтать в ЧАТЕ и ТЕРеть о бабках
+cheap[ʧip/ʧi:p]дешевый||/ЧИП и дейл купили *дешевый самолет для гайки
+checkers[ʧekərz/ʧekəz]шашки||/в + играли проверяльщики
+checkup[ʧe,kəp/ʧekʌp]медосмотр||/проверка+вверх
+cheer[ʧir/ʧiə]аплодировать,радостно встречать||/чирикать
+cheerful[ʧirfəl/ʧiəful]весёлый,неунывающий
+chequered[ʧekəd]клетчатый
+cherish[ʧeriʃ]лелеять,хранить
+chess[ʧes]шахматы||/ЧЕСтный остап играл в +
+chest[ʧest]грудь,грудная клетка,сундук||/ЧЕСТь и совесть спрятали в *сундук
+chestnut[ʧes,nət/ʧest,nət/ʧesnʌt]каштан||/сундук+орех
+chew[ʧu/ʧu:]жевать||/ЧУмазое ЧУчело *жевало ЧЬЮ то заразную жевачку
+chicken[ʧikən/ʧikin]курица||/ *курицу поЧИКали и съели (неживая)
+child[ʧaild]ребенок||/+ пил ЧАЙ со ЛьДом (и подавился)
+childhood[ʧaild,hud/ʧaildhud]детство||/ребенок худой провел свое + у робин гуда
+childish[ʧaildiʃ]как ребенок
+chill[ʧil]холод,охлаждать||/*холод в чили
+chimney[ʧimni]дымовая труба
+chin[ʧin]подбородок||/ жирный ЧИНовник с тройным *подбородком ест в три горла
+choice[ʧɔis]выбор||/ЧЕ ИСкать был выбор у нас
+choke[ʧouk]задыхаться,давиться,подавиться||/ ЧОКнутый *подавился ШОКоладкой
+choose[ʧuz/ʧu:z]выбирать||/ЧУдо Заморское (в президенты)
+chop[ʧɑp/ʧɔp]рубить||/чапай *рубил шашкой белых
+chore[ʧɔr/ʧɔ:r]скучная неприятная работа||/ЧЕРная + для ЧЕРных
+chorus[kɔrəs/kɔ:rəs]припев
+christmas[krisməs]рождество||/ + КРЫС в МАСках
+chuck[ʧək/ʧʌk]бросать (небрежно)||/ЧАК норис *бросал через плечо
+chuckle[ʧəkəl/ʧʌkl]посмеиваться||/чак любил + над каратистами
+chunk[ʧəŋk/ʧʌŋk]кусок
+church[ʧərʧ/ʧə:ʧ]церковь||/ ЧЕРЧель изучал ЧЕРЧение в *церкви
+cinnamon[sinəmən]корица||/*корицу ел синий маникен
+circuit[sərkət/sə:kit]схема,цепь,контур||/сокет
+circumstance[sərkəm,stæns/sə:kəmstəns]обстоятельство
+cite[sait]упоминать,цитировать||/на сайте
+citizen[sitəzən/sitizən/sitizn]гражданин
+city[siti]город||/ в *городе есть СИТно и СИТИлинк / поехал за СИТом Из села в *город
+civil[sivəl/sivl]гражданский
+claim[kleim]претендовать,претензия,требовать,утверждать||/клеймо
+clam[klæm]моллюск
+clamour[klæmər/klæmə]шум,ропот,протесты
+clamp[klæmp]зажимать,зажим
+clarify[klerə,fai/klærifai]прояснять
+clash[klæʃ]столкновение
+clasp[klæsp/klasp]застёжка,застёгивать
+classmate[klæs,meit/klɑ:smeit]одноклассник||/+ КЛАСС МЕТёт МЕТлой
+classroom[klæs,rum/klɑ:sru:m]классная комната||/ класс+комната
+clause[klɔz/klɔ:z]пункт,статья документа
+claw[klɔ]коготь,клешня||/клопы с когтями разорвали в клочья тузика
+clean[klin/kli:n]чистить,чистый||/в КЛИНике *чисто и тепло (а внизу в грязном подвале лежат обглоданные крысами трупы умерших больных)
+cleanse[klenz]очищать
+clear[klir/kliə]очищать,ясно,ясный,чистый (пр. и перен)
+clearly[klirli/kliəli]ясно (+ly-нар)
+cleave[kliv]раскалывать||/+ клювом орехи и клевать клевер
+clench[klenʧ]стиснуть,сжать
+clergy[klərʤi/klə:ʤi]духовенство
+clerical[klerəkəl/klerikəl]канцелярский,административный||/клерк
+cliff[klif]утес
+climax[klai,mæks/klaimæks]кульминация,разгар||/климакс
+climb[klaim]взбираться
+cling[kliŋ](clung,clung) цепляться
+clip[klip]зажим,зажимать,отсекать,обрезать||/клип
+cloak[klouk]плащ,мантия,покров
+clock[klɑk/klɔk]часы||/клок
+clockwise[klɑ,kwaiz/klɔkwaiz]по часовой стрелке
+clog[klɑg/klɔg]загромождать
+close[klous/klouz]близкий,близко 2.закрывать,закрыть
+closed[klouzd]закрытый
+closely[klousli]близко
+closet[klɑzət/klɔzit]стенной шкаф||/ клозет
+closure[klouʒər/klouʒə]закрытие,завершение
+cloth[klɔθ]ткань,тряпка||/клочья
+clothe[klouð]одевать,покрывать
+clothes[klouðz/klouz]одежда||/в-клочья
+cloud[klaud]облако
+cloudy[klaudi]облачный
+clout[klaut]влияние,влиятельность
+clove[klouv]гвоздика
+clue[klu/klu:]ключ,нить,улика||/клубок *ниток
+clump[kləmp/klʌmp]комок,кучка,клок||/К ЛАМпе летела *кучка насекомых
+clumsy[kləmzi/klʌmzi]неловкий,неуклюжий||/*неуклюжий нашел ХЛАМ ЗИмой
+clutch[kləʧ/klʌʧ]сцеплять,сцепление
+clutter[klətər/klʌtə]беспорядок,куча всего
+coach[kouʧ]автобус,вагон,телега 2.тренер
+coal[koul]уголь||/+ КОнь по УЛице возил
+coarse[kɔrs/kɔ:s]грубый,крупный,шероховатый||/*грубый *крупный КОРСиканец
+coast[koust]берег,побережье||/кости на *берегу
+coaster[koustər/koustə]подставка
+coat[kout]пальто,покрывать||/ КОнь в *пальто УТром зашёл поговорить о КОнских ценах на *пальто
+coax[kouks]убедить,соблазнить сделать||/кокс
+coerce[kou'ərs/kouə:s]принуждать
+coffin[kɔfin]гроб
+coherent[kou'hirənt/kouhiər(ə)nt]согласованный,связный
+cohesion[kou'hiʒən/kou'hi:ʒ(ə)n]единство,согласие
+coil[kɔil]катушка,моток,наматывать
+coincide[,kouin'said]совпасть
+coincidence[kou'insidəns/kou'insid(ə)ns]совпадение
+collapse[kə'læps]обрушиться,сложиться||/колапс
+collar[kɑlər/kɔlə]воротник,ошейник||/кока кола
+collide[kə'laid/kəlaid]сталкиваться
+colon[koulən]двоеточие||/колонка
+colonel[kərnəl/kə:nl]полковник||/колония
+comb[koum]расческа,причёсывать||/КОМБайнер в КОМБинизоне *причесывался *расческой
+combat[kɑmbæt/kəm'bæt/kɔmbət]бой||/КОМБАТ ведет в *бой
+combine[kɑmbain/kəm'bain/kɔmbain]объединить,соединять(ся)||/комбаин
+come[kəm/kʌm]прийти,приходить||/*прийти КО Мне КАМни таскать в гору
+comedian[kə'midiən/kə'mi:djən]комик||/комедиант
+commemorate[kə'memər,eit/kəmeməreit]отметить,почтить
+commence[kə'mens]начинать
+commend[kə'mend]высоко оценивать
+commit[kə'mit]совершить (напр. ошибку)
+commitment[kə'mitmənt]обязательство,приверженность
+commodity[kə'mɑdəti/kə'mɔditi]товар,сырьё
+common[kɑmən/kɔmən]общий,обычный,распространённый
+commonly[kɑmənli/kɔmənli]обычно||/(+ly-нар)
+commonplace[kɑmən,pleis/kɔmənpleis]обычное дело,банальность
+commonwealth[kɑmən,welθ/kɔmənwelθ]содружество
+commute[kəm'jut/kə'mju:t]ходить,курсировать||/комутация
+compact[kɑmpækt/kəm'pækt/kɔmpækt]договор||/компактный
+compare[kəm'per/kəm'peə]сравнивать,сравнить||/компаратор
+comparison[kəm'perəsən/kəm'pænsn]сравнение
+compartment[kəm'pɑrtmənt/kəm'pa:tmənt]отсек,отделение,купе
+compassion[kəm'pæʃən/kəm'pæʃ(ə)n]сочуствие,сострадание
+compatible[kəm'pætəbəl/kəm'pætəbl]совместимый
+compel[kəm'pel]вынуждать,заставлять
+compete[kəm'pit/kəm'pi:t]конкурировать,соперничать
+competition[,kɑmpə'tiʃən/,kɔmpi'tiʃən]конкуренция
+competitive[kəm'petətiv/kəm'petitiv/kəmpetitiv]конкурентоспособный
+complain[kəm'plein]жаловаться
+complaint[kəm'pleint]жалоба
+complement[kɑmpləmənt/kɔmplimənt]дополнять,дополнение,набор,состав,комплект
+complete[kəm'plit/kəm'pli:t]завершенный,завершить,выполнить
+completely[kəm'plitli/kəm'pli:tli]полностью
+completion[kəm'pliʃən/kəm'pli:ʃən]завершение
+complicate[kɑmplə,keit/kɔmplikeit]усложнять
+comply[kəm'plai]соблюдать,соответствовать
+compose[kəm'pouz]составлять,сочинять||/*составлять КОМПОЗицию
+compound[kɑmpaund/kəm'paund/kɔmpaund]состав,составной
+comprehend[,kɑmpri'hend/,kɔmpri'hend]понять,вникнуть
+comprehensive[,kɑmpri'hensiv/,kɔmpri'hensiv]исчерпывающий,всесторонний
+comprise[kəm'praiz]состоять из,охватывать
+compulsory[kəm'pəlsəri/kəm'pʌlsən]принудительный,обязательный
+comrade[kɑm,ræd/kɔmrid]товарищ||/+ КОМунист РАДостный
+conceal[kən'sil/kən'si:l]скрывать||/ консилиум
+concede[kən'sid/kənsi:d]уступить
+conceive[kən'siv/kənsi:v]помыслить,представить||/конь и сивка бурка
+concern[kən'sərn/kənsə:n]беспокойство,забота,тревожить,волноваться||/концерн
+concerned[kən'sərnd/kənsə:nd]обеспокоенный
+concerning[kən'sərniŋ/kənsə:niŋ]что касается
+conclude[kən'klud/kən'klu:d]заключать,завершать,заключить
+conclusion[kən'kluʒən/kən'klu:ʒən]вывод
+concrete[kɑnkrit/kən'krit/kɔnkri:t]бетон,бетонировать
+concur[kən'kər/kənkə:]соглашаться||/конкурент
+condemn[kən'dem]осуждать
+condition[kən'diʃən/kən'diʃ(ə)n]состояние,условие||/кондиция
+conduct[kɑndəkt/kɑn'dəkt/kɔndʌkt]вести,поведение,проводить||/кондуктор-проводник
+confer[kən'fər/kənfə:]дать,принести,присудить,совещаться||/конферансье
+confess[kən'fes/kənfes]признаваться
+confide[kən'faid/kənfaid]доверить,вверить||/конфедициально
+confidence[kɑnfədəns/kɔnfid(ə)ns]уверенность
+confident[kɑnfədənt/kɔnfid(ə)nt]уверенный,уверенный в себе
+confine[kən'fain/kənfain]ограничить,ограничить (ся)
+confirm[kən'fərm/kənfə:m]подтвердить,подтверждать
+conform[kən'fɔrm/kənfɔm]соответствовать||/конформист
+confront[kən'frənt/kən'frʌnt]противостоять,сталкиваться||/конфронтация
+confuse[kən'fjuz/kən'fju:z]путать||/конфуз
+confusion[kən'fjuʒən/kən'fju:z(ə)n]путаница
+congestion[kən'ʤesʧən/kən'ʤesʧ(ə)n]загруженность,запор
+congratulate[kən'græʧə,leit/kəngrætjuleit]поздравлять
+congratulations[kən,græʧə'leiʃənz/kən,grætju'leiʃ(ə)ns]поздравления
+conjunction[kən'ʤəŋkʃən/kən'ʤʌŋkʃ(ə)n]соединение,связь
+connect[kə'nekt/kənekt]соединить,соединять||/коннектор
+connection[kə'nekʃən/kənekʃən]соединение
+conquer[kɑŋkər/kɔŋkə]завоевать||/конкистадоры
+conquest[kɑŋkwest/kɔŋkwest]завоевание
+conscience[kɑnʃəns/kɔnʃ(ə)ns]совесть,сознательность||/конфесия
+conscious[kɑnʃəs/kɔnʃəs]сознательный,сознающий
+consciousness[kɑnʃəsnəs/kɔnʃəsnis]сознание
+consecutive[kən'sekjətiv/kənsekjutiv]последующий по времени
+consent[kən'sent/kənsent]согласие,разрешение||/консенсус
+consequence[kɑnsəkwəns/kɔnsikwəns]последствие
+consequent[kɑnsəkwənt/kɔnsikwənt]последующий,вытекающий
+conservation[,kɑnsər'veiʃən/,kɔnsə(:)'veʧ(ə)n]сохранение||/консервация
+conserve[kən'sərv/kənsə:v]беречь,экономить||/консерва
+consider[kən'sidər/kənsidə]рассматривать,учитывать,считать чем-либо
+considerable[kən'sidərəbəl/kənsid(ə)rəbl]значительный,крупный
+considerably[kən'sidərəbli]значительно
+consideration[kən,sidər'eiʃən/kən,sidə'reiʃ(ə)n]рассмотрение
+consist[kən'sist]состоять из
+consistent[kən'sistənt/kənsist(ə)nt]последовательный
+console[kɑnsoul/kən'soul/kənsoul]утешать||/консул
+conspicuous[kən'spikjuəs]заметный
+conspire[kən'spaiər/kənspaiə]сговариваться||/конспирация
+constantly[kɑnstəntli/kɔnst(ə)ntli]постоянно||/(+ly-нар)
+constellation[,kɑnstə'leiʃən/,kɔnstə'leiʃ(ə)n]созвездие
+constituency[kən'stiʧuənsi/kənstitjuənsi]избирательный округ
+constrain[kən'strein/kənstrein]ограничивать (препятствием)
+constraint[kən'streint/kənstreint]ограничение
+consume[kən'sum/kən'sju:m]потреблять
+consumer[kən'sumər/kən'sju:mə]потребитель
+consumption[kən'səmpʃən/kən'səmʃən/kənsʌmpʃən]потребление
+contaminate[kən'tæmə,neit/kəntæmineit]загрязнять
+contemplate[kɑntəm,pleit/kɔntempleit]созерцать,размышлять
+contemporary[kən'tempər,eri/kən'temp(ə)rəri]современный,современник
+contempt[kən'tempt/kəntempt]презрение,презирать
+contend[kən'tend/kəntend]бороться,соперничать
+content[kɑntent/kən'tent/kɔntent]содержание,содержимое||/контент
+contest[kɑntest/kən'test/kɔntest]соревнование,конкурс
+contingency[kən'tinʤənsi/kən'tinʤ(ə)nsi]непредвиденные обстоятельства
+continue[kən'tinju/kəntinju(:)]продолжать,продолжить
+continuous[kən'tinjuəs/kəntinjuəs]непрерывный
+contradict[,kɑntrə'dikt/,kɔntrə'dikt]противоречить
+contrary[kɑntreri/kən'treri/kɔntrəri]противоположный,вопреки||/контра
+contribute[kən'tribjut/kəntribju(:)t]внести свой вклад,способствовать,вносить вклад
+contribution[,kɑntrəb'juʃən/,kɔntri'bju:ʃ(ə)n]вклад||/контрибуция
+controversy[kɑntrə,vərsi/kɔntrəvə:si]спор,разногласие,дискуссия
+convene[kən'vin/kən'vi:n]созывать,собирать
+convenience[kən'vinjəns/kənvi:njəns]удобство
+convenient[kən'vinjənt/kən'vi:njənt]удобный
+conventional[kən'venʃənəl/kənvenʃənl]обычный,стандартный,общепринятый
+converge[kən'vərʤ/kən'və:ʤ]сходиться,сближаться
+conversation[,kɑnvər'seiʃən/,kɔnvə'seiʃ(ə)n]разговор
+converse[kɑnvərs/kən'vərs/kən'və:s]разговаривать||/конверсия
+convertible[kən'vərtəbəl/kən'və:təbl]кабриолет||/+ нарисован на конверте
+convict[kɑnvikt/kən'vikt/kɔnvikt]осуждённый,осуждать||/КОНвоир ВИКТор вез *осужденного
+conviction[kən'vikʃən/kən'vikʃ(ə)n]убеждение,убеждённость,убежденность
+convince[kən'vins]убеждать
+cookie[kuki]печенье||/кукиш
+cope[koup]справляться
+copper[kɑpər/kɔpə]медь
+cord[kɔrd/kɔd]верёвка,шнур||/хорда
+cork[kɔrk/kɔ:k]пробка||/корка
+corner[kɔrnər/kɔ:nə]угол||/иКОНА стоит всегда в *углу/сара КОНЕР поставила в *угол терминатора за плохое поведение
+corpse[kɔrps/kɔ:ps]труп||/+ на КОРПоративе Спел и сплясал
+correspond[,kɔrə'spɑnd/,kɔris'pɔnd]соответствовать||/кореспондент
+cost[kɑst/kɔst](cost,cost) стоить,стоимость||/КОСТяшками на счетах *стоимость считали
+cotton[kɑtən/kɔtən/kɔtn]хлопок||/ КОТ Наш носит исключительно *хлопок
+couch[kauʧ/kaufl]диван||/+ КАУЧуковый
+council[kaunsəl/kaunsl]совет,совет (орган)||/консилиум
+councillor[kaunsilə]советник
+count[kaunt]подсчет,считать,считаться,иметь значение||/*считать на КОНТрольной
+counter[kauntər/kauntə]прилавок,противостоять,противоположный,стойка||/=считатель
+counterfeit[kauntər,fit/kauntəfit]подделка,фальшивый
+counterpart[kauntər,pɑrt/kauntəpat]аналог,коллега
+country[kəntri/kʌntri]страна||/ контра недобитая сбежала из *страны
+countryside[kəntri,said/kʌntrisaid]сельская местность
+county[kauni/kaunti]графство,округ,страна
+coup[ku/ku:]переворот
+couple[kəpəl/kʌpl]пара||/эта + КАПАЛа всем на мозги
+courage[kərəʤ/kəriʤ/kʌriʤ]мужество
+court[kɔrt/kɔ:t]двор,двор королевский,игровая площадка,суд||/корт (тенисный)
+courteous[kərtiəs/kə:tjəs]вежливый||/ картеж
+courtesy[kərtəsi/kə:tisi]учтивость,этикет
+courtyard[kɔrt,jɑrd/kɔ:tja:d]внутренний двор
+cousin[kəzən/kʌzn]двоюродный брат||/+ это кузин
+cover[kəvər/kʌvə]накрывать,покрывать,покрытие
+coverage[kəvərəʤ/kəvəriʤ/kəvriʤ/kʌvəriʤ]освещение
+covet[kəvət/kʌvit]желать,вожделеть
+coward[kauərd/kauəd]трус
+cozy[kouzi/kəuzi]уютный
+crack[kræk]трескаться,трещина
+crackle[krækəl/krækl]потрескивание
+cradle[kreidəl/kreidl]колыбель
+craft[kræft/kraft]ремесло,мастерство||/вар крафт игруля
+cram[kræm]втискивать,впихивать
+cramp[kræmp]судорога
+cranberry[kræn,beri/krænb(ə)n]клюква||/+ из КРАНа течет в БЕРЕт, кислятина
+crank[kræŋk]чудак,фрик||/пил из крынки
+crap[kræp]дерьмо||/крапленые карты
+crate[kreit]ящик
+crave[kreiv]желать,жаждать,требовать
+crawl[krɔl]ползать||/КРОЛик *ползал в норе и кричал КаРАУЛ
+crayon[krei,ɑn/kreiən]цветной карандаш,мелок
+crazy[kreizi]сумасшедший||/+ КРИчал на ЗИну всю ЗИму
+creak[krik]скрипеть||/крик
+crease[kris/kri:s]складка,сминать
+create[kri'eit/kri(:)'eit]создавать
+creation[kri'eiʃən/kn(:)'eiʃ(ə)n]создание
+creature[kriʧər/kri:ʧə]создание,существо
+credential[krə'denʃəl/kri'denʃəl/kri'denʃ(ə)l]удостоверение,аккредитация
+credible[kredəbəl/kredəbl]заслуживающий доверия
+creed[krid]вероисповедание,убеждение
+creek[krik/kri:k]ручей||/крик возле *ручья
+creep[krip/kri:p](crept,crept) ползти,красться||/скрип двери
+creep[krip/kri:p]гад,урод (разг)||/гад купил КРИПту
+creepy[kripi/kri:pi]жуткий
+crest[krest]гребень||/крест
+crew[kru/kru:]команда,экипаж||/крушение
+crib[krib]раскладушка,дет.кроватка
+crimson[krimzən/krimzn]малиновый,багряный
+cringe[krinʤ]съёживаться
+cripple[kripəl/kripl]калека,калечить
+crisp[krisp]хрустящий
+criticism[kriti,sizəm/kritisizm]критика||/=критицизм
+crop[krɑp/krɔp]урожай||/уКРОП
+cross[krɔs]крест,пересекать,пересечение,пересечь||/кросс бежали
+crossroads[krɔs,roudz/krɔsroudz]перекрёсток,перепутье
+crouch[krauʧ]присесть,припасть к земле
+crow[krou]ворона||/уКРАла У карла коралы
+crowd[kraud]толпа||/КРАжа в *толпе УДочки у дочки/КРОВожаДная *толпа хотела КРОВавых зрелищ
+crucial[kruʃəl/kru:ʃ(ə)l]ключевой,решающий,критический
+crude[krud/kr:d]сырой,грубый,необработанный
+cruel[kruəl/krul]жестокий||/КРУпу ЕЛ + КРОЛик
+crumble[krəmbəl/krʌmbl]крошить,рушиться
+crumple[krəmpəl/krʌmpl]комкать,смять||/ КРАМсать ПЛатье и *комкать
+crunch[krənʧ/krʌnʧ]хрустеть
+crusade[kru'seid/kru:'seid]крестовый поход
+crust[krəst/krʌst]кора,корка
+crutch[krəʧ/krʌʧ]костыль||/ КРУТой Чел на *костылях бежал за львом
+cry[krai]крик,плакать||/*крик в далекий КРАЙ унесся,ааа /*плакать идя за любимым на КРАЙ света
+cub[kəb/kʌb]детеныш||/+ играл в кубики
+cubicle[kjubikəl/kju:bikl]отсек,кабинка
+cucumber[kjukəmbər/kju:kʌmbə]огурец||/ сосэмбэ :)
+cuddle[kədəl/kʌdl]обнимать,прижимать||/кадило
+cue[kju/kju:]сигнал,намёк||/кудряшка кью
+cuisine[kwi'zin/kwi(:)'zi:n]кухня
+cup[kəp/kʌp]чашка,кружка,кубок||/ КАПли КАПали в *чашку,КАП КАП
+cupboard[kəbərd/kʌpəd]шкаф,буфет||/чашка+доска
+curb[kərb/kə:b]бордюр,обочина,узда,обуздать,сдержать
+cure[kjur/kjuə]лечить||/+ курей
+curious[kjuriəs/kjuəriəs]любопытный
+curl[kərl/kə:l]скручивать,клубиться,завиток||/курлыкать
+currency[kərənsi/kʌrənsi]валюта
+current[kɑrənt/kərənt/kərnt/kʌrənt]текущий,актуальный,ток,поток,течение
+currently[kərəntli/kʌrəntli]в настоящее время
+curriculum[kər'ikjələm/kə'rikjuləm]учебная программа
+curse[kərs/kəs]проклятие||/курс
+curtain[kərtən/kə:tn]занавеска,занавес||/ КУРица ТАНя за *занавеской спряталась от пьяного мужа
+custody[kəstədi/kʌstədi]охрана,стража,опека
+custom[kəstəm/kʌstəm]заказной,индивидуальный 2.обычай,привычка
+customer[kəstəmər/kʌstəmə]клиент
+customs[kəstəmz/kʌstəmz]таможня
+cute[kjut/kju:t]привлекательный,милый||/тслм
+cycling[saikəliŋ/saikliŋ]велоспорт||/сайка линяла и смотрела + сусликов
+
+daffodil[dæfə,dil/dæfədil]нарцисс||/+ ели уДАВ и крокоДИЛ
+dagger[dægər/dægə]кинжал
+daisy[deizi]маргаритка
+damage[dæməʤ/dæmiʤ]вред,повреждать,ущерб
+damaged[dæməʤd/dæmiʤd]поврежденный||/ дама джона *повредила
+damn[dæm]проклятый,проклинать||/*проклятый дым /домна
+damp[dæmp]сырой,сырость||/демпинг
+dance[dæns/da:ns]танец,танцевать||/*танцевать *танец с ДАНтистом САдистом /лада ДЭНС *танцует и поет
+dandelion[dændə,laiən/dændilɑiən]одуванчик||/+ любит данди лионид ильч
+danger[deinʤər/deinʤə]опасность
+dangerous[deinʤərəs/deinʤrəs]опасный||/ ДАНила  ГЕРОй *опаСный / ДАНила дал *опасный ГЕРоин РОЗе
+dangle[dæŋgəl/dæŋgl]мотаться
+dare[der/deə]осмелиться
+darkness[dɑrknəs/da:knis]темнота
+darling[dɑrliŋ/da:liŋ]дорогой,дорогая (устар)
+darn[dɑrn/dan]штопать
+dash[dæʃ]бросать,бросаться,разрушить (перен) 2.тире,чёрточка||/даша *бросила *тире
+date[deit]встречаться,свидание 2.финик||/ *финик ушёл на *свидание и не вернулся
+daunt[dɔnt/dɔ:nt]пугать,обескураживать
+dawn[dɔn]рассвет||/река дон
+daze[deiz]ошеломить
+dazzle[dæzəl/dæzl]ослепить||/дизель
+deaf[def]глухой
+death[deθ]смерть||/+ десанта в тылу врагов
+decade[dekeid/de'keid]десятилетие,десяток||/декада
+decay[di'kei]распад,упадок,разлагаться
+deceased[di'sist/di'si:st]покойный,усопший
+deceive[di'siv/disi:v]обманывать
+decent[disənt/disnt]приличный,достойный
+deception[di'sepʃən/di'sepʃ(ə)n]обман
+decide[,di'said/di'said]принимать решение,решить||/ДИкий САИД решил
+decision[di'siʒən/di'siʒ(ə)n]решение
+decisive[di'saisiv]решающий,решительный
+deck[dek]палуба,крышка,настил||/декоротивный
+decline[di'klain]отказаться,отклонить,снижаться,снижение,спад||/клянчить
+decrease[di,kris/di'kris/di:kri:s]уменьшать(ся),уменьшение||/кризиса
+dedicate[dedə,keit/dedikeit]посвящать||/деда
+deduct[di'dəkt/di'dʌkt]вычитать (об. про деньги)||/дедукция
+deed[did]дело,поступок
+deem[dim]считать (чем-либо)
+deep[dip]глубокий||/дипфейк
+deeply[dipli/di:pli]глубоко||/+ в дупле сидит мухожук
+deer[dir/diə](pl:deer) олень||/+ уДИРал от директора
+defeat[di'fit/difi:t]победить,поражение,наносить поражение
+defence[di'fens/difens](=defense) защита,защитный
+defend[di'fend/difend]защитить,защищать
+defendant[di'fendənt]ответчик
+deficient[di'fiʃənt/difiʃ(ə)nt]недостаточный,неполный
+define[di'fain]определять
+definite[defənət/definit]определённый||/дефинитив
+definitely[defənətli/definətli]определенно
+definition[,defə'niʃən/,defi'niʃn]определение
+deflect[di'flekt]отклонять,преломлять
+deft[deft]ловкий,проворный
+defy[di'fai]пренебрегать,отрицать
+degree[di'gri/di'gri:]градус,степень (во всех значениях)||/ ДЕтям ГРИша объяснял как мерить *градусы / ДЯдя ГРИша под *градусом валяется в луже
+deity[diəti/deiiti]божество
+delay[di'lei]задерживать(-ся),задержка
+deliberate[di'libər,eit/di'libərət/di'librət/di'lib(ə)rit]обдуманный,преднамеренный
+deliberately[di'libərətli/di'librətli/di'lib(ə)ntli]умышленно
+delight[di'lait]восторг
+delinquent[di'liŋkwənt]правонарушитель
+deliver[di'livər/di'livə]доставлять,рожать||/детям ливер
+delivery[di'livəri/di'liv(ə)ri]доставка
+delusion[di'luʒən/di'lu:ʒ(ə)n]наваждение,заблуждение
+demand[di'mænd/di'ma:nd]спрос,требовать
+demise[di'maiz]кончина,конец
+demolish[di'mɑliʃ/di'mɔliʃ]сносить
+den[den]логово,берлога||/ДЕНис залез в *берлогу и весь ДЕНь там спал
+denote[di'nout/dinout]обозначать
+denounce[di'nauns/dinauns]осуждать,разоблачать
+dense[dens]густой
+dent[dent]вмятина
+deny[di'nai]отрицать
+depend[di'pend]зависеть
+dependent[di'pendənt/dipendənt]зависимый
+depict[di'pikt]изображать,описывать
+deplete[di'plit]истощать
+deploy[di'plɔi]развёртывать
+depot[dipou/depou]хранилище,база,склад
+deprive[di'praiv]лишать
+depth[depθ]глубина
+derive[dər'aiv/di'raiv]выводить,извлекать
+descend[di'send]спускаться
+descendant[di'sendənt]потомок||/+ десидента
+describe[dis'kraib]описать,описывыть,описывать||/краба
+description[dis'kripʃən/dis'knpʃ(ə)n]описание
+deserve[di'zərv/di'zə:v]заслуживать
+designate[dezəg,neit/dezig,neit/dezignit]обозначать,называть
+desire[di'zaiər/di'zaiə]желание,желать
+desktop[desk,tɑp/desktop]настольный||/=стол+вершина
+desolate[desə,leit/desələt/dezələt/desəlit]пустынный,безлюдный
+despair[di'sper/dispeə]отчаяние,безнадёжность
+desperate[despərit/desprit/desp(ə)rit]отчаянный,безвыходный
+despise[di'spaiz/dis'paiz]презирать
+despite[di'spait/dis'pait]несмотря на
+destination[,destə'neiʃən/,desti'neiʃən/,desti'neiʃ(ə)n]место назначения
+destiny[destəni/destini]судьба,предназначение
+destroy[di'strɔi/dis'trɔi]разрушать||/строй
+`;

@@ -1,0 +1,503 @@
+//трудные6 ~500 , хорошие ФА
+g_api=`
+overt[ouvərt/ou'vərt/ouvə:t]явный,открытый
+overtake[ouvər,teik/,ouvə'teik]обгонять
+overthrow[ouvər,θrou/ouvəθrou]свергнуть
+overtime[ouvər,taim/ouvətaim]сверхурочная работа
+overturn[ouvər,tərn/ouvətə:n]опрокинуть(-ся),перевернуться
+overview[ouvərv,ju/ouvəvju:]обзор
+overwhelm[,ouvər'welm/,ouvərh'welm/,ouvə'welm]завалить,подавить
+owe[ou]быть должным,быть обязанным чем-л.,задолжать
+owl[aul]сова
+own[oun]владеть,свой
+owner[ounər/ounə]владелец
+ownership[ounər,ʃip/ounəʃip]собственность
+oxygen[ɑksəʤən/ɑksiʤən/ɔksiʤ(ə)n]кислород||/оксид
+
+pace[peis]темп,шаг,шагать||/с песней
+pad[pæd]блокнот,панель,клавиатура,подушечка пальца,лапы
+paddle[pædəl/pædl]грести,весло||/педали
+pain[pein]боль||/ ПЕЙ Настойку от *боли /+ от пинка под ж
+paint[peint]красить,краска,рисовать||/ ПАпа ИНТерьер *красил для ПОНТов в ПАНТалонах
+paintbrush[peint,brəʃ/peintbrʌʃ]кисть||/=рисовать+щетка
+painter[peintər/peintə]художник||/+ нарисовал ПАНТЕРу
+painting[peintiŋ/pemtiŋ]картина||/+ про интим
+pal[pæl]приятель||/+ пел и палкой махал
+pale[peil]бледный||/не спелый
+pan[pæn]сковорода||/+ у пана
+pancake[pæn,keik/pænkeik(s)]блин,оладья||/*блин с ПЕНКами ЕЙ Купили на день рождения
+pant[pænt]пыхтеть,задыхаться||/пэнт
+pardon[pɑrdən/padn]извинять,извинение||/пардон
+parent[perənt/peər(ə)nt]родитель||/перент
+parish[pæriʃ/periʃ]приход||/париж
+parlor[pɑrlər/pɑ:lər]приёмная,салон
+parrot[perət/pærət]попугай||/пороть *попугая за то что матерится
+parsley[pɑrsli/pa:sli]петрушка||/поросли
+part[pat/pɑ:t]роль,часть,разделять(-ся)||/эта *часть ПАРТы моя, а это твоя и я тебя не знаю
+participant[pɑr'tisəpənt/pa:'tisipənt]участник
+participate[pɑr'tisə,peit/pa:'tisipeit]участвовать
+participation[pɑr,tisə'peiʃən/pa:,tisi'peiʃ(ə)n]участие
+particle[pɑrtəkəl/pɑrtikəl/pa:tikl]частица
+particular[,pɑ'tikjələr/pər'tikjələr/pə'tikjulə]частный,конкретный
+particularly[,pɑr'tikjələrli/pər'tikjələrli/pə'tikjuləli]особенно
+partition[pɑr'tiʃən/pa:'tiʃ(ə)n]раздел
+partly[pɑrtli/pa:tli]частично
+party[pɑrti/pa:ti]вечеринка||/партия
+passage[pæsəʤ/pæsiʤ]проход,коридор||/пассажир в *проходе
+pastime[pæs,taim/pastaim]времяпрепровождение
+pastries[peistriz]выпечка||/ *выпечку из ПАСты ТРИ раЗа ела лиса патрикеевна вместе с зайцем
+pastry[peistri/peistn]выпечка,тесто||/пестрый
+pasture[pæsʧər/pasʧə]пастбище
+pat[pæt]похлопать,потрепать
+path[pæθ/paθ]путь||/ пастух ПАС коров на *путях жд
+pathetic[pə'θetik]жалкий||/пацефист
+patiently[peiʃəntli]терпеливо||/+ly наречие
+patio[pæti,ou/pætiou]внутренний дворик
+pattern[pætərn/pætən]шаблон,образец||/паттерн сленг
+pave[peiv]вымостить
+paw[pɔ]лапа||/подать *лапу
+pay[pei]плата,платить||/пей воду и плати
+payment[peimənt]оплата
+pea[pi]горошина||/ пищалка это кулек для *горошин
+peaceful[pisfəl/pi:sful]мирный
+peacekeeper[pi,skipər/pis,ki:pə]миротворец
+peach[piʧ/pi:ʧ]персик||/ ПИЧкали *персики в персии
+peanut[pi,nət/pinət/pi:nʌt]арахис||/=горошина+орех
+pear[per/peə]груша||/ первый пир на весь мир с *грушами
+peas[piz]горох||/+ бросали с ПИЗанской башни
+peasant[pezənt/pez(ə)nt]крестьянин
+pebble[pebəl/pebl]морской камень
+peck[pek]клевать||/+ у пекарни крошки
+peculiar[pək'juljər/pik'juljər/pi'kju:ljə]своеобразный,особый
+peddle[pedəl/pedl]торговать вразнос,по мелочи
+pedestrian[pə'destriən/pi'destriən]пешеход||/ педик в стрингах перешёл дорогу на красный свет и попал под каток
+peek[pik/pi:k]вгзлянуть,подсмотреть||/*подсмотрел и не пикнул
+peer[pir/piə]вглядываться,ровня,ровесник
+peg[peg]колышек,фиксатор
+pencil[pensəl/pensl]карандаш||/ ПЕНСИонер писаЛ *карандашом песни о маленькой пенсии
+pending[pendiŋ]в ожидании,на рассмотрении
+penetrate[penə,treit/penitreit]проникать
+peninsula[pə'ninsələ/pininsjulə]полуостров
+pepper[pepər/pepə]перец||/ пеппи длинный чулок кормила непослушных детей одним *перцем
+per[pər/pə:](кол-во) на (единицу)
+perceive[pər'siv/pə'siv]воспринимать,ощущать
+perception[pər'sepʃən/pə'sepʃ(ə)n]восприятие
+perennial[pər'eniəl/pə'renjəl]многолетний,вечный
+perfect[pər,fikt/pər'fekt/pə:fikt]идеальный,совершенный||/перфект
+perfectly[pərfəkli/pərfəktli/pə:fiktli]совершенно||/+ly наречие
+perform[pər'fɔrm/pə'fɔ:m]выполнить,исполнить,выполнять
+performance[pər'fɔrməns/pə'fɔ:məns]выступление||/перфоманс
+perhaps[pər'hæps/pə'hæps,præps]возможно
+perish[periʃ]погибать
+perk[pərk/pə:k]привилегия,преимущество
+permanent[pərmənənt/pə:mənənt]постоянный
+permission[pər'miʃən/pə'miʃ(ə)n]разрешение
+permit[pər,mit/pər'mit/pə:mit]разрешать,разрешить
+perpetual[pər'peʧuəl/pə'peʧuəl]вечный,постоянный||/перпетум мобиле
+perplex[pər'pleks/pəpleks]смутить,озадачить
+persecute[pərsək,jut/pə:sikju:t]преследовать,травить
+persimmon[pə:'simən]хурма||/ *хурму ела первая симона
+persist[pər'sist/pə'sist]сохраниться,упорствовать
+personality[,pərsə'næliti/,pə:sə'næliti]личность
+personally[pərsənəli/pərsənli/pərsnəli/pə:snəli]лично||/персонально
+persuade[pər'sweid/pə'sweid]убеждать,уговаривать
+pervasive[pər'veisiv/pə:'veisiv]расширяющийся,всепроникающий
+pervert[pərvərt/pər'vərt/pə:və:t]извращать,извращенец
+pest[pest]паразит,вредитель||/+ ползет по ПЕСТику
+petal[petəl/petl]лепесток,пестик
+petroleum[pə'trouliəm/pi'trouljəm]нефть||/петро наливай
+petty[pe,ti/peti]мелкий,мелочный||/петя
+physician[fə'ziʃən/fi'ziʃ(ə)n]врач||/физиотерапевт
+pickle[pikəl/pikl]мариновать,солить
+picture[pikʧər/pikʧə]изображение,картина||/ пикачу с покемонами на *картине
+piece[pis/pi:s]кусок,предмет,часть||/ ПИСал на *куске бумаги заПИСульку
+pierce[pirs/piəs]проколоть
+pigeon[piʤən/piʤin]голубь||/пижон
+pile[pail]куча,стопка||/сПАИваЛ *стопками водки
+pillar[pilər/pilə]столб,опора,колонна||/пиллар
+pillow[pilou]подушка||/+ с кедровыми оПИЛками пахнет вкУсно /маньяк в маске с бензоПИЛОЙ ворвался к соседям в спальню и распилил их всех и *подушки тоже, повсюду кровь,перья,руки,ноги,жуть (поменьше надо фильмы ужасов смотреть :)
+pin[pin]булавка,штырь,прикалывать||/пин
+pincers[pinsərz/pmsəz]клещи||/пинцет
+pinch[pinʧ]зажать,ущипнуть
+pine[pain]сосна||/пайн
+pineapple[pai,næpəl/pain,æpl]ананас||/ а мы ее и на сосне яблоки выросли
+pipe[paip]труба,трубка
+pit[pit]яма||/бред пит в +
+pitch[piʧ]подавать (мяч),ставить (напр. палатку)
+pity[piti]жалость||/пити
+pivot[pivət]стержень,ось,точка опоры
+place[pleis]место,положить
+placement[pleismənt]размещение
+placid[plæsəd/plæsid]тихий,спокойный
+plague[pleig]чума
+plain[plein]простой,незамысловатый,ровный,равнина,ясный,очевидный||/план
+plaintiff[pleinəf/pleintəf/pleintif]истец
+plaque[plæk/pla:k]бляшка,металлический знак
+plausible[plɔzəbəl/plɔ:zəbl]правдоподобный
+plea[pli]просьба,требование,иск||/вопли
+pleasant[plezənt/pleznt]приятный
+please[pliz/pllz]пожалуйста,радовать,угодить||/плиз
+pleased[plizd/pllzd]довольный
+pleasure[pleʒər/pleʒə]удовольствие,наслаждение||/+ ПоЛЕЖАть ЛЁЖА
+pledge[pleʤ]залог,оставлять в залог,обещание,обязательство
+plenty[pleni/plenti]много,множество,масса,достаток
+pliers[plaiərz/plaiəz]плоскогубцы
+plight[plait]тяжёлое положение,участь
+plot[plɑt/plɔt]план,чертёж,сюжет||/плот
+plow[plau]пахать,плуг
+pluck[plək/plʌk]сорвать,выдернуть||/плакса
+plug[pləg/plʌg]штепсель,включать||/плаг
+plum[pləm/plʌm]слива||/ на ПЛАМени жарили *сливы / ПЛУт Мыл *сливы которые ночью в чужом саду стырил
+plumber[pləmər/plʌmə]водопроводчик||/ел сливы и пламя мерил
+plumbing[pləmiŋ/plʌmbiŋ]водопровод
+plump[pləmp/plʌmp]пухлый||/ел плюшки
+plunge[plənʤ/plʌnʤ]окунуться,нырнуть
+pointed[pɔinəd/pɔintid]заостренный
+poise[pɔiz]равновесие,самообладание
+poison[pɔizən/pɔizn]яд,травить||/поясом
+poke[pouk]совать,тыкать||/уПАКовка
+policy[pɑləsi/pɔlisi]политика,курс||/полисы
+polish[pɑliʃ/pouliʃ/pɔliʃ]шлифовать,полировать
+polite[pə'lait]вежливый
+poll[poul]опрос,голосование||/экзит пул
+pollute[pə'lut/pə'lu:t]загрязнять
+pollution[pə'luʃən/pə'lu:ʃ(ə)n]загрязнение
+pond[pɑnd/pɔnd]пруд||/понд
+ponder[pɑndər/pɔndə]обдумывать
+pool[pul/pu:l]бассейн||/пул
+poor[pur/puə]бедный||/ пороли *бедного на площади
+pope[poup]папа римский
+poplar[pɑplər/pɔplə]тополь||/популярный
+poppy[pɑpi/pɔpi]мак||/попи
+population[,pɑpjə'leiʃən/,pɔpju'leiʃ(ə)n]население
+porcelain[pɔrsələn/pɔ:s(ə)lin]фарфор
+porch[pɔrʧ/pɔ:ʧ]веранда,крыльцо,терраса||/ ПОРЧу сняли с *веранды /ПОЧему ПОЧту бросили на исПОРЧенное *крыльцо (вместе с почтальоном)
+pork[pɔrk/pɔ:k]свинина||/ ПОРКа неверных за то что ели *свинину
+possess[pə'zes]обладать
+possession[pə'zeʃən/pə'zeʃ(ə)n]владение
+possibility[,pɑsə'bilə,ti/,pɔsə'biliti]возможность
+possible[pɑsəbəl/pɔsəbl]вожможный,возможный
+possibly[pɑsəbli/pɔsəbli]возможно||/+ly наречие
+post[poust]почта,почтовый||/пост
+postcard[pou,skɑrd/poust,kɑrd/poustka:d]открытка||/=почта+карточка
+postpone[pou'spoun/poust'poun]отложить,задержать
+posture[pɑsʧər/pɔsʧə]поза
+pot[pɑt/pɔt]горшок,кастрюля||/ПОТер *горшок оттуда вылез джин, гари ПОТер
+potato[pə'tei,tou/p(ə)'teitou]картофель,картошка||/ ПОТные зэки с ТАТУ копали *картошку
+potent[poutənt/pout(ə)nt]мощный,могущественный
+pouch[pauʧ]сумочка,кошелёк||/с паучками
+poultry[poultri]домашняя птица
+pound[paund]долбить,толочь,фунт
+poverty[pɑvərti/pɔvəti]бедность,нищета||/по ветру
+powder[paudər/paudə]порошок
+power[pauər/pauə]мощность||/повербанк
+powerful[pauərfəl/pauəful]мощный,действенный
+practitioner[præk'tiʃənər/præk'tiʃnər/præk'tiʃnə]практикующий (врач,юрист)
+praise[preiz]хвалить,похвала
+pray[prei]молиться||/прей
+prayer[preiər/prer/preə]молитва
+preach[priʧ/pri:ʧ]проповедовать||/ПРИЧитать
+precarious[pri'keriəs/pri'keəriəs]ненадёжный,шаткий
+precaution[pri'kɔʃən/prfkɔ:ʃ(ə)n]предосторожность
+precede[pri'sid/pri(:)'si:d]предшествовать
+precious[preʃəs]драгоценный
+precisely[pri'saisli]в точности
+preclude[pri'klud/pri'klu:d]исключить,помешать
+predator[predətər/predətə]хищник||/предатель
+predecessor[predə,sesər/pri:disesə]предшественник
+predict[pri'dikt]предсказывать
+predominant[pri'dɑmənənt/pri'dɔminənt]преобладающий
+prefer[prə'fər/pri'fər/pn'fə:]предпочитать
+preference[prefərəns/prefrəns/pref(ə)r(ə)ns]предпочтение
+pregnant[pregnənt]беременная||/прегнэнт
+prejudice[preʤədis/preʤudis]предубеждение,предрассудок
+preliminary[pri'limə,neri/pri'liminəri]предварительный
+premature[,primə'ʧur/,premə'tjuə]преждевременный
+premise[premis]предпосылка
+premises[preməsəz/preməsiz]помещение (-я)
+preoccupy[pri'ɑkjə,pai/pri(:)'ɔkjupai]занимать внимание
+preparation[,prepər'eiʃən/,prepə'reiʃ(ə)n]подготовка
+prescribe[prəs'kraib/pris'kraib/pns'kraib]предписывать
+prescription[prəs'kripʃən/pris'knpʃ(ə)n]рецепт
+presence[prezəns/prezns]присутствие
+present[prezənt/pər'zent/pri'zent/preznt]настоящее (время),настоящий,подарок,присутствующий,в наличии,представлять
+preserve[prə'zərv/pri'zərv/pri'zə:v]сохранить,сохранять,беречь||/пресервы
+preside[pri'zaid/pn'zaid]председательствовать
+presumably[prə'zuməbli/pri'zuməbli/pri'zju:məbli]предположительно
+presume[pri'zum/pri'zju:m]предполагать
+pretend[pri'tend]притворяться
+pretext[pri,tekst/prl:tekst]повод
+prevail[pri'veil/pn'veil]преобладать,возобладать
+prevent[pri'vent]предотвращать||/превентивный
+previous[priviəs/pri:vjəs]предшествующий,предыдущий
+previously[priviəsli/pri:vjəsli]ранее
+prey[prei]добыча||/прей
+prick[prik]колоть
+pride[praid]гордость||/прайд /парад
+priest[prist]жрец,священник||/приставал
+primarily[prai'merəli/praim(ə)nli]в первую очередь
+primary[prai,meri/praimən]первичный,главный||/примерял
+principal[prinsəpəl/prinsəp(ə)l]главный,основной
+prior[praiər/praiə]предварительный,предшествующий
+prison[prizən/prizn]тюрьма||/ПРИСНился СОН в *тюрьме
+prisoner[prizənər/priznər/pnznə]заключенный
+pristine[pristin/pristain]нетронутый,первозданный
+privacy[praivəsi]частная жизнь,конфиденциальность
+probable[prɑbəbəl/prɔbəbl]вероятный,возможный||/пробу брал
+probably[prɑbə,bli/prɑbli/prɔb(ə)bli]вероятно||/+ly наречие
+proceed[pər'sid/prə'sid/prou'sid]продолжать,следовать
+proclaim[prou'kleim/prəkleim]провозглашать
+procure[prouk'jur/prəkjuə]достать,добыть,обеспечить
+prod[prɑd/prɔd]ткнуть (чтобы сдвинуть)
+proficient[prɑ'fiʃənt/prə'fiʃ(ə)nt]опытный,умелый
+profound[prou'faund/prə'faund]глубокий (перен)
+prohibit[prou'hibət/prə'hibit]запрещать
+prominent[prɑmənənt/prɔminənt]выдающийся,видный
+promise[prɑməs/prɔmis]обещание,обещать
+prompt[prɑmpt/prɔmpt]быстрый,оперативный,побуждать,подстрекать
+prone[proun]склонный
+pronounce[prə'nauns]произносить
+prop[prɑp/prɔp]подпирать,подпорка
+proper[prɑpər/prɔpə]правильный,надлежащий
+properly[prɑpərli/prɔpəli]правильно||/+ly наречие
+property[prɑpərti/prɔpəti]собственность
+prophet[prɑfət/profit]пророк
+proponent[prə'pounənt]сторонник,поборник
+proposal[prə'pouzəl/prə'pouz(ə)l]предложение
+propose[prə'pouz]предлагать,предложить
+proposed[prə'pouzd]предложенный
+prosecute[prɑsək,jut/prɔsikju:t]вести,осуществлять,преследовать (законодательно)
+prosper[prɑspər/prɔspə]процветать,преуспевать
+protection[prə'tekʃən/prə'tekʃ(ə)n]защита
+protein[prou,tin/prouti:n]белок||/протеин
+proud[praud]гордый,гордящийся||/*гордый лев в прайде / на параде *гордый шёл
+proverb[prɑvərb/prɔvəb]пословица
+provided[prə'vaidid]при условии
+provision[prə'viʒən/prə'viʒ(ə)n]положение||/провизия
+provisional[prə'viʒənəl/prə'viʒənl]предварительный,временный
+proximity[prɑk'siməti/prɔk'simiti]близость
+prudent[prudənt/pru:d(ə)nt]разумный,осторожный
+prudently[prudəntli/pru:d(ə)ntli]благоразумно
+pry[prai]любопытствовать,совать нос||/прай
+publisher[pəbliʃər/pʌbliʃə]издатель||/публишист
+puff[pəf/pʌf]дуновение,пых,клубы (дыма)||/паф
+pull[pul]тянуть||/+ ПУЛемет
+pumpkin[pəmkin/pəmpkin/pʌmpkin]тыква||/ ПАПа КИНул *тыкву в маму, дружная семья
+punch[pənʧ/pʌnʧ]удар (кулаком),бить
+punish[pəniʃ/pʌniʃ]наказывать||/паниш
+pupil[pjupəl/pju:pl]зрачок,ученик||/ ПЬЮ ПИЛ и буду пить сказал *ученик алкоголика
+puppet[pəpət/pəpit/pʌpit]кукла,марионетка
+puppy[pəpi/pʌpi]щенок||/+ облизал папу
+purchase[pərʧəs/pə:ʧəs]покупать,покупка
+purely[pjurli/pjuəli]чисто||/+ly наречие
+purge[pərʤ/pə:ʤ]чистка,очищать
+purpose[pərpəs/pə:pəs]цель,причина
+purse[pərs/pə:s]кошелек,сумочка||/*кошелек стащил ПЁС
+pursue[pər'su/pə'sju:]преследовать,гнаться
+pursuit[pər'sut/pə'sju:t]преследование
+push[puʃ]толкать||/+ ПУШку
+put[put]класть,положить||/+ путь
+
+quaint[kweint]причудливый||/квентин тарантино
+quality[kwɑləti/kwɔliti]качество,качественный
+quarrel[kwɔrəl/kwɔr(ə)l]ссора
+quarry[kwɔri/kwɔn]карьер
+quarter[kwɔrtər/kwɔ:tə]четверть
+queen[kwin/kwi:n]королева
+queer[kwir/kwiə]странный,чудной
+query[kwiri/kwiəri]запрос
+question[kwesʧən/kweʃən/kwesʧ(ə)n]вопрос,подвергать сомнению
+questionnaire[,kwesʧə'ner/,kwestiə'neə]анкета
+queue[kju/kju:]очередь
+quick[kwik]быстрый||/квик
+quickly[kwikli]быстро||/+ly наречие
+quiet[kwaiət]тихий,спокойный,тишина
+quietly[kwaiətli]тихо||/+ly наречие
+quilt[kwilt]одеяло (стёганное)
+quit[kwit](quit,quit) бросить,покинуть,перестать||/квиты
+quite[kwait]вполне,более-менее,довольно,довольно-таки
+quiz[kwiz]викторина,тест,опрос
+
+rabbit[ræbət/ræbit]заяц,кролик||/ ловили рябята *зайца сеткой рабицей
+rack[ræk]стеллаж,вешалка,подставка
+raft[ræft/raft]плот
+rag[ræg]тряпка
+rage[reiʤ]ярость
+rain[rein]дождь||/рейн
+rainbow[rein,bou/reinbou]радуга||/=дождь+дуга
+raincoat[rein,kout/reinkout]плащ||/=дождь+пальто
+raise[reiz]поднимать,поднять,повысить,растить (детей)
+raisin[reizin/reizn]изюм
+rake[reik]грабли||/рейка
+rally[ræli]оживать,приходить в себя,собраться,созвать (напр. армию)
+ramble[ræmbəl/ræmbl]бродить,блуждать||/рамблер
+ramp[ræmp]скат,съезд
+range[reinʤ]выстраивать в ряд,диапазон,пределы
+ransom[rænsəm]выкуп
+rapid[ræpəd/ræpid]быстрый,стремительный||/ *быстРА ПИДали крути пока не дали
+rapidly[ræpədli/ræpidli]быстро||/+ly наречие
+rarely[rerli/reəli]редко||/+ly наречие
+rash[ræʃ]опрометчивый,необдуманный
+raspberry[ræz,beri/ra:zb(ə)ri]малина||/разбери
+rather[ræðər/rəðər/ra:ðə]вернее,скорее,предпочтительнее
+ratio[reiʃi,ou/reiʃiou]соотношение,пропорции
+rattle[rætəl/rætl]греметь,погремушка
+ravage[ræviʤ]разорить,сильно повредить
+ray[rei]луч||/рей
+razor[reizər/reizə]бритва||/ разорвали *бритвой шов
+reach[riʧ/ri:ʧ]достигать,достичь||/рич
+readily[redəli/redili]с готовностью
+reading[rediŋ/ridiŋ/ri:diŋ]чтение
+ready[redi]готовый||/реди
+realise[riə,laiz/riəlaiz]понимать
+realm[relm]царство,область (перен)
+reap[rip]пожинать
+rear[rir/riə]задний
+reason[rizən/rizn]причина,мотив,разум,благоразумие
+reasonable[rizənəbəl/riznəbəl/riznəbl]благоразумный,резонный
+reasonably[rizənəbli/ri:znəbli]разумно||/+ly наречие
+rebel[rebəl/ri'bel/rebl]восставать||/ребел /реабилитация
+rebound[ri'baund/n'baund]отскочить,рикошет
+recall[ri,kɔl/ri'kɔl/n'kɔ:l]вспоминать
+recede[ri'sid/ri(:)'sid]убывать
+recent[risənt/ri:snt]недавний,последний
+recently[risənli/risəntli/ri:sntli]недавно||/+ly наречие
+recess[rises/ri'ses]выемка,впадина,перерыв
+recipient[rə'sipiənt/ri'sipiənt]получатель
+reciprocal[ri'siprəkəl/ri'siprək(ə)l]взаимный,ответный
+recite[rə'sait/ri'sait]декламировать,рассказывать
+reckless[rekləs/reklis]опрометчивый,безрассудный
+reckon[rekən/rek(ə)n]считать,рассчитывать
+recognise[rekəg,naiz/rekəgnaiz]узнавать
+recognition[,rekəg'niʃən/,rekig'niʃən/,rekəg'niʃ(ə)n]признание
+recognize[rekəg,naiz/rekəgnaiz]распознавать,узнавать
+recollection[,rekə'lekʃən/,rekə'lekʃ(ə)n]воспоминание
+reconcile[rekən,sail/rekənsail]примириться
+recording[rə'kɔrdiŋ/ri'kɔrdiŋ/ri'kɔ:diŋ]запись
+recount[,ri'kaunt/ri'kaunt]пересказать
+recover[ri'kəvər/ri'kʌvə]восстанавливать,восстановиться,выздороветь,выздоравливать
+recovery[ri'kəvəri/ri'kəvri/ri'kʌvən]восстановление
+recreation[,rekri'eiʃən/,rekri'eiʃ(ə)n]отдых и развлечения
+rectangle[rektæŋgəl/rek,tæŋgl]прямоугольник
+recycle[ri'saikəl/ri'saikl]перерабатывать||/рециклинг
+red[red]красный||/*красная РЕДиска полезная
+redeem[ri'dim/n'dim]выкупить,искупить
+reduction[rə'dəkʃən/ri'dəkʃən/ri'dʌkʃ(ə)n]сокращение
+redundant[ri'dəndənt/ri'dʌndənt]избыточный
+reed[rid]тростник,камыш
+reel[ril]катушка,наматывать||/рил
+reference[refərəns/refrəns/refr(ə)ns]ссылка
+refrain[ri'frein/n'frein]воздерживаться
+refresh[ri'freʃ]обновлять,освежить
+refuge[refjuʤ/refju:ʤ]убежище,пристанище
+refugee[refjuʤi/,refju(:)'ʤi:]беженец
+refund[ri,fənd/ri'fənd/ri:fʌnd]возврат,возмещение
+refuse[ref,juz/rəf'juz/rif'juz/ri'fju:z]отказаться
+refute[rif'jut/n'fju:t]опровергать
+regain[ri'gein]восстановить,вернуть себе
+regard[ri'gɑrd/ri'gad]внимание,уважение,считать,рассматривать
+regiment[reʤəmənt/reʤimənt]полк
+regret[rə'gret/ri'gret]сожалеть,сожаление||/регрит
+regularly[regjələrli/regjuləli]регулярно||/+ly наречие
+rehearse[ri'hərs/ri'hə:s]репетировать
+reign[rein]царствовать
+rein[rein]сдерживать,держать в узде
+reinforce[,riin'fɔrs/,riin'fɔs]укреплять,усилить,укрепить
+reject[riʤekt/ri'ʤekt/ri:ʤekt]отвергать,отказаться
+rejoice[ri'ʤɔis]радоваться
+relate[ri'leit/n'leit]относиться,быть связанным
+relation[ri'leiʃən/n'leiʃ(ə)n]отношение
+relationship[ri'leiʃən,ʃip/n'leif(ə)nʃip]отношения
+relative[relətiv/relətrv]относительный,родственник
+relatively[relətivli]относительно||/+ly наречие
+relatives[relətivz]родственники||/+ с рылом противным приперлись
+relentless[ri'lentlis/n'lentlis]настойчивый,непрекращающийся
+relief[ri'lif/ri'lkf]облегчение
+relieve[ri'liv/ri'li:v]облегчить,освободить
+relish[reliʃ]наслаждаться
+reluctant[ri'ləktənt/n'lʌktənt]неохотный,нежелающий
+rely[ri'lai]полагаться,рассчитывать на
+remain[ri'mein/n'mein]оставаться
+remainder[ri'meindər/ri'meində]оставшаяся часть
+remaining[ri'meiniŋ]остальной
+remains[ri'meinz]остатки,останки
+remark[ri'mɑrk/ri'ma:k]замечание,замечать
+remarkable[ri'mɑrkəbəl/ri'ma:kəbl]замечательный
+remedy[remədi/remidi]средство
+remember[ri'membər/n'membə]запоминать,помнить
+remind[ri'maind/rimaind]напомнить
+reminiscent[,remə'nisənt/,remi'nisnt]напоминающий
+remnant[remnənt]остаток
+remorse[ri'mɔrs/ri'mɔ:s]раскаяние
+remote[ri'mout]отдалённый,захолустный,удаленный
+remove[ri'muv/ri'mu:v]убрать,удалить,удалять
+render[rendər/rendə]воздавать,оказывать,делать,придавать свойство
+renew[ri'nu/ri'nju:]возобновлять
+renown[ri'naun/rinaun]известность,слава
+repair[ri'per/ri'peə]ремонт,ремонтировать,чинить
+repay[ri'pei/ri:'pei]отплатить
+repeal[ri'pil/n'pi:l]отменить (закон)
+repel[ri'pel]отталкивать,отражать
+replace[,ri'pleis/ər'pleis/ri'pleis]заменить
+replacement[ri'pleismənt/n'pleismənt]замена
+represent[,repri'zent/,repn'zent]представлять
+representation[,reprəzen'teiʃən/jepnzen'teiʃ(ə)n]представительство
+representative[,reprə'zenətiv/,reprə'zentətiv/,repri'zenətiv/,repri'zentətiv]представитель
+reproduce[,riprə'dus/,ri:prə'dju:s]воспроизводить
+request[ri'kwest]запрашивать,запрос
+require[,ri'kwaiər/ri'kwair/ri'kwaiər/n'kwaiə]требовать
+requirement[ri'kwairmənt/ri'kwaiəmənt]требование
+research[risərʧ/ri'sərʧ/n'sə:ʧ]исследование,исследовать
+researcher[risərʧər/ri'sə:ʧə]исследователь
+resemble[ri'zembəl/ri'zembl]походить
+resent[ri'zent]огорчаться,возмущаться
+reserved[ri'zərvd/ri'zə:vd]скрытный,замкнутый
+reside[ri'zaid]жить,проживать (где-то)
+residential[,rezi'denʃəl/,rezi'denʃ(ə)l]жилой||/резиденция
+residue[rezə,du/rezidju:]остаток
+resign[ri'sain/ri'zain/rizain]отказываться,сдавать,уходить,уйти в отставку
+resilient[ri'ziljənt/riziliənt]стойкий,упругий
+resolute[rezə,lut/rezəlu:t]решительный,твёрдый||/резолюция
+resolution[,rezə'luʃən/,rezə'lu:ʃ(ə)n]разрешающая способность
+resolve[ri'zɑlv/ri'zɔlv]разрешить (ситуацию),решиться,решимость,решать
+resort[ri'sɔrt/ri'zɔrt/rizɔ:t]курорт
+respect[ri'spekt/ris'pekt]уважение||/респект сленг
+respective[ri'spektiv/ris'pektiv]соответственный
+respectively[ri'spektivli/ns'pektivli]соответственно||/+ly наречие
+respond[ri'spɑnd/ris'pɔnd]ответить,отвечать
+response[ri'spɑns/ris'pɔns]ответ,отклик
+responsibility[ri,spɑnsə'biləti/ns,pɔnsə'biliti]обязанность,ответственность
+responsible[ri'spɑnsəbəl/ris'pɔnsəbl]ответственный
+restore[ri'stɔr/ris'tɔ]восстанавливать
+restrain[ri'strein/ris'trein]ограничивать,удерживать
+restrict[ri'strikt/ris'trikt]ограничивать
+restriction[ri'strikʃən/ris'trikʃ(ə)n]ограничение
+restroom[res,trum/restrum]туалет||/=отдых+комната / в *туалете аРЕСТованный выпил рюмку водки и вылез через окно
+resurrect[,rezər'ekt/,rezə'rekt]воскрешать
+retail[ri,teil/ri:teil]розничная продажа||/ритеил
+retain[ri'tein]сохранять,удерживать
+retaliate[ri'tæli,eit/ri'tælieit]отплатить,отомстить
+retarded[ri'tɑrdəd/ri'tɑrdid/n'ta:did]умственно отсталый
+retention[ri'tenʃən/n'tenʃ(ə)n]удержание,сохранение
+retire[,ri'taiər/ri'tair/n'taiə]уйти в отставку,уходить в отставку,на пенсию
+retirement[ri'taiərmənt/n'taiəmənt]выход на пенсию
+retract[ri'trækt/n'trækt]втягивать,брать обратно
+retreat[ri'trit/ri'tri:t]отступать
+retrieve[ri'triv/n'tri:v]извлечь,вернуть
+reveal[ri'vil/ri'vi:l]раскрыть,выявить
+revenge[ri'venʤ]месть
+revenue[revə,nu/revən,ju/revinju:]доход,выручка
+revere[ri'vir/ri'viə]почитать
+review[,riv'ju/ri'vju:]обзор,сделать обзор,рассмотреть
+revive[ri'vaiv]возрождать,оживлять
+revolt[ri'voult/n'voult]восстание,бунт
+revolve[ri'vɑlv/ri'vɔlv]вращаться||/револьвер
+reward[ri'wɔrd/n'wɔd]награда,награждать
+ribbon[ribən]лента
+rich[riʧ]богатый||/+ утонул в речке, плясала вся деревня
+rid[rid]избавиться от,освобождать,избавлять
+riddle[ridəl/ridl]загадка
+ride[raid]ездить,ехать||/райд
+ridge[riʤ]хребет,ребро
+ridicule[ridək,jul/ndikju:l]осмеяние||/радикулит
+`;

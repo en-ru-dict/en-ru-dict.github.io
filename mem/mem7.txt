@@ -1,0 +1,503 @@
+//трудные4 ~500 , хорошие ФА
+g_api=`
+folly[fɑli/fɔli]глупость,безумие
+fool[ful/fu:l]дурак,дурачить||/фул
+footage[futiʤ]запись,кадры видео
+footing[futiŋ]опора,основа
+footprint[fut,print/futprint]след||/=нога+печатать
+forbid[fər'bid/fɔ'bid/fəbid](forbade,forbidden) запрещать||/обида
+force[fɔrs/fɔs]заставить,сила||/форс мажор
+forcible[fɔrsəbəl/fɔ:səbl]насильственный
+forecast[fɔr,kæst/fɔ:ka:st]прогноз
+forehead[fɔrhed/fɔrid]лоб||/=впереди головы
+foreign[fɑrən/fɔrən/fɔrin]иностранный
+foreman[fɔrmən/fɔ:mən]мастер,бригадир
+foremost[fɔr,moust/fɔ:moust]передовой,первоочередной
+foresee[fɔr'si/fɔ:'si:]предвидеть||/форсировать
+forest[fɔrəst/fɔrist/fɔnst]лес||/форест
+forge[fɔrʤ/fɔ:ʤ]ковать,подделывать
+forget[fər'get/fɔr'get/fə'get]забывать
+forgive[fər'giv/fɔr'giv/fə'giv](forgave,forgiven) простить
+fork[fɔrk/fɔ:k]вилка,развилка,раздваиваться||/ форк биткоина это *вилка
+former[fɔrmər/fɔ:mə]бывший,первый (из названных)
+formerly[fɔrmərli/fɔ:məli]в прошлом
+formidable[fɔrmədəbəl/,fɔr'midəbəl/fɔ:midəbl]внушительный,грозный
+forth[fɔrθ/fɔ:θ]дальше,вперёд||/форсировать
+forthcoming[fɔrθ'kəmiŋ/fɔ:θ'kʌmiŋ]предстоящий
+fortify[fɔrti,fai/fɔ:tifai]укреплять,поддерживать||/фортификации
+forward[fɔrwərd/fɔ:wəd]вперед
+fossil[fɑsəl/fɔsl]ископаемое
+foster[fɑstər/fɔstə]приёмный (ребёнок),способствовать,питать
+foul[faul]гадкий,скверный,грязный
+fracture[frækʃər/frækʧər/frækʧə]перелом,разрушение
+fragile[fræʤəl/fræʤail]хрупкий
+fragrant[freigrənt/freigr(ə)nt]душистый,ароматный
+frail[freil]хилый
+frame[freim]рамка,каркас||/фрейм
+framework[freim,wərk/freimwə:k]каркас,основа,рамки
+frank[fræŋk]откровенный||/+ ФРАНцуз признался ФРАНКу что ест лягушек
+frantic[fræntik]неистовый,бешеный
+fraud[frɔd]обман,мошенничество||/фрауд
+fray[frei]драка,бой,соревнование
+frayed[freid]потрёпанный
+freight[freit]грузовой
+frenzy[frenzi]неистовство,безумие
+frequency[frikwənsi/fri:kwənsi]частота
+frequent[fri,kwent/frikwənt/fri:kwənt]частый
+frequently[frikwəntli/frikwentli/fri:kwəntli]часто
+fresh[freʃ]свежий||/+ ФРуктовый напиток фантА Шипел
+fret[fret]волновать(-ся)
+friction[frikʃən/frikʃ(ə)n]трение
+fright[frait]испуг
+frighten[fraitən/fraitn]пугать
+fringe[frinʤ]край,крайний
+frog[frɑg/frɔg]лягушка||/ ФРАнцузы Голодные едят *лягушек
+frost[frɔst]мороз||/фрост
+frown[fraun]хмурить брови,хмуриться
+frustrate[frəs,treit/frʌs'treit]расстраивать (план,схему)
+fry[frai]жарить||/+ ФРукты, АЙ брызги жира летят
+fuel[fjuəl/fjul]топливо,заправлять
+fugitive[fjuʤətiv/fjuʤitiv/fju:ʤitiv]беглец
+fulfil[ful'fil/fulfil]заполнить,исполнить
+fumble[fəmbəl/fʌmbl]щупать,лапать,мять
+fume[fjum/fju:m]дым,испарение
+funeral[fjunərəl/fju:n(ə)r(ə)l]похороны,похоронный
+fungus[fəŋgəs/fʌŋgəs]гриб,грибок
+funnel[fənəl/fʌnl]воронка
+funny[fəni/fʌni]смешной||/+ нафаня / фани каплан *смешная дура
+fur[fər/fə:]мех
+furnace[fərnəs/fə:nis]печь
+furnish[fərniʃ/fə:niʃ]обставлять,меблировать,предоставлять
+further[fərðər/fə:ðə]далее,дальнейший
+furthermore[fərðər,mɔr/fə:ðə'mɔ:]более того
+fury[fjuri/fjuəri]ярость,бешенство||/фурия
+fuse[fjuz/fju:z]плавиться,сливаться
+fuss[fəs/fʌs]суетиться
+futile[fjutəl/fju:tail]тщетный,напрасный
+fuzzy[fəzi/fʌzi]пушистый,ворсистый||/папа нашел фазу
+
+gain[gein]получать,выигрывать,прирост,получить||/гейе
+gait[geit]походка||/гейт
+gala[gælə/geilə/ga:lə]праздник,торжество||/гала концерт
+gamble[gæmbəl/gæmbl]азартная игра,играть
+gang[gæŋ]банда,шайка||/гангстер
+gap[gæp]разрыв,пробел
+garbage[gɑrbiʤ/ga:biʤ]мусор (особ. пищевой)
+garbageman[gɑ:biʤ,mæn]уборщик
+garden[gɑrdən/ga:dn]сад||/гадина жила в *саду
+garlic[gɑrlik/ga:lik]чеснок||/+ ел КАРЛИК и ГАРпун в ЛИСу Кидал
+garment[gɑrmənt/ga:mənt]предмет одежды
+gasoline[gæsə,lin/gæsəll:n]бензин||/+ для газели налили
+gasp[gæsp/gasp]задыхаться,ловить воздух
+gate[geit]ворота||/гейт
+gates[geits]ворота||/бил гейтс закрыл ворота в рай с той стороны
+gather[gæðər/gæðə]собирать(-ся)
+gauge[geiʤ]измерить,изм.прибор
+gaze[geiz]пристально глядеть||/гейзер
+gear[gir/giə]механизм,привод,передача||/гиря
+gem[ʤem](полу-)драгоценный камень||/жемчуг
+generation[,ʤenər'eiʃən/,ʤenə'reiʃ(ə)n]поколение
+generous[ʤenərəs/ʤen(ə)rəs]великодушный,щедрый||/*щедрый генерал с донной розой встречался
+gentle[ʤenəl/ʤentəl/ʤentl]мягкий,тихий,нежный||/ джентльмен
+gentleman[ʤenəlmən/ʤentəlmən/ʤentlmən]джентльмен||/=нежный чел /неженка :)
+gently[ʤentli]нежно||/джентли
+genuine[ʤen'ju,wain/ʤenjəwən/ʤenjuin]подлинный,настоящий
+germ[ʤərm/ʤə:m]микроб,зародыш||/в германии жил
+ghost[goust]привидение||/гость
+giggle[gigəl/gigl]хихикать,хихиканье
+give[giv]давать||/гив
+glacier[gleiʃər/glæsjə]ледник
+glad[glæd]радостный||/+ гладил
+gladly[glædli]с радостью||/+ гладил
+glance[glæns/gla:ns]взгляд,взглянуть
+glare[gler/gleə]яркий свет,ослеплять
+glass[glæs/glas]стакан,стекло||/ в *стакане шрека плавал ГЛАЗ
+glasses[glæsəz/glæsiz/gla:siz]очки||/=стекла
+gleam[glim/glrm]блеск,отблеск||/ мокрой глины
+glimpse[glimps]вид (мельком или уголком)
+glint[glint]вспыхнуть,сверкнуть (слегка)
+glitter[glitər/glitə]блеск,блестеть,сверкать
+gloom[glum/glu:m]сумрак,уныние
+glory[glɔri/glɔn]слава,сияние
+glove[gləv/glʌv]перчатка
+gloves[gləvz/glʌvz]перчатки||/ у ГЛАВы мафии Спёрли воры
+glow[glou]сияние,свечение
+goat[gout]козел,коза||/*козел ГОворит *козе УТром, жрать давай
+god[gɑd/gɔd]Бог||/гад такой, смотрит на всё сверху и пофигу
+goddess[gɑdəs/gɔdis]богиня
+gold[gould]золото||/голд
+golden[gouldən/gould(ə)n]золотой||/ ГОЛый на ДНе нашёл *золотое колечко и прикарманил (кино)
+goods[gudz]товары||/+ гудели за стенкой
+goof[guf/gu:f]балбес,придурок (амер)
+gorgeous[gɔrʤəs/gɔ:ʤəs]шикарный
+gospel[gɑspəl/gɔspəl/gɔsp(ə)l]евангелие
+gossip[gɑsəp/gɔsip]слухи
+government[gəvərmənt/gəvərnmənt/gʌvnmənt]правительство
+gown[gaun]платье
+grace[greis]благодать,милость||/грейс
+gradual[græʤuəl/grædjuəl]постепенный
+gradually[græʤuəli/græʤuli/grædjuəli]постепенно
+graduate[græʤə,weit/græʤəwət/græʤu,eit/græʤuwət/grædjuət]выпускник,выпускаться
+grandchildren[græn,ʧildrən/grænd,ʧildrən]внуки||/=грандиозные дети
+granddaughter[græn,dɔtər/grænd,dɔtər]внучка||/=грандиозная большая дочка стала *внучкой
+grandfather[græn,fɑðər/grænd,fɑðər]дедушка||/грандиозный большой папа ищет фазу у *дедушки
+grandmother[grænd,məðər/græn,mʌðə]бабушка||/грандиозная мама промазала тапком в *бабушку
+grandson[grænd,sən/grænd,sʌn]внук
+grape[greip]виноград (ягода)||/грейпфрукт
+grapple[græpəl/græpl]сцепиться,бороться
+grasp[græsp/grasp]схватывать
+grass[græs/gras]трава||/+ на Газоне Растет
+grate[greit]решетка
+grateful[greitfəl/greitful]благодарный
+gratify[grætə,fai/grætifɑi]удовлетворять,радовать
+gratitude[grætə,tud/grætitju:d]благодарность
+grave[greiv]могила,серьёзный
+gravy[greivi]подливка,соус
+graze[greiz]пасти,пастись
+grease[gris/gri:s]смазка,жир
+great[greit]великий||/грейт
+greatly[greitli]значительно
+greed[grid]жадность||/грид
+green[grin]зеленый||/ ГРЕта киборг Нашла ГРИНпис *зеленый мир
+greenhouse[grin,haus/gri:nhaus]теплица,оранжерея
+grey[grei]серый||/ ГРанит *сЕрыЙ / ГРязь *сЕрая
+grid[grid]сетка,решётка
+grief[grif/gri:f]горе||/ГРИФ секретно на досье, какое +
+grievance[grivəns/gri:v(ə)ns]обида
+grim[grim]мрачный,зловещий||/гримасса
+grin[grin]ухмыляться,ухмылка,оскал||/гринго
+grind[graind](ground,groud) молоть,измельчать
+grip[grip]хватать,захват,хватка||/*хватать ГРИБ в лесу и бежать
+grit[grit]крошка,песок,гравий,твёрдость,стойкость
+groan[groun]стон,стонать
+groceries[grousəriz/grousriz/grous(ə)ris]бакалея
+grocery[grousəri/grousri/grous(ə)ri]продуктовый
+groom[grum]жених||/грум
+groove[gruv/gru:v]канавка,желоб
+grope[group]щупать,искать вслепую
+gross[grous]валовой,грязный,грубый (во всех смыслах)
+grove[grouv]лесок
+grow[grou](grew,grown) расти,выращивать,становиться
+growing[grouiŋ]растущий
+growl[graul]рычать
+growth[grouθ]рост
+grudge[grəʤ/grʌʤ]обида,злоба
+grumble[grəmbəl/grʌmbl]ворчать,жаловаться
+grunt[grənt/grʌnt]хрюкать||/+ на гаранта
+guess[ges]угадать,угадывать,догадываться||/ГЕСтапо догадывается что штирлиц любовник евы браун
+guest[gest]гость||/+ из ГЕСТапо пришел на чай
+guidance[gaidəns/gaid(ə)ns]руководство
+guide[gaid]вести,направлять,руководство||/ГАЙДар *вел страну в @#@
+guideline[gaid,lain/gaidlain]общее правило,принцип,руководство
+guilt[gilt]вина||/+ разГИЛЬДяя
+guilty[gilti]виновный
+guise[gaiz]облик,личина
+gulf[gəlf/gʌlf]залив,разрыв,пропасть
+gulp[gəlp/gʌlp]большой глоток,заглатывать,глоток||/ ГАЛоПом бежал за *глотком воды в пустыне
+gum[gəm/gʌm]жвачка||/в школе шум и ГАМ, один барыга достал *жевачку
+gust[gəst/gʌst]порыв
+gut[gət/gʌt]кишка
+gutter[gətər/gʌtə]желоб,сток
+guy[gai]парень||/+ был гей и работал в гаи
+gym[ʤim]спортзал||/ГИМнастика в *спортзале
+habit[hæbət/hæbit]привычка,обычай||/хоббита кольца носить в мордор
+habitat[hæbə,tæt/hæbitæt]среда,место обитания
+hack[hæk]рубить,кромсать||/ХАКер *рубит лес на зоне
+hail[heil]град,окликнуть,привлечь внимание,приветствовать
+hair[her/heə]волосы||/+ хорошие
+haircut[her,kət/heəkʌt]стрижка,причёска
+hairdresser[her,dresər/heə,dresə]парикмахер
+half[hæf/haf]половина||/*половина ХАЛВы сХАВали
+hallmark[hɑl,mɑrk/hɔlmak]характерная черта
+halt[hɔlt/hɔ:lt]останавливаться
+halve[hæv/hav]делить пополам||/халву
+ham[hæm]ветчина||/*ветчину ел ХАМ
+hammer[hæmər/hæmə]молоток||/+ у ХАМа МЕРина
+hamper[hæmpər/hæmpə]затруднять,ограничивать
+handcuffs[hænd,kəfs/hændkʌfs]наручники||/ рука и кайф
+handful[hænd,ful/hændful]горсть||/=рука+полный
+handicap[hændi,kæp/hændikæp]помеха,недостаток
+handkerchief[hæŋkərʧif/hæŋkəʧif]носовой платок||/+ в руке шефа
+handle[hændəl/hændl]обращаться с,рукоятка,управляться,обращаться
+handsome[hænsəm]красивый (обычно о мужчинах)||/=рука+несколько
+handwriting[hæn,draitiŋ/hænd,raitiŋ]почерк||/=рукописание
+handy[hændi]удобный||/хэнди
+hang[hæŋ](hung,hung) висеть,вешать,повесить||/хана
+hanger[hæŋər/hæŋə]вешалка||/+ у голодного и злого хана героя
+hangover[hæ,ŋouvər/hæŋ,əuvər]похмелье
+happen[hæpən/hæp(ə)n]случаться,случиться,происходить
+harass[hər'æs/hærəs]тревожить,изводить
+harbor[hɑrbər/ha:bə](-our) гавань,порт||/хаб
+hardly[hɑrdli/ha:dli]едва
+hardware[hɑrd,wer/ha:dweə]аппаратные средства
+hardy[hɑrdi/ha:di]выносливый
+harness[hɑrnəs/hɑrnis/ha:nis]запрягать,обуздывать
+harsh[hɑrʃ/haʃ]резкий,суровый,грубый
+harvest[hɑrvəst/ha:vist]урожай,собирать урожай
+hassle[hæsəl/hæsl]трудность,неудобство
+haste[heist]спешка
+hat[hæt]шапка,шляпа||/ *шляпу мисис ХАТсон шерлок холмс нашел у ватсона под кроватью
+hatch[hæʧ]люк
+hatred[heitrəd/heitrid]ненависть
+haul[hɔl]тащить,тянуть,буксировать
+haunt[hɔnt]являться,преследовать (перен)
+hawk[hɔk/hɔ:k]ястреб||/+ играл в хокей с воронами
+hay[hei]сено
+hazard[hæzərd/hæzəd]опасность,риск,угроза
+haze[heiz]дымка,туман
+headlight[hed,lait/hedlait]передняя фара
+headline[hed,lain/hedlain]заголовок
+headquarters[hed,kɔrtərz/hed,kwɔrtərz/hed'kwɔ:təz]штаб-квартира
+heal[hil/hrl]лечить,заживать
+health[helθ]здоровье||/хилый
+healthcare[helθ,ker/helθkeər]здравоохранение
+healthy[helθi]здоровый||/ *здоровому детине поплохело сильно
+heap[hip]куча||/хиппи
+hear[hir/hiə]слышать
+hearing[hiriŋ/hiəriŋ]слух
+heart[hɑrt/hat]сердце||/+ ХАТта нашли у джедая в сумке
+heave[hiv/hi:v]вздыматься
+heaven[hevən/hevn]небеса
+heavily[hevəli/hevili]сильно
+hebrew[hibru/hi:bru:]еврейский
+hectic[hektik]беспокойный,напряжённый
+hedge[heʤ]живая изгородь
+heed[hid]прислушиваться,учитывать
+hefty[hefti]большой и тяжёлый
+height[hait]высота,рост
+heir[er/eə]наследник
+hell[hel]ад||/поплоХЕЛо мне в *аду
+hello[hə'lou/he'lou/hə'ləu]здравствуйте||/ хамло
+helm[helm]руль,штурвал
+helmet[helmət/helmit]шлем
+helm[helm]шлем
+helpful[helpfəl/helpful]полезный
+helpless[helpləs/helplis]беспомощный
+hemisphere[hemis,fir/hemisfiə]полушарие
+hen[hen]курица||/*курица ханна клевала плоХого ЕНота (из игры) /+ дрыХла на сЕНовале с петухом
+hence[hens]отсюда (следует,происходит),следовательно
+herald[herəld/her(ə)ld]возвестить,вестник
+herbivore[ərbi,vɔr/hərbi,vɔr/hə:bivɔ:r]травоядный||/+ ел ГЕРБариум это листья и трава
+herd[hərd/hə:d]стадо,пасти
+heritage[herətəʤ/heritiʤ]наследие
+hesitate[hezə,teit/heziteit]колебаться,медлить
+hide[haid](hid,hidden) скрывать,прятать
+hideous[hidiəs]отвратительный,ужасный
+high[hai]высокий,высоко
+highlight[hai,lait/hailait]выделить,подсветить,выделять
+highly[haili]высоко
+highway[hai,wei/haiwei]дорога,шоссе||/=высокий+путь
+hijack[hai,ʤæk/haiʤæk]угонять||/хай джек
+hike[haik]поход,ходить в поход||/хакеры ушли в *поход искать секретный датацентр
+hilarious[hi'leriəs/hi'leəriəs]веселый,забавный,смешной
+hill[hil]холм||/ХИЛый залез на + и устал
+hinder[hindər/haində]мешать,затруднять
+hinge[hinʤ]петля,шарнир
+hint[hint]намёк,намекать
+hire[haiər/hair/haiə]нанимать
+hiss[his]шипеть
+hitch[hiʧ]заминка,помеха
+hoard[hɔrd/hɔd]копить,накопление,клад
+hobble[hɑbəl/hɔbl]прихрамывать
+hog[hɑg/hɔg]большой свин,боров
+hoist[hɔist]поднимать
+hold[hould]держать||/холдер
+holder[houldər/houldə]держатель
+holiday[hɑlə,dei/hɑli,dei/hɔlədi]праздник||/+ когда холодильник полный
+holler[hɑlər/hɔlər]крикнуть,окликнуть
+hollow[hɑlou/hɔlou]полый
+holy[houli]святой,священный
+home[houm]дом||/+ хомячка
+homeland[houm,lænd/houmlænd]родина
+homework[houm,wərk/həumwə:k]домашняя работа||/=дом+работа
+homicide[hɑmə,said/hɔmisaid]убийство
+honest[ɑnəst/ɔnist]честный||/+ ХОтел НЕСТи ответственность на свалку
+honey[həni/hʌni]мёд
+honor[ɑnər/ɔnə](-our) честь,чтить||/гонорея
+hoof[huf/hu:f]копыто||/хув
+hook[huk]крюк,зацеплять||/хук справа
+hoop[hup/hu:p]обруч,обод
+hope[houp]надежда,надеяться
+hopeful[houpfəl/houpful]внушающий надежды
+horrible[hɔrəbəl/hɔrəbl]ужасный,отвратительный||/+ тип пел в хоре бл
+horrify[hɔrə,fai/hɔrifai]ужасать
+horse[hɔrs/hɔs]лошадь||/+ пела в ХОРе С коровами и свиньями
+horseback[hɔrs,bæk/(,ɔn)hɔ:sbæk]верхом||/=лошадь+спина
+hose[houz]шланг
+hospitality[,hɑspə'tæləti/,hɔspi'tæliti]гостеприимство
+host[houst]множество,хозяин,быть хозяином||/хост
+hostage[hɑstiʤ/hɔstiʤ]заложник
+hostile[hɑstəl/hɑ'stail/hɔstail]враждебный,неприязненный
+hot[hɑt/hɔt]горячий||/+ хот дог
+hound[haund]охотничья собака,гончая
+hourglass[auər,glæs/auəgla:s]песочные часы||/=час+стекло
+house[haus]дом,приютить||/ ХАлупа УЗкая
+household[haus,hould/haushould]домашнее хозяйство,домашний,домохозяйство
+housewife[hau,swaif/hauswaif]домохозяйка||/=дом+жена
+housework[hau,swərk/hauswə:k]работа по дому||/=дом+работа
+housing[hauziŋ]жилье
+hover[həvər/hɔvə]зависнуть,парить
+however[,hau'evər/hauevə]однако
+howl[haul]выть
+huddle[hədəl/hʌdl]столпиться,скучиться
+hue[hju/hju:]цвет,оттенок
+hug[həg/hʌg]объятие,обнимать
+huge[hjuʤ/juʤ/hju:ʤ]огромный
+hull[həl/hʌl]корпус,оболочка
+hum[həm/hʌm]гудеть,жужжать
+humble[həmbəl/hʌmbl]скромный,смиренный
+humid[hjuməd/hjumid/juməd/jumid/hju:mid]влажный
+humiliate[hju'mili,eit/hju(:)'milieit]унижать
+hump[həmp/hʌmp]горб
+hunch[hənʧ/hʌnʧ]горб,горбиться 2.догадка,предчуствие
+hunger[həŋgər/hʌŋgə]голод||/ ХАН ГЕРоически терпел + и холод
+hunk[həŋk/hʌŋk]ломоть,лакомый кусок
+hurdle[hərdəl/hə:dl]препятствие
+hurl[hərl/hə:l]метать,бросать с силой
+hurricane[hərə,keinz/hərə,kein/hʌrikən]ураган
+hurry[həri/hʌri]спешить,торопиться||/харя
+hurt[hərt/hə:t](hurt,hurt) причинять боль,болеть
+husband[həzbənd/hʌzbənd]муж||/ + на ХУтор С БАНДой ушел (бабочек искать)
+hush[həʃ/hʌʃ]молчать
+hustle[həsəl/hʌsl]нечестно добыть (амер),толкаться,торопиться
+hut[hət/hʌt]хижина,лачуга,барак
+hydrogen[haidrəʤən/haidriʤən]водород||/гидроген
+hypocrite[hipə,krit/hipəkrit]лицемер
+identity[ai'denti,ti/ai'dentiti]личность||/идентичный
+idle[aidəl/aidl]праздный,бездействующий
+ignite[,ig'nait/ig'nait]воспламеняться
+ignorant[ignərənt/ign(ə)r(ə)nt]невежественный
+ill[il]больной,дурной,нехороший||/ест ил
+illicit[,i'lisət/i'lisit]незаконный,запрещённый
+illness[ilnəs/ilnis]болезнь
+imagination[,i,mæʤə'neiʃən/i,mæʤi'neiʃ(ə)n]воображение
+imagine[,i'mæʤən/i'mæʤin]воображать,вообразить
+immediate[,i'mi,diət/i'mi:djət]немедленный,непосредственный
+immediately[,i'mi,diətli/i'mi:djətli]немедленно
+immense[,i'mens/i'mens]огромный
+immerse[,i'mərs/i'mə:s]погружаться (втч. перен)
+imminent[imənənt/iminənt]неизбежный
+impact[impækt/,im'pækt]воздействие,удар
+impair[,im'per/im'peə]ухудшать,ослаблять
+impatient[,im'peiʃənt/im'peiʃ(ə)nt]нетерпеливый||/+ импотент пил виагру
+impede[,im'pid/im'pi:d]затруднять
+impending[,im'pendiŋ/im'pendiŋ]предстоящий,грозящий
+imperative[,im'perətiv/im'perətiv]обязательный,необходимый
+implement[impləmənt/implimənt]осуществлять,реализовать
+implementation[,impləmen'teiʃən/,implimen'teiʃ(ə)n]осуществление
+implicate[impli,keit/implikeit]указать на причастность
+implication[,implə'keiʃən/,impli'keiʃ(ə)n]следствие
+implicit[,im'plisət/im'plisit]подразумеваемый,неявный
+imply[,im'plai/im'plai]подразумевать
+importance[,im'pɔrtəns/im'pɔ:t(ə)ns]важность
+important[,im'pɔrtənt/im'pɔ:t(ə)nt]важный||/импотент
+impose[,im'pouz/im'pouz]навязывать,налагать
+imposing[,im'pouziŋ/im'pouziŋ]внушительный,импозантный
+impossible[,im'pɑsəbəl/im'pɔsəbl]невозможно||/im=не
+impress[im,pres/,im'pres/impres]впечатлить
+impression[,im'preʃən/im'preʃ(ə)n]впечатление
+impressive[,im'presiv/im'presiv]впечатляющий
+imprint[imprint/,im'print]отпечаток,отпечатывать
+improve[,im'pruv/im'pru:v]улучшить
+improvement[,im'pruvmənt/im'pru:vmənt]улучшение
+incentive[,in'seniv/,in'sentiv/in'sentiv]стимул,мотив
+inch[inʧ]дюйм||/инч
+incidence[insədəns/insidəns/insid(ə)ns]частотность,распространённость
+include[,in'klud/in'klu:d]включать,содержать в себе
+including[,in'kludiŋ/in'klu:diŋ]включая
+income[in,kəm/inkʌm]доход
+incoming[in,kəmiŋ/in,kʌmiŋ]входящий
+incorporate[,in'kɔrpər,eit/inkɔ:p(ə)rit]включать в состав,вобрать,соединить
+increase[in,kris/,in'kris/inkris]увеличение,увеличивать(-ся)
+increased[in,krist/,in'krist/in'krisd]увеличенный
+increasingly[in'krisiŋgli/in'krisiŋli/inkri:siŋli]все больше
+incredible[,in'kredəbəl/inkredəbl]невероятный
+incumbent[,in'kəmbənt/in'kʌmbənt]возложенный
+incur[,in'kər/inkə:]навлечь,повлечь
+indeed[,in'did/in'di:d]в самом деле,действительно
+independence[,indi'pendəns]независимость
+independent[,indi'pendənt]независимый
+indication[,ində'keiʃən/,indi'keiʃ(ə)n]указание
+indifferent[,in'difərənt/,in'difrənt/in'difr(ə)nt]безразличный
+indigenous[,in'diʤənəs/in'diʤinəs]коренной,местный
+induce[,in'dus/in'dju:s]вызывать,побуждать
+indulge[,in'dəlʤ/in'dʌlʤ]баловать,потворствовать||/индульгенция
+inevitable[,i'nevətəbəl/in'evitəbl]неизбежный
+inevitably[,i'nevətəbli/in'evitəbli]неизбежно
+inexplicable[,inəks'plisəbəl/,inik'splikəbl]необъяснимый
+infamous[infəməs]печально известный,постыдный
+infantry[infəntri/mf(ə)ntri]пехота
+infer[,in'fər/in'fə:]делать вывод
+inferior[,in'firiər/in'fiəriə]низший
+infinite[infənət/infinit]бесконечный||/инфинитив
+inflame[in'fleim/infleim]разжигать (в осн. перен)
+inflict[,in'flikt/inflikt]причинять,наносить
+influence[influəns]влияние,влиять
+infuse[,in'fjuz/infju:z]вливать,настаивать
+ingenious[,in'ʤinjəs/in'ʤi:njəs]изобретательный
+inhabit[,in'hæbət/in'hæbit]населять,обитать в
+inherent[in'herənt/in'hirənt/inhiər(ə)nt]свойственный,присущий
+inherit[,in'herət/inherit]унаследовать,перенять
+inhibit[,in'hibət/in'hibit]препятствовать,затруднять
+initially[,i'niʃəli/iniʃəli]первоначально
+injure[inʤər/inʤə]ранить,наносить ущерб,травмировать
+injury[inʤəri/inʤ(ə)n]травма
+ink[iŋk]чернила||/ИНКи пили + и курили траву
+inland[in,lænd/inlənd]внутренний,вглубь страны
+inmate[in,meit/inmeit]обитатель
+inn[in]гостиница
+innocent[inəsənt/inəs(ə)nt]невинный,невиновный
+inquire[,in'kwair/in'kwaiə]узнавать,интересоваться
+inquiry[,in'kwai,ri/inkwərri/in'kwaiəri]запрос
+insert[in,sərt/,in'sərt/insət]вставить
+inside[in,said/,in'said/in'said]внутри
+insight[in,sait/insait]понимание,догадка
+insincere[,insin'sir/,insin'siə]лицемерный
+insist[,in'sist/insist]настаивать
+inspire[,in'spair/inspaiə]вдохновить,внушить
+install[,in'stɔl/in'stɔ:l]устанавливать||/на стол
+instance[instəns]пример,случай
+instant[instənt]мгновенние,мгновенный
+instead[,in'sted/in'sted]вместо
+institution[,insti'tuʃən/,insti'tju:ʃn]учреждение
+insulate[insə,leit/insjuleit]изолировать,оградить
+insurance[,in'ʃurəns/inʃuər(ə)ns]страховка
+insure[,in'ʃur/in'ʃuə]страховать,гарантировать
+insurgent[,in'sərʤənt/in'sə:ʤ(ə)nt]повстанец,мятежник
+intact[,in'tækt/in'tækt]неповрежденный
+intake[in,teik/inteik]потребление,приём
+integral[inəgrəl/intəgrəl/intigr(ə)l]составной,неотъемлемый||/интеграл
+integrity[,in'tegrəti/in'tegriti]целостность,честность,порядочность
+intelligible[,in'teləʤəbəl/in'teliʤəbl]вразумительный,понятный
+intend[,in'tend/in'tend]намереваться
+intended[,in'tendid/in'tendid]предназначенный
+intention[,in'tenʧən/in'tenʃ(ə)n]намерение
+intercept[,inər'sept/,intər'sept/intə(:)sept]перехватить
+intercourse[inər,kɔrs/intər,kɔrs/intə(:)kɔ:s]отношения,пол.сношение
+interim[inərəm/intərəm/intrəm/intərim]промежуточный,временный
+intermediate[,inər'midiit/,intər'midiit/,intə(:)'midjət]промежуточный
+internal[,in'tərnəl/in'tə:nl]внутренний||/интернет
+international[,inər'næʃənəl/,intər'næʃənəl/,intə(:)'næʃənl]международный||/интернациональный
+interpreter[,in'tərprətər/intə:pritə]переводчик||/=интерпретер
+interrogate[,in'terə,geit/in'terougeit]допрашивать
+interrupt[,intər'əpt/,intə'rʌpt]прерывать,перебивать
+intersect[,intər'sekt/,intə'sekt]пересекаться
+intersection[,intər'sekʃən/,intə(:)'sekj(ə)n]перекресток||/ ИНТЕРнет есть в СЕКции на *перекрестке
+intestine[,in'testən/m'testm]кишечник||/в тесте
+intimate[inəmət/intə,meit/intəmət/mtimit]близкий||/интим
+intimidate[,in'timi,deit/m'timideit]запугивать
+intolerant[,in'tɑlərənt/m'tɔlər(ə)nt]нетерпимый||/=не толерантный
+intricate[intrəkət/intrikit]сложный,запутанный
+intrinsic[,in'trinsik/intrinsik]присущий,внутренний
+introduce[,intrə'dus/,introu'dus/,intrə'dju:s]ввести (в употребление),представить,познакомить,представлять
+introduction[,intrə'dəkʃən/,introu'dəkʃən/,intrə'dʌkʃ(ə)n]введение
+invade[,in'veid/inveid]вторгаться||/инвейд
+invent[,in'vent/invent]изобретать||/инвент
+inventor[,in'ventər/inventə]изобретатель||/инвертора перевернулся в гробу
+investigate[,in'vestə,geit/investigeit]расследовать
+investigation[,in,vestə'geiʃən/in,vesti'geiʃn]расследование
+invite[,in'vait/invait]приглашать||/инвайт
+invoke[,in'vouk/invouk]взывать,призывать||/инвоук
+involve[,in'vɑlv/in'vɔlv]включать,вовлекать,увлекать,содержать в себе (процесс)||/инволв
+involved[,in'vɑlvd/in'vɔlvd]вовлеченный
+`;

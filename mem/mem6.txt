@@ -1,0 +1,503 @@
+//трудные3 ~500 , хорошие ФА
+g_api=`
+detach[di,tæʧ/di'tæʧ]отделить,оторвать
+detain[di'tein]задерживать
+detention[di'tenʃən/di'tenʃ(ə)n]задержание,арест
+deter[di'tər/di'tə:]удерживать (от действия)||/+ дитё неразумное
+deteriorate[di'tiriər,eit/di'tiəriəreit]ухудшать
+determination[di,tərmə'neiʃən/di,tə:mi'neiʃən]решимость
+determine[də'tərmən/di'tərmən/di'tə:min]определить||/детерминал (мат)
+determined[di'tərmənd/di'tə:mind]решителен
+detriment[detrəmənt/detrimənt]ущерб,вред
+devastate[devə,steit/devəsteit]опустошать,разорять
+develop[di'veləp]развивать,разрабатывать
+developing[di'veləpiŋ]развивающийся
+development[di'veləpmənt]развитие
+deviate[divi,eit/di:vieit]отклоняться||/девиация
+device[di'vais]устройство||/девайс сленг
+devise[di'vais/di'vaiz]придумывать,изобретать
+devoid[di'vɔid]лишенный
+devote[di'vout]посвятить,уделить
+devour[di'vauər/di'vauə]пожирать
+dial[daiəl/dail/dai(ə)l]набирать номер||/диалап инет
+diamond[daimənd/daiəmənd]бриллиант обычно алмаз
+diary[daiəri/dairi]дневник||/+доярки
+dice[dais](pl: dice) кубик (игральный)
+dictionary[dikʃə,neri/dikʃ(ə)nn]словарь||/+ жаргонов ДИКТовали в Школе НАРкоману
+die[dai]умереть||/ ДАЙ *умереть спокойно
+differ[difər/difə]отличаться||/диференциал
+difference[difərəns/difrəns/difr(ə)ns]разница
+different[difərənt/difrənt/difr(ə)nt]различный,разный,отличающийся
+difficult[difəkəlt/difik(ə)lt]трудный||/дифектный культурист
+difficulty[difəkəlti/difi,kəlti/difik(ə)lti]трудность
+digest[daiʤest/dai'ʤest]переваривать
+digit[diʤət/diʤit]цифра
+dignity[dignəti/digniti]достоинство
+diligent[diliʤənt/diliʤ(ə)nt]усердный,старательный
+dilute[dai'lut/di'lut/dai'lju:t]разбавлять,разводить
+dim[dim]тусклый
+dimension[di'menʃən]измерение,размер
+diminish[di'miniʃ]уменьшаться
+dine[dain]ужинать||/+ с динозавром /ДАЙ Нам поужинать
+dinner[dinər/dinə]ужин||/*ужин с динозаврами нервными
+dip[dip]окунать,погружать
+dire[daiər/dair/daiə]страшный,тяжёлый||/ДИРЕктор
+direct[dai'rekt/dər'ekt/di'rekt]направлять,прямой (обычн. перен.знач)||/директива
+direction[dai'rekʃin/dər'ekʃən/di'rekʃin/dai'rekʃən]направление
+directly[dai'rekli/dər'ektli/di'rekli/dai'rektli]прямо
+directory[dai'rektəri/dər'ektəri/di'rektəri/di'rektən]справочник||/+ директора с адресами и явками
+dirty[dərti/də:ti]грязный||/ дитё *грязное по уши пришло домой
+disable[di'seibəl/dis'eibl]отключить,нейтрализовать
+disabled[di'seibəld/dis'eibld]инвалид (прил),отключенный
+disappear[,disə'pir/,disə'piə]исчезать,исчезнуть
+disappoint[,disə'pɔint]разочаровывать
+disappointed[,disə'pɔinid/,disə'pɔintid]разочарованный||/ дисапоинтед
+disaster[di'zæstər/diza:stə]бедствие
+discard[di'skɑrd/diska:d]отбросить,отказаться
+discern[di'sərn/di'sə:n]различить,распознать
+disciple[di'saipəl/di'saipl]ученик,последователь
+disclose[di'sklouz/dis'klouz]раскрывать,обнаруживать
+discount[diskaunt/di'skaunt]скидка
+discourage[di'skəriʤ/dis'kʌriʤ]отговорить,демотивировать
+discourse[diskɔrs/dis'kɔs]речь,рассуждение
+discover[di'skəvər/dis'kʌvə]открывать,открыть (новое)
+discovery[,dis'kəvri/di'skəvəri/di'skəvri/dis'kʌv(ə)ri]открытие
+discreet[dis'krit/dis'krrt]сдержанный||/дискретный
+discrepancy[dis'krepənsi/dis'krep(ə)nsi]несоответствие,расхождение
+discrete[dis'krit/dis'kri:t]благоразумный,отдельный,разрозненный||/ дискридитация
+discretion[dis'kreʃən/dis'kreʃ(ə)n]благоразумие,усмотрение
+discriminate[dis'krimə,neit/dis'kriminit]различать,разделять||/дискриминация
+discussion[di'skəʃən/dis'kʌʃ(ə)n]обсуждение
+disdain[dis'dein]пренебрегать,презирать
+disease[di'ziz/di'zi:z]болезнь||/*болезнь от ДИкого СЕЗона дождей
+disgrace[dis'greis]бесчестие,позор
+disguise[dis'gaiz]маскировать,маскировка
+disgust[dis'gəst/dis'gʌst]отвращение
+dish[diʃ]блюдо,тарелка,миска||/диск
+dishonest[di'sɑnəst/dis'ɔnist]нечестный||/ dis*=не*
+disillusion[,disi'luʒən/,disi'lu:ʒ(ə)n]разочаровывать
+dislocate[disloukeit]вывихнуть,сместить||/дислокация
+dismantle[dis'mænəl/dis'mæntəl/dis'mæntl]разобрать,демонтировать
+dismay[dis'mei]испуг,тревога,потрясение
+dismiss[dis'mis]отказаться,отклонить,отбросить,прогонять,посылать,увольнять
+disobey[,disə'bei/disə'bei]не подчиняться
+disorder[di'sɔrdər/dis'ɔ:də]беспорядок||/(order-порядок)
+disparity[di'sperəti/dis'pæriti]неравенство||/не паритет
+dispatch[di'spæʧ/dis'pæʧ]отправлять,отправка
+dispel[di'spel]развеяться,исчезнуть
+dispense[di'spens]распределять,раздавать
+disperse[di'spərs/dis'pə:s]рассеиваться
+displace[dis'pleis]вытеснять,смещать
+disrupt[dis'rəpt/dis'rʌpt]нарушить,сорвать
+dissent[di'sent]несогласие,не соглашаться
+dissipate[disə,peit/disipeit]рассеивать
+dissolve[di'zɑlv/dizɔlv]растворять,растворяться
+distinct[di'stiŋkt/dis'tiŋkt]отчетливый,чёткий,различимый
+distinction[di'stiŋkʃən/dis'tiŋkʃ(ə)n]различие
+distinguish[di'stiŋgwiʃ/dis'tiŋgwiʃ]выделять,отличать,различать
+distort[di'stɔrt/dis'tɔ:t]искажать
+distract[di'strækt/dis'trækt]отвлекать
+distress[di'stres/dis'tres]несчастье,страдание
+distribute[di'stribjut/dis'tribju(:)t]распределять,распростронять
+distribution[,distrəb'juʃən/,distri'bju:ʃən]распространение
+district[distrikt/distnkt]район,округ
+disturb[di'stərb/dis'tə:b]беспокоить,тревожить
+ditch[diʧ]ров||/дичь
+diverge[di'vərʤ/daivə:ʤ]расходиться
+diverse[dai'vərs/di'vərs/daivə:s]разнообразный||/диверсант
+divert[dai'vərt/di'vərt/dai'və:t]отвлечь,развлечь
+division[di'viʒən/di'viʒ(ə)n]деление||/ дивизию *делили генералы поровну
+divorce[di'vɔrs/di'vɔ:s]развод,разводиться
+divorced[di'vɔrst/di'vɔ:st]разведенный||/ диверсант
+dizzy[dizi]головокружительный
+dodge[dɑʤ/dɔʤ]уворачиваться,уклоняться,уловка
+dole[doul]пособие по безработице||/доля тяжкая
+domain[dou'mein/doumein]область,сфера,владение||/домен
+dome[doum]купол,свод||/ДОМ УМный с *куполом
+domestic[də'mestik/dou'mestik]внутренний (о политике),домашний,отечественный||/*ДОМашний СТИКер на холодильнике
+donkey[dɑŋki/dɔŋki]осел||/ДОН КИхот на + ездил
+doom[dum/du:m]гибель,рок,обречённость||/ДУМа *обречена на *гибель /ДУМ игруля известная
+door[dɔr/dɔ:]дверь||/+ ДОма Расписная
+doorway[dɔr,wei/dɔ:wei]дверной проем||/=дверь+путь
+dormitory[dɔrmə,tɔri/dɔ:mitəri]общежитие||/дом санаторий
+dot[dɑt/dɔt]точка||/дот (воен)
+dotted[dɑtəd/dɑtid/dɔtid]точечный||/+ удар ракетой в дот идет
+double[dəbəl/dʌbl]двойной,удваивать||/дабл известное
+doubt[daut]сомневаться,сомнение
+dough[dou]тесто
+doughnut[dou,nət/dounʌt]пончик||/=тесто+орех
+downtown[daun'taun/,daun'taun]центр города||/+ кишит даунами
+downturn[daun,tərn/dauntə:n]спад
+draft[dræft/draft]проект,черновик,набросок,тяга,сквозняк
+drag[dræg]тащить,волочить||/*тащить ДРАГоценности
+drastic[dræstik]радикальный,резкий
+draw[drɔ/drɔ:](drew,drawn) тянуть,влечь,рисовать,чертить||/*рисовать ДРОжащей рукой ДРОВа
+drawback[drɔ,bæk/drɔ:bæk]недостаток||/=тянуть+назад
+drawer[drɔr/drɔ:ə]выдвижной ящик
+drawing[drɔiŋ/drɔ:iŋ]рисунок
+dread[dred]страх,бояться||/судья дред
+drills[drilz/drils]тренировка,учение||/сверлилки
+drink[driŋk/dnŋk]напиток,пить||/*напиток из ТРЫН травы и Кактуса /*пить дрянь кислую
+drip[drip]капля,капать||/заДРИПаный бачок протекал и *капал
+drive[draiv](drove,driven) водить машину,двигать,гнать,вести (машину)||/*вести_машину с дровами
+driver[draivər/draivə]водитель||/+ ДРАпал с места аВАРии /+ ДРых И ВЕРтелся пока не врезался в столб
+drizzle[drizəl/drizl]моросить,морось
+drop[drɑp/drɔp]капля,падать,ронять,уронить||/ дроп покупал *капли по *капле и *уронил посылку
+drought[draut]засуха
+drown[draun]тонуть
+drug[drəg/drʌg]лекарство,наркотик||/драг
+drum[drəm/drʌm]барабан,барабанить||/драм друм
+dry[drai]сухой,сушить,засуха||/ДРАИл *сухой пол *досуха
+dubious[dubiəs/dju:bjəs]сомнительный
+duck[dək/dʌk]утка||/ макДАК из *утинных историй
+duckling[dəkliŋ/dʌkliŋ]утёнок
+dude[dud/du:d]чувак||/+ с ДУДочкой
+due[dju/du/dju:]должное,должный,положенный
+dull[dəl/dʌl]скучный,унылый
+dumb[dəm/dʌm]немой,тупой||/ты *тупой, ща как ДАМ
+dummy[dəmi/dʌmi]манекен,чучело||/+ дамы
+dump[dəmp/dʌmp]бросать (парня||/девушку),сваливать,сбрасывать свалка,свалка / ДАМы Пошли на *свалку *бросать мусор
+durable[durəbəl/djuərəbl]прочный,долговечный||/дюралюминий
+duration[du'reiʃən/dju(ə)'reiʃən]продолжительность
+during[dəriŋ/djuriŋ/duriŋ/djuənŋ]в течение,во время
+dusk[dəsk/dʌsk]смеркаться
+dust[dəst/dʌst]пыль||/+ достала
+duty[djuti/duti/dju:ti]долг,обязанность,служба
+dwarf[dwɔrf/dwɔ:f]карлик,гном||/*гном зашел во двор и фыркнул
+dwell[dwel]обитать,проживать
+dwindle[dwindəl/dwindl]постепенно уменьшаться
+dye[dai]краска,краситель||/дай *краску
+
+eager[igər/i:gə]сильно желающий||/игорь
+ear[ir/iə]ухо||/ *уши осла ИА нашла сова на кусте (и подарила ему на др)
+early[ərli/ə:li]рано,ранний
+earn[ərn/ən]зарабатывать
+earnest[ərnist/ə:nist]серьёзный,ревностный||/эрнест
+earning[ərniŋ/ə:niŋ]заработок
+earring[iriŋ/iəriŋ]сережка,серьга||/=ухо+кольцо
+earth[ərθ/ə:θ]Земля||/эрс
+earthquake[ərθ,kweik/ə:θkweik](quake) землетрясение||/квака игруля
+ease[iz/i:z]лёгкость,облегчать
+easily[izəli/i:zili]легко
+east[ist/i:st]восток||/ ИСТинный ариец напал на *восток
+eastern[istərn/i:stən]восточный
+eclipse[ə'klips/i'klips]затмение
+edge[eʤ]край||/аджика
+edible[edəbəl/edibl]съедобный
+edition[ə'diʃən/i'diʃən/i'diʃ(ə)n]издание
+educate[eʤə,keit/eʤju,keit/edju(:)keit]воспитывать,обучать||/эдика и катю
+education[,eʤə'keiʃən/,eʤju'keiʃən/,edju(:)'keiʃ(ə)n]образование
+educational[,eʤə'keiʃənəl/,eʤju'keiʃənəl/,edju(:)'keiʃənl]образовательный
+efficacy[efi,kæsi/efikəsi]результативность
+effort[efərt/efət]усилие,старание
+egg[eg]яйцо||/последнее + съел ЭГоист (ночью тайно от всех схомячил)
+eggplant[eg,plænt/egpla:nt]баклажан||/=яйцо+растение
+either[aiðər/iðər/aiðə]каждый,либо,любой,любой из двух,тоже (не)
+eject[i'ʤekt/i(:)'ʤekt]выталкивать
+elaborate[i'læbər,eit/i'læbrət/i'læb(ə)rit]разработать,хорошо проработанный
+elbow[el,bou/elbou]локоть||/ ЕЛ БОрщ Утром *локтем
+elder[eldər/eldə]старший||/дылда
+elderly[eldərli/eldəli]пожилой
+elephant[eləfənt/elifənt]слон||/+ ел фантики
+elicit[i'lisit]добиться,извлечь
+eligible[eləʤəbəl/eliʤəbəl/eliʤəbl]имеющий право
+eliminate[i'limə,neit/i'limineit]устранять,ликвидировать
+elk[elk]лось||/+ ел какашки
+eloquent[eləkwənt/eloukw(ə)nt]красноречивый,выразительный
+elsewhere[el,swer/els'weə]в другом месте,где-то еще
+elude[i'lud/i'lu:d]ускользнуть,увернуться
+embarrass[im'berəs/im'bærəs]смущать,стеснять
+embassy[embəsi]посольство||/  возле Этого Мелкого БАСсейна
+embed[im'bed]встроить,вставить
+embody[im'bɑdi/im'bɔdi]олицетворять
+embrace[em'breis/im'breis]обхватить,обнять,обхват
+embroider[im'brɔidər/im'brɔidə]вышивать||/+ этому бродяге узоры
+emerge[imərʤ/i'mərʤ/i'mə:ʤ]появляться
+emergency[imərʤənsi/i'mərʤənsi/i'mə:ʤ(ə)nsi]чрезвычайная ситуация
+eminent[emənənt/eminənt]видный,уважаемый
+emphasis[emfəsəs/emfəsis]акцент,внимание,ударение,особое внимание
+emphasise[emfəsəs/emfəsis/emfəsaiz]подчеркнуть
+employ[em'plɔi/im'plɔi]использовать,нанимать на работу,предоставлять работу||/ем плойку
+employee[em'plɔii/im'plɔii/,emplɔi'i:]работник,сотрудник
+employer[em'plɔiər/im'plɔiər/im'plɔiə]работодатель
+employment[em'plɔimənt/im'plɔimənt]занятость
+empower[im'pauər/im'pauə]давать возможность,право
+empty[empti/emti]опустошать,пустой||/ ЕМ ПТИчку на *пустой желудок
+enable[e'neibəl/i'neibəl/i'neibl]включить,давать возможность
+enact[i'nækt]вводить (напр. закон)
+enchant[en'ʧænt/in'ʧa:nt]околдовать,очаровать||/чары
+enclose[in'klouz]окружать,заключать
+encompass[en'kəmpəs/in'kʌmpəs]охватывать,заключать
+encounter[in'kaunər/in'kauntər/in'kauntə]встретить,встретиться,столкнуться
+encourage[en'kəriʤ/in'kərəʤ/m'kʌriʤ]поддерживать,поощрять
+endanger[en'deinʤər/in'deinʤə]подвергать опасности
+endeavor[in'devər/en'devər](-our) стремиться,стараться,попытка
+endorse[en'dɔrs/in'dɔ:s]одобрять,поддерживать
+endow[en'dau/in'dau]наделять,даровать
+endure[en'djur/in'dur/indjuə]выдерживать
+enemy[enəmi/enimi]враг||/+ онемел
+enforce[en'fɔrs/infɔ:s]внедрить,навязать
+engaged[en'geiʤd/in'geiʤd]помолвленный (-ая)||/ с леди гагой
+engender[en'ʤendər/in'ʤendər/in'ʤendə]зарождать,порождать
+enhance[en'hæns/in'ha:ns]повысить,усилить,расширить,усиливать
+enjoy[,en'ʤɔi/in'ʤɔi]наслаждаться
+enlarge[,en'lɑrʤ/in'lɑrʤ/inla:ʤ]увеличить,расширить
+enlighten[,en'laitən/inlaitn]просветить
+enlist[,en'list/inlist]привлечь (к делу)
+enormous[i'nɔrməs/i'nɔrmis/inɔ:məs]огромный||/не нормальный
+enough[i'nəf/i'nʌf]довольно,достаточно||/нафталин
+enquiry[in'kwai,ri/in'kwaiəri]запрос
+enrich[en'riʧ/in'riʧ]обогащать||/rich-богатый
+enrol[in'roul](enroll) записать (в члены),набрать
+ensue[in'su/in'sju:]следовать,вытекать
+ensure[en'ʃur/in'ʃur/in'ʃuə]гарантировать,обеспечить
+entail[en'teil/in'teil]влечь за собой,подразумевать
+enterprise[enər,praiz/entər,praiz/entəpraiz]предприятие,предпринимательство
+entertain[,enər'tein/,entər'tein/,entə'tein]развлекать
+entice[in'tais/intais]соблазнять
+entire[in'taiər/in'taiə]весь,целый
+entirely[in'taiərli/in'taiəli]полностью
+entitle[en'taitəl/in'taitəl/intaitl]давать название,давать право (по заслугам)
+entity[entəti/entiti]сущность
+entrance[entrəns/entr(ə)ns]вход||/ ЕНот ТРАНСформер искал *вход в ракету
+entrepreneur[,ɑntrəprə'nər/,ɑntrəprə'nur/,ɔntrəprə'nə:]предприниматель
+entry[entri/entn]вход||/ЕНот ТРИ раза нашел +
+envelope[envə,loup/envəloup]конверт||/+ энвенк слопал
+environment[in'vairənmənt/in'vaiər(ə)nmənt]окружающая среда,среда,окружение
+environmental[in,vairən'menəl/in,vairən'mentəl/in,vaiər(ə)n'mentl]экологический
+environs[in'vairənz/invaiər(ə)nz]окрестности||/ енот с вороной изучали *окрестности галактики
+envision[en'viʒən/in'viʒ(ə)n]воображать
+envy[envi]зависть
+equation[i'kweiʒən/i'kweiʃ(ə)n]уравнение
+equity[ekwəti/ekwiti]равноправие,справедливость
+eradicate[i'rædə,keit/i'rædikeit]уничтожить,искоренить
+erase[i'reis/i'reiz]стирать||/+ кЕРОСином и ластиком
+eraser[i'reisər/i'reizə]ластик||/+ с эротическим сюрпризом
+erect[i'rekt]воздвигнуть,соорудить
+erode[iroud/i'roud]размывать,выветривать
+errand[erənd/er(ə)nd]поручение
+erupt[irəpt/i'rəpt/i'rʌpt]извергаться
+escape[i'skeip/is'keip]избежать,спастись,сбежать||/ИЗ КЕЙПинга
+especially[ə'speʃəli/ə'speʃli/is'peʃ(ə)li]особенно
+essence[esəns/esns]сущность||/эсенция
+essential[e'senʃəl/i'senʃəl/i'senʃ(ə)l]необходимый,существенный
+essentially[e'senʃəli/i'senʃəli/i'senʃ(ə)li]по существу
+establish[i'stæbliʃ/is'tæbliʃ]установить,учредить
+establishment[i'stæbliʃmənt/is'tæbliʃmənt]учреждение
+estate[i'steit/is'teit]имущество
+esteem[ə'stim/is'ti:m]уважать,почитать,почтение
+estimate[estə,meit/estəmət/estimit]оценивать,оценка,примерно оценивать
+eternal[i'tərnəl/i(:)'tə:nl]вечный
+evade[i'veid]уклоняться
+evaluate[i'vælju,eit/i'væljueit]дать оценку
+evaluation[i,vælju'eiʃən/i,vælju'eiʃ(ə)n]оценка||/эволюция
+evaporate[i'væpər,eit/i'væpəreit]испаряться
+eve[iv]канун||/ева
+even[ivin/iv(ə)n]даже 2.ровный
+evening[ivniŋ/i:vniŋ]вечер
+event[i'vent]событие||/ивент сленг
+eventual[ə'venʧuəl/i'venʧuəl]конечный,возможный
+eventually[i'venʃəli/i'venʧəwəli/i'venʧəli]в конце концов
+ever[evər/evə]всегда,когда-либо
+evidence[evədəns/evid(ə)ns]доказательство (неисчисл)
+evident[evədənt/evid(ə)nt]очевидный
+evoke[i'vouk]вызывать
+evolve[i'vɑlv/i'vɔlv]развиваться,эволюционировать
+exact[ig'zækt/igzækt]точный
+exactly[ig'zæktli/igzæktli]точно
+exaggerate[ig'zæʤər,eit/ig'zæʤəreit]преувеличивать
+examination[ig,zæmə'neiʃən/ig,zæmi'neiʃ(ə)n]осмотр
+examine[ig'zæmin/igzæmin]исследовать,осмотреть,изучить
+example[ig'zæmpəl/igzampl]пример
+excavate[ekskə,veit/ekskəveit]рыть,выкапывать
+exceed[ik'sid/ik'si:d]превышать
+excel[ik'sel]преуспеть||/эксель таблица
+excellent[eksələnt/eks(ə)lənt]отличный,превосходный
+except[ik'sept]кроме,исключая
+exception[ik'sepʃən/ik'sepʃ(ə)n]исключение
+excerpt[eksərpt/ek'sərpt/eksə:pt]выдержка,отрывок
+excess[ek,ses/ik'ses]избыток,чрезмерный
+exchange[iks'ʧeinʤ]обмен
+excite[ik'sait]волновать,возбуждать
+excited[ik'saitəd/ik'saitid]взволнованный||/ на ЭКСкурсии по САЙТу (с эротикой)
+excitement[ik'saitmənt]волнение
+exciting[ik'saitiŋ]захватывающий
+exclaim[ik'skleim/iks'kleim]восклицать
+exclude[ik'sklud/iks'klu:d]исключать
+excuse[ik'skjus/ik'skjuz/iks'kju:s]оправдание,отмазка
+executive[ig'zekjətiv/ig'zekjutiv]руководитель высшего звена
+exempt[ig'zempt]освободить (от),освобождение
+exercise[eksər,saiz/eksəsaiz]упражнение,тренироваться,упражняться
+exert[ig'zərt/ig'zə:t]приложить,оказать
+exhale[eks'heil]выдыхать
+exhaust[ig'zɔst/ig'zɔ:st]выхлопные газы,исчерпывать,истощать
+exhibit[ig'zibit]выставлять,показывать
+exhibition[,eksə'biʃən/,eksi'biʃ(ə)n]выставка
+exile[eg,zail/ek,sail/eksail]ссылка,изгнание
+exist[ig'zist]существовать
+existence[eg'zistəns/ig'zistəns/ig'zist(ə)ns]существование
+existing[ig'zistiŋ]существующий
+expand[ik'spænd/iks'pænd]расширять,распространять||/экспандер
+expanse[ik'spæns/iks'pæns]пространство,простор
+expansion[ik'spænʃən/ik'spænʧən/ikspænʃ(ə)n]расширение
+expect[ik'spekt/iks'pekt]ожидать (события)
+expectation[,ekspek'teiʃən/,ekspek'teiʃ(ə)n]ожидание
+expected[ik'spektəd/ik'spektid]ожидаемый
+expel[ik'spel/iks'pel]высылать,изгонять
+expenditure[ik'spendəʧər/ik'spendiʧər/iks'pendiʧə]затраты,расходы
+expense[ik'spens/iks'pens]расход,расходы
+expensive[ik'spensiv]дорогой
+experience[ik'spiriəns/iks'piəriəns]испытывать,опыт
+expire[ik'spair/ikspaiə]истекать
+explain[iks'plein]объяснить,объяснять||/икс план
+explanation[,eksplə'neiʃən/,eksplə'neiʃ(ə)n]объяснение
+explicit[iks'plisət/iks'plisit]явный,откровенный
+explode[iks'ploud]взрываться
+explore[iks'plɔr/iks'plɔ:]изучать,исследовать
+explorer[iks'plɔrər/iks'plɔrə]исследователь||/эксплуататор
+expose[ik'spouz/iks'pouz]выставлять,обнажать
+express[iks'pres]выражать||/экспрессия
+expression[iks'preʃən/iks'preʃ(ə)n]выражение
+exquisite[ekskwəzət/ekskwizit]утончённый,изысканный
+extend[ik'stend/iks'tend]продлить,расширять,удлиннять
+extension[ik'stenʃən/iks'tenʃ(ə)n]расширение
+extensive[ik'stensiv/iks'tensiv]обширный
+extent[ik'stent/iks'tent]степень,мера
+exterior[ik'stiriər/eks'tiəriə]внешний,внешняя сторона||/экстерьер
+external[ik'stərnəl/eks'tə:nl]внешний
+extinct[ik'stiŋkt/iks'tiŋkt]вымерший
+extinguish[ik'stiŋgwiʃ/iks'tiŋgwiʃ]погасить
+extort[ek'stɔrt/iks'tɔ:t]вымогать
+extra[ekstrə]дополнительный||/экстра
+extract[ek,strækt/ik'strækt/ekstrækt]извлекать||/экстракт
+extraordinary[,ekstrə'ɔrdə,neri/ik'strɔrdə,neri/iks'trɔ:dnn]необычный||/экстраординарный
+extreme[ek'strim/iks'tri:m]крайний||/экстримист
+extremely[ek'strimli/iks'tri:mli]чрезвычайно
+exuberant[ig'zubərənt/ig'zju:b(ə)r(ə)nt]буйный,энергичный
+eye[ai]глаз||/ АЙ в *глаз бревно попало
+eyeglasses[ai,glæsəz/ai,glæsiz/ai,glɑ:siz]очки||/=глаза+стекла
+eyelid[ai,lid/ailid]веко||/глаз+крышка
+eyes[aiz]глаза||/ всегда райз
+
+fabric[fæbrik]ткань,материал||/фабрика *тканей
+fabulous[fæbjələs/fæbjuləs]невероятный,легендарный
+facet[fæsət/fæsit]грань (втч. перен)
+facial[feiʃəl/feiʃ(ə)l]лицевой
+facilitate[fə'silə,teit/fə'siliteit]облегчать,способствовать
+facility[fə'siliti]лёгкость,удобство,сооружение,объект,средство
+faction[fækʃən/fækʃ(ə)n]группировка,фракция
+faculty[fækəlti/fæk(ə)lti]дар,способность||/факультет
+fade[feid]увядать,блекнуть
+fail[feil]потерпеть неудачу,терпеть неудачу
+failure[feiljər/feiljə]неудача,провал
+faint[feint]обморок,падать в обморок,слабый,неуловимый
+fairly[ferli/feəli]довольно,вполне,справедливо
+faith[feiθ]вера
+fall[fɑl/fɔl/fɔ:l]осень (амер),падать||/фол (футб)
+falter[fɔltər/fɔ:ltə]колебаться,дрогнуть
+fame[feim]известность,слава||/+ фомы, которого съел крокодил
+familiar[fə'miljər/fə'miljə]знакомый||/фамилиарный
+famine[fæmən/fæmin]голод
+fancy[fænsi]необычный,причудливый,модный,представлять,полагать||/фэнси (муз)
+faraway[fɑrə'wei/,fɑ:rə'wei]далёкий
+fare[fer/feə]плата за проезд||/фея на ферари таксует
+farewell[,fer'wel/feə'wel](farewells)прощальный,прощание
+fascinate[fæsə,neit/fæsineit]очаровывать
+fashion[fæʃən/fæʃ(ə)n]мода,стиль,образ,манер||/*мода фашистов и нацистов
+fat[fæt]жир,жирный||/ белая фата на *жирной невесте
+father[fɑðər/fa:ðə]отец||/+ нашёл ФАЗу и сунул двА пальца в Розетку
+fatigue[fə'tig/fə'ti:g]усталость,утомление
+faucet[fɔsət/fɔ:sit]кран
+fault[fɔlt/fɔ:lt]вина,ошибка,недостаток,неисправность
+fear[fir/fiə]бояться,страх||/*страх ФИоны в замке с дРаконом
+feasible[fizəbəl/fi:zəbl]выполнимый,осуществимый
+feat[fit/fi:t]подвиг,свершение
+feather[feðər/feðə]перо
+fee[fi/fi:]плата||/+ фиговая
+feeble[fibəl/fi:bl]слабый,немощный
+feed[fid/fi:d](fed,fed) кормить||/фид
+feedback[fid,bæk/fi:dbæk]обратная связь
+feel[fil/fi:l](felt,felt) трогать,щупать,чувствовать||/филина за клюв
+feeling[filiŋ/fi:liŋ]чувство||/филина
+fellow[felou]парень,человек,товарищ по чему-либо
+felon[felən]преступник,уголовник
+feminine[femənən/feminin]женский
+fence[fens]забор,огораживать||/фенс
+ferocious[fər'ouʃəs/fə'rouf(ə)s]свирепый
+ferry[feri]паром,переправа||/ аФЕРИсты сели на *паром и поплыли на ФЕРосплавныЙ завод
+fertile[fərtəl/fər'tail/fə:tail]плодородный
+fertility[fər'tiləti/fər'tiliti/fə(:)'tiliti]рождаемость||/ на ферме телиться / феромонами вертели
+fetch[feʧ]сходить принести||/феч
+fetus[fitəs/fi:təs]плод,эмбрион
+fever[fivər/fi:və]лихорадка,жар||/*лихорадка в ФЕВРале
+few[fju/fju:]мало,немного||/фьючерсы
+fewer[fjuər/fju:ər]меньше
+fibre[faibər/faibə]волокно||/микрофибра
+fiction[fikʃən/fikʃ(ə)n]вымысел,худ.литература||/фикция
+fiddle[fidəl/fidl]скрипка||/+ фиделя кастро
+fidelity[,fai'deləti/fə'deləti/fi'deliti]верность
+field[fild/fi:ld]поле,область||/филд
+fierce[firs/fiəs]свирепый||/фирс
+fight[fait]бой,драться||/файт
+file[fail]папка,файл||/*папка фили простофили пропала со стола
+fill[fil]заполнять,наполнять||/фил
+filth[filθ]грязь,гадость
+fin[fin]плавник||/финский
+find[faind]найти||/фаину д
+finding[faindiŋ]находка
+fine[fain]тонкий,хороший,хорошо 2.штраф
+fingertip[fiŋgər,tip/fiŋgətip]кончик пальца
+fir[fər/fə:]ель||/+ фирменная
+firearm[fai,rɑrm/faiər,ɑrm/faiəra:m]огнестрельное оружие
+firefighter[fair,faitər/faiə,faitər]пожарник
+firmly[fərmli/fə:mli]твердо
+fish[fiʃ]рыба||/+ играет в ФИШки с раками на желания /+ приплыла к ФИниШу / фарш из *рыбы
+fisherman[fiʃər,mæn/fiʃərmən/fiʃəmən]рыбак||/=рыба+чел
+fist[fist]кулак||/ сВИСТел в + / ФИСТашки в *кулаке
+flair[fler/fleə]чутьё,талант
+flake[fleik]слоиться,крошиться
+flakes[fleiks]хлопья
+flare[fler/fleə]вспышка,вспыхивать
+flash[flæʃ]вспышка,вспыхнуть||/флешка
+flat[flæt]квартира 2.плоский,ровный
+flatter[flætər/flætə]льстить
+flavor[fleivər/fleivə]вкус,приправлять
+flaw[flɔ]изъян
+flea[fli/fli:]блоха||/фли
+flee[fli](fled,fled) спасаться бегством||/блоха *спасается от ловли
+fleeting[flitiŋ/fli:tiŋ]мимолётный,скоротечный
+flesh[fleʃ]плоть,мясо
+flex[fleks]сгибать||/рефлекс
+flick[flik]короткое резкое движение,фильм (разг)
+flicker[flikər/flikə]мерцать
+flight[flait]бегство,драка,полет,рейс||/*полёт Фанерного ЛАЙнера Туда
+flinch[flinʧ]дёрнуться,дрогнуть
+fling[fliŋ](flung,flung) швырнуть
+flip[flip]переворачивать,перевёрнутый
+float[flout]плыть
+flock[flɑk/flɔk]стадо,стая
+flood[fləd/flʌd]потоп,наводнение,наводнять||/флуд сленг
+floor[flɔr/flɔ:]пол,этаж||/*пол раскрасили ФЛОмастеРом и посыпали мукой
+flop[flɑp/flɔp]провал,неудача
+flour[flauər/flaur/flauə]мука||/ ФЛАкон с *мукой уронили с 10 этажа на пол
+flourish[fləriʃ/flʌriʃ]процветать
+flow[flou]поток,течь||/флоу
+fluctuate[fləkʧə,weit/flʌktjueit]колебаться||/флуктуация
+fluent[fluənt/flu(:)ənt]беглый
+fluently[fluəntli/flu(:)əntli]свободно||/=бегло
+fluffy[fləfi/flʌfi]пушистый
+fluid[fluəd/fluid/flu(:)id]жидкий,текучий
+flurry[fləri/flʌri]поток,шквал||/флэри
+flush[fləʃ/flʌʃ]промывать,смывать,румянец,порозоветь
+flutter[flətər/flʌtə]трепетать,развеваться,порхать
+fly[flai]летать,муха||/ *муха раздавала ФЛАеры на день варенья
+foam[foum]пена
+foe[fou]недруг
+fog[fɑg/fɔg]туман
+foil[fɔil]расстаривать,разрушать,фольга
+fold[fould]сворачивать,складывать
+folder[fouldər/fouldə]папка
+foliage[fouliiʤ/fouliʤ]листва
+follow[fɑlou/fɔlou]следовать,следить
+following[fɑlouiŋ/fɔlouiŋ]следующий
+`;

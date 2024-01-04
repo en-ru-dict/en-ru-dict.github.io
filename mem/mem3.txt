@@ -1,0 +1,723 @@
+//составные ~700 , дословные ФА
+g_api=`
+above-all[ə'bəv-ɔl]кроме того||/=над-всем
+account-for[ə'kaunt-fɔr]объяснить (произошедшее)
+act-on[ækt-ɑn]действовать в соответствии
+add-to[æd-tu]увеличивать||/(=добавить к)
+add-up[æd-əp]сходиться (об информации)
+after-all[æftər-ɔl]всё-таки,в конце концов||/(=после-всего)
+air-conditioning[er-kən'diʃəniŋ]кондиционер %%
+all-along[ɔl-ə'lɔŋ]всё время
+allow-for[ə'lau-fɔr]выделять,рассчитывать
+apart-from[ə'pɑrt-frəm]помимо
+approve-of[ə'pruv-əv]одобрять (субъективно)
+arterial-pressure[ɑr'tiriəl-preʃər]артериальное давление %
+article-of-clothing[ɑrtəkəl-əv-klouðiŋ]предмет одежды||/=статья
+as-much[æz-məʧ]столько же
+as-though[æz-ðou]как будто
+as-well[æz-wel]также
+as-well-as[æz-wel-æz]так же как,так же как и
+ash-tree[æʃ-tri]ясень
+aside-from[ə'said-frəm]кроме
+ask-around[æsk-ər'aun]поспрашивать
+ask-out[æsk-aut]пригласить сходить
+at-all[æt-ɔl]вообще,совсем
+at-first[æt-fərst]сначала
+at-last[æt-læs]наконец
+at-least[æt-list]по крайней мере
+at-odds-with[æt-ɑdz-wið]в противоречии,в конфликте
+at-once[æt-wəns]сразу
+at-that-time[æt-ðæt-taim]в это время
+at-the-moment[æt-ðə-moumənt]сейчас
+at-the-same-time[æt-ðə-seim-taim]в то-же время
+at-top-speed[æt-tɑp-spid]на полной скорости||/ втопил по шоссе
+back-down[bæk-daun]отступить,отказаться
+back-then[bæk-ðen]тогда
+back-up[bæk-əp]ехать задним ходом,поддержать,прикрыть||/ за БЫКом АПрелем *ехал-задним-ходом
+badly-dressed[bædli-drest]плохо одетый %
+bank-on[bæŋk-ɑn]надеяться,полагаться
+be-able[bi-eibəl]мочь
+be-afraid[bi-ə'freid]бояться,ощущать страх||/~фреди-крюгера боятся дети
+be-after[bi-æftər]иметь целью
+be-angry[bi-æŋgri](with somebody) разозлиться (на кого-то)
+be-back[bi-bæk]возвращаться
+be-bored[bi-bɔrd]скучать
+be-born[bi-bɔrn]родиться||/=быть-рожденным
+be-cold[bi-kould]ощущать холод||/=быть-холодный
+be-hot[bi-hɑt]ощущать жару||/=быть-горячий
+be-hungry[bi-həŋgri]быть голодным
+be-ill[bi-il]болеть||/ и есть ил с улитками и пьявками,фу
+be-in[bi-in]участвовать
+be-into[bi-intu]любить,увлекаться
+be-keen-to[bi-kin-tu]желать,стремиться
+be-late[bi-leit]опоздать
+be-off[bi-ɔf]отсутствовать
+be-on-fire[bi-ɑn-faiər]гореть
+be-over[bi-ouvər]закончиться
+be-right[bi-rait]быть правым
+be-sleepy[bi-slipi]хотеть спать||/=быть-сонным
+be-thirsty[bi-θərsti]ощущать жажду
+be-up-to[bi-əp-tu]замышлять что-то
+be-wrong[bi-rɔŋ]быть неправым
+beat-up[bit-əp]побить
+become-of[bi'kəm-əv]случиться с к-л впоследствии
+belong-to[bi'lɔŋ-tu]принадлежать
+bend-down[bend-daun]наклониться
+black-out[blæk-aut]обесточить
+block-out[blɑk-aut]блокировать,не пускать
+block-up[blɑk-əp]забиться (о канале)
+blood-test[bləd-test]анализ крови %||/=кровь-тест
+blow-one's-nose[]сморкаться||/=дуть-один-нос
+blow-out[blou-aut]задуть (свечу)
+blow-over[blou-ouvər]пройти,утихнуть
+blow-up[blou-əp]взорвать,накачивать,надувать
+both-and[bouθ-ænd]как * так и *
+bow-out[bau-aut]откланяться,уйти
+bow-tie[bau-tai]галстук бабочка||/ был у тайсона
+brand-new[brænd-nju]новый||/ брэнд
+break-away[breik-ə'wei]отделяться
+break-down[breik-daun]ломаться
+break-into[breik-intu](break in) проникнуть,вломиться
+break-out[breik-aut]вспыхнуть,разразиться,сбежать,вырваться
+break-up[breik-əp]разорвать отношения
+bring-along[briŋ-ə'lɔŋ]взять с собой
+bring-around[briŋ-ər'aun]убедить
+bring-back[briŋ-bæk]вернуть
+bring-down[briŋ-daun]сбрасывать,свергать
+bring-in[briŋ-in]привлечь
+bring-out[briŋ-aut]выпустить (новинку )
+bring-up[briŋ-əp]воспитывать,поднять тему
+buckle-up[bəkəl-əp]пристегнуться
+build-on[bild-ɑn]нарастить,развить
+built-in[bilt-in]встроенный
+burn-down[bərn-daun]сгореть,сжечь (полностью)
+burn-out[bərn-aut]выгореть,перегореть
+bus-stop[bəs-stɑp]автобусная остановка||/ стоп
+butcher-shop[buʧər-ʃɑp]мясной магазин
+butt-in[bət-in]встревать,вмешиваться
+buy-up[bai-əp]скупить
+by-chance[bai-ʧæns]случайно
+by-far[bai-fɑr]безусловно
+by-heart[bai-hɑrt]наизусть||/=всем-сердцем
+by-oneself[bai-,wən'self]один,сам
+by-the-way[bai-ðə-wei]кстати
+call-back[kɔl-bæk]перезвонить
+call-for[kɔl-fɔr]требовать,взывать
+call-off[kɔl-ɔf]отменить
+call-on[kɔl-ɑn]обратиться,попросить
+calm-down[kɑlm-daun]успокоиться
+carry-out[kæri-aut]выполнить
+catch-on[kæʧ-ɑn]внезапно понять,становиться популярным
+catch-up-on[kæʧ-əp-ɑn]следить быть в курсе
+catch-up-with[kæʧ-əp-wið]догнать
+cheat-on[ʧit-ɑn]изменять
+check-in[ʧek-in]вселиться (в отель)
+check-into[ʧek-intu]лечь (в больницу)
+check-on[ʧek-ɑn]проверить,что всё норм
+check-out[ʧek-aut]освободить номер,посмотреть,заценить
+cheer-on[ʧir-ɑn]болеть (за спорт)
+cheer-up[ʧir-əp]взбодриться
+chill-out[ʧil-aut]расслабиться
+chop-down[ʧɑp-daun]срубить (дерево)
+chop-up[ʧɑp-əp]порезать (на кусочки)
+christmas-tree[krisməs-tri]новогодняя елка||/у крыс в масках
+clean-up[klin-əp]убрать (мусор)
+clear-off[klir-ɔf]убраться вон
+clear-out[klir-aut]убирать,забирать
+clear-up[klir-əp]прояснить(ся)
+close-down[klous-daun]закрыться (насовсем)
+close-in-on[klous-in-ɑn]приближаться
+co-operation[ko-,ɑpər'eiʃən]сотрудничество||/~кооперация
+co-worker[ko-wərkər]сотрудник||/=со работник
+come-about[kəm-ə'baut]произойти
+come-across[kəm-ə'krɔs]встретить (случайно)
+come-along[kəm-ə'lɔŋ]идти вместе,продвигаться (о работе)
+come-back[kəm-bæk]возвращаться
+come-by[kəm-bai]зайти,найти,заполучить
+come-down[kəm-daun]сводиться
+come-from[kəm-frəm]быть из
+come-into[kəm-intu]унаследовать
+come-off[kəm-ɔf]выйти,получиться,отвалиться
+come-on[kəm-ɑn]включаться
+come-out[kəm-aut]выступить,заявить,выходить,выходить (напр. об альбоме)
+come-over[kəm-ouvər]заходить (в гости)
+come-through[kəm-θru]пережить,перенести
+come-to[kəm-tu]доходить до,очнуться
+come-to-life[kəm-tu-laif]оживать,приходить в себя
+come-true[kəm-tru]сбываться
+come-under[kəm-əndər]подвегрнуться
+come-up[kəm-əp]приближаться (о событии),произойти,появиться
+come-up-to[kəm-əp-tu]подойти к кому-л.
+come-up-with[kəm-əp-wið]придумать
+come-with[kəm-wið]прилагаться
+computer-science[kəm'pjutər-saiəns]информатика||/=компьютер+наука
+consist-of[kən'sist-əv]состоять (из)
+content-with[kɑntent-wið]довольный,довольство
+cool-down[kul-daun]остыть,охладиться||/=прохладно-вниз
+cope-with[koup-wið]совладать,справиться
+count-on[kaunt-ɑn]рассчитывать на
+credit-card[kredət-kɑrd]кредитная карта %
+cross-out[krɔs-aut]вычеркнуть
+cry-out[krai-aut]закричать (от страха,боли)
+curriculum-vitae[kər'ikjələm-vaitə]резюме,биография
+cut-across[kət-ə'krɔs]пересечь,срезать путь
+cut-down[kət-daun]урезать,уменьшить
+cut-off[kət-ɔf]отрезать,отключить
+date-someone[deit-səm,wən]встречаться с кем-то||/ *встречать памятную дату /*встречаться в дату рождения
+dawn-on[dɔn-ɑn]осенить
+day-after-tomorrow[dei-æftər-tə'mɑ,rou]послезавтра
+day-before-yesterday[dei-,bi'fɔr-jestər,dei]позавчера
+day-off[dei-ɔf]выходной
+dead-end[ded-end]тупик
+deal-in[dil-in]заниматься (напр. торговать)
+deal-with[dil-wið]иметь дело с
+department-store[di'pɑrtmənt-stɔr]торговый центр
+descend-from[di'send-frəm]происходить от
+detective-story[di'tektiv-stɔri]детектив история %
+die-down[dai-daun]утихнуть
+die-out[dai-aut]вымереть
+dig-up[dig-əp]откопать
+dining-room[dainiŋ-rum]столовая||/ ДАЙ НИНе рюмку водки в *столовой
+dispense-with[di'spens-wið]обойтись без,избавиться
+dispose-of[di'spouz-əv]избавиться,располагать,распоряжаться
+do-about[du-ə'baut]сделать (с чем-то)
+do-away-with[du-ə'wei-wið]покончить,избавиться
+do-up[du-əp]привести в порядок
+do-without[du-wi'ðaut]обойтись без
+down-there[daun-ðer]там внизу
+drag-on[dræg-ɑn]тянуться долго
+draw-up[drɔ-əp]составить (документ)
+dream-up[drim-əp]придумать (в деталях)
+dress-up[dres-əp]нарядиться
+dressing-table[dresiŋ-teibəl]туалетный столик||/+ у дрессировщицы
+drive-out[draiv-aut]выгнать
+driver's-license[+laisəns]водительские права||/ =лицензия
+drop-by[drɑp-bai]зайти (по пути)
+drop-off[drɑp-ɔf]завезти,высадить
+drop-out-of[drɑp-aut-əv]бросить (учёбу)
+dry-up[drai-əp]пересохнуть,иссякнуть
+due-to[dju-tu]из-за,в связи
+dwell-on[dwel-ɑn]остановиться (подробно)
+eat-out[it-aut]есть не дома||/снаружи
+eat-up[it-əp]съесть полностью
+electric-bulb[i'lektrik-bəlb]лампочка||/ БАЛБес сунул *лампочку в рот
+embark-on[em'bɑrk-ɑn]начать (что-то серьёзное)
+end-up[end-əp]заканчивать чем-либо
+engage-in[en'geiʤ-in]заниматься,вступать,вовлекать
+even-if[ivin-if]даже если
+even-though[ivin-ðou]хотя
+evening-party[ivniŋ-pɑrti]вечеринка||/ вечернее пати под ивами
+excuse-me[ik'skjus-mi]извините
+face-up-to[feis-əp-tu]принять (обстоятельства)
+fairly-well[ferli-wel]довольно хорошо||/ фея на велике
+fall-apart[fɑl-ə'pɑrt]разваливаться
+fall-asleep[fɑl-ə'slip]заснуть,уснуть
+fall-back-on[fɑl-bæk-ɑn]опереться,прибегнуть
+fall-behind[fɑl-bi'haind]отставать
+fall-for[fɑl-fɔr]вестись,влюбляться
+fall-in-love-with[fɑl-in-ləv-wið]влюбиться
+fall-out[fɑl-aut]ссориться
+fall-over[fɑl-ouvər]упасть,перевернуться
+fall-through[fɑl-θru]провалиться
+father-in-law[fɑðər-in-lɑ]тесть,свёкр||/=в законе
+feed-on[fid-ɑn]питаться
+feel-for[fil-fɔr]сочувствовать
+feel-like[fil-laik]хотеть
+feel-oneself[fil-,wən'self]чувствовать себя||/ филя *чувствовал-себя филином
+female-flight-attendant[fi,meil-flait-ə'tendənt]стюардесса
+fend-for[fend-fɔr](-oneself) позаботиться о (-себе)
+fend-off[fend-ɔf]защищаться
+fight-back[fait-bæk]отбиваться
+fight-off[fait-ɔf]отбить
+figure-out[figjər-aut]понять,придумать
+fill-in[fil-in]заполнить
+fill-in-on[fil-in-ɑn]посвятить (в подробности)
+fill-up[fil-əp]наполнить целиком
+find-out[faind-aut]выяснить
+fire-station[faiər-steiʃən]пожарное депо||/=огонь-станция
+first-name[fərst-neim]имя %
+fit-in-with[fit-in-wið]вписаться (в коллектив)
+flea-market[fli-mɑrkət]блошиный рынок
+flick-through[flik-θru]просмотреть,пролистать
+flight-attendant[flait-ə'tendənt]бортпроводник
+flood-in[fləd-in]наплыть,валить потоком
+fond-of[fɑnd-əv]любящий
+fool-around[ful-ər'aun]придуриваться
+for-real[fɔr-ril]правда,серьёзно
+for-sure[fɔr-ʃur]наверняка,точно
+for-the-sake-of[fɔr-ðə-seik-əv]ради
+freak-out[frik-aut]пугать,бесить
+free-up[fri-əp]высвободить
+french-fries[frenʧ-fraiz]картофель фри||/=французский+жаренный
+freshen-up[freʃən-əp]освежить(-ся)
+frighten-off[fraitən-ɔf]отпугивать
+frying-pan[fraiiŋ-pæn]сковорода||/=жарящая кастрюля
+fuck-with[fək-wið]дразнить,шутить,злить (руг)
+gas-station[gæs-steiʃən]заправочная станция||/ газель заехала на *заправку
+geared-to[gird-tu]направлен на
+get-about[get-ə'baut]передвигаться (на чём-то)
+get-ahead[get-ə'hed]преуспевать,продвигаться
+get-ahead-of[get-ə'hed-əv]обогнать
+get-along[get-ə'lɔŋ]ладить
+get-at[get-æt]клонить,намекать
+get-away-with[get-ə'wei-wið]безнаказанно сделать
+get-back-at[get-bæk-æt]отомстить
+get-by[get-bai]обойтись,протянуть
+get-cold[get-kould]замерзнуть||/=получить-холодный
+get-down[get-daun]приступить
+get-in[get-in]прибывать (о транспорте)
+get-in-line[get-in-lain]встать в очередь
+get-lost[get-lɔst]пропасть
+get-off[get-ɔf]выходить (из транспорта)
+get-off-with[get-ɔf-wið]отделаться чем-либо
+get-older[get-ouldər]стареть||/=получить-старше
+get-on[get-ɑn]быть,делать
+get-out-of[get-aut-əv]избежать,отмазаться
+get-over[get-ouvər]пережить,принять
+get-rid-of[get-rid-əv]избавиться от
+get-stuck[get-stək]застрять
+get-through[get-θru]дозвониться
+get-together[get-tə'geðər]собираться
+get-used-to[get-juzd-tu]привыкать к,привыкнуть
+get-wet[get-wet]намокнуть||/=получить-мокрый
+give-a-ride[giv-ei-raid]подвезти
+give-away[giv-ə'wei]выдать (раскрыть),раздавать,дарить
+give-back[giv-bæk]возвращать
+give-birth[giv-bərθ]рожать||/=дать-рождение
+give-birth-to[giv-bərθ-tu]родить
+give-off[giv-ɔf]издавать,испускать
+give-out[giv-aut]раздать,выдать
+give-up[giv-əp]бросить (привычку),отказаться,сдаться
+gnaw-on[nɔ-ɑn]грызть,обгладывать
+go-about[gou-ə'baut]заниматься (делами)
+go-against[gou-ə'geinst]противоречить
+go-ahead[gou-ə'hed]взять (и сделать)
+go-along[gou-ə'lɔŋ]поддерживать,соглашаться
+go-bad[gou-bæd]испортиться
+go-down[gou-daun]быть принятым,спускаться
+go-for[gou-fɔr]быть проданным за,выбирать,предпочитать
+go-into[gou-intu]вдаваться
+go-off[gou-ɔf]отключиться,сработать
+go-on[gou-ɑn]продолжаться,происходить
+go-out[gou-aut]погаснуть
+go-over[gou-ouvər]просмотреть,изучить
+go-through[gou-θru]просмотреть,перебрать
+go-together[gou-tə'geðər]сочетаться
+go-under[gou-əndər]разориться
+go-up[gou-əp]подниматься
+good-evening[gud-ivniŋ]добрый вечер||/+ гудвин
+good-morning[gud-mɔrniŋ]доброе утро||/+ моника
+good-bye[gud-bai]до свидания||/+ бабайка
+great-grandmother[greit-grænd,məðər]прабабушка||/= великая грандиозная
+grocery-store[grousəri-stɔr]бакалея||/ ГРОзный СЕРЕжа зашел в *бакалею за солью для ружья
+grow-up[grou-əp]вырастать
+half-an-hour[hæf-æn-auər]полчаса
+hand-down[hænd-daun]передать (по наследству)
+hand-in[hænd-in]сдать
+hand-over[hænd-ouvər]передать
+hang-around[hæŋ-ər'aun]зависать,слоняться
+hang-out[hæŋ-aut]тусоваться где-то
+hard-working[hɑrd-wərkiŋ]трудолюбивый||/=тяжело-работающий
+have-dinner[hæv-dinər]ужинать||/~хавать динозавра нервного на ночь сленг.
+have-fun[hæv-fən]веселиться||/=иметь-веселый (фанат, фан-клуб)
+have-lunch[hæv-lənʧ]обедать||/~хавать ланч
+have-to[hæv-tu]быть должным
+head-for[hed-fɔr]направляться
+head-off[hed-ɔf]выйти,отправиться
+heads-or-tails[hedz-ɔr-teilz]орел или решка||/=головы или хвосты
+heat-up[hit-əp]разогреть
+help-out[help-aut]выручить
+high-jump[hai-ʤəmp]прыжки в высоту
+high-school[hai-skul]лицей||/=высшая-школа
+high-end[hai-end]высококлассный,лидирующий
+hit-back[hit-bæk]отыграться,отбиться
+hit-on[hit-ɑn]клеить,подкатывать
+hold-back[hould-bæk]сдерживать
+hold-on[hould-ɑn]держаться,оставаться на линии
+hold-up[hould-əp]задержать,затормозить
+hook-up[huk-əp]подключить,смонтировать,потрахаться
+horror-film[hɔrər-film]фильм ужасов||/+ про ХОР нА уРоке пения
+horse-racing[hɔrs-reisiŋ]скачки
+how-many[hau-meni]сколько %
+how-much[hau-məʧ]сколько %
+ice-cream[ais-krim]мороженое||/=лед-крем
+in-a-crazy-manner[in-ei-kreizi-mænər]по-дурацки||/=в сумашедшей манере
+in-a-row[in-ei-rou]подряд
+in-addition-to[in-ə'diʃən-tu]в дополнение
+in-advance[in-əd'væns]заранее
+in-any-case[in-eni-keis]в любом случае||/ анин кейс
+in-charge[in-ʧɑrʤ]во главе
+in-fact[in-fækt]на самом деле
+in-front-of[in-frənt-əv]перед
+in-my-opinion[in-mai-ə'pinjən]по-моему||/ в мае опята на пне
+in-order-to[in-ɔrdər-tu]для того что бы
+in-spite[in-spait]несмотря
+in-spite-of[in-spait-əv]несмотря на
+in-the-middle[in-ðə-midəl]посередине
+inside-out[in,said-aut]наизнанку
+instead-of[,in'sted-əv]вместо
+intrude-on[,in'trud-ɑn]вторгаться,вмешиваться
+it-is-necessary-that[it-iz-nesə,seri-ðæt]необходимо чтобы ...
+jump-at[ʤəmp-æt]ухватиться (за возможность)
+jump-in[ʤəmp-in]вмешаться
+keep-away[kip-ə'wei]держать(-ся) подальше
+keep-off[kip-ɔf]избегать,не трогать
+keep-on[kip-ɑn]продолжать делать
+keep-out-of[kip-aut-əv]не влезать
+keep-up[kip-əp]успевать за чем-л.
+kick-around[kik-ər'aun]обсудить (разг)
+kick-back[kik-bæk]расслабиться
+kiss-each-other[kis-iʧ-əðər]целоваться
+knitting-needle[nitiŋ-nidəl]спица
+knock-down[nɑk-daun]снести,сбить||/~нокдаун
+knock-out[nɑk-aut]вырубить (ударом)
+knock-together[nɑk-tə'geðər]слепить,соорудить
+lash-out[læʃ-aut]нападать,ругаться
+last-name[læs-neim]фамилия %
+lay-down[lei-daun]установить (правило,норму)
+lay-off[lei-ɔf]уволить,сократить
+lay-out[lei-aut]выложить,разложить
+lead-up-to[led-əp-tu]предшествовать
+lean-against[lin-ə'geinst]опереться,прислонить
+lean-over[lin-ouvər]наклониться над,через
+leave-behind[liv-bi'haind]оставить,забыть
+let-in-on[let-in-ɑn]посвящать (в секрет,план)
+let-off[let-ɔf]отпустить,дать отделаться
+let-smb-down[let-*-daun]подвести
+let-smb-in[let-*-in]впустить
+let-up[let-əp]прекратиться,стихнуть
+light-up[lait-əp]осветить,загореться
+like-a-crazy-person[laik-ei-kreizi-pərsən]как дурак
+like-that[laik-ðæt]так
+line-up[lain-əp]встать в очередь
+listen-in-on[lisən-in-ɑn]подслушивать
+listen-to[lisən-tu]слушать
+little-bit[litəl-bit]немного
+live-up-to[laiv-əp-tu]соответствовать,дотягивать
+liven-up[laivən-əp]оживить,взбодрить
+living-room[liviŋ-rum]гостиная||/=жилая-комната
+lock-up[lɑk-əp]посадить в тюрьму или дурку||/локдаун
+long-ago[lɔŋ-ə'gou]давно
+long-for[lɔŋ-fɔr]желать,скучать
+long-term[lɔŋ-tərm]долгосрочный
+look-after[luk-æftər]присматривать
+look-around[luk-ər'aun]посмотреть,оглядеть
+look-at[luk-æt]рассмотреть,обдумать
+look-for[luk-fɔr]искать
+look-forward[luk-fɔrwərd]ожидать,предвкушать
+look-into[luk-intu]посмотреть,изучить
+look-out[luk-aut]смотреть (опасность!)
+look-smb-up[luk-*-əp]найти (в списке )
+look-up[luk-əp]улучшаться,налаживаться
+look-up-to[luk-əp-tu]уважать,восхищаться
+lose-weight[luz-weit]худеть||/ лузер теряет вес
+make-a-mistake[meik-ei-mi'steik]ошибаться
+make-fun-of[meik-fən-əv]смеяться,издеваться
+make-into[meik-intu]переделать в
+make-noise[meik-nɔiz]шуметь||/=делать-шум
+make-of[meik-əv]извлечь,получить
+make-out[meik-aut]разобрать,понять,целоваться
+make-out-a-check[meik-aut-ei-ʧek]выписать чек
+make-sure[meik-ʃur]убедиться
+make-up[meik-əp]выдумать,помириться
+make-up-for[meik-əp-fɔr]компенсировать,наверстать
+many-colored[meni-kələrd]разноцветная %
+map-out[mæp-aut]запланировать,расписать
+mark-down[mɑrk-daun]снижать ценник
+me-neither[mi-naiðər]я тоже||/ люблю минтай в майонезе
+me-too[mi-tu]я тоже||/ мету мяту веником
+mess-up[mes-əp]испортить,накосячить
+mess-with[mes-wið]возиться,связываться
+middle-ages[midəl-eiʤəz]средние века
+mineral-water[minərəl-wɔtər]минералка %
+mistake-for[mi'steik-fɔr]принимать за
+mix-up[miks-əp]перепутать
+mother-in-law[məðər-in-lɑ]теща,свекровь||/=в законе
+move-out[muv-aut]съехать,выселиться
+move-over[muv-ouvər]подвинуться
+movie-theater[muvi-θiətər]кинотеатр||/ муМУ ВИдели в кинотеатре
+name-after[neim-æftər]назвать в честь
+neither-one-nor-another[naiðər-wən-nɔr-ə'nəðər]ни то,ни другое
+neither-nor[naiðər-nɔr]ни
+new-year[nju-jir]новый год %
+nibble-on[nibəl-ɑn]покусывать,обгрызать
+no-kidding[nou-kidiŋ]кроме шуток||/ кидалово
+no-matter[nou-mætər]неважно
+no-one[nou-wən]никто
+nose-around[nouz-ər'aun]рыскать,вынюхивать
+not-only-but-also[nɑt-ounli-bət-ɔlsou]не только * но и *
+not-too-well[nɑt-tu-wel]так себе||/=не-слишком-хорошо
+occur-to[ə'kər-tu]прийти в голову
+of-course[əv-kɔrs]конечно
+on-account-of[ɑn-ə'kaunt-əv]в связи
+on-behalf[ɑn-bi'hæf]от имени
+on-behalf-of[ɑn-bi'hæf-əv]от имени
+on-foot[ɑn-fut]пешком
+on-purpose[ɑn-pərpəs]нарочно
+on-the-contrary[ɑn-ðə-kɑntreri]наоборот,напротив!||/ сидела контра недобитая
+on-the-other-hand[ɑn-ðə-əðər-hænd]с другой стороны||/=на-другую-руку
+on-time[ɑn-taim]вовремя
+on-top-of[ɑn-tɑp-əv]на верху
+one-hour-from-now[wən-auər-frəm-nau]через час
+one-more-thing[wən-mɔr-θiŋ]и еще
+one-way-ticket[wən-wei-tikət]билет в один конец||/=один-путь-билет
+one-colored[wən-kələrd]одноцветный %
+opt-for[ɑpt-fɔr]выбирать из вариантов
+orange-juice[ɔrənʤ-ʤus]апельсиновый сок||/ оранжевый джус %
+out-loud[aut-laud]вслух
+outside-of[aut'said-əv]снаружи
+palm-tree[pɑlm-tri]пальма %
+panama-hat[pænə,mɑ-hæt]панамка %
+paper-clip[peipər-klip]скрепка||/=бумага-зажим
+part-time[pat-taim]неполная занятость
+pass-away[pæs-ə'wei]умереть
+pass-by[pæs-bai]проходить мимо
+pass-off-as[pæs-ɔf-æz]сойти,прокатить за
+pass-out[pæs-aut]вырубиться
+pass-smth-on[pæs-*-ɑn]отдать (другому)
+pass-up[pæs-əp]не воспользоваться шансом
+pastry-shop[peistri-ʃɑp]булочная
+pay-back[pei-bæk]вернуть деньги
+pay-off[pei-ɔf]расплатиться (с долгом)
+pay-out[pei-aut]выплатить (крупную сумму)
+perk-up[pərk-əp]воспрянуть,оживиться
+pick-on[pik-ɑn]дразнить,докучать
+pick-out[pik-aut]выбрать,выделить из
+pick-up[pik-əp]подобрать,прибрать||/~пикапер сленг
+piece-of-advice[pis-əv-æd'vais]совет
+piece-of-furniture[pis-əv-fərniʧər]предмет мебели||/=кусок-фурнитуры
+pile-up[pail-əp]сложить,навалить
+piss-about[pis-ə'baut]страдать фигнёй
+piss-off[pis-ɔf]бесить
+plug-in[pləg-in]включать
+point-out[pɔint-aut]указать
+poke-out[pouk-aut]высовывать
+police-station[pə'lis-steiʃən]полицейский участок||/=станция
+post-office[poust-ɔfis]почта||/~постомат / ПОчта СТоит в ОФИСе
+pour-in[pɔr-in](-into) хлынуть,заполонить
+prevent-smb-from[pri'vent-*-frəm]мешать
+primary-school[prai,meri-skul]начальная школа||/ примеряли форму в + %
+pull-back[pul-bæk]отступить,отвести войска
+pull-off[pul-ɔf]справиться,вытянуть
+pull-over[pul-ouvər]притормозить ненадолго
+pull-through[pul-θru]выжить,выкарабкаться
+punctuation-mark[,pəŋkʧu'eiʃən-mɑrk]знак препинания||/~пунктуация /~помарка
+put-aside[put-ə'said]отложить
+put-away[put-ə'wei]посадить в тюрьму
+put-in[put-in]вложить
+put-off[put-ɔf]отвратить,отвлечь,откладывать
+put-on[put-ɑn]надеть,одевать,провести (мероприятие)||/*одевать плутона на симпозиум /=ложить-на
+put-out[put-aut]обременять,стеснять,потушить
+put-smb-down[put-*-daun]подавлять,угнетать
+put-smth-down-to[put-*-daun-tu]объяснить,списать на
+put-through[put-θru]подвергнуть
+put-together[put-tə'geðər]собирать,соединять
+put-up[put-əp]устроить (напр. драку)
+put-up-with[put-əp-wið]принимать,мириться
+quarter-past[kwɔrtər-pæst]* с четвертью
+quarter-to[kwɔrtər-tu]без четверти *
+question-mark[kwesʧən-mɑrk]вопросительный знак
+re-[re]- повторно сделать
+reach-out[riʧ-aut]потянуться (рукой)
+read-out[red-aut]огласить,зачитать вслух
+read-up-on[red-əp-ɑn]изучить вопрос
+real-estate[ril-i'steit]недвижимость
+rear-seat[rir-sit]заднее сиденье||/ РИта СИдела на +
+rearview-mirror[rirvju-mirər]зеркало заднего вида
+related-to-school[,ri'leitid-tu-skul]школьный||/=относится-к-школе
+remote-control[ri'mout-kən'troul]пульт управления
+resort-to[ri'sɔrt-tu]прибегать к
+result-in[ri'zəlt-in]привести к
+rifle-shot[raifəl-ʃɑt]выстрел
+right-away[rait-ə'wei]немедленно
+right-side-out[rait-said-aut]наизнанку
+rip-off[rip-ɔf]обмануть,ободрать
+roll-up[roul-əp]свернуть,скатать
+roller-skate[roulər-skeit]роликовый конек %
+root-out[rut-aut]искоренить
+rope-in[roup-in](-into) втянуть в занятие
+rough-up[rəf-əp]грубо обращаться,нападать
+round-down[raund-daun]округлить (вниз)
+round-trip-ticket[raund-trip-tikət]билет туда и обратно||/=круг-поездка-билет
+run-after[rən-æftər]гнаться за
+run-away[rən-ə'wei]убежать %
+run-counter[rən-kauntər]противоречить
+run-into[rən-intu]случайно встретить
+run-out-of[rən-aut-əv]исчерпать запас
+run-over[rən-ouvər]переехать машиной
+runny-nose[rəni-nouz]насморк||/=бегающий-нос %%
+safety-belt[seifti-belt]ремень безопасности||/~болтался
+santa-claus[sænə-klɔz]дед мороз||/ это внук санта клауса
+save-up[seiv-əp]накопить
+school-year[skul-jir]учебный год||/=школа+год
+scrambled-eggs[skræmbəld-egz]яичница||/яйца подрались
+scrape-through[skreip-θru]с трудом пройти
+scrape-together[skreip-tə'geðər]наскрести (денег)
+screw-something-on[skru-səmθiŋ-ɑn]закручивать что-либо
+screw-up[skru-əp]завалить,профукать
+see-off[si-ɔf]провожать (в путь)
+see-through[si-θru]довести до конца
+see-to[si-tu]заняться,позаботиться
+sell-out-of[sel-aut-əv]распродать (весь товар)
+send-out[send-aut]рассылать
+set-about[set-ə'baut]приступить,начать
+set-down[set-daun]написать,установить
+set-out[set-aut]разъяснять
+set-out-for[set-aut-fɔr]отправиться
+set-smb-back[set-*-bæk]задержать,обойтись в (сумму)
+set-smb-up[set-*-əp]подставить
+set-smb-up-with[set-*-əp-wið]познакомить,свести,устроить,организовать
+settle-for[setəl-fɔr]согласиться на
+settle-in[setəl-in]освоиться
+settle-on[setəl-ɑn]определиться с
+sew-on-a-button[sou-ɑn-ei-bətən]пришивать пуговицу||/ к батону
+shake-hands[ʃeik-hændz]пожимать руку
+shake-off[ʃeik-ɔf]отделаться
+shake-up[ʃeik-əp]встряхнуть,взбудоражить
+shave-oneself[ʃeiv-,wən'self]бриться||/=брить себя
+shopping-cart[ʃɑpiŋ-kɑrt]тележка %
+show-around[ʃou-ər'aun]показать места
+show-off[ʃou-ɔf]показать всем,похвастаться
+show-up[ʃou-əp]прийти,появиться
+shut-out[ʃət-aut]не впускать
+shut-up[ʃət-əp]заткнуться||/закрыть рот
+sign-up[sain-əp]записаться,зарегистрироваться
+since-when?[sins-]с каких пор?
+sister-in-law[sistər-in-lɑ]сноха,золовка||/в законе
+sit-around[sit-ər'aun]просто сидеть
+sit-back[sit-bæk]отсидеться
+sit-down[sit-daun]садитесь||/ даун
+sit-out[sit-aut]высидеть
+size-up[saiz-əp]изучить,оценить
+skating-rink[skeitiŋ-riŋk]каток
+sleep-around[slip-ər'aun]трахаться,блудить
+slow-down[slou-daun]замедлиться
+smiley-face[smaili-feis]смайлик||/= радостная рожа
+so-far[sou-fɑr]до сих пор
+so-called[sou-kɔld]так называемый
+so-so[sou-sou]по-разному||/ сосу
+sober-up[soubər-əp]протрезветь
+something-to-eat[səmθiŋ-tu-it]что-нибудь поесть||/ в самсунг ит
+speak-fluently[spik-fluəntli]говорить свободно
+speak-out[spik-aut]высказать
+speak-up[spik-əp]говорить громче
+speed-up[spid-əp]ускориться %
+spell-out[spel-aut]разъяснить
+split-up[split-əp]разделиться
+stand-against[stænd-ə'geinst]противостоять
+stand-by[stænd-bai]поддерживать,быть наготове
+stand-for[stænd-fɔr]выступать за,обозначать (в сокращении)
+stand-out[stænd-aut]выделяться
+start-a-car[stɑrt-ei-kɑr]завести машину||/=старт-машины
+start-up[stɑrt-əp]основать,установить||/~стартап
+stay-up[stei-əp]не ложиться
+steering-wheel[stiriŋ-hwil]руль||/~стырили
+step-down[step-daun]уйти в отставку
+step-in[step-in]вмешаться
+stick-at[stik-æt]упорно продолжать
+stick-out[stik-aut]торчать,выделяться
+stick-to[stik-tu]придерживаться,соблюдать
+stick-together[stik-tə'geðər]держаться вместе
+stir-up[stər-əp]вызвать,возбудить
+stock-up-on[stɑk-əp-ɑn]запастись
+stop-over[stɑp-ouvər]заехать,остановиться
+stop-sign[stɑp-sain]знак стоп||/ это сигнал
+straight-ahead[streit-ə'hed]прямо
+strike-out[straik-aut]потерпеть неудачу
+submachine-gun[,səbmə'ʃin-gən]автомат
+submit-to[səb'mit-tu]подчиниться
+sum-up[səm-əp]подытожить
+swimming-pool[swimiŋ-pul]бассейн||/ СВИньи МИло ПЛЮхались в *бассейн
+take-a-look[teik-ei-luk]взглянуть
+take-a-trip[teik-ei-trip]ехать
+take-a-walk[teik-ei-wɑk]прогуляться
+take-aback[teik-ə'bæk]ошеломить
+take-advantage-of[teik-æd'væntiʤ-əv]воспользоваться
+take-after[teik-æftər]быть в (родителей)
+take-apart[teik-ə'pɑrt]разбирать
+take-away[teik-ə'wei]отнять
+take-care[teik-ker]позаботиться,заняться
+take-down[teik-daun]записать
+take-in[teik-in]понять,вникнуть
+take-off[teik-ɔf]взлететь,снимать,снять||/ с госТЕЙ КОФты,жарко
+take-on[teik-ɑn]набрать (напр. рабочих),соревноваться,столкнуться
+take-over[teik-ouvər]принять обязанности
+take-part[teik-pat]принимать участие
+take-place[teik-pleis]происходить,бывать,проходить
+take-up[teik-əp]заняться чем-либо
+talk-into[tɔk-intu]уговорить
+talk-over[tɔk-ouvər]обговорить
+talk-smb-out[tɔk-*-aut]отговорить
+tee-shirt[ti-ʃərt]майка||/+ у ТИмоти ШИРокая
+tell-apart[tel-ə'pɑrt]различать
+tell-from[tel-frəm]отличить
+tell-off[tel-ɔf]ругать
+tell-on[tel-ɑn]донести на кого-то
+the-close-future[ðə-klous-fjuʧər]близкое будущее
+the-distant-future[ðə-distənt-fjuʧər]далекое будущее
+the-distant-past[ðə-distənt-pæst]давнее прошлое
+the-future[ðə-fjuʧər]будущее
+the-left[ðə-left]налево %
+the-past[ðə-pæst]прошлое
+the-recent-past[ðə-risənt-pæst]недавнее прошлое
+the-right[ðə-rait]направо %
+the-truth[ðə-truθ]правда||/ ТРУС сказал *правду про ТРУСы
+the-weekend[ðə-wi,kend]выходные||/~уикенд
+the-whole-family[ðə-houl-fæməli]вся-семья||/+ хулигана поменяла фамилию
+think-over[θiŋk-ouvər]обдумать
+throw-away[θrou-ə'wei]выбрасывать
+throw-up[θrou-əp]блевануть
+tied-up[taid-əp]занятый
+tinker-with[tiŋkər-wið]возиться,пытаться сделать
+tip-smb-off[tip-*-ɔf]предупредить,секретно сообщить
+too-many[tu-meni]слишком много %
+too-much[tu-məʧ]слишком много %
+tow-truck[tou-trək]эвакуатор||/~тяговый трактор /+ сТОит У ТРАКтора
+town-hall[taun-hɔl]мэрия
+toy-with[tɔi-wið]подумывать о ч-л
+track-down[træk-daun]разыскать,отследить
+traffic-light[træfik-lait]светофор||/=движение+свет
+train-station[trein-steiʃən]вокзал||/=поезд+станция /~трамвай /~рейс
+travel-agency[trævəl-eiʤənsi]тур агенство||/ травили тараканов в *тур агентстве,они убегали по ТРАВе в Лес (вместе с туристами)
+try-on[trai-ɑn]примерить
+try-out[trai-aut]испытать
+turn-away[tərn-ə'wei]не пустить
+turn-down[tərn-daun]отказаться от предложения
+turn-into[tərn-intu]превращать(-ся)
+turn-off[tərn-ɔf]выключить,свернуть (с дороги)
+turn-on[tərn-ɑn]включить,заводить,возбуждать
+turn-out[tərn-aut]оказаться
+turn-over[tərn-ouvər]перевернуть
+turn-up[tərn-əp]сделать погромче
+tv-program[prou,græm]телепрограмма %
+un-[an]- частица не- (отрицание)
+unscrew-something[ʌn'skru:-səmθiŋ]выкручивать что-либо
+until-the-traffic-light[ən'til-ðə-træfik-lait]до светофора
+up-to-date[əp-tu-deit]современный,актуальный
+upside-down[əp'said-daun]вверх ногами
+used-to[juzd-tu]когда-то бывало
+vacuum-cleaner[vækjum-klinər]пылесос||/=вакуум-чиститель
+vending-machine[vendiŋ-mə'ʃin]торговый автомат
+vice-versa[vais-vərsə](и) наоборот
+video-taped[vidiou-teipt]записанный на видео
+wage-war-against[weiʤ-wɔr-ə'geinst]вести войну с
+wake-up[weik-əp]просыпаться,будить
+ward-off[wɔrd-ɔf]предотвратить,отогнать
+wash-down[wɑʃ-daun]запивать
+wash-up[wɑʃ-əp]помыть посуду,умыться
+washing-machine[wɑʃiŋ-mə'ʃin]стиральная машина %
+water-down[wɔtər-daun]разбавить,ослабить
+wear-off[wer-ɔf]сойти на нет,выветриться
+wear-out[wer-aut]измотать,истрепать
+wedding-anniversary[wediŋ-,ænə'vərsəri]годовщина свадьбы||/+ ведьмы и динозавра, пришли анна,вера и сара
+wedding-dress[wediŋ-dres]свадебное платье||/+ ведьмы дрессировщицы съел динозавр на свадьбе
+well-being[wel-biiŋ]благополучие
+well-dressed[wel-drest]хорошо одетый||/ великан дрессировщик
+well-off[wel-ɔf]обеспеченный
+which-way?[hwiʧ]куда?
+wind-up[waind-əp]заканчивать
+wipe-out[waip-aut]уничтожить
+work-out[wərk-aut]получиться,сработать,тренироваться
+worry-about[wəri-ə'baut]беспокоиться о
+write-out[rait-aut]выписать (документ)
+`;
