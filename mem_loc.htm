@@ -1,0 +1,220 @@
+<!DOCTYPE html> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<body> 
+<noscript>
+ Для работы меню включите скрипты! <br>
+ please turn on javascripts!
+</noscript>
+<style>
+@import url('bootstrap.min.css');
+
+a { outline: none; }
+ul li a[aria-controls="profile"]:hover{ color:red;}
+.ot2 {margin: 2px 1px;}
+i {color: red;}
+#id_but3 {float: right;}
+#id_p3 {max-width:100%; width:auto}
+#id_p5 {font-size: 18px;}
+</style>
+<script>
+if(window['g_api']!=undefined)alert('g_api?');
+var g_api='error';//global 
+var g_page='mem1';//global
+var g_word=0;//global
+var g_pic='0.gif';
+</script> 
+<script src='jquery.min.js'></script>
+<script src='bootstrap.min.js'></script>
+<script src='vue.js'></script>
+<script src='tem_loc.js'></script>
+
+
+  <!-- Навигация -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#tem" aria-controls="tem" role="tab" data-toggle="tab">главная</a></li>
+    <li><a href="#tem1" aria-controls="tem1" role="tab" data-toggle="tab" title="" onclick="load_g_api_from_Loc();;">списки</a></li>
+    <li><a href="#tem2" aria-controls="tem2" role="tab" data-toggle="tab" title="" onclick="load_card();">карточки</a></li>
+  </ul>
+ 
+<!-- Содержимое вкладок -->
+<div class="tab-content" >
+
+<div role="tabpanel" class="tab-pane fade in active" id="tem" align="center">
+   <div class="panel panel-primary">
+    <div class="panel-heading"><h3 >ТАБЛИЦА ПО СЛОВАМ 6к (mem)</h3></div>
+   </div>
+
+<p>
+Проект для изучения английского языка по ассоциациям. 
+Открытый. Бесплатный. Использование в комерческих целях запрещено. <br>
+Помощь в развитии сайта и БД приветствуется. Пишите в телеграм чат EnglSpaceChat
+</p>
+<hr>
+<textarea id='id_text1' cols="80" rows="20">
+
+Если в день учить по 50 слов, то за сто дней(3 мес) можно выучить, потом иногда повторять..
+
+Из 5000 частых+3000 с сайта полиглот, получилось 5 списков:
+
+1. Известные со школы. ~250 Слов. Местоимения, предлоги, частицы, служебные, основные. Для них ФА бесполезны и даже вредны. Эти слова - основа и их надо учить наизусть через паттерны и тысячи примеров в разных вариантах.
+
+2. Похожие и немного похожие. ~800 Слов. Запоминаем как есть, фа не надо, написание и звучание могут немного отличаться от рус. Если у слова есть второе значение, то связываем с первым. Bank /банк на берегу (океана смыло цунами, плакали наши денежки)
+
+3. Имеющее родственное слово из той же темы. ~800 Слов.(медведь берлога, молодой юнга), для них фа простые и короткие. /*медведь спит в БЕРлоге/ маша *несёт бред и *медведя на плече в БЕРлогу
+
+4. Составные слова (put on), ~700 Слов для понимания что это ОДНО слово и дословно имеет другой смысл, пишем его через дефис и учим как новое слово (put-on). /ПлУТОН *одевал шубу и валенки летом на симпозиум (хотя на самом деле его платон звали, плутон это планета)
+
+5. Слова обязательные. к ним нужны хорошие ФА. ~4к Слов.
+Для половины слов ФА есть, но так себе, запомнить трудно и забудете раньше чем надо :) но, без ФА и без использования слов, забудете ещё быстрее. После использования слова раз 300, ФА постепенно забудется и сразу будет всплывать перевод. Если ФА хорошо не запомнилась, значит не зацепило, придумайте лучше свою.
+
+У меня на сайте ФА и карточки будут только для 3,4,5 списков. На все остальные можно посмотреть в списке 16к. Отфильтрованные от мусора будут тут da6k.txt, пока еще буква (А) не сделана, помощники нужны..
+
+Если вкл доп перевод и асоц. то будет показывать внизу если есть..
+</textarea>
+<hr>
+</div>
+
+
+<div role="tabpanel" class="tab-pane fade" id="tem1" >
+<br>
+  <div class="panel-group">
+
+   <div class="panel panel-primary">
+    <div class="panel-body">
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(1);">1</button>
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(2);">2</button>
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(3);">3</button>
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(4);">4</button>
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(5);">5</button>
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(6);">6</button>
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(7);">7</button>
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(8);">8</button>
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(9);">9</button>
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(10);">10</button>
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(11);">11</button>
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(12);">12</button>
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(13);">13</button>
+
+      ||
+      <button type="button" class="btn btn-success btn-md ot2" onclick="load_All();">Загр. список из БД</button>
+      <button type="button" class="btn btn-danger btn-md ot2" onclick="save_g_api_to_Loc();">Запом. список в LS</button>
+      <button type="button" class="btn btn-danger btn-md ot2" onclick="del_Loc();">Очистить LS</button>
+
+      
+    </div>
+   </div> 
+
+   <div class="panel panel-success">
+<div class="panel-heading">Текущий список=<span id="id_list0">?</span></div>
+
+    <div class="panel-body">
+     <div id="app" >
+      <input v-model="newTodo" v-on:keyup.enter="addTodo" style="width:500px">
+      <p></p>
+      <ul>
+        <li v-for="todo in todos" class="alert alert-info" role="alert">
+          <span>{{ todo.text }}</span>
+          <button type="button" class="btn btn-danger btn-xs" v-on:click="removeTodo($index)">[X]</button>
+        </li>
+      </ul>
+     </div>
+    </div>
+   
+ </div>
+ 
+ </div>
+</div>
+<script>
+vu=new Vue({
+  el: '#app',
+  data: {
+    newTodo: '',
+    todos: [ { text: 'номер| слово - перевод, крестик удалить' }]
+  },
+
+  methods: {
+    addTodo: function () {
+      var text = this.newTodo.trim()
+      if (text) {
+        this.todos.push({ text: text })
+        this.newTodo = ''
+        //save_vu_to_Loc()
+      }
+    },
+    removeTodo: function (index) {var s='',ms;
+         s=''+this.todos[index].text; 
+         console.log('del card='+s);
+         delete(g_api[s+'[']);//удаляем карточку если есть
+     this.todos.splice(index, 1);
+     //save_vu_to_Loc()
+    }
+
+  }
+})
+
+</script>
+
+
+<div role="tabpanel" class="tab-pane fade" id="tem2">
+  <div class="panel-group">
+
+   <div class="panel panel-primary">
+    <div class="panel-heading"><h5 id="id_tek_word">Загружаем карточки..</h5></div>
+    <div class="panel-body">
+      <button id="id_but1" type="button" class="btn btn-primary btn-md ot2" onclick="load_card();">HOME</button>
+       ||
+      <button id="id_but2" type="button" class="btn btn-success btn-md ot2" onclick="prev_word();">PREV</button>
+      ||
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="next_word(20);">NEXT-20</button>
+      |||| 
+      <button type="button" class="btn btn-info btn-md ot2"> список=<span id="id_list">?</span> номер слова=<span id="id_word">?</span> </button>
+      |||| 
+      <button type="button" id="id_dp" class="btn btn-primary btn-md ot2" onclick="load_dp()"> Включить доп.перевод </button>
+      <button type="button" id="id_da" class="btn btn-primary btn-md ot2" onclick="load_da()"> Включить доп.асоц. </button>
+      <button id="id_but3" type="button" class="btn btn-success btn-md ot2" onclick="next_word(1);">NEXT</button>
+    </div>
+   </div> 
+
+   <div class="panel panel-success">
+    <div  class="panel-body">
+     <h3><b id="id_p0">слово - перевод</b> <span id="id_p1" class="">транскрипция 3 шт</span></h3>
+    </div>
+   </div>
+
+   <div class="panel panel-primary">
+    <div  class="panel-body">
+     <div class="row">
+       <div class="col-sm-6 col-md-4">
+        <img id="id_p3" src="" width="100%" >
+       </div>
+       <div class="col-sm-6 col-md-8" >
+        <h3 id="id_p2" >fa</h3>
+<hr>
+        <h4 id="id_p4" >dp</h4>
+       </div>
+      </div>  
+     </div>
+   </div>   
+ 
+   <div class="panel panel-primary">
+    <div id="id_p5" class="panel-body">
+доп асоц
+    </div>
+   </div>    
+ 
+   <div class="panel panel-primary">
+    <div id="id_p6" class="panel-body">
+примеры
+    </div>
+   </div>    
+
+ </div>
+</div>
+   
+ </div>
+</div>
+</div>
+</div>
+
+
+</body>
