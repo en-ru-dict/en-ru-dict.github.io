@@ -257,7 +257,7 @@ eat[it]есть,Есть %% (ись,кушать жрать)||/~еда
 echo[ekou]эхо %,отголосок,отражаться
 ecology[i'kɑləʤi/i'kɔləʤi]экология %
 economic[,ekə'nɑmik/,ikə'nɑmik/,i:kə'nɔmik]экономический %
-economics[,ekə'nɑmiks/,ikə'nɑmiks/,i:kə'nɔmiks]экономика,экономика %
+economics[,ekə'nɑmiks/,ikə'nɑmiks/,i:kə'nɔmiks]экономика %
 economy[i'kɑnəmi/i(:)'kɔnəmi]экономика %
 effect[ifekt/ə'fekt/i'fekt]эффект %
 effective[ifektiv/i'fektiv]эффективный %

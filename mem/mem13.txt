@@ -262,238 +262,69 @@ are - есть
 another - другой
 
 ----похожие по написанию или звучаанию или частично--(ФА-не надо!)---
-abnormal - ненормальный,аномальный %
 abort - прерывать ~аборт это прерывание беремености
-absolute - абсолютный %
-absolutely - абсолютно +ly
 abuse - (абузер-слэнг)злоупотреблять,насилие,домогательство,оскорблять,бранить
-academic - академический %
 accident - авария,происшествие,ДТП,случайность ~инцидент
-accordion - аккордеон %
-actor - актер %
-actress - актриса %
-actual - актуальный %
 add - прибавить {ЭДик в АДу *прибавил в весе, хорошо кормят}
-address - адрес %
-adequate - адекватный %
-administration - администрация %
-administrative - административный %
 adult - взрослый /~дылда
-aerobics - аэробика %
-agency - агентство %
-airline - авиалиния %
 airplane - самолет %
-airport - аэропорт %
-alternative - альтернатива,альтернативный %
 amber - янтарь /прятали в амбаре
-analysis - анализ %
 answer - ответ,отвечать
-architect - архитектор %
-architecture - архитектура %
-archive - архив %
-army - армия %
-artistic - артистичный %
-astronomy - астрономия %
-automatically - автоматически %
-
-balance - баланс %
-balcony - балкон %
-banana - банан %
-baseball - бейсбол %
-basketball - баскетбол %
 big - большой (бигимот бежит на нас. страшно)
-biology - биология %
-blonde - блондин,блондинка %
-bottle - бутылка %
 boy - мальчик (пошел в *бой с буржуями)
 boyfriend - парень девушки
-brother - брат %
 bus - автобус %
 bus-stop - автобусная остановка %
-
-cable - кабель,канат,трос %
-cafeteria - кафетерий %
 cards - карты %
-career - карьера %
 cat - кот,кошка %
-chaos - хаос %
-chocolate - шоколад %
-cocoa - какао %
-coffee - кофе %
 combination - комбинация %
-commentary - комментарий %
-computer - компьютер %
 computer-science - информатика
-copy - копировать %
-
 daughter - дочь %
 day - день
-dessert - десерт %
 do - делать
 dog - собака (бульДОГ это собака)
-dolphin - дельфин %
-
-ecology - экология %
-economics - экономика %
-engineer - инженер %
-
-farm - ферма %
-farmer - фермер %
 father - отец (нашел фазу и сунул два пальца в розетку)
 father-in-law - тесть,свёкр
-flag - флаг %
 football - американский футбол
-fountain - фонтан %
-fruit - фрукт %
-
-geography - география %
-geometry - геометрия %
-geranium - герань %
-giraffe - жираф %
 girl - девочка ~гёрла
 girlfriend - девушка парня
 go - идти
 golden - золотой
-golf - гольф %
 good - хороший
-goose - гусь %
-
-history - история %%
-hockey - хоккей %%
-
-informatics - информатика %
-iris - ирис %
-
-jeans - джинсы %
-jelly - желе %
-journalism - журналистика %%
-journalist - журналист %
-jumper - джемпер %
-
-laboratory - лаборатория %
-lamp - лампа %
-liter - литр %
-
 make - делать
-mammoth - мамонт %%
 man - мужчина (спортс-мен,шоу-мен,бизнес-мен)
-mathematics - математика %
-mechanic - механик %
-menu - меню %
-metal - металл %
-meter - метр %
 million - миллион %
 mineral-water - минералка %
-minus - минус %
-minute - минута %
-monitor - монитор
 mother - мать (мазала кремом дырявые руки)
 mother-in-law - теща,свекровь
-museum - музей %
-music - музыка %
-musician - музыкант %%
-number - номер %
 numeric (numerical) - числовой,цифровой ~номерной
-omelet - омлет %
 panama-hat - панамка %
-panic - паника %
-parade - парад %
 pardon - извинять,извинение ~пардон
 parents - родители
-park - парк,парковаться %
-penguin - пингвин %
 people - люди (пипл хавает)
-percent - процент %
-person - персона %
 personally - лично @
-personnel - персонал,личный состав %%
-philosopher - философ %%
-photograph - фотография %%
-photographer - фотограф %
-physicist - физик %%
-physics - физика %%
-piano - пианино %
-pizza - пицца %
-planet - планета %
-plus - плюс %
-poem - поэма %
-poet - поэт %
-poetry - поэзия @
 police-station - полицейский участок %
-policeman - полицейский %
-politician - политик @
-politics - политика %
-popular - популярный %
 population - население ~популяция
-problem - проблема %
-procedure - процедура %
-projector - проектор %
-province - провинция %
-psychology - психология %
-publish - публиковать,издавать %
-pulse - пульс %
 put - класть (ложить)
-pyjamas - пижама %
-realistic - реалистичный %
-reality - реальность %
-reflex - рефлекс %
-religious - религиозный %
-reptile - рептилия %
-salad - салат %%
-sandals - сандали %
 sandwich - бутерброд =сандвич
-sardine - сардина %
-saxophone - саксофон %
 sea - море (купался по поСИнения)
-secretary - секретарь %
 see - видеть (в *море золотую рыбку с тремя желаниями)
-semester - семестр %
-shampoo - шампунь %
-shock - шок %
-shorts - шорты %
 silver - серебряный (пират сильвер)
-sister - сестра %
 sister-in-law - сноха,золовка @
-sit - сидеть %
 snow - снег (снова шел)
 snowball - снежок (снег+мяч)
-sociology - социология %
-soldier - солдат %
-son - сын %
-spinach - шпинат %
 stadium - стадион %%
-statue - статуя %
 stepbrother - сводный брат @
 stepfather - отчим @
 stepmother - мачеха @
-stethoscope - стетоскоп %
-stop - останавливаться %
-stylish - стильный %
-sum - сумма,суммировать %
-surfing - серфинг %
-symbol - символ %
-system - система %
-table - стол,таблица
 tax - налог (такса)
 tea - чай
-telephone - телефон %
-television - телевизор %
-theater (-re) - театр %
-theatrical - театральный %
-theme - тема %
 tiger - тигр %
 today - сегодня
 tomorrow - завтра
 tree - дерево
-trombone - тромбон %
-university - университет %
-volcano - вулкан %
-waffle - вафля,вафельный %
 want - хотеть
 war - война
-wine - вино %
 woman - женщина
 year - год
 yesterday - вчера
-zoo - зоопарк %
-`;
