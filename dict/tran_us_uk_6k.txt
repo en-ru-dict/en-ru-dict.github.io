@@ -1,6 +1,6 @@
 //5980
 var g_tran=`
-a[ei/ə]
+a[ə/ei]
 aback[ə'bæk]
 abandon[ə'bændən]
 abate[ə'beit]

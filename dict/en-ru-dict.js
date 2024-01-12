@@ -1,5 +1,4 @@
-/*! Xing Soft 2023 */
-
+/*! Xing Soft 2024 */
 function log(s){console.log(s+'');} //проще и короче
 function len(d){ return d.length;} //защита от ошибок написания
 function run_js(vPathScript,fun1){var sc; //запуск внешнего скрипта асинхронно вместо ajax
@@ -44,7 +43,8 @@ function show_perevod() {var w,t,o,d,n1,n2;//ищем слово в словар
   o=replace_all(o,']',']</a> ');
   o=replace_all(o,'\n','<br>');
   o=replace_all(o,'#','<hr>');
-  d.innerHTML='<b>'+o;
+  w=get_fa0(w);
+  d.innerHTML='<b>'+o+'<hr><hr>'+w;
 }
 function loader(){ setTimeout(loader2,0);}
 
@@ -73,6 +73,19 @@ function font_small(){
 	
 	
 	
+}
+function get_fa0(w){var n1,n2,o;
+	if(window['g_fa']==undefined)return '';
+    n1=g_fa.indexOf('\n'+w+'/');
+    if(n1<0){return 'нет ФА для этого слова';}
+    n2=n1+1;
+    while(1){ // добавляем примеры к слову
+     n2=g_fa.indexOf('\n',n2+1);
+     if(g_fa.charAt(n2+1)!='/')break;
+    }
+  o=g_fa.substring(n1+1,n2);
+  o=replace_all(o,'/','<hr>');
+  return o;
 }
 
 function suggest_entry() {

@@ -1,11 +1,11 @@
 <!DOCTYPE html> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="en-ru-dict-6k.txt"></script>
-<script src="fa_gr.txt"></script>
-<script src="en-ru-dict.js"></script>
+
+    <script src="rus.txt"></script>
+    <script src="tran.js"></script>
+
 <style>
-#id_input{background-color: aliceblue;}
-a {  text-decoration: none; color:red}
+a {  text-decoration: none;}
 #id_output,#id_input,button {font-size: xx-large;}
 h1 a {  color: #000;}
 h2 {  font-size: 24px;  color: gray;  line-height: 1;}
@@ -35,29 +35,19 @@ h2 {  font-size: 24px;  color: gray;  line-height: 1;}
   height: 2px;
 }
 </style>
-<body>
-<center>
-
-<div id="id_info">
-<h1>Словарь английских слов 6к</h1>
-только нужные и частые слова с транскрипцией US+UK<br>
-может работать локально без интернета<br>
-</div>
-
-<input type="text" size="35" id="id_input" placeholder="word" value="" /><br>
-<button type="button" onclick="show_perevod();"> перевод </button>||<button type="button" onclick="font_small();"> шрифт мельче </button><hr>
-<div id="id_output">&nbsp;</div>
-
-<script>
- 
- window.onload = function(){ 
-	 var d=document.getElementById('id_input');d.focus();
-	 setTimeout("document.getElementById('id_info').remove()",9000);
- }
- var keys;//global
- loader3();
-</script>
-
-</center>
-</body>
+  <body>
+    <center>
+      <h1>rus 100k</h1>
+       <input type="text" size="35" id="id_input" placeholder="word" value="" /><br>
+       <button type="button" onclick="show_ipa();">Search!</button><hr>
+      <div id="id_output">&nbsp;</div>
+      <div id="player">&nbsp;</div>
+    <script>
+      window.onload = function() { document.getElementById('id_input').focus(); }
+      lang = "en";
+      var keys = g_rus.split('\n');
+      suggest_entry();
+    </script>
+    </center>
+  </body>
 </html>
