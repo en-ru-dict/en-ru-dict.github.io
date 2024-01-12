@@ -8,12 +8,13 @@
 <style>
 @import url('bootstrap.min.css');
 
-a { outline: none; }
+a { outline: none; font-weight: 700;}
 ul li a[aria-controls="profile"]:hover{ color:red;}
 .ot2 {margin: 2px 1px;}
 i {color: red;}
 #id_but3 {float: right;}
 #id_p3 {max-width:100%; width:auto}
+#id_p5 {font-size: 18px;}
 </style>
 
 <script>
@@ -199,7 +200,7 @@ vu=new Vue({
   <div class="panel-group">
 
    <div class="panel panel-primary">
-    <div class="panel-heading"><h5 id="id_tek_word">Загружаем карточки..</h5></div>
+    <div class=""><b id="id_tek_word">Загружаем карточки..</b></div>
     <div class="panel-body">
       <button id="id_but1" type="button" class="btn btn-primary btn-md ot2" onclick="load_card();">HOME</button>
        ||
@@ -207,7 +208,7 @@ vu=new Vue({
       ||
       <button type="button" class="btn btn-primary btn-md ot2" onclick="next_word(20);">NEXT-20</button>
       |||| 
-      <button type="button" class="btn btn-info btn-md ot2" onclick="g_pic='0.gif';"> список=<span id="id_list">?</span> номер слова=<span id="id_word">?</span> </button>
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="g_pic='0.gif';"> список=<span id="id_list">?</span> номер слова=<span id="id_word">?</span> </button>
       |||| 
       <button type="button" id="id_dp" class="btn btn-primary btn-md ot2" onclick="load_dp()"> Включить доп.перевод </button>
       <button type="button" id="id_da" class="btn btn-primary btn-md ot2" onclick="load_da()"> Включить доп.асоц. </button>
@@ -217,7 +218,7 @@ vu=new Vue({
 
    <div class="panel panel-success">
     <div  class="panel-body">
-     <h3><b id="id_p0">слово - перевод</b> <span id="id_p1" class="label label-primary">транскрипция 3 шт</span></h3>
+     <h3><b id="id_p0">слово - перевод</b> <span id="id_p1" class="">транскрипция 3 шт</span></h3>
     </div>
    </div>
 

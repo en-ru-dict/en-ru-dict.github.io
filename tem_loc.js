@@ -46,15 +46,23 @@ function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
  if(s0.indexOf(a0)>=0){ms=s0.split(a0);s0=ms.join(b0);}
  return s0;
 }
-function zvez_v_kurs(s,w){var dd=[],i=0,ms=[],v=''; // *слово  <i>слово</i>
+function zvez_v_kurs(s,p){var dd=[],i=0,ms=[],v=''; // *слово  <i>слово</i>
 	//меняем + на слово перевод
-	s=s+' ';w='*'+w.trim();
+	s=s+'';
 	s=replace_all(s,',',' , ');
-	s=replace_all(s,'+ ',w+' ');
-	s=replace_all(s,'/',' <hr> ');
-    ms=s.split(' ');
-    for(i=0;i<len(ms);i++)if(ms[i].substring(0,1)=='*')ms[i]='<i>'+ms[i].substring(1)+'</i>';
-    return ms.join(' ');
+	s=replace_all(s,'/',' <hr> ');	
+	p='<i>'+p.trim()+'</i>';
+	s=replace_all(s,'+ ',' + ');
+	s=replace_all(s,' +',' + ');
+	s=replace_all(s,' + ',' '+p+' ');
+	s=s.trim();
+	ms=s.split(' ');dd=[];
+    for(i=0;i<len(ms);i++){
+	 v=ms[i];if(v=='')continue;
+	 if(v.substring(0,1)=='*')(v='<i>'+v.substring(1)+'</i>');
+	 dd.push(v);
+	}
+    return dd.join(' ');
 }
 function get_tr2(w){ var m,tr,tr1,s=w+'';
  tr2 = {'ja':'я','ya':'я','ch':'ч','sh':'ш',
@@ -77,6 +85,10 @@ function get_tr3(tr){var i,tr2,b,out,dd=[],w=tr+'';
   if(n<0){out+=b;continue;}
   out+=tr3.charAt(n+1);
  }
+ out=replace_all(out,',','');
+ out=replace_all(out,"'",'');
+ out=replace_all(out,':','');
+ out=replace_all(out,'йу', 'ью');
  return out;
 }
 function is_digit(s){s=s+'';if(s=='')return 0;return '1234567890'.indexOf(s)+1;}
@@ -136,7 +148,7 @@ p=replace_all(p,'%','(очень похоже)');
  put_h('id_p2',fa);
  put_src('id_p3',pic);//pic
  put_h('id_p4','(доп.перевод) '+dp);
- put_h('id_p5','(доп.ассоц) '+zvez_v_kurs(da,p));
+ put_h('id_p5',zvez_v_kurs(da,p));
  put_h('id_p6','(разное) '+ms[5]);
  
 }
@@ -179,7 +191,8 @@ function save_g_api_to_Loc(){ var i=0,s='',ss='';
  catch(e) { if (e == QUOTA_EXCEEDED_ERR) alert('limit localStorage1');}
 }
 var g_dict='';//global
-function get_dp(w) {var t,o,d,n1,n2;//ищем слово в словаре
+function get_dp(w){var t,o,d,n1,n2;//ищем слово в словаре
+if(!w)return '_';
     n1=g_dict.indexOf('\n'+w.trim()+'|');
     if(n1<0){return '-';}
     n2=n1+1;
@@ -196,17 +209,20 @@ function get_dp(w) {var t,o,d,n1,n2;//ищем слово в словаре
 }
 var g_da='';//global
 function get_da(w) {var t,o,d,n1,n2;//ищем fa 
-    n1=g_da.indexOf('\n'+w.trim()+'/');
-    if(n1<0){return '-';}
+    w=w.trim();if(!w)return '_';
+    n1=g_da.indexOf('\n'+w+'-');
+    n2=g_da.indexOf('\n'+w+'/');
+    if(n1<0){n1=n2;if(n1<0)return '-';}
     n2=n1+1;
-    while(1){ // добавляем примеры к слову
+    while(1){ // добавляем другие
      n2=g_da.indexOf('\n',n2+1);
      if(g_da.charAt(n2+1)!='/')break;
     }
   o=g_da.substring(n1+1,n2);
+  o=o.replace('-',' *(');o='*'+o.replace('/',') ');
   o=replace_all(o,';','; ');
-  o=replace_all(o,'\n','<br>');
-  o=replace_all(o,'/','<hr>');
+  o=replace_all(o,'\n',' <br> ');
+  o=replace_all(o,'/',' <hr> ');
   return o;
 }
 function get_page(){ 
