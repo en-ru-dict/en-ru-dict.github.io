@@ -50,11 +50,15 @@ function zvez_v_kurs(s,p){var dd=[],i=0,ms=[],v=''; // *слово  <i>слов�
 	//меняем + на слово перевод
 	s=s+'';
 	s=replace_all(s,',',' , ');
-	s=replace_all(s,'/',' <hr> ');	
+	s=replace_all(s,'/',' <hr> ');
+	s=replace_all(s,'@',' <hr class="mag"> ');	
+	
 	p='<i>'+p.trim()+'</i>';
 	s=replace_all(s,'+ ',' + ');
 	s=replace_all(s,' +',' + ');
 	s=replace_all(s,' + ',' '+p+' ');
+	s=replace_all(s,')',' ) ');
+	s=replace_all(s,'(',' ( ');
 	s=s.trim();
 	ms=s.split(' ');dd=[];
     for(i=0;i<len(ms);i++){
@@ -144,10 +148,11 @@ p=replace_all(p,'%','(очень похоже)');
  da=ms[4];if(da=='')da=get_da(w);
  pic=ms[1];if(pic=='+')pic=w+'.jpg';
  put_h('id_p0',s); //word+perevod
+ if(len(s)>70)t='<br>'+t;
  put_h('id_p1',t); //tr123
  put_h('id_p2',fa);
  put_src('id_p3',pic);//pic
- put_h('id_p4','(доп.перевод) '+dp);
+ put_h('id_p4',dp);
  put_h('id_p5',zvez_v_kurs(da,p));
  put_h('id_p6','(разное) '+ms[5]);
  
@@ -208,22 +213,44 @@ if(!w)return '_';
   return o;
 }
 var g_da='';//global
-function get_da(w) {var t,o,d,n1,n2;//ищем fa 
-    w=w.trim();if(!w)return '_';
-    n1=g_da.indexOf('\n'+w+'-');
-    n2=g_da.indexOf('\n'+w+'/');
-    if(n1<0){n1=n2;if(n1<0)return '-';}
+
+function one_space(s){var i,out='',f=0,ss;
+ for(i=0;i<len(s);i++){
+   ss=s.charAt(i);
+   if(ss==' '){
+     if(f==1)continue;
+     f=1;
+   }
+   else f=0;
+   out+=ss;
+ }
+ return out;
+}
+function get_da(w){var out='',n1=0,n2=0,n=0,s='';//ищем fa 
+ w=w.trim();if(!w)return '?w?';
+ n=0;out='';
+ while(1){
+    n1=g_da.indexOf('\n'+w+'~',n);
+    n2=g_da.indexOf('\n'+w+'/',n);
+    if(n1<0){n1=n2;if(n1<0)break;}
     n2=n1+1;
     while(1){ // добавляем другие
      n2=g_da.indexOf('\n',n2+1);
      if(g_da.charAt(n2+1)!='/')break;
     }
-  o=g_da.substring(n1+1,n2);
-  o=o.replace('-',' *(');o='*'+o.replace('/',') ');
-  o=replace_all(o,';','; ');
-  o=replace_all(o,'\n',' <br> ');
-  o=replace_all(o,'/',' <hr> ');
-  return o;
+    s=' *'+g_da.substring(n1+1,n2);
+    s=s.replace('~',' (');s=s.replace('/',') ');
+  out+=s+'@';n=n2+1;
+}
+  
+ if(out=='')out='-@';
+ out=out.substring(0,out.length-1);//del @
+ 
+  out=replace_all(out,';','; ');
+  out=replace_all(out,'\n',' <br> ');
+  out=replace_all(out,'/',' <hr> ');
+  out=one_space(out);
+  return out;
 }
 function get_page(){ 
  if(len(g_page)<3)alert('g_page='+g_page); 

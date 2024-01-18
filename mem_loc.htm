@@ -1,6 +1,6 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<body> 
+<body>
 <noscript>
  Для работы меню включите скрипты! <br>
  please turn on javascripts!
@@ -13,16 +13,19 @@ ul li a[aria-controls="profile"]:hover{ color:red;}
 .ot2 {margin: 2px 1px;}
 i {color: red;}
 #id_but3 {float: right;}
+#id_p0 {margin-left: 10px;}
 #id_p3 {max-width:100%; width:auto}
 #id_p5 {font-size: 18px;}
+hr {margin-top: 5px; margin-bottom: 5px;}
+.mag {border-top: 1px solid #428bca;}
 </style>
 <script>
 if(window['g_api']!=undefined)alert('g_api?');
-var g_api='error';//global 
+var g_api='error';//global
 var g_page='mem1';//global
 var g_word=0;//global
 var g_pic='0.gif';
-</script> 
+</script>
 <script src='jquery.min.js'></script>
 <script src='bootstrap.min.js'></script>
 <script src='vue.js'></script>
@@ -35,7 +38,7 @@ var g_pic='0.gif';
     <li><a href="#tem1" aria-controls="tem1" role="tab" data-toggle="tab" title="" onclick="load_g_api_from_Loc();;">списки</a></li>
     <li><a href="#tem2" aria-controls="tem2" role="tab" data-toggle="tab" title="" onclick="load_card();">карточки</a></li>
   </ul>
- 
+
 <!-- Содержимое вкладок -->
 <div class="tab-content" >
 
@@ -45,7 +48,7 @@ var g_pic='0.gif';
    </div>
 
 <p>
-Проект для изучения английского языка по ассоциациям. 
+Проект для изучения английского языка по ассоциациям.
 Открытый. Бесплатный. Использование в комерческих целях запрещено. <br>
 Помощь в развитии сайта и БД приветствуется. Пишите в телеграм чат EnglSpaceChat
 </p>
@@ -100,9 +103,9 @@ var g_pic='0.gif';
       <button type="button" class="btn btn-danger btn-md ot2" onclick="save_g_api_to_Loc();">Запом. список в LS</button>
       <button type="button" class="btn btn-danger btn-md ot2" onclick="del_Loc();">Очистить LS</button>
 
-      
+
     </div>
-   </div> 
+   </div>
 
    <div class="panel panel-success">
 <div class="panel-heading">Текущий список=<span id="id_list0">?</span></div>
@@ -119,9 +122,9 @@ var g_pic='0.gif';
       </ul>
      </div>
     </div>
-   
+
  </div>
- 
+
  </div>
 </div>
 <script>
@@ -142,7 +145,7 @@ vu=new Vue({
       }
     },
     removeTodo: function (index) {var s='',ms;
-         s=''+this.todos[index].text; 
+         s=''+this.todos[index].text;
          console.log('del card='+s);
          delete(g_api[s+'[']);//удаляем карточку если есть
      this.todos.splice(index, 1);
@@ -157,28 +160,26 @@ vu=new Vue({
 
 <div role="tabpanel" class="tab-pane fade" id="tem2">
   <div class="panel-group">
-
+<div id="id_tek_word">Загружаем карточки..</div>
    <div class="panel panel-primary">
-    <div class="panel-heading"><h5 id="id_tek_word">Загружаем карточки..</h5></div>
+
     <div class="panel-body">
       <button id="id_but1" type="button" class="btn btn-primary btn-md ot2" onclick="load_card();">HOME</button>
        ||
       <button id="id_but2" type="button" class="btn btn-success btn-md ot2" onclick="prev_word();">PREV</button>
       ||
       <button type="button" class="btn btn-primary btn-md ot2" onclick="next_word(20);">NEXT-20</button>
-      |||| 
+      ||||
       <button type="button" class="btn btn-info btn-md ot2"> список=<span id="id_list">?</span> номер слова=<span id="id_word">?</span> </button>
-      |||| 
+      ||||
       <button type="button" id="id_dp" class="btn btn-primary btn-md ot2" onclick="load_dp()"> Включить доп.перевод </button>
       <button type="button" id="id_da" class="btn btn-primary btn-md ot2" onclick="load_da()"> Включить доп.асоц. </button>
       <button id="id_but3" type="button" class="btn btn-success btn-md ot2" onclick="next_word(1);">NEXT</button>
     </div>
-   </div> 
+   </div>
 
    <div class="panel panel-success">
-    <div  class="panel-body">
      <h3><b id="id_p0">слово - перевод</b> <span id="id_p1" class="">транскрипция 3 шт</span></h3>
-    </div>
    </div>
 
    <div class="panel panel-primary">
@@ -189,28 +190,28 @@ vu=new Vue({
        </div>
        <div class="col-sm-6 col-md-8" >
         <h3 id="id_p2" >fa</h3>
-<hr>
+<hr class="mag">
         <h4 id="id_p4" >dp</h4>
        </div>
-      </div>  
+      </div>
      </div>
-   </div>   
- 
+   </div>
+
    <div class="panel panel-primary">
     <div id="id_p5" class="panel-body">
 доп асоц
     </div>
-   </div>    
- 
+   </div>
+
    <div class="panel panel-primary">
     <div id="id_p6" class="panel-body">
 примеры
     </div>
-   </div>    
+   </div>
 
  </div>
 </div>
-   
+
  </div>
 </div>
 </div>

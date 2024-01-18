@@ -1,6 +1,6 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<body> 
+<body>
 <noscript>
  Для работы меню включите скрипты! <br>
  please turn on javascripts!
@@ -13,17 +13,19 @@ ul li a[aria-controls="profile"]:hover{ color:red;}
 .ot2 {margin: 2px 1px;}
 i {color: red;}
 #id_but3 {float: right;}
+#id_p0 {margin-left: 10px;}
 #id_p3 {max-width:100%; width:auto}
 #id_p5 {font-size: 18px;}
+hr {margin-top: 5px; margin-bottom: 5px;}
+.mag {border-top: 1px solid #428bca;}
 </style>
-
 <script>
 if(window['g_api']!=undefined)alert('g_api?');
-var g_api='error';//global 
+var g_api='error';//global
 var g_page='tem1';//global
 var g_word=0;//global
 var g_pic='0.png';
-</script> 
+</script>
 <script src='jquery.min.js'></script>
 <script src='bootstrap.min.js'></script>
 <script src='vue.js'></script>
@@ -36,7 +38,7 @@ var g_pic='0.png';
     <li><a href="#tem1" aria-controls="tem1" role="tab" data-toggle="tab" title="" onclick="load_g_api_from_Loc();;">списки</a></li>
     <li><a href="#tem2" aria-controls="tem2" role="tab" data-toggle="tab" title="" onclick="load_card();">карточки</a></li>
   </ul>
- 
+
 <!-- Содержимое вкладок -->
 <div class="tab-content" >
 
@@ -46,7 +48,7 @@ var g_pic='0.png';
    </div>
 
 <p>
-Проект для изучения английского языка по ассоциациям. 
+Проект для изучения английского языка по ассоциациям.
 Открытый. Бесплатный.Использование в комерческих целях запрещено. <br>
 Помощь в развитии сайта и БД приветствуется. Пишите в телеграм чат EnglSpaceChat
 </p>
@@ -59,63 +61,63 @@ var g_pic='0.png';
 Эта версия может работать локально без интернета.
 
 tem1
- Animals - Животные 52 слов  
- Buildings, Organizations - Строения, организации 40 слов 
- Car - Автомобиль 24 слов  
- City, Streets, Transportation - Город, улицы, транспорт 75 слов 
- Clothing 1 - Одежда1 43 слов  
- Clothing 2 - Одежда2 43 слов  
-  
+ Animals - Животные 52 слов
+ Buildings, Organizations - Строения, организации 40 слов
+ Car - Автомобиль 24 слов
+ City, Streets, Transportation - Город, улицы, транспорт 75 слов
+ Clothing 1 - Одежда1 43 слов
+ Clothing 2 - Одежда2 43 слов
+
 tem2
- Colors - Цвета 26 слов  
- Education 1 - Образование1 49 слов  
- Education 2 - Образование2 49 слов  
- Entertainment, Art, Music - Развлечения, искусство, музыка 71 слов  
- Family - Семья 43 слов  
- Feelings, Senses - Чувства, ощущения 29 слов  
-  
+ Colors - Цвета 26 слов
+ Education 1 - Образование1 49 слов
+ Education 2 - Образование2 49 слов
+ Entertainment, Art, Music - Развлечения, искусство, музыка 71 слов
+ Family - Семья 43 слов
+ Feelings, Senses - Чувства, ощущения 29 слов
+
 tem3
- Food, Restaurants, Kitchen 1 - Еда, рестораны, кухня1 69 слов  
- Food, Restaurants, Kitchen 2 - Еда, рестораны, кухня2 76 слов  
- Geography: Countries, Cities... - География: страны, города... 49 слов  
- Greetings, Requests, Welcomes, Farewells - Приветствия, обращения, прощания 73 слов  
- Health, Medicine, Hygiene - Здоровье, медицина, гигиена 67 слов  
- House, Furniture, and Household Objects - Дом, мебель, домашние предметы 71 слов  
+ Food, Restaurants, Kitchen 1 - Еда, рестораны, кухня1 69 слов
+ Food, Restaurants, Kitchen 2 - Еда, рестораны, кухня2 76 слов
+ Geography: Countries, Cities... - География: страны, города... 49 слов
+ Greetings, Requests, Welcomes, Farewells - Приветствия, обращения, прощания 73 слов
+ Health, Medicine, Hygiene - Здоровье, медицина, гигиена 67 слов
+ House, Furniture, and Household Objects - Дом, мебель, домашние предметы 71 слов
 
-tem4  
- Human Body Parts - Части тела 40 слов  
- Human Characteristics 1 - Человеческие качества1 42 слов  
- Human Characteristics 2 - Человеческие качества2 44 слов  
- Life, Age - Жизнь, возраст 15 слов  
- Materials, Substances, Objects, Tools - Материалы, вещества, предметы 42 слов  
- Measures, Measurements - Измерения 32 слов  
-  
-tem5  
- Money, Shopping - Деньги, покупки 42 слов  
- Movement, Directions - Движение, направления 44 слов  
- Nature - Природа 31 слов  
- Numbers - Числа 31 слов  
- People: Relatives, Friends, Enemies... - Люди: родственники, друзья, враги... 42 слов  
- Plants - Растения 36 слов  
-  
-tem6  
- Profession - Профессия 48 слов  
- Pronouns, Conjunctions, Prepositions - Местоимения, союзы, предлоги 65 слов  
- Religion, Politics, Military, Science - Религия, политика, армия, наука 62 слов  
- Sports, Games, Hobbies - Спорт, игры, хобби 34 слов  
- Time 1 - Время 1 53 слов  
- Time 2 - Время 2 22 слов 
- 
+tem4
+ Human Body Parts - Части тела 40 слов
+ Human Characteristics 1 - Человеческие качества1 42 слов
+ Human Characteristics 2 - Человеческие качества2 44 слов
+ Life, Age - Жизнь, возраст 15 слов
+ Materials, Substances, Objects, Tools - Материалы, вещества, предметы 42 слов
+ Measures, Measurements - Измерения 32 слов
 
-tem7  
- Tools - Инструменты 17 слов 
- Various Adjectives - Различные прилагательные 24 слов  
- Various Adverbs 1 - Различные наречия1 48 слов  
- Various Adverbs 2 - Различные наречия2 50 слов  
- Various Verbs 1 - Различные глаголы1 69 слов  
- Various Verbs 2 - Различные глаголы2 66 слов  
- Weather - Погода 20 слов  
- Work, Business, Office - Работа, бизнес, офис 44 слов  
+tem5
+ Money, Shopping - Деньги, покупки 42 слов
+ Movement, Directions - Движение, направления 44 слов
+ Nature - Природа 31 слов
+ Numbers - Числа 31 слов
+ People: Relatives, Friends, Enemies... - Люди: родственники, друзья, враги... 42 слов
+ Plants - Растения 36 слов
+
+tem6
+ Profession - Профессия 48 слов
+ Pronouns, Conjunctions, Prepositions - Местоимения, союзы, предлоги 65 слов
+ Religion, Politics, Military, Science - Религия, политика, армия, наука 62 слов
+ Sports, Games, Hobbies - Спорт, игры, хобби 34 слов
+ Time 1 - Время 1 53 слов
+ Time 2 - Время 2 22 слов
+
+
+tem7
+ Tools - Инструменты 17 слов
+ Various Adjectives - Различные прилагательные 24 слов
+ Various Adverbs 1 - Различные наречия1 48 слов
+ Various Adverbs 2 - Различные наречия2 50 слов
+ Various Verbs 1 - Различные глаголы1 69 слов
+ Various Verbs 2 - Различные глаголы2 66 слов
+ Weather - Погода 20 слов
+ Work, Business, Office - Работа, бизнес, офис 44 слов
 
 
 </textarea>
@@ -141,9 +143,9 @@ tem7
       <button type="button" class="btn btn-danger btn-md ot2" onclick="save_g_api_to_Loc();">Запомнить юзер список в LocalStore</button>
       <button type="button" class="btn btn-danger btn-md ot2" onclick="del_Loc();">Очистить LocalStore</button>
 
-      
+
     </div>
-   </div> 
+   </div>
 
    <div class="panel panel-success">
 <div class="panel-heading">Текущий список=<span id="id_list0">?</span></div>
@@ -160,9 +162,9 @@ tem7
       </ul>
      </div>
     </div>
-   
+
  </div>
- 
+
  </div>
 </div>
 <script>
@@ -183,7 +185,7 @@ vu=new Vue({
       }
     },
     removeTodo: function (index) {var s='',ms;
-         s=''+this.todos[index].text; 
+         s=''+this.todos[index].text;
          console.log('del card='+s);
          delete(g_api[s+'[']);//удаляем карточку если есть
      this.todos.splice(index, 1);
@@ -198,28 +200,26 @@ vu=new Vue({
 
 <div role="tabpanel" class="tab-pane fade" id="tem2">
   <div class="panel-group">
-
+<div id="id_tek_word">Загружаем карточки..</div>
    <div class="panel panel-primary">
-    <div class=""><b id="id_tek_word">Загружаем карточки..</b></div>
+
     <div class="panel-body">
       <button id="id_but1" type="button" class="btn btn-primary btn-md ot2" onclick="load_card();">HOME</button>
        ||
       <button id="id_but2" type="button" class="btn btn-success btn-md ot2" onclick="prev_word();">PREV</button>
       ||
       <button type="button" class="btn btn-primary btn-md ot2" onclick="next_word(20);">NEXT-20</button>
-      |||| 
+      ||||
       <button type="button" class="btn btn-primary btn-md ot2" onclick="g_pic='0.gif';"> список=<span id="id_list">?</span> номер слова=<span id="id_word">?</span> </button>
-      |||| 
+      ||||
       <button type="button" id="id_dp" class="btn btn-primary btn-md ot2" onclick="load_dp()"> Включить доп.перевод </button>
       <button type="button" id="id_da" class="btn btn-primary btn-md ot2" onclick="load_da()"> Включить доп.асоц. </button>
       <button id="id_but3" type="button" class="btn btn-success btn-md ot2" onclick="next_word(1);">NEXT</button>
     </div>
-   </div> 
+   </div>
 
    <div class="panel panel-success">
-    <div  class="panel-body">
-     <h3><b id="id_p0">слово - перевод</b> <span id="id_p1" class="">транскрипция 3 шт</span></h3>
-    </div>
+     <h3> <b id="id_p0">слово - перевод</b> <span id="id_p1" class="">транскрипция 3 шт</span></h3>
    </div>
 
    <div class="panel panel-primary">
@@ -233,25 +233,25 @@ vu=new Vue({
 <hr>
         <h4 id="id_p4" >dp</h4>
        </div>
-      </div>  
+      </div>
      </div>
-   </div>   
- 
+   </div>
+
    <div class="panel panel-primary">
     <div id="id_p5" class="panel-body">
 доп асоц
     </div>
-   </div>    
- 
+   </div>
+
    <div class="panel panel-primary">
     <div id="id_p6" class="panel-body">
 примеры
     </div>
-   </div>    
+   </div>
 
  </div>
 </div>
-   
+
  </div>
 </div>
 </div>
