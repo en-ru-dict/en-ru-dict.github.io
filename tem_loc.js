@@ -34,7 +34,14 @@ function isLocalStorageAvailable() {
 }
 function put_v(id,s){var d=document.getElementById(id);if(d)d.value=s+'';}
 function put_h(id,s){var d=document.getElementById(id);if(d)d.innerHTML=s+'';}
-function put_src(id,s){var d=document.getElementById(id);if(!s)s=g_pic;if(d)d.src='pic/'+s;}
+
+function put_src(id,u,w){var fl_err=1;
+ if(u=='')u='pic/'+w+'.jpg';
+	var o=document.getElementById(id);if(!o)return;
+ o.onerror=function(){if(fl_err){fl_err=0;o.src='pic/'+g_pic;}}
+	o.src=u;
+}
+	
 function but_enable(id_but,n){var d,v;//1-0
     d=document.getElementById(id_but);
     if(d){
@@ -146,12 +153,11 @@ p=replace_all(p,'%','(очень похоже)');
  ;
  dp=ms[3];if(dp=='')dp=get_dp(w);
  da=ms[4];if(da=='')da=get_da(w);
- pic=ms[1];if(pic=='+')pic=w+'.jpg';
+ put_src('id_p3',ms[1],w);
  put_h('id_p0',s); //word+perevod
  if(len(s)>70)t='<br>'+t;
  put_h('id_p1',t); //tr123
  put_h('id_p2',fa);
- put_src('id_p3',pic);//pic
  put_h('id_p4',dp);
  put_h('id_p5',zvez_v_kurs(da,p));
  put_h('id_p6','(разное) '+ms[5]);
