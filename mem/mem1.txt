@@ -1,5 +1,5 @@
 //известные ~250
-g_api=`
+g_api=`Эти слова надо учить наизусть без ФА
 about[ə'baut]о,примерно,про 
 above[ə'bəv/ə'bʌv]над 
 add[æd]добавлять ||/Арифмитическое-Действие /ДобАвить
@@ -7,7 +7,7 @@ after[æftər/aftə]после
 afternoon[,æftər'nun/a:ftə'nu:n]после полудня 
 again[ə'gein/ə'gen]еще,снова 
 all[ɔl]все 
-already[ɔ'redi/ɔl'redi/ɔ:l'redi]уже ||/(ready-)
+already[ɔ'redi/ɔl'redi/ɔ:l'redi]уже ||/(ready-готов)
 alright[,ɔl'rait/ɔl'rait]в порядке ||/(right-прав)
 also[ɔlsou/ɔ:lsou]также,тоже 
 always[ɔl,weiz/ɔlwiz/ɔ:lwəz]всегда ||/(way-путь)
@@ -16,7 +16,7 @@ any[eni/em]любой
 back[bæk]назад,спина,поддерживать ||/ ехал на *спине быка на родео
 bad[bæd]плохой ||/~быдло
 be[bi/bi:]быть 
-become[bi'kəm/bi'kʌm]становиться 
+become[bi'kəm/bi'kʌm]становиться ||/+ белым камнем
 bed[bed]кровать||/ БЕДная *кровать,что на ней только не вытворяли / оБЕД в *кровать принесли
 bedroom[be,drum/bedru:m]спальня ||/=кровать+комната
 before[,bi'fɔr/bi'fɔr/bi'fɔ]перед 
@@ -32,7 +32,7 @@ bluebell[blu,bel/blu:bel]колокольчик
 body[bɑdi/bɔdi]тело ||/~боди-арт
 bookshelf[buk,ʃelf/bukʃelf]книжный шкаф ||/ на шельфе у шефа
 bookstore[buk,stɔr/bukstɔ:]книжный магазин ||/ БУКвари и СТОРож
-boy[bɔi]мальчик ||/~ковбой
+boy[bɔi]мальчик ||/~ковБОЙ /~БОЙфренд
 briefcase[brif,keis/bri:fkeis]портфель,чемодан-дипломат 
 but[bət]но 
 daily[deili]ежедневно,ежедневный ||/(day-день)
@@ -44,7 +44,7 @@ edit[edət/edit]редактировать,монтировать
 editor[edətər/editər/editə]редактор 
 else[els]еще 
 end[end]завершать,конец ||/~хэпи-енд
-enter[enər/entər/entə]войти,входить ||/ЕНот выТЕР ноги и вошел в ракету
+enter[enər/entər/entə]войти,входить ||/ЕНот выТЕР ноги и *вошел в ракету
 error[erər/erə]ошибка 
 every[evəri/evri/evn]каждый 
 everybody[evri,bɑdi/evribɔdi]все,каждый 
@@ -97,7 +97,7 @@ keyboard[ki,bɔrd/ki:bɔ:d]клавиатура||/=ключ+доска
 lady[leidi]дама 
 large[lɑrʤ/laʤ]большой,широкий ||/ларь
 left[left]левый 
-lesson[lesən/lesn]урок ||/на уроке про лес тянуло в сон
+lesson[lesən/lesn]урок ||/на *уроке про ЛЕС тянуло в СОН
 like[laik]как,любить ||/лайк если нравиться
 little[litəl/litl]маленький,немного 
 live[laiv/liv]живой,жить ||/*жить в ливии под ливнем
@@ -105,7 +105,7 @@ living[liviŋ]живущий
 love[ləv/lʌv]любить,любовь 
 lovely[ləvli/lʌvli]прекрасный,чудесный,милый 
 lover[ləvər/lʌvə]любовник 
-low[lou]низкий ||/~лоукостер низкая стоимость
+low[lou]низкий ||/~лоукостер это низкая стоимость
 mailbox[meil,bɑks/meilbɔks]почтовый ящик||/~мыло 
 mailman[meil,mæn/meilmæn]почтальон 
 main[mein]главный ||/+ майнер
