@@ -2,7 +2,7 @@
 g_api=`
 Tools - Инструменты 7
 ×
-1. a broom[brum]метла||?
+1. a broom[brum]метла||/(+ly наречие) брум +
 2. a hammer[hæmər/hæmə]молоток||?
 3. a hanger[hæŋər/hæŋə]вешалка||?
 4. a ladder[lædər/lædə]лестница||?
