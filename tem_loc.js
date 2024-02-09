@@ -1,14 +1,17 @@
 //!Xing Soft 2024
+var g_fa,g_da;//global
+
 function log(s){console.log(s+'');}
 function len(d){ return d.length;}
-function run_js(vPathScript,fun1){var sc;
-  sc=document.createElement('script');sc.async=true;
+function run_js(vPathScript,fun1,a1,a2){var sc;
+ log('загружаем скрипт='+vPathScript);
+ sc=document.createElement('script');sc.async=true;
  sc.src=''+vPathScript; document.head.appendChild(sc);
- sc.onerror=function(){alert('no file='+sc.src+': error in run_js');}
+ sc.onerror=function(){log('no file='+sc.src+': error in run_js');}
  sc.onload=function(){
   if(!this.executed){
    this.executed=true;
-   if(fun1)setTimeout(fun1,0);
+   if(fun1)setTimeout(fun1(a1,a2),0);
   }
  }
  sc.onreadystatechange=function(){var self=this;
@@ -34,7 +37,6 @@ function isLocalStorageAvailable() {
 }
 function put_v(id,s){var d=document.getElementById(id);if(d)d.value=s+'';}
 function put_h(id,s){var d=document.getElementById(id);if(d)d.innerHTML=s+'';}
-
 function put_src(id,u,w){var fl_err=1;
  if(u=='')u='pic/'+w+'.jpg';
 	var o=document.getElementById(id);if(!o)return;
@@ -150,16 +152,17 @@ p=replace_all(p,'%%','(примерно похоже)')
 p=replace_all(p,'%','(очень похоже)');
  s=w+' - <i>'+p+'</i>'; w=cut_tem(w);
  t=get_tr123(w,t); t=t.replace('/',' / ');
- ;
- dp=ms[3];if(dp=='')dp=get_dp(w);
- da=ms[4];if(da=='')da=get_da(w);
- put_src('id_p3',ms[1],w);
  put_h('id_p0',s); //word+perevod
  if(len(s)>70)t='<br>'+t;
  put_h('id_p1',t); //tr123
- put_h('id_p2',fa);
+ put_h('id_p2',fa);//best fa
+ put_src('id_p3',ms[1],w);//pic
+ dp=ms[3];if(dp=='')dp=get_dp(w);//доп.перевод
  put_h('id_p4',dp);
- put_h('id_p5',zvez_v_kurs(da,p));
+ da=ms[4];
+ if(da){da=zvez_v_kurs(da,p);put_h('id_p5',da);}
+ else {get_da(w,p);}
+ 
  put_h('id_p6','(разное) '+ms[5]);
  
 }
@@ -232,7 +235,7 @@ function one_space(s){var i,out='',f=0,ss;
  }
  return out;
 }
-function get_da(w){var out='',n1=0,n2=0,n=0,s='';//ищем fa 
+function get_da_old(w){var out='',n1=0,n2=0,n=0,s='';//ищем fa 
  w=w.trim();if(!w)return '?w?';
  n=0;out='';
  while(1){
@@ -258,9 +261,47 @@ function get_da(w){var out='',n1=0,n2=0,n=0,s='';//ищем fa
   out=one_space(out);
   return out;
 }
+function get_da(w,p){var s='';//ищем fa по новому
+ put_h('id_p5','(дополнительные ФА)');
+ w=w.trim();p=p.trim();
+ if(w){
+  s=w.charAt(0);
+  if(s!=g_fa.charAt(1)) run_js('fa/'+s+'-fa.txt',get_da2,w,p);
+  else get_da2(w,p);
+ } 
+}
+function get_da2(w,p){var out='',n1=0,n2=0,n=0,s='';//словарь загружен
+	log('w='+w+' p='+p);
+ n=0;out='';
+ while(1){
+    n1=g_fa.indexOf('\n'+w+'~',n);
+    n2=g_fa.indexOf('\n'+w+'/',n);
+    if(n1<0){n1=n2;if(n1<0)break;}
+    n2=n1+1;
+    while(1){ // добавляем другие
+     n2=g_fa.indexOf('\n',n2+1);
+     if(g_fa.charAt(n2+1)!='/')break;
+    }
+    s=' *'+g_fa.substring(n1+1,n2);
+    s=s.replace('~',' (');s=s.replace('/',') ');
+  out+=s+'@';n=n2+1;
+}
+  
+ if(out=='')out='-@';
+ out=out.substring(0,out.length-1);//del @
+ 
+  out=replace_all(out,';','; ');
+  out=replace_all(out,'\n',' <br> ');
+  out=replace_all(out,'/',' <hr> ');
+  out=one_space(out);
+  put_h('id_p5',zvez_v_kurs(out,p));
+}
 function get_page(){ 
  if(len(g_page)<3)alert('g_page='+g_page); 
  return g_page.substring(0,3);
 }
 function load_dp(){run_js('dp6k.txt');document.getElementById("id_dp").style.backgroundColor='coral';}
-function load_da(){run_js('da6k.txt');document.getElementById("id_da").style.backgroundColor='coral';}
+function load_da(){g_fa='000';document.getElementById("id_da").style.backgroundColor='coral';}
+//news
+var g_news='';
+run_js('news.txt',function(){alert(g_news);});
