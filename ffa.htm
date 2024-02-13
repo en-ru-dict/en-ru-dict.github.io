@@ -3,9 +3,78 @@
 
 <div id="id_info"></div>
 <script>
-
-var lat="abcdefghijklmnopqrstuvwyz";
-var i,x,s='';
-for(i=0;i<lat.length;i++){x=lat.charAt(i);s+='<a href="fa/'+x+'-fa.txt">Фонетическик ассоциации для-'+x.toUpperCase()+'</a><br><br>\n';}
-document.getElementById("id_info").innerHTML=s;
+var g_bukva='';
+function start(){var i,x,s,lat="abcdefghijklmnopqrstuvwyz";
+ s='';
+ for(i=0;i<lat.length;i++){
+    x=lat.charAt(i);s+='<a href="fa/'+x+'-fa.txt">ФА для-'+x.toUpperCase()+'</a>';
+    s+='____<button onclick="g_bukva=\''+x+'\';info();">info</button>';
+    s+='<br><br>\n';
+ }
+ document.getElementById("id_info").innerHTML=s;
+}
+function run_js(vPathScript,fun1){var sc;
+ sc=document.createElement('script');sc.async=true;
+ sc.src=''+vPathScript; document.head.appendChild(sc);
+ sc.onerror=function(){alert('no file='+sc.src+': error in run_js');}
+ sc.onload=function(){
+  if(!this.executed){
+   this.executed=true;
+   if(fun1)setTimeout(fun1(),0);
+  }
+ }
+ sc.onreadystatechange=function(){var self=this;
+  if(this.readyState == "complete" || this.readyState == "loaded"){
+   setTimeout(function(){self.onload()}, 0);
+  }
+ }
+}
+function len(d){ return d.length;}
+function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
+ if(s0.indexOf(a0)>=0){ms=s0.split(a0);s0=ms.join(b0);}
+ return s0;
+}
+function mas_unik(mm){var i,dd=[],le=len(mm);//делает уник массив
+    for(i=0;i<le;i++){s=mm[i].trim();if(dd.indexOf(s)<0)dd.push(s);}
+    return dd;
+}
+function info(){run_js('fa/'+g_bukva+'-fa.txt',ok);}
+function ok(){var i,s,w=[],a=[],out,m;
+ if(g_fa.indexOf('\n/')<0){
+  out='чистый список\n';
+  g_fa=replace_all(g_fa,'/','\n/');
+  g_fa=g_fa.split('\n');
+  for(i=0;i<g_fa.length;i++){
+   s=g_fa[i].trim();
+   if(s.charAt(0)==g_bukva)w.push(s.split('~')[0]);
+   if(s.charAt(0)=='/'){s=s.substring(1);a.push(s.trim());}
+  }
+  w=mas_unik(w);
+  a=mas_unik(a);
+  out+='слов='+len(w)+'\nФА='+len(a);
+  //document.getElementById("id_info").innerHTML=s;
+    
+  alert(out);
+  return;
+ }
+    
+ out='грязный список\n';      
+ g_fa=g_fa.split('\n');
+ for(i=0;i<g_fa.length;i++){
+  s=g_fa[i].trim();
+  if(s.charAt(0)==g_bukva){
+      w.push(s.split('~')[0]);
+      m=s.split('/'); s=m.slice(-1)[0];
+      s=replace_all(s,'*',''); a.push(s.trim());
+  }
+  if(s.charAt(0)=='/'){s=s.substring(1);s=replace_all(s,'*','');a.push(s.trim());}
+ }
+ 
+    
+  w=mas_unik(w);
+  a=mas_unik(a);
+  out+='слов='+len(w)+'\nФА='+len(a);alert(out);
+  //s=a.join('<br>');document.getElementById("id_info").innerHTML=s;
+}
+start();
 </script>
