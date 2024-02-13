@@ -1,0 +1,11 @@
+<!DOCTYPE html> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<div id="id_info"></div>
+<script>
+
+var lat="abcdefghijklmnopqrstuvwyz";
+var i,x,s='';
+for(i=0;i<lat.length;i++){x=lat.charAt(i);s+='<a href="fa/'+x+'-fa.txt">Фонетическик ассоциации для-'+x.toUpperCase()+'</a><br><br>\n';}
+document.getElementById("id_info").innerHTML=s;
+</script>
