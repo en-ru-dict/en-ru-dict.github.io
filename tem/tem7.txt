@@ -1,366 +1,366 @@
-//365
+// 367
 g_api=`
 Tools - Инструменты 7
-×
+
 1. a broom[brum]метла||/(+ly наречие) брум +
-2. a hammer[hæmər/hæmə]молоток||?
-3. a hanger[hæŋər/hæŋə]вешалка||?
-4. a ladder[lædər/lædə]лестница||?
-5. a needle[nidəl/nidl]игла||?
-6. a pin[pin]булавка||?
-7. a pump[pəmp/pʌmp]насос||?
-8. a rake[reik]грабли||?
-9. a saw[sɔ/sɔ:]пила||?
-10. a screwdriver[skru,draivər/skru:draivə]отвертка||?
-11. a shelf[ʃelf]полка||?
-12. a shovel[ʃəvəl/ʃʌvl]лопата||?
-13. a tool[tul/tu:l]инструмент||?
-14. knitting needle[nitiŋ-nidəl]спица||?
-15. pincers[pinsərz/pmsəz]клещи||?
-16. pliers[plaiərz/plaiəz]плоскогубцы||?
-17. scissors[sizərz/sizəz]ножницы||?
+2. a hammer[hæmər/ hæmə]молоток||/?
+3. a hanger[hæŋər/ hæŋə]вешалка||/?
+4. a ladder[lædər/ lædə]лестница||/?
+5. a needle[nidəl/ nidl]игла||/?
+6. a pin[pin]булавка||/?
+7. a pump[pəmp/ pʌmp]насос||/?
+8. a rake[reik]грабли||/?
+9. a saw[sɔ/ sɔ:]пила||/?
+10. a screwdriver[skru,draivər/ skru:draivə]отвертка||/?
+11. a shelf[ʃelf]полка||/?
+12. a shovel[ʃəvəl/ ʃʌvl]лопата||/?
+13. a tool[tul/ tu:l]инструмент||/?
+14. knitting needle[nitiŋ-nidəl]спица||/?
+15. pincers[pinsərz/ pmsəz]клещи||/?
+16. pliers[plaiərz/ plaiəz]плоскогубцы||/?
+17. scissors[sizərz/ sizəz]ножницы||/?
 
 Various Adjectives - Различные прилагательные
 ×
-1. alone[ə'loun]одинокий||?
-2. bad[bæd]плохой||?
-3. complete[kəm'plit/kəm'pli:t]завершенный||?
-4. empty[empti/emti]пустой||?
-5. enormous[i'nɔrməs/i'nɔrmis/inɔ:məs]огромный||?
-6. free[fri/fri:]свободный||?
-7. full[ful]полный||?
-8. horrible[hɔrəbəl/hɔrəbl]ужасный||?
-9. last[læs/læst/last]последний||?
-10. latest[leitəst/leitist]последний||?
-11. new[nju/nu]новый||?
-12. next[neks/nekst]следующий||?
-13. noisy[nɔizi]шумный||?
-14. ordinary[ɔrdə,neri/ɔ:dnn]обыкновенный||?
-15. other[əðər/ʌðə]другой||?
-16. perfect[pər,fikt/pər'fekt/pə:fikt]совершенный||?
-17. same[seim]одинаковый||?
-18. silent[sailənt]тихий||?
-19. simple[simpəl/simpl]простой||?
-20. special[speʃəl/speʃ(ə)l]специальный||?
-21. useful[jusfəl/ju:sful]полезный||?
-22. useless[jusləs/ju:slis]бесполезный||?
-23. usual[juʒəwəl/juʒuəl/ju:ʒuəl]обычный||?
-24. whole[houl]целый||?
+1. alone[ə'loun]одинокий||/?
+2. bad[bæd]плохой||/?
+3. complete[kəm'plit/ kəm'pli:t]завершенный||/?
+4. empty[empti/ emti]пустой||/?
+5. enormous[i'nɔrməs/ i'nɔrmis/ inɔ:məs]огромный||/?
+6. free[fri/ fri:]свободный||/?
+7. full[ful]полный||/?
+8. horrible[hɔrəbəl/ hɔrəbl]ужасный||/?
+9. last[læs/ læst/ last]последний||/?
+10. latest[leitəst/ leitist]последний||/?
+11. new[nju/ nu]новый||/?
+12. next[neks/ nekst]следующий||/?
+13. noisy[nɔizi]шумный||/?
+14. ordinary[ɔrdə,neri/ ɔ:dnn]обыкновенный||/?
+15. other[əðər/ ʌðə]другой||/?
+16. perfect[pər,fikt/ pər'fekt/ pə:fikt]совершенный||/?
+17. same[seim]одинаковый||/?
+18. silent[sailənt]тихий||/?
+19. simple[simpəl/ simpl]простой||/?
+20. special[speʃəl/ speʃ(ə)l]специальный||/?
+21. useful[jusfəl/ ju:sful]полезный||/?
+22. useless[jusləs/ ju:slis]бесполезный||/?
+23. usual[juʒəwəl/ juʒuəl/ ju:ʒuəl]обычный||/?
+24. whole[houl]целый||/?
 
  
 Various Adverbs 1 - Различные наречия 1
 ×
-1. a little bit[litəl-bit]немного||?
-2. a lot[lɑt/lɔt]много||?
-3. again[ə'gein/ə'gen]еще||?
-4. almost[ɔl,moust/ɔ:lmoust]почти||?
-5. also[ɔlsou/ɔ:lsou]тоже||?
-6. always[ɔl,weiz/ɔlwiz/ɔ:lwəz]всегда||?
-7. at all[æt-ɔl]вообще||?
-8. badly[bædli]плохо||?
-9. because[bi'kɑz/bi'kəz/bi'kɔz/bikəz]потому что||?
-10. By the way[bai-ðə-wei]кстати ...||?
-11. enough[i'nəf/i'nʌf]достаточно||?
-12. formerly[fɔrmərli/fɔ:məli]в прошлом||?
-13. generally[ʤenərəli/ʤenrəli/ʤen(ə)rəli]в основном||?
-14. here[hir/hiə]здесь||?
-15. how[hau]как||?
-16. how many[hau-meni]сколько||?
-17. how much[hau-məʧ]сколько||?
-18. in the middle[in-ðə-midəl]посередине||?
-19. maybe[meibi]может быть||?
-20. more[mɔr/mɔ]еще||?
-21. never[nevər/nevə]никогда||?
-22. of course[əv-kɔrs]конечно||?
-23. often[ɔfən/ɔftən/ɔfn]часто||?
-24. only[ounli]только||?
-25. perhaps[pər'hæps/pə'hæps,præps]возможно||?
-26. quite[kwait]довольно||?
-27. rarely[rerli/reəli]редко||?
-28. rather[ræðər/rəðər/ra:ðə]вернее||?
-29. really[rili/riəli]на самом деле||?
-30. right side out[rait-said-aut]наизнанку||?
-31. sometimes[səm,taimz/səm'taimz/sʌmtaimz]иногда||?
-32. still[stil]еще||?
-33. surely[ʃurli/ʃuəli]конечно||?
-34. then[ðen]тогда||?
-35. there[ðer/ðeə(r)]там||?
-36. therefore[ðer,fɔr/ðeəfɔ:]следовательно||?
-37. together[tə'geðər/tə'geðə]вместе||?
-38. too[tu/tu:]тоже||?
-39. too many[tu-meni]слишком много||?
-40. too much[tu-məʧ]слишком много||?
-41. upside down[əp'said-daun]вверх ногами||?
-42. usually[juʒəli/juʒəwəli/ju:ʒuəli]обычно||?
-43. very[veri]очень||?
-44. well[wel]хорошо||?
-45. what[hwət/wət/wɔt]что||?
-46. where[hwer/wer/weə]где||?
-47. who[hu/hu:]кто||?
-48. why[hwai/wai]почему||?
+1. a little bit[litəl-bit]немного||/?
+2. a lot[lɑt/ lɔt]много||/?
+3. again[ə'gein/ ə'gen]еще||/?
+4. almost[ɔl,moust/ ɔ:lmoust]почти||/?
+5. also[ɔlsou/ ɔ:lsou]тоже||/?
+6. always[ɔl,weiz/ ɔlwiz/ ɔ:lwəz]всегда||/?
+7. at all[æt-ɔl]вообще||/?
+8. badly[bædli]плохо||/?
+9. because[bi'kɑz/ bi'kəz/ bi'kɔz/ bikəz]потому что||/?
+10. By the way[bai-ðə-wei]кстати ...||/?
+11. enough[i'nəf/ i'nʌf]достаточно||/?
+12. formerly[fɔrmərli/ fɔ:məli]в прошлом||/?
+13. generally[ʤenərəli/ ʤenrəli/ ʤen(ə)rəli]в основном||/?
+14. here[hir/ hiə]здесь||/?
+15. how[hau]как||/?
+16. how many[hau-meni]сколько||/?
+17. how much[hau-məʧ]сколько||/?
+18. in the middle[in-ðə-midəl]посередине||/?
+19. maybe[meibi]может быть||/?
+20. more[mɔr/ mɔ]еще||/?
+21. never[nevər/ nevə]никогда||/?
+22. of course[əv-kɔrs]конечно||/?
+23. often[ɔfən/ ɔftən/ ɔfn]часто||/?
+24. only[ounli]только||/?
+25. perhaps[pər'hæps/ pə'hæps,præps]возможно||/?
+26. quite[kwait]довольно||/?
+27. rarely[rerli/ reəli]редко||/?
+28. rather[ræðər/ rəðər/ ra:ðə]вернее||/?
+29. really[rili/ riəli]на самом деле||/?
+30. right side out[rait-said-aut]наизнанку||/?
+31. sometimes[səm,taimz/ səm'taimz/ sʌmtaimz]иногда||/?
+32. still[stil]еще||/?
+33. surely[ʃurli/ ʃuəli]конечно||/?
+34. then[ðen]тогда||/?
+35. there[ðer/ ðeə(r)]там||/?
+36. therefore[ðer,fɔr/ ðeəfɔ:]следовательно||/?
+37. together[tə'geðər/ tə'geðə]вместе||/?
+38. too[tu/ tu:]тоже||/?
+39. too many[tu-meni]слишком много||/?
+40. too much[tu-məʧ]слишком много||/?
+41. upside down[əp'said-daun]вверх ногами||/?
+42. usually[juʒəli/ juʒəwəli/ ju:ʒuəli]обычно||/?
+43. very[veri]очень||/?
+44. well[wel]хорошо||/?
+45. what[hwət/ wət/ wɔt]что||/?
+46. where[hwer/ wer/ weə]где||/?
+47. who[hu/ hu:]кто||/?
+48. why[hwai/ wai]почему||/?
 
 Various Adverbs 2 - Различные наречия 2
 ×
-1. absolutely[,æbsə'lutli/æbsəlu:tli]абсолютно||?
-2. after[æftər/aftə]после||?
-3. already[ɔ'redi/ɔl'redi/ɔ:l'redi]уже||?
-4. as much[æz-məʧ]столько же||?
-5. at first[æt-fərst]сначала||?
-6. at least[æt-list]по крайней мере||?
-7. before[,bi'fɔr/bi'fɔr/bi'fɔ]перед||?
-8. better[betər/betə]лучше||?
-9. certainly[sərtənli/sə:tnli]конечно||?
-10. constantly[kɑnstəntli/kɔnst(ə)ntli]постоянно||?
-11. early[ərli/ə:li]рано||?
-12. elsewhere[el,swer/els'weə]где-то еще||?
-13. especially[ə'speʃəli/ə'speʃli/is'peʃ(ə)li]особенно||?
-14. even[ivin/iv(ə)n]даже||?
-15. even if[ivin-if]даже если||?
-16. even though[ivin-ðou]хотя||?
-17. far[fɑr/fa]далеко||?
-18. finally[fainəli]в конце||?
-19. fluently[fluəntli/flu(:)əntli]свободно||?
-20. fortunately[fɔrʧənətli/fɔrʧunətli/fɔ:ʧənətli]к счастью||?
-21. in a crazy manner[in-ei-kreizi-mænər]по-дурацки||?
-22. in fact[in-fækt]на самом деле||?
-23. inside[in,said/,in'said/in'said]внутри||?
-24. instead of ...[,in'sted-əv-]вместо ...||?
-25. late[leit]поздно||?
-26. less[les]меньше||?
-27. more[mɔr/mɔ]больше||?
-28. naturally[næʧərəli/næʧrəli/næʧr(ə)li]естественно||?
-29. nevertheless[,nevərðə'les/,nevəð(ə)'les]тем не менее||?
-30. next[neks/nekst]затем||?
-31. noisily[nɔizəli/nɔizili]шумно||?
-32. now[nau]сейчас||?
-33. nowhere[nou,wer/nouh,wer/nouweə]нигде||?
-34. outside[aut'said]снаружи||?
-35. patiently[peiʃəntli]терпеливо||?
-36. personally[pərsənəli/pərsənli/pərsnəli/pə:snəli]лично||?
-37. properly[prɑpərli/prɔpəli]правильно||?
-38. prudently[prudəntli/pru:d(ə)ntli]благоразумно||?
-39. quickly[kwikli]быстро||?
-40. rapidly[ræpədli/ræpidli]быстро||?
-41. recently[risənli/risəntli/ri:sntli]недавно||?
-42. seriously[siriəsli/siəriəsli]серьезно||?
-43. silently[sailəntli]тихо||?
-44. slowly[slouli/sləuli]медленно||?
-45. somewhere[səm,wer/sʌmweə]где-то||?
-46. straight ahead[streit-ə'hed]прямо||?
-47. to the left[ðə-left]налево||?
-48. to the right[ðə-rait]направо||?
-49. voluntarily[,vɑlən'terəli/vɔləntərili]добровольно||?
-50. worse[wərs/wə:s]хуже||?
+1. absolutely[,æbsə'lutli/ æbsəlu:tli]абсолютно||/?
+2. after[æftər/ aftə]после||/?
+3. already[ɔ'redi/ ɔl'redi/ ɔ:l'redi]уже||/?
+4. as much[æz-məʧ]столько же||/?
+5. at first[æt-fərst]сначала||/?
+6. at least[æt-list]по крайней мере||/?
+7. before[,bi'fɔr/ bi'fɔr/ bi'fɔ]перед||/?
+8. better[betər/ betə]лучше||/?
+9. certainly[sərtənli/ sə:tnli]конечно||/?
+10. constantly[kɑnstəntli/ kɔnst(ə)ntli]постоянно||/?
+11. early[ərli/ ə:li]рано||/?
+12. elsewhere[el,swer/ els'weə]где-то еще||/?
+13. especially[ə'speʃəli/ ə'speʃli/ is'peʃ(ə)li]особенно||/?
+14. even[ivin/ iv(ə)n]даже||/?
+15. even if[ivin-if]даже если||/?
+16. even though[ivin-ðou]хотя||/?
+17. far[fɑr/ fa]далеко||/?
+18. finally[fainəli]в конце||/?
+19. fluently[fluəntli/ flu(:)əntli]свободно||/?
+20. fortunately[fɔrʧənətli/ fɔrʧunətli/ fɔ:ʧənətli]к счастью||/?
+21. in a crazy manner[in-ei-kreizi-mænər]по-дурацки||/?
+22. in fact[in-fækt]на самом деле||/?
+23. inside[in,said/ ,in'said/ in'said]внутри||/?
+24. instead of ...[,in'sted-əv-]вместо ...||/?
+25. late[leit]поздно||/?
+26. less[les]меньше||/?
+27. more[mɔr/ mɔ]больше||/?
+28. naturally[næʧərəli/ næʧrəli/ næʧr(ə)li]естественно||/?
+29. nevertheless[,nevərðə'les/ ,nevəð(ə)'les]тем не менее||/?
+30. next[neks/ nekst]затем||/?
+31. noisily[nɔizəli/ nɔizili]шумно||/?
+32. now[nau]сейчас||/?
+33. nowhere[nou,wer/ nouh,wer/ nouweə]нигде||/?
+34. outside[aut'said]снаружи||/?
+35. patiently[peiʃəntli]терпеливо||/?
+36. personally[pərsənəli/ pərsənli/ pərsnəli/ pə:snəli]лично||/?
+37. properly[prɑpərli/ prɔpəli]правильно||/?
+38. prudently[prudəntli/ pru:d(ə)ntli]благоразумно||/?
+39. quickly[kwikli]быстро||/?
+40. rapidly[ræpədli/ ræpidli]быстро||/?
+41. recently[risənli/ risəntli/ ri:sntli]недавно||/?
+42. seriously[siriəsli/ siəriəsli]серьезно||/?
+43. silently[sailəntli]тихо||/?
+44. slowly[slouli/ sləuli]медленно||/?
+45. somewhere[səm,wer/ sʌmweə]где-то||/?
+46. straight ahead[streit-ə'hed]прямо||/?
+47. to the left[ðə-left]налево||/?
+48. to the right[ðə-rait]направо||/?
+49. voluntarily[,vɑlən'terəli/ vɔləntərili]добровольно||/?
+50. worse[wərs/ wə:s]хуже||/?
 
 Various Verbs 1 - Различные глаголы 1
 ×
-1. to ask[æsk/a:sk]спрашивать||?
-2. to be[bi/bi:]быть||?
-3. to become[bi'kəm/bi'kʌm]становиться||?
-4. to begin[bi'gin]начинать||?
-5. to belong[bi'lɔŋ]принадлежать||?
-6. to bring[briŋ]приносить||?
-7. to burn[bərn/bə:n]гореть||?
-8. to carry[kæri/keri/kæn]нести||?
-9. to choose[ʧuz/ʧu:z]выбирать||?
-10. to close[klous/klouz]закрывать||?
-11. to cover[kəvər/kʌvə]накрывать||?
-12. to cry[krai]плакать||?
-13. to depend[di'pend]зависеть||?
-14. to describe[dis'kraib]описывыть||?
-15. to dig[dig]копать||?
-16. to disappear[,disə'pir/,disə'piə]исчезать||?
-17. to do[du/du:]делать||?
-18. to dress[dres]одевать||?
-19. to fall asleep[fɑl-ə'slip]заснуть||?
-20. to find[faind]найти||?
-21. to fold[fould]складывать||?
-22. to forget[fər'get/fɔr'get/fə'get]забывать||?
-23. to give[giv]давать||?
-24. to have[hæv]иметь||?
-25. to have fun[hæv-fən]веселиться||?
-26. to have to[hæv-tu]быть должным||?
-27. to hear[hir/hiə]слышать||?
-28. to hide[haid]прятать||?
-29. to hit[hit]ударить||?
-30. to hope[houp]надеяться||?
-31. to keep[kip]сохранять||?
-32. to leave[liv]уходить||?
-33. to listen to[lisən-tu]слушать||?
-34. to look for[luk-fɔr]искать||?
-35. to make[meik]делать||?
-36. to need[nid/ni:d]нуждаться в||?
-37. to notice[noutəs/noutis]замечать||?
-38. to occupy[ɑkjə,pai/ɔkjupai]занимать||?
-39. to offer[ɔfər/ɔfə]предлагать||?
-40. to pour[pɔr/pɔ:]наливать||?
-41. to prefer[prə'fər/pri'fər/pn'fə:]предпочитать||?
-42. to put[put]класть||?
-43. to read[red/rid]читать||?
-44. to receive[rə'siv/ri'siv/n'si:v]получать||?
-45. to repair[ri'per/ri'peə]чинить||?
-46. to reply[ri'plai]отвечать||?
-47. to reside[ri'zaid]жить||?
-48. to see[si/si:]видеть||?
-49. to send[send]посылать||?
-50. to sit[sit]сидеть||?
-51. to sleep[slip]спать||?
-52. to smell[smel]пахнуть||?
-53. to smoke[smouk]курить||?
-54. to speak[spik/spi:k]говорить||?
-55. to spend[spend]потратить||?
-56. to spread[spred]распространять||?
-57. to stretch[streʧ]растягивать||?
-58. to surround[sər'aund/sə'raund]окружать||?
-59. to sweep[swip/swi:p]подметать||?
-60. to take[teik]брать||?
-61. to think[θiŋk]думать||?
-62. to throw[θrou]бросать||?
-63. to try[trai]пытаться||?
-64. to understand[,əndər'stænd/,ʌndə'stænd]понимать||?
-65. to use[jus/juz/ju:s]использовать||?
-66. to wait[weit/waft]ждать||?
-67. to watch[wɑʧ/wɔʧ]смотреть||?
-68. to wear[wer/weə]носить||?
-69. to write[rait]писать||?
+1. to ask[æsk/ a:sk]спрашивать||/?
+2. to be[bi/ bi:]быть||/?
+3. to become[bi'kəm/ bi'kʌm]становиться||/?
+4. to begin[bi'gin]начинать||/?
+5. to belong[bi'lɔŋ]принадлежать||/?
+6. to bring[briŋ]приносить||/?
+7. to burn[bərn/ bə:n]гореть||/?
+8. to carry[kæri/ keri/ kæn]нести||/?
+9. to choose[ʧuz/ ʧu:z]выбирать||/?
+10. to close[klous/ klouz]закрывать||/?
+11. to cover[kəvər/ kʌvə]накрывать||/?
+12. to cry[krai]плакать||/?
+13. to depend[di'pend]зависеть||/?
+14. to describe[dis'kraib]описывыть||/?
+15. to dig[dig]копать||/?
+16. to disappear[,disə'pir/ ,disə'piə]исчезать||/?
+17. to do[du/ du:]делать||/?
+18. to dress[dres]одевать||/?
+19. to fall asleep[fɑl-ə'slip]заснуть||/?
+20. to find[faind]найти||/?
+21. to fold[fould]складывать||/?
+22. to forget[fər'get/ fɔr'get/ fə'get]забывать||/?
+23. to give[giv]давать||/?
+24. to have[hæv]иметь||/?
+25. to have fun[hæv-fən]веселиться||/?
+26. to have to[hæv-tu]быть должным||/?
+27. to hear[hir/ hiə]слышать||/?
+28. to hide[haid]прятать||/?
+29. to hit[hit]ударить||/?
+30. to hope[houp]надеяться||/?
+31. to keep[kip]сохранять||/?
+32. to leave[liv]уходить||/?
+33. to listen to[lisən-tu]слушать||/?
+34. to look for[luk-fɔr]искать||/?
+35. to make[meik]делать||/?
+36. to need[nid/ ni:d]нуждаться в||/?
+37. to notice[noutəs/ noutis]замечать||/?
+38. to occupy[ɑkjə,pai/ ɔkjupai]занимать||/?
+39. to offer[ɔfər/ ɔfə]предлагать||/?
+40. to pour[pɔr/ pɔ:]наливать||/?
+41. to prefer[prə'fər/ pri'fər/ pn'fə:]предпочитать||/?
+42. to put[put]класть||/?
+43. to read[red/ rid]читать||/?
+44. to receive[rə'siv/ ri'siv/ n'si:v]получать||/?
+45. to repair[ri'per/ ri'peə]чинить||/?
+46. to reply[ri'plai]отвечать||/?
+47. to reside[ri'zaid]жить||/?
+48. to see[si/ si:]видеть||/?
+49. to send[send]посылать||/?
+50. to sit[sit]сидеть||/?
+51. to sleep[slip]спать||/?
+52. to smell[smel]пахнуть||/?
+53. to smoke[smouk]курить||/?
+54. to speak[spik/ spi:k]говорить||/?
+55. to spend[spend]потратить||/?
+56. to spread[spred]распространять||/?
+57. to stretch[streʧ]растягивать||/?
+58. to surround[sər'aund/ sə'raund]окружать||/?
+59. to sweep[swip/ swi:p]подметать||/?
+60. to take[teik]брать||/?
+61. to think[θiŋk]думать||/?
+62. to throw[θrou]бросать||/?
+63. to try[trai]пытаться||/?
+64. to understand[,əndər'stænd/ ,ʌndə'stænd]понимать||/?
+65. to use[jus/ juz/ ju:s]использовать||/?
+66. to wait[weit/ waft]ждать||/?
+67. to watch[wɑʧ/ wɔʧ]смотреть||/?
+68. to wear[wer/ weə]носить||/?
+69. to write[rait]писать||/?
 
 Various Verbs 2 - Различные глаголы 2
 ×
 
-1. to annoy[ə'nɔi]надоедать||?
-2. to answer[ænsər/a:nsə]отвечать||?
-3. to attach[ə'tæʧ]присоединить||?
-4. to be able[bi-eibəl]мочь||?
-5. to be bored[bi-bɔrd]скучать||?
-6. to beat[bit]бить||?
-7. to believe[bi'liv/bi'lrv]верить||?
-8. to bend[bend]гнуть||?
-9. to blow[blou]дуть||?
-10. to bore[bɔr/bɔ]вгонять в скуку||?
-11. to break[breik]ломать||?
-12. to capture[kæpʧər/kæpʧə]захватывать||?
-13. to change[ʧeinʤ]изменять||?
-14. to chatter[ʧætər/ʧætə]болтать||?
-15. to check[ʧek]проверять||?
-16. to complain[kəm'plein]жаловаться||?
-17. to create[kri'eit/kri(:)'eit]создавать||?
-18. to deceive[di'siv/disi:v]обманывать||?
-19. to disobey[,disə'bei/disə'bei]не подчиняться||?
-20. to disturb[di'stərb/dis'tə:b]беспокоить||?
-21. to drop[drɑp/drɔp]ронять||?
-22. to dry[drai]сушить||?
-23. to empty[empti/emti]опустошать||?
-24. to explain[iks'plein]объяснять||?
-25. to fight[fait]драться||?
-26. to fill[fil]наполнять||?
-27. to follow[fɑlou/fɔlou]следовать||?
-28. to forbid[fər'bid/fɔ'bid/fəbid]запрещать||?
-29. to frown[fraun]хмурить брови||?
-30. to get used to[get-juzd-tu]привыкать к||?
-31. to give back[giv-bæk]возвращать||?
-32. to invite[,in'vait/invait]приглашать||?
-33. to joke[ʤouk]шутить||?
-34. to know[nou]знать||?
-35. to let[let]позволять||?
-36. to lose[luz]терять||?
-37. to make a mistake[meik-ei-mi'steik]ошибаться||?
-38. to meet[mit/mi:t]встречать||?
-39. to obey[ou'bei/ə'bei]подчиняться||?
-40. to persuade[pər'sweid/pə'sweid]уговаривать||?
-41. to promise[prɑməs/prɔmis]обещать||?
-42. to protect[prə'tekt]защищать||?
-43. to relax[ri'læks/n'læks]расслабляться||?
-44. to release[ri'lis/n'li:s]отпускать||?
-45. to remember ...[ri'membər-]помнить ...||?
-46. to remove[ri'muv/ri'mu:v]удалять||?
-47. to repeat[ri'pit/ri'pi:t]повторять||?
-48. to rescue[reskju/reskju:]спасать||?
-49. to screw something on[skru-səmθiŋ-ɑn]закручивать что-либо||?
-50. to separate[sepər,eit/sepərit/seprət/sepnt]разделять||?
-51. to shake[ʃeik]трясти||?
-52. to signify[signə,fai/signifai]обозначать||?
-53. to sink[siŋk]тонуть||?
-54. to speak fluently[spik-fluəntli]говорить свободно||?
-55. to steal[stil/sti:l]красть||?
-56. to succeed[sək'sid/sək'si:d]добиться успеха||?
-57. to take place[teik-pleis]проходить||?
-58. to tear[ter/tir/teə]разрывать||?
-59. to unfold[ən'fould/ʌnfould]разворачивать||?
-60. to unscrew something[ʌn'skru:-səmθiŋ]выкручивать что-либо||?
-61. to wake up[weik-əp]просыпаться||?
-62. to want[wɑnt/wɔnt]хотеть||?
-63. to wash[wɑʃ/wɔʃ]мыть||?
-64. to wipe[waip]вытирать||?
-65. to wish[wiʃ]желать||?
-66. to worry about[wəri-ə'baut]беспокоиться о||?
+1. to annoy[ə'nɔi]надоедать||/?
+2. to answer[ænsər/ a:nsə]отвечать||/?
+3. to attach[ə'tæʧ]присоединить||/?
+4. to be able[bi-eibəl]мочь||/?
+5. to be bored[bi-bɔrd]скучать||/?
+6. to beat[bit]бить||/?
+7. to believe[bi'liv/ bi'lrv]верить||/?
+8. to bend[bend]гнуть||/?
+9. to blow[blou]дуть||/?
+10. to bore[bɔr/ bɔ]вгонять в скуку||/?
+11. to break[breik]ломать||/?
+12. to capture[kæpʧər/ kæpʧə]захватывать||/?
+13. to change[ʧeinʤ]изменять||/?
+14. to chatter[ʧætər/ ʧætə]болтать||/?
+15. to check[ʧek]проверять||/?
+16. to complain[kəm'plein]жаловаться||/?
+17. to create[kri'eit/ kri(:)'eit]создавать||/?
+18. to deceive[di'siv/ disi:v]обманывать||/?
+19. to disobey[,disə'bei/ disə'bei]не подчиняться||/?
+20. to disturb[di'stərb/ dis'tə:b]беспокоить||/?
+21. to drop[drɑp/ drɔp]ронять||/?
+22. to dry[drai]сушить||/?
+23. to empty[empti/ emti]опустошать||/?
+24. to explain[iks'plein]объяснять||/?
+25. to fight[fait]драться||/?
+26. to fill[fil]наполнять||/?
+27. to follow[fɑlou/ fɔlou]следовать||/?
+28. to forbid[fər'bid/ fɔ'bid/ fəbid]запрещать||/?
+29. to frown[fraun]хмурить брови||/?
+30. to get used to[get-juzd-tu]привыкать к||/?
+31. to give back[giv-bæk]возвращать||/?
+32. to invite[,in'vait/ invait]приглашать||/?
+33. to joke[ʤouk]шутить||/?
+34. to know[nou]знать||/?
+35. to let[let]позволять||/?
+36. to lose[luz]терять||/?
+37. to make a mistake[meik-ei-mi'steik]ошибаться||/?
+38. to meet[mit/ mi:t]встречать||/?
+39. to obey[ou'bei/ ə'bei]подчиняться||/?
+40. to persuade[pər'sweid/ pə'sweid]уговаривать||/?
+41. to promise[prɑməs/ prɔmis]обещать||/?
+42. to protect[prə'tekt]защищать||/?
+43. to relax[ri'læks/ n'læks]расслабляться||/?
+44. to release[ri'lis/ n'li:s]отпускать||/?
+45. to remember ...[ri'membər-]помнить ...||/?
+46. to remove[ri'muv/ ri'mu:v]удалять||/?
+47. to repeat[ri'pit/ ri'pi:t]повторять||/?
+48. to rescue[reskju/ reskju:]спасать||/?
+49. to screw something on[skru-səmθiŋ-ɑn]закручивать что-либо||/?
+50. to separate[sepər,eit/ sepərit/ seprət/ sepnt]разделять||/?
+51. to shake[ʃeik]трясти||/?
+52. to signify[signə,fai/ signifai]обозначать||/?
+53. to sink[siŋk]тонуть||/?
+54. to speak fluently[spik-fluəntli]говорить свободно||/?
+55. to steal[stil/ sti:l]красть||/?
+56. to succeed[sək'sid/ sək'si:d]добиться успеха||/?
+57. to take place[teik-pleis]проходить||/?
+58. to tear[ter/ tir/ teə]разрывать||/?
+59. to unfold[ən'fould/ ʌnfould]разворачивать||/?
+60. to unscrew something[ʌn'skru:-səmθiŋ]выкручивать что-либо||/?
+61. to wake up[weik-əp]просыпаться||/?
+62. to want[wɑnt/ wɔnt]хотеть||/?
+63. to wash[wɑʃ/ wɔʃ]мыть||/?
+64. to wipe[waip]вытирать||/?
+65. to wish[wiʃ]желать||/?
+66. to worry about[wəri-ə'baut]беспокоиться о||/?
 
 Weather - Погода
 ×
-1. changing[ʧeinʤiŋ]переменный||?
-2. cloudy[klaudi]облачный||?
-3. fog[fɑg/fɔg]туман||?
-4. It's cold[kould]Холодно.||?
-5. It's cool[kul]Прохладно.||?
-6. It's hot (warm)[hɑt]хат) - Жарко.||?
-7. It's nice out[nais-aut]Хорошая погода.||?
-8. It's raining[]Идет дождь.||?
-9. It's snowing[]Идет снег.||?
+1. changing[ʧeinʤiŋ]переменный||/?
+2. cloudy[klaudi]облачный||/?
+3. fog[fɑg/ fɔg]туман||/?
+4. It's cold[kould]Холодно.||/?
+5. It's cool[kul]Прохладно.||/?
+6. It's hot (warm)[hɑt]хат) - Жарко.||/?
+7. It's nice out[nais-aut]Хорошая погода.||/?
+8. It's raining[]Идет дождь.||/?
+9. It's snowing[]Идет снег.||/?
 10. It's starting to get cold[stɑrtiŋ-tu-get-kould]Становится холодно.
-11. It's sunny out[səni-aut]Солнечно.||?
+11. It's sunny out[səni-aut]Солнечно.||/?
 12. It's windy[]Ветренно.
-13. rain[rein]дождь||?
-14. snow[snou]снег||?
+13. rain[rein]дождь||/?
+14. snow[snou]снег||/?
 15. the weather is bad[ðə-weðər-iz-bæd]Плохая погода.
-16. to get cold[get-kould]замерзнуть||?
-17. to get wet[get-wet]намокнуть||?
-18. to wet[wet]намочить||?
-19. weather[weðər/weðə]погода||?
+16. to get cold[get-kould]замерзнуть||/?
+17. to get wet[get-wet]намокнуть||/?
+18. to wet[wet]намочить||/?
+19. weather[weðər/ weðə]погода||/?
 20. what is the weather like?[hwət-iz-ðə-weðər-laik-?]Какая сейчас погода?
 
 Work, Business, Office - Работа, бизнес, офис
 ×
-1. a book[buk]книга||?
-2. a boss[bɑs/bɔs]начальник||?
-3. a briefcase[brif,keis/bri:fkeis]чемодан-дипломат||?
-4. a calculator[kælkjə,leitər/kælkjuleitə]калькулятор||?
-5. a commentary[kɑmən,teri/kɔməntən]комментарий||?
-6. a computer[kəm'pjutər/kəm'pju:tə]компьютер||?
-7. a desk[desk]стол||?
-8. a disorder[di'sɔrdər/dis'ɔ:də]беспорядок||?
-9. a factory[fæktəri/fækt(ə)ri]завод||?
-10. a file[fail]папка||?
-11. a letter[letər/letə]письмо||?
-12. a magazine[mægə,zin/,mægə'zi:n]журнал||?
-13. a method[meθəd]способ||?
-14. a mouse[maus]мышь||?
-15. a newspaper[nuz,peipər/nju:s,peipə]газета||?
-16. a note[nout]заметка||?
-17. a paper clip[peipər-klip]скрепка||?
-18. a printer[prinər/printər]принтер||?
-19. a problem[prɑbləm/prɔbləm]проблема||?
-20. a report[ri'pɔrt/ri'pɔ:t]отчет||?
-21. a stamp[stæmp]марка||?
-22. a vacation[vei'keiʃən/və'keiʃ(ə)n]отпуск||?
-23. accounting[ə'kauniŋ/ə'kauntiŋ]бухгалтерия||?
-24. an appointment[ə'pɔintmənt]встреча||?
-25. an employee[em'plɔii/im'plɔii/,emplɔi'i:]работник||?
-26. an envelope[envə,loup/envəloup]конверт||?
-27. an experience[ik'spiriəns/iks'piəriəns]опыт||?
-28. an idea[ai'diə]идея||?
-29. an office[ɔfis]офис %||?
-30. an owner[ounər/ounə]владелец||?
-31. business[biznəs/biznis]бизнес||?
-32. complete[kəm'plit/kəm'pli:t]завершенный||?
-33. efficient[i'fiʃənt/ifiʃ(ə)nt]эффективный||?
-34. management[mænəʤmənt/mæniʤmənt]руководство||?
-35. mandatory[mændə,tɔri/mændət(ə)ri]обязательный||?
-36. order[ɔrdər/ɔ:də]порядок||?
-37. responsibility[ri,spɑnsə'biləti/ns,pɔnsə'biliti]ответственность||?
-38. to cancel[kænsəl/kæns(ə)l]отменять||?
-39. to copy[kɑpi/kɔpi]копировать||?
-40. to offer[ɔfər/ɔfə]предлагать||?
-41. to repair[ri'per/ri'peə]чинить||?
-42. to supply[sə'plai]снабжать||?
-43. to use[jus/juz/ju:s]использовать||?
-44. to work[wərk/wək]работать||?
+1. a book[buk]книга||/?
+2. a boss[bɑs/ bɔs]начальник||/?
+3. a briefcase[brif,keis/ bri:fkeis]чемодан-дипломат||/?
+4. a calculator[kælkjə,leitər/ kælkjuleitə]калькулятор||/?
+5. a commentary[kɑmən,teri/ kɔməntən]комментарий||/?
+6. a computer[kəm'pjutər/ kəm'pju:tə]компьютер||/?
+7. a desk[desk]стол||/?
+8. a disorder[di'sɔrdər/ dis'ɔ:də]беспорядок||/?
+9. a factory[fæktəri/ fækt(ə)ri]завод||/?
+10. a file[fail]папка||/?
+11. a letter[letər/ letə]письмо||/?
+12. a magazine[mægə,zin/ ,mægə'zi:n]журнал||/?
+13. a method[meθəd]способ||/?
+14. a mouse[maus]мышь||/?
+15. a newspaper[nuz,peipər/ nju:s,peipə]газета||/?
+16. a note[nout]заметка||/?
+17. a paper clip[peipər-klip]скрепка||/?
+18. a printer[prinər/ printər]принтер||/?
+19. a problem[prɑbləm/ prɔbləm]проблема||/?
+20. a report[ri'pɔrt/ ri'pɔ:t]отчет||/?
+21. a stamp[stæmp]марка||/?
+22. a vacation[vei'keiʃən/ və'keiʃ(ə)n]отпуск||/?
+23. accounting[ə'kauniŋ/ ə'kauntiŋ]бухгалтерия||/?
+24. an appointment[ə'pɔintmənt]встреча||/?
+25. an employee[em'plɔii/ im'plɔii/ ,emplɔi'i:]работник||/?
+26. an envelope[envə,loup/ envəloup]конверт||/?
+27. an experience[ik'spiriəns/ iks'piəriəns]опыт||/?
+28. an idea[ai'diə]идея||/?
+29. an office[ɔfis]офис %||/?
+30. an owner[ounər/ ounə]владелец||/?
+31. business[biznəs/ biznis]бизнес||/?
+32. complete[kəm'plit/ kəm'pli:t]завершенный||/?
+33. efficient[i'fiʃənt/ ifiʃ(ə)nt]эффективный||/?
+34. management[mænəʤmənt/ mæniʤmənt]руководство||/?
+35. mandatory[mændə,tɔri/ mændət(ə)ri]обязательный||/?
+36. order[ɔrdər/ ɔ:də]порядок||/?
+37. responsibility[ri,spɑnsə'biləti/ ns,pɔnsə'biliti]ответственность||/?
+38. to cancel[kænsəl/ kæns(ə)l]отменять||/?
+39. to copy[kɑpi/ kɔpi]копировать||/?
+40. to offer[ɔfər/ ɔfə]предлагать||/?
+41. to repair[ri'per/ ri'peə]чинить||/?
+42. to supply[sə'plai]снабжать||/?
+43. to use[jus/ juz/ ju:s]использовать||/?
+44. to work[wərk/ wək]работать||/?
 `;

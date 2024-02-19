@@ -1,304 +1,304 @@
-//303
+// 305
 g_api=`
-Profession - Профессия 6
-×
-1. a baker[beikər/beikə]пекарь|||?
-2. a banker[bæŋkər]банкир||?
-3. a beginner[bi'ginər/bi'ginə]новичок||?
-4. a businessman[biznəs,mæn/biznis,mæn/biznəsmən]бизнесмен||?
-5. a carpenter[kɑrpəntər/kapmtə]плотник||?
-6. a cook[kuk]повар||?
-7. a dentist[denist/dentəst/dentist]дантист||?
-8. a doctor[dɑktər/dɔktər/dɔktə]доктор||?
-9. a farmer[fɑrmər/famə]фермер||?
-10. a female flight attendant[fi,meil-flait-ə'tendənt]стюардесса||?
-11. a fireman[fairmən/faiəmæn]пожарный||?
-12. a florist[flɑrist/flɔrist]цветочник||?
-13. a garbageman[gɑ:biʤ,mæn]уборщик||?
-14. a general[ʤenərəl/ʤenrəl/ʤen(ə)r(ə)l]генерал||?
-15. a hairdresser[her,dresər/heə,dresə]парикмахер||?
-16. a housewife[hau,swaif/hauswaif]домохозяйка||?
-17. a journalist[ʤərnələst/ʤərnəlist/ʤə:nəlist]журналист||?
-18. a lawyer[lɔiər/lɔjər/lɔ:jə]адвокат||?
-19. a librarian[lai'bre,riən/lai'breəriən]библиотекарь||?
-20. a mailman[meil,mæn/meilmæn]почтальон||?
-21. a manager[mænəʤər/mæniʤər/mæniʤə]управляющий||?
-22. a mechanic[mə'kænik/mi'kænik]механик||?
-23. a musician[mju'ziʃən/mju(:)'ziʃ(ə)n]музыкант||?
-24. a nurse[nərs/nə:s]медсестра||?
-25. a painter[peintər/peintə]художник||?
-26. a philosopher[fə'lɑsəfər/fi'lɔsəfə]философ||?
-27. a photographer[fə'tɑgrəfər/fə'tɔgrəfə]фотограф||?
-28. a physicist[fizisist]физик||?
-29. a pilot[pailət]пилот||?
-30. a plumber[pləmər/plʌmə]водопроводчик||?
-31. a policeman[pə'lismən]полицейский||?
-32. a politician[,pɑlə'tiʃən/,pɔli'tiʃ(ə)n]политик||?
-33. a salesman[seilzmən]продавец||?
-34. a scientist[saiəntist]ученый||?
-35. a secretary[sekrə,teri/sekrətri]секретарь||?
-36. a soldier[soulʤər/soulʤə]солдат||?
-37. a surgeon[sərʤən/sərʤin/sə:ʤ(ə)n]хирург||?
-38. a teacher[tiʧər/ti:ʧə]учитель||?
-39. a thief[θif]вор||?
-40. a tourist[turəst/turist/tuərist]турист||?
-41. a volunteer[,vɑlən'tir/,vɔlən'tiə]доброволец||?
-42. a worker[wərkər/wə:kə]рабочий||?
-43. a writer[raitər/raitə]писатель||?
-44. an accountant[ə'kauntənt]бухгалтер||?
-45. an actor[æktər/æktə]актер||?
-46. an actress[æktrəs/æktris]актриса||?
-47. an engineer[enʤə'nir/,enʤi'niə]инженер||?
-48. an explorer[iks'plɔrər/iks'plɔrə]исследователь||?
+Profession - Профессия
 
-Местоимения, союзы, предлоги
-×
-1. about[ə'baut]про||?
-2. above all[ə'bəv-ɔl]кроме того||?
-3. according to[ə'kɔrdiŋ-tu]в соответствии||?
-4. after[æftər/aftə]после||?
-5. again[ə'gein/ə'gen]снова||?
-6. against[ə'geinst/ə'genst]против||?
-7. all[ɔl]все||?
-8. also[ɔlsou/ɔ:lsou]тоже||?
-9. among[ə'məŋ/ə'mʌŋ]между||?
-10. and[ænd/ənd]и||?
-11. around[ər'aun/ər'aund/ə'raund]вокруг||?
-12. as well as[æz-wel-æz]так же как||?
-13. because[bi'kɑz/bi'kəz/bi'kɔz/bikəz]потому что||?
-14. behind[bi'haind]за||?
-15. beside[,bi'said/bi'said]рядом||?
-16. between[bit'win/bi'twi:n]между||?
-17. both … and[bouθ-?-ænd]как … так и…||?
-18. but[bət]но||?
-19. during[dəriŋ/djuriŋ/duriŋ/djuənŋ]в течение||?
-20. either[aiðər/iðər/aiðə]каждый||?
-21. everybody[evri,bɑdi/evribɔdi]каждый||?
-22. for[fɔr/fər/frər/fɔ:]для||?
-23. from[frəm/frɔm]от||?
-24. he[hi]он||?
-25. how[hau]как||?
-26. I[ai]я||?
-27. if[if]если||?
-28. in[in]в||?
-29. in addition to[in-ə'diʃən-tu]в дополнение||?
-30. in front of[in-frənt-əv]перед||?
-31. in order to[in-ɔrdər-tu]для того что бы||?
-32. in spite of[in-spait-əv]несмотря на||?
-33. inside[in,said/,in'said/in'said]внутри||?
-34. just[ʤəst/ʤist/ʤʌst]только||?
-35. likewise[lai,kwaiz/laikwaiz]также||?
-36. moreover[mɔ'rouvər/mɔ:'rouvə]сверх того||?
-37. near[nir/niə]около||?
-38. not only … but also[nɑt-ounli--bət-ɔlsou]не только… но и …||?
-39. on[ɑn/ɔn]на||?
-40. on top of[ɑn-tɑp-əv]на верху||?
-41. one more thing[wən-mɔr-θiŋ]и еще||?
-42. outside of[aut'said-əv]снаружи||?
-43. she[ʃi/ʃi:]она||?
-44. since[sins]с||?
-45. so[sou]поэтому||?
-46. someone[səm,wən/sʌmwʌn]кто-то||?
-47. something[səmθiŋ/sʌmθiŋ]что-то||?
-48. they[ðei]они||?
-49. through[θru/θru:]сквозь||?
-50. to[tu/tə/ti/tu:]до||?
-51. toward[tɔrd/tə'wɔrd/tə'wɔ:d]к||?
-52. under[əndər/ʌndə]под||?
-53. until[ən'til/əntil]до||?
-54. we[wi]мы||?
-55. what[hwət/wət/wɔt]что||?
-56. when[hwen/hwin/wen/win]когда||?
-57. where[hwer/wer/weə]где||?
-58. where (to)[hwer-?]хвер-?) - куда||?
-59. while[hwail/wail]пока||?
-60. who[hu/hu:]кто||?
-61. whose[huz/hu:z]чей||?
-62. why[hwai/wai]почему||?
-63. with[wið/wiθ]с||?
-64. without[wi'ðaut/wi'θaut]без||?
-65. you[ju]вы||?
+1. a baker[beikər/ beikə]пекарь||/+ в молодости был БАЙКЕР и ездил без глушителя/ + с БАКЕнбаРдами/ + крошками заманивал голуБЕЙ в бунКЕР и пёк пирожки с мясом
+2. a banker[bæŋkər]банкир %
+3. a beginner[bi'ginər/ bi'ginə]новичок||/+ БЕГИ НЕРвный отсюда
+4. a businessman[biznəs,mæn/ biznis,mæn/ biznəsmən]бизнесмен %%
+5. a carpenter[kɑrpəntər]плотник||/+ папа КАРло нашел ПЕНь и выстругал из него робота, купил компьюТЕР для него и отправил в школу/ + нашёл по КАРте волшебный ПЕНь и сделал из него ТЕРемок
+6. a cook[kuk]повар||/~КУХня
+7. a dentist[denist/ dentəst/ dentist]дантист %%
+8. a doctor[dɑktər/ dɔktər/ dɔktə]доктор %%
+9. a farmer[fɑrmər/ famə]фермер %%
+10. a female flight attendant[fi,meil-flait-ə'tendənt] стюардесса||/женский полётный адьютант
+11. a fireman[fairmən/ faiəmæn]пожарный||/огонь+чел
+12. a florist[flɑrist/ flɔrist]цветочник||/~флорист
+13. a garbageman[gɑ:biʤ,mæn]уборщик||/мусор+чел/ на горе бегемот
+14. a general[ʤenərəl/ ʤenrəl/ ʤen(ə)r(ə)l]генерал %
+15. a hairdresser[her,dresər/ heə,dresə]парикмахер||/волосы+одеватель/ + ХОРоший ДРЕССИРовщик капризных детей
+16. a housewife[hau,swaif/ hauswaif]домохозяйка||/дом+жена
+17. a journalist[ʤərnələst/ ʤərnəlist/ ʤə:nəlist]журналист %
+18. a lawyer[lɔiər/ lɔjər/ lɔ:jə]адвокат||/зЛОЙ + вытЕР свой сопливый нос
+19. a librarian[lai'bre,riən/ lai'breəriən]библиотекарь||/+ был либерал рьяный
+20. a mailman[meil,mæn/ meilmæn]почтальон||/+ сМЫЛся от МАНьяка
+21. a manager[mænəʤər/ mæniʤər/ mæniʤə]управляющий||/~менеджер
+22. a mechanic[mə'kænik/ mi'kænik]механик %
+23. a musician[mju'ziʃən/ mju(:)'ziʃ(ə)n]музыкант %
+24. a nurse[nərs/ nə:s]медсестра||/+ вечно сует свой НОС куда не надо/ + в пиоНЕРСком лагере ставила уколы и упала в обморок от вида крови, доктор её уНЕС на руках, она сопротивлялась 
+25. a painter[peintər/ peintə]художник||/этот + такой ПАЕНька и рисует нам ИНТЕРьер
+26. a philosopher[fə'lɑsəfər/ fi'lɔsəfə]философ %%
+27. a photographer[fə'tɑgrəfər/ fə'tɔgrəfə]фотограф %%
+28. a physicist[fizisist]физик %% ||/+ СИСТемы изучает
+29. a pilot[pailət]пилот %%
+30. a plumber[pləmər/ plʌmə]водопроводчик||/+ из ПЛЕМЕни слесаРей из подвала зажёг ПЛАМЯ на горелке и срезал ржавый вентиль
+31. a policeman[pə'lismən]полицейский||/полиция+чел
+32. a politician[,pɑlə'tiʃən/ ,pɔli'tiʃ(ə)n]политик||/ПОЛИТИКАН с ШЕНгенской визой ездит на курорты
+33. a salesman[seilzmən]продавец||/+ САЛА обМАНул меня и обвеСИЛ/ + поСЕИЛ ЗМЕиНый лук, осенью будет его *продавать змеям
+34. a scientist[saiəntist]ученый||/+ САЙру ЕЛ с арТИСТом/ броСАЙ даНТИСТ работу, иди в *учёные
+35. a secretary[sekrə,teri/ sekrətri]секретарь %%
+36. a soldier[soulʤər/ soulʤə]солдат %%||/+ за пять сольдо достанет золотой ключик из болота
+37. a surgeon[sərʤən/ sərʤin/ sə:ʤ(ə)n]хирург||/+ как СЕРдитый ДЖИН колдует над больным, режет его так и сяк/ + заменил СЕРдце и выпил ДЖИН с тоником
+38. a teacher[tiʧər/ ti:ʧə]учитель||/+ пТИЧку ЧЕРтит/ + эТИх ЧЕРтят сам ЧЕРт
+39. a thief[θif]вор||/+ СИФон свиснул у этой расфуфыреной ФИФы
+40. a tourist[turəst/ turist/ tuərist]турист %
+41. a volunteer[,vɑlən'tir/ ,vɔlən'tiə]доброволец||/~волонтер
+42. a worker[wərkər/ wə:kə]рабочий||/+ ВЕРКе сердючке строит бунКЕР/ + открыл ключём ВЕКИ вию
+43. a writer[raitər/ raitə]писатель||/+ попал в РАЙ и выТЕР кляксу с носа
+44. an accountant[ə'kauntənt]бухгалтер||/+ завёл АККАУНТ в 1С и купил паТЕНТ
+45. an actor[æktər/ æktə]актер %
+46. an actress[æktrəs/ æktris]актриса %
+47. an engineer[enʤə'nir/ ,enʤi'niə]инженер %
+48. an explorer[iks'plɔrər/ iks'plɔrə]исследователь||/+ ЭКСПЛУАтации ПЛОтов в мОРЕ/ ЭКСПЛУАтатоР рабов был раньше + америки/ + искал птицу фенИКС, заглядывал в каждое дуПЛО, а в пеРЕРывах пил элИКСир бессмертия и ел ПЛОв на кудыкиной гОРЕ
+
+Местоимения, союзы, предлоги (их надо учить наизусть! без ФА)
+
+1. about[ə'baut]про||/АББАТ писал *про приБАУТки книги
+2. above-all[ə'bəv-ɔl]кроме-того||/дед мороз съел торт и + попросил дОБАВКи салата ОЛивье
+3. according-to[ə'kɔrdiŋ-tu]в-соответствии||/+ с аккордом тузик играл на грелке
+4. after[æftər/ aftə]после||/АВТОР книги о ТЕРмитах + праздников ездил по АФрике с ТЕРмометром искал ТЕРмитов в ТЕРемках/ + дождичка в четверг к нам приехал АФерист ТЕРминатор
+5. again[ə'gein/ ə'gen]снова||/+ Эти ГЕИ На параде
+6. against[ə'geinst/ ə'genst]против||/Эти ГЕИ из ИНСТаграм + АГЕНТСТва движимости 
+7. all[ɔl]все||/вы + АЛкогОЛики 
+8. also[ɔlsou/ ɔ:lsou]тоже||/он + зОЛ на СОУс острый, чуть не помер
+9. among[ə'məŋ/ ə'mʌŋ]между||/+ Эдиком и МАНей любовь с первого раза
+10. and[ænd/ ənd]и||/ЭНДоскоп *и АНДрей друзья навеки
+11. around[ər'aun/ ər'aund/ ə'raund]вокруг||/+ Этого РАУНДа бушуют страсти
+12. as-well-as[æz-wel-æz]так же как||/опять сусАнин ЗаВЕЛ нАС в болота + и раньше
+13. because[bi'kɑz/ bi'kəz/ bi'kɔz/ bikəz]потому-что||/+ люБИл КОЗу (и КОЗявки в носу)
+14. behind[bi'haind]за||/+ БИомеХАником ИНДейцем стоял БИоробот ХАкер ИНДус
+15. beside[,bi'said/ bi'said]рядом||/+ с барБИ сидел САИД и приставал
+16. between[bit'win/ bi'twi:n]между||/+ БИТВамИ за вИНо голубые ели и закусывали
+17. both-and[bouθ-ænd]как-так-и||/оба+и
+18. but[bət]но||/+ БАТон БАТя съел 
+19. during[dəriŋ/ djuriŋ/ duriŋ/ djuənŋ]в-течение||/+ дня ДУРЕНь ест и спит на печи
+20. either[aiðər/ iðər/ aiðə]каждый||/+ гЕЙЗЕР горячий с русалками
+21. everybody[evri,bɑdi/ evribɔdi]каждый||/+ ЕВРопЕец БрОДИт по лесу ночью
+22. for[fɔr/ fər/ frər/ fɔ:]для||/+ ФОРмы тела - зарядка утром
+23. from[frəm/ frɔm]от||/+ ФРанцуза РОМашка
+24. he[hi]он||/+ постоянно ХИХИкал, смешно дураку, что уши на боку
+25. how[hau]как||/~ноуХАУ
+26. I[ai]я||/АЙфон посеЯл
+27. if[if]если||/+ ИФрит потереть, то он светится
+28. in[in]в||/+ ИНсте смотрю фотки
+29. in-addition-to[in-ə'diʃən-tu]в-дополнение %%
+30. in-front-of[in-frənt-əv]перед %%
+31. in-order-to[in-ɔrdər-tu]для-того-что-бы||/ИНки ОРДЕн во РТУ носят + никто не догадался
+32. in-spite-of[in-spait-əv]несмотря-на||/+ ИНСПЕктора сАЙТОВ СПАсаЙТесь кто может
+33. inside[in,said/ ,in'said/ in'said]внутри||/+ апельсИНа САИД нашёл рубль
+34. just[ʤəst/ ʤist/ ʤʌst]только||/+ ДЖедай АСТронома, сына агронома знал
+35. likewise[lai,kwaiz/ laikwaiz]также||/+ ЛАЙК даВАЙ мне Ставь
+36. moreover[mɔ'rouvər/ mɔ:'rouvə]сверх-того||/+ МОРОз по коже У ВЕРы (в светлое будущее)
+37. near[nir/ niə]около||/+ НИРваны лежал сувеНИР
+38. not-only, but-also[nɑt-ounli--bət-ɔlsou]не только, но и||/нотэунли батолсоу
+39. on[ɑn/ ɔn]на||/ОН *на ней (лежал)
+40. on-top-of[ɑn-tɑp-əv]на-верху||/+ ОН ТОПал и кричал ЭВрика
+41. one-more-thing[wən-mɔr-θiŋ]и-еще||/+ иВАН в МОРе СИНем ловил русалок сетями/= один больше вещь
+42. outside of[aut'said-əv]снаружи||/А УТку САИД УВидел +
+43. she[ʃi/ ʃi:]она||/+ ШИзанутая (а он-he постоянно ХИХИкал) два сапога пара :)
+44. since[sins]с||/+ тех пор ходит с СИНяком Синим под глазом
+45. so[sou]поэтому||/+ СОУс вкусный
+46. someone[səm,wən/ sʌmwʌn]кто-то||/+ САМого ВАНю встретил
+47. something[səmθiŋ/ sʌmθiŋ]что-то||/+ САМый жирный СвИН съел
+48. they[ðei]они||/+ завели друЗЕЙ
+49. through[θru/ θru:]сквозь||/+ ФРУкт СмотРЮ на жопу С РУчкой
+50. to[tu/ tə/ ti/ tu:]до||/+ ТУалета он не дошёл..
+51. toward[tɔrd/ tə'wɔrd/ tə'wɔ:d]к||/+ ТВЕРДому камню иду
+52. under[əndər/ ʌndə]под||/+ АНДрЕем лежит АНка из ДЕРевни (на нижней полке в купе)
+53. until[ən'til/ əntil]до||/+ вЕНТИЛя вода не доходит
+54. we[wi]мы||/+ ВИдели (вчера динозавра с блондинкой)
+55. what[hwət/ wət/ wɔt]что||/ВОТ + те надо?
+56. when[hwen/ hwin/ wen/ win]когда||/+ ВЕНок мне сплетёшь из подснежников?
+57. where[hwer/ wer/ weə]где||/+ потайная дВЕРь нАходится?
+58. where-to[hwertu]куда||/+ ВЕРТУшка улетела?
+59. while[hwail/ wail]пока||/+ ВАлИЛ лес, волки пришли посмотреть
+60. who[hu/ hu:]кто||/+ здесь уХУ ел?/ купил доХУ я на меХУ я, и + я после этого? (матершинник)/ + этот китаец? его зовут - сунь ХУнь вчань, вынь сУХим
+61. whose[huz/ hu:z]чей||/+ ХУдожник Здесь ходит и тоску наводит?
+62. why[hwai/ wai]почему||/+ караВАЙ такой вкусный?/ * трамВАИ не летают?
+63. with[wið/ wiθ]с||/+ ВИЗитом пришёл и с-ВИСтит
+64. without[wi'ðaut/ wi'θaut]без||/+ деВИЗА УТята не летают
+65. you[ju]вы||/+ Ютуб смотрите (в розовых очках)
 
 Religion, Politics, Military, Science - , политика, армия, наука
-×
-1. a battle[bætəl/bætl]бой||?
-2. a church[ʧərʧ/ʧə:ʧ]церковь||?
-3. a civilian[sə'viljən/si'viljən]гражданин||?
-4. a firearm[fai,rɑrm/faiər,ɑrm/faiəra:m]огнестрельное оружие||?
-5. a flag[flæg]флаг||?
-6. a general[ʤenərəl/ʤenrəl/ʤen(ə)r(ə)l]генерал||?
-7. a helicopter[heli,kɑptər/helikɔptə]вертолет||?
-8. a holiday[hɑlə,dei/hɑli,dei/hɔlədi]праздник||?
-9. a king[kiŋ]король||?
-10. a knight[nait]рыцарь||?
-11. a leader[lidər/ll:də]лидер||?
-12. a mayor[meiər/meə]мэр||?
-13. a mosque[mɑsk/mɔsk]мечеть||?
-14. a parade[pər'eid/pə'reid]парад||?
-15. a physicist[fizisist]физик||?
-16. a pistol[pistəl/pistl]пистолет||?
-17. a planet[plænət/plænit]планета||?
-18. a policeman[pə'lismən]полицейский||?
-19. a politician[,pɑlə'tiʃən/,pɔli'tiʃ(ə)n]политик||?
-20. a queen[kwin/kwi:n]королева||?
-21. a rifle[raifəl/raifl]ружье||?
-22. a rifle shot[raifəl-ʃɑt]выстрел||?
-23. a rocket[rɑkət/rɔkit]ракета||?
-24. a sample[sæmpəl/sa:mpl]образец||?
-25. a scientist[saiəntist]ученый||?
-26. a soldier[soulʤər/soulʤə]солдат||?
-27. a spear[spir/spiə]копье||?
-28. a submachine gun[,səbmə'ʃin-gən]автомат||?
-29. a sword[sɔrd/sɔ:d]меч||?
-30. a temple[tempəl/templ]храм||?
-31. a town hall[taun-hɔl]мэрия||?
-32. a war[wɔr/wɔ]война||?
-33. a weapon[wepən]оружие||?
-34. an armour[ɑrmər]броня||?
-35. an army[ɑrmi/ami]армия||?
-36. an arrow[ærou/erou]стрела||?
-37. an emperor[empərər/emp(ə)rə]император||?
-38. an explorer[iks'plɔrər/iks'plɔrə]исследователь||?
-39. an inventor[,in'ventər/inventə]изобретатель||?
-40. cemetery[semə,teri/semi,teri/semitri]кладбище||?
-41. chemistry[keməstri/kemistri]химия||?
-42. Christmas - Рождество
-43. economics[,ekə'nɑmiks/,ikə'nɑmiks/,i:kə'nɔmiks]экономика||?
-44. electric[i'lektrik/i'lektnk]электрический||?
-45. Middle Ages - Средние века
-46. military[milə,teri/mili,teri/milit(ə)ri]военный||?
-47. navy[neivi]военно-морской флот||?
-48. peace[pis]мир||?
-49. politics[pɑlə,tiks/pɔlitiks]политика||?
-50. power[pauər/pauə]мощность||?
-51. reality[,ri'ælə,ti/ri(:)'æliti]реальность||?
-52. religious[ri'liʤəs]религиозный||?
-53. science[saiəns]наука||?
-54. space[speis]космос||?
-55. strength[streŋkθ/streŋθ]сила||?
-56. to beat[bit]бить||?
-57. to capture[kæpʧər/kæpʧə]захватывать||?
-58. to fight[fait]драться||?
-59. to pray[prei]молиться||?
-60. to protect[prə'tekt]защищать||?
-61. to wage war against ...[weiʤ-wɔr-ə'geinst-?]вести войну с ...||?
-62. vacuum[vækjum/vækjuəm]вакуум||?
+
+1. a battle[bætəl/ bætl]бой||/~БАТАЛьон вёл +
+2. a church[ʧərʧ/ ʧə:ʧ]церковь||/в *церкви ЧЕРТи уЧили ЧЕРЧиля
+3. a civilian[sə'viljən/ si'viljən]гражданин||/цивильный
+4. a firearm[fai,rɑrm/ faiər,ɑrm/ faiəra:m]огнестрельное-оружие||/=огонь+рука
+5. a flag[flæg]флаг %
+6. a general[ʤenərəl/ ʤenrəl/ ʤen(ə)r(ə)l]генерал %
+7. a helicopter[heli,kɑptər/ helikɔptə]вертолет||/геликоптер синоним
+8. a holiday[hɑlə,dei/ hɑli,dei/ hɔlədi]праздник||/+ алкоГОЛИков из люДЕЙ делает
+9. a king[kiŋ]король||/КИНГ конг был + острова
+10. a knight[nait]рыцарь||/НАЙТи *рыцаря ночью
+11. a leader[lidər/ ll:də]лидер %
+12. a mayor[meiər/ meə]мэр||/майор был + /зМЕЙ гОРыныч съел *мэра
+13. a mosque[mɑsk/ mɔsk]мечеть||/выносят МОЗГ в *мечети и МОСКиты летают
+14. a parade[pər'eid/ pə'reid]парад %%
+15. a physicist[fizisist]физик||/ мяСИСТый
+16. a pistol[pistəl/ pistl]пистолет||/ПИСТОЛет (похоже частично)
+17. a planet[plænət/ plænit]планета %
+18. a policeman[pə'lismən]полицейский %%
+19. a politician[,pɑlə'tiʃən/ ,pɔli'tiʃ(ə)n]политик %%
+20. a queen[kwin/ kwi:n]королева||/+ выпила КУВшИН ВИНа
+21. a rifle[raifəl/ raifl]ружье||/+ в саРАЙ ФЕЛьдмаршал спрятал
+22. a rifle-shot[raifəl-ʃɑt]выстрел||/РИФЛЕный аШОТ сделал + и попал в РАЙ, а ФЕЛикс ШОТландец в ад
+23. a rocket[rɑkət/ rɔkit]ракета %%
+24. a sample[sæmpəl/ sa:mpl]образец||/самый плохой +
+25. a scientist[saiəntist]ученый||/+ сайру ел с артистом
+26. a soldier[soulʤər/ soulʤə]солдат %%
+27. a spear[spir/ spiə]копье||/бритни СПИРс с *копьем и в набедренной повязке С ПИРа в пещере ушла домой пьяная
+28. a submachine-gun[,səbmə'ʃin-gən]автомат||/субмашина гангстера
+29. a sword[sɔrd/ sɔ:d]меч||/+ чистил содой в сортире
+30. a temple[tempəl/ templ]храм||/в ТЕМном *храме ПЕЛ
+31. a town-hall[taun-hɔl]мэрия||/городок+холл
+32. a war[wɔr/ wɔ]война||/ВОйна ВОРов и ВАРваров
+33. a weapon[wepən]оружие||/ВЕПЕНдриваются с *оружием
+34. an armour[ɑrmər]броня||/~АРМИРованая
+35. an army[ɑrmi/ ami]армия||/АРМИя (похоже)
+36. an arrow[ærou/ erou]стрела||/+ попала в ЭРОтикУ
+37. an emperor[empərər/ emp(ə)rə]император %
+38. an explorer[iks'plɔrər/ iks'plɔrə]исследователь||/иксплорер /~эксплуататор
+39. an inventor[,in'ventər/ inventə]изобретатель||/инвентэр/+ ИНтимного ВЕНТиляТОРа
+40. cemetery[semə,teri/ semi,teri/ semitri]кладбище||/симетричное +
+41. chemistry[keməstri/ kemistri]химия||/кемистри /канистра
+42. Christmas[крисмас]Рождество||/~крестины масонов
+43. economics[,ekə'nɑmiks/ ,ikə'nɑmiks/ ,i:kə'nɔmiks]экономика %
+44. electric[i'lektrik/ i'lektnk]электрический %
+45. Middle-Ages[мидлейджес]Средние-века||/=возрасты
+46. military[milə,teri/ mili,teri/ milit(ə)ri]военный||/~милитарист
+47. navy[neivi]военно-морской флот||/~навигация
+48. peace[pis]мир||/*миру ПИСец скоро
+49. politics[pɑlə,tiks/ pɔlitiks]политика||/=политики
+50. power[pauər/ pauə]мощность||/~пауэр банк /ПОВЕРить в * вечного двигателя
+51. reality[,ri'ælə,ti/ ri(:)'æliti]реальность||/~реалити шоу
+52. religious[ri'liʤəs]религиозный %%
+53. science[saiəns]наука||/+ о САЙтах пЕНСионеров
+54. space[speis]космос||/не СПЕЙСя в *космосе от скуки
+55. strength[streŋkθ/ streŋθ]сила||/+ быСТРЕНКо роСла
+56. to beat[bit]бить %
+57. to capture[kæpʧər/ kæpʧə]захватывать||/~капитулировать
+58. to fight[fait]драться||/+ в фуФАЙке за бесплаТный вай ФАЙ сосеДа
+59. to pray[prei]молиться||/+ на ПРЕЙскурант в ПРЕрИи
+60. to protect[prə'tekt]защищать||/~протектор на шине защищает от грязи
+61. to wage-war-against[weiʤ-wɔr-ə'geinst]вести-войну-с||/дарт ВЕЙДер *ведет-войну-с ДЖедаями и дВОРоняжками из АГЕНТСТва
+62. vacuum[vækjum/ vækjuəm]вакуум %
 
 Sports, Games, Hobbies - Спорт, игры, хобби
-×
-1. a ball[bɔl/bɔ:l]мяч||?
-2. a game[geim]игра||?
-3. a kite[kait]воздушный змей||?
-4. a roller skate[roulər-skeit]роликовый конек||?
-5. a skate[skeit]конек||?
-6. a skating rink[skeitiŋ-riŋk]каток||?
-7. a walk[wɑk/wɔk/wɔ:k]прогулка||?
-8. aerobics[ər'oubiks/eə'roubiks]аэробика||?
-9. an athlete[æθ,lit/æθli:t]атлет||?
-10. balance[bæləns]баланс||?
-11. baseball[beis'bɔl/beisbal]бейсбол||?
-12. basketball[bæskət,bɔl/baskitbɔ:l]баскетбол||?
-13. boxing[bɑksiŋ/bɔksiŋ]бокс||?
-14. cards[kɑrdz]карты||?
-15. checkers[ʧekərz/ʧekəz]шашки||?
-16. chess[ʧes]шахматы||?
-17. cycling[saikəliŋ/saikliŋ]велоспорт||?
-18. football[fut,bɔl/futbɔ:l]американский футбол||?
-19. golf[gɑlf/gɔlf]гольф||?
-20. gymnastics[ʤim'næstiks]гимнастика||?
-21. high jump[hai-ʤəmp]прыжки в высоту||?
-22. hockey[hɑki/hɔki]хоккей||?
-23. horse-racing[hɔrs-reisiŋ]скачки||?
-24. jogging[ʤɑgiŋ/ʤɔgiŋ]бег трусцой||?
-25. rugby[rəgbi/rʌgbi]регби||?
-26. running[rəniŋ/rʌniŋ]бег||?
-27. soccer[sɑkər/sɔkə]футбол||?
-28. surfing[sərfiŋ/sə:fiŋ]серфинг||?
-29. swimming[swimiŋ]плавание||?
-30. tennis[tenəs/tenis]теннис||?
-31. to play[plei]играть||?
-32. to skate[skeit]кататься на коньках||?
-33. to ski[ski/ski:]кататься на лыжах||?
-34. to swim[swim]плыть||?
+
+1. a ball[bɔl/ bɔ:l]мяч||/?
+2. a game[geim]игра||/?
+3. a kite[kait]воздушный змей||/?
+4. a roller skate[roulər-skeit]роликовый конек||/?
+5. a skate[skeit]конек||/?
+6. a skating rink[skeitiŋ-riŋk]каток||/?
+7. a walk[wɑk/ wɔk/ wɔ:k]прогулка||/?
+8. aerobics[ər'oubiks/ eə'roubiks]аэробика||/?
+9. an athlete[æθ,lit/ æθli:t]атлет||/?
+10. balance[bæləns]баланс||/?
+11. baseball[beis'bɔl/ beisbal]бейсбол||/?
+12. basketball[bæskət,bɔl/ baskitbɔ:l]баскетбол||/?
+13. boxing[bɑksiŋ/ bɔksiŋ]бокс||/?
+14. cards[kɑrdz]карты||/?
+15. checkers[ʧekərz/ ʧekəz]шашки||/?
+16. chess[ʧes]шахматы||/?
+17. cycling[saikəliŋ/ saikliŋ]велоспорт||/?
+18. football[fut,bɔl/ futbɔ:l]американский футбол||/?
+19. golf[gɑlf/ gɔlf]гольф||/?
+20. gymnastics[ʤim'næstiks]гимнастика||/?
+21. high jump[hai-ʤəmp]прыжки в высоту||/?
+22. hockey[hɑki/ hɔki]хоккей||/?
+23. horse-racing[hɔrs-reisiŋ]скачки||/?
+24. jogging[ʤɑgiŋ/ ʤɔgiŋ]бег трусцой||/?
+25. rugby[rəgbi/ rʌgbi]регби||/?
+26. running[rəniŋ/ rʌniŋ]бег||/?
+27. soccer[sɑkər/ sɔkə]футбол||/?
+28. surfing[sərfiŋ/ sə:fiŋ]серфинг||/?
+29. swimming[swimiŋ]плавание||/?
+30. tennis[tenəs/ tenis]теннис||/?
+31. to play[plei]играть||/?
+32. to skate[skeit]кататься на коньках||/?
+33. to ski[ski/ ski:]кататься на лыжах||/?
+34. to swim[swim]плыть||/?
 
 Time 1 - Время 1
 ×
-1. a calendar[kæləndər/kælində]календарь||?
-2. a century[senʧəri/senʧuri]век||?
-3. a day[dei]день||?
-4. a holiday[hɑlə,dei/hɑli,dei/hɔlədi]праздник||?
-5. a hourglass[auər,glæs/auəgla:s]песочные часы||?
-6. a millenium[mə'leniəm/mileniəm]тысячелетие||?
-7. a minute[minət/mai'nut/main'jut/minit]минута||?
-8. a month[mənθ/mʌnθ]месяц||?
-9. a morning[mɔrniŋ/mɔ:niŋ]утро||?
-10. a night[nait]ночь||?
-11. a schedule[skeʤul/ʃedju:l]расписание||?
-12. a season[sizən/si:zn]время года||?
-13. a second[sekənd/sek(ə)nd]секунда||?
-14. a stopwatch[stɑp,wɑʧ/stɔpwɔʧ]секундомер||?
-15. a sundial[sən,dail/sʌndaiəl]солнечные часы||?
-16. a week[wik/wi:k]неделя||?
-17. a year[jir/jə:]год||?
-18. an afternoon[,æftər'nun/a:ftə'nu:n]после полудня||?
-19. an evening[ivniŋ/i:vniŋ]вечер||?
-20. an hour[auər/aur/auə]час||?
-21. at that time[æt-ðæt-taim]в это время||?
-22. at the same time[æt-ðə-seim-taim]в то-же время||?
-23. day after tomorrow[dei-æftər-tə'mɑ,rou]послезавтра||?
-24. day before yesterday[dei-,bi'fɔr-jestər,dei]позавчера||?
-25. early[ərli/ə:li]рано||?
-26. half an hour[hæf-æn-auər]полчаса||?
-27. It is noon.[it-iz-?]Сейчас полдень||?
-28. late[leit]поздно||?
-29. Middle Ages[midəl-eiʤəz]Средние века||?
-30. midnight[mid,nait/midnait]полночь||?
-31. New Year[nju-jir]Новый Год||?
-32. noon[nun/nu:n]полдень||?
-33. nowadays[nauə,deiz/nauədeiz]в настоящее время||?
-34. on time[ɑn-taim]вовремя||?
-35. one hour from now[wən-auər-frəm-nau]через час||?
-36. quarter past ...[kwɔrtər-pæst-?]... с четвертью||?
-37. quarter to ...[kwɔrtər-tu-?]без четверти ...||?
-38. recently[risənli/risəntli/ri:sntli]недавно||?
-39. right away[rait-ə'wei]немедленно||?
-40. Since when?[sins-?]С каких пор?||?
-41. the close future[ðə-klous-fjuʧər]близкое будущее||?
-42. the distant future[ðə-distənt-fjuʧər]далекое будущее||?
-43. the distant past[ðə-distənt-pæst]давнее прошлое||?
-44. the future[ðə-fjuʧər]будущее||?
-45. the past[ðə-pæst]прошлое||?
-46. the recent past[ðə-risənt-pæst]недавнее прошлое||?
-47. the weekend[ðə-wi,kend]выходные||?
-48. today[tə'dei/tu'dei]сегодня||?
-49. tomorrow[tə'mɑ,rou/tu'mɑ,rou/tə'mɔrəu]завтра||?
-50. usually[juʒəli/juʒəwəli/ju:ʒuəli]обычно||?
-51. What day is it?[hwət-dei-iz-?]Какой сегодня день?||?
-52. What time is it?[hwət-taim-iz-?]Сколько времени?||?
-53. yesterday[jestər,dei/jestərdi/jestədi]вчера||?
+1. a calendar[kæləndər/ kælində]календарь||/?
+2. a century[senʧəri/ senʧuri]век||/?
+3. a day[dei]день||/?
+4. a holiday[hɑlə,dei/ hɑli,dei/ hɔlədi]праздник||/?
+5. a hourglass[auər,glæs/ auəgla:s]песочные часы||/?
+6. a millenium[mə'leniəm/ mileniəm]тысячелетие||/?
+7. a minute[minət/ mai'nut/ main'jut/ minit]минута||/?
+8. a month[mənθ/ mʌnθ]месяц||/?
+9. a morning[mɔrniŋ/ mɔ:niŋ]утро||/?
+10. a night[nait]ночь||/?
+11. a schedule[skeʤul/ ʃedju:l]расписание||/?
+12. a season[sizən/ si:zn]время года||/?
+13. a second[sekənd/ sek(ə)nd]секунда||/?
+14. a stopwatch[stɑp,wɑʧ/ stɔpwɔʧ]секундомер||/?
+15. a sundial[sən,dail/ sʌndaiəl]солнечные часы||/?
+16. a week[wik/ wi:k]неделя||/?
+17. a year[jir/ jə:]год||/?
+18. an afternoon[,æftər'nun/ a:ftə'nu:n]после полудня||/?
+19. an evening[ivniŋ/ i:vniŋ]вечер||/?
+20. an hour[auər/ aur/ auə]час||/?
+21. at that time[æt-ðæt-taim]в это время||/?
+22. at the same time[æt-ðə-seim-taim]в то-же время||/?
+23. day after tomorrow[dei-æftər-tə'mɑ,rou]послезавтра||/?
+24. day before yesterday[dei-,bi'fɔr-jestər,dei]позавчера||/?
+25. early[ərli/ ə:li]рано||/?
+26. half an hour[hæf-æn-auər]полчаса||/?
+27. It is noon.[it-iz-?]Сейчас полдень||/?
+28. late[leit]поздно||/?
+29. Middle Ages[midəl-eiʤəz]Средние века||/?
+30. midnight[mid,nait/ midnait]полночь||/?
+31. New Year[nju-jir]Новый Год||/?
+32. noon[nun/ nu:n]полдень||/?
+33. nowadays[nauə,deiz/ nauədeiz]в настоящее время||/?
+34. on time[ɑn-taim]вовремя||/?
+35. one hour from now[wən-auər-frəm-nau]через час||/?
+36. quarter past ...[kwɔrtər-pæst-?]... с четвертью||/?
+37. quarter to ...[kwɔrtər-tu-?]без четверти ...||/?
+38. recently[risənli/ risəntli/ ri:sntli]недавно||/?
+39. right away[rait-ə'wei]немедленно||/?
+40. Since when?[sins-?]С каких пор?||/?
+41. the close future[ðə-klous-fjuʧər]близкое будущее||/?
+42. the distant future[ðə-distənt-fjuʧər]далекое будущее||/?
+43. the distant past[ðə-distənt-pæst]давнее прошлое||/?
+44. the future[ðə-fjuʧər]будущее||/?
+45. the past[ðə-pæst]прошлое||/?
+46. the recent past[ðə-risənt-pæst]недавнее прошлое||/?
+47. the weekend[ðə-wi,kend]выходные||/?
+48. today[tə'dei/ tu'dei]сегодня||/?
+49. tomorrow[tə'mɑ,rou/ tu'mɑ,rou/ tə'mɔrəu]завтра||/?
+50. usually[juʒəli/ juʒəwəli/ ju:ʒuəli]обычно||/?
+51. What day is it?[hwət-dei-iz-?]Какой сегодня день?||/?
+52. What time is it?[hwət-taim-iz-?]Сколько времени?||/?
+53. yesterday[jestər,dei/ jestərdi/ jestədi]вчера||/?
 
-Time 2 - Время 2
+Time 2 - Время2 месяцы и дни недели
 ×
-1. April[eiprəl/eipril]апрель||?
-2. August[ɑgəst/ɔgəst/ɔ:gəst]август||?
-3. December[di'sembər/di'sembə]декабрь||?
-4. February[febjə,weri/febru,eri/februəri]февраль||?
-5. Friday[frai,dei/fraidi]пятница||?
-6. January[ʤænju,eri/ʤænjuəri]январь||?
-7. July[,ʤu'lai/ʤə'lai/ʤu(:)'lai]июль||?
-8. June[ʤun/ʤu:n]июнь||?
-9. March[mɑrʧ/ma:ʧ]март||?
-10. May[mei/mel]май||?
-11. Monday[mən,dei/məndi/mʌndi]понедельник||?
-12. November[nou'vembər/nouvembə]ноябрь||?
-13. October[ɑk'toubər/ɔk'toubə]октябрь||?
-14. Saturday[sætədi/sætədei]суббота||?
-15. September[sep'tembər/sep'tembə]сентябрь||?
-16. spring[spriŋ/spər'iŋ/spnŋ]весна||?
-17. summer[səmər/sʌmə]лето||?
-18. Sunday[sʌndei/sʌndi]воскресенье||?
-19. Thursday[θərz,dei/θərzdi/θə:zdei]четверг||?
-20. Tuesday[tjuz,dei/tuz,dei/tuzdi/tju:zdei]вторник||?
-21. Wednesday[wenz,dei/wenzdi/wenzdei]среда||?
-22. winter[wintər/wintə]зима||?
+1. April[eiprəl/ eipril]апрель %
+2. August[ɑgəst/ ɔgəst/ ɔ:gəst]август %
+3. December[di'sembər/ di'sembə]декабрь %%
+4. February[febjə,weri/ febru,eri/ februəri]февраль %%
+5. Friday[frai,dei/ fraidi]пятница||/фрайдей
+6. January[ʤænju,eri/ ʤænjuəri]январь %%
+7. July[,ʤu'lai/ ʤə'lai/ ʤu(:)'lai]июль %%
+8. June[ʤun/ ʤu:n]июнь %%
+9. March[mɑrʧ/ ma:ʧ]март %
+10. May[mei/ mel]май %
+11. Monday[mən,dei/ məndi/ mʌndi]понедельник||/мандэй
+12. November[nou'vembər/ nouvembə]ноябрь %%
+13. October[ɑk'toubər/ ɔk'toubə]октябрь %
+14. Saturday[sætədi/ sætədei]суббота||/сэтэдэй
+15. September[sep'tembər/ sep'tembə]сентябрь %%
+16. spring[spriŋ/ spər'iŋ/ spnŋ]весна||/сприн
+17. summer[səmər/ sʌmə]лето||/самэ
+18. Sunday[sʌndei/ sʌndi]воскресенье||/сандей
+19. Thursday[θərz,dei/ θərzdi/ θə:zdei]четверг||/серздэй
+20. Tuesday[tjuz,dei/ tuz,dei/ tuzdi/ tju:zdei]вторник||/тьюздей
+21. Wednesday[wenz,dei/ wenzdi/ wenzdei]среда||/венздей
+22. winter[wintər/ wintə]зима||/винтер
 `;
