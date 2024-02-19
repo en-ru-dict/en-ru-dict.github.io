@@ -127,6 +127,7 @@ function get_tr123(w,t){var tr1,tr2,tr3,out,i,dd=[];
   return t+' ('+tr3+')';
 }
 function next_word(n){var le=len(vu.$data.todos);
+  if(!n)n=1;
   g_word+=n; if(g_word>=le){g_word=le-1;alert("конец списка");}
   show_card();
 }

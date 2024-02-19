@@ -38,10 +38,13 @@ function mas_unik(mm){var i,dd=[],le=len(mm);//делает уник масси�
     for(i=0;i<le;i++){s=mm[i].trim();if(dd.indexOf(s)<0)dd.push(s);}
     return dd;
 }
-function info(){run_js('fa/'+g_bukva+'-fa.txt',ok);}
+function info(){
+ document.title=g_bukva+'';
+ run_js('fa/'+g_bukva+'-fa.txt',ok);
+}
 function ok(){var i,s,w=[],a=[],out,m;
  if(g_fa.indexOf('\n/')<0){
-  out='чистый список\n';
+  out=g_bukva+') чистый список\n';
   g_fa=replace_all(g_fa,'/','\n/');
   g_fa=g_fa.split('\n');
   for(i=0;i<g_fa.length;i++){
@@ -58,7 +61,7 @@ function ok(){var i,s,w=[],a=[],out,m;
   return;
  }
     
- out='грязный список\n';      
+ out=g_bukva+') грязный список\n';      
  g_fa=g_fa.split('\n');
  for(i=0;i<g_fa.length;i++){
   s=g_fa[i].trim();
