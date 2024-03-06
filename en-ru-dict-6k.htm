@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="dict/en-ru-dict.js"></script>
+<script src="tem_loc.js"></script>
+<script src="en-ru-dict-6k.txt"></script>
+<style>
+#id_input{background-color: aliceblue;}
+a {  text-decoration: none; color:red}
+#id_output,#id_input,button {font-size: xx-large;}
+h1 a {  color: #000;}
+h2 {  font-size: 24px;  color: gray;  line-height: 1;}
+#infolink {  line-height: 2.5;}
+.autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 9999; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.autocomplete-suggestion b { font-weight: normal; color: #1f8dd6; }
+.autocomplete-suggestion.selected { background: #f0f0f0; }
+i {color:red}
+</style>
+<body>
+<center>
+
+<div id="id_info">
+<h1>Словарь английских слов 6к</h1>
+только нужные и частые слова с транскрипцией US+UK<br>
+может работать локально без интернета<br>
+</div>
+
+<input type="text" size="35" id="id_input" placeholder="word" value="" /><br>
+<button type="button" onclick="show_perevod();"> перевод </button>||<button type="button" onclick="font_small();"> шрифт мельче </button><hr>
+<div id="id_output">&nbsp;</div>
+<hr>
+<div id="id_p5">-</div>
+<hr>
+<div id="id_p6">-</div>
+</center>
+<script>
+var keys;//global
+window.onload = function(){ 
+	 var d=document.getElementById('id_input');d.focus();
+	 setTimeout("document.getElementById('id_info').remove()",9000);
+}
+
+loader3();
+loader_fa();
+g_fa='1';
+</script>
+</body>
+</html>

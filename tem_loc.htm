@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Список легких слов для изучения английского языка с помощью фонетических ассоциаций (ФА).">
+<title>Фонетические Ассоциации, Списки и карточки (tem)</title>
 <body>
 <noscript>
  Для работы меню включите скрипты! <br>
@@ -257,29 +259,21 @@ vu=new Vue({
 </div>
 </div>
 <script>
-// Вешаем на прикосновение функцию handleTouchStart
-document.addEventListener('touchstart',handleTouchStart,false);  
-// А на движение пальцем по экрану - handleTouchMove      
-document.addEventListener('touchmove',handleTouchMove,false);
+document.addEventListener('touchstart',handleTouchStart,false);// Вешаем на прикосновение
+document.addEventListener('touchmove',handleTouchMove,false);// на движение пальцем по экрану
 
-var xDown = null; var yDown = null; var gBus=0;
-function handleTouchStart(evt){xDown=evt.touches[0].clientX;  yDown=evt.touches[0].clientY;}                                              
-function handleTouchMove(evt){
-//document.title=gBus;
-if(gBus)return;gBus=1;
-if ( ! xDown || ! yDown ) { gBus=0; return;}
-var xUp=evt.touches[0].clientX; var yUp=evt.touches[0].clientY;
-var xDiff=xDown - xUp; var yDiff=yDown - yUp;
-if(Math.abs( xDiff ) > Math.abs( yDiff )){
- if(xDiff > 5){/* left swipe */ 
-  document.title="==>";setTimeout(next_word,300);
- } 
- if(xDiff < -5){/* right swipe */
-  document.title="<==";setTimeout(prev_word,300);
- }                       
-} 
-xDown = null; yDown = null; gBus=0;                                   
-};
+var xDown = null, yDown = null, gBus=0; //global var
+function handleTouchStart(evt){xDown=evt.touches[0].clientX; yDown=evt.touches[0].clientY;}
+function handleTouchMove(evt){var xUp,yUp,xDiff,yDiff;
+ if(gBus)return;gBus=1;//занято
+ if(!xDown || !yDown){gBus=0; return;}
+ xUp=evt.touches[0].clientX; yUp=evt.touches[0].clientY;
+ xDiff=xDown - xUp; yDiff=yDown - yUp;
+ if(Math.abs(xDiff) > Math.abs(yDiff)){
+  if(xDiff > 5){document.title="==>>";setTimeout(next_word,200);} // left swipe
+  if(xDiff < -5){document.title="<<==";setTimeout(prev_word,200);} // right swipe
+ }
+ xDown = null; yDown = null; gBus=0; return;
+}
 </script>
-
 </body>
