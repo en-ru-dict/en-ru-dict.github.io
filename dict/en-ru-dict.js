@@ -27,7 +27,7 @@ function get_keys2(){var dd=[],ms=[],i=0,keys=[]; //делаем ключи дл
   keys=[];for(i=0;i<ms.length;i++){dd=ms[i].split('[');if(dd.length>1)keys.push(dd[0]);}
   return keys;
 }
-function show_perevod() {var w,t,o,d,n1,n2;//ищем слово в словаре
+function show_perevod() {var w,t,o,d,n1,n2,da;//ищем слово в словаре
   w=document.getElementById("id_input").value;
    d=document.getElementById("id_output");
     n1=g_dict.indexOf('\n'+w+'[');
@@ -43,8 +43,11 @@ function show_perevod() {var w,t,o,d,n1,n2;//ищем слово в словар
   o=replace_all(o,']',']</a> ');
   o=replace_all(o,'\n','<br>');
   o=replace_all(o,'#','<hr>');
-  w=get_fa0(w);
-  d.innerHTML='<b>'+o+'<hr><hr>'+w;
+  d.innerHTML='<b>'+o;
+  if(window['g_fa_tem']==undefined)return;
+  da=get_da(w);da=zvez_v_kurs(da,'');
+  put_h('id_p5',da);
+  get_fa1(w);
 }
 function loader(){ setTimeout(loader2,0);}
 
@@ -70,16 +73,13 @@ function font_small(){
 	if(d.style.fontSize=='medium')d.style.fontSize='small';
 	if(d.style.fontSize=='x-large')d.style.fontSize='medium';
 	if(d.style.fontSize=='')d.style.fontSize='x-large';
-	
-	
-	
 }
-function get_fa0(w){var n1,n2,o;
+function get_fa0(w){var n1,n2,o;//old
 	if(window['g_fa']==undefined)return '';
     n1=g_fa.indexOf('\n'+w+'/');
     if(n1<0){return 'нет ФА для этого слова';}
     n2=n1+1;
-    while(1){ // добавляем примеры к слову
+    while(1){ 
      n2=g_fa.indexOf('\n',n2+1);
      if(g_fa.charAt(n2+1)!='/')break;
     }

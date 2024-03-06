@@ -10,30 +10,7 @@ a {  text-decoration: none;}
 h1 a {  color: #000;}
 h2 {  font-size: 24px;  color: gray;  line-height: 1;}
 #infolink {  line-height: 2.5;}
-.autocomplete-suggestions {
-    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
-    position: absolute; display: none; z-index: 9999; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
-}
-.autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
-.autocomplete-suggestion b { font-weight: normal; color: #1f8dd6; }
-.autocomplete-suggestion.selected { background: #f0f0f0; }
-.pace {
-  -webkit-pointer-events: none;
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-.pace-inactive {  display: none;}
-.pace .pace-progress {
-  background: #29d;
-  position: fixed;
-  z-index: 2000;
-  top: 0;
-  right: 100%;
-  width: 100%;
-  height: 2px;
-}
+
 </style>
 
   <body>
@@ -45,22 +22,23 @@ h2 {  font-size: 24px;  color: gray;  line-height: 1;}
        <button type="button" onclick="poisk_old()">Искать2</button>
        <button type="button" onclick="filtr_oko()">Фильтр око</button>
       <textarea id="id_output"cols="100" rows="25">Улучшенный поиск русских слов по части для сочинения ФА</textarea>
-
+    </center>
 <script>
 g_oko=replace_all(g_oko,' ',"")
 g_oko=replace_all(g_oko,'/',"\n")
 g_oko=g_oko.split('\n');	
-var g_busy=0;
-window.onload = function(){ document.getElementById('id_input').focus(); }
+var g_busy=0;//global var
+window.onload = function(){document.getElementById('id_input').focus();}
 
+function get_in(){return document.getElementById('id_input').value.toLowerCase();}
 function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
  if(s0.indexOf(a0)>=0){ms=s0.split(a0);s0=ms.join(b0);}
  return s0;
 }
 function poisk_old(){var i=0,m1=[],m2=[],m3=[],m4=[],sum1=0,sum2=0,w='',s='',n=0,m=[];
   if(g_busy)return; g_busy=1;
-  m = g_rus.split('\n');
-  s=document.getElementById('id_input').value;
+  m=g_rus.split('\n');
+  s=get_in();
   for(i=0;i<m.length;i++){
     if(sum1>190)break;
     if((sum1+sum2)>290)break;
@@ -70,7 +48,6 @@ function poisk_old(){var i=0,m1=[],m2=[],m3=[],m4=[],sum1=0,sum2=0,w='',s='',n=0
     if(n==0){m1.push(w);sum1++;continue;}
     if(n==(w.length-s.length)){m2.push(w);sum2++;continue;}
     if(n>0){m3.push(w);sum2++;continue;}
-
   }
   w=m1.join('\n')+'\n'+m2.join('\n')+'\n'+m3.join('\n');
   w=replace_all(w,s,s.toUpperCase());
@@ -105,10 +82,11 @@ function unik_o(dd,s){var i,j,w,mm=[],oo=[];//убираем с одинаков
  mm=[];for(i=0;i<dd.length;i++)if(dd[i])mm.push(dd[i]);
  return mm;
 }
+
 //   m1=str.match(/\s.*к.*н.*\s/g).slice(0,50);
 function poisk(){var i,ss,s,n,k,m,re,dd;
   if(g_busy)return; g_busy=1; //занято
-  s=document.getElementById('id_input').value;
+  s=get_in();
 
   re = new RegExp("\\s.*" + s + ".*", "g"); //слова где есть (кон)
   m=g_rus.match(re);if(!m)m=[s];
@@ -139,7 +117,7 @@ function poisk(){var i,ss,s,n,k,m,re,dd;
   g_busy=0;
 }
 function filtr_oko(){var s,dd,ss;
-  s=document.getElementById('id_input').value;
+  s=get_in();
   ss=document.getElementById('id_output').value;
   dd=ss.split('\n');
   dd=unik_o(dd,s);//удалить слова с одинаковой основой и разными окончаниями
@@ -147,7 +125,6 @@ function filtr_oko(){var s,dd,ss;
   document.getElementById('id_output').value=ss;
 }
 
-    </script>
-    </center>
-  </body>
+</script>
+</body>
 </html>
