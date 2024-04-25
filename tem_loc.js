@@ -311,4 +311,4 @@ function load_dp(){run_js('dp6k.txt');document.getElementById("id_dp").style.bac
 function load_da(){g_fa='1';loader_fa();document.getElementById("id_da").style.backgroundColor='coral';}
 //news
 var g_news='';
-run_js('news.txt',function(){alert(g_news);});
+//run_js('news.txt',function(){alert(g_news);}); мешает 
