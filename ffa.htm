@@ -31,7 +31,7 @@ function start(){var i,x,s,lat="abcdefghijklmnopqrstuvwyz";
 }
 function run_js(vPathScript,fun1){var sc;
  sc=document.createElement('script');sc.async=true;
- sc.src=''+vPathScript; document.head.appendChild(sc);
+ sc.src=''+vPathScript; 
  sc.onerror=function(){alert('no file='+sc.src+': error in run_js');}
  sc.onload=function(){
   if(!this.executed){
@@ -44,6 +44,7 @@ function run_js(vPathScript,fun1){var sc;
    setTimeout(function(){self.onload()}, 0);
   }
  }
+ document.head.appendChild(sc);
 }
 function len(d){ return d.length;}
 function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;

@@ -18,13 +18,14 @@ h2 {  font-size: 24px;  color: gray;  line-height: 1;}
 .autocomplete-suggestion b { font-weight: normal; color: #1f8dd6; }
 .autocomplete-suggestion.selected { background: #f0f0f0; }
 i {color:red}
+#id_p5,#id_p6 {font-size: 18px;}
 </style>
 <body>
 <center>
 
 <div id="id_info">
 <h1>Словарь английских слов 6к</h1>
-только нужные и частые слова с транскрипцией US+UK<br>
+только нужные и частые слова с транскрипцией US+UK и ФА<br>
 может работать локально без интернета<br>
 </div>
 
@@ -42,6 +43,7 @@ window.onload = function(){
 	 var d=document.getElementById('id_input');d.focus();
 	 setTimeout("document.getElementById('id_info').remove()",9000);
 }
+
 
 loader3();
 loader_fa();

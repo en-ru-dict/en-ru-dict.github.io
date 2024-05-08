@@ -9,7 +9,7 @@ function len(d){ return d.length;}
 function run_js(vPathScript,fun1,a1,a2){var sc;
  log('загружаем скрипт='+vPathScript);
  sc=document.createElement('script');sc.async=true;
- sc.src=''+vPathScript; document.head.appendChild(sc);
+ sc.src=''+vPathScript; 
  sc.onerror=function(){log('no file='+sc.src+': error in run_js');}
  sc.onload=function(){
   if(!this.executed){
@@ -22,6 +22,7 @@ function run_js(vPathScript,fun1,a1,a2){var sc;
    setTimeout(function(){self.onload()}, 0);
   }
  }
+ document.head.appendChild(sc);
 }
 function save_s_to_Loc(name_el,s){
  try {localStorage.setItem(name_el,s);}
