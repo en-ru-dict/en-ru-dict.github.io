@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script src="tran_us_126k.txt"></script>
+    <script src="tran.js"></script>
+
+<style>
+a {  text-decoration: none;}
+#id_output,#id_input,button {font-size: xx-large;}
+h1 a {  color: #000;}
+h2 {  font-size: 24px;  color: gray;  line-height: 1;}
+#infolink {  line-height: 2.5;}
+.autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    position: absolute; display: none; z-index: 9999; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.autocomplete-suggestion b { font-weight: normal; color: #1f8dd6; }
+.autocomplete-suggestion.selected { background: #f0f0f0; }
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.pace-inactive {  display: none;}
+.pace .pace-progress {
+  background: #29d;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+}
+</style>
+  <body>
+    <center>
+      <h1>Транскрипция(US) английских слов 126к</h1>
+       <input type="text" size="35" id="id_input" placeholder="word" value="" /><br>
+       <button type="button" onclick="show_ipa();">Search!</button><hr>
+      <div id="id_output">&nbsp;</div>
+      <div id="player">&nbsp;</div>
+    <script>
+      window.onload = function() { document.getElementById('id_input').focus(); }
+      lang = "en";
+      var keys = get_keys();
+      suggest_entry();
+    </script>
+    </center>
+  </body>
+</html>
