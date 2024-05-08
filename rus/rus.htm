@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>подбор рус слов для ФА</title>
+<script src="rus.txt"></script>
+<script src="oko.txt"></script>
+
+<style>
+a {  text-decoration: none;}
+#id_output,#id_input,button {font-size: large;}
+h1 a {  color: #000;}
+h2 {  font-size: 24px;  color: gray;  line-height: 1;}
+#infolink {  line-height: 2.5;}
+
+</style>
+
+  <body>
+    <center>
+        <form onsubmit="poisk();return false">
+       <input type="text" size="35" id="id_input" placeholder="word" value="" /><br>
+       </form>
+       <button type="button" onclick="poisk()">Искать(или ENTER)</button>
+       <button type="button" onclick="poisk_old()">Искать2</button>
+       <button type="button" onclick="filtr_oko()">Фильтр око</button>
+      <textarea id="id_output"cols="100" rows="25">Улучшенный поиск русских слов по части для сочинения ФА</textarea>
+    </center>
+<script>
+g_oko=replace_all(g_oko,' ',"")
+g_oko=replace_all(g_oko,'/',"\n")
+g_oko=g_oko.split('\n');	
+var g_busy=0;//global var
+window.onload = function(){document.getElementById('id_input').focus();}
+
+function get_in(){return document.getElementById('id_input').value.toLowerCase();}
+function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
+ if(s0.indexOf(a0)>=0){ms=s0.split(a0);s0=ms.join(b0);}
+ return s0;
+}
+function poisk_old(){var i=0,m1=[],m2=[],m3=[],m4=[],sum1=0,sum2=0,w='',s='',n=0,m=[];
+  if(g_busy)return; g_busy=1;
+  m=g_rus.split('\n');
+  s=get_in();
+  for(i=0;i<m.length;i++){
+    if(sum1>190)break;
+    if((sum1+sum2)>290)break;
+    w=m[i];
+    n=w.indexOf(s);
+    if(n<0){continue;}
+    if(n==0){m1.push(w);sum1++;continue;}
+    if(n==(w.length-s.length)){m2.push(w);sum2++;continue;}
+    if(n>0){m3.push(w);sum2++;continue;}
+  }
+  w=m1.join('\n')+'\n'+m2.join('\n')+'\n'+m3.join('\n');
+  w=replace_all(w,s,s.toUpperCase());
+  document.getElementById('id_output').value=w;
+  g_busy=0;
+}
+function vyd(w,s){var ss,i,n=0;
+ for(i=0;i<s.length;i++){
+  ss=s.charAt(i);
+  n=w.indexOf(ss,n);
+  w=w.substring(0,n)+ss.toUpperCase()+w.substring(n+1);
+ }
+ return w;
+}
+function cut_oko(w){var le,o;//*ский *ская 
+  le=w.length;
+  o=w.substring(le-3);if(g_oko.indexOf(o)>=0)return w.substring(0,le-2);//ный
+  o=w.substring(le-4);if(g_oko.indexOf(o)>=0)return w.substring(0,le-3);//ного
+  return w;
+}	
+function srav_oko(w1,w2){
+ if(w1=='')return 0;
+ if(w2=='')return 0;
+ if(w1==w2)return 99;//невозможно
+ w1=cut_oko(w1);w2=cut_oko(w2);
+ if(w1==w2)return 1;
+ return 0;
+}
+function unik_o(dd,s){var i,j,w,mm=[],oo=[];//убираем с одинаковыми основами и разными окончаниями
+ for(i=0;i<dd.length;i++){ dd[i]=replace_all(dd[i],s,s.toUpperCase());}
+ for(i=0;i<dd.length;i++)for(j=i+1;j<dd.length;j++)if(srav_oko(dd[i],dd[j]))dd[j]='';
+ mm=[];for(i=0;i<dd.length;i++)if(dd[i])mm.push(dd[i]);
+ return mm;
+}
+
+//   m1=str.match(/\s.*к.*н.*\s/g).slice(0,50);
+function poisk(){var i,ss,s,n,k,m,re,dd;
+  if(g_busy)return; g_busy=1; //занято
+  s=get_in();
+
+  re = new RegExp("\\s.*" + s + ".*", "g"); //слова где есть (кон)
+  m=g_rus.match(re);if(!m)m=[s];
+  for(i=0;i<m.length;i++)m[i]=m[i].trim();//убрать \n
+  dd=[];// уник массив
+  
+  for(i=0;i<m.length;i++){//начинается с (кон)
+	w=m[i];n=w.indexOf(s);
+    if(n==0){w=replace_all(w,s,s.toUpperCase());dd.push(w);if(dd.length>200)break;}
+  }
+  for(i=0;i<m.length;i++){//кончается на (кон)
+	w=m[i];	n=w.indexOf(s);	k=w.length-s.length;
+    if(n==k){w=replace_all(w,s,s.toUpperCase());dd.push(w);if(dd.length>200)break;}
+  } 
+  for(i=0;i<m.length;i++){//середина (кон), бывают повторы с выше
+	w=m[i];	n=w.indexOf(s);
+    if(n>0){w=replace_all(w,s,s.toUpperCase());if(dd.indexOf(w)<0)dd.push(w);if(dd.length>200)break;}
+  }
+  
+  if(dd.length<100){ //ищем если раньше нашли мало
+   ss=s.split('').join('.*');
+   re = new RegExp("\\s.*" + ss + ".*", "g"); //буквы (к,о,н) разнесены по слову, бывают повторы с выше
+   m=g_rus.match(re);if(!m)m=[s];m=m.slice(0,99); 
+   for(i=0;i<m.length;i++){w=m[i].trim();w=vyd(w,s);if(dd.indexOf(w)<0)dd.push(w);}
+  }
+  ss=dd.join('\n');
+  document.getElementById('id_output').value=ss;
+  g_busy=0;
+}
+function filtr_oko(){var s,dd,ss;
+  s=get_in();
+  ss=document.getElementById('id_output').value;
+  dd=ss.split('\n');
+  dd=unik_o(dd,s);//удалить слова с одинаковой основой и разными окончаниями
+  ss=dd.join('\n');
+  document.getElementById('id_output').value=ss;
+}
+
+</script>
+</body>
+</html>
