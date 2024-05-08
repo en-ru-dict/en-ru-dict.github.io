@@ -1,26 +1,23 @@
 /*! Xing Soft 2024 */
-function log(s){console.log(s+'');} //проще и короче
-function len(d){ return d.length;} //защита от ошибок написания
-function run_js(vPathScript,fun1){var sc; //запуск внешнего скрипта асинхронно вместо ajax
-  sc=document.createElement('script');sc.async=true;
- sc.src=''+vPathScript; document.head.appendChild(sc);
- sc.onerror=function(){console.log('no file='+vPathScript+': error in run_js');}
- sc.onload=function(){
-  if(!this.executed){
-   this.executed=true;
-   if(fun1)setTimeout(fun1,0);
-  }
- }
- sc.onreadystatechange=function(){var self=this;
-  if(this.readyState == "complete" || this.readyState == "loaded"){
-   setTimeout(function(){self.onload()}, 0);
-  }
- }
-}
-//внимание требует много памяти, для больших строк лучше через рег.выр.
+function log(s){console.log(s+'');}
+function len(d){ return d.length;}
 function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
  if(s0.indexOf(a0)>=0){ms=s0.split(a0);s0=ms.join(b0);}
  return s0;
+}
+function run_js(vPathScript,fun1,a1,a2){
+ log('загружаем скрипт='+vPathScript);
+ let promise = new Promise(function(resolve, reject) {
+    let script = document.createElement('script');
+    script.src = vPathScript;
+    script.onload = () => resolve(script);
+    script.onerror = () => reject(new Error(`Ошибка загрузки скрипта ${src}`));
+    document.head.append(script);
+  });
+ promise.then(
+  script => {log(`${script.src} загружен!`);if(fun1)fun1(a1,a2);},
+  error => log(`Ошибка: ${error.message}`)
+);
 }
 function get_keys2(){var dd=[],ms=[],i=0,keys=[]; //делаем ключи для автозавершения
   ms=g_dict.split('\n');
@@ -29,6 +26,7 @@ function get_keys2(){var dd=[],ms=[],i=0,keys=[]; //делаем ключи дл
 }
 function show_perevod() {var w,t,o,d,n1,n2,da;//ищем слово в словаре
   w=document.getElementById("id_input").value;
+  w=w.toLowerCase();
    d=document.getElementById("id_output");
     n1=g_dict.indexOf('\n'+w+'[');
     if(n1<0){d.innerHTML='нет такого слова';return;}
@@ -49,7 +47,7 @@ function show_perevod() {var w,t,o,d,n1,n2,da;//ищем слово в слов�
   put_h('id_p5',da);
   get_fa1(w);
 }
-function loader(){ setTimeout(loader2,0);}
+function loader(){setTimeout(loader2,0);}
 
 function loader2(){var w,lat='qwertyuiopasdfghjklzxcvbnm';
   w=document.getElementById("id_input").value;

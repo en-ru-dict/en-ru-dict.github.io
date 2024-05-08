@@ -68,20 +68,13 @@ function make_tabl2(){var rows,row,out,url,text,word;
             }
 }
 function run_js(vPathScript,fun1){var sc;
-  sc=document.createElement('script');sc.async=true;
- sc.src=''+vPathScript; document.head.appendChild(sc);
- sc.onerror=function(){console.log('no file='+vPathScript+': error in run_js');}
- sc.onload=function(){
-  if(!this.executed){
-   this.executed=true;
-   if(fun1)setTimeout(fun1,0);
-  }
+ sc=document.createElement('script');sc.async=true;sc.src=''+vPathScript;
+ sc.onerror=()=>{console.log('no file='+vPathScript+': error in run_js');}
+ sc.onload=()=>{if(!this.executed){this.executed=true;if(fun1)setTimeout(fun1,0);}}
+ sc.onreadystatechange=()=>{var self=this;
+  if(this.readyState == "complete" || this.readyState == "loaded"){setTimeout(()=>{self.onload()},0);}
  }
- sc.onreadystatechange=function(){var self=this;
-  if(this.readyState == "complete" || this.readyState == "loaded"){
-   setTimeout(function(){self.onload()}, 0);
-  }
- }
+ document.head.appendChild(sc);
 }
 
 function start1(){var url,word,w,xhr;
