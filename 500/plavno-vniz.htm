@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Words List</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+    .floating-panel { background-color: aquamarine; border: 1px solid #ddd; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); display: flex; justify-content: center; position: fixed; right: 20px; top: 20px; }
+    .floating-panel button { background-color: transparent; border: none; cursor: pointer; font-size: 14px; margin: 5px; padding: 5px 10px; }
+    .floating-panel button:hover { background-color: #ddd; }
+    #words-list { list-style-type: none; margin: 0; padding: 0; }
+    #words-list li { border-bottom: 1px solid #ddd; padding: 10px 0; text-align: left; }
+    b {color:indigo;font-size: 26px;}
+    i {color:orangered;font-size: 26px;}
+  </style>
+  <script src="500.txt"></script>
+
+</head>
+<body>
+  <div class="floating-panel">
+    <button id="start-btn" onclick="startScrolling()">Start</button>
+    <button id="stop-btn" onclick="stopScrolling()">Stop</button>
+    <button id="decrease-speed-btn" onclick="decreaseSpeed()">+ Speed</button>
+    <button id="increase-speed-btn" onclick="increaseSpeed()">- Speed</button>
+    <button id="increase-font-btn" onclick="increaseFontSize()">+ Font</button>
+    <button id="decrease-font-btn" onclick="decreaseFontSize()">- Font</button>
+<button id="zvuk-btn" onclick="zvuk('What do you need ?')">zvuk</button>
+  </div>
+
+
+  <ul id="words-list">
+netu
+  </ul>
+
+<script>
+    const wordsList = document.getElementById('words-list');
+    let currentIndex = 0;
+    let scrollStop = 1;
+    let scrollSpeed = 900; // milliseconds
+    let fontSize = 24; // pixels
+
+function zvuk(text){
+// console.log(text);
+if(!window['speechSynthesis']){alert('net zvuka');return;}
+var lat='qwertyuiopasdfghjklzxcvbnm';
+var c=text.charAt(0);
+if(lat.indexOf(c)<0)return;
+ console.log(text);
+ var u=new SpeechSynthesisUtterance(text);
+ u.lang='en-US';
+ window.speechSynthesis.speak(u);
+ delete u;
+}
+function startScrolling(){
+ if(scrollStop){scrollStop=0; setTimeout(scrollToNextWord,scrollSpeed);}
+}
+
+function stopScrolling(){
+ scrollStop=1;
+}
+
+function scrollToNextWord(){
+ if(currentIndex >= wordsList.children.length){scrollStop=1;currentIndex=0;return;}
+ wordsList.style.setProperty('--current-index', currentIndex);
+ wordsList.children[currentIndex].scrollIntoView({
+  behavior: 'smooth',
+  block: 'nearest',
+  inline: 'center',
+ });
+ var t=wordsList.children[currentIndex].innerText;
+ t=t.split(' ')[0];
+ //zvuk(t); не успевает говорить
+ currentIndex++;
+ if(scrollStop==0)setTimeout(scrollToNextWord,scrollSpeed);
+}
+
+function decreaseSpeed() {
+  scrollSpeed = Math.max(100, scrollSpeed - 100); document.title=scrollSpeed;
+}
+
+function increaseSpeed(){scrollSpeed += 100;  document.title=scrollSpeed;}
+
+function decreaseFontSize(){
+ fontSize = Math.max(10, fontSize - 2);
+ wordsList.style.fontSize = `${fontSize}px`;
+}
+
+function increaseFontSize(){fontSize+=2;wordsList.style.fontSize=`${fontSize}px`;}
+
+increaseFontSize();
+var ww,w,mm,s,c,i,j,k,m;
+var lat='qwertyuiopasdfghjklzxcvbnm';
+var rus='-ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ';
+
+m=g_mfa.split('\n');
+for(i=0;i<m.length;i++){
+ s=m[i].trim();
+ if(s)if(lat.indexOf(s.charAt(0))>=0)s='<b>'+s.replace(' ','</b> ');
+ mm=s.split('*');
+ for(j=1;j<mm.length;j++){
+	 w=mm[j];
+	 for(k=0;k<w.length;k++)if(rus.indexOf(w.charAt(k))<0)break;
+	 mm[j]='<i>'+w.substring(0,k)+'</i>'+w.substring(k);
+ }
+ s=mm.join('*');
+ m[i]='<li>'+s+'</li>';
+}
+document.getElementById('words-list').innerHTML=m.join('\n');
+
+</script>
+</body>
+</html>
