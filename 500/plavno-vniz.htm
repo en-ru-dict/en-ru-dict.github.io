@@ -15,7 +15,7 @@
     b {color:indigo;font-size: 26px;}
     i {color:orangered;font-size: 26px;}
   </style>
-  <script src="500.txt"></script>
+
 
 </head>
 <body>
@@ -31,7 +31,7 @@
 
 
   <ul id="words-list">
-netu
+Идёт загрузка и форматирование. Ждите!
   </ul>
 
 <script>
@@ -88,26 +88,46 @@ function decreaseFontSize(){
 }
 
 function increaseFontSize(){fontSize+=2;wordsList.style.fontSize=`${fontSize}px`;}
+function log(s){console.log(''+s);}
 
+//start
 increaseFontSize();
-var ww,w,mm,s,c,i,j,k,m;
-var lat='qwertyuiopasdfghjklzxcvbnm';
-var rus='-ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ';
+var script = document.createElement('script');
+var file=''+window.location.search;
+if(!file)file='500';vPathScript=file.replace('?','')+'.txt';
+log('загружаем скрипт='+vPathScript);
+let promise = new Promise(function(resolve, reject) {
+    let script = document.createElement('script');
+    script.src = vPathScript;
+    script.onload = () => resolve(script);
+    script.onerror = () => reject(new Error(`Ошибка загрузки скрипта ${src}`));
+    document.head.append(script);
+});
+promise.then(
+  script => {log(`${script.src} загружен!`);fun1();},
+  error => log(`Ошибка: ${error.message}`)
+);
 
-m=g_mfa.split('\n');
-for(i=0;i<m.length;i++){
- s=m[i].trim();
- if(s)if(lat.indexOf(s.charAt(0))>=0)s='<b>'+s.replace(' ','</b> ');
- mm=s.split('*');
- for(j=1;j<mm.length;j++){
-	 w=mm[j];
-	 for(k=0;k<w.length;k++)if(rus.indexOf(w.charAt(k))<0)break;
-	 mm[j]='<i>'+w.substring(0,k)+'</i>'+w.substring(k);
- }
- s=mm.join('*');
- m[i]='<li>'+s+'</li>';
+function fun1(){
+	var ww,w,mm,s,c,i,j,k,m;
+	var lat='qwertyuiopasdfghjklzxcvbnm';
+	var rus='-ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ';
+	
+	m=g_mfa.split('\n');
+	for(i=0;i<m.length;i++){
+	 s=m[i].trim();
+	 if(s)if(lat.indexOf(s.charAt(0))>=0)s='<b>'+s.replace(' ','</b> ');
+	 mm=s.split('*');
+	 for(j=1;j<mm.length;j++){
+		 w=mm[j];
+		 for(k=0;k<w.length;k++)if(rus.indexOf(w.charAt(k))<0)break;
+		 mm[j]='<i>'+w.substring(0,k)+'</i>'+w.substring(k);
+	 }
+	 s=mm.join('*');
+	 m[i]='<li>'+s+'</li>';
+	}
+	document.getElementById('words-list').innerHTML=m.join('\n');
 }
-document.getElementById('words-list').innerHTML=m.join('\n');
 
 </script>
 </body>
