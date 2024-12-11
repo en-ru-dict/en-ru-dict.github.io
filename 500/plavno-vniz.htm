@@ -107,7 +107,10 @@ promise.then(
   script => {log(`${script.src} загружен!`);fun1();},
   error => log(`Ошибка: ${error.message}`)
 );
-
+function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
+ if(s0.indexOf(a0)>=0){ms=s0.split(a0);s0=ms.join(b0);}
+ return s0;
+}
 function fun1(){
 	var ww,w,mm,s,c,i,j,k,m;
 	var lat='qwertyuiopasdfghjklzxcvbnm';
@@ -116,6 +119,10 @@ function fun1(){
 	m=g_mfa.split('\n');
 	for(i=0;i<m.length;i++){
 	 s=m[i].trim();
+s=replace_all(s, ',' , ', ');
+s=replace_all(s, '/' , ' / ');
+s=replace_all(s, ')(' , ') (');
+
 	 if(s)if(lat.indexOf(s.charAt(0))>=0)s='<b>'+s.replace(' ','</b> ');
 	 mm=s.split('*');
 	 for(j=1;j<mm.length;j++){
