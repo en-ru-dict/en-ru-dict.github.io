@@ -12,7 +12,7 @@
 </head>
 <body>
 <table id="TABL"></table>
-<div id="TABL2"></div>
+<div id="TABL2">Использование poisk.htm?word=test</div>
 <script>
 function get_v(id){var d=document.getElementById(id);if(d)return d.value+'';}
 function make_tabl(){var rows,row,out,url,text,word;
@@ -81,7 +81,7 @@ function start1(){var url,word,w,xhr;
      url = new URL(window.location.href);
      word = url.searchParams.get("word");
      console.log(word);
-     if(word){ w = word.charAt(0);run_js(w + "_big.txt",make_tabl); }
+     if(word){ w = word.charAt(0);run_js(w + "_big.txt",make_tabl);}
 }
 window.onload =start1;
 

@@ -40,7 +40,7 @@ h2 {  font-size: 24px;  color: gray;  line-height: 1;}
 <div id="id_info">
 <h1>Большой словарь английских слов 50к</h1>
 (источник Г.П. Шалаева Большой современный АНГЛО-РУССКИЙ СЛОВАРЬ с транскрипцией UK)<br>
-может работать локально без интернета, иногда есть ошибки в транскрипции из-за сканирования, правильную можно посмотреть здесь: <a href="tran-us.htm">(tran-us)</a><br>
+может работать локально без интернета, добавлена амер. транскрипция, но есть ошибки в брит. из-за сканирования</a><br>
 </div>
 
 <input type="text" size="35" id="id_input" placeholder="word" value="" /><br>
@@ -49,10 +49,11 @@ h2 {  font-size: 24px;  color: gray;  line-height: 1;}
 <div id="id_player">&nbsp;</div>
 
 <script>
- window.onload = function(){ var d=document.getElementById('id_input');d.focus();d.oninput=loader;}
+ window.onload = function(){ var d=document.getElementById('id_input');d.focus();d.value='';d.oninput=loader;}
  var keys;//global
  var g_dict='--';//global
  setTimeout("document.getElementById('id_info').remove()",9000);
+function get_da(){}
 </script>
 
 </center>

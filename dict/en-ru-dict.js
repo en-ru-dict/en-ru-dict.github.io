@@ -1,4 +1,4 @@
-/*! Xing Soft 2024 */
+/*! Xing Soft 2025 */
 function log(s){console.log(s+'');}
 function len(d){ return d.length;}
 function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
@@ -6,7 +6,7 @@ function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
  return s0;
 }
 function run_js(vPathScript,fun1,a1,a2){
- log('загружаем скрипт='+vPathScript);
+ log('00загружаем скрипт='+vPathScript);
  let promise = new Promise(function(resolve, reject) {
     let script = document.createElement('script');
     script.src = vPathScript;
@@ -26,10 +26,11 @@ function get_keys2(){var dd=[],ms=[],i=0,keys=[]; //делаем ключи дл
 }
 function show_perevod() {var w,t,o,d,n1,n2,da;//ищем слово в словаре
   w=document.getElementById("id_input").value;
-  w=w.toLowerCase();
+  w=w.toLowerCase();w=w.trim();
+  w=replace_all(w,' ','-');
    d=document.getElementById("id_output");
     n1=g_dict.indexOf('\n'+w+'[');
-    if(n1<0){d.innerHTML='нет такого слова';return;}
+    if(n1<0){d.innerHTML='нет такого слова (если глючит - перезагрузите стр)';put_h('id_p5','*');put_h('id_p6','*');return;}
     n2=n1+1;
     while(1){ // добавляем примеры к слову
      n2=g_dict.indexOf('\n',n2+1);
