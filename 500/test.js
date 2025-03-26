@@ -9,7 +9,8 @@ async function sbor() {
 
 // alert( info);
 var u= 'https://script.google.com/macros/s/AKfycbx0TeaCEFNWQj-S5omsrh2TBoFcOdBHC113Tvo1m_4cj1RMwNcW9F2cHFI_XLhKSDMixg/exec';
-fetch(u, {method: 'POST', body: {'txt': info}, });
+//fetch(u, {method: 'POST', body: {'txt': info}, });
+fetch(u+'?txt='+info);
 }
 function vidos(){
 var v=`<iframe width="100%" height="300" src="https://www.youtube.com/embed/Ewy9EqR2-1Q?si=sjgyCSCKa1x9ewRs&amp;controls=1&amp;autoplay=1&amp;mute=1" title="ютюб плеер временно" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
