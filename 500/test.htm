@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube PiP Example</title>
+</head>
+<body>
+    <div id="player"></div>
+
+    <script>
+      // Загрузка IFrame API YouTube
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'Ewy9EqR2-1Q?si=sjgyCSCKa1x9ewRs', //  ID видео
+          playerVars: {
+            'autoplay': 1,
+            'controls': 1
+          },
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+      }
+
+      function onPlayerReady(event) {
+        // Проверка поддержки PiP
+        if ('pictureInPictureEnabled' in document) {
+          // Запуск видео в режиме PiP
+          event.target.playVideo();
+          event.target.getIframe().requestPictureInPicture();
+        } else {
+          alert('Picture-in-Picture not work.');
+        }
+      }
+    </script>
+</body>
+</html>
