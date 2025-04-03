@@ -15,8 +15,23 @@ var v=`<iframe width="100%" height="300" src="https://www.youtube.com/embed/Ewy9
 </iframe>`;
 var d=document.getElementById("id2");if(d)d.innerHTML=v;
 }
+
+async function loadGA4() {
+  var script = document.createElement('script'); script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-E7738ZD4RF';
+
+  script.onload = function() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());gtag('config', 'G-E7738ZD4RF'); 
+  };
+
+  document.head.appendChild(script);
+}
+
 function onPageLoad() {
+if(window.location.protocol=="file:")return;
  setTimeout(async () => {await sbor(); }, 1000);
- setTimeout(vidos,5000); //временно
+ setTimeout(loadGA4,5000); //временно
 }
 window.addEventListener('load', onPageLoad);
