@@ -1,6 +1,5 @@
 User-agent: *
-Allow: 
 Disallow: /dict/
 Disallow: /rus/
 Disallow: /tran/
-Sitemap: https://en-ru-dict.github.io/sitemap
+Sitemap: https://en-ru-dict.github.io/sitemap.xml
