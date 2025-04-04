@@ -1,5 +1,0 @@
-User-agent: *
-Host: https://en-ru-dict.github.io/
-Disallow: /pic
-Disallow: /dict
-Disallow: *.zip
