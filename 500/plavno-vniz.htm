@@ -35,6 +35,7 @@
   </ul>
 
 <script>
+g_mfa='0';
     const wordsList = document.getElementById('words-list');
     let currentIndex = 0;
     let scrollStop = 1;
@@ -100,30 +101,38 @@ let promise = new Promise(function(resolve, reject) {
     let script = document.createElement('script');
     script.src = vPathScript;
     script.onload = () => resolve(script);
-    script.onerror = () => reject(new Error(`Ошибка загрузки скрипта ${src}`));
+    script.onerror = () => log(`Ошибка загрузки ${script.src}`);
     document.head.append(script);
 });
 promise.then(
   script => {log(`${script.src} загружен!`);fun1();},
-  error => log(`Ошибка: ${error.message}`)
 );
 function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
  if(s0.indexOf(a0)>=0){ms=s0.split(a0);s0=ms.join(b0);}
  return s0;
 }
+function one_space(s){var i,out='',f=0,ss;
+ for(i=0;i<s.length;i++){
+  ss=s.charAt(i);
+  if(ss==' '){if(f==1)continue;f=1;} else f=0;
+  out+=ss;
+ }
+ return out.trim();
+}
+function in_str(a,b){return 1+a.indexOf(b);}
 function fun1(){
 	var ww,w,mm,s,c,i,j,k,m;
 	var lat='qwertyuiopasdfghjklzxcvbnm';
 	var rus='-ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ';
-	
+	if(g_mfa=='0')document.location='2000.txt';
 	m=g_mfa.split('\n');
 	for(i=0;i<m.length;i++){
 	 s=m[i].trim();
 s=replace_all(s, ',' , ', ');
 s=replace_all(s, '/' , ' / ');
 s=replace_all(s, ')(' , ') (');
-
-	 if(s)if(lat.indexOf(s.charAt(0))>=0)s='<b>'+s.replace(' ','</b> ');
+s=one_space(s);
+	 if(s)if(in_str(lat,s.charAt(0)))if(in_str(s,'~'))s='<b>'+s.replace('~','</b>~');
 	 mm=s.split('*');
 	 for(j=1;j<mm.length;j++){
 		 w=mm[j];
