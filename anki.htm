@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Удаление лишних слов для Анки</title>
+<body>
+<noscript>
+ Для работы меню включите скрипты! <br>
+ please turn on javascripts!
+</noscript>
+<style>
+@import url('bootstrap.min.css');
+body {font-size:22px;background-color:azure;padding:10px;}
+a {outline: none; font-weight: 700}
+ul li a[aria-controls="profile"]:hover{color:red}
+.ot2 {margin: 2px 1px}
+i {color:red}
+#id_but3 {float:right}
+#id_p0 {margin-left: 10px}
+#id_p3 {max-width:100%; width:auto}
+#id_p5,#id_p6 {font-size: 20px}
+#tem1 {;}
+hr {margin-top: 5px; margin-bottom: 5px}
+.mag {border-top: 1px solid #428bca}
+</style>
+<script>
+var g_fa='';//global
+var g_word=0;//global
+var g_ms=[];//global list
+var rus1='йцукенгшщзхъфывапролджэячсмитьбюё';//33
+var rus2=rus1.toUpperCase();
+var lat1='qwertyuiopasdfghjklzxcvbnm';//26
+var lat2=lat1.toUpperCase();
+
+function log(s){console.log(s+'');}
+function put_v(id,s){var d=document.getElementById(id);if(d)d.value=s+'';}
+function get_v(id){var d=document.getElementById(id);if(d)return d.value+'';}
+function put_h(id,s){var d=document.getElementById(id);if(d)d.innerHTML=s+'';}
+function get_h(id){var d=document.getElementById(id);if(d)return d.innerHTML+'';}
+function len(d){ return d.length;}
+function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
+ if(s0.indexOf(a0)>=0){ms=s0.split(a0);s0=ms.join(b0);}
+ return s0;
+}
+function one_space(s){var i,out='',f=0,ss;
+ for(i=0;i<len(s);i++){
+   ss=s.charAt(i);
+   if(ss==' '){if(f==1)continue;f=1;}
+   else f=0;
+   out+=ss;
+ }
+ return out.trim();
+}
+
+function save_text(file,text) {
+ if(!file)file='new_anki.txt';
+ if(!text)text=get_v('id_text1');
+ const blob = new Blob([text], { type: 'text/plain' });
+ const link = document.createElement('a');
+ link.href = URL.createObjectURL(blob);
+ link.download = file; // Имя файла
+ // Программно кликаем по ссылке, чтобы начать скачивание
+ document.body.appendChild(link);
+ link.click();
+ document.body.removeChild(link);
+}
+
+function loader1(file1){
+ if(file1==0)file1=window.location.search.replace('?','');
+ if(file1==1)file1="500/600b.txt";
+ if(file1==2)file1="500/1500i.txt";
+ if(file1==3)file1="500/1600p.txt";
+ if(file1==4)file1="500/3200r.txt";
+  if(!file1)return;
+ log('начинаем загружать скрипт='+file1);
+ let script = document.createElement('script');
+ script.src = file1;
+ script.onload = () => {log('скрипт загружен='+g_fa.length);put_v('id_text1',g_fa);}
+ script.onerror = () => log('Ошибка загрузки='+script.src);
+ document.head.append(script);
+}
+function lat_rus(){var i,n,k,w,ww;
+
+ var s=get_v('id_text1');
+ var rus=rus1+rus2;
+ var lat=lat1+lat2;
+
+ var ss=rus+lat;
+ n=len(s);k=0;ww='';
+ for(i=0;i<n;i++){
+     w=s.charAt(i);
+     if(k){
+         if(ss.indexOf(w)<0){k=0;ww='';continue;}
+         if(rus.indexOf(w)>=0)if(k==1)alert(i+'/?'+ww+w);
+         if(lat.indexOf(w)>=0)if(k==2)alert(i+'/??'+ww+w);
+
+     }
+     if(k==0){if(lat.indexOf(w)>=0)k=1;if(rus.indexOf(w)>=0)k=2;}
+     if(k)ww+=w;
+ }
+ alert('ok');
+}
+function sec4(){var ms=[],n=0,k=0,dd=[],v=0,mm=[],x='';
+ var s=get_v('id_text1');
+ var s173=String.fromCharCode(173);
+ if(s.indexOf(s173)>=0)alert(173);
+ ms=s.split('\n');
+ n=len(ms);
+  for(k=0;k<n;k++){
+   s=ms[k];
+   if(s.charAt(0)=='#')continue;
+   //if(s.charAt(0)=='=')continue;
+   if(s=='')continue;
+   dd=s.split('|');
+   if(len(dd)!=4)alert(s);
+   dd=dd[0].split('[');
+   x='0'+dd[0];
+   if(mm[x])alert(s);else mm[x]=1;
+   v++;
+  }
+  alert('vsego='+v);
+}
+function zap_probel(){
+ s=get_v('id_text1');
+ ms=s.split('\n');s='';
+ n=len(ms);
+ for(k=0;k<n;k++){
+  s=ms[k];
+  if(s.charAt(0)=='#')continue;
+  if(s=='')continue;
+  s=s.replace('[',' ['); //1raz 
+  dd=s.split('|');
+  s=dd[2];s=replace_all(s,',',', ');s=replace_all(s,'  ',' ');
+  ms[k]=dd[0]+'|'+dd[1]+'|'+s+'|'+dd[3];
+ }
+ s=ms.join('\n');
+ put_v('id_text1',s);
+ alert('ok');
+}
+
+function zv_i(s){var n,k,ww,i,w,ss;//*слова окружить тегом i
+ var rus=rus1+rus2+'-';s=s+' ';
+ n=len(s);k=0;ww='';
+ for(i=0;i<n;i++){
+     w=s.charAt(i);
+     if(k==1)if(rus.indexOf(w)<0){k=0;w='</i>'+w;}
+     if(k==0)if(w=='*'){w='<i>*';k=1;}
+     ww+=w;
+ }
+ return ww;
+}
+function zagl_b(s){var n,k,ww,i,w,ss,f//заглавные рус.буквы окружаем тегом b
+ s=s+' ';n=len(s);k=0;ww='';f=0;
+ for(i=0;i<n;i++){
+     w=s.charAt(i);
+     if(f==0)if(w=='~')f=1;
+     
+     if(k==1)if(rus2.indexOf(w)<0){k=0;if(f==0)w='</b>'+w;}//ниже не найдет такое
+     if(k==0)if(rus2.indexOf(w)>=0){if(f==0)w='<b>'+w;k=1;}
+     if(f==1){if(w==')')f=0;if(w==' ')f=0;}
+     ww+=w;
+ }
+ return ww;
+}
+//slash_hr();word_a();zvez_i();tran_b()
+function slash_hr(){var s,ms,n,k,dd,out;
+ s=get_v('id_text1');
+ ms=s.split('\n');
+ n=len(ms);out='';
+ for(k=0;k<n;k++){
+  s=ms[k];
+  if(s.charAt(0)=='#')continue;
+  if(s=='')continue;
+  s=replace_all(s,'//','<hr class="hr2">');
+  
+  dd=s.split('|');
+  dd[2]=replace_all(dd[2],'/', '<hr class="hr1">');
+  
+  dd[3]=replace_all(dd[3],'/', ' /');
+  s=dd.join('|');
+  s=s.replace('[',' ['); //1raz 
+  out+=s+'\n';
+ }
+ s=one_space(out);
+ ms=s.split('\n');
+ n=len(ms);
+ for(k=0;k<n;k++){ ms[k]='<a>'+ms[k].replace(' [','</a> ['); }
+ for(k=0;k<n;k++){ ms[k]=zv_i(ms[k]);}
+ for(k=0;k<n;k++){
+  s=ms[k];
+  dd=s.split('|');
+  dd[0]=dd[0].replace(' [',' <b>[');
+  dd[0]=dd[0].replace('] ',']</b> ');
+  
+  s=dd[2];
+  ms[k]=''+dd[0]+'|'+dd[1]+'|'+zagl_b(s)+'|'+dd[3]+'';
+ }
+ s=ms.join('\n');
+ s=one_space(s);
+ s=replace_all(s,'<i>*</i>','*');
+ s=replace_all(s,' \n','\n');
+ s=one_space(s);
+ put_v('id_text1',s);
+ alert('ok');
+}
+</script>
+<script src='jquery.min.js'></script>
+<script src='bootstrap.min.js'></script>
+
+  <!-- Навигация -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#tem" aria-controls="tem" role="tab" data-toggle="tab" title="Всякая лабуда">начало</a></li>
+    <li><a href="#tem1" aria-controls="tem1" role="tab" data-toggle="tab" title="Полный список слов" onclick="">список</a></li>
+    <li><a href="#tem2" aria-controls="tem2" role="tab" data-toggle="tab" title="Тут можно удалить лишнее" onclick="cards();">карточки</a></li>
+  </ul>
+
+<!-- Содержимое вкладок -->
+<div class="tab-content">
+
+<div role="tabpanel" class="tab-pane fade in active" id="tem" align="">
+ <div class="panel panel-primary">
+  <div class="panel-heading"><h1>Вступление и Описание</h1></div>
+ </div>
+ <div class="panel panel-primary">
+  <div class="panel-body">
+<h2>ИНСТРУКЦИЯ КАК ДОБАВЛЯТЬ В АНКИ</h2>
+Если импортировать (apkg) то тип записи создатся сам, но можно сделать его вручную - 4 поля: слово, перевод, ассоциация и похожие. Потом при импорте выбрать разделитель (|) и этот тип записи, там ГДЕ ПРОВЕРЯТЬ (тип записи и колоды) иначе не все добавятся! там по умолчанию стоит неправильно! <br>
+Можно потом ещё добавить звуки и картинки, и подробный перевод и примеры на англ. Они есть в других колодах и на сайтах. Хорошие картинки я видел на одном сайте и приложении, но там слова всем известные или ненужные редкие, а от плохих картинок толку мало, они должны удивлять или смешить и понятно изображать предмет, глагол или ФА. Списки иногда меняются так что сами форматируйте здесь.<br>
+<hr>
+<h2>Приложение АНКИ-дроид</h2>
+Плюсы - сразу есть импорт экспорт без реги! С регой можно скачать из общего хранилища (видно все, но искать трудно) и оставить отзыв! Но не дают качать много, лучше качать с др.сайтов и импортировать, на ВК есть итд. Есть интервальное повторение. Можно красиво оформить карточку через html теги, много полей. берём текст-список и в поле, жмем кнопки и получится красиво, но потом надо зайти в карточку - нажать редактировать- внизу - карточка - стили и вставить туда стили для ссылок, жирных и курсива или свои пишите, для конкретного экрана нужны свои размеры и стили, на всех сделать красиво нереально<br>
+==========<br>
+.card {font-size: 28px;}<br>
+a {color:darkblue}<br>
+i {color:red}<br>
+.hr1 {border-top:1px solid #428bca; margin-top:3px;margin-bottom:3px;}<br>
+.hr2 {border-top:2px solid green;   margin-top:3px;margin-bottom:3px;}<br>
+.hr3 {border-top:2px solid red;     margin-top:3px;margin-bottom:3px;}<br>
+==========<br>
+Минусы анки - в их хранилище навалено в кучу и ничего хорошего нет, рейтинг туфта есть там платная 14т, но восторженые отзывы липа и много лишней ненужной инфы, не рекомендую. Удалить выученные неудобно (через меню-исключить) Файлы звук и картинки надо свои искать/делать и вставлять сложно и долго, встроеной озвучки нет, но можно через виджет гугл переводчика озвучить, но надо убирать *%~+= <br>
+<hr>
+<h2>Приложение QuizLet</h2>
+-МИНУСЫ - нет импорта-экспорта, надо на сайт идти и регится, там есть. Картинки только из колекции и мелкие. Нет интервального повтория. Хранилище скрыто! может там и есть что-то годное, но надо знать название чтобы искать! по (англ-рус) выйдет мало и не то, так что тоже не фонтан, отзыв не оставить, рейтинга нет, искать вслепую и все смотреть и выбирать надо год.<br>
++ПЛЮСЫ - встроенная озвучка англ и рус, не надо свой звук тащить, можно сделать запись экрана, вытащить звук и слушать только те слова которые не знаешь. ну и можно по названию поделиться и будут искать и качать. <br>
+Как форматировать для неё не знаю, можно жирным выделить через **, может ещё что есть.
+  </div>
+ </div>
+</div>
+
+<div role="tabpanel" class="tab-pane fade" id="tem1" >
+   <div class="panel panel-primary">
+    <div class="panel-heading">Исходный список слов</div>
+   </div>
+<div class="panel-body">
+<button type="button" onclick="loader1(1);">600b</button>
+<button type="button" onclick="loader1(2);">1500i</button>
+<button type="button" onclick="loader1(3);">1600p</button>
+<button type="button" onclick="loader1(4);">3200r</button>
+<button type="button" onclick="slash_hr();word_a();zvez_i();tran_b();">для Anki</button>
+<button type="button" onclick="save_text();">save</button>
+<button type="button" onclick="zap_probel();">пробел после запятой</button>
+<button type="button" onclick="lat_rus();">тест на смесь англ-рус</button>
+<button type="button" onclick="sec4();">тест на 4 секции</button>
+</div>
+<br>
+<textarea id='id_text1' cols="83" rows="13">
+Сюда загрузится полный список слов. Использование: anki.htm?500/600b.txt
+</textarea>
+</div>
+
+
+<div role="tabpanel" class="tab-pane fade" id="tem2">
+   <div class="panel panel-primary">
+    <div class="panel-heading">Удаление лишних слов и ФА для Анки</div>
+   </div>
+
+ <div class="panel-group">
+   <div class="panel panel-primary">
+    <div class="panel-body">
+      <button type="button" class="btn btn-primary btn-md ot2" onclick="g_word=0;show_w();">Начало</button>
+       ||
+      <button type="button" class="btn btn-danger btn-md ot2" onclick="del_w();">Удалить</button>
+      ||
+      <button type="button" class="btn btn-primary btn-md ot2" onclick=""> список=<span id="id_list">?</span> номер слова=<span id="id_word">?</span> </button>
+      <button type="button" class="btn btn-danger btn-md ot2" onclick="save_list();">Запомнить список</button>
+      ||||
+      <button type="button" class="btn btn-success btn-md ot2" onclick="next_w();">Дальше</button>
+    </div>
+   </div>
+
+   <div class="panel panel-success">
+     <h2> &nbsp;<b id="idw">слово [транскрипция]</b> <span id="idp" class="">перевод</span></h2>
+   </div>
+
+   <div class="panel panel-primary">
+    <div class="panel-body"><textarea id="ida" cols="83" rows="5" >fa</textarea></div>
+   </div> 
+   <div class="panel panel-primary"> 
+    <div class="panel-body"><textarea id="idd" cols="83" rows="4" >fa</textarea></div>
+   </div>
+
+ </div>
+</div>
+
+
+<script>
+document.addEventListener('touchstart',handleTouchStart,false);// Вешаем на прикосновение
+document.addEventListener('touchmove',handleTouchMove,false);// на движение пальцем по экрану
+
+var xDown = null, yDown = null, gBus=0; //global var
+function handleTouchStart(evt){xDown=evt.touches[0].clientX; yDown=evt.touches[0].clientY;}
+function handleTouchMove(evt){var xUp,yUp,xDiff,yDiff;
+ if(gBus)return;gBus=1;//занято
+ if(!xDown || !yDown){gBus=0; return;}
+ xUp=evt.touches[0].clientX; yUp=evt.touches[0].clientY;
+ xDiff=xDown - xUp; yDiff=yDown - yUp;
+ if(Math.abs(xDiff) > Math.abs(yDiff)){
+  if(xDiff > 5){document.title="==NEXT==>>";setTimeout(next_w,200);} // left swipe
+  if(xDiff < -5){document.title="<<==DEL==";setTimeout(del_w,200);} // right swipe
+ }
+ xDown = null; yDown = null; gBus=0; return;
+}
+function cards(){var i;
+ g_word=0;dd=g_fa.split('\n');g_ms=[];
+ for(i=0;i<len(dd);i++)if(4==len(dd[i].split('|')))g_ms.push(dd[i]);
+ show_w();
+}
+function show_w(){var s,dd;
+ s=''+g_ms[g_word];
+ dd=s.split('|');
+ put_h('idw',dd[0]);
+ put_h('idp',dd[1]);
+ put_v('ida',dd[2]);
+ put_v('idd',dd[3]);
+ put_h('id_list',len(g_ms));
+ put_h('id_word',g_word+1);
+}
+function next_w(){var s,dd;
+	g_ms[g_word]= get_h('idw')+'|'+get_h('idp')+'|'+get_v('ida')+'|'+get_v('idd');
+	g_word++;
+	if(g_word==len(g_ms)){alert('Конец списка');g_word=0;}
+	show_w();
+}
+function del_w(){var s,dd;
+	g_ms[g_word]= '#'+get_h('idw');
+	g_word++;
+	if(g_word==len(g_ms)){alert('Конец списка');g_word=0;}
+	show_w();
+}
+function save_list(){
+ g_fa=g_ms.join('\n');put_v('id_text1',g_fa);g_ms=[];g_word=0;
+}
+loader1(0);
+// XingSoft*2025 Для удаления лишних слов и ФА и форматирование для импорта в АнкиДроид
+// Расчитано на Экран 1280 х 800 , Остальным неповезло :) Сами размеры подгоняйте
+</script>
+</body>
