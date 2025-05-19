@@ -1,0 +1,2804 @@
+g_fa=` список важных 2800 английских слов в порядке частоты, их знать обязательно!
+1 |the | /точно этот +this +these
+2 |be |am, are, aren't, been, being, beings, is, isn't, was, wasn't, were, weren't /быть %
+3 |and | /андрей и эндоскоп братья близнецы
+4 |of | /чего
+5 |to | /к
+6 |a |an /некий
+7 |in | /инкубатор= в+детеныш
+8 |have |had, hadn't, has, hasn't, haven't, having /хавать
+9 |it |its /это
+10 |you |your, yours /ютюб= ты+труба
+11 |he |him, his /хихикал
+12 |for | /форточка для проветривания
+13 |they |their, theirs, them
+14 |not | /нет %
+15 |that |those /тот те
+16 |we |our, ours, us /мы (М вверх ногами W)
+17 |on | /на ней
+18 |with | /с визитом
+19 |this |these /=the
+20 |i |me, my /айфон +глаз eye
+21 |do |did, didn't, does, doesn't, doing, don't, done /делать %
+22 |as | /+осёл, задница
+23 |at | /время, возле
+24 |she |her, hers /шизанутая
+25 |but |buts /но батон вкуснее
+26 |from | /от фром *
+27 |by | /+купить, пока
+28 |will |willed, willing, won't /вилли купит виллу и вилку
+29 |or | /или ори или молчи
+30 |say |said, saying, sayings, says /сказать %
+31 |go |goes, going, gone, gonna, went /горила идет крокодила ведёт
+32 |so | /соу соу= так себе
+33 |all | все алкаши
+34 |if |ifs /иф монтан +else иначе, условный оператор
+35 |one |ones /оно=одно
+36 |would |wouldn't /+древесина голивуд, знал бы вуду жил бы в сочи
+37 |about | /аббат ходил вокруг да около часовни
+38 |can |can't, cannot /консерва может храниться долго
+39 |which | /который тут вич? выходи
+40 |there | /там +хиа=тут +Вэа=где
+41 |know |knew, knowing, known, knows /ноу-хау
+42 |more | /море=много сленг
+43 |get |gets, getting, got, gotta, gotten /гетман получил получку и спрятал заначку
+44 |who |whom, whose /кто уху ел?
+45 |like |liked, likes, liking /лайки
+46 |when | /когда вену взяли - нашли там венома
+47 |think |thinking, thinks, thought, thoughts /синк-раковина тонуть, сфинкс думал о пирамидах, индюк думал и в супе утонул
+48 |make |made, makes, making /хэнд мейд, ремейк
+49 |time |timed, times, timing /таймер
+50 |see |saw, seeing, seen, sees /синее море
+51 |what | /вот что это?
+52 |up |upped, upping, ups /але ап в цирке
+53 |some | /несколько самцов бегали за той же самой(same) самкой
+54 |other |others /другое озере
+55 |out |outed, outing, outings, outs /аутсайдер = вне + сторона
+56 |good | /гудвин, робин гуд, гуд бай
+57 |people |peopled, peoples, peopling /пипл хавает
+58 |year |years /+ухо
+59 |take |taken, takes, taking, took /тайком брать
+60 |no | нет %
+61 |well |welled, welling, wells /великолепно
+62 |because | /потому что любовь зла, полюбишь и козла
+63 |very | /очень верим в светлое будущее
+64 |just | /j=й юстиция
+65 |come |came, comes, coming /приходи ка мне
+66 |could |coulda, couldn't /куда он мог исчезнуть?
+67 |work |worked, working, workings, works/ фейверк
+68 |use |used, uses, using /юзать
+69 |than | /чем +then затем
+70 |now | /+know наука знает
+71 |then | /+than чем
+72 |also | /алсу тоже
+73 |into | /интуиция
+74 |only | /только он ли
+75 |look |looked, looking, looks /на лук и плачу
+76 |want |wanna, wanted, wanting, wants /авантюристы
+77 |give |gave, given, gives, giving /гиви дал гирей
+78 |first |firsts /фестиваль у валь
+79 |new |newer, newest /нью йорк
+80 |way |ways /бродвей, трамвай
+81 |find |finding, findings, finds /финляндия нашла железное небо на луне
+82 |over |overs /овертаим, оверлок
+83 |any | /эникей сковородкин
+84 |after | /после текста автор поставил подпись
+85 |day |days /день %%
+86 |where | /где here-там
+87 |thing |things /сын не вещь а домашнее животное
+88 |most | /самый большой мост до луны
+89 |should |shoulda, shouldn't
+90 |need |needed, needing, needs /че те надо гнида (из кино)
+91 |much | /много у мачо баб
+92 |right |righted, righting, rights /братья райт
+93 |how | /ноу хау= знать как
+94 |back |backed, backing, backs /кэшбэк
+95 |mean |meaner, meanest, meaning, meanings, means, meant /кислая мина минстра
+96 |even |evened, evens /иван сусанин даже дороги не знал
+97 |may | /можно+май %
+98 |here | /+where где
+99 |many | /много мани-денег
+100 |such | /вот таакой сачок дала тебе мадам батерфляй и послала на хутор бабочек ловить
+101 |last |lasted, lasting, lasts /он склеил ласты, это последнее что он склеил правильно
+102 |child |children /чайлдфри
+103 |tell |telling, tells, told /по телефону
+104 |really | /реально %
+105 |call |called, calling, calls /кол-ццентр
+106 |before | /бефокальные линзы
+107 |company |companies /компания %
+108 |through | /срубил просеку через заколдованный лес и всякая нечисть попёрла
+109 |down |downed, downing, downs / даун внизу, локдаун
+110 |show |showed, showing, shown, shows /шоу % шоумен
+111 |life | /лайфхак, гербалайф
+112 |man |manned, manning, mans, men /спортсмен, манекен
+113 |change |changed, changes, changing /чунга чанге поменяли пол, теперь он белый и пушистый
+114 |place |placed, places, placing /маркетплейс
+115 |long |longed, longer, longest, longing, longs /пролонгация, шезлонг
+116 |between | /бить виновника между глаз
+117 |feel |feeling, feelings, feels, felt /философ чувствует что пора на пароход
+118 |too | /тузик очень хочет грелку +to к
+119 |still |stilled, stiller, stillest, stilling, stills /стиль маньяка тот же +сталь +украсть
+120 |problem |problems /проблема %
+121 |write |writes, writing, writings, written, wrote /не врите что левша и пишите правой(райт) рукой
+122 |same | /тот же самый сейм
+123 |lot |lots /лот лоторея
+124 |great |greater, greatest, greats /грейт бритн
+125 |try |tried, tries, trying /трайная попытка угадай с трёх раз
+126 |leave |leaved, leaves, leaving /+жить
+127 |number |numbered, numbering, numbers /номер %
+128 |both | /оба боса шишки
+129 |own |owned, owning, owns /клоун показал собственный красный нос
+130 |part |parted, parting, parts /партнер, партия
+131 |point |pointed, pointing, points /пункт %%
+132 |little |littler, littlest /лилипут
+133 |help |helped, helping, helpings, helps /хел-ад
+134 |ask |asked, asking, asks /в аське асю
+135 |meet |meeting, meetings, meets, met /на митинге
+136 |start |started, starting, starts /старт %
+137 |talk |talked, talking, talks /ток шоу говорильня
+138 |something | /=несколько+вещь
+139 |put |puts, putting /ложить пути
+140 |another | /заноза
+141 |become |became, becomes, becoming /шарик кошмарик стал кубиком рубиком
+142 |interest |interested, interesting, interests /интерес %
+143 |country |countries /кантри музыка
+144 |old |older, oldest /колдун
+145 |each | каждый гадя петрович забыл своё имя и потерялся
+146 |school |schooled, schooling, schools /с=ш %%
+147 |late |later, latest /лейтенант поздно пил баржоми
+148 |high |higher, highest, highs / хай -привет
+149 |different | диферент у подводной лодки, диферинциал
+150 |off |offed, offing, offs /офшор
+151 |next | /некстати тебя следующего вызвали к доске.. садись два
+152 |end |ended, ending, ends /хэпи енд
+153 |live |lived, lives, living /+покидать
+154 |why | /+вей путь
+155 |while |whiled, whiles, whiling /пока валил лес, волки пришли посмотреть
+156 |world |worlds /вурделаки захватили мир
+157 |week |weeks /уик-енд
+158 |play |played, playing, plays /плеер
+159 |might |mighta, mightn't /мощь %%
+160 |must |musta, mustn't /мастер должен найти маргариту
+161 |home |homed, homes, homing /хомяк
+162 |never | /+евер всегда
+163 |include |included, includes, including /ал инклюзив всё включено, инклюзивный
+164 |course |coursed, courses, coursing /курс %
+165 |house |housed, houses, housing /в доме хаос
+166 |report |reported, reporting, reports /рапорт, репортаж
+167 |group |grouped, grouping, groups /группа %
+168 |case |cased, cases, casing, casings /кейс сленг
+169 |woman |women /бизнес вумэн
+170 |around | раунд круглый
+171 |book |booked, booking, bookings, books /букварь
+172 |family |families /фамилия
+173 |seem |seemed, seeming, seems /кажется симпатичной в темноте
+174 |let |lemme, lets, letting /летать во сне и наяву
+175 |again | /агент снова на задании
+176 |kind |kinder, kindest, kinds /киндер сюрприз
+177 |keep |keeping, keeps, kept /кипер вебмани
+178 |hear |heard, hearing, hears /глухие
+179 |system |systems /система
+180 |every | /эврика
+181 |question |questioned, questioning, questions /квест
+182 |during | /дурень на печи
+183 |always | /все+пути
+184 |big |bigger, biggest /биг мак
+185 |set |sets, setting, settings /ставить сети
+186 |small |smaller, smallest /с маленьким
+187 |study |studied, studies, studying /студент
+188 |follow |followed, following, follows /фоловеры
+189 |begin |began, beginning, beginnings, begins, begun /богиня начала снимать бикини..
+190 |important | /импотент слушал виагру, импорт
+191 |since | /синус угла
+192 |run |ran, running, runs / ресторан
+193 |under | андеграунд
+194 |turn |turned, turning, turns /турникет, турнир
+195 |few |fewer, fewest /мало фьючерсов купил
+196 |bring |bringing, brings, brought /сабрина принесла новый альбом бойз-бойз
+197 |early |earlier, earliest /оли рано нет на работе, она засоня
+198 |hand |handed, handing, hands /хэндэ хох, хэнд мейд, секонд хенд
+199 |state |stated, states, stating /статус, с=ш штат
+200 |move |moved, moves, moving /мувик
+201 |money | /мани, портмане
+202 |fact |facts /факт
+203 |however | /как+даже
+204 |area |areas /ареал обитания
+205 |provide |provided, provides, providing /провайдер
+206 |name |named, names, naming /наименование
+207 |read |reading, readings, reads /картридер
+208 |friend |friends /бойфренд
+209 |month |months / месяц %%
+210 |large |larger, largest /лоджия
+211 |business |businesses /бизнес
+212 |without | /с+вне
+213 |information | /информация %
+214 |open |opened, opening, openings, opens /опенгеймер, шопен открыл магазин
+215 |order |ordered, ordering, orders /ордер
+216 |government |governments /гувернант, губернатор
+217 |word |worded, wording, words /кроссворд
+218 |issue |issued, issues, issuing /иссус
+219 |market |marketed, marketing, markets /маркет плейс, супермаркет
+220 |pay |paid, paying, pays /пейпал
+221 |build |building, buildings, builds, built /бодибилдер
+222 |hold |held, holding, holdings, holds /холдинг
+223 |service |serviced, services, servicing /сервис %
+224 |against | /агенство против
+225 |believe |believed, believes, believing /в изобилие в раю
+226 |second |sec, seconded, seconding, seconds /секунда % второй секонд хэнд
+227 |though | /+although~олЗоу *хотя ОЛя жила в ЗООпарке в клетке со львами - её не кормили
+228 |yes |yeses /+да+день=вчера
+229 |love |loved, loves, loving /ловелас
+230 |increase |increased, increases, increasing /в кризис растут цены
+231 |job |jobbing, jobs /стив джобс +jab пихать, (j=й) много матерных слов
+232 |plan |planned, planning, plans /план %
+233 |result |resulted, resulting, results /резкльтат %
+234 |away | /прочь с пути
+235 |example |examples /экземпляр
+236 |happen |happened, happening, happenings, happens /хэпи енд
+237 |offer |offered, offering, offerings, offers /оферта
+238 |young |younger, youngest /юнга
+239 |close |closed, closer, closes, closest, closing /клозет
+240 |program |programed, programing, programme, programmed, programmes, programming, programs /программа %
+241 |lead |leading, leads, led /лидер ведет
+242 |buy |bought, buying, buys /+пока +предлог , бай покупал батраков
+243 |understand |understanding, understands, understood /=под+стэнд
+244 |thank |thanked, thanking, thanks /сенкевича
+245 |far |farther, farthest /фары
+246 |today | /к+день
+247 |hour |hours /+наша аура
+248 |student |students /%
+249 |face |faced, faces, facing /фейсконтроль
+250 |hope |hoped, hopes, hoping /хопер инвест
+251 |idea |ideas /%
+252 |cost |costing, costs /лоукостер
+253 |less | /чем меньше лес тем толще партизаны
+254 |room |roomed, rooming, rooms /румыния, +бродить по комнате в роуменге
+255 |until | /пока золотую антилопу не поймаю, не успокоюсь
+256 |reason |reasoned, reasoning, reasons /нет резона, резонанс
+257 |form |formed, forming, forms /форма%
+258 |spend |spending, spends, spent /тратить стипендию
+259 |head |headed, heading, headings, heads /хедхантер
+260 |car |cars /карета, каршеринг
+261 |learn |learned, learning, learns, learnt /лень
+262 |level |leveled, leveling, levelled, levelling, levels /уровень левши левел влево
+263 |person |persons /персона года, персонаж
+264 |experience |experienced, experiences, experiencing /эсперимент
+265 |once | /аванс
+266 |member |members /+ремембер вспомнить, мемориал на берегу
+267 |enough | /и нафига столько? достаточно
+268 |bad |worse, worst /беда, badly=быдло
+269 |city |cities /ситизен, ситилинк
+270 |night |nights /+рыцарь, найти ночью наощупь
+271 |able |abler, ablest /айболит способен вылечить любого бармалея
+272 |support |supported, supporting, supports /сапорт это поддержка, супорт станка
+273 |whether | /везет с погодой то ли снег то ли дождь
+274 |line |lined, lines, lining /линия %
+275 |present |presented, presenting, presents /презент, презентация
+276 |side |sided, sides, siding /аутсайдер, сайдинг
+277 |quite | /кувейт вполне богатая страна
+278 |although | /хотя оля жила в зоопарке..
+279 |sure |surer, surest /китаез щурится если уверен что надул тебя
+280 |term |termed, terming, terms /термин, термос долго хранит срок
+281 |least | /самый маленький глист вовремя смылся
+282 |age |aged, ageing, ages, aging /баба яга в возрасте
+283 |low |lowed, lower, lowered, lowering, lowers, lowest, lowing, lows /лоукостер
+284 |speak |speaking, speaks, spoke, spoken /спикер
+285 |within | /с+в
+286 |process |processed, processes, processing /процесс
+287 |public | /публичный
+288 |often | /о фен часто сгорает вместе с волосами
+289 |train |trained, training, trains /тренер %, трамвай
+290 |possible | /подсобил
+291 |actually | /актульно
+292 |rather | /скорей разевай рот разиня, резерфорд
+293 |view |viewed, viewing, views /вьюга
+294 |together | /туристы вместе едут на гейзер
+295 |consider |considered, considering, considers /расматривал конь сидр и пил
+296 |price |priced, prices, pricing /прайс лист, прейскурант
+297 |parent |parented, parenting, parents /пара, порет детей
+298 |hard |harder, hardest /хард-рок
+299 |party |partied, parties, partying /патифон
+300 |local |locals /локальный
+301 |control |controlled, controlling, controls /контроль
+302 |already | все уже готово
+303 |concern |concerned, concerning, concerns /концерн беспокоится
+304 |product |products /продукт
+305 |lose |loses, losing, lost /лузер лось золотые рога потерял
+306 |story |storey, storied, stories /истрория %
+307 |almost | почти = все+большинство, оля мост почти проползла
+308 |continue |continued, continues, continuing /континент
+309 |stand |standing, stands, stood /стэнд
+310 |whole |wholes /полный холодильник вкусняшек
+311 |yet | /ещё йети не поймали
+312 |rate |rated, rates, rating, ratings /рейтинг
+313 |care |cared, cares, caring /карефан
+314 |expect |expected, expecting, expects /спектакль ожидать
+315 |effect |effected, effecting, effects /эффект
+316 |sort |sorted, sorting, sorts /сортировка
+317 |ever | /эверест
+318 |anything | /любой+вещь
+319 |cause |caused, causes, causing /казус белли
+320 |fall |fallen, falling, falls, fell /фол падение в футболе
+321 |deal |dealing, deals, dealt /дилер
+322 |water |watered, watering, waters /ватерлиния
+323 |send |sending, sends, sent / сендвич в рот
+324 |allow |allowed, allowing, allows /есть алое и кактус
+325 |soon |sooner, soonest /сунешь палец скоро откусят руку
+326 |watch |watched, watches, watching /в очи черные
+327 |base |based, baser, bases, basest, basing /база, бейсик
+328 |probably | /про бабло вероятно
+329 |suggest |suggested, suggesting, suggests /предагать жестами
+330 |past | /в прошлом пастух
+331 |power |powered, powering, powers /павербанк
+332 |test |tested, testing, tests /тест
+333 |visit |visited, visiting, visits /визит
+334 |center |centered, centering, centers, centre, centred, centres /центр
+335 |grow |grew, growing, grown, grows /на грядке
+336 |nothing | нет+вещь
+337 |return |returned, returning, returns /пере+поворот
+338 |mother |mothered, mothering, mothers /мама % в зеркало
+339 |walk |walked, walking, walks /вповалку
+340 |matter |mattered, mattering, matters / материя
+341 |mind |minded, minding, minds /минделеев был с мозгами +менд чинить
+342 |value |valued, values, valuing /валюта
+343 |office |offices /офис
+344 |record |recorded, recording, recordings, records /рекорд записали
+345 |stay |stayed, staying, stays /постояльцы
+346 |force |forced, forces, forcing /форс мажор
+347 |stop |stopped, stopping, stops /стоп куда же я иду
+348 |several | /несколько раз соврал на севере
+349 |light |lighted, lightest, lighting, lights, lit /лайт версия
+350 |develop |developed, developing, develops /девелоупер
+351 |remember |remembered, remembering, remembers /пере+член вспомнить мемори-память
+352 |bit |bits /биткоит немного+монета
+353 |share |shared, shares, sharing /диск расшарил, каршеринг
+354 |real | /реальный
+355 |answer |answered, answering, answers /ансамбль ответил фанатам
+356 |sit |sat, sits, sitting /сидение %%
+357 |figure |figured, figures, figuring /фигура
+358 |letter |lettering, letters /литера, литература
+359 |decide |decided, decides, deciding /десидент решил слинять
+360 |language |languages /линвист
+361 |subject |subjected, subjecting, subjects /субъект подвержен
+362 |class |classed, classes, classing /класс
+363 |development |developments /девелопер + мент сущ
+364 |town |towns /кейптаун мыс городок
+365 |half |halved, halves, halving /халвинг битка
+366 |minute |minutes /%
+367 |food |foods /фастфуд
+368 |break |breaking, breaks, broke, broken /брейк данс, брекфаст-завтрак, бракованый тормоз сломался, мы все умрём
+369 |clear |cleared, clearer, clearest, clearing, clears /клара украла чистые коралы
+370 |future |futures /футуристический
+371 |either | /гейзер или с русалками или с газировкой
+372 |ago | егор объгорил 100 лет тому назад
+373 |per | /на,в
+374 |remain |remained, remaining, remains /тебя били ремнем за то что украл ложечки, их нашли, но осадочек остался
+375 |top |topped, topping, toppings, tops /топ-меджер вершина пищевой цепочки
+376 |among | /среди манго
+377 |win |winning, winnings, wins /гудвин, вини пух
+378 |color |colored, coloring, colors, colour, coloured, colouring, colours /триколор, колоритный
+379 |involve |involved, involves, involving /в вольво впутывать *
+380 |reach |reached, reaches, reaching /*достичь речки
+381 |social | социальный
+382 |period |periods /период
+383 |across | /кроссворд, кросс бежали поперек
+384 |note |noted, notes, noting /ноутбук, заметиои наутилус
+385 |history |histories /история %
+386 |create |created, creates, creating /креативный
+387 |drive |driven, drives, driving, drove /тест-драйв
+388 |along | /вдоль длинный
+389 |type |typed, types, typing /тип
+390 |sound |sounded, sounding, sounds /саундтрек
+391 |eye |eyed, eyeing, eyes /ай, +я
+392 |music | /музыка %
+393 |game |gamed, games, gaming /геймер
+394 |political | /политический %
+395 |free |freed, freeing, freer, frees, freest / фристайл
+396 |receive |received, receives, receiving / ресивер
+397 |moment |moments /момент
+398 |sale |sales /распродавать сало +sell продавать
+399 |policy |policies /не полиция, страховой полис, политика
+400 |further |furthered, furthering, furthers /фёрзэр дальнейший *
+401 |body |bodied, bodies /бодибилдинг
+402 |require |required, requires, requiring /рыбки требуют новый аквариум
+403 |wait |waited, waiting, waits / ждать
+404 |general |generals /генеральная уборка
+405 |appear |appeared, appearing, appears /оперативники появляются
+406 |toward |towards /к+вперед
+407 |team |teamed, teaming, teams /тимур и его команда
+408 |easy |easier, easiest /изя из израиля
+409 |individual |individuals /индивидуальный
+410 |full |fuller, fullest /полный дурак(fool)
+411 |black |blacked, blacker, blackest, blacking, blacks /блэкаут тьма тьмущая
+412 |sense |sensed, senses, sensing /сенсор
+413 |perhaps | /возможно *
+414 |add |added, adding, adds /эдик в аду прибавил в весе, хорошо кормят
+415 |rule |ruled, rules, ruling, rulings /правило рулит
+416 |pass |passed, passes, passing /паспорт, пасажир
+417 |produce |produced, produces, producing /продюсер, продукция
+418 |sell |selling, sells, sold /бестселер
+419 |short |shorted, shorter, shortest, shorting, shorts /шорты
+420 |agree |agreed, agreeing, agrees /с агресией
+421 |law |laws /лояльный
+422 |everything | /каждый+вещь
+423 |research |researched, researches, researching /пере+поиск=исследование
+424 |cover |covered, covering, coverings, covers /ковер накрывает яму +овер=над
+425 |paper |papered, papering, papers / папирус, папиросы
+426 |position |positioned, positioning, positions /позиция
+427 |near |neared, nearer, nearest, nearing, nears /неардельтальцы
+428 |human |humans /гуманоид
+429 |computer |computers /%
+430 |situation |situations /ситуация
+431 |staff |staffed, staffing, staffs /работает на пол стафки
+432 |activity |activities /активность
+433 |film |filmed, filming, films /фильм на пленку сняли
+434 |morning |mornings /моряк утром нину поматросил и бросил (в море)
+435 |war |warred, warring, wars /варвары
+436 |account |accounted, accounting, accounts /аккаунт
+437 |shop |shopped, shopping, shops /шопинг, шопоголик
+438 |major |majored, majoring, majors /майор
+439 |someone | /некоторый+чел
+440 |above | /добавки и надбавки
+441 |design |designed, designing, designs /дизайн
+442 |event |events /ивент
+443 |special |specials /специальный %
+444 |sometimes | /некоторый+времена иногда
+445 |condition |conditioned, conditioning, conditions /не кондиция, кондиционер
+446 |carry |carried, carries, carrying /каридор, карета
+447 |choose |chooses, choosing, chose, chosen /выбирать сыр чиз
+448 |father |fathered, fathering, fathers /нашел фазу и сунул 2 пальца в розетку
+449 |decision |decisions /решение десидента
+450 |table |tabled, tables /таблица % табло стол
+451 |certain | +ли =конечно занавеска, конкретный
+452 |forward |forwarded, forwarding, forwards /форвард вперёд
+453 |main | майнер
+454 |die |died, dies, dying /дай воды умираю
+455 |bear |bearing, bearings, bears, borne /медведь в берлоге, нести, рожать
+456 |cut |cuts, cutting, cuttings /катер
+457 |describe |described, describes, describing /диск краба описать
+458 |himself | /его+себя
+459 |available | /доступный
+460 |especially | /особенно, е+специально
+461 |strong |stronger, strongest /армстронг сильная рука
+462 |rise |risen, rises, rising /поднимись в райские кущи
+463 |girl |girls /как гирлянда висит на елке
+464 |maybe | /может+быть %
+465 |community |communities /комьюнити, комунна
+466 |else | еще не наелся, безобразная эльза ещё хочет безобразий
+467 |particular |particulars /подроб­ный от парт часть
+468 |role |roles /роль
+469 |join |joined, joining, joins /присоединять *
+470 |difficult | /трудный дефект культуры
+471 |please |pleased, pleases, pleasing / плиз пожалуйста *
+472 |detail |detailed, detailing, details /детальный %
+473 |difference |differences /различие от диферент
+474 |action |actions /не акция, действие от акт
+475 |health | /хельсенки
+476 |eat |ate, eaten, eating, eats /есть %%
+477 |step |stepped, stepping, steps /стопа, ступенька
+478 |true |trued, truer, trues, truest, truing /труман
+479 |phone |phoned, phones, phoning /телефон =говорить по телефону
+480 |themselves | /их+себя
+481 |draw |drawing, drawings, drawn, draws, drew /рисовать дрова, тяга *
+482 |white |whiter, whites, whitest /вата
+483 |date |dated, dates, dating /дата
+484 |practice |practiced, practices, practicing, practise, practised, practises, practising /практика
+485 |model |modeled, modeling, modelled, modelling, models /модель
+486 |raise |raised, raises, raising /райские кущи +rise
+487 |customer |customers /костюмер с привычкой
+488 |front |fronted, fronting, fronts /фронт
+489 |explain |explained, explaining, explains /объяснить план
+490 |door |doors /коридор
+491 |outside |outsides /аутсайдер
+492 |behind | /позади *
+493 |economic |economics /экономика
+494 |site |sited, sites /сайт
+495 |approach |approached, approaches, approaching /а прочь, не подходи
+496 |teacher |teachers /тычет в книгу
+497 |land |landed, landing, landings, lands /дисней лэнд
+498 |charge |charged, charges, charging /заряжать *
+499 |finally | /финально
+500 |sign |signed, signing, signs /сигнал, сигнатура
+==
+501 |claim |claimed, claiming, claims
+502 |relationship |relationships
+503 |travel |traveled, traveling, travelled, travelling, travels
+504 |enjoy |enjoyed, enjoying, enjoys
+505 |death |deaths
+506 |nice |nicer, nicest
+507 |amount |amounted, amounts
+508 |improve |improved, improves, improving
+509 |picture |pictured, pictures, picturing
+510 |boy |boys
+511 |regard |regarded, regarding, regards
+512 |organization |organisation, organisations, organizations
+513 |happy |happier, happiest
+514 |couple |coupled, couples, coupling
+515 |act |acted, acting, acts
+516 |range |ranged, ranges, ranging
+517 |quality |qualities
+518 |project |projected, projecting, projects
+519 |round |rounded, rounder, roundest, rounding, rounds
+520 |opportunity |opportunities
+521 |road |roads
+522 |accord |accorded, according, accords
+523 |list |listed, listing, listings, lists
+524 |wish |wished, wishes, wishing
+525 |therefore |
+526 |wear |wearing, wears, wore, worn
+527 |fund |funded, funding, funds
+528 |rest |rested, resting, rests
+529 |kid |kidded, kidding, kids
+530 |industry |industries
+531 |education |educations
+532 |measure |measured, measures, measuring
+533 |kill |killed, killing, killings, kills
+534 |serve |served, serves, serving, servings
+535 |likely |likelier, likeliest
+536 |certainly |
+537 |national |nationals
+538 |itself |
+539 |teach |taught, teaches, teaching, teachings
+540 |field |fielded, fielding, fields
+541 |security |securities
+542 |air |aired, airing, airs
+543 |benefit |benefited, benefiting, benefits, benefitted, benefitting
+544 |trade |traded, trades, trading
+545 |risk |risked, risking, risks
+546 |news |
+547 |standard |standards
+548 |vote |voted, votes, voting
+549 |percent |percents
+550 |focus |focused, focuses, focusing, focussed, focusses, focussing
+551 |stage |staged, stages, staging
+552 |space |spaced, spaces, spacing
+553 |instead |
+554 |realize |realise, realised, realises, realising, realized, realizes, realizing
+555 |usually |
+556 |data |datum
+557 |single |singled, singles, singling
+558 |address |addressed, addresses, addressing
+559 |performance |performances
+560 |chance |chanced, chances, chancing
+561 |accept |accepted, accepting, accepts
+562 |society |societies
+563 |technology |technologies
+564 |mention |mentioned, mentioning, mentions
+565 |choice |choicer, choices, choicest
+566 |save |saved, saves, saving, savings
+567 |common |commonest
+568 |culture |cultured, cultures, culturing
+569 |total |totaled, totaling, totalled, totalling, totals
+570 |demand |demanded, demanding, demands
+571 |material |materials
+572 |limit |limited, limiting, limits
+573 |listen |listened, listening, listens
+574 |due |
+575 |wrong |wronged, wronging, wrongs
+576 |foot |feet, footed, footing, foots
+577 |effort |efforts
+578 |attention |attentions
+579 |upon |
+580 |check |checked, checking, checks
+581 |complete |completed, completes, completing
+582 |lie |lain, lied, lies, lying
+583 |pick |picked, picking, picks
+584 |reduce |reduced, reduces, reducing
+585 |personal |personals
+586 |ground |grounded, grounding, grounds
+587 |animal |animals
+588 |arrive |arrived, arrives, arriving
+589 |patient |patients
+590 |current |currents
+591 |century |centuries
+592 |evidence |evidenced, evidences, evidencing
+593 |exist |existed, existing, exists
+594 |similar |
+595 |fight |fighting, fights, fought
+596 |leader |leaders
+597 |fine |fined, finer, fines, finest, fining
+598 |street |streets
+599 |former |formers
+600 |contact |contacted, contacting, contacts
+601 |particularly |
+602 |wife |wives
+603 |sport |sported, sporting, sports
+604 |prepare |prepared, prepares, preparing
+605 |discuss |discussed, discusses, discussing
+606 |response |responses
+607 |voice |voiced, voices, voicing
+608 |piece |pieced, pieces, piecing
+609 |finish |finished, finishes, finishing
+610 |suppose |supposed, supposes, supposing
+611 |apply |applied, applies, applying
+612 |president |presidents
+613 |fire |fired, fires, firing, firings
+614 |compare |compared, compares, comparing
+615 |court |courted, courting, courts
+616 |police |policed, polices, policing
+617 |store |stored, stores, storing
+618 |poor |poorer, poorest
+619 |knowledge |
+620 |laugh |laughed, laughing, laughs
+621 |arm |armed, arming, arms
+622 |heart |hearted, hearts
+623 |source |sourced, sources, sourcing
+624 |employee |employees
+625 |manage |managed, manages, managing
+626 |simply |
+627 |bank |banked, banking, banks
+628 |firm |firmed, firmer, firmest, firming, firms
+629 |cell |celled, cells
+630 |article |articled, articles, articling
+631 |fast |fasted, faster, fastest, fasting, fasts
+632 |attack |attacked, attacking, attacks
+633 |foreign |
+634 |surprise |surprised, surprises, surprising
+635 |feature |featured, features, featuring
+636 |factor |factored, factoring, factors
+637 |pretty |prettier, pretties, prettiest, prettying
+638 |recently |
+639 |affect |affected, affecting, affects
+640 |drop |dropped, dropping, drops
+641 |recent |
+642 |relate |related, relates, relating
+643 |official |officials
+644 |financial |financials
+645 |miss |missed, misses, missing
+646 |art |arts
+647 |campaign |campaigned, campaigning, campaigns
+648 |private |
+649 |pause |paused, pauses, pausing
+650 |everyone |
+651 |forget |forgets, forgetting, forgot, forgotten
+652 |page |paged, pages, paging
+653 |worry |worried, worries, worrying
+654 |summer |summered, summers
+655 |drink |drank, drinking, drinks
+656 |opinion |opinioned, opinions
+657 |park |parked, parking, parks
+658 |represent |represented, representing, represents
+659 |key |keyed, keying, keys
+660 |inside |insides
+661 |manager |managers
+662 |international |internationals
+663 |contain |contained, containing, contains
+664 |notice |noticed, notices, noticing
+665 |wonder |wondered, wondering, wonders
+666 |nature |natured, natures
+667 |structure |structured, structures, structuring
+668 |section |sectioned, sectioning, sections
+669 |myself |
+670 |exactly |
+671 |plant |planted, planting, plants
+672 |paint |painted, painting, paintings, paints
+673 |worker |workers
+674 |press |pressed, presses, pressing
+675 |whatever |
+676 |necessary |necessaries
+677 |region |regions
+678 |growth |growths
+679 |evening |evenings
+680 |influence |influenced, influences, influencing
+681 |respect |respected, respecting, respects
+682 |various |
+683 |catch |catches, catching, caught
+684 |thus |
+685 |skill |skilled, skills
+686 |attempt |attempted, attempting, attempts
+687 |son |sons
+688 |simple |simpler, simplest
+689 |medium |mediums
+690 |average |averaged, averages, averaging
+691 |stock |stocked, stocking, stocks
+692 |management |managements
+693 |character |characters
+694 |bed |bedded, bedding, beds
+695 |hit |hits, hitting
+696 |establish |established, establishes, establishing
+697 |indeed |
+698 |final |finals
+699 |economy |economies
+700 |fit |fits, fitted, fitter, fittest, fitting, fittings
+701 |guy |guys
+702 |function |functioned, functioning, functions
+703 |yesterday |yesterdays
+704 |image |imaged, images, imaging
+705 |size |sized, sizes, sizing
+706 |behavior |behaviors, behaviour, behaviours
+707 |addition |additions
+708 |determine |determined, determines, determining
+709 |station |stationed, stationing, stations
+710 |population |populations
+711 |fail |failed, failing, failings, fails
+712 |environment |environments
+713 |production |productions
+714 |contract |contracted, contracting, contracts
+715 |player |players
+716 |comment |commented, commenting, comments
+717 |enter |entered, entering, enters
+718 |occur |occurred, occurring, occurs
+719 |alone |
+720 |significant |
+721 |drug |drugged, drugging, drugs
+722 |wall |walled, walling, walls
+723 |series |
+724 |direct |directed, directing, directs
+725 |success |successes
+726 |tomorrow |tomorrows
+727 |director |directors
+728 |clearly |
+729 |lack |lacked, lacking, lacks
+730 |review |reviewed, reviewing, reviews
+731 |depend |depended, depending, depends
+732 |race |raced, races, racing
+733 |recognize |recognise, recognised, recognises, recognising, recognized, recognizes, recognizing
+734 |window |windowed, windowing, windows
+735 |purpose |purposed, purposes, purposing
+736 |department |departments
+737 |gain |gained, gaining, gains
+738 |tree |trees
+739 |college |colleges
+740 |argue |argued, argues, arguing
+741 |board |boarded, boarding, boards
+742 |holiday |holidayed, holidaying, holidays
+743 |mark |marked, marking, markings, marks
+744 |church |churched, churches, churching
+745 |machine |machined, machines, machining
+746 |achieve |achieved, achieves, achieving
+747 |item |items
+748 |prove |proved, proven, proves, proving
+749 |cent |cents
+750 |season |seasoned, seasoning, seasonings, seasons
+751 |floor |floored, flooring, floors
+752 |stuff |stuffed, stuffing, stuffs
+753 |wide |wider, widest
+754 |anyone |
+755 |method |methods
+756 |analysis |analyses
+757 |election |elections
+758 |military |militaries
+759 |hotel |hotels
+760 |club |clubbed, clubbing, clubs
+761 |below |
+762 |movie |movies
+763 |doctor |doctored, doctoring, doctors
+764 |discussion |discussions
+765 |sorry |sorrier, sorriest
+766 |challenge |challenged, challenges, challenging
+767 |nation |nations
+768 |nearly |
+769 |statement |statements
+770 |link |linked, linking, links
+771 |despite |
+772 |introduce |introduced, introduces, introducing
+773 |advantage |advantaged, advantages
+774 |ready |readied, readier, readies, readiest, readying
+775 |marry |married, marries, marrying
+776 |strike |strikes, striking, struck
+777 |mile |miles
+778 |seek |seeking, seeks, sought
+779 |ability |abilities
+780 |unit |units
+781 |card |carded, carding, cards
+782 |hospital |hospitals
+783 |quickly |
+784 |interview |interviewed, interviewing, interviews
+785 |agreement |agreements
+786 |release |released, releases, releasing
+787 |tax |taxed, taxes, taxing
+788 |solution |solutions
+789 |capital |capitals
+790 |popular |
+791 |specific |specifics
+792 |beautiful |
+793 |fear |feared, fearing, fears
+794 |aim |aimed, aiming, aims
+795 |television |televisions
+796 |serious |
+797 |target |targeted, targeting, targets
+798 |degree |degrees
+799 |pull |pulled, pulling, pulls
+800 |red |redder, reddest, reds
+801 |husband |husbanded, husbanding, husbands
+802 |access |accessed, accesses, accessing
+803 |movement |movements
+804 |treat |treated, treating, treats
+805 |identify |identified, identifies, identifying
+806 |loss |losses
+807 |shall |
+808 |modern |
+809 |pressure |pressured, pressures, pressuring
+810 |bus |bused, buses, busing
+811 |treatment |treatments
+812 |yourself |yourselves
+813 |supply |supplied, supplies, supplying
+814 |village |villages
+815 |worth |
+816 |natural |naturals
+817 |express |expressed, expresses, expressing
+818 |indicate |indicated, indicates, indicating
+819 |attend |attended, attending, attends
+820 |brother |brothers
+821 |investment |investments
+822 |score |scored, scores, scoring
+823 |organize |organise, organised, organises, organising, organized, organizes, organizing
+824 |trip |tripped, tripping, trips
+825 |beyond |
+826 |sleep |sleeping, sleeps, slept
+827 |fish |fished, fishes, fishing
+828 |promise |promised, promises, promising
+829 |potential |potentials
+830 |energy |energies
+831 |trouble |troubled, troubles, troubling
+832 |relation |relations
+833 |touch |touched, touches, touching
+834 |file |filed, files, filing, filings
+835 |middle |middled, middles, middling
+836 |bar |barred, barring, bars
+837 |suffer |suffered, suffering, sufferred, sufferring, suffers
+838 |strategy |strategies
+839 |deep |deeper, deepest, deeps
+840 |except |excepted, excepting, excepts
+841 |clean |cleaned, cleaning, cleans
+842 |tend |tended, tending, tends
+843 |advance |advanced, advances, advancing
+844 |fill |filled, filling, fillings, fills
+845 |star |starred, starring, stars
+846 |network |networked, networking, networks
+847 |generally |
+848 |operation |operations
+849 |match |matched, matches, matching
+850 |avoid |avoided, avoiding, avoids
+851 |seat |seated, seating, seats
+852 |throw |threw, throwing, thrown, throws
+853 |task |tasked, tasking, tasks
+854 |normal |normals
+855 |goal |goals
+856 |associate |associated, associates, associating
+857 |blue |blued, bluer, blues, bluest, bluing
+858 |positive |positives
+859 |option |options
+860 |box |boxed, boxes, boxing
+861 |huge |huger, hugest
+862 |message |messaged, messages, messaging
+863 |instance |instanced, instances, instancing
+864 |style |styled, styles, styling
+865 |refer |refered, refering, referred, referring, refers
+866 |cold |colder, coldest, colds
+867 |push |pushed, pushes, pushing
+868 |quarter |quartered, quartering, quarters
+869 |assume |assumed, assumes, assuming
+870 |baby |babied, babies, babying
+871 |successful |
+872 |sing |sang, singing, sings, sung
+873 |doubt |doubted, doubting, doubts
+874 |competition |competitions
+875 |theory |theories
+876 |propose |proposed, proposes, proposing
+877 |reference |referenced, references, referencing
+878 |argument |arguments
+879 |adult |adults
+880 |fly |flew, flies, flown, flying
+881 |document |documented, documenting, documents
+882 |pattern |patterned, patterning, patterns
+883 |application |applications
+884 |hot |hots, hotter, hottest
+885 |obviously |
+886 |unclear |
+887 |bill |billed, billing, bills
+888 |search |searched, searches, searching
+889 |separate |separated, separates, separating
+890 |central |centrals
+891 |career |careered, careering, careers
+892 |anyway |anyways
+893 |speech |speeches
+894 |dog |dogged, dogging, dogs
+895 |officer |officered, officering, officers
+896 |throughout |
+897 |oil |oiled, oiling, oils
+898 |dress |dressed, dresses, dressing
+899 |profit |profited, profiting, profits
+900 |guess |guessed, guesses, guessing
+901 |fun |
+902 |protect |protected, protecting, protects
+903 |resource |resourced, resources, resourcing
+904 |science |sciences
+905 |disease |diseased, diseases
+906 |balance |balanced, balances, balancing
+907 |damage |damaged, damages, damaging
+908 |basis |
+909 |author |authored, authoring, authors
+910 |basic |basics
+911 |encourage |encouraged, encourages, encouraging
+912 |hair |haired, hairs
+913 |male |males
+914 |operate |operated, operates, operating
+915 |reflect |reflected, reflecting, reflects
+916 |exercise |exercised, exercises, exercising
+917 |useful |
+918 |restaurant |restaurants
+919 |income |incomes
+920 |property |properties
+921 |previous |
+922 |dark |darker, darkest
+923 |imagine |imagined, imagines, imagining, imaginings
+924 |okay |ok, okayed, okaying, okays
+925 |earn |earned, earning, earnings, earns
+926 |daughter |daughters
+927 |post |posted, posting, postings, posts
+928 |newspaper |newspapers
+929 |define |defined, defines, defining
+930 |conclusion |conclusions
+931 |clock |clocked, clocking, clocks
+932 |everybody |
+933 |weekend |weekending, weekends
+934 |perform |performed, performing, performs
+935 |professional |professionals
+936 |mine |mined, mines, mining
+937 |debate |debated, debates, debating
+938 |memory |memories
+939 |green |greened, greener, greenest, greening, greens
+940 |song |songs
+941 |object |objected, objecting, objects
+942 |maintain |maintained, maintaining, maintains
+943 |credit |credited, crediting, credits
+944 |ring |rang, ringed, ringing, rings, rung
+945 |discover |discovered, discovering, discovers
+946 |dead |deader, deadest
+947 |afternoon |afternoons
+948 |prefer |prefered, prefering, preferred, preferring, prefers
+949 |extend |extended, extending, extends
+950 |possibility |possibilities
+951 |direction |directions
+952 |facility |facilities
+953 |variety |varieties
+954 |daily |dailies
+955 |clothes |
+956 |screen |screened, screening, screenings, screens
+957 |track |tracked, tracking, tracks
+958 |dance |danced, dances, dancing
+959 |completely |
+960 |female |females
+961 |responsibility |responsibilities
+962 |original |originals
+963 |sister |sisters
+964 |rock |rocked, rocking, rocks
+965 |dream |dreamed, dreaming, dreams, dreamt
+966 |nor |
+967 |university |universities
+968 |easily |
+969 |agency |agencies
+970 |dollar |dollars
+971 |garden |gardened, gardening, gardens
+972 |fix |fixed, fixes, fixing, fixings
+973 |ahead |
+974 |cross |crossed, crosses, crossing, crossings
+975 |yeah |
+976 |weight |weighted, weighting, weights
+977 |legal |
+978 |proposal |proposals
+979 |version |versions
+980 |conversation |conversations
+981 |somebody |
+982 |pound |pounded, pounding, pounds
+983 |magazine |magazines
+984 |shape |shaped, shapes, shaping
+985 |sea |seas
+986 |immediately |
+987 |welcome |welcomed, welcomes, welcoming
+988 |smile |smiled, smiles, smiling
+989 |communication |communications
+990 |agent |agents
+991 |traditional |
+992 |replace |replaced, replaces, replacing
+993 |judge |judged, judges, judging
+994 |herself |
+995 |suddenly |
+996 |generation |generations
+997 |estimate |estimated, estimates, estimating
+998 |favorite |favorites, favourite, favourites
+999 |difficulty |difficulties
+1000 |purchase |purchased, purchases, purchasing
+1001 |shoot |shooting, shootings, shoots
+1002 |announce |announced, announces, announcing
+1003 |unless |
+1004 |independent |independents
+1005 |recommend |recommended, recommending, recommends
+1006 |survey |surveyed, surveying, surveys
+1007 |majority |majorities
+1008 |stick |sticking, sticks, stuck
+1009 |request |requested, requesting, requests
+1010 |rich |richer, richest
+1011 |wind |winded, winding, winds
+1012 |none |
+1013 |exchange |exchanged, exchanges, exchanging
+1014 |budget |budgeted, budgeting, budgets
+1015 |famous |
+1016 |blood |blooded, blooding, bloods
+1017 |appropriate |appropriated, appropriates, appropriating
+1018 |block |blocked, blocking, blocks
+1019 |warm |warmed, warmer, warmest, warming, warms
+1020 |count |counted, counting, counts
+1021 |scene |scenes
+1022 |writer |writers
+1023 |content |contented, contenting, contents
+1024 |prevent |prevented, preventing, prevents
+1025 |safe |safer, safest
+1026 |invite |invited, invites, inviting
+1027 |mix |mixed, mixes, mixing
+1028 |element |elements
+1029 |effective |
+1030 |correct |corrected, correcting, corrects
+1031 |medical |medicals
+1032 |admit |admits, admitted, admitting
+1033 |beat |beaten, beating, beatings, beats
+1034 |telephone |telephoned, telephones, telephoning
+1035 |copy |copied, copies, copying
+1036 |committee |committees
+1037 |aware |
+1038 |advice |advices
+1039 |handle |handled, handles, handling
+1040 |glass |glassed, glasses, glassing
+1041 |trial |trialed, trialing, trialled, trialling, trials
+1042 |stress |stressed, stresses
+1043 |radio |radioed, radios
+1044 |administration |administrations
+1045 |complex |complexes
+1046 |text |texts
+1047 |context |contexts
+1048 |ride |ridden, rides, riding, rode
+1049 |directly |
+1050 |heavy |heavier, heavies, heaviest
+1051 |remove |removed, removes, removing
+1052 |conduct |conducted, conducting, conducts
+1053 |equipment |equipments
+1054 |otherwise |
+1055 |title |titled, titles, titling
+1056 |extra |extras
+1057 |executive |executives
+1058 |chair |chaired, chairing, chairs
+1059 |expensive |
+1060 |sample |sampled, samples, sampling, samplings
+1061 |sex |sexes
+1062 |deliver |delivered, delivering, delivers
+1063 |video |videoed, videos
+1064 |connection |connections, connexion, connexions
+1065 |primary |primaries
+1066 |weather |weathered, weathering, weathers
+1067 |collect |collected, collecting, collects
+1068 |inform |informed, informing, informs
+1069 |principle |principled, principles
+1070 |straight |straighter, straightest
+1071 |appeal |appealed, appealing, appeals
+1072 |highly |
+1073 |trust |trusted, trusting, trusts
+1074 |wonderful |
+1075 |flat |flats
+1076 |absolutely |
+1077 |flow |flowed, flowing, flows
+1078 |fair |faired, fairer, fairest, fairing, fairs
+1079 |additional |
+1080 |responsible |
+1081 |farm |farmed, farming, farms
+1082 |collection |collections
+1083 |hang |hanged, hanging, hangings, hangs, hung
+1084 |negative |negatives
+1085 |band |banded, bands
+1086 |relative |relatives
+1087 |tour |toured, touring, tours
+1088 |alternative |alternatives
+1089 |software |
+1090 |pair |paired, pairing, pairings, pairs
+1091 |ship |shipped, shipping, ships
+1092 |attitude |attitudes
+1093 |cheap |cheaper, cheapest
+1094 |double |doubled, doubles, doubling
+1095 |leg |legged, legging, leggings, legs
+1096 |observe |observed, observes, observing
+1097 |sentence |sentenced, sentences, sentencing
+1098 |print |printed, printing, printings, prints
+1099 |progress |progressed, progresses, progressing
+1100 |truth |truths
+1101 |nobody |nobodies
+1102 |examine |examined, examines, examining
+1103 |lay |laid, laying, lays
+1104 |speed |sped, speeded, speeding, speeds
+1105 |politics |
+1106 |reply |replied, replies, replying
+1107 |display |displayed, displaying, displays
+1108 |transfer |transfering, transferred, transferring, transfers
+1109 |perfect |perfected, perfecting, perfects
+1110 |slightly |
+1111 |overall |
+1112 |intend |intended, intending, intends
+1113 |user |users
+1114 |respond |responded, responding, responds
+1115 |dinner |dinners
+1116 |slow |slowed, slower, slowest, slowing, slows
+1117 |regular |regulars
+1118 |physical |physicals
+1119 |apart |
+1120 |suit |suited, suiting, suits
+1121 |federal |
+1122 |reveal |revealed, revealing, revealled, revealling, reveals
+1123 |percentage |percentages
+1124 |peace |peaces
+1125 |status |
+1126 |crime |crimes
+1127 |decline |declined, declines, declining
+1128 |decade |decades
+1129 |launch |launched, launches, launching
+1130 |warn |warned, warning, warnings, warns
+1131 |consumer |consumers
+1132 |favor |favored, favoring, favors, favour, favoured, favouring, favours
+1133 |dry |dried, drier, dries, driest, drying
+1134 |partner |partnered, partnering, partners
+1135 |institution |institutions
+1136 |spot |spots, spotted, spotting
+1137 |horse |horsed, horses, horsing
+1138 |eventually |
+1139 |heat |heated, heating, heats
+1140 |excite |excited, excites, exciting
+1141 |reader |readers
+1142 |importance |
+1143 |distance |distanced, distances, distancing
+1144 |guide |guided, guides, guiding
+1145 |grant |granted, granting, grants
+1146 |taxi |taxies, taxiing, taxis
+1147 |feed |fed, feeding, feedings, feeds
+1148 |pain |pained, paining, pains
+1149 |sector |sectors
+1150 |mistake |mistakes, mistaking, mistook
+1151 |ensure |ensured, ensures, ensuring
+1152 |satisfy |satisfied, satisfies, satisfying
+1153 |chief |chiefs
+1154 |cool |cooled, coolest, cooling, cools
+1155 |expert |experts
+1156 |wave |waved, waves, waving
+1157 |south |
+1158 |labor |labored, laboring, labors, labour, laboured, labouring, labours
+1159 |surface |surfaced, surfaces, surfacing
+1160 |library |libraries
+1161 |excellent |
+1162 |edge |edged, edges, edging
+1163 |camp |camped, camping, camps
+1164 |audience |audiences
+1165 |lift |lifted, lifting, lifts
+1166 |procedure |procedures
+1167 |email |emailed, emailing, emails
+1168 |global |
+1169 |struggle |struggled, struggles, struggling
+1170 |advertise |advertised, advertises, advertising, advertize, advertized, advertizes, advertizing
+1171 |select |selected, selecting, selects
+1172 |surround |surrounded, surrounding, surroundings, surrounds
+1173 |extent |extents
+1174 |river |rivers
+1175 |annual |annuals
+1176 |fully |
+1177 |contrast |contrasted, contrasting, contrasts
+1178 |roll |rolled, rolling, rolls
+1179 |reality |realities
+1180 |photograph |photographed, photographing, photographs
+1181 |artist |artists
+1182 |conflict |conflicted, conflicting, conflicts
+1183 |entire |
+1184 |presence |presences
+1185 |crowd |crowded, crowding, crowds
+1186 |corner |cornered, cornering, corners
+1187 |gas |gases, gassed, gasses, gassing
+1188 |shift |shifted, shifting, shifts
+1189 |net |nets, netted, netting
+1190 |category |categories
+1191 |secretary |secretaries
+1192 |defense |defence, defences, defenses
+1193 |quick |quicker, quickest
+1194 |cook |cooked, cooking, cooks
+1195 |spread |spreading, spreads
+1196 |nuclear |
+1197 |scale |scaled, scales, scaling
+1198 |driver |drivers
+1199 |ball |balled, balling, balls
+1200 |cry |cried, cries, crying
+1201 |introduction |introductions
+1202 |requirement |requirements
+1203 |north |
+1204 |confirm |confirmed, confirming, confirms
+1205 |senior |seniors
+1206 |photo |photos
+1207 |refuse |refused, refuses, refusing
+1208 |transport |transported, transporting, transports
+1209 |emerge |emerged, emerges, emerging
+1210 |map |mapped, mapping, maps
+1211 |concept |concepts
+1212 |island |islanded, islanding, islands
+1213 |reform |reformed, reforming, reforms
+1214 |neither |
+1215 |football |footballs
+1216 |survive |survived, survives, surviving
+1217 |flight |flights
+1218 |left |lefts
+1219 |solve |solved, solves, solving
+1220 |neighbor |neighbored, neighboring, neighbors, neighbour, neighboured, neighbouring, neighbours
+1221 |background |backgrounds
+1222 |technique |techniques
+1223 |traffic |trafficked, trafficking, trafficks, traffics
+1224 |improvement |improvements
+1225 |tool |tooled, tooling, tools
+1226 |consequence |consequences
+1227 |circumstance |circumstances
+1228 |smoke |smoked, smokes, smoking
+1229 |reaction |reactions
+1230 |rain |rained, raining, rains
+1231 |busy |busied, busier, busies, busiest, busying
+1232 |lesson |lessons
+1233 |brain |brained, braining, brains
+1234 |mass |massed, masses, massing
+1235 |funny |funnier, funniest
+1236 |contribute |contributed, contributes, contributing
+1237 |failure |failures
+1238 |schedule |scheduled, schedules, scheduling
+1239 |speaker |speakers
+1240 |bottom |bottomed, bottoming, bottoms
+1241 |adopt |adopted, adopting, adopts
+1242 |combine |combined, combines, combining
+1243 |mountain |mountains
+1244 |waste |wasted, wastes, wasting
+1245 |hide |hid, hidden, hides, hiding
+1246 |marriage |marriages
+1247 |ticket |ticketed, ticketing, tickets
+1248 |meal |meals
+1249 |colleague |colleagues
+1250 |bag |bagged, bagging, bags
+1251 |repeat |repeated, repeating, repeats
+1252 |equal |equaled, equaling, equalled, equalling, equals
+1253 |expression |expressions
+1254 |plus |pluses
+1255 |extremely |
+1256 |owner |owners
+1257 |plane |planed, planes
+1258 |commercial |commercials
+1259 |lady |ladies
+1260 |duty |duties
+1261 |strength |strengths
+1262 |connect |connected, connecting, connects
+1263 |cultural |
+1264 |arrange |arranged, arranges, arranging
+1265 |scheme |schemed, schemes, scheming
+1266 |payment |payments
+1267 |unfortunately |
+1268 |brief |briefed, briefer, briefest, briefing, briefings, briefs
+1269 |bird |birded, birding, birds
+1270 |demonstrate |demonstrated, demonstrates, demonstrating
+1271 |contribution |contributions
+1272 |appreciate |appreciated, appreciates, appreciating
+1273 |chapter |chapters
+1274 |secret |secrets
+1275 |apparently |
+1276 |novel |novels
+1277 |union |unions
+1278 |burn |burned, burning, burns, burnt
+1279 |trend |trended, trending, trends
+1280 |initial |initialed, initialing, initialled, initialling, initials
+1281 |pleasure |pleasured, pleasures, pleasuring
+1282 |suggestion |suggestions
+1283 |critical |
+1284 |gather |gathered, gathering, gatherings, gathers
+1285 |mostly |
+1286 |earth |earthed, earths
+1287 |pop |popped, popping, pops
+1288 |essential |essentials
+1289 |desire |desired, desires, desiring
+1290 |promote |promoted, promotes, promoting
+1291 |currently |
+1292 |employ |employed, employing, employs
+1293 |path |paths
+1294 |topic |topics
+1295 |beach |beached, beaches, beaching
+1296 |attract |attracted, attracting, attracts
+1297 |engage |engaged, engages, engaging
+1298 |powerful |
+1299 |flower |flowered, flowering, flowers
+1300 |crisis |crises
+1301 |settle |settled, settles, settling
+1302 |boat |boated, boating, boats
+1303 |aid |aided, aiding, aids
+1304 |fan |fanned, fanning, fans
+1305 |kitchen |kitchens
+1306 |twice |
+1307 |fresh |fresher, freshest
+1308 |delay |delayed, delaying, delays
+1309 |safety |safeties
+1310 |engineer |engineered, engineering, engineers
+1311 |quiet |quieted, quieter, quietest, quieting, quiets
+1312 |insurance |insurances
+1313 |nurse |nursed, nurses, nursing
+1314 |divide |divided, divides, dividing
+1315 |length |lengths
+1316 |investigation |investigations
+1317 |package |packaged, packages, packaging
+1318 |somewhere |
+1319 |expand |expanded, expanding, expands
+1320 |commit |commits, committed, committing
+1321 |obvious |
+1322 |jump |jumped, jumping, jumps
+1323 |weapon |weapons
+1324 |relatively |
+1325 |host |hosted, hosting, hosts
+1326 |winter |wintered, wintering, winters
+1327 |district |districts
+1328 |broad |broader, broadest
+1329 |tire |tired, tires, tiring
+1330 |spring |sprang, springing, springs, sprung
+1331 |spirit |spirited, spiriting, spirits
+1332 |lunch |lunched, lunches, lunching
+1333 |actual |
+1334 |pool |pooled, pooling, pools
+1335 |battle |battled, battles, battling
+1336 |tradition |traditions
+1337 |cash |cashed, cashes, cashing
+1338 |hardly |
+1339 |award |awarded, awarding, awards
+1340 |coach |coached, coaches, coaching
+1341 |experiment |experimented, experimenting, experiments
+1342 |consideration |considerations
+1343 |strange |strangest
+1344 |code |coded, codes, coding
+1345 |possibly |
+1346 |threat |threats
+1347 |accident |accidents
+1348 |impossible |
+1349 |revenue |revenues
+1350 |enable |enabled, enables, enabling
+1351 |afraid |
+1352 |active |actives
+1353 |conclude |concluded, concludes, concluding
+1354 |religious |
+1355 |cancer |cancers
+1356 |convince |convinced, convinces, convincing
+1357 |vary |varied, varies, varying
+1358 |environmental |
+1359 |sun |sunned, sunning, suns
+1360 |healthy |healthier, healthiest
+1361 |blow |blew, blowing, blown, blows
+1362 |volume |volumes
+1363 |location |locations
+1364 |invest |invested, investing, invests
+1365 |proceed |proceeded, proceeding, proceedings, proceeds
+1366 |wash |washed, washes, washing
+1367 |actor |actors
+1368 |glad |gladder, gladdest
+1369 |tape |taped, tapes, taping
+1370 |whereas |
+1371 |opposite |opposites
+1372 |stone |stoned, stones, stoning
+1373 |sum |summed, summing, sums
+1374 |murder |murdered, murdering, murders
+1375 |monitor |monitored, monitoring, monitors
+1376 |soldier |soldiered, soldiering, soldiers
+1377 |finance |financed, finances, financing
+1378 |hate |hated, hates, hating
+1379 |egg |egged, egging, eggs
+1380 |concert |concerted, concerts
+1381 |shock |shocked, shocking, shocks
+1382 |comfortable |
+1383 |usual |
+1384 |carefully |
+1385 |pack |packed, packing, packs
+1386 |recall |recalled, recalls
+1387 |wine |wines, wining
+1388 |camera |cameras
+1389 |swim |swam, swimming, swims, swum
+1390 |manufacture |manufactured, manufactures, manufacturing
+1391 |theater |theaters, theatre, theatres
+1392 |cycle |cycled, cycles, cycling
+1393 |coffee |coffees
+1394 |totally |
+1395 |museum |museums
+1396 |visitor |visitors
+1397 |freedom |freedoms
+1398 |construction |constructions
+1399 |dear |dearer, dearest, dears
+1400 |objective |objectives
+1401 |moreover |
+1402 |onto |
+1403 |historical |
+1404 |oppose |opposed, opposes, opposing
+1405 |branch |branched, branches, branching
+1406 |vehicle |vehicles
+1407 |scientist |scientists
+1408 |route |routes
+1409 |bind |binding, binds
+1410 |belong |belonged, belonging, belongings, belongs
+1411 |taste |tasted, tastes, tasting
+1412 |tonight |
+1413 |fashion |fashioned, fashioning, fashions
+1414 |danger |dangers
+1415 |bomb |bombed, bombing, bombings, bombs
+1416 |army |armies
+1417 |dangerous |
+1418 |decrease |decreased, decreases, decreasing
+1419 |hurt |hurting, hurts
+1420 |council |councils
+1421 |editor |editors
+1422 |normally |
+1423 |sight |sighted, sighting, sightings, sights
+1424 |generate |generated, generates, generating
+1425 |gift |gifted, gifting, gifts
+1426 |delivery |deliveries
+1427 |deny |denied, denies, denying
+1428 |guest |guests
+1429 |anybody |
+1430 |bedroom |bedrooms
+1431 |quote |quoted, quotes, quoting
+1432 |climb |climbed, climbing, climbs
+1433 |basically |
+1434 |violence |
+1435 |minister |ministered, ministering, ministers
+1436 |mainly |
+1437 |mouth |mouthed, mouthing, mouths
+1438 |noise |noises
+1439 |manner |mannered, manners
+1440 |gun |gunned, gunning, guns
+1441 |square |squared, squarer, squares, squarest, squaring
+1442 |occasion |occasioned, occasioning, occasions
+1443 |familiar |familiars
+1444 |ignore |ignored, ignores, ignoring
+1445 |destroy |destroyed, destroying, destroys
+1446 |affair |affairs
+1447 |civil |
+1448 |locate |located, locates, locating
+1449 |citizen |citizens
+1450 |temperature |temperatures
+1451 |gold |
+1452 |domestic |domestics
+1453 |load |loaded, loading, loads
+1454 |belief |beliefs
+1455 |troop |troops
+1456 |technical |
+1457 |remind |reminded, reminding, reminds
+1458 |arrangement |arrangements
+1459 |skin |skinned, skinning, skins
+1460 |prison |prisons
+1461 |switch |switched, switches, switching
+1462 |acquire |acquired, acquires, acquiring
+1463 |corporate |
+1464 |fairly |
+1465 |wood |wooded, woods
+1466 |participate |participated, participates, participating
+1467 |tough |tougher, toughest
+1468 |tear |tearing, tears, tore
+1469 |representative |representatives
+1470 |capacity |capacities
+1471 |border |bordered, bordering, borders
+1472 |shake |shaken, shakes, shaking, shook
+1473 |assessment |assessments
+1474 |shoe |shod, shoed, shoes
+1475 |ought |oughta, oughtn't
+1476 |ad |ads
+1477 |fee |fees
+1478 |hall |halls
+1479 |regulation |regulations
+1480 |escape |escaped, escapes, escaping
+1481 |studio |studios
+1482 |proper |
+1483 |relax |relaxed, relaxes, relaxing
+1484 |tourist |tourists
+1485 |component |components
+1486 |afford |afforded, affording, affords
+1487 |lawyer |lawyers
+1488 |suspect |suspected, suspecting, suspects
+1489 |cup |cupped, cupping, cups
+1490 |description |descriptions
+1491 |confidence |confidences
+1492 |industrial |industrials
+1493 |complain |complained, complaining, complains
+1494 |perspective |perspectives
+1495 |error |errors
+1496 |arrest |arrested, arresting, arrests
+1497 |assess |assessed, assesses, assessing
+1498 |register |registered, registering, registers
+1499 |asset |assets
+1500 |signal |signaled, signaling, signalled, signalling, signals
+1501 |finger |fingered, fingering, fingers
+1502 |relevant |
+1503 |explore |explored, explores, exploring
+1504 |leadership |leaderships
+1505 |commitment |commitments
+1506 |wake |waked, wakes, waking, woke, woken
+1507 |necessarily |
+1508 |bright |brighter, brightest
+1509 |frame |framed, frames, framing
+1510 |slowly |
+1511 |bond |bonded, bonding, bonds
+1512 |hire |hired, hires, hiring
+1513 |hole |holed, holes, holing
+1514 |tie |tied, ties, tying
+1515 |internal |internals
+1516 |chain |chained, chaining, chains
+1517 |literature |literatures
+1518 |victim |victims
+1519 |threaten |threatened, threatening, threatens
+1520 |division |divisions
+1521 |secure |secured, secures, securing
+1522 |amaze |amazed, amazes, amazing
+1523 |device |devices
+1524 |birth |birthed, birthing, births
+1525 |forest |forested, foresting, forests
+1526 |label |labeled, labeling, labelled, labelling, labels
+1527 |root |rooted, rooting, roots
+1528 |factory |factories
+1529 |expense |expensed, expenses, expensing
+1530 |channel |channeled, channeling, channelled, channelling, channels
+1531 |investigate |investigated, investigates, investigating
+1532 |recommendation |recommendations
+1533 |rank |ranked, ranking, rankings, ranks
+1534 |typical |
+1535 |west |
+1536 |friendly |friendlier, friendliest
+1537 |resident |residents
+1538 |provision |provisioned, provisioning, provisions
+1539 |concentrate |concentrated, concentrates, concentrating
+1540 |plenty |
+1541 |export |exported, exporting, exports
+1542 |entirely |
+1543 |strongly |
+1544 |bridge |bridged, bridges, bridging
+1545 |consist |consisted, consisting, consists
+1546 |graduate |graduated, graduates, graduating
+1547 |brand |branded, branding, brands
+1548 |moral |morals
+1549 |insist |insisted, insisting, insists
+1550 |combination |combinations
+1551 |abuse |abused, abuses, abusing
+1552 |ice |iced, ices
+1553 |principal |principals
+1554 |master |mastered, mastering, masters
+1555 |definitely |
+1556 |session |sessions
+1557 |grade |graded, grades, grading
+1558 |nevertheless |
+1559 |predict |predicted, predicting, predicts
+1560 |previously |
+1561 |protection |protections
+1562 |largely |
+1563 |wed |wedded, wedding, weddings, weds
+1564 |rent |rented, renting, rents
+1565 |shot |shots
+1566 |appearance |appearances
+1567 |reasonable |
+1568 |guarantee |guaranteed, guaranteeing, guarantees, guaranties, guaranty
+1569 |till |tilled, tilling, tills
+1570 |theme |themed, themes
+1571 |judgment |judgments
+1572 |odd |odder, oddest
+1573 |approve |approved, approves, approving
+1574 |loan |loaned, loaning, loans
+1575 |definition |definitions
+1576 |elect |elected, electing, elects
+1577 |atmosphere |atmospheres
+1578 |farmer |farmers
+1579 |comparison |comparisons
+1580 |characteristic |characteristics
+1581 |license |licence, licenced, licences, licencing, licensed, licenses, licensing
+1582 |rely |relied, relies, relying
+1583 |narrow |narrowed, narrower, narrowest, narrowing, narrows
+1584 |succeed |succeeded, succeeding, succeeds
+1585 |identity |identities
+1586 |desk |desks
+1587 |permit |permits, permitted, permitting
+1588 |seriously |
+1589 |wild |wilder, wildest, wilds
+1590 |empty |emptied, emptier, empties, emptiest, emptying
+1591 |commission |commissioned, commissioning, commissions
+1592 |unique |
+1593 |association |associations
+1594 |instrument |instrumented, instruments
+1595 |investor |investors
+1596 |practical |
+1597 |tea |teas
+1598 |lovely |lovelier, loveliest
+1599 |soft |softer, softest
+1600 |row |rowed, rowing, rows
+1601 |youth |youths
+1602 |lock |locked, locking, locks
+1603 |fuel |fueled, fueling, fuels
+1604 |expectation |expectations
+1605 |employment |employments
+1606 |celebrate |celebrated, celebrates, celebrating
+1607 |sexual |
+1608 |shoulder |shouldered, shoulders
+1609 |breath |breaths
+1610 |increasingly |
+1611 |import |imported, importing, imports
+1612 |bottle |bottled, bottles, bottling
+1613 |ourselves |
+1614 |sheet |sheeted, sheeting, sheets
+1615 |engine |engines
+1616 |cast |casted, casting, castings, casts
+1617 |notion |notions
+1618 |conservative |conservatives
+1619 |journey |journeyed, journeying, journeys
+1620 |opposition |oppositions
+1621 |relief |reliefs
+1622 |debt |debts
+1623 |honor |honored, honoring, honors, honour, honoured, honouring, honours
+1624 |outcome |outcomes
+1625 |blame |blamed, blames, blaming
+1626 |explanation |explanations
+1627 |arise |arisen, arises, arising, arose
+1628 |musical |musicals
+1629 |recover |recovered, recovering, recovers
+1630 |dad |daddies, daddy, dads
+1631 |stretch |stretched, stretches, stretching
+1632 |declare |declared, declares, declaring
+1633 |retire |retired, retires, retiring
+1634 |tiny |tinier, tiniest
+1635 |careful |
+1636 |suitable |
+1637 |native |natives
+1638 |fruit |fruited, fruiting, fruits
+1639 |analyze |analyse, analysed, analysing, analyzed, analyzes, analyzing
+1640 |witness |witnessed, witnesses, witnessing
+1641 |mail |mailed, mailing, mailings, mails
+1642 |terrible |
+1643 |researcher |researchers
+1644 |ordinary |
+1645 |selection |selections
+1646 |anywhere |
+1647 |mental |
+1648 |participant |participants
+1649 |vision |visions
+1650 |personality |personalities
+1651 |specifically |
+1652 |fat |fats, fatter, fattest
+1653 |entry |entries
+1654 |fellow |fellows
+1655 |chemical |chemicals
+1656 |capture |captured, captures, capturing
+1657 |tip |tipped, tipping, tips
+1658 |discount |discounted, discounting, discounts
+1659 |peak |peaked, peaking, peaks
+1660 |chairman |chairmen
+1661 |proportion |proportioned, proportioning, proportions
+1662 |ear |eared, ears
+1663 |disappear |disappeared, disappearing, disappears
+1664 |shout |shouted, shouting, shouts
+1665 |yard |yards
+1666 |constant |constants
+1667 |significantly |
+1668 |hill |hilled, hills
+1669 |considerable |
+1670 |instruction |instructions
+1671 |intelligence |intelligences
+1672 |ideal |ideals
+1673 |folk |folks
+1674 |surely |
+1675 |guard |guarded, guarding, guards
+1676 |cat |cats
+1677 |somewhat |
+1678 |kiss |kissed, kisses, kissing
+1679 |presentation |presentations
+1680 |joint |jointed, jointing, joints
+1681 |compete |competed, competes, competing
+1682 |poll |polled, polling, polls
+1683 |weak |weaker, weakest
+1684 |faith |faiths
+1685 |reduction |reductions
+1686 |reserve |reserved, reserves, reserving
+1687 |complaint |complaints
+1688 |bore |bored, bores, boring
+1689 |mission |missions
+1690 |somehow |
+1691 |tone |toned, tones, toning
+1692 |neighborhood |neighborhoods, neighbourhood, neighbourhoods
+1693 |passenger |passengers
+1694 |justice |justices
+1695 |phase |phased, phases, phasing
+1696 |thin |thinned, thinner, thinnest, thinning, thins
+1697 |rush |rushed, rushes, rushing
+1698 |formal |formals
+1699 |religion |religions
+1700 |employer |employers
+1701 |reject |rejected, rejecting, rejects
+1702 |latter |
+1703 |plate |plated, plates, plating
+1704 |ban |banned, banning, bans
+1705 |steal |stealing, steals, stole, stolen
+1706 |protest |protested, protesting, protests
+1707 |index |indexed, indexes, indexing, indices
+1708 |sad |sadder, saddest
+1709 |frequently |
+1710 |circle |circled, circles, circling
+1711 |helpful |
+1712 |command |commanded, commanding, commands
+1713 |attractive |
+1714 |sick |sicker, sickest
+1715 |impression |impressions
+1716 |unable |
+1717 |joke |joked, jokes, joking
+1718 |sky |skies
+1719 |column |columned, columns
+1720 |electronic |electronics
+1721 |impose |imposed, imposes, imposing
+1722 |criminal |criminals
+1723 |besides |
+1724 |properly |
+1725 |ancient |ancients
+1726 |coast |coasted, coasting, coasts
+1727 |ill |ills
+1728 |kick |kicked, kicking, kicks
+1729 |closely |
+1730 |multiple |multiples
+1731 |yield |yielded, yielding, yields
+1732 |via |
+1733 |legislation |legislations
+1734 |county |counties
+1735 |unlike |
+1736 |mobile |mobiles
+1737 |assistant |assistants
+1738 |implement |implemented, implementing, implements
+1739 |chart |charted, charting, charts
+1740 |attach |attached, attaches, attaching
+1741 |hell |hells
+1742 |everywhere |
+1743 |advise |advised, advises, advising
+1744 |household |households
+1745 |acknowledge |acknowledged, acknowledges, acknowledging
+1746 |reward |rewarded, rewarding, rewards
+1747 |east |
+1748 |hat |hats, hatted
+1749 |academic |academics
+1750 |voter |voters
+1751 |meanwhile |
+1752 |furthermore |
+1753 |accuse |accused, accuses, accusing
+1754 |scientific |
+1755 |wage |waged, wages, waging
+1756 |absence |absences
+1757 |construct |constructed, constructing, constructs
+1758 |remark |remarked, remarking, remarks
+1759 |medicine |medicines
+1760 |professor |prof, professors
+1761 |rare |rarer, rarest
+1762 |intention |intentions
+1763 |dozen |dozens
+1764 |settlement |settlements
+1765 |gap |gapped, gapping, gaps
+1766 |widely |
+1767 |minimum |minima, minimums
+1768 |northern |
+1769 |estate |estates
+1770 |equally |
+1771 |expose |exposed, exposes, exposing
+1772 |alive |
+1773 |shut |shuts
+1774 |victory |victories
+1775 |resolve |resolved, resolves, resolving
+1776 |critic |critics
+1777 |variable |variables
+1778 |enormous |
+1779 |sweet |sweeter, sweetest, sweets
+1780 |permanent |
+1781 |emotion |emotions
+1782 |pursue |pursued, pursues, pursuing
+1783 |tall |taller, tallest
+1784 |urge |urged, urges, urging
+1785 |enemy |enemies
+1786 |appoint |appointed, appointing, appoints
+1787 |milk |milked, milking, milks
+1788 |talent |talented, talents
+1789 |smell |smelled, smelling, smells
+1790 |prior |priors
+1791 |priority |priorities
+1792 |online |
+1793 |phrase |phrased, phrases, phrasing
+1794 |pilot |piloted, piloting, pilots
+1795 |stable |stabled, stables, stabling
+1796 |merely |
+1797 |resolution |resolutions
+1798 |communicate |communicated, communicates, communicating
+1799 |injury |injuries
+1800 |vast |vaster, vastest
+1801 |exhibition |exhibitions
+1802 |producer |producers
+1803 |regional |regionals
+1804 |immediate |
+1805 |incident |incidents
+1806 |childhood |childhoods
+1807 |draft |drafted, drafting, drafts, draught, draughts
+1808 |slip |slipped, slipping, slips
+1809 |accompany |accompanied, accompanies, accompanying
+1810 |politician |politicians
+1811 |angry |angrier, angriest
+1812 |knock |knocked, knocking, knocks
+1813 |seed |seeded, seeding, seeds
+1814 |salary |salaried, salaries
+1815 |illustrate |illustrated, illustrates, illustrating
+1816 |imply |implied, implies, implying
+1817 |breakfast |breakfasted, breakfasting, breakfasts
+1818 |temporary |
+1819 |liberal |liberals
+1820 |lake |lakes
+1821 |qualify |qualified, qualifies, qualifying
+1822 |competitive |
+1823 |truly |
+1824 |hi |
+1825 |yellow |yellowed, yellowing, yellows
+1826 |habit |habited, habits
+1827 |disk |disc, discs, disks
+1828 |core |cored, cores, coring
+1829 |emotional |
+1830 |aircraft |aircrafts
+1831 |self |selves
+1832 |metal |metals
+1833 |existence |existences
+1834 |bone |boned, bones, boning
+1835 |panel |paneled, paneling, panelled, panelling, panels
+1836 |prime |primed, primes, priming
+1837 |appointment |appointments
+1838 |emphasize |emphasise, emphasised, emphasises, emphasising, emphasized, emphasizes, emphasizing
+1839 |maximum |
+1840 |effectively |
+1841 |elsewhere |
+1842 |bother |bothered, bothering, bothers
+1843 |initiative |initiatives
+1844 |sharp |sharper, sharpest
+1845 |diet |dieted, dieting, diets
+1846 |motion |motioned, motioning, motions
+1847 |gray |grayed, grayer, grayest, graying, grays, grey, greyed, greyer, greyest, greying, greys
+1848 |plastic |plastics
+1849 |complicate |complicated, complicates, complicating
+1850 |discipline |disciplined, disciplines, disciplining
+1851 |disappoint |disappointed, disappointing, disappoints
+1852 |boss |bossed, bosses, bossing
+1853 |assumption |assumptions
+1854 |freeze |freezes, freezing, froze, frozen
+1855 |extreme |extremes
+1856 |passage |passages
+1857 |reputation |reputations
+1858 |forth |
+1859 |negotiation |negotiations
+1860 |mechanism |mechanisms
+1861 |coat |coated, coating, coats
+1862 |democracy |democracies
+1863 |pocket |pocketed, pocketing, pockets
+1864 |lucky |luckier, luckiest
+1865 |crash |crashed, crashes, crashing
+1866 |observation |observations
+1867 |meat |meats
+1868 |concentration |concentrations
+1869 |implication |implications
+1870 |deserve |deserved, deserves, deserving
+1871 |unusual |
+1872 |defend |defended, defending, defends
+1873 |classic |classics
+1874 |king |kings
+1875 |interaction |interactions
+1876 |repair |repaired, repairing, repairs
+1877 |collapse |collapsed, collapses, collapsing
+1878 |borrow |borrowed, borrowing, borrows
+1879 |fundamental |fundamentals
+1880 |dish |dished, dishes, dishing
+1881 |abroad |
+1882 |soul |souls
+1883 |capable |
+1884 |defeat |defeated, defeating, defeats
+1885 |presidential |
+1886 |perfectly |
+1887 |enhance |enhanced, enhances, enhancing
+1888 |proud |prouder, proudest
+1889 |emergency |emergencies
+1890 |educational |
+1891 |distinguish |distinguished, distinguishes, distinguishing
+1892 |substantial |
+1893 |nearby |
+1894 |manufacturer |manufacturers
+1895 |slide |slid, slides, sliding
+1896 |valuable |valuables
+1897 |personally |
+1898 |breast |breasted, breasting, breasts
+1899 |cope |coped, copes, coping
+1900 |approximately |
+1901 |accommodation |accommodations
+1902 |highlight |highlighted, highlighting, highlights
+1903 |reporter |reporters
+1904 |climate |climates
+1905 |shirt |shirted, shirting, shirts
+1906 |exception |exceptions
+1907 |corporation |corporations
+1908 |chip |chipped, chipping, chips
+1909 |winner |winners
+1910 |encounter |encountered, encountering, encounters
+1911 |brown |browned, browner, brownest, browning, browns
+1912 |breathe |breathed, breathes, breathing
+1913 |excuse |excused, excuses, excusing
+1914 |partly |
+1915 |tennis |
+1916 |urban |
+1917 |confuse |confused, confuses, confusing
+1918 |southern |
+1919 |output |outputs, outputted, outputting
+1920 |beauty |beauties
+1921 |massive |
+1922 |install |installed, installing, installs
+1923 |calculate |calculated, calculates, calculating
+1924 |mouse |mice, mouses
+1925 |mathematics |math, maths
+1926 |upper |uppers
+1927 |creation |creations
+1928 |occupy |occupied, occupies, occupying
+1929 |outline |outlined, outlines, outlining
+1930 |sufficient |
+1931 |update |updated, updates, updating
+1932 |luck |lucked, lucking, lucks
+1933 |preserve |preserved, preserves, preserving
+1934 |split |splits, splitting
+1935 |swing |swinging, swings, swung
+1936 |illness |illnesses
+1937 |journalist |journalists
+1938 |sudden |
+1939 |advertisement |advertisements
+1940 |consistent |
+1941 |originally |
+1942 |aside |asides
+1943 |comfort |comforted, comforting, comforts
+1944 |secondly |
+1945 |severe |severer, severest
+1946 |gene |genes
+1947 |prospect |prospected, prospecting, prospects
+1948 |snow |snowed, snowing, snows
+1949 |plot |plots, plotted, plotting
+1950 |neck |necked, necking, necks
+1951 |criterion |criterions
+1952 |primarily |
+1953 |integrate |integrated, integrates, integrating
+1954 |criticism |criticisms
+1955 |convention |conventions
+1956 |bet |bets, betted, betting
+1957 |retain |retained, retaining, retains
+1958 |sequence |sequenced, sequences, sequencing
+1959 |plain |plainer, plainest, plains
+1960 |volunteer |volunteered, volunteering, volunteers
+1961 |rural |
+1962 |calm |calmed, calmer, calmest, calming, calms
+1963 |abandon |abandoned, abandoning, abandons
+1964 |examination |examinations
+1965 |silence |silenced, silences, silencing
+1966 |rapidly |
+1967 |efficient |
+1968 |revolution |revolutions
+1969 |delight |delighted, delighting, delights
+1970 |spell |spelled, spelling, spells, spelt
+1971 |premise |premised, premises, premising
+1972 |lean |leaned, leaner, leanest, leaning, leans, leant
+1973 |dramatic |dramatics
+1974 |differ |differed, differing, differs
+1975 |grateful |
+1976 |protein |proteins
+1977 |bike |biked, bikes, biking
+1978 |distribute |distributed, distributes, distributing
+1979 |intellectual |intellectuals
+1980 |derive |derived, derives, deriving
+1981 |crucial |
+1982 |unemployment |
+1983 |wheel |wheeled, wheeling, wheels
+1984 |crop |cropped, cropping, crops
+1985 |minority |minorities
+1986 |origin |origins
+1987 |interpretation |interpretations
+1988 |gentleman |gentlemen
+1989 |drama |dramas
+1990 |landscape |landscaped, landscapes, landscaping
+1991 |educate |educated, educates, educating
+1992 |toy |toyed, toying, toys
+1993 |fault |faulted, faulting, faults
+1994 |exhibit |exhibited, exhibiting, exhibits
+1995 |minor |minors
+1996 |hunt |hunted, hunting, hunts
+1997 |storm |stormed, storming, storms
+1998 |thick |thicker, thickest
+1999 |achievement |achievements
+2000 |negotiate |negotiated, negotiates, negotiating
+2001 |dominate |dominated, dominates, dominating
+2002 |supplier |suppliers
+2003 |prize |prized, prizes
+2004 |typically |
+2005 |peer |peered, peering, peers
+2006 |pension |pensioned, pensioning, pensions
+2007 |wing |winged, winging, wings
+2008 |acquisition |acquisitions
+2009 |laughter |
+2010 |deeply |
+2011 |recognition |recognitions
+2012 |electricity |
+2013 |assistance |assistances
+2014 |roof |roofed, roofing, roofs
+2015 |retirement |retirements
+2016 |respectively |
+2017 |variation |variations
+2018 |ultimately |
+2019 |proof |proofed, proofing, proofs
+2020 |soil |soiled, soiling, soils
+2021 |smart |smarted, smarter, smartest, smarting, smarts
+2022 |layer |layered, layering, layers
+2023 |upset |upsets, upsetting
+2024 |tooth |teeth, toothed
+2025 |representation |representations
+2026 |preparation |preparations
+2027 |dispute |disputed, disputes, disputing
+2028 |agenda |agendas
+2029 |emphasis |emphases
+2030 |edition |editions
+2031 |silver |silvered, silvers
+2032 |entertainment |entertainments
+2033 |honest |
+2034 |undertake |undertaken, undertakes, undertaking, undertakings, undertook
+2035 |retail |retailed, retailing, retails
+2036 |wire |wired, wires, wiring
+2037 |unlikely |unlikelier, unlikeliest
+2038 |gay |gayer, gayest, gays
+2039 |publication |publications
+2040 |slight |slighted, slighter, slightest, slighting, slights
+2041 |unknown |unknowns
+2042 |framework |frameworks
+2043 |zone |zoned, zones, zoning
+2044 |restrict |restricted, restricting, restricts
+2045 |trace |traced, traces, tracing
+2046 |inch |inched, inches, inching
+2047 |equivalent |equivalents
+2048 |solid |solids
+2049 |enterprise |enterprises, enterprising
+2050 |elderly |
+2051 |owe |owed, owes, owing
+2052 |governor |governors
+2053 |uniform |uniformed, uniforms
+2054 |port |ported, porting, ports
+2055 |pitch |pitched, pitches, pitching
+2056 |arrival |arrivals
+2057 |contemporary |contemporaries
+2058 |gate |gated, gates, gating
+2059 |ease |eased, eases, easing
+2060 |beer |beers
+2061 |specialist |specialists
+2062 |assure |assured, assures, assuring
+2063 |profile |profiled, profiles, profiling
+2064 |mood |moods
+2065 |episode |episodes
+2066 |crack |cracked, cracking, cracks
+2067 |numerous |
+2068 |submit |submits, submitted, submitting
+2069 |symptom |symptoms
+2070 |virtually |
+2071 |era |eras
+2072 |coverage |
+2073 |tension |tensioned, tensioning, tensions
+2074 |cable |cabled, cables, cabling
+2075 |sensitive |
+2076 |nervous |
+2077 |input |inputs, inputted, inputting
+2078 |isolate |isolated, isolates, isolating
+2079 |prisoner |prisoners
+2080 |eliminate |eliminated, eliminates, eliminating
+2081 |tight |tighter, tightest
+2082 |wet |wets, wetted, wetter, wettest, wetting
+2083 |secondary |
+2084 |welfare |welfares
+2085 |recruit |recruited, recruiting, recruits
+2086 |exclude |excluded, excludes, excluding
+2087 |string |stringing, strings, strung
+2088 |cloud |clouded, clouding, clouds
+2089 |persuade |persuaded, persuades, persuading
+2090 |inspire |inspired, inspires, inspiring
+2091 |grand |grander, grandest
+2092 |hence |
+2093 |crew |crewed, crewing, crews
+2094 |phenomenon |phenomena
+2095 |pupil |pupils
+2096 |false |falser, falsest
+2097 |assist |assisted, assisting, assists
+2098 |restore |restored, restores, restoring
+2099 |formula |formulae, formulas
+2100 |alter |altered, altering, alters
+2101 |perceive |perceived, perceives, perceiving
+2102 |routine |routines
+2103 |sink |sank, sinking, sinks, sunk
+2104 |stare |stared, stares, staring
+2105 |anymore |
+2106 |hero |heroes
+2107 |supporter |supporters
+2108 |convert |converted, converting, converts
+2109 |steady |steadied, steadier, steadies, steadiest, steadying
+2110 |meter |metered, metering, meters, metre, metres
+2111 |truck |trucked, trucking, trucks
+2112 |nose |nosed, noses, nosing
+2113 |beside |
+2114 |sail |sailed, sailing, sails
+2115 |disaster |disasters
+2116 |pace |paced, paces, pacing
+2117 |heavily |
+2118 |devote |devoted, devotes, devoting
+2119 |terrorist |terrorists
+2120 |justify |justified, justifies, justifying
+2121 |vital |vitals
+2122 |fascinate |fascinated, fascinates, fascinating
+2123 |external |externals
+2124 |spare |spared, sparer, spares, sparest, sparing
+2125 |whenever |
+2126 |depression |depressions
+2127 |guilty |guiltier, guiltiest
+2128 |underlie |underlain, underlies, underlying
+2129 |mom |mommies, mommy, moms
+2130 |distinction |distinctions
+2131 |satisfaction |satisfactions
+2132 |incorporate |incorporated, incorporates, incorporating
+2133 |pour |poured, pouring, pours
+2134 |sweep |sweeping, sweeps, swept
+2135 |obligation |obligations
+2136 |sir |
+2137 |evaluate |evaluated, evaluates, evaluating
+2138 |anger |angered, angers
+2139 |pub |pubs
+2140 |perception |perceptions
+2141 |naturally |
+2142 |currency |currencies
+2143 |database |databases
+2144 |initially |
+2145 |territory |territories
+2146 |stream |streamed, streaming, streams
+2147 |rarely |
+2148 |height |heights
+2149 |apparent |
+2150 |western |westerns
+2151 |expansion |expansions
+2152 |constantly |
+2153 |muscle |muscled, muscles
+2154 |scare |scared, scares, scaring
+2155 |badly |
+2156 |everyday |
+2157 |boundary |boundaries
+2158 |ratio |ratios
+2159 |essay |essayed, essaying, essays
+2160 |scream |screamed, screaming, screams
+2161 |withdraw |withdrawing, withdrawn, withdraws, withdrew
+2162 |pollution |pollutions
+2163 |disorder |disordered, disordering, disorders
+2164 |furniture |
+2165 |symbol |symbols
+2166 |apartment |apartments
+2167 |demonstration |demonstrations
+2168 |analyst |analysts
+2169 |platform |platforms
+2170 |steel |steeled, steeling, steels
+2171 |cake |caked, cakes, caking
+2172 |transform |transformed, transforming, transforms
+2173 |wound |wounded, wounding, wounds
+2174 |restriction |restrictions
+2175 |foundation |foundations
+2176 |designer |designers
+2177 |strain |strained, straining, strains
+2178 |innovation |innovations
+2179 |album |albums
+2180 |singer |singers
+2181 |trail |trailed, trailing, trails
+2182 |trap |trapped, trapping, trappings, traps
+2183 |loose |loosed, looser, looses, loosest, loosing
+2184 |extension |extensions
+2185 |wealth |
+2186 |gradually |
+2187 |tank |tanked, tanking, tanks
+2188 |evil |eviler, evilest, evils
+2189 |remarkable |
+2190 |tune |tuned, tunes, tuning
+2191 |grass |grassed, grasses, grassing
+2192 |invitation |invitations
+2193 |transition |transitioned, transitioning, transitions
+2194 |frighten |frightened, frightening, frightens
+2195 |bid |bade, bidding, bids
+2196 |breed |bred, breeding, breeds
+2197 |extraordinary |
+2198 |brilliant |
+2199 |adviser |advisers
+2200 |stem |stemmed, stemming, stems
+2201 |reverse |reversed, reverses, reversing
+2202 |mode |modes
+2203 |mirror |mirrored, mirroring, mirrors
+2204 |awful |
+2205 |pose |posed, poses, posing
+2206 |adjust |adjusted, adjusting, adjusts
+2207 |creative |
+2208 |nowadays |
+2209 |poem |poems
+2210 |agricultural |
+2211 |competitor |competitors
+2212 |alcohol |alcohols
+2213 |festival |festivals
+2214 |vegetable |vegetables
+2215 |van |vans
+2216 |confident |
+2217 |planet |planets
+2218 |curve |curved, curves, curving
+2219 |knee |kneed, kneeing, knees
+2220 |overcome |overcame, overcomes, overcoming
+2221 |web |webbed, webbing, webs
+2222 |depth |depths
+2223 |entrance |entranced, entrances, entrancing
+2224 |log |logged, logging, logs
+2225 |giant |giants
+2226 |god |gods
+2227 |portion |portioned, portioning, portions
+2228 |substance |substances
+2229 |extensive |
+2230 |interpret |interpreted, interpreting, interprets
+2231 |independence |
+2232 |sugar |sugared, sugars
+2233 |inner |inners
+2234 |harm |harmed, harming, harms
+2235 |consult |consulted, consulting, consults
+2236 |pink |pinked, pinker, pinkest, pinking, pinks
+2237 |shadow |shadows
+2238 |strip |stripped, stripping, strips
+2239 |smooth |smoothed, smoother, smoothest, smoothing
+2240 |intervention |interventions
+2241 |impress |impressed, impresses, impressing
+2242 |exam |exams
+2243 |vice |vices
+2244 |radical |radicals
+2245 |similarly |
+2246 |behave |behaved, behaves, behaving
+2247 |loud |louder, loudest
+2248 |dimension |dimensioned, dimensioning, dimensions
+2249 |subsequent |
+2250 |infection |infections
+2251 |jacket |jackets
+2252 |efficiency |efficiencies
+2253 |dirty |dirtied, dirtier, dirties, dirtiest, dirtying
+2254 |statistic |statistics
+2255 |regularly |
+2256 |resort |resorted, resorting, resorts
+2257 |iron |ironed, ironing, irons
+2258 |broadcast |broadcasted, broadcasting, broadcasts
+2259 |membership |memberships
+2260 |bread |breaded, breading, breads
+2261 |blind |blinded, blinder, blindest, blinding, blinds
+2262 |pure |purer, purest
+2263 |bloody |bloodied, bloodier, bloodies, bloodiest, bloodying
+2264 |ally |allied, allies
+2265 |quantity |quantities
+2266 |bend |bended, bending, bends, bent
+2267 |mature |matured, matures, maturing
+2268 |briefly |
+2269 |alarm |alarmed, alarming, alarms
+2270 |disturb |disturbed, disturbing, disturbs
+2271 |sustain |sustained, sustaining, sustains
+2272 |flood |flooded, flooding, floods
+2273 |poverty |
+2274 |crazy |crazier, crazies, craziest
+2275 |cite |cited, cites, citing
+2276 |newly |
+2277 |parallel |paralleled, paralleling, parallels
+2278 |gender |gendered, genders
+2279 |sponsor |sponsored, sponsoring, sponsors
+2280 |boot |booted, booting, boots
+2281 |accurate |
+2282 |dealer |dealers
+2283 |button |buttoned, buttoning, buttons
+2284 |burden |burdened, burdening, burdens
+2285 |desert |deserted, deserting, deserts
+2286 |mate |mated, mates, mating
+2287 |occasionally |
+2288 |shareholder |shareholders
+2289 |bowl |bowled, bowling, bowls
+2290 |discovery |discoveries
+2291 |resistance |resistances
+2292 |bath |baths
+2293 |frequency |frequencies
+2294 |criticize |criticise, criticised, criticises, criticising, criticized, criticizes, criticizing
+2295 |tap |tapped, tapping, taps
+2296 |philosophy |philosophies
+2297 |lip |lipped, lips
+2298 |attribute |attributed, attributes, attributing
+2299 |apologize |apologise, apologised, apologises, apologising, apologized, apologizes, apologizing
+2300 |approval |approvals
+2301 |grab |grabbed, grabbing, grabs
+2302 |entitle |entitled, entitles, entitling
+2303 |lend |lending, lends, lent
+2304 |involvement |involvements
+2305 |exposure |exposures
+2306 |conventional |
+2307 |digital |digitals
+2308 |translate |translated, translates, translating
+2309 |edit |edited, editing, edits
+2310 |formation |formations
+2311 |deposit |deposited, depositing, deposits
+2312 |pleasant |pleasanter, pleasantest
+2313 |overseas |oversea
+2314 |advocate |advocated, advocates, advocating
+2315 |establishment |establishments
+2316 |summary |summaries
+2317 |rough |roughed, rougher, roughest, roughing, roughs
+2318 |pen |penned, penning, pens
+2319 |recovery |recoveries
+2320 |seal |sealed, sealing, seals
+2321 |tube |tubed, tubes, tubing
+2322 |tower |towered, towering, towers
+2323 |characterize |characterise, characterised, characterises, characterising, characterized, characterizes, characterizing
+2324 |specify |specified, specifies, specifying
+2325 |exact |exacted, exacting, exacts
+2326 |spin |spinning, spins, spun
+2327 |operator |operators
+2328 |infant |infants
+2329 |dig |digging, digs, dug
+2330 |drag |dragged, dragging, drags
+2331 |mount |mounted, mounting, mounts
+2332 |wrap |wrapped, wrapping, wraps
+2333 |anticipate |anticipated, anticipates, anticipating
+2334 |dependent |dependents
+2335 |specialize |specialise, specialised, specialises, specialising, specialized, specializes, specializing
+2336 |angle |angled, angles, angling
+2337 |chicken |chickened, chickens
+2338 |anxiety |anxieties
+2339 |virus |viruses
+2340 |precisely |
+2341 |rival |rivaled, rivaling, rivalled, rivalling, rivals
+2342 |offense |offence, offences, offenses
+2343 |detect |detected, detecting, detects
+2344 |teenager |teenagers
+2345 |admire |admired, admires, admiring
+2346 |moderate |moderated, moderates, moderating
+2347 |surgery |surgeries
+2348 |musician |musicians
+2349 |significance |significances
+2350 |shower |showered, showering, showers
+2351 |illegal |
+2352 |charity |charities
+2353 |universal |universals
+2354 |cigarette |cigarettes
+2355 |constitute |constituted, constitutes, constituting
+2356 |adequate |
+2357 |consultant |consultants
+2358 |historian |historians
+2359 |cousin |cousins
+2360 |visual |visuals
+2361 |stupid |stupider, stupidest
+2362 |keen |keened, keener, keenest, keening, keens
+2363 |ethnic |ethnics
+2364 |twin |twins
+2365 |clinical |
+2366 |eastern |
+2367 |forecast |forecasted, forecasting, forecasts
+2368 |segment |segmented, segmenting, segments
+2369 |custom |customs
+2370 |adapt |adapted, adapting, adapts
+2371 |sand |sanded, sanding, sands
+2372 |cap |capped, capping, caps
+2373 |prompt |prompted, prompting, prompts
+2374 |charm |charmed, charming, charms
+2375 |react |reacted, reacting, reacts
+2376 |lecture |lectured, lectures, lecturing
+2377 |venture |ventured, ventures, venturing
+2378 |compound |compounded, compounds
+2379 |rescue |rescued, rescues, rescuing
+2380 |mess |messed, messes, messing
+2381 |preference |preferences
+2382 |comprehensive |
+2383 |incentive |incentives
+2384 |league |leagues
+2385 |dialog |dialoged, dialoging, dialogs, dialogue, dialogued, dialogues, dialoguing
+2386 |cream |creamed, creaming, creams
+2387 |rapid |
+2388 |cancel |canceled, canceling, cancelled, cancelling, cancels
+2389 |regret |regrets, regretted, regretting
+2390 |dismiss |dismissed, dismisses, dismissing
+2391 |margin |margins
+2392 |beneath |
+2393 |opponent |opponents
+2394 |resist |resisted, resisting, resists
+2395 |capability |capabilities
+2396 |absolute |absolutes
+2397 |correspond |corresponded, corresponding, corresponds
+2398 |stroke |stroked, strokes, stroking
+2399 |dare |dared, dares, daring
+2400 |barrier |barriers
+2401 |rid |ridded, ridding, rids
+2402 |divorce |divorced, divorces, divorcing
+2403 |ruin |ruined, ruining, ruins
+2404 |bury |buried, buries, burying
+2405 |counsel |counseled, counseling, counselled, counselling, counsels
+2406 |tendency |tendencies
+2407 |frequent |frequented, frequenting, frequents
+2408 |motor |motored, motoring, motors
+2409 |survival |survivals
+2410 |counter |countered, countering, counters
+2411 |possess |possessed, possesses, possessing
+2412 |permission |permissions
+2413 |valley |valleys
+2414 |float |floated, floating, floats
+2415 |mad |madder, maddest
+2416 |greatly |
+2417 |visible |
+2418 |electric |electrics
+2419 |impressive |
+2420 |evolution |evolutions
+2421 |awareness |
+2422 |violent |
+2423 |slave |slaved, slaves, slaving
+2424 |wealthy |wealthier, wealthiest
+2425 |architecture |architectures
+2426 |acceptable |
+2427 |journal |journaling, journals
+2428 |coal |coals
+2429 |measurement |measurements
+2430 |random |
+2431 |successfully |
+2432 |depress |depressed, depresses, depressing
+2433 |illustration |illustrations
+2434 |burst |bursting, bursts
+2435 |privilege |privileged, privileges, privileging
+2436 |buyer |buyers
+2437 |mutual |
+2438 |rail |railed, railing, railings, rails
+2439 |motivate |motivated, motivates, motivating
+2440 |laboratory |laboratories
+2441 |mortgage |mortgaged, mortgages
+2442 |promotion |promotions
+2443 |passion |passions
+2444 |champion |championed, championing, champions
+2445 |fulfill |fulfil, fulfiled, fulfiling, fulfilled, fulfilling, fulfills, fulfils
+2446 |dust |dusted, dusting, dusts
+2447 |dedicate |dedicated, dedicates, dedicating
+2448 |roughly |
+2449 |skirt |skirted, skirting, skirts
+2450 |province |provinces
+2451 |march |marched, marches, marching
+2452 |evaluation |evaluations
+2453 |compromise |compromised, compromises, compromising
+2454 |accomplish |accomplished, accomplishes, accomplishing
+2455 |weakness |weaknesses
+2456 |announcement |announcements
+2457 |salt |salted, salting, salts
+2458 |glance |glanced, glances, glancing
+2459 |opera |operas
+2460 |contest |contested, contesting, contests
+2461 |brush |brushed, brushes, brushing
+2462 |embarrass |embarrassed, embarrasses, embarrassing
+2463 |gallery |galleries
+2464 |genetic |
+2465 |aggressive |
+2466 |chest |chests
+2467 |format |formats, formatted, formatting
+2468 |literary |
+2469 |govern |governed, governing, governs
+2470 |embrace |embraced, embraces, embracing
+2471 |praise |praised, praises, praising
+2472 |silent |
+2473 |pump |pumped, pumping, pumps
+2474 |publisher |publishers
+2475 |celebration |celebrations
+2476 |golf |
+2477 |compensation |compensations
+2478 |classical |
+2479 |weigh |weighed, weighing, weighs
+2480 |versus |
+2481 |deficit |deficits
+2482 |modify |modified, modifies, modifying
+2483 |flash |flashed, flashes, flashing
+2484 |friendship |friendships
+2485 |profession |professions
+2486 |literally |
+2487 |equation |equations
+2488 |gesture |gestured, gestures, gesturing
+2489 |entertain |entertained, entertaining, entertains
+2490 |fantastic |
+2491 |assign |assigned, assigning, assigns
+2492 |inflation |inflations
+2493 |historic |
+2494 |injure |injured, injures, injuring
+2495 |remote |remoter, remotest
+2496 |therapy |therapies
+2497 |orange |oranges
+2498 |twist |twisted, twisting, twists
+2499 |personnel |
+2500 |imagination |imaginations
+2501 |disagree |disagreed, disagreeing, disagrees
+2502 |throat |throats
+2503 |insight |insights
+2504 |tackle |tackled, tackles, tackling
+2505 |forever |
+2506 |exceed |exceeded, exceeding, exceeds
+2507 |expenditure |expenditures
+2508 |joy |joys
+2509 |pregnant |
+2510 |reliable |reliables
+2511 |gear |geared, gearing, gears
+2512 |poet |poets
+2513 |fortune |fortunes
+2514 |ceremony |ceremonies
+2515 |pile |piled, piles, piling
+2516 |pig |pigged, pigging, pigs
+2517 |mixture |mixtures
+2518 |automatically |
+2519 |scholar |scholars
+2520 |psychological |
+2521 |dramatically |
+2522 |stake |staked, stakes, staking
+2523 |creature |creatures
+2524 |partnership |partnerships
+2525 |participation |participations
+2526 |clause |clauses
+2527 |penalty |penalties
+2528 |chamber |chambered, chambering, chambers
+2529 |fancy |fancied, fancies, fanciest, fancying
+2530 |poetry |poetries
+2531 |chat |chats, chatted, chatting
+2532 |clothing |
+2533 |evolve |evolved, evolves, evolving
+2534 |sake |sakes
+2535 |shelf |shelved, shelves, shelving
+2536 |boost |boosted, boosting, boosts
+2537 |tail |tailed, tailing, tails
+2538 |possession |possessions
+2539 |abortion |abortions
+2540 |curious |curiouser
+2541 |wooden |
+2542 |boom |boomed, booming, booms
+2543 |tale |tales
+2544 |democratic |
+2545 |maintenance |maintenances
+2546 |consequently |
+2547 |pot |pots, potted, potting
+2548 |cow |cowed, cowing, cows
+2549 |strengthen |strengthened, strengthening, strengthens
+2550 |whilst |
+2551 |constraint |constraints
+2552 |fold |folded, folding, folds
+2553 |bin |binned, binning, bins
+2554 |undergo |undergoes, undergoing, undergone, underwent
+2555 |potentially |
+2556 |scope |scoped, scopes, scoping
+2557 |pretend |pretended, pretending, pretends
+2558 |diversity |diversities
+2559 |allege |alleged, alleges
+2560 |pride |prided, prides, priding
+2561 |intense |
+2562 |inquiry |inquiries
+2563 |resign |resigned, resigning, resigns
+2564 |craft |crafted, crafting, crafts
+2565 |strict |stricter, strictest
+2566 |concrete |concreted, concretes, concreting
+2567 |shell |shelled, shells
+2568 |damn |damned, damning, damns
+2569 |distinct |
+2570 |humor |humored, humoring, humors, humour, humoured, humours
+2571 |limitation |limitations
+2572 |indication |indications
+2573 |stability |stabilities
+2574 |wise |wised, wiser, wises, wisest, wising
+2575 |neglect |neglected, neglecting, neglects
+2576 |compose |composed, composes, composing
+2577 |jail |jailed, jailing, jails
+2578 |shelter |sheltered, shelters
+2579 |mere |merest
+2580 |carbon |carbons
+2581 |regulate |regulated, regulates, regulating
+2582 |cheese |cheeses
+2583 |trigger |triggered, triggering, triggers
+2584 |pipe |piped, pipes, piping
+2585 |destruction |destructions
+2586 |guitar |guitars
+2587 |flag |flagged, flagging, flags
+2588 |piano |pianos
+2589 |magic |
+2590 |mystery |mysteries
+2591 |ski |skied, skiing, skis
+2592 |whisper |whispered, whispering, whispers
+2593 |rear |reared, rearing, rears
+2594 |menu |menus
+2595 |species |
+2596 |moon |mooned, moons
+2597 |presumably |
+2598 |bless |blessed, blesses, blessing, blessings, blest
+2599 |airline |airlines
+2600 |amendment |amendments
+2601 |grandmother |grandmothers
+2602 |jury |juries
+2603 |cooperation |
+2604 |civilian |civilians
+2605 |composition |compositions
+2606 |coin |coined, coining, coins
+2607 |regardless |
+2608 |scan |scanned, scanning, scans
+2609 |bunch |bunched, bunches, bunching
+2610 |racial |racials
+2611 |greet |greeted, greeting, greetings, greets
+2612 |hopefully |
+2613 |sanction |sanctioned, sanctioning, sanctions
+2614 |trick |tricked, tricking, tricks
+2615 |paragraph |paragraphed, paragraphing, paragraphs
+2616 |maker |makers
+2617 |chocolate |chocolates
+2618 |stimulate |stimulated, stimulates, stimulating
+2619 |belt |belted, belting, belts
+2620 |potato |potatoes
+2621 |narrative |narratives
+2622 |tissue |tissues
+2623 |barely |
+2624 |invent |invented, inventing, invents
+2625 |tourism |
+2626 |pro |pros
+2627 |stair |stairs
+2628 |hesitate |hesitated, hesitates, hesitating
+2629 |shine |shined, shines, shining, shone
+2630 |motivation |motivations
+2631 |romantic |romantics
+2632 |firmly |
+2633 |interior |interiors
+2634 |stomach |stomached, stomaching, stomachs
+2635 |nowhere |
+2636 |pray |prayed, praying, prays
+2637 |championship |championships
+2638 |servant |servants
+2639 |immigrant |immigrants
+2640 |excess |excesses
+2641 |complexity |complexities
+2642 |liability |liabilities
+2643 |surprisingly |
+2644 |extract |extracted, extracting, extracts
+2645 |implementation |implementations
+2646 |bias |biased, biases, biasing
+2647 |differently |
+2648 |catalog |cataloged, cataloging, catalogs, catalogue, catalogued, catalogues, cataloguing
+2649 |continuous |
+2650 |golden |
+2651 |stamp |stamped, stamping, stamps
+2652 |guideline |guidelines
+2653 |envelope |envelopes
+2654 |knife |knifed, knifes, knifing, knives
+2655 |biological |
+2656 |consume |consumed, consumes, consuming
+2657 |luxury |luxuries
+2658 |weekly |weeklies
+2659 |wherever |
+2660 |bite |bites, biting, bitten
+2661 |printer |printers
+2662 |firstly |
+2663 |anxious |
+2664 |adventure |adventured, adventures, adventuring
+2665 |fence |fenced, fences, fencing
+2666 |exhaust |exhausted, exhausting, exhausts
+2667 |attraction |attractions
+2668 |ocean |oceans
+2669 |quietly |
+2670 |castle |castled, castles, castling
+2671 |veteran |veterans
+2672 |reflection |reflections
+2673 |nerve |nerved, nerves, nerving
+2674 |determination |determinations
+2675 |altogether |
+2676 |fiction |fictions
+2677 |carpet |carpeted, carpeting, carpets
+2678 |cluster |clustered, clustering, clusters
+2679 |confusion |confusions
+2680 |hurry |hurried, hurries, hurrying
+2681 |logic |logics
+2682 |controversial |
+2683 |raw |rawer, rawest
+2684 |grammar |grammars
+2685 |revise |revised, revises, revising
+2686 |hint |hinted, hinting, hints
+2687 |hook |hooked, hooking, hooks
+2688 |bell |belled, belling, bells
+2689 |liquid |liquids
+2690 |panic |panicked, panicking, panics
+2691 |uncle |uncles
+2692 |rice |rices
+2693 |slope |slopes
+2694 |happiness |
+2695 |genuine |
+2696 |vessel |vessels
+2697 |verb |verbs
+2698 |reckon |reckoned, reckoning, reckons
+2699 |silly |sillier, silliest
+2700 |transportation |transportations
+2701 |harbor |harbored, harboring, harbors, harbour, harbouring, harbours
+2702 |comedy |comedies
+2703 |chase |chased, chases, chasing
+2704 |storage |storages
+2705 |universe |universes
+2706 |horrible |
+2707 |sheep |
+2708 |lover |lovers
+2709 |rat |rats, ratted, ratting
+2710 |portrait |portraits
+2711 |innocent |innocents
+2712 |substitute |substituted, substitutes, substituting
+2713 |supplement |supplemented, supplementing, supplements
+2714 |adjustment |adjustments
+2715 |reasonably |
+2716 |filter |filtered, filtering, filters
+2717 |flexible |
+2718 |abstract |abstracted, abstracting, abstracts
+2719 |tent |tented, tenting, tents
+2720 |precise |
+2721 |distant |
+2722 |stranger |strangers
+2723 |shade |shaded, shades, shading
+2724 |grain |grained, graining, grains
+2725 |situate |situated, situates, situating
+2726 |summarize |summarise, summarised, summarises, summarising, summarized, summarizes, summarizing
+2727 |leap |leaped, leaping, leaps, leapt
+2728 |snap |snapped, snapping, snaps
+2729 |probability |probabilities
+2730 |leather |leathered, leathering, leathers
+2731 |uncertainty |uncertainties
+2732 |swear |swearing, swears, swore, sworn
+2733 |refugee |refugees
+2734 |shore |shored, shores, shoring
+2735 |monthly |
+2736 |comprise |comprised, comprises, comprising
+2737 |stir |stirred, stirring, stirrings, stirs
+2738 |excitement |excitements
+2739 |sigh |sighed, sighing, sighs
+2740 |pregnancy |pregnancies
+2741 |experimental |experimentals
+2742 |institutional |
+2743 |slice |sliced, slices, slicing
+2744 |wander |wandered, wandering, wanderings, wanders
+2745 |empire |empires
+2746 |subsequently |
+2747 |gentle |gentled, gentler, gentles, gentlest, gentling
+2748 |attendance |attendances
+2749 |ownership |ownerships
+2750 |qualification |qualifications
+2751 |suspend |suspended, suspending, suspends
+2752 |functional |
+2753 |voluntary |
+2754 |pale |paled, paler, pales, palest, paling
+2755 |stain |stained, staining, stains
+2756 |athlete |athletes
+2757 |organic |organics
+2758 |tongue |tongued, tongues, tonguing
+2759 |server |servers
+2760 |structural |
+2761 |fool |fooled, fooling, fools
+2762 |alongside |
+2763 |unite |united, unites, uniting
+2764 |gently |
+2765 |compute |computed, computes, computing
+2766 |wipe |wiped, wipes, wiping
+2767 |weird |weirder, weirdest
+2768 |gaze |gazed, gazes, gazing
+2769 |fade |faded, fades, fading
+2770 |cough |coughed, coughing, coughs
+2771 |hypothesis |hypotheses
+2772 |royal |royals
+2773 |theoretical |
+2774 |curtain |curtained, curtaining, curtains
+2775 |mayor |mayors
+2776 |darkness |
+2777 |aunt |aunts
+2778 |tournament |tournaments
+2779 |registration |registrations
+2780 |fragment |fragmented, fragmenting, fragments
+2781 |listener |listeners
+2782 |tender |tenders
+2783 |density |densities
+2784 |ugly |uglier, ugliest
+2785 |module |modules
+2786 |faithfully |
+2787 |autumn |autumns
+2788 |cheek |cheeked, cheeks
+2789 |attachment |attachments
+2790 |holder |holders
+2791 |grin |grinned, grinning, grins
+2792 |noun |nouns
+2793 |fortunate |
+2794 |alright |
+2795 |lazy |lazier, laziest
+2796 |hello |
+2797 |hunger |hungered, hungering, hungers
+2798 |insure |insured, insures, insuring
+2799 |ashamed |
+2800 |found |founded, founding, founds
+2801 |thirst |thirsted, thirsting, thirsts
+`;
