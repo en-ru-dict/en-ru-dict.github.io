@@ -23,11 +23,10 @@ textarea {width:100%;background-color:mintcream;}
 </style>
 <script src='jquery.min.js'></script>
 <script src='bootstrap.min.js'></script>
-
 <!-- Навигация -->
 <ul class="nav nav-tabs" role="tablist">
  <li class="active"><a href="#tem" aria-controls="tem" role="tab" data-toggle="tab" title="Всякая лабуда">начало</a></li>
- <li><a id="id_a" href="#tem1" aria-controls="tem1" role="tab" data-toggle="tab" title="Полный список слов">список</a></li>
+ <li><a id="id_spisok" href="#tem1" aria-controls="tem1" role="tab" data-toggle="tab" title="Полный список слов">список</a></li>
  <li><a href="#tem2" aria-controls="tem2" role="tab" data-toggle="tab" title="Тут можно удалить лишнее" onclick="cards();">карточки</a></li>
 </ul>
 
@@ -100,7 +99,7 @@ textarea {width:100%;background-color:mintcream;}
    ||
    <button type="button" onclick=""> список=<span id="id_list">?</span> номер слова=<span id="id_word">?</span> </button>
    ||
-   <button type="button" class="btn btn-danger btn-lg" onclick="save_list();">Запомнить список</button>
+   <button type="button" class="btn btn-danger btn-lg" onclick="save_list();">Запомнить общий список</button>
    ||
    <button id="id_b0" type="button" class="btn btn-primary btn-lg" onclick="swipe_on();">Свайп вкл</button>
    <button id="id_b2" type="button" class="btn btn-success btn-lg" onclick="next_w();">Дальше</button>
@@ -110,15 +109,23 @@ textarea {width:100%;background-color:mintcream;}
 
  <div class="panel panel-primary"> 
   <div class="panel panel-success">
-   <h2> &nbsp;&nbsp;<b id="idw">слово [транскрипция]</b> <span id="idp" class="">перевод</span></h2>
+   <h2> &nbsp;&nbsp;<b id="id_w">слово [транскрипция]</b> <span id="id_p" class="">перевод</span></h2>
   </div>
   <div class="panel-body">  
-   <textarea id="ida" rows="4" >fa</textarea>
-   <textarea id="idd" rows="4" >fa</textarea>
+   <textarea id="id_a" rows="4" >fa</textarea>
+   <textarea id="id_d" rows="4" >fa</textarea>
   </div>
+<div id="id_info">инфо</div>
+<button type="button" id="id_bbb"                 >Загрузить из файла список известных слов (текст с разделителем: ;,\t\n)</button><br>
+<button type="button" onclick="load_list_js();"   >Загрузить список известных слов из english_words.js (рядом с index.htm)</button><br>
+<button type="button" onclick="filter_list();"    >Удалить из общего списка все уже известные слова</button><br>
+<button type="button" onclick="saveWordsToFile();">Сохранить на диск список известных слов (везде пригодится)</button><br>
+  
  </div>
 </div>
 </div>
+
+
 
 <script>
 var g_fa='';//global
@@ -135,6 +142,7 @@ function get_v(id){var d=document.getElementById(id);if(d)return d.value+'';}
 function put_h(id,s){if(!s)s=' ';var d=document.getElementById(id);if(d)d.innerHTML=s+'';}
 function get_h(id){var d=document.getElementById(id);if(d)return d.innerHTML+'';}
 function len(d){ return d.length;}
+function info(t){put_h('id_info',t);}
 function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
  if(s0.indexOf(a0)>=0){ms=s0.split(a0);s0=ms.join(b0);}
  return s0;
@@ -148,6 +156,26 @@ function one_space(s){var i,out='',f=0,ss;
  }
  return out.trim();
 }
+function loadScript(vPathScript, callback, arg1, arg2) { //new 2025
+  return new Promise((resolve, reject) => {
+    console.log('Загружаем скрипт=', vPathScript);
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = vPathScript;
+    script.onload = () => {
+      console.log('Скрипт загружен:', vPathScript);
+      resolve();
+      if (callback) {
+        setTimeout(() => callback(arg1, arg2), 0);
+      }
+    };
+    script.onerror = () => {
+      console.error('Ошибка загрузки скрипта:', vPathScript);
+      reject(new Error(`Ошибка загрузки скрипта: ${vPathScript}`));
+    };
+    document.head.appendChild(script);
+  });
+}
 function save_text(file,text) {
  if(!file)file='new_anki.txt';
  if(!text)text=get_v('id_text1');
@@ -155,7 +183,6 @@ function save_text(file,text) {
  const link = document.createElement('a');
  link.href = URL.createObjectURL(blob);
  link.download = file; // Имя файла
- // Программно кликаем по ссылке, чтобы начать скачивание
  document.body.appendChild(link);
  link.click();
  document.body.removeChild(link);
@@ -165,19 +192,13 @@ function put_txt(){var i,s,mm;
  g_fa=''; for(i=0;i<mm.length;i++){s=mm[i].trim();if(s)if(s.charAt(0)!='#')g_fa+=s+'\n';}
  put_v('id_text1',g_fa);
 }
-function loader1(file1){
- if(file1==0)file1=window.location.search.replace('?','');
- if(file1==1)file1="500/600b.txt";
- if(file1==2)file1="500/1500i.txt";
- if(file1==3)file1="500/1600p.txt";
- if(file1==4)file1="500/3200r.txt";
-  if(!file1)return;
- log('начинаем загружать скрипт='+file1);
- let script = document.createElement('script');
- script.src = file1;
- script.onload = () => {log('скрипт загружен='+g_fa.length);setTimeout(put_txt,0);}
- script.onerror = () => log('Ошибка загрузки='+script.src);
- document.head.append(script);
+function loader1(f){
+ if(f==0)f=window.location.search.replace('?','');
+ if(f==1)f="500/600b.txt";
+ if(f==2)f="500/1500i.txt";
+ if(f==3)f="500/1600p.txt";
+ if(f==4)f="500/3200r.txt";
+ if(f) loadScript(f,put_txt)
 }
 function lat_rus(){var i,n,k,w,ww,ss,s;
  var rus=rus1+rus2;
@@ -292,27 +313,27 @@ function slash_hr(){var s,ms,n,k,dd,out;
  alert('ok');
 }
 
-document.addEventListener('touchstart',handleTouchStart,false);// Вешаем на при
-document.addEventListener('touchmove',handleTouchMove,false);// на движение па
+document.addEventListener('touchstart',handleTouchStart,false);// Вешаем на прикосновение
+document.addEventListener('touchmove',handleTouchMove,false);// на движение пальцем по экрану
 
 var xDown = null, yDown = null, gBus=0; g_swipe=0;//global var
-function handleTouchStart(evt){xDown=evt.touches[0].clientX; yDown= evt.touches[0].clientY;}
+function handleTouchStart(evt){xDown=evt.touches[0].clientX; yDown=evt.touches[0].clientY;}
 function handleTouchMove(evt){var xUp,yUp,xDiff,yDiff;
  if(gBus)return;gBus=1;//занято
  if(!xDown || !yDown){gBus=0; return;}
  xUp=evt.touches[0].clientX; yUp=evt.touches[0].clientY;
  xDiff=xDown - xUp; yDiff=yDown - yUp;
  if(Math.abs(xDiff) > Math.abs(yDiff)){
-  if(xDiff > 5){document.title="==NEXT==>>";if(g_swipe)setTimeout(next_w,200);} // left swipe
-  if(xDiff < -5){document.title="<<==DEL==";if(g_swipe)setTimeout(del_w,200);} // right swipe
+  if(xDiff > 5){document.title="==NEXT==>>";if(gSwipe)setTimeout(next_w,200);} // left swipe
+  if(xDiff < -5){document.title="<<==DEL==";if(gSwipe)setTimeout(del_w,200);} // right swipe
  }
  xDown = null; yDown = null; gBus=0; return;
 }
 function swipe_on(){
  if(g_swipe){g_swipe=0;put_h('id_b0','Свайп вкл');}
- else {g_swipe=1;put_h('id_b0','cвайп ВЫКЛ');}
+ else {g_swipe=1;put_h('id_b0','Свайп ВЫКЛ');}
 }
-function cards(){var i,s;
+function cards(){var i,s,dd;
  s=get_v('id_text1');dd=s.split('\n');g_word=0;
  g_ms=[];for(i=0;i<dd.length;i++){if(4==len(dd[i].split('|')))g_ms.push(dd[i]);}
  show_w();
@@ -320,27 +341,28 @@ function cards(){var i,s;
 function show_w(){var s,dd;
  s=''+g_ms[g_word];
  dd=s.split('|');
- put_h('idw',dd[0]);
- put_h('idp',dd[1]);
- put_v('ida',dd[2]);
- put_v('idd',dd[3]);
+ put_h('id_w',dd[0]);
+ put_h('id_p',dd[1]);
+ put_v('id_a',dd[2]);
+ put_v('id_d',dd[3]);
  put_h('id_list',g_ms.length);
  put_h('id_word',g_word+1);
 }
 function next_w(){
- g_ms[g_word]= get_h('idw')+'|'+get_h('idp')+'|'+get_v('ida')+'|'+get_v('idd');
+ g_ms[g_word]= get_h('id_w')+'|'+get_h('id_p')+'|'+get_v('id_a')+'|'+get_v('id_d');
  g_word++;
  if(g_word==len(g_ms)){alert('Конец списка');g_word=0;}
  show_w();
 }
 function del_w(){
+ var w=g_ms[g_word].split(' ')[0];addKnownWord(w);
  g_ms.splice(g_word, 1);//del g_ms[g_word]
  if(g_word==len(g_ms)){alert('Конец списка');g_word=0;}
  show_w();
 }
 function save_list(){
  put_v('id_text1',g_ms.join('\n'));
- document.getElementById('id_a').click();
+ document.getElementById('id_spisok').click();
 }
 
 var g_300=1;
@@ -351,7 +373,160 @@ function obrez300(){var mm,n;
  put_h('id_b300','Вырезать 100('+g_300+') слов');
  put_v('id_text1',mm.join('\n'));
 }
-loader1(0);
+// либа для работы со списками известных слов
+// Функция для получения списка известных слов из localStorage
+function getKnownWords() {
+ const storedWords = localStorage.getItem('knownEnglishWords');
+ return storedWords ? storedWords.split('\n') : [];
+}
+// Функция для сохранения списка известных слов в localStorage
+function saveKnownWords(words) {
+ localStorage.setItem('knownEnglishWords', words.join('\n'));
+ return words.length;
+}
+// Функция для добавления слова в список известных слов
+function addKnownWord(w){
+ if(!w)return 0;w=w+'';w=w.trim();if(w=='')return 0;
+ w=w.toLowerCase();w=replace_all(w,' ','-');
+ var words = getKnownWords();
+ if (!words.includes(w)) {
+  words.push(w);
+  saveKnownWords(words);
+  info('известных слов='+words.length);
+ } else info('уже есть');
+}
+// Функция для удаления слова из списка известных слов
+function delKnownWord(word) {
+ var words = getKnownWords();
+ if (words.includes(word)) {
+  words=words.filter(w => w !== word);
+  saveKnownWords(words);
+  return 1;
+ } else return 0;
+}
+// Функция для создания ссылки и обработки загрузки файла
+function upload_file(){
+  
+  // Скрытый input для выбора файла
+  const fileInput = document.createElement("input");
+  fileInput.type = "file";
+  fileInput.style.display = "none";
+
+  // При клике по ссылке — кликаем по input
+  document.getElementById('id_bbb').addEventListener("click", (e) => {
+    e.preventDefault();
+    fileInput.click();
+  });
+
+  // Обработка выбранного файла
+  fileInput.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onerror = function(error){info('Ошибка при чтении файла:'+error);};
+    reader.onload = function(evt){var v='',i=0,dd=[],mm=[];
+	  v=evt.target.result+'';
+      v=v.replace('g_words=`','');v=v.replace('`;','');
+      v=replace_all(v,', ',',');
+      v=replace_all(v,',','\n');
+      v=replace_all(v,'; ',';');
+      v=replace_all(v,';','\n');
+      v=replace_all(v,'\t','\n');
+      v=v.toLowerCase(); //все слова маленькими буквами, для правильного поиска
+      mm=v.split('\n');
+      for(i=0;i<mm.length;i++){
+       v=mm[i].trim();
+       v=replace_all(v,' ','-'); //составные через дефис
+       if(v)if(!dd.includes(v))dd.push(v);
+      } 
+      saveKnownWords(dd);
+      info('ok='+dd.length);
+    };
+    reader.readAsText(file, "UTF-8");
+  });
+
+  // Добавляем элементы на страницу
+  document.body.appendChild(fileInput);
+}
+function old_loadWordsFromFile() {
+    const fileInput = document.getElementById('id_file');
+    if (!fileInput || !fileInput.files || fileInput.files.length === 0) {
+      alert('Пожалуйста, выберите файл.');
+      return 0;
+    }
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+    reader.onload = function(event) {var v='',i=0,dd=[],mm=[];
+      v = event.target.result;
+      v=v.replace('g_words=`','');v=v.replace('`;','');
+      v=replace_all(v,', ',',');
+      v=replace_all(v,',','\n');
+      v=replace_all(v,'; ',';');
+      v=replace_all(v,';','\n');
+      v=replace_all(v,'\t','\n');
+      v=v.toLowerCase(); //все слова маленькими буквами, для правильного поиска
+      mm=v.split('\n');
+      for(i=0;i<mm.length;i++){
+       v=mm[i].trim();
+       v=replace_all(v,' ','-'); //составные через дефис
+       if(v)if(!dd.includes(v))dd.push(v);
+      } 
+      saveKnownWords(dd);
+      info('ok='+dd.length);
+    };
+    reader.onerror = function(error) {
+       info('Ошибка при чтении файла:'+error);
+    };
+    reader.readAsText(file);
+    return 1;
+}
+
+// Функция для сохранения списка известных слов в текстовый файл (скачивание файла браузером)
+function saveWordsToFile(filename = 'english_words.js') {
+ var words=getKnownWords();
+ const text = 'g_words=`\n'+words.join('\n')+'\n`;';
+ const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+ const link = document.createElement('a');
+ link.href = URL.createObjectURL(blob);
+ link.download = filename;
+ document.body.appendChild(link);
+ link.click();
+ document.body.removeChild(link);
+ URL.revokeObjectURL(link.href);
+}
+
+// Функция для фильтрации списка слов, оставляя только неизвестные
+function filterUnknownWords(allWords) {
+ const knownWords = getKnownWords();
+ return allWords.filter(word => !knownWords.includes(word));
+}
+
+async function load_list_js() {
+  try {
+    await loadScript('english_words.js');
+    if (window.g_words) {
+	  var mm=g_words.split('\n');g_words='';
+	  mm=mm.map(w => w.trim()).filter(w => w !== '');
+      saveKnownWords(mm);
+      info('ok='+mm.length);
+    } else {
+      info('Переменная g_words не найдена');
+    }
+  } catch (error) {
+    info('Произошла ошибка при загрузке или обработке скрипта:'+error);
+  }
+}
+function filter_list(){var i,s,dd,uw,k,w; //чистим общий список от известных слов
+ s=get_v('id_text1');dd=s.split('\n');g_word=0;uw=getKnownWords();
+ g_ms=[];for(i=0;i<dd.length;i++){
+	 s=dd[i];k=len(s.split('|'));w=s.split(' ')[0];
+	 if(k==4)if(!uw.includes(w))g_ms.push(s);}
+ show_w();
+}
+
+
+loader1(0);upload_file();
+
 // XingSoft*2025 Для удаления лишних слов и ФА и форматирование для импорта в АнкиДроид
 // Расчитано на Экран 1280 х 800 , Остальным неповезло :) Сами размеры подгоняйте
 </script>
