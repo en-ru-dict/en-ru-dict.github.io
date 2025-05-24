@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма обратной связи</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .captcha-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .captcha-group input[type="text"] {
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .message {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <h2>Форма обратной связи</h2>
+Тут можно писать отзывы, предложения, свои ФА, что нравится и не нравится, что сделать, переделать, или какой это отцтой и никому не надо. Но лучше на ютюбе или englspace писать, больше народа прочитает и может поможет!
+        <hr>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Ваш Email(необязательно):</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="form-group captcha-group">
+                <label for="captcha">Сколько звёзд на небе и <span id="num1"></span> * <span id="num2"></span>?</label>
+                <input type="text" id="captcha" name="captcha" required>
+            </div>
+            <div style="display:none;">
+             <input type="text" id="lastname" name="lastname">
+            </div>
+            <button type="submit">Отправить</button>
+
+        </form>
+    </div>
+
+
+</div>
+
+<script>
+function getv(id){return document.getElementById(id).value;}
+window.onload = function() {
+    window['formStartTimeField'] = new Date().getTime();
+    const num1 = Math.floor(Math.random() * 5) + 2;
+    const num2 = Math.floor(Math.random() * 5) + 2;
+    document.getElementById('num1').textContent = num1;
+    document.getElementById('num2').textContent = num2;
+    window['captchaResult'] = num1 * num2;
+ }
+
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    var name = ''+getv('name')+' email='+getv('email');
+    var message = ''+getv('message');
+    var captchaInput = parseInt(getv('captcha'));
+    if(captchaInput !== window['captchaResult']){alert('Неправильный ответ на задачу, роботы считать не умеют');return;}
+    if (window['formStartTimeField']+5000 > new Date().getTime()){alert('Пожалуйста помедленей, я записываю');return;}
+    const G_URL = 'https://script.google.com/macros/s/AKfycbwAvb5NsKn1TTltfPjIllAcVk13gl_Lp9nA7kGMSYuYv_z5ST8WiJ_0Vud02j18b_SH/exec';
+    const formData = new FormData();
+    name=name.replace(/[=\+\-<>()\[\]{}!?;:"'`\\\/%*&^#$~]/g,',');
+    formData.append('name', name);
+    message=message.replace(/[=\+\-<>()\[\]{}!?;:"'`\\\/%*&^#$~@]/g,',');
+    formData.append('message', message);
+
+    try {
+        const response = await fetch(G_URL, {method: 'POST',body: formData});
+        const result = await response.json();
+        if(result.status === 'success'){
+          alert('сообщение успешно отправлено куда надо!');
+        } else alert('Ошибка при отправке сообщения=' + result.message);
+    } catch (error) {alert('Ошибка при отправке=:'+error);}
+ });
+</script>
+</body>
+</html>
