@@ -111,30 +111,30 @@
 <body>
     <div class="container">
         <h2>Форма обратной связи</h2>
-Тут можно писать отзывы, предложения, свои ФА, что нравится и не нравится, что сделать, переделать, или какой это отцтой и никому не надо. Но лучше на ютюбе или englspace писать, больше народа прочитает и может поможет!
+        Сюда можно писать отзывы, предложения, замечания, что нравится или не нравится, что сделать, переделать, какой это отцтой и никому не надо :) 
+
         <hr>
         <form id="contactForm">
             <div class="form-group">
-                <label for="name">Ваше имя:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Ваш Email(необязательно):</label>
-                <input type="email" id="email" name="email">
-            </div>
-            <div class="form-group">
-                <label for="message">Сообщение:</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <div class="form-group captcha-group">
-                <label for="captcha">Сколько звёзд на небе и <span id="num1"></span> * <span id="num2"></span>?</label>
-                <input type="text" id="captcha" name="captcha" required>
+                <label for="name">Имя:</label>
+                <input type="text" name="name" required>
             </div>
             <div style="display:none;">
-             <input type="text" id="lastname" name="lastname">
+             <input type="text" name="tel">
+            </div>
+            <div class="form-group">
+                <label for="email">Email (необязательно):</label>
+                <input type="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="message">Сообщение: (макс=1000)</label>
+                <textarea name="message" required></textarea>
+            </div>
+            <div class="form-group captcha-group">
+                <label for="captcha"> <span id="id_num1"></span></label>
+                <input type="text" name="captcha" required>
             </div>
             <button type="submit">Отправить</button>
-
         </form>
     </div>
 
@@ -143,36 +143,34 @@
 
 <script>
 function getv(id){return document.getElementById(id).value;}
-window.onload = function() {
+window.onload = () => {
     window['formStartTimeField'] = new Date().getTime();
     const num1 = Math.floor(Math.random() * 5) + 2;
     const num2 = Math.floor(Math.random() * 5) + 2;
-    document.getElementById('num1').textContent = num1;
-    document.getElementById('num2').textContent = num2;
+    document.getElementById('id_num1').textContent = 'Сколько звёзд на небе? и ' + num1 + ' * '+ num2;
     window['captchaResult'] = num1 * num2;
  }
-
-document.getElementById('contactForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    var name = ''+getv('name')+' email='+getv('email');
-    var message = ''+getv('message');
-    var captchaInput = parseInt(getv('captcha'));
-    if(captchaInput !== window['captchaResult']){alert('Неправильный ответ на задачу, роботы считать не умеют');return;}
-    if (window['formStartTimeField']+5000 > new Date().getTime()){alert('Пожалуйста помедленей, я записываю');return;}
-    const G_URL = 'https://script.google.com/macros/s/AKfycbwAvb5NsKn1TTltfPjIllAcVk13gl_Lp9nA7kGMSYuYv_z5ST8WiJ_0Vud02j18b_SH/exec';
-    const formData = new FormData();
-    name=name.replace(/[=\+\-<>()\[\]{}!?;:"'`\\\/%*&^#$~]/g,',');
-    formData.append('name', name);
-    message=message.replace(/[=\+\-<>()\[\]{}!?;:"'`\\\/%*&^#$~@]/g,',');
-    formData.append('message', message);
-
+const g_form=document.getElementById('contactForm');
+ g_form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const formData = new FormData(g_form);
+  const data = {};  formData.forEach((value, key) => data[key] = value);
+  var b1 = JSON.stringify(data);
+  var s=data.name+',,,'+data.email+',,,'+data.message;
+  s=s.replace(/[=\+\-<>()\[\]{}!?;:"'`\\\/%*&^#$~@]/g,'.');
+  var b2=JSON.stringify({"text":s});
+    if(parseInt(data.captcha) !== window['captchaResult']){alert('Неправильный ответ на задачу, роботы считать не умеют');return;}
+    if(data.tel !== ''){alert('Телефон не надо');return;}
+    if(s.length>1100){alert('слишком много букв');return;}
+    if(window['formStartTimeField']+5000 > new Date().getTime()){alert('Пожалуйста помедленей, я записываю');return;}
+    const G_URL = '/macros/s/AKfycbxWCw6jWTnbWCLujGX1MCGkPaLxMMDsiwe9bgNX7JMly-kRCY9vpz1Zx_gWiUKTcBt0/exec';
     try {
-        const response = await fetch(G_URL, {method: 'POST',body: formData});
+//не вздумайте взламывать! а то отключу и пишите на ютюбе 
+        const response = await fetch('https://script.google.com'+G_URL, {method:'POST',headers:{'Content-Type':'application/json'},body: b2});
         const result = await response.json();
-        if(result.status === 'success'){
-          alert('сообщение успешно отправлено куда надо!');
-        } else alert('Ошибка при отправке сообщения=' + result.message);
-    } catch (error) {alert('Ошибка при отправке=:'+error);}
+        if(result.status === 'success'){alert('сообщение успешно отправлено куда надо!');} 
+        else alert('Ошибка ответ сервера=' + result.message);
+    } catch (error){alert('Ошибка отправки=:'+error);}
  });
 </script>
 </body>
