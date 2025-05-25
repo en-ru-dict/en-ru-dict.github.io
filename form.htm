@@ -137,8 +137,6 @@
             <button type="submit">Отправить</button>
         </form>
     </div>
-
-
 </div>
 
 <script>
@@ -150,28 +148,47 @@ window.onload = () => {
     document.getElementById('id_num1').textContent = 'Сколько звёзд на небе? и ' + num1 + ' * '+ num2;
     window['captchaResult'] = num1 * num2;
  }
+
 const g_form=document.getElementById('contactForm');
- g_form.addEventListener('submit', async (e) => {
+ g_form.addEventListener('submit',  (e) => {
   e.preventDefault();
   const formData = new FormData(g_form);
   const data = {};  formData.forEach((value, key) => data[key] = value);
-  var b1 = JSON.stringify(data);
   var s=data.name+',,,'+data.email+',,,'+data.message;
   s=s.replace(/[=\+\-<>()\[\]{}!?;:"'`\\\/%*&^#$~@]/g,'.');
-  var b2=JSON.stringify({"text":s});
-    if(parseInt(data.captcha) !== window['captchaResult']){alert('Неправильный ответ на задачу, роботы считать не умеют');return;}
-    if(data.tel !== ''){alert('Телефон не надо');return;}
-    if(s.length>1100){alert('слишком много букв');return;}
-    if(window['formStartTimeField']+5000 > new Date().getTime()){alert('Пожалуйста помедленей, я записываю');return;}
-    const G_URL = '/macros/s/AKfycbxWCw6jWTnbWCLujGX1MCGkPaLxMMDsiwe9bgNX7JMly-kRCY9vpz1Zx_gWiUKTcBt0/exec';
+  if(parseInt(data.captcha) !== window['captchaResult']){alert('Неправильный ответ на задачу, роботы считать не умеют');return;}
+ if(data.tel !== ''){alert('Телефон не надо');return;}
+ if(s.length>1100){alert('слишком много букв');return;}
+ if(window['formStartTimeField']+5000 > new Date().getTime()){alert('Пожалуйста помедленей, я записываю');return;}
+send_msg(s);
+});
+
+function send_msg(s){var u,b;
+u=' https://script.google.com/macros/s/AKfycbxWCw6jWTnbWCLujGX1MCGkPaLxMMDsiwe9bgNX7JMly-kRCY9vpz1Zx_gWiUKTcBt0/exec';
+b = JSON.stringify({"text": s});
+
+fetch(u, {
+method:'POST',
+/* headers:{'Content-Type':'application/json;charset=utf-8'}, */
+body: b
+}).then(function(response) {
+        if (!response.ok) {throw new Error('HTTP error! status: ' + response.status);}
+        return response.json();
+ }).then(function(result) {
+        if (result.status === 'success') {alert('сообщение отправлено!');} 
+        else {alert('Ошибка ответ сервера=' + result.message);}
+ }).catch(function(error) {alert('Ошибка отправки=' + error); });
+}
+/*
     try {
 //не вздумайте взламывать! а то отключу и пишите на ютюбе 
-        const response = await fetch('https://script.google.com'+G_URL, {method:'POST',headers:{'Content-Type':'application/json'},body: b2});
-        const result = await response.json();
+        const response = fetch(u, {method:'POST',headers:{'Content-Type':'application/json'},body: b});return
+        const result = response.json();
         if(result.status === 'success'){alert('сообщение успешно отправлено куда надо!');} 
         else alert('Ошибка ответ сервера=' + result.message);
     } catch (error){alert('Ошибка отправки=:'+error);}
  });
+*/
 </script>
 </body>
 </html>
