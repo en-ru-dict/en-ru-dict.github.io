@@ -1,131 +1,133 @@
-g_fa=` список важных 2800 английских слов в порядке частоты, их знать обязательно!
-1 |the | /точно этот +this +these
-2 |be |am, are, aren't, been, being, beings, is, isn't, was, wasn't, were, weren't /быть %
-3 |and | /андрей и эндоскоп братья близнецы
-4 |of | /чего
-5 |to | /к
-6 |a |an /некий
-7 |in | /инкубатор= в+детеныш
-8 |have |had, hadn't, has, hasn't, haven't, having /хавать
-9 |it |its /это
-10 |you |your, yours /ютюб= ты+труба
-11 |he |him, his /хихикал
-12 |for | /форточка для проветривания
-13 |they |their, theirs, them
-14 |not | /нет %
-15 |that |those /тот те
-16 |we |our, ours, us /мы (М вверх ногами W)
-17 |on | /на ней
-18 |with | /с визитом
-19 |this |these /=the
-20 |i |me, my /айфон +глаз eye
-21 |do |did, didn't, does, doesn't, doing, don't, done /делать %
-22 |as | /+осёл, задница
-23 |at | /время, возле
-24 |she |her, hers /шизанутая
-25 |but |buts /но батон вкуснее
-26 |from | /от фром *
-27 |by | /+купить, пока
-28 |will |willed, willing, won't /вилли купит виллу и вилку
-29 |or | /или ори или молчи
-30 |say |said, saying, sayings, says /сказать %
-31 |go |goes, going, gone, gonna, went /горила идет крокодила ведёт
-32 |so | /соу соу= так себе
-33 |all | все алкаши
-34 |if |ifs /иф монтан +else иначе, условный оператор
-35 |one |ones /оно=одно
-36 |would |wouldn't /+древесина голивуд, знал бы вуду жил бы в сочи
-37 |about | /аббат ходил вокруг да около часовни
-38 |can |can't, cannot /консерва может храниться долго
-39 |which | /который тут вич? выходи
-40 |there | /там +хиа=тут +Вэа=где
-41 |know |knew, knowing, known, knows /ноу-хау
-42 |more | /море=много сленг
-43 |get |gets, getting, got, gotta, gotten /гетман получил получку и спрятал заначку
-44 |who |whom, whose /кто уху ел?
-45 |like |liked, likes, liking /лайки
-46 |when | /когда вену взяли - нашли там венома
-47 |think |thinking, thinks, thought, thoughts /синк-раковина тонуть, сфинкс думал о пирамидах, индюк думал и в супе утонул
-48 |make |made, makes, making /хэнд мейд, ремейк
-49 |time |timed, times, timing /таймер
-50 |see |saw, seeing, seen, sees /синее море
-51 |what | /вот что это?
-52 |up |upped, upping, ups /але ап в цирке
-53 |some | /несколько самцов бегали за той же самой(same) самкой
-54 |other |others /другое озере
-55 |out |outed, outing, outings, outs /аутсайдер = вне + сторона
-56 |good | /гудвин, робин гуд, гуд бай
-57 |people |peopled, peoples, peopling /пипл хавает
-58 |year |years /+ухо
-59 |take |taken, takes, taking, took /тайком брать
-60 |no | нет %
-61 |well |welled, welling, wells /великолепно
-62 |because | /потому что любовь зла, полюбишь и козла
-63 |very | /очень верим в светлое будущее
-64 |just | /j=й юстиция
-65 |come |came, comes, coming /приходи ка мне
-66 |could |coulda, couldn't /куда он мог исчезнуть?
-67 |work |worked, working, workings, works/ фейверк
-68 |use |used, uses, using /юзать
-69 |than | /чем +then затем
-70 |now | /+know наука знает
-71 |then | /+than чем
-72 |also | /алсу тоже
-73 |into | /интуиция
-74 |only | /только он ли
-75 |look |looked, looking, looks /на лук и плачу
-76 |want |wanna, wanted, wanting, wants /авантюристы
-77 |give |gave, given, gives, giving /гиви дал гирей
-78 |first |firsts /фестиваль у валь
-79 |new |newer, newest /нью йорк
-80 |way |ways /бродвей, трамвай
-81 |find |finding, findings, finds /финляндия нашла железное небо на луне
-82 |over |overs /овертаим, оверлок
-83 |any | /эникей сковородкин
-84 |after | /после текста автор поставил подпись
-85 |day |days /день %%
-86 |where | /где here-там
-87 |thing |things /сын не вещь а домашнее животное
-88 |most | /самый большой мост до луны
-89 |should |shoulda, shouldn't
-90 |need |needed, needing, needs /че те надо гнида (из кино)
-91 |much | /много у мачо баб
-92 |right |righted, righting, rights /братья райт
-93 |how | /ноу хау= знать как
-94 |back |backed, backing, backs /кэшбэк
-95 |mean |meaner, meanest, meaning, meanings, means, meant /кислая мина минстра
-96 |even |evened, evens /иван сусанин даже дороги не знал
-97 |may | /можно+май %
-98 |here | /+where где
-99 |many | /много мани-денег
-100 |such | /вот таакой сачок дала тебе мадам батерфляй и послала на хутор бабочек ловить
-101 |last |lasted, lasting, lasts /он склеил ласты, это последнее что он склеил правильно
-102 |child |children /чайлдфри
-103 |tell |telling, tells, told /по телефону
-104 |really | /реально %
-105 |call |called, calling, calls /кол-ццентр
-106 |before | /бефокальные линзы
-107 |company |companies /компания %
-108 |through | /срубил просеку через заколдованный лес и всякая нечисть попёрла
-109 |down |downed, downing, downs / даун внизу, локдаун
-110 |show |showed, showing, shown, shows /шоу % шоумен
-111 |life | /лайфхак, гербалайф
-112 |man |manned, manning, mans, men /спортсмен, манекен
-113 |change |changed, changes, changing /чунга чанге поменяли пол, теперь он белый и пушистый
-114 |place |placed, places, placing /маркетплейс
-115 |long |longed, longer, longest, longing, longs /пролонгация, шезлонг
-116 |between | /бить виновника между глаз
-117 |feel |feeling, feelings, feels, felt /философ чувствует что пора на пароход
-118 |too | /тузик очень хочет грелку +to к
-119 |still |stilled, stiller, stillest, stilling, stills /стиль маньяка тот же +сталь +украсть
+g_fa=`
+# список самых важных 2800 английских слов в порядке частоты, их знать обязательно!
+1 |the | /*точно-этот +this +these (артикль)
+2 |be |am, are, aren't, been, being, beings, is, isn't, was, wasn't, were, weren't /*быть %
+3 |and | /андрей *и эндоскоп братья близнецы
+4 |of | /*чего (предлог)
+5 |to | /*к (направление), частица к глаголу +too тоже,слишком
+6 |a |an /*некий (артикль)
+7 |in | /инкубатор= *в+детеныш(куб-каб)
+8 |have |had, hadn't, has, hasn't, haven't, having /хавать= *иметь завтрак
+9 |it |its /*это %%
+10 |you |your, yours /ютюб= *ты+труба
+11 |he |him, his /*он хихикал
+12 |for | /форточка *для проветривания
+13 |they |their, theirs, them /*они завели друзей (в лес)
+14 |not | /*нет %
+15 |that |those /*тот
+16 |we |our, ours, us /*мы (М вверх ногами W)
+17 |on | /он *на ней
+18 |with | /визитер пришел к тебе *с визитом, а ушел с пустыми руками
+19 |this |these /=the *этот +that тот
+20 |i |me, my /айфон=*я+телефон, +глаз eye
+21 |do |did, didn't, does, doesn't, doing, don't, done /*делать %
+22 |as | /*как, +ass осёл,задница
+23 |at | /*возле +время
+24 |she |her, hers /*она шизанутая
+25 |but |buts /*но батон вкуснее пуговицы-батн
+26 |from | /*от фрола машка сбежала
+27 |by | /*чем (предлог) + buy-купить, bye-пока
+28 |will |willed, willing, won't /вилли купит виллу *воля *будет
+29 |or | /*или ори *или молчи
+30 |say |said, saying, sayings, says /*сказать %, саид *сказал махмуду - поджигай
+31 |go |goes, going, gone, gonna, went /горила *идет крокодила ведёт
+32 |so | /соу соу= *так себе соус
+33 |all | /*все алкаши
+34 |if |ifs /*если иф то монтан +else иначе, условный оператор
+35 |one |ones /оно= *одно рыло
+36 |would |wouldn't /знал *бы вуду жил *бы в сочи +wood древесина голивуд, 
+37 |about | /аббат ходил *вокруг да *около часовни
+38 |can |can't, cannot /*консерва *может храниться долго
+39 |which | /*который тут вич? выходи +ведьма лечит от вич вичкой
+40 |there | /*там +хиа=тут +Вэа=где
+41 |know |knew, knowing, known, knows /ноу-хау= *знать как
+42 |more | /*больше, море= значит много (сленг)
+43 |get |gets, getting, got, gotta, gotten /гетман *получил получку и спрятал заначку
+44 |who |whom, whose /*кто уху ел?
+45 |like |liked, likes, liking /лайки *нравятся +лав-любить
+46 |when | /*когда вену взяли штурмом - там нашли венома, он доедал последнего защитника
+47 |think |thinking, thinks, thought, thoughts /сфинкс *думал о пирамидах, индюк *думал и в супе утонул, +синк-раковина тонуть
+48 |make |made, makes, making /хэнд мейд= *сделано руками, ремейк= повторно *делать
+49 |time |timed, times, timing /таймер считает *время
+50 |see |saw, seeing, seen, sees /*видеть синее море с русалками
+51 |what | /вот *что это такое?
+52 |up |upped, upping, ups /але ап в цирке это *вверх прыгай
+53 |some | /*несколько самцов бегали за той же самой(same) самкой
+54 |other |others /*другое озеро с лох-неским чудовищем и лохами
+55 |out |outed, outing, outings, outs /аутсайдер = *вне + сторона
+56 |good | /гудвин= *хороший+выиграл, робин гуд= малиновка+ *хороший, гуд-бай= всего *хорошего
+57 |people |peopled, peoples, peopling /пипл хавает = *люди сьедят и всем пофик
+58 |year |years /*год, +ухо ир
+59 |take |taken, takes, taking, took /тайком *брать деньги из карманов родичей
+60 |no | /*нет %%
+61 |well |welled, welling, wells /*хорошо и ~великолепно
+62 |because | /*потому-что любовь зла, полюБИшь и КОЗла
+63 |very | /*очень верим в светлое будущее
+64 |just | /*только-что *справедливость, j=й ~юстиция
+65 |come |came, comes, coming /*приходи ка мне на сеновал с кузнецом
+66 |could |coulda, couldn't /куда он *мог исчезнуть?
+67 |work |worked, working, workings, works/ фейверк= огонь + *работа
+68 |use |used, uses, using /~юзать (сленг) =использовать
+69 |than | /*чем, +then-затем
+70 |now | /*теперь, +know наука *теперь знает где раки зимуют
+71 |then | /*затем, +than-чем
+72 |also | /алсу *тоже пела под фанеру
+73 |into | /интуиция *внутри прячется
+74 |only | /*только он ли толька у ольки
+75 |look |looked, looking, looks /*смотрю на лук и плачу
+76 |want |wanna, wanted, wanting, wants /авантюристы *хотят приключений на свою
+77 |give |gave, given, gives, giving /гиви *дал гирей по башке, очнулся в морге
+78 |first |firsts /*первый фестиваль у валь
+79 |new |newer, newest /нью йорк= *новый орк с орками
+80 |way |ways /бродвей= широкий + *путь, трамвай= трамвай(вагон)+ *путь
+81 |find |finding, findings, finds /в финляндии нашли железное небо и немцев на луне
+82 |over |overs /~овертаим = *сверх + время, ~оверлок = *через + замок +cover-накрыть
+83 |any | /аникейщик= *любая клавиша - спец по принеси подай, эникей сковородкин
+84 |after | /*после текста автор поставил подпись и печать
+85 |day |days /*день %%
+86 |where | /*где, +here-там
+87 |thing |things /сын не *вещь, а домашнее животное +Син-тонкий, кормят плохо
+88 |most | /*самый-большой мост до луны построили лунатики, большинство ходит через мост, а по тонкому льду только камикадзе, там короче
+89 |should |shoulda, shouldn't /ШУТ *должен застрелить(шут) короля лира
+90 |need |needed, needing, needs /чё те *надо гнида (из кино)
+91 |much | /*много у мачо баб и денег(мэни-много, мани-деньги)
+92 |right |righted, righting, rights /братья райт писали(write) *правой рукой о самолетах
+93 |how | /ноу хау= знать *как
+94 |back |backed, backing, backs /кэшбэк= наличные + *назад, бэкграунд= *задний фон
+95 |mean |meaner, meanest, meaning, meanings, means, meant /*кислая мина *посредственного министра *означает всем капец
+96 |even |evened, evens /иван сусанин *даже дороги не знал, завёл нас хз куда
+97 |may | /*можно %% *мочь %% *май %
+98 |here | /*здесь +where-где
+99 |many | /*много денег-мани не бывает
+#==
+100 |such | /вот *таакой сачок дала тебе мадам батерфляй и послала на хутор бабочек ловить
+101 |last |lasted, lasting, lasts /он склеил ласты, это *последнее что он склеил правильно
+102 |child |children /чайлдфри= *ребенок+свободный
+103 |tell |telling, tells, told /телефон= *говорить+телефон
+104 |really | /*реально %
+105 |call |called, calling, calls /кол-центр для *названивания, колокол *звонит
+106 |before | /бифокальные линзы - чтобы видеть *перед носом
+107 |company |companies /*компания %
+108 |through | /срубил просеку *через заколдованый лес и всякая нечисть попёрла
+109 |down |downed, downing, downs / даун *внизу соц.лестницы , локдаун= замок+ *вниз
+110 |show |showed, showing, shown, shows /ток-шоу=говорить и *показывать, ~шоумен
+111 |life | /лайфхак= *жизнь+взломать, гербалайф=трава+ *жизнь
+112 |man |manned, manning, mans, men /спортсмен=спорт+ *человек, манекен +woman-женщина друг *человека
+113 |change |changed, changes, changing /чунга чанге *поменяли пол, теперь он белый и пушистый
+114 |place |placed, places, placing /маркетплейс = рынок + *место
+115 |long |longed, longer, longest, longing, longs /пролонгация=продление, шезлонг *длинный
+116 |between | /бить виновника *между глаз
+117 |feel |feeling, feelings, feels, felt /философ *чувствует что пора на пароход
+118 |too | /тузик *очень хочет грелку +to к /*тоже
+119 |still |stilled, stiller, stillest, stilling, stills /стиль маньяка *тот же +сталь-steel +украсть-steal
 120 |problem |problems /проблема %
-121 |write |writes, writing, writings, written, wrote /не врите что левша и пишите правой(райт) рукой
-122 |same | /тот же самый сейм
-123 |lot |lots /лот лоторея
-124 |great |greater, greatest, greats /грейт бритн
-125 |try |tried, tries, trying /трайная попытка угадай с трёх раз
-126 |leave |leaved, leaves, leaving /+жить
-127 |number |numbered, numbering, numbers /номер %
+121 |write |writes, writing, writings, written, wrote /не врите что левша и *пишите правой(райт) рукой
+122 |same | /*тот-же самый сейм, *те-же рожи
+123 |lot |lots /лот лоторея *много билетов
+124 |great |greater, greatest, greats /грейт бритн *велико-британия
+125 |try |tried, tries, trying /трайная *попытка угадай с трёх раз
+126 |leave |leaved, leaves, leaving /*покидать ливию +жить-live
+127 |number |numbered, numbering, numbers /номер % число
 128 |both | /оба боса шишки
 129 |own |owned, owning, owns /клоун показал собственный красный нос
 130 |part |parted, parting, parts /партнер, партия
@@ -499,75 +501,74 @@ g_fa=` список важных 2800 английских слов в поря�
 498 |charge |charged, charges, charging /заряжать *
 499 |finally | /финально
 500 |sign |signed, signing, signs /сигнал, сигнатура
-==
-501 |claim |claimed, claiming, claims
-502 |relationship |relationships
-503 |travel |traveled, traveling, travelled, travelling, travels
-504 |enjoy |enjoyed, enjoying, enjoys
-505 |death |deaths
-506 |nice |nicer, nicest
-507 |amount |amounted, amounts
-508 |improve |improved, improves, improving
-509 |picture |pictured, pictures, picturing
-510 |boy |boys
-511 |regard |regarded, regarding, regards
-512 |organization |organisation, organisations, organizations
-513 |happy |happier, happiest
-514 |couple |coupled, couples, coupling
-515 |act |acted, acting, acts
-516 |range |ranged, ranges, ranging
-517 |quality |qualities
-518 |project |projected, projecting, projects
-519 |round |rounded, rounder, roundest, rounding, rounds
-520 |opportunity |opportunities
-521 |road |roads
-522 |accord |accorded, according, accords
-523 |list |listed, listing, listings, lists
-524 |wish |wished, wishes, wishing
-525 |therefore |
-526 |wear |wearing, wears, wore, worn
-527 |fund |funded, funding, funds
-528 |rest |rested, resting, rests
-529 |kid |kidded, kidding, kids
-530 |industry |industries
-531 |education |educations
-532 |measure |measured, measures, measuring
-533 |kill |killed, killing, killings, kills
-534 |serve |served, serves, serving, servings
-535 |likely |likelier, likeliest
-536 |certainly |
-537 |national |nationals
-538 |itself |
-539 |teach |taught, teaches, teaching, teachings
-540 |field |fielded, fielding, fields
-541 |security |securities
-542 |air |aired, airing, airs
-543 |benefit |benefited, benefiting, benefits, benefitted, benefitting
-544 |trade |traded, trades, trading
-545 |risk |risked, risking, risks
-546 |news |
-547 |standard |standards
-548 |vote |voted, votes, voting
-549 |percent |percents
-550 |focus |focused, focuses, focusing, focussed, focusses, focussing
-551 |stage |staged, stages, staging
-552 |space |spaced, spaces, spacing
-553 |instead |
-554 |realize |realise, realised, realises, realising, realized, realizes, realizing
-555 |usually |
-556 |data |datum
-557 |single |singled, singles, singling
-558 |address |addressed, addresses, addressing
-559 |performance |performances
-560 |chance |chanced, chances, chancing
-561 |accept |accepted, accepting, accepts
-562 |society |societies
-563 |technology |technologies
-564 |mention |mentioned, mentioning, mentions
-565 |choice |choicer, choices, choicest
-566 |save |saved, saves, saving, savings
-567 |common |commonest
-568 |culture |cultured, cultures, culturing
+501 |claim |claimed, claiming, claims /клеймо подтверждает права
+502 |relationship |relationships /*
+503 |travel |traveled, traveling, travelled, travelling, travels /травил новичком
+504 |enjoy |enjoyed, enjoying, enjoys /ен+джой=радость приносит ди джей
+505 |death |deaths /деспота казнили, собаке, собачья смерть
+506 |nice |nicer, nicest /милая премянница-нис
+507 |amount |amounted, amounts /маунт-гора,много, монтёр влез
+508 |improve |improved, improves, improving /импоровизация им+прув=доказывать
+509 |picture |pictured, pictures, picturing /пиктограмма
+510 |boy |boys /бойфренд, ковбой, бойскаут
+511 |regard |regarded, regarding, regards /рихард зорге, регата
+512 |organization |organisation, organisations, organizations /организация %
+513 |happy |happier, happiest /хэпи енд
+514 |couple |coupled, couples, coupling /фани и каплан веселая парочка приведений в мавзолее
+515 |act |acted, acting, acts /актовый зал
+516 |range |ranged, ranges, ranging /ранг,рейнджер
+517 |quality |qualities /квалификация
+518 |project |projected, projecting, projects /проект
+519 |round |rounded, rounder, roundest, rounding, rounds /раунд круглый?
+520 |opportunity |opportunities /опортунисты
+521 |road |roads /на родину
+522 |accord |accorded, according, accords /аккорд согласие?
+523 |list |listed, listing, listings, lists /листать список
+524 |wish |wished, wishes, wishing /желаю срубить вишневый сад
+525 |therefore | /резерфорд сумел, поэтому
+526 |wear |wearing, wears, wore, worn /носить веер, полувер
+527 |fund |funded, funding, funds /фонд %% а фонд=любить
+528 |rest |rested, resting, rests /остаток дня провожу в ресторане и отдыхаю
+529 |kid |kidded, kidding, kids /кидалово это шутка
+530 |industry |industries /индустрия
+531 |education |educations /*
+532 |measure |measured, measures, measuring /межа, мензурка
+533 |kill |killed, killing, killings, kills /килер
+534 |serve |served, serves, serving, servings /сервис
+535 |likely |likelier, likeliest /лайки
+536 |certainly | /конечно *
+537 |national |nationals /национальный %
+538 |itself | /селфи
+539 |teach |taught, teaches, teaching, teachings /тычет в книгу
+540 |field |fielded, fielding, fields /коперфилд, филадельфия поля с эльфами
+541 |security |securities /секьюрити, секрет
+542 |air |aired, airing, airs /аэроплан
+543 |benefit |benefited, benefiting, benefits, benefitted, benefitting /бенефициар
+544 |trade |traded, trades, trading /трейдер
+545 |risk |risked, risking, risks /риск %
+546 |news | нью йорк =новинки, евроньюс
+547 |standard |standards /стандартный %
+548 |vote |voted, votes, voting /вотум недоверия
+549 |percent |percents /процент %%
+550 |focus |focused, focuses, focusing, focussed, focusses, focussing /фокус оптический
+551 |stage |staged, stages, staging /стадия, стажеры на сцене
+552 |space |spaced, spaces, spacing /спасите в космосе, спайс-специи
+553 |instead | /вместо * 
+554 |realize |realise, realised, realises, realising, realized, realizes, realizing /релиз реализовать
+555 |usually | /обычно южане загорелые
+556 |data |datum /дата, данные
+557 |single |singled, singles, singling /сингл для психов одиночек
+558 |address |addressed, addresses, addressing /адрес % вы обратились не по адресу
+559 |performance |performances /перфоманс
+560 |chance |chanced, chances, chancing /шанс %%
+561 |accept |accepted, accepting, accepts /акцепт
+562 |society |societies /социальное общество
+563 |technology |technologies /технология %
+564 |mention |mentioned, mentioning, mentions /упоминание, ментальный
+565 |choice |choicer, choices, choicest /выбор, чуз-выбирать сыр-чиз 
+566 |save |saved, saves, saving, savings /сейф
+567 |common |commonest /комуна общая
+568 |culture |cultured, cultures, culturing /культура %
 569 |total |totaled, totaling, totalled, totalling, totals
 570 |demand |demanded, demanding, demands
 571 |material |materials
