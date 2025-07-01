@@ -3,7 +3,56 @@ var g_fa='';//global
 var g_fa_tem='';//global
 var g_fa_sek='';//global
 var g_dict='';//global
+var vu='';//global
+function start0(){
+ vu=new Vue({
+  el: '#app',
+  data: {
+    newTodo: '',
+    todos: [ { text: 'номер| слово - перевод, крестик удалить' }]
+  },
 
+  methods: {
+    addTodo: function () {
+      var text = this.newTodo.trim()
+      if (text) {
+        this.todos.push({ text: text })
+        this.newTodo = ''
+      }
+    },
+    removeTodo: function (index) {var w;
+         w=''+this.todos[index].word;
+         console.log('del card='+w);
+         addKnownWord(w);
+         this.todos.splice(index, 1);
+    }
+
+  }
+});
+document.addEventListener('keydown',function(e){
+	if(e.code=='Delete')del_word();
+	if(e.code=='ArrowRight')next_word(1);
+	if(e.code=='ArrowLeft')prev_word();
+	if(e.code=='PageDown')next_word(20);
+}); //key
+}
+function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
+ if(s0.indexOf(a0)>=0){ms=s0.split(a0);s0=ms.join(b0);}
+ return s0;
+}
+function one_space(s){var i,out='',f=0,ss;
+ for(i=0;i<len(s);i++){
+   ss=s.charAt(i);
+   if(ss==' '){
+     if(f==1)continue;
+     f=1;
+   }
+   else f=0;
+   out+=ss;
+ }
+ return out;
+}
+function info(t){put_h('id_info',t);}
 function log(s){console.log(s+'');}
 function len(d){ return d.length;}
 function run_js(vPathScript,fun1,a1,a2){var sc;
@@ -24,6 +73,23 @@ function run_js(vPathScript,fun1,a1,a2){var sc;
  }
  document.head.appendChild(sc);
 }
+function put_v(id,s){var d=document.getElementById(id);if(d)d.value=s+'';}
+function put_h(id,s){var d=document.getElementById(id);if(d)d.innerHTML=s+'';}
+function show_h(id){var d=document.getElementById(id); if(d)d.scrollIntoView();}
+function put_src(id,u,w){var fl_err=1;
+ if(u=='')u='pic/'+w+'.jpg';
+    var o=document.getElementById(id);if(!o)return;
+ o.onerror=function(){if(fl_err){fl_err=0;o.src='pic/'+g_pic;}}
+    o.src=u;
+}
+function but_enable(id_but,n){var d,v;//1-0
+    d=document.getElementById(id_but);
+    if(d){
+     if(n)d.disabled=false;
+     else d.disabled=true;
+    }
+}
+//============
 function save_s_to_Loc(name_el,s){
  try {localStorage.setItem(name_el,s);}
  catch(e) { if (e == QUOTA_EXCEEDED_ERR) alert('limit localStorage2');}
@@ -39,26 +105,7 @@ function isLocalStorageAvailable() {
    try {return 'localStorage' in window && window['localStorage'] !== null;}
    catch(e) { return false;}
 }
-function put_v(id,s){var d=document.getElementById(id);if(d)d.value=s+'';}
-function put_h(id,s){var d=document.getElementById(id);if(d)d.innerHTML=s+'';}
-function put_src(id,u,w){var fl_err=1;
- if(u=='')u='pic/'+w+'.jpg';
-    var o=document.getElementById(id);if(!o)return;
- o.onerror=function(){if(fl_err){fl_err=0;o.src='pic/'+g_pic;}}
-    o.src=u;
-}
 
-function but_enable(id_but,n){var d,v;//1-0
-    d=document.getElementById(id_but);
-    if(d){
-     if(n)d.disabled=false;
-     else d.disabled=true;
-    }
-}
-function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
- if(s0.indexOf(a0)>=0){ms=s0.split(a0);s0=ms.join(b0);}
- return s0;
-}
 function zvez_v_kurs(s,p){var z,i=0,ms=[],v='',f=0; // *слово -> <i>слово</i>
  var sps=' ,.!?()[]{}"+%/~';//до них выделить
  if(!s)return '';
@@ -126,7 +173,7 @@ function cut_tem(s){s=s+'';
     if(simv2(s)=='a ')s=cut2(s);
     if(simv3(s)=='an ')s=cut3(s);
     if(simv3(s)=='to ')s=cut3(s);
-    return s;
+    return s.trim();
 }
 function get_tr123(w,t){var tr1,tr2,tr3,out,i,dd=[];
   tr2=get_tr2(w); tr3=get_tr3(t);
@@ -135,17 +182,32 @@ function get_tr123(w,t){var tr1,tr2,tr3,out,i,dd=[];
 function next_word(n){var le=len(vu.$data.todos);
   if(!n)n=1;
   g_word+=n; if(g_word>=le){g_word=le-1;alert("конец списка");}
-  show_card();
+  show_card();show_h('id_list');
 }
+function del_word(){var w;
+    w=''+vu.todos[g_word].word;
+    vu.todos.splice(g_word, 1);
+    console.log('del card='+w);
+    addKnownWord(w);show_card();
+}
+function del_known(){var k=0,w,mm=[];
+    mm=getKnownWords();
+    while(1){
+     w=''+vu.todos[k].word;
+     {if(mm.includes(w))vu.todos.splice(k, 1);else k++;}
+     if(k==vu.todos.length)break;
+    }
+}
+
 function prev_word(){var le=0,s='',d,n=0;
   g_word--;if(g_word<0){g_word=0;alert("начало списка");}
   show_card();
 }
 function load_card(){ g_word=0;show_card();}
 function show_card(){var s,v='',n1,n2,w,t,p,fa,dp,da,pic;
-  put_h('id_list',g_page);put_h('id_word',g_word);
- s=vu.$data.todos[g_word].text;
- v=''+g_api[s]+'||||||||';
+  put_h('id_list',g_page);put_h('id_word',g_word+' ('+vu.todos.length+')');
+ s=vu.todos[g_word].text;
+ v=''+vu.todos[g_word].fa+'||||||||';
   put_h("id_tek_word",s+'');
  ms=v.split('|');
  n1=s.indexOf('[');n2=s.indexOf(']');
@@ -169,7 +231,7 @@ function show_card(){var s,v='',n1,n2,w,t,p,fa,dp,da,pic;
  da=ms[4]; if(da=='')da=get_da(w);//доп.асоц
  da=zvez_v_kurs(da,'');put_h('id_p5',da);
  put_h('id_p6','(разное) '+ms[5]);
- if(ms[5]=='')get_fa1(w);
+ if(ms[5]=='')get_fa1(w);//все ФА
 }
 function delit_s(s,d){ //делит строку по d
     var n=s.indexOf(d);if(n>=0)return[s.substring(0,n),s.substring(n)];
@@ -177,7 +239,7 @@ function delit_s(s,d){ //делит строку по d
 }
 function ok_load_All(){var i,ms,n=0,s;
     save_s_to_Loc(g_page,g_api);g_api='';
-    load_g_api_from_Loc();//g_api to a-mas
+    load_vu_from_Loc();
     log('ok_load_All '+g_page);
 }
 function load_All(n){
@@ -185,11 +247,11 @@ function load_All(n){
  run_js(get_page()+'/'+g_page+'.txt',ok_load_All);
 }
 
-function load_g_api_from_Loc(n){var i=0,ms=[],s='',dd=[];
+function load_vu_from_Loc(n){var i=0,ms=[],s='',dd=[];
  if(n)g_page=get_page()+n;//smena tek stranicy
  put_h('id_list0',g_page);
  if(!isLocalStorageAvailable())return;
- vu.$data.todos.length=0;g_api=[];
+ vu.$data.todos.length=0;
  s=localStorage.getItem(g_page);
  if(s){
   ms=s.split('\n');
@@ -197,15 +259,17 @@ function load_g_api_from_Loc(n){var i=0,ms=[],s='',dd=[];
     dd=delit_s(ms[i],'|');
     s=dd[0].trim();
     s=s.replace('[',' [');s=s.replace(']','] ');
-    g_api[s]=dd[1];
-    vu.$data.todos.push({text:s});
+    s=one_space(s);
+    w=s.split('[')[0];w=cut_tem(w);
+    vu.$data.todos.push({word:w,text:s,fa:dd[1]});
   }
  }
- else vu.$data.todos.push({text:'пустой список'})
+ else vu.$data.todos.push({word:'',text:'пустой список',fa:''})
 }
-function save_g_api_to_Loc(){ var i=0,s='',ss='';
+
+function save_vu_to_Loc(){ var i=0,s='',ss='';
  if(!isLocalStorageAvailable()){alert('нету localStorage?');return;}
- for(s in g_api)if(s.indexOf('[')>0){ss+=s+g_api[s]+'\n';}
+ for(i=0;i<vu.todos.length;i++){ss+=vu.todos[i].text+vu.todos[i].fa+'\n';}
  try {localStorage.setItem(g_page,ss);}
  catch(e) { if (e == QUOTA_EXCEEDED_ERR) alert('limit localStorage1');}
 }
@@ -227,22 +291,9 @@ if(!w)return '_';
   return o;
 }
 
-function one_space(s){var i,out='',f=0,ss;
- for(i=0;i<len(s);i++){
-   ss=s.charAt(i);
-   if(ss==' '){
-     if(f==1)continue;
-     f=1;
-   }
-   else f=0;
-   out+=ss;
- }
- return out;
-}
-
 function get_da(w){var out='',n1=0,n2=0,n=0,s='';//ищем fa по новому
  if(g_fa=='')return '-';//off
- w=w.trim(); if(!w)return;
+ w=w.trim(); if(!w)return;w=w.toLowerCase();
   log('da w='+w);
  var out='';
  if(g_fa_tem){//ищем в fa_tem
@@ -274,7 +325,7 @@ function get_da(w){var out='',n1=0,n2=0,n=0,s='';//ищем fa по новому
 
 function get_fa1(w){var out='',n1=0,n2=0,n=0,s='';//ищем fa по новому
  if(g_fa=='')return '-';//off
- w=w.trim(); if(!w)return;
+ w=w.trim(); if(!w)return;w=w.toLowerCase();
   log('fa w='+w);
   //ищем в 16к по буквам
  s=w.charAt(0);
@@ -282,7 +333,7 @@ function get_fa1(w){var out='',n1=0,n2=0,n=0,s='';//ищем fa по новом�
  else get_fa2(w);
 }
 function get_fa2(w){var out='',n1=0,n2=0,n=0,s='';//словарь загружен
- var out='';
+ var out='';w=w.toLowerCase();
  if(g_fa){//ищем в fa_sek
   n=0; while(1){
    n1=g_fa.indexOf('\n'+w+'~',n);if(n1<0)break;n2=n1+1;
@@ -303,13 +354,54 @@ function get_page(){
  if(len(g_page)<3)alert('g_page='+g_page);
  return g_page.substring(0,3);
 }
- 
 function loader_fa(){
  if(g_fa_tem==''){g_fa_tem='1';run_js('fa-tem.txt',loader_fa);return;}
  if(g_fa_sek==''){g_fa_sek='1';run_js('fa-sek.txt',loader_fa);return;}
 }
 function load_dp(){run_js('dp6k.txt');document.getElementById("id_dp").style.backgroundColor='coral';}
 function load_da(){g_fa='1';loader_fa();document.getElementById("id_da").style.backgroundColor='coral';}
-//news
-var g_news='';
-//run_js('news.txt',function(){alert(g_news);}); мешает 
+function getKnownWords() {
+ const storedWords = localStorage.getItem('knownEnglishWords');
+ return storedWords ? storedWords.split('\n') : [];
+}
+// Функция для сохранения списка известных слов в localStorage
+function saveKnownWords(words) {
+ try {localStorage.setItem('knownEnglishWords', words.join('\n'));}
+ catch(e) { alert('error'); if (e == QUOTA_EXCEEDED_ERR) alert('limit localStorage1');}
+ return words.length;
+}
+// Функция для добавления слова в список известных слов
+function addKnownWord(w){
+ if(!w)return 0;w=w+'';w=w.trim();if(w=='')return 0;
+ //w=w.toLowerCase();
+ w=replace_all(w,' ','-');
+ var words = getKnownWords();
+ if (!words.includes(w)) {
+  words.push(w);
+  saveKnownWords(words);
+  info('известных слов='+words.length);
+ } else info('уже есть');
+}
+document.addEventListener('touchstart',handleTouchStart,false);// Вешаем на прикосновение
+document.addEventListener('touchmove',handleTouchMove,false);// на движение пальцем по экрану
+
+var xDown = null, yDown = null, gBusySwipe=0, gSwipe=0; //global var
+function handleTouchStart(evt){xDown=evt.touches[0].clientX; yDown=evt.touches[0].clientY;}
+function handleTouchMove(evt){var xUp,yUp,xDiff,yDiff;
+ if(gBusySwipe)return;gBusySwipe=1;//занято
+ if(!xDown || !yDown){gBusySwipe=0; return;}
+ xUp=evt.touches[0].clientX; yUp=evt.touches[0].clientY;
+ xDiff=xDown - xUp; yDiff=yDown - yUp;
+ if(Math.abs(xDiff) > Math.abs(yDiff)){
+  if(xDiff > 5){document.title="==>>";if(gSwipe)setTimeout(next_word,200);} // left swipe
+  if(xDiff < -5){document.title="<<==";if(gSwipe)setTimeout(prev_word,200);} // right swipe
+ }
+ xDown = null; yDown = null; gBusySwipe=0; return;
+}
+function vkl_swipe(){
+	gSwipe=(gSwipe+1)%2;
+	if(gSwipe)put_h('id_vkl','swipe off');else put_h('id_vkl','swipe on');
+}
+
+window.addEventListener('load', start0);
+

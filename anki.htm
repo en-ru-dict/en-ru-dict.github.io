@@ -56,9 +56,11 @@ textarea {width:100%;background-color:mintcream;}
    Минусы анки - в их хранилище навалено в кучу и ничего хорошего нет, рейтинг туфта есть там платная 14т, но восторженые отзывы липа и много лишней ненужной инфы, не рекомендую. Удалить выученные неудобно (через меню-исключить) Файлы звук и картинки надо свои искать/делать и вставлять сложно и долго, встроеной озвучки нет, но можно через виджет гугл переводчика озвучить, но надо убирать *%~+= <br>
    <hr>
    <h2>Приложение QuizLet</h2>
-   -МИНУСЫ - нет импорта-экспорта, надо на сайт идти и регится, там есть. Картинки только из колекции и мелкие. Нет интервального повтория. Хранилище скрыто! может там и есть что-то годное, но надо знать название чтобы искать! по (англ-рус) выйдет мало и не то, так что тоже не фонтан, отзыв не оставить, рейтинга нет, искать вслепую и все смотреть и выбирать надо год.<br>
-   +ПЛЮСЫ - встроенная озвучка англ и рус, не надо свой звук тащить, можно сделать запись экрана, вытащить звук и слушать только те слова которые не знаешь. ну и можно по названию поделиться и будут искать и качать. <br>
-   Как форматировать для неё не знаю, можно жирным выделить через **, может ещё что есть.
+   -МИНУСЫ - нет импорта-экспорта, надо на сайт идти и регится, там есть. Картинки только из колекции и мелкие. Нет интервального повторения. Хранилище скрыто! может там и есть что-то годное, но надо точно знать название чтобы искать! по (англ-рус) выйдет мало и не то, так что тоже не фонтан, отзыв не оставить, рейтинга нет, искать вслепую и все смотреть и выбирать надо годы.<br>
+   +ПЛЮСЫ - встроенная озвучка англ и рус, не надо свой звук тащить, можно сделать запись экрана и смотреть/слушать только те слова которые не знаешь. По названию колодой поделиться и будут искать и качать. <br>
+   Как форматировать для неё не знаю, можно жирным выделить через **, может ещё что есть.<br>
+   ==========<br>
+   Есть ещё другие приложения ReWord итд, но они ещё хуже и платно. Рекомендую Анки для ПК или Анки-дроид для андроид и гугл-переводчик для озвучки. Для ФА всё равно картинок почти нет, воображение тренируйте. Для айфона работают только карточки на 3к и 5к с этого сайта, но ФА там старые и хуже, по спискам в HTML можно учить, но там сразу видно слово и перевод и знакомые не удалить..
   </div>
  </div> 
 </div>
@@ -97,9 +99,9 @@ textarea {width:100%;background-color:mintcream;}
   <div class="panel-body">
    <button type="button" class="btn btn-primary btn-lg" onclick="g_word=0;show_w();">Начало</button>
    ||
-   <button type="button" onclick=""> список=<span id="id_list">?</span> номер слова=<span id="id_word">?</span> </button>
+   <button type="button" onclick=""> список=<span id="id_list">?</span> слово=<span id="id_word">?</span> </button>
    ||
-   <button type="button" class="btn btn-danger btn-lg" onclick="save_list();">Запомнить общий список</button>
+   <button type="button" class="btn btn-danger btn-lg" onclick="save_list();">Запомнить список</button>
    ||
    <button id="id_b0" type="button" class="btn btn-primary btn-lg" onclick="swipe_on();">Свайп вкл</button>
    <button id="id_b2" type="button" class="btn btn-success btn-lg" onclick="next_w();">Дальше</button>
@@ -374,7 +376,6 @@ function obrez300(){var mm,n;
  put_v('id_text1',mm.join('\n'));
 }
 // либа для работы со списками известных слов
-// Функция для получения списка известных слов из localStorage
 function save_s_to_Loc(name_el,s){
  try {localStorage.setItem(name_el,s);}
  catch(e) { if (e == QUOTA_EXCEEDED_ERR) alert('limit localStorage2');}
@@ -392,13 +393,14 @@ function getKnownWords() {
 // Функция для сохранения списка известных слов в localStorage
 function saveKnownWords(words) {
  try {localStorage.setItem('knownEnglishWords', words.join('\n'));}
- catch(e) { alert('error'); if (e == QUOTA_EXCEEDED_ERR) alert('limit localStorage?');}
+ catch(e) { alert('error'); if (e == QUOTA_EXCEEDED_ERR) alert('limit localStorage1');}
  return words.length;
 }
 // Функция для добавления слова в список известных слов
 function addKnownWord(w){
  if(!w)return 0;w=w+'';w=w.trim();if(w=='')return 0;
- w=w.toLowerCase();w=replace_all(w,' ','-');
+ //w=w.toLowerCase();
+ w=replace_all(w,' ','-');
  var words = getKnownWords();
  if (!words.includes(w)) {
   words.push(w);
@@ -519,7 +521,7 @@ async function load_list_js() {
 	  var mm=g_words.split('\n');g_words='';
 	  mm=mm.map(w => w.trim()).filter(w => w !== '');
       saveKnownWords(mm);
-      info('ok='+mm.length);
+      alert('ok='+mm.length);
     } else {
       info('Переменная g_words не найдена');
     }

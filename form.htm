@@ -1,152 +1,207 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Форма обратной связи</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Форма обратной связи</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	padding: 20px;
+	box-sizing: border-box;
+}
 
-        .container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 100%;
-        }
+.container {
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	max-width: 500px;
+	width: 100%;
+}
 
-        h2 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
+h2 {
+	text-align: center;
+	color: #333;
+	margin-bottom: 20px;
+}
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+.form-group {
+	margin-bottom: 15px;
+}
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
-        }
+label {
+	display: block;
+	margin-bottom: 5px;
+	color: #555;
+}
 
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
+input[type="text"],
+input[type="email"],
+textarea {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-size: 16px;
+}
 
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
+textarea {
+	resize: vertical;
+	min-height: 100px;
+}
 
-        .captcha-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+.captcha-group {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
 
-        .captcha-group input[type="text"] {
-            flex-grow: 1;
-            margin-left: 10px;
-        }
+.captcha-group input[type="text"] {
+	flex-grow: 1;
+	margin-left: 10px;
+}
 
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-        }
+button {
+	background-color: #007bff;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	width: 100%;
+}
 
-        button:hover {
-            background-color: #0056b3;
-        }
+button:hover {
+	background-color: #0056b3;
+}
 
-        .message {
-            margin-top: 15px;
-            text-align: center;
-            font-weight: bold;
-        }
+.message {
+	margin-top: 15px;
+	text-align: center;
+	font-weight: bold;
+}
 
-        .success {
-            color: green;
-        }
+.success {
+	color: green;
+}
 
-        .error {
-            color: red;
-        }
+.error {
+	color: red;
+}
 
-        /* Адаптивность для мобильных устройств */
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-        }
-    </style>
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+	.container {
+		padding: 20px;
+	}
+}
+@keyframes colorChange {
+	0% { color: orangered;}
+	10% { color: springgreen;}
+	20% { color: chocolate;}
+	30% { color: deeppink;}
+	40% { color: deepskyblue;}
+	50% { color: darkorange;}
+	60% { color: dodgerblue;}
+	70% { color: fuchsia;}
+	80% { color: tomato;}
+	90% { color: lime;}
+	100% { color: mediumseagreen;}
+}
+
+@keyframes blink {
+	0% { opacity: 1; }
+	20% { opacity: 0.7; }
+	60% { opacity: 0.3; }
+	80% { opacity: 0.7; }
+	100% { opacity: 1; }
+}
+
+h2{
+	animation: colorChange 3s infinite, blink 1s infinite;
+	font-size: 24px;
+	font-weight: bold;
+}
+#progressBar {
+	width: 100%;
+	background-color: #f3f3f3;
+	margin-top: 10px;
+}
+
+#progressBarFill {
+	width: 0%;
+	height: 30px;
+	background-color: #4CAF50;
+	text-align: center;
+	line-height: 30px;
+	color: white;
+}
+	</style>
 </head>
 
 
 <body>
-    <div class="container">
-        <h2>Форма обратной связи</h2>
-        Сюда можно писать отзывы, предложения, замечания, что нравится или не нравится, что сделать, переделать, какой это отцтой и никому не надо :) 
-
-        <hr>
-        <form id="contactForm">
-            <div class="form-group">
-                <label for="name">Имя:</label>
-                <input type="text" name="name" required>
-            </div>
-            <div style="display:none;">
-             <input type="text" name="tel">
-            </div>
-            <div class="form-group">
-                <label for="email">Email (необязательно):</label>
-                <input type="email" name="email">
-            </div>
-            <div class="form-group">
-                <label for="message">Сообщение: (макс=1000)</label>
-                <textarea name="message" required></textarea>
-            </div>
-            <div class="form-group captcha-group">
-                <label for="captcha"> <span id="id_num1"></span></label>
-                <input type="text" name="captcha" required>
-            </div>
-            <button type="submit">Отправить</button>
-        </form>
-    </div>
+<div id="id_msg" class="container">
+		<h2>Форма обратной связи</h2>
+		Сюда можно писать отзывы, предложения, замечания, что нравится или не нравится, что сделать, переделать, какой это отцтой и никому не надо :)
+		<hr>
+		<form id="contactForm">
+			<div class="form-group">
+				<label for="name">Имя:</label>
+				<input type="text" name="name" required>
+			</div>
+			<div style="display:none;">
+			 <input type="text" name="tel">
+			</div>
+			<div class="form-group">
+				<label for="email">Email (необязательно):</label>
+				<input type="email" name="email">
+			</div>
+			<div class="form-group">
+				<label for="message">Сообщение: (макс=1000)</label>
+				<textarea name="message" required></textarea>
+			</div>
+			<div class="form-group captcha-group">
+				<label for="captcha"> <span id="id_num1"></span></label>
+				<input type="text" name="captcha" required>
+			</div>
+			<button type="submit">Отправить</button>
+		</form>
 </div>
 
 <script>
+function pb(){   // Запускаем прогресс-бар
+		const progressBarFill = document.getElementById('progressBarFill');
+		let width = 0;
+		const interval = setInterval(function() {
+			width += 1;
+			progressBarFill.style.width = width + '%';
+			progressBarFill.textContent = width + '%';
+			if (width >= 99) {
+				clearInterval(interval);
+			}
+		}, 100);
+}
 function getv(id){return document.getElementById(id).value;}
+var g_d=0, g_dt=document.getElementById('id_msg');
+function putd(s,k){
+ g_dt.innerHTML=s;if(k)setTimeout(function(){document.location='index.htm';},5000)
+}
 window.onload = () => {
-    window['formStartTimeField'] = new Date().getTime();
-    const num1 = Math.floor(Math.random() * 5) + 2;
-    const num2 = Math.floor(Math.random() * 5) + 2;
-    document.getElementById('id_num1').textContent = 'Сколько звёзд на небе? и ' + num1 + ' * '+ num2;
-    window['captchaResult'] = num1 * num2;
+	window['formStartTimeField'] = new Date().getTime();
+	const num1 = Math.floor(Math.random() * 5) + 2;
+	const num2 = Math.floor(Math.random() * 5) + 2;
+	document.getElementById('id_num1').textContent = 'Сколько звёзд на небе? и ' + num1 + ' * '+ num2;
+	window['captchaResult'] = num1 * num2;
  }
 
 const g_form=document.getElementById('contactForm');
@@ -158,37 +213,30 @@ const g_form=document.getElementById('contactForm');
   s=s.replace(/[=\+\-<>()\[\]{}!?;:"'`\\\/%*&^#$~@]/g,'.');
   if(parseInt(data.captcha) !== window['captchaResult']){alert('Неправильный ответ на задачу, роботы считать не умеют');return;}
  if(data.tel !== ''){alert('Телефон не надо');return;}
- if(s.length>1100){alert('слишком много букв');return;}
+ if(s.length>1100){alert('Слишком много букв');return;}
  if(window['formStartTimeField']+5000 > new Date().getTime()){alert('Пожалуйста помедленей, я записываю');return;}
 send_msg(s);
 });
 
 function send_msg(s){var u,b;
-u=' https://script.google.com/macros/s/AKfycbxWCw6jWTnbWCLujGX1MCGkPaLxMMDsiwe9bgNX7JMly-kRCY9vpz1Zx_gWiUKTcBt0/exec';
+u='</h2>'+'<div id="progressBar"><div id="progressBarFill">0%</div></div>';
+putd('<h2>Отправляем отзыв, ждите...'+u,0);pb();
+u='https://script.google.com/macros/s/'
+u+='AKfycbxWCw6jWTnbWCLujGX1MCGkPaLxMMDsiwe9bgNX7JMly-kRCY9vpz1Zx_gWiUKTcBt0/exec';
 b = JSON.stringify({"text": s});
-
+send_msg=alert;
 fetch(u, {
 method:'POST',
 /* headers:{'Content-Type':'application/json;charset=utf-8'}, */
 body: b
 }).then(function(response) {
-        if (!response.ok) {throw new Error('HTTP error! status: ' + response.status);}
-        return response.json();
+		if (!response.ok) {throw new Error('HTTP error! status: ' + response.status);}
+		return response.json();
  }).then(function(result) {
-        if (result.status === 'success') {alert('сообщение отправлено!');} 
-        else {alert('Ошибка ответ сервера=' + result.message);}
- }).catch(function(error) {alert('Ошибка отправки=' + error); });
+		if (result.status === 'success') {putd('Ура! Сообщение отправлено!',1);}
+		else {putd('Ошибка ответ сервера=' + result.message);}
+ }).catch(function(error) {putd('Ошибка отправки=' + error,1); });
 }
-/*
-    try {
-//не вздумайте взламывать! а то отключу и пишите на ютюбе 
-        const response = fetch(u, {method:'POST',headers:{'Content-Type':'application/json'},body: b});return
-        const result = response.json();
-        if(result.status === 'success'){alert('сообщение успешно отправлено куда надо!');} 
-        else alert('Ошибка ответ сервера=' + result.message);
-    } catch (error){alert('Ошибка отправки=:'+error);}
- });
-*/
 </script>
 </body>
 </html>
