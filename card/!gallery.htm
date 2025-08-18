@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Фотогалерея карточек</title>
+
+<!-- Локальные CSS -->
+<link rel="stylesheet" href="swiper-bundle.min.css">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* Fullscreen PNG */
+#fullScreen {
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.95);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+#fullScreenImg {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+/* Мини-эскизы снизу */
+.swiper-thumbs {
+    height:60px;
+    margin-top:5px;
+    overflow:hidden;
+}
+.swiper-thumbs::-webkit-scrollbar { display:none; }
+.swiper-thumbs { -ms-overflow-style:none; scrollbar-width:none; }
+
+.swiper-thumbs .swiper-slide img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0.6;
+    border:2px solid transparent;
+    box-sizing:border-box;
+}
+.swiper-thumbs .swiper-slide-thumb-active img {
+    opacity:1;
+    border:2px solid #007bff;
+}
+</style>
+</head>
+<body>
+
+<!-- Верхние кнопки -->
+<div id="controls">
+  <button id="btnList" class="active">Список</button>
+  <button id="btnThumbs">Эскизы</button>
+  <button id="btnGallery">Галерея</button>
+--
+  <button id="thumbMinus">−</button>
+  <button id="thumbPlus">+</button>
+</div>
+
+<!-- Режим Список -->
+<div id="listView"></div>
+
+<!-- Режим Эскизы -->
+<div id="thumbView" class="hidden"></div>
+
+<!-- FULLSCREEN PNG -->
+<div id="fullScreen" class="hidden"><img id="fullScreenImg" src=""></div>
+
+<!-- SWIPER ГАЛЕРЕЯ -->
+<div class="swiper-container swiper-main hidden" id="gallery">
+  <div class="swiper-wrapper" id="galleryWrapper"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+<div class="swiper-container swiper-thumbs hidden" id="thumbs">
+  <div class="swiper-wrapper" id="thumbWrapper"></div>
+</div>
+
+<!-- Список картинок -->
+<script src="list.js"></script>
+
+<!-- Локальный Swiper JS -->
+<script src="swiper-bundle.min.js"></script>
+
+<script>
+// ======= Парсим список =======
+let images = g_jpg.trim().split("\n").map(line=>{
+    line+=';;';
+    let parts = line.split(";").map(p=>p.trim());
+    let names = parts[0].split(",").map(p=>p.trim());
+    parts[1]=parts[1] || '0';
+    parts[2]=parts[2] || '0.png';
+    return {name: names.join(", "), jpg: parts[1]+'.jpg', png: parts[2]};
+});
+
+// ======= Режим Список =======
+const listView = document.getElementById('listView');
+images.forEach(img=>{
+    let div = document.createElement('div'); div.className='item';
+    let title = document.createElement('span'); title.textContent = img.name; div.appendChild(title);
+
+    let btnJpg = document.createElement('button'); btnJpg.textContent="JPG 50кб";
+    btnJpg.onclick = ()=>enterGallery(img.jpg); div.appendChild(btnJpg);
+
+    let btnPng = document.createElement('button'); btnPng.textContent="PNG 1-3мб";
+    btnPng.onclick = ()=>showFull(img.png); div.appendChild(btnPng);
+
+    listView.appendChild(div);
+});
+
+// ======= Режим Эскизы =======
+const thumbView = document.getElementById('thumbView');
+let thumbSize = 150;
+
+function renderThumbs(){
+    thumbView.innerHTML='';
+    images.forEach(img=>{
+        let div = document.createElement('div'); div.className='thumb';
+        div.style.width = thumbSize + "px";
+        let im = document.createElement('img'); im.src = img.jpg; div.appendChild(im);
+        let label = document.createElement('span'); label.textContent = img.name; div.appendChild(label);
+        div.onclick = ()=>showFull(img.png);
+        thumbView.appendChild(div);
+    });
+}
+renderThumbs();
+
+document.getElementById('thumbMinus').onclick = ()=>{
+    thumbSize = Math.max(50, thumbSize-30);
+    renderThumbs();
+};
+document.getElementById('thumbPlus').onclick = ()=>{
+    thumbSize = Math.min(300, thumbSize+30);
+    renderThumbs();
+};
+
+// ======= FULLSCREEN PNG =======
+const fullScreen = document.getElementById('fullScreen');
+const fullScreenImg = document.getElementById('fullScreenImg');
+function showFull(src){
+    fullScreenImg.src=src;
+    fullScreen.classList.remove('hidden');
+}
+fullScreen.onclick = ()=>{
+    fullScreen.classList.add('hidden');
+    fullScreenImg.src='';
+};
+
+// ======= Режим Галерея =======
+const galleryWrapper = document.getElementById('galleryWrapper');
+const thumbWrapper = document.getElementById('thumbWrapper');
+images.forEach(img=>{
+    galleryWrapper.innerHTML += '<div class="swiper-slide"><img src="'+img.jpg+'"></div>';
+    thumbWrapper.innerHTML += '<div class="swiper-slide"><img src="'+img.jpg+'"></div>';
+});
+
+const thumbsSwiper = new Swiper('#thumbs', {
+    spaceBetween:10,
+    slidesPerView:6,
+    freeMode:true,
+    watchSlidesProgress:true,
+});
+
+const gallerySwiper = new Swiper('#gallery', {
+    spaceBetween:10,
+    navigation:{nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev'},
+    thumbs:{swiper: thumbsSwiper},
+    loop: true, // зацикливание
+});
+
+// открыть галерею
+function enterGallery(jpg){
+    setMode('gallery');
+    let index = images.findIndex(i=>i.jpg===jpg);
+    if(index>=0) gallerySwiper.slideToLoop(index,0); // slideToLoop учитывает loop
+}
+
+// ======= Переключение режимов =======
+const btnList = document.getElementById('btnList');
+const btnThumbs = document.getElementById('btnThumbs');
+const btnGallery = document.getElementById('btnGallery');
+const controls = document.getElementById('controls');
+
+function setMode(mode){
+    listView.classList.add('hidden');
+    thumbView.classList.add('hidden');
+    document.getElementById('gallery').classList.add('hidden');
+    document.getElementById('thumbs').classList.add('hidden');
+    controls.style.display = 'block';
+
+    if(mode==='list'){
+        listView.classList.remove('hidden');
+    } else if(mode==='thumbs'){
+        thumbView.classList.remove('hidden');
+    } else if(mode==='gallery'){
+        document.getElementById('gallery').classList.remove('hidden');
+        document.getElementById('thumbs').classList.remove('hidden');
+        controls.style.display = 'none';
+    }
+
+    [btnList,btnThumbs,btnGallery].forEach(b=>b.classList.remove('active'));
+    if(mode==='list') btnList.classList.add('active');
+    if(mode==='thumbs') btnThumbs.classList.add('active');
+    if(mode==='gallery') btnGallery.classList.add('active');
+}
+
+btnList.onclick = ()=>setMode('list');
+btnThumbs.onclick = ()=>setMode('thumbs');
+btnGallery.onclick = ()=>setMode('gallery');
+
+// ======= клик по картинке в галерее возвращает в список =======
+document.querySelectorAll('#galleryWrapper img').forEach(img=>{
+    img.onclick = ()=>setMode('list');
+});
+</script>
+
+</body>
+</html>

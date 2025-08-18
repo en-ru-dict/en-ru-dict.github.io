@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Фотогалерея карточек</title>
+
+<link rel="stylesheet" href="swiper-bundle.min.css">
+
+<style>
+body {margin:0; font-family:sans-serif; background:#f9f9f9;}
+.hidden{display:none;}
+
+/* Верхние кнопки */
+#controls {
+  display:flex;
+  gap:10px;
+  padding:10px;
+  background:#fff;
+  border-bottom:1px solid #ccc;
+}
+#controls button {
+  flex:0 0 auto;
+  font-size:20px;
+  padding:10px 15px;
+  border:none;
+  border-radius:8px;
+  background:#007bff;
+  color:#fff;
+  cursor:pointer;
+}
+#controls button.active{background:#0056b3;}
+
+/* Карточки превью (как Google Drive) */
+#thumbView {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(160px,1fr));
+  gap:15px;
+  padding:15px;
+}
+.thumb {
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.thumb img {
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  background:#eee;
+}
+.thumb span {
+  padding:8px;
+  font-size:14px;
+  text-align:center;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+/* FULLSCREEN PNG */
+#fullScreen {
+  position: fixed; top:0; left:0; width:0%; height:100%;
+  background: rgba(0,0,0,0.95);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  flex-direction:column;
+}
+#fullScreenImg {
+  max-width:100%;
+  max-height:80%;
+  object-fit:contain;
+}
+#progress {
+  color:#fff;
+  margin-top:10px;
+}
+
+/* Мини-эскизы снизу */
+.swiper-thumbs {
+  height:60px;
+  margin-top:5px;
+}
+.swiper-thumbs .swiper-slide img {
+  width:100%; height:100%; object-fit:cover;
+  opacity:0.6; border:2px solid transparent;
+}
+.swiper-thumbs .swiper-slide-thumb-active img {
+  opacity:1; border:2px solid #007bff;
+}
+</style>
+</head>
+<body>
+
+<!-- Верхние кнопки -->
+<div id="controls">
+  <button id="thumbMinus">−</button>
+  <button id="thumbPlus">+</button>
+</div>
+
+<!-- Режим карточки -->
+<div id="thumbView"></div>
+
+<!-- FULLSCREEN PNG -->
+<div id="fullScreen" class="hidden">
+  <img id="fullScreenImg" src="">
+  <div id="progress"></div>
+</div>
+
+<!-- SWIPER ГАЛЕРЕЯ -->
+<div class="swiper-container swiper-main hidden" id="gallery">
+  <div class="swiper-wrapper" id="galleryWrapper"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+<div class="swiper-container swiper-thumbs hidden" id="thumbs">
+  <div class="swiper-wrapper" id="thumbWrapper"></div>
+</div>
+
+<script src="list.js"></script>
+<script src="swiper-bundle.min.js"></script>
+<script>
+// ======= Парсим список =======
+let images = g_jpg.trim().split("\n").map(line=>{
+  line+=';;';
+  let parts = line.split(";").map(p=>p.trim());
+  let names = parts[0].split(",").map(p=>p.trim());
+  return {name: names.join(", "), jpg: parts[1]||'0.jpg', png: parts[2]||'0.png'};
+});
+
+// ======= Карточки превью =======
+const thumbView=document.getElementById('thumbView');
+let thumbSize=160;
+function renderThumbs(){
+  thumbView.innerHTML='';
+  images.forEach(img=>{
+    let div=document.createElement('div'); div.className='thumb';
+    div.style.width=thumbSize+"px";
+    let im=document.createElement('img'); im.src='0.jpg';
+    // асинхронная загрузка превью
+    let tmp=new Image(); tmp.onload=()=>im.src=img.jpg; tmp.src=img.jpg;
+    div.appendChild(im);
+    let label=document.createElement('span'); label.textContent=img.name; div.appendChild(label);
+    div.onclick=()=>enterGallery(img);
+    thumbView.appendChild(div);
+  });
+}
+renderThumbs();
+
+document.getElementById('thumbMinus').onclick=()=>{thumbSize=Math.max(100, thumbSize-30); renderThumbs();};
+document.getElementById('thumbPlus').onclick=()=>{thumbSize=Math.min(300, thumbSize+30); renderThumbs();};
+
+// ======= FULLSCREEN PNG =======
+const fullScreen=document.getElementById('fullScreen');
+const fullScreenImg=document.getElementById('fullScreenImg');
+const progress=document.getElementById('progress');
+
+function showPNG(src,jpg){
+  if(!confirm("Загрузить PNG (~2МБ)?")) return;
+  fullScreen.classList.remove('hidden');
+  fullScreenImg.src=jpg; progress.textContent="Загрузка...";
+  let xhr=new XMLHttpRequest();
+  xhr.open('GET',src,true);
+  xhr.responseType='blob';
+  xhr.onprogress=e=>{if(e.lengthComputable){progress.textContent=Math.round(e.loaded/e.total*100)+"%";}};
+  xhr.onload=()=>{let url=URL.createObjectURL(xhr.response); fullScreenImg.src=url; progress.textContent="";};
+  xhr.send();
+}
+
+fullScreen.onclick=()=>{fullScreen.classList.add('hidden'); fullScreenImg.src=''; progress.textContent='';};
+
+// ======= Галерея Swiper =======
+const galleryWrapper=document.getElementById('galleryWrapper');
+const thumbWrapper=document.getElementById('thumbWrapper');
+images.forEach(img=>{
+  galleryWrapper.innerHTML+='<div class="swiper-slide"><img src="'+img.jpg+'"></div>';
+  thumbWrapper.innerHTML+='<div class="swiper-slide"><img src="'+img.jpg+'"></div>';
+});
+
+const thumbsSwiper=new Swiper('#thumbs',{spaceBetween:10,slidesPerView:6,freeMode:true,watchSlidesProgress:true});
+const gallerySwiper=new Swiper('#gallery',{spaceBetween:10,navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'},thumbs:{swiper:thumbsSwiper},loop:true});
+
+function enterGallery(img){
+  document.getElementById('gallery').classList.remove('hidden');
+  document.getElementById('thumbs').classList.remove('hidden');
+  let index=images.findIndex(i=>i.jpg===img.jpg);
+  if(index>=0) gallerySwiper.slideToLoop(index,0);
+}
+
+// ======= Управление клавиатурой =======
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('gallery').classList.contains('hidden')) return;
+  if(e.key==='ArrowRight') gallerySwiper.slideNext();
+  if(e.key==='ArrowLeft') gallerySwiper.slidePrev();
+  if(e.key==='ArrowUp'){document.getElementById('gallery').classList.add('hidden'); document.getElementById('thumbs').classList.add('hidden');}
+});
+
+// Свайп вверх для выхода (мобильные)
+let startY;
+document.getElementById('gallery').addEventListener('touchstart',e=>{startY=e.touches[0].clientY;});
+document.getElementById('gallery').addEventListener('touchend',e=>{if(startY-e.changedTouches[0].clientY>50){document.getElementById('gallery').classList.add('hidden'); document.getElementById('thumbs').classList.add('hidden');}});
+
+// клик по картинке в галерее -> PNG
+setTimeout(()=>{
+  document.querySelectorAll('#galleryWrapper img').forEach((imgEl,idx)=>{
+    imgEl.onclick=()=>showPNG(images[idx].png,images[idx].jpg);
+  });
+},500);
+</script>
+</body>
+</html>

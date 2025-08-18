@@ -1,0 +1,113 @@
+/* Скрытые блоки */
+.hidden {
+  display: none !important;
+}
+
+/* Основные стили body */
+body {
+  margin:0;
+  font-family: sans-serif;
+}
+
+/* Верхние кнопки */
+#controls {
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  padding:5px;
+  background:#f0f0f0;
+}
+#controls button.active {
+  background:#007bff;
+  color:#fff;
+}
+
+/* Список карточек */
+#listView .item {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:5px;
+  border-bottom:1px solid #ddd;
+}
+#listView .item button {
+  cursor:pointer;
+}
+
+/* Эскизы */
+#thumbView {
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  padding:5px;
+  justify-content:center;
+}
+.thumb {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  cursor:pointer;
+}
+.thumb img {
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* Fullscreen PNG */
+#fullScreen {
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.95);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+#fullScreenImg {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+}
+
+/* Swiper галерея */
+.swiper-container.swiper-main, .swiper-container.swiper-thumbs {
+  width:100%;
+  box-sizing:border-box;
+}
+.swiper-main {
+  height:70vh;
+  margin-bottom:5px;
+}
+.swiper-main img {
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  cursor:pointer;
+}
+.swiper-thumbs {
+  height:100px;
+}
+.swiper-thumbs img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  cursor:pointer;
+}
+
+/* Адаптив под мобильные */
+@media (max-width:768px){
+  #controls {
+    flex-direction:column;
+  }
+  .swiper-main {
+    height:50vh;
+  }
+  .swiper-thumbs {
+    height:60px;
+  }
+  #thumbView .thumb {
+    width:80px;
+  }
+}
