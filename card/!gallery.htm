@@ -1,223 +1,274 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Фотогалерея карточек</title>
-
-<!-- Локальные CSS -->
-<link rel="stylesheet" href="swiper-bundle.min.css">
-<link rel="stylesheet" href="style.css">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Галерея карточек — адаптивная</title>
+<link rel="stylesheet" href="swiper-bundle.min.css" />
 <style>
-/* Fullscreen PNG */
-#fullScreen {
-  position: fixed;
-  top:0; left:0; width:100%; height:100%;
-  background: rgba(0,0,0,0.95);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-#fullScreenImg {
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  cursor:pointer;
-}
+  :root{
+    --tileMin:160px; /* меняется кнопками */
+    --tileGap:12px;
+    --thumbH:64px;  /* высота нижней ленты в галерее */
+    --bg:#f7f7f8;
+    --card:#fff;
+    --text:#111;
+    --muted:#6b7280;
+    --brand:#1e6bff;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',"Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--text)}
+  .hidden{display:none !important}
 
-/* Мини-эскизы снизу */
-.swiper-thumbs {
-    height:60px;
-    margin-top:5px;
-    overflow:hidden;
-}
-.swiper-thumbs::-webkit-scrollbar { display:none; }
-.swiper-thumbs { -ms-overflow-style:none; scrollbar-width:none; }
+  /* Верхняя панель управления */
+  #topbar{position:sticky;top:0;z-index:10;display:flex;gap:10px;align-items:center;padding:10px;background:#fff;border-bottom:1px solid #e5e7eb}
+  #topbar .spacer{flex:1}
+  .btn{appearance:none;border:0;border-radius:12px;background:var(--brand);color:#fff;padding:10px 16px;font-size:22px;line-height:1;cursor:pointer;touch-action:manipulation;box-shadow:0 2px 8px rgba(30,107,255,.3)}
+  .btn:active{transform:translateY(1px)}
+  .btn.secondary{background:#111;color:#fff}
 
-.swiper-thumbs .swiper-slide img {
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    opacity:0.6;
-    border:2px solid transparent;
-    box-sizing:border-box;
-}
-.swiper-thumbs .swiper-slide-thumb-active img {
-    opacity:1;
-    border:2px solid #007bff;
-}
+  /* Сетка карточек а-ля Google Drive */
+  #cards{padding:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--tileMin),1fr));gap:var(--tileGap)}
+  .card{background:var(--card);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);overflow:hidden;display:flex;flex-direction:column}
+  .card-thumb{position:relative;background:#eee;aspect-ratio:4/3;/* Chrome 99 поддерживает */}
+  .card-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .card-name{padding:8px 10px;font-size:14px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-top:1px solid #f0f0f0}
+
+  /* Оверлей галереи. В DOM есть всегда, но скрыт скриптом */
+  #overlay{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;/* включаем скриптом */z-index:9999}
+  #overlay.show{display:flex;flex-direction:column;min-height:0}
+
+  /* Основной слайдер сверху, лента прижата к нижнему краю */
+  #galleryMain{position:relative;flex:1 1 auto;min-height:0;padding:8px 8px calc(var(--thumbH) + 16px)}
+  #galleryMain .swiper{height:100%}
+  #galleryMain .swiper-slide{display:flex;/*align-items:center*/;justify-content:center}
+  #galleryMain img{max-width:100%;max-height:100%;object-fit:contain}
+  .swiper-button-prev,.swiper-button-next{color:#fff}
+
+  /* Лента миниатюр — прижата к низу */
+  #thumbStrip{position:fixed;left:0;right:0;bottom:0;padding:0 8px 8px;background:linear-gradient(transparent, rgba(0,0,0,.25));}
+  #thumbStrip .swiper{height:var(--thumbH)}
+  #thumbStrip .swiper-slide{width:86px}
+  #thumbStrip img{width:100%;height:100%;object-fit:cover;border-radius:8px;opacity:.75;border:2px solid transparent}
+  #thumbStrip .swiper-slide-thumb-active img{opacity:1;border-color:#4f9dff}
+
+  /* Бейдж прогресса PNG */
+  #pngBadge{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:rgba(17,17,17,.8);color:#fff;border-radius:12px;padding:8px 12px;display:none;align-items:center;gap:10px;font-size:14px}
+  #pngBadge.show{display:flex}
+  .ring{width:18px;height:18px;border-radius:999px;border:2px solid #89b4ff;border-top-color:#fff;animation:spin 1s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* Адаптив: на маленьких экранах плитки крупнее по умолчанию */
+  @media (max-width:480px){:root{--tileMin:180px}}
 </style>
 </head>
 <body>
+  <div id="topbar">
+    <button class="btn" id="btnMinus" aria-label="Меньше">−</button>
+    <button class="btn" id="btnPlus" aria-label="Больше">+</button>
+    <div class="spacer"></div>
+  </div>
 
-<!-- Верхние кнопки -->
-<div id="controls">
-  <button id="btnList" class="active">Список</button>
-  <button id="btnThumbs">Эскизы</button>
-  <button id="btnGallery">Галерея</button>
---
-  <button id="thumbMinus">−</button>
-  <button id="thumbPlus">+</button>
-</div>
+  <!-- Сетка карточек -->
+  <main id="cards" aria-live="polite"></main>
 
-<!-- Режим Список -->
-<div id="listView"></div>
+  <!-- Галерея (скрыта по умолчанию, управляется скриптом) -->
+  <div id="overlay" aria-hidden="true">
+    <div id="galleryMain">
+      <div class="swiper" id="mainSwiper">
+        <div class="swiper-wrapper" id="mainWrapper"></div>
+        <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Назад"></div>
+        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Вперёд"></div>
+      </div>
+    </div>
+    <div id="thumbStrip">
+      <div class="swiper" id="thumbSwiper">
+        <div class="swiper-wrapper" id="thumbWrapper"></div>
+      </div>
+    </div>
+    <div id="pngBadge"><span class="ring"></span><span id="pngText">Загрузка…</span></div>
+  </div>
 
-<!-- Режим Эскизы -->
-<div id="thumbView" class="hidden"></div>
+  <!-- Данные -->
+  <script src="list.js"></script>
+  <!-- Локальная библиотека -->
+  <script src="swiper-bundle.min.js"></script>
 
-<!-- FULLSCREEN PNG -->
-<div id="fullScreen" class="hidden"><img id="fullScreenImg" src=""></div>
+  <script>
+  // ====== Разбор list.js ======
+  // Формат строки: "Название; pic.jpg; url/pic.png" или "Название; pic; url/pic.png"
+  // Допускается пропуск .jpg — добавим автоматически. PNG можно не указывать — возьмём jpg и заменим расширение.
+  var lines = (window.g_jpg || '').split(/\r?\n/).map(function(s){return s.trim()}).filter(Boolean);
+  var images = lines.map(function(line){
+    var parts = line.split(';').map(function(s){return (s||'').trim()});
+    var name = parts[0] || '';
+    var jpg  = parts[1] || '0';
+    var png  = parts[2] || '';
+    if (!/\.jpg(\?|$)/i.test(jpg)) jpg += '.jpg'; // поддержка "+jpg"
+    if (!jpg || jpg === '0') jpg = '0.jpg';
+    if (!png){
+      // если PNG не задан, делаем из JPG
+      png = jpg.replace(/\.jpg(\?.*)?$/i, '.png$1');
+    }
+    return { name:name, jpg:jpg, png:png };
+  });
 
-<!-- SWIPER ГАЛЕРЕЯ -->
-<div class="swiper-container swiper-main hidden" id="gallery">
-  <div class="swiper-wrapper" id="galleryWrapper"></div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-</div>
-<div class="swiper-container swiper-thumbs hidden" id="thumbs">
-  <div class="swiper-wrapper" id="thumbWrapper"></div>
-</div>
+  // ====== Рендер карточек (асинхронная подмена 0.jpg -> jpg) ======
+  var cards = document.getElementById('cards');
+  function renderCards(){
+    cards.innerHTML = '';
+    images.forEach(function(item, idx){
+      var card = document.createElement('div');
+      card.className = 'card';
 
-<!-- Список картинок -->
-<script src="list.js"></script>
+      var thumb = document.createElement('div');
+      thumb.className = 'card-thumb';
+      var im = document.createElement('img');
+      im.alt = item.name || ('Картинка ' + (idx+1));
+      im.src = '0.jpg'; // плейсхолдер
+      thumb.appendChild(im);
 
-<!-- Локальный Swiper JS -->
-<script src="swiper-bundle.min.js"></script>
+      // асинхронная загрузка настоящего JPG
+      var pre = new Image();
+      pre.onload = function(){ im.src = item.jpg; };
+      pre.src = item.jpg;
 
-<script>
-// ======= Парсим список =======
-let images = g_jpg.trim().split("\n").map(line=>{
-    line+=';;';
-    let parts = line.split(";").map(p=>p.trim());
-    let names = parts[0].split(",").map(p=>p.trim());
-    parts[1]=parts[1] || '0';
-    parts[2]=parts[2] || '0.png';
-    return {name: names.join(", "), jpg: parts[1]+'.jpg', png: parts[2]};
-});
+      // при клике — открыть галерею на нужном слайде
+      thumb.addEventListener('click', function(){ openGallery(idx); });
 
-// ======= Режим Список =======
-const listView = document.getElementById('listView');
-images.forEach(img=>{
-    let div = document.createElement('div'); div.className='item';
-    let title = document.createElement('span'); title.textContent = img.name; div.appendChild(title);
+      var name = document.createElement('div');
+      name.className = 'card-name';
+      name.textContent = item.name || item.jpg;
 
-    let btnJpg = document.createElement('button'); btnJpg.textContent="JPG 50кб";
-    btnJpg.onclick = ()=>enterGallery(img.jpg); div.appendChild(btnJpg);
-
-    let btnPng = document.createElement('button'); btnPng.textContent="PNG 1-3мб";
-    btnPng.onclick = ()=>showFull(img.png); div.appendChild(btnPng);
-
-    listView.appendChild(div);
-});
-
-// ======= Режим Эскизы =======
-const thumbView = document.getElementById('thumbView');
-let thumbSize = 150;
-
-function renderThumbs(){
-    thumbView.innerHTML='';
-    images.forEach(img=>{
-        let div = document.createElement('div'); div.className='thumb';
-        div.style.width = thumbSize + "px";
-        let im = document.createElement('img'); im.src = img.jpg; div.appendChild(im);
-        let label = document.createElement('span'); label.textContent = img.name; div.appendChild(label);
-        div.onclick = ()=>showFull(img.png);
-        thumbView.appendChild(div);
+      card.appendChild(thumb);
+      card.appendChild(name);
+      cards.appendChild(card);
     });
-}
-renderThumbs();
+  }
+  renderCards();
 
-document.getElementById('thumbMinus').onclick = ()=>{
-    thumbSize = Math.max(50, thumbSize-30);
-    renderThumbs();
-};
-document.getElementById('thumbPlus').onclick = ()=>{
-    thumbSize = Math.min(300, thumbSize+30);
-    renderThumbs();
-};
+  // ====== Кнопки изменения размера плиток ======
+  var tileMin = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--tileMin')) || 160;
+  function applyTile(){ document.documentElement.style.setProperty('--tileMin', tileMin + 'px'); }
+  document.getElementById('btnMinus').addEventListener('click', function(){ tileMin = Math.max(120, tileMin - 24); applyTile(); });
+  document.getElementById('btnPlus').addEventListener('click', function(){ tileMin = Math.min(320, tileMin + 24); applyTile(); });
 
-// ======= FULLSCREEN PNG =======
-const fullScreen = document.getElementById('fullScreen');
-const fullScreenImg = document.getElementById('fullScreenImg');
-function showFull(src){
-    fullScreenImg.src=src;
-    fullScreen.classList.remove('hidden');
-}
-fullScreen.onclick = ()=>{
-    fullScreen.classList.add('hidden');
-    fullScreenImg.src='';
-};
+  // ====== Галерея ======
+  var overlay = document.getElementById('overlay');
+  var pngBadge = document.getElementById('pngBadge');
+  var pngText  = document.getElementById('pngText');
 
-// ======= Режим Галерея =======
-const galleryWrapper = document.getElementById('galleryWrapper');
-const thumbWrapper = document.getElementById('thumbWrapper');
-images.forEach(img=>{
-    galleryWrapper.innerHTML += '<div class="swiper-slide"><img src="'+img.jpg+'"></div>';
-    thumbWrapper.innerHTML += '<div class="swiper-slide"><img src="'+img.jpg+'"></div>';
-});
+  var mainWrapper = document.getElementById('mainWrapper');
+  var thumbWrapper = document.getElementById('thumbWrapper');
+  var mainSwiper, thumbSwiper;
 
-const thumbsSwiper = new Swiper('#thumbs', {
-    spaceBetween:10,
-    slidesPerView:6,
-    freeMode:true,
-    watchSlidesProgress:true,
-});
+  function buildGallery(){
+    mainWrapper.innerHTML = '';
+    thumbWrapper.innerHTML = '';
+    images.forEach(function(item){
+      var slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+      slide.innerHTML = '<img src="'+ item.jpg +'" alt="">';
+      mainWrapper.appendChild(slide);
 
-const gallerySwiper = new Swiper('#gallery', {
-    spaceBetween:10,
-    navigation:{nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev'},
-    thumbs:{swiper: thumbsSwiper},
-    loop: true, // зацикливание
-});
+      var tSlide = document.createElement('div');
+      tSlide.className = 'swiper-slide';
+      tSlide.innerHTML = '<img src="'+ item.jpg +'" alt="">';
+      thumbWrapper.appendChild(tSlide);
+    });
 
-// открыть галерею
-function enterGallery(jpg){
-    setMode('gallery');
-    let index = images.findIndex(i=>i.jpg===jpg);
-    if(index>=0) gallerySwiper.slideToLoop(index,0); // slideToLoop учитывает loop
-}
+    thumbSwiper = new Swiper('#thumbSwiper', {
+      spaceBetween: 8,
+      slidesPerView: 'auto',
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
 
-// ======= Переключение режимов =======
-const btnList = document.getElementById('btnList');
-const btnThumbs = document.getElementById('btnThumbs');
-const btnGallery = document.getElementById('btnGallery');
-const controls = document.getElementById('controls');
+    mainSwiper = new Swiper('#mainSwiper', {
+      spaceBetween: 10,
+      loop: false,
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      thumbs: { swiper: thumbSwiper }
+    });
 
-function setMode(mode){
-    listView.classList.add('hidden');
-    thumbView.classList.add('hidden');
-    document.getElementById('gallery').classList.add('hidden');
-    document.getElementById('thumbs').classList.add('hidden');
-    controls.style.display = 'block';
+    // Клик по большой картинке — запросить PNG
+    mainWrapper.addEventListener('click', function(){
+      var i = mainSwiper.activeIndex;
+      askAndLoadPNG(i);
+    });
+  }
 
-    if(mode==='list'){
-        listView.classList.remove('hidden');
-    } else if(mode==='thumbs'){
-        thumbView.classList.remove('hidden');
-    } else if(mode==='gallery'){
-        document.getElementById('gallery').classList.remove('hidden');
-        document.getElementById('thumbs').classList.remove('hidden');
-        controls.style.display = 'none';
+  function openGallery(index){
+    if (!mainSwiper){ buildGallery(); }
+    overlay.classList.add('show');
+    overlay.setAttribute('aria-hidden','false');
+    mainSwiper.update(); thumbSwiper.update();
+    mainSwiper.slideTo(index, 0);
+  }
+
+  function closeGallery(){
+    overlay.classList.remove('show');
+    overlay.setAttribute('aria-hidden','true');
+  }
+
+  // Свайп вверх для выхода
+  (function(){
+    var startY = 0;
+    overlay.addEventListener('touchstart', function(e){ if(!overlay.classList.contains('show')) return; startY = e.touches[0].clientY; }, {passive:true});
+    overlay.addEventListener('touchend', function(e){ if(!overlay.classList.contains('show')) return; var dy = startY - e.changedTouches[0].clientY; if(dy > 60) closeGallery(); }, {passive:true});
+  })();
+
+  // Клавиатура: ← → для навигации, ↑ / Esc — выход
+  document.addEventListener('keydown', function(e){
+    if(!overlay.classList.contains('show')) return;
+    if(e.key === 'ArrowRight'){ mainSwiper.slideNext(); }
+    else if(e.key === 'ArrowLeft'){ mainSwiper.slidePrev(); }
+    else if(e.key === 'ArrowUp' || e.key === 'Escape'){ closeGallery(); }
+  });
+
+  // ====== Загрузка PNG с прогрессом и заменой JPG ======
+  var pngLoaded = {}; // индекс -> blobURL, чтобы не перекачивать
+  function askAndLoadPNG(i){
+    var item = images[i];
+    if(!item) return;
+    if(!confirm('Загрузить PNG (~2MB)?')) return;
+
+    if(pngLoaded[i]){
+      swapMainImage(i, pngLoaded[i]);
+      return;
     }
 
-    [btnList,btnThumbs,btnGallery].forEach(b=>b.classList.remove('active'));
-    if(mode==='list') btnList.classList.add('active');
-    if(mode==='thumbs') btnThumbs.classList.add('active');
-    if(mode==='gallery') btnGallery.classList.add('active');
-}
+    pngBadge.classList.add('show');
+    pngText.textContent = '0%';
 
-btnList.onclick = ()=>setMode('list');
-btnThumbs.onclick = ()=>setMode('thumbs');
-btnGallery.onclick = ()=>setMode('gallery');
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', item.png, true);
+    xhr.responseType = 'blob';
+    xhr.onprogress = function(e){ if(e.lengthComputable){ pngText.textContent = Math.round(e.loaded / e.total * 100) + '%'; } };
+    xhr.onerror = function(){ pngBadge.classList.remove('show'); alert('Не удалось загрузить PNG'); };
+    xhr.onload = function(){
+      if(xhr.status >= 200 && xhr.status < 300){
+        var url = URL.createObjectURL(xhr.response);
+        pngLoaded[i] = url; // кэшируем
+        swapMainImage(i, url);
+      } else {
+        alert('Ошибка ' + xhr.status);
+      }
+      pngBadge.classList.remove('show');
+    };
+    xhr.send();
+  }
 
-// ======= клик по картинке в галерее возвращает в список =======
-document.querySelectorAll('#galleryWrapper img').forEach(img=>{
-    img.onclick = ()=>setMode('list');
-});
-</script>
+  function swapMainImage(i, url){
+    var slide = mainWrapper.children[i];
+    if(!slide) return;
+    var img = slide.querySelector('img');
+    if(img) img.src = url; // заменить jpg на png
+  }
 
+  // ====== Инициализация: выставить стартовый размер плиток ======
+  applyTile();
+  </script>
 </body>
 </html>
