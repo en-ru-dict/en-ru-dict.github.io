@@ -6,69 +6,116 @@
 <title>Галерея карточек — адаптивная</title>
 <link rel="stylesheet" href="swiper-bundle.min.css" />
 <style>
-  :root{
-    --tileMin:160px; /* меняется кнопками */
-    --tileGap:12px;
-    --thumbH:64px;  /* высота нижней ленты в галерее */
-    --bg:#f7f7f8;
-    --card:#fff;
-    --text:#111;
-    --muted:#6b7280;
-    --brand:#1e6bff;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',"Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--text)}
-  .hidden{display:none !important}
+#pngBadge{display:none}
 
-  /* Верхняя панель управления */
-  #topbar{position:sticky;top:0;z-index:10;display:flex;gap:10px;align-items:center;padding:10px;background:#fff;border-bottom:1px solid #e5e7eb}
-  #topbar .spacer{flex:1}
-  .btn{appearance:none;border:0;border-radius:12px;background:var(--brand);color:#fff;padding:10px 16px;font-size:22px;line-height:1;cursor:pointer;touch-action:manipulation;box-shadow:0 2px 8px rgba(30,107,255,.3)}
-  .btn:active{transform:translateY(1px)}
-  .btn.secondary{background:#111;color:#fff}
+:root{
+ --tileMin:160px; /* меняется кнопками */
+ --tileGap:12px;
+ --thumbH:64px;  /* высота нижней ленты в галерее */
+ --bg:#f7f7f8;
+ --card:#fff;
+ --text:#111;
+ --muted:#6b7280;
+ }
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',"Apple Color Emoji","Segoe UI Emoji";background:var(--bg);color:var(--text)}
+.hidden{display:none !important}
 
-  /* Сетка карточек а-ля Google Drive */
-  #cards{padding:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--tileMin),1fr));gap:var(--tileGap)}
-  .card{background:var(--card);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);overflow:hidden;display:flex;flex-direction:column}
-  .card-thumb{position:relative;background:#eee;aspect-ratio:4/3;/* Chrome 99 поддерживает */}
-  .card-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-  .card-name{padding:8px 10px;font-size:14px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-top:1px solid #f0f0f0}
+/* Верхняя панель управления  */
+#topbar{position:sticky;top:0;z-index:10;display:flex;gap:10px;align-items:center;padding:10px;background:#fff;border-bottom:1px solid #e5e7eb}
+#topbar .spacer{flex:1}
+.btn{background:beige;;font-size:22px;width:100px;}
+.btn:active{transform:translateY(1px)}
+.btn.secondary{background:#111;color:#fff}
 
-  /* Оверлей галереи. В DOM есть всегда, но скрыт скриптом */
-  #overlay{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;/* включаем скриптом */z-index:9999}
-  #overlay.show{display:flex;flex-direction:column;min-height:0}
+/* Сетка карточек а-ля Google Drive */
+#cards{padding:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--tileMin),1fr));gap:var(--tileGap)}
+.card{background:var(--card);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);overflow:hidden;display:flex;flex-direction:column}
+.card-thumb{min-height:100px;position:relative;background:#eee;aspect-ratio:4/3;/* Chrome 99 поддерживает */}
+.card-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.card-name{padding:8px 10px;font-size:14px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-top:1px solid #f0f0f0}
 
-  /* Основной слайдер сверху, лента прижата к нижнему краю */
-  #galleryMain{position:relative;flex:1 1 auto;min-height:0;padding:8px 8px calc(var(--thumbH) + 16px)}
-  #galleryMain .swiper{height:100%}
-  #galleryMain .swiper-slide{display:flex;/*align-items:center*/;justify-content:center}
-  #galleryMain img{max-width:100%;max-height:100%;object-fit:contain}
-  .swiper-button-prev,.swiper-button-next{color:#fff}
+/* Оверлей галереи. В DOM есть всегда, но скрыт скриптом */
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,.94);display:none;/* включаем скриптом */z-index:9999}
+#overlay.show{display:flex;flex-direction:column;min-height:0}
 
-  /* Лента миниатюр — прижата к низу */
-  #thumbStrip{position:fixed;left:0;right:0;bottom:0;padding:0 8px 8px;background:linear-gradient(transparent, rgba(0,0,0,.25));}
-  #thumbStrip .swiper{height:var(--thumbH)}
-  #thumbStrip .swiper-slide{width:86px}
-  #thumbStrip img{width:100%;height:100%;object-fit:cover;border-radius:8px;opacity:.75;border:2px solid transparent}
-  #thumbStrip .swiper-slide-thumb-active img{opacity:1;border-color:#4f9dff}
+/* Основной слайдер сверху, лента прижата к нижнему краю */
+#galleryMain{position:relative;flex:1 1 auto;min-height:0;padding:8px 8px calc(var(--thumbH) + 16px)}
+#galleryMain .swiper{height:100%}
+#galleryMain .swiper-slide{display:flex;align-items:center;justify-content:center}
+#galleryMain img{height:100%;max-width:100%;max-height:100%;object-fit:contain}
+.swiper-button-prev,.swiper-button-next{color:#fff}
 
-  /* Бейдж прогресса PNG */
-  #pngBadge{position:fixed;top:12px;left:50%;transform:translateX(-50%);background:rgba(17,17,17,.8);color:#fff;border-radius:12px;padding:8px 12px;display:none;align-items:center;gap:10px;font-size:14px}
-  #pngBadge.show{display:flex}
-  .ring{width:18px;height:18px;border-radius:999px;border:2px solid #89b4ff;border-top-color:#fff;animation:spin 1s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
+/* Лента миниатюр — прижата к низу */
+#thumbStrip{position:fixed;left:0;right:0;bottom:0;padding:0 8px 8px;background:linear-gradient(transparent, rgba(0,0,0,.25));}
+#thumbStrip .swiper{height:var(--thumbH)}
+#thumbStrip .swiper-slide{width:86px}
+#thumbStrip img{width:100%;height:100%;object-fit:cover;border-radius:8px;opacity:.75;border:2px solid transparent}
+#thumbStrip .swiper-slide-thumb-active img{opacity:1;border-color:#4f9dff}
 
-  /* Адаптив: на маленьких экранах плитки крупнее по умолчанию */
-  @media (max-width:480px){:root{--tileMin:180px}}
+#thumbStrip .swiper-slide-thumb-active img {
+  transform: scale(1.1); /* Увеличиваем масштаб */
+  transition: transform 0.3s ease; /* Плавный переход */
+}
+
+/* Адаптив: на маленьких экранах плитки крупнее по умолчанию */
+@media (max-width:480px){:root{--tileMin:180px}}
+
+/* фулскрин картинка */
+#fullscreen-view {
+  display:none; position:fixed; inset:0;
+  background:rgba(0,0,0,0.9); z-index:1000;
+  justify-content:center; align-items:center;
+}
+#fullscreen-img { max-width:100%; max-height:100%; height: 100%;width: 100%;object-fit: contain;}
+
+#info-box {
+  position:fixed; top:10px; left:50%; transform:translateX(-50%);
+  background:rgba(0,0,0,0.7); color:#fff;
+  padding:8px 12px; border-radius:8px;
+  font-size:16px; text-align:center;
+  z-index:1001; min-width:400px;
+}
+#progress-wrap { margin-top:6px; background:rgba(255,255,255,0.3); height:8px; border-radius:999px; overflow:hidden; }
+#progress-bar { height:100%; width:0%; background:#4caf50; }
+#cancel-btn { margin-top:6px; padding:3px 10px; border:none; border-radius:6px; cursor:pointer; }
+
+#external-frame { display:none; position:fixed; inset:0; width:100%; height:100%; border:none; z-index:1002; }
+#close-frame {
+  display:none; position:fixed; top:10px; right:10px;
+  width:40px; height:40px; border-radius:50%;
+  background:rgba(0,0,0,0.6); color:#fff;
+  font-size:22px; justify-content:center; align-items:center;
+  cursor:pointer; z-index:1003; user-select:none;
+}
+
+.rb div {width:100%;height:40px;}
+.rb input:checked + label { background:#D0FFD0; box-shadow:inset 0 3px 6px rgba(0,0,0,0.52); transition:0.2s;}
+.rb label, button {
+ padding:5px 10px;
+ border: 1px solid #BBBBBB;
+ background:linear-gradient(to bottom,rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
+ box-shadow:0 2px 5px rgba(0,0,0,0.52);
+ cursor:pointer;
+ border-radius:8px;
+}
+
+
 </style>
 </head>
+
 <body>
-  <div id="topbar">
-    <button class="btn" id="btnMinus" aria-label="Меньше">−</button>
-    <button class="btn" id="btnPlus" aria-label="Больше">+</button>
-    <div class="spacer"></div>
-  </div>
+<div id="topbar">
+ <button class="btn" id="btnMinus" aria-label="Меньше">-</button>
+ <button class="btn" id="btnPlus" aria-label="Больше">+</button>
+ <div class="rb">
+   <label for="id_mode">Большая PNG</label>
+   <input type="checkbox" name="neizv" id="id_mode" />  
+ </div>
+ <a href="https://postimg.cc/gallery/y7dRbyB">Галерея на фотохостинге</a>
+ <div class="spacer"></div>
+</div>
 
   <!-- Сетка карточек -->
   <main id="cards" aria-live="polite"></main>
@@ -89,33 +136,40 @@
     </div>
     <div id="pngBadge"><span class="ring"></span><span id="pngText">Загрузка…</span></div>
   </div>
+  <div id="fullscreen-view">
+    <img id="fullscreen-img" ondblclick="closeFullscreen()">
+    <div id="info-box" style="display:none">
+      <div id="info-text">Идёт загрузка..</div>
+      <div id="progress-wrap"><div id="progress-bar"></div></div>
+      <button id="cancel-btn">Отмена</button>
+    </div>
+  </div>
+
+  <iframe id="external-frame"></iframe>
+  <div id="close-frame" onclick="closeIframe()">✕</div>
 
   <!-- Данные -->
   <script src="list.js"></script>
   <!-- Локальная библиотека -->
   <script src="swiper-bundle.min.js"></script>
 
-  <script>
+<script>
   // ====== Разбор list.js ======
-  // Формат строки: "Название; pic.jpg; url/pic.png" или "Название; pic; url/pic.png"
-  // Допускается пропуск .jpg — добавим автоматически. PNG можно не указывать — возьмём jpg и заменим расширение.
+  // Формат строки: "Название; pic; url/pic.png"
   var lines = (window.g_jpg || '').split(/\r?\n/).map(function(s){return s.trim()}).filter(Boolean);
   var images = lines.map(function(line){
-    var parts = line.split(';').map(function(s){return (s||'').trim()});
-    var name = parts[0] || '';
-    var jpg  = parts[1] || '0';
-    var png  = parts[2] || '';
-    if (!/\.jpg(\?|$)/i.test(jpg)) jpg += '.jpg'; // поддержка "+jpg"
-    if (!jpg || jpg === '0') jpg = '0.jpg';
-    if (!png){
-      // если PNG не задан, делаем из JPG
-      png = jpg.replace(/\.jpg(\?.*)?$/i, '.png$1');
-    }
+    var parts = (line+';;').split(';');
+    var name = parts[0].trim(); if(name=='')name='name_pic';
+    var jpg  = parts[1].trim(); if(jpg=='')jpg='0'; jpg+='.jpg';
+    var png  = parts[2].trim(); if(png=='')png='0.png';
+    //alert(name+'/'+jpg+'/'+png);
     return { name:name, jpg:jpg, png:png };
   });
 
   // ====== Рендер карточек (асинхронная подмена 0.jpg -> jpg) ======
   var cards = document.getElementById('cards');
+  function card_hide(){cards.style.display='none';}
+  function card_show(){cards.style.display='grid';}
   function renderCards(){
     cards.innerHTML = '';
     images.forEach(function(item, idx){
@@ -135,8 +189,7 @@
       pre.src = item.jpg;
 
       // при клике — открыть галерею на нужном слайде
-      thumb.addEventListener('click', function(){ openGallery(idx); });
-
+      thumb.addEventListener('click', function(){ if(g_mode())openGallery(idx);else loadPNG(idx)});
       var name = document.createElement('div');
       name.className = 'card-name';
       name.textContent = item.name || item.jpg;
@@ -191,12 +244,6 @@
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
       thumbs: { swiper: thumbSwiper }
     });
-
-    // Клик по большой картинке — запросить PNG
-    mainWrapper.addEventListener('click', function(){
-      var i = mainSwiper.activeIndex;
-      askAndLoadPNG(i);
-    });
   }
 
   function openGallery(index){
@@ -205,11 +252,13 @@
     overlay.setAttribute('aria-hidden','false');
     mainSwiper.update(); thumbSwiper.update();
     mainSwiper.slideTo(index, 0);
+    card_hide();
   }
 
   function closeGallery(){
     overlay.classList.remove('show');
     overlay.setAttribute('aria-hidden','true');
+    card_show();
   }
 
   // Свайп вверх для выхода
@@ -219,56 +268,100 @@
     overlay.addEventListener('touchend', function(e){ if(!overlay.classList.contains('show')) return; var dy = startY - e.changedTouches[0].clientY; if(dy > 60) closeGallery(); }, {passive:true});
   })();
 
-  // Клавиатура: ← → для навигации, ↑ / Esc — выход
+  // Клавиатура: стрелки для навигации, ↑ / Esc — выход
   document.addEventListener('keydown', function(e){
     if(!overlay.classList.contains('show')) return;
     if(e.key === 'ArrowRight'){ mainSwiper.slideNext(); }
     else if(e.key === 'ArrowLeft'){ mainSwiper.slidePrev(); }
     else if(e.key === 'ArrowUp' || e.key === 'Escape'){ closeGallery(); }
   });
+  document.addEventListener('dblclick', function(e){closeGallery();});
 
-  // ====== Загрузка PNG с прогрессом и заменой JPG ======
-  var pngLoaded = {}; // индекс -> blobURL, чтобы не перекачивать
-  function askAndLoadPNG(i){
-    var item = images[i];
-    if(!item) return;
-    if(!confirm('Загрузить PNG (~2MB)?')) return;
+async function getImageMeta(url){
+  try{
+	const h=await fetch(url,{method:'HEAD'});
+	const ct=h.headers.get('Content-Type');
+	if(ct && ct.includes('text/html')) return {isHTML:true};
+	const cl=h.headers.get('Content-Length');
+	if(cl) return {sizeKB:Math.round(parseInt(cl,10)/1024)};
+  }catch{}
+  try{
+	const r=await fetch(url,{headers:{Range:'bytes=0-1'}});
+	const ct=r.headers.get('Content-Type');
+	if(ct && ct.includes('text/html')) return {isHTML:true};
+	const cr=r.headers.get('Content-Range');
+	if(cr){ const tot=parseInt(cr.split('/')[1],10); if(!isNaN(tot)) return {sizeKB:Math.round(tot/1024)}; }
+  }catch{}
+  return {};
+}
+let currentIndex=-1, isLoading=false, cancelled=false;
 
-    if(pngLoaded[i]){
-      swapMainImage(i, pngLoaded[i]);
-      return;
-    }
+async function loadPNG(i){
+  if(isLoading) return;
+  isLoading=true; cancelled=false; currentIndex=i;
+  const {jpg,png}=images[i];
+  const fv=document.getElementById('fullscreen-view');
+  const fi=document.getElementById('fullscreen-img');
+  const ib=document.getElementById('info-box');
+  const it=document.getElementById('info-text');
+  const pb=document.getElementById('progress-bar');
+  const cb=document.getElementById('cancel-btn');
+card_hide();cb.style.display='';
+  fi.src=jpg; fv.style.display='flex'; ib.style.display='block';
+  it.textContent='Идёт загрузка..'; pb.style.width='0%';
 
-    pngBadge.classList.add('show');
-    pngText.textContent = '0%';
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', item.png, true);
-    xhr.responseType = 'blob';
-    xhr.onprogress = function(e){ if(e.lengthComputable){ pngText.textContent = Math.round(e.loaded / e.total * 100) + '%'; } };
-    xhr.onerror = function(){ pngBadge.classList.remove('show'); alert('Не удалось загрузить PNG'); };
-    xhr.onload = function(){
-      if(xhr.status >= 200 && xhr.status < 300){
-        var url = URL.createObjectURL(xhr.response);
-        pngLoaded[i] = url; // кэшируем
-        swapMainImage(i, url);
-      } else {
-        alert('Ошибка ' + xhr.status);
-      }
-      pngBadge.classList.remove('show');
-    };
-    xhr.send();
+  const meta=await getImageMeta(png);
+  if(meta.isHTML){
+	fv.style.display='none'; ib.style.display='none';
+	showIframe(png); isLoading=false; return;
+  }
+  if(meta.sizeKB){
+	it.textContent=`Идёт загрузка.. (${meta.sizeKB>1024? (meta.sizeKB/1024).toFixed(1)+' МБ':meta.sizeKB+' КБ'})`;
+  } else {
+	it.textContent='Идёт загрузка.. (размер ?)';
   }
 
-  function swapMainImage(i, url){
-    var slide = mainWrapper.children[i];
-    if(!slide) return;
-    var img = slide.querySelector('img');
-    if(img) img.src = url; // заменить jpg на png
-  }
+  let pr=0; const int=setInterval(()=>{
+	if(cancelled){clearInterval(int);return;}
+	pr=Math.min(100,pr+2);
+	pb.style.width=pr+'%';
+  },100);
 
-  // ====== Инициализация: выставить стартовый размер плиток ======
-  applyTile();
-  </script>
+  cb.onclick=()=>{cancelled=true; ib.style.display='none'; isLoading=false; clearInterval(int);closeFullscreen();};
+
+  const big=new Image(); big.src=png;
+  big.onload=()=>{ 
+   if(cancelled)return; 
+   clearInterval(int); 
+   ib.style.display='block'; 
+   it.textContent='Ок. Двойной клик - выход'; 
+   pb.style.width='100%'; fi.src=png; 
+   isLoading=false; 
+   cb.style.display='none';
+   setTimeout(()=>{ib.style.display='none'},2000);
+  };
+  big.onerror=()=>{ if(cancelled)return; clearInterval(int); ib.style.display='block'; it.textContent='Ошибка загрузки'; isLoading=false; };
+}
+
+function showIframe(url){
+  const f=document.getElementById('external-frame');
+  const c=document.getElementById('close-frame');
+  f.src=url; f.style.display='block'; c.style.display='flex';
+}
+function closeIframe(){
+  const f=document.getElementById('external-frame');
+  f.style.display='none'; f.src='';
+  document.getElementById('close-frame').style.display='none';
+}
+function closeFullscreen(){
+  document.getElementById('fullscreen-view').style.display='none';
+  document.getElementById('info-box').style.display='none';
+  card_show();
+}
+function g_mode(){return !document.getElementById('id_mode').checked;}
+
+// ====== Инициализация: выставить стартовый размер плиток ======
+applyTile();
+</script>
 </body>
 </html>
