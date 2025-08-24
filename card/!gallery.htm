@@ -303,7 +303,7 @@ async function loadPNG(i){
   if(isLoading) return;
   isLoading=true; cancelled=false; currentIndex=i;
   const {jpg,png}=images[i];
-  card_hide(i);cb.style.display='';fv.requestFullscreen();
+  card_hide(i);cb.style.display='';
   fi.src=jpg; fv.style.display='flex'; ib.style.display='block';
   it.textContent='Идёт загрузка..'; pb.style.width='0%';
 
@@ -325,7 +325,7 @@ async function loadPNG(i){
   },200);
 
   cb.onclick=()=>{cancelled=true; ib.style.display='none'; isLoading=false; clearInterval(int);closeFullscreen();fi.src='0.png';};
-
+fv.requestFullscreen();
   const big=new Image(); big.src=png;
   big.onload=()=>{
    if(cancelled)return;
