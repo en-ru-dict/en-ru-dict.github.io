@@ -134,7 +134,7 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvet
 
   </div>
   <div id="fullscreen-view">
-    <img id="fullscreen-img" ondblclick="closeFullscreen()">
+    <img id="fullscreen-img">
     <div id="info-box" style="display:none">
       <div id="info-text">Идёт загрузка..</div>
       <div id="progress-wrap"><div id="progress-bar"></div></div>
@@ -165,10 +165,10 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvet
 
   // ====== Рендер карточек (асинхронная подмена 0.jpg -> jpg) ======
   var cards = eid('cards');
-  var g_img=[],g_index=0;
+  var g_img=[], g_index=0;
 
   function card_hide(i){cards.style.display='none';;g_index=i;}
-  function card_show(){cards.style.display='grid';sc_img(g_index);}
+  function card_show(){ cards.style.display='grid';sc_img(g_index);}
 
   function renderCards(){
     cards.innerHTML = '';
@@ -188,7 +188,10 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvet
       pre.src = item.jpg;
 
       // при клике — открыть галерею на нужном слайде
-      thumb.addEventListener('click', function(){ if(g_mode())openGallery(idx);else loadPNG(idx);});
+      thumb.addEventListener('click', function(){ 
+        if(g_mode())openGallery(idx);
+        else loadPNG(idx);
+       });
 
       var name = document.createElement('div');
       name.className = 'card-name';
@@ -251,7 +254,6 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvet
     mainSwiper.slideTo(index, 0);
     card_hide(index)
   }
-
   function closeGallery(){
     overlay.classList.remove('show');
     overlay.setAttribute('aria-hidden','true');
@@ -274,23 +276,6 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvet
   });
   document.addEventListener('dblclick', function(e){closeGallery();});
 
-async function getImageMeta(url){
- try{
-	const h=await fetch(url,{method:'HEAD'});
-	const ct=h.headers.get('Content-Type');
-	if(ct && ct.includes('text/html')) return {isHTML:true};
-	const cl=h.headers.get('Content-Length');
-	if(cl) return {sizeKB:Math.round(parseInt(cl,10)/1024)};
- }catch{}
- try{
-	const r=await fetch(url,{headers:{Range:'bytes=0-1'}});
-	const ct=r.headers.get('Content-Type');
-	if(ct && ct.includes('text/html')) return {isHTML:true};
-	const cr=r.headers.get('Content-Range');
-	if(cr){ const tot=parseInt(cr.split('/')[1],10); if(!isNaN(tot)) return {sizeKB:Math.round(tot/1024)}; }
- }catch{}
-  return {};
-}
 let currentIndex=-1, isLoading=false, cancelled=false;
 const fv=eid('fullscreen-view');
 const fi=eid('fullscreen-img');
@@ -299,24 +284,13 @@ const it=eid('info-text');
 const pb=eid('progress-bar');
 const cb=eid('cancel-btn');
 
-async function loadPNG(i){
-  if(isLoading) return;
+function loadPNG(i){
+  if(isLoading) return; 
   isLoading=true; cancelled=false; currentIndex=i;
   const {jpg,png}=images[i];
-  card_hide(i);cb.style.display='';
+  card_hide(i);cb.style.display='';fv.requestFullscreen();
   fi.src=jpg; fv.style.display='flex'; ib.style.display='block';
-  it.textContent='Идёт загрузка..'; pb.style.width='0%';
-
-  const meta=await getImageMeta(png);
-  if(meta.isHTML){
-   fv.style.display='none'; ib.style.display='none';
-   showIframe(png); isLoading=false; return;
-  }
-  if(meta.sizeKB){
-   it.textContent=`Идёт загрузка.. (${meta.sizeKB>1024? (meta.sizeKB/1024).toFixed(1)+' МБ':meta.sizeKB+' КБ'})`;
-  } else {
-   it.textContent='Идёт загрузка.. (размер ?)';
-  }
+  it.textContent='Идёт загрузка..1-3мб'; pb.style.width='0%';
 
   let pr=0; const int=setInterval(()=>{
    if(cancelled){clearInterval(int);return;}
@@ -324,49 +298,39 @@ async function loadPNG(i){
    pb.style.width=pr+'%';
   },200);
 
-  cb.onclick=()=>{cancelled=true; ib.style.display='none'; isLoading=false; clearInterval(int);closeFullscreen();fi.src='0.png';};
-fv.requestFullscreen();
+  cb.onclick=()=>{cancelled=true; ib.style.display='none'; isLoading=false; 
+  clearInterval(int);closeFullscreen();fi.src='0.png';};
+  fi.onclick=()=>{cancelled=true; ib.style.display='none'; isLoading=false; 
+  clearInterval(int);closeFullscreen();fi.src='0.png';};
+
   const big=new Image(); big.src=png;
   big.onload=()=>{
    if(cancelled)return;
    clearInterval(int);
    ib.style.display='block';
-   it.textContent='Картинка загружена. Двойной клик - выход';
+   it.textContent='Картинка загружена. Клик - выход';
    pb.style.width='100%'; fi.src=png;
    isLoading=false;
    cb.style.display='none';
    setTimeout(()=>{ib.style.display='none'},3000);
   };
-  big.onerror=()=>{ if(cancelled)return; clearInterval(int); ib.style.display='block'; it.textContent='Ошибка загрузки'; isLoading=false; };
+  big.onerror=()=>{ if(cancelled)return; clearInterval(int); ib.style.display='block'; it.textContent='Ошибка загрузки PNG'; isLoading=false; };
 }
-
-function showIframe(url){
-  const f=eid('external-frame');
-  const c=eid('close-frame');
-  f.src=url; f.style.display='block'; c.style.display='flex';
-}
-function closeIframe(){
-  const f=eid('external-frame');
-  f.style.display='none'; f.src='';
-  eid('close-frame').style.display='none';
-  document.exitFullscreen();
-}
-function closeFullscreen(){
+function closeFullscreen(){document.exitFullscreen();
   eid('fullscreen-view').style.display='none';
   eid('info-box').style.display='none';
-  card_show();
-  document.exitFullscreen();
+  card_show(); 
 }
 function g_mode(){return !eid('id_mode').checked;}
-function sc_img(i){ if(!g_img[i])return;
- var imgRect = g_img[i].getBoundingClientRect();
- g_img[i].style.border="solid 1px red"
- var scrollTop = imgRect.top + window.scrollY - 200;
- // Прокрутить страницу так, чтобы следующий элемент был в верхней части экрана
- window.scrollTo({top: scrollTop,behavior: 'instant'});
+function sc_img(i){ var k,t;
+ k=g_img[i]; 
+ if(k){// Прокрутить страницу, чтобы элемент был в верхней части экрана
+   t = k.getBoundingClientRect(); k.style.border="solid 1px red";
+   t =t.top + window.scrollY - 200;
+   window.scrollTo({top: t, behavior: 'instant'});
+ }
 }
-// ====== Инициализация: выставить стартовый размер плиток ======
-applyTile();
+applyTile(); //выставить стартовый размер плиток
 </script>
 </body>
 </html>
