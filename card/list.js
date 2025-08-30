@@ -36,7 +36,6 @@ entrance,exit; entrance; https://files.catbox.moe/rhpiog.png; 1.3 MB
 fill,feel; fill; https://files.catbox.moe/1plgzz.png; 1.3 MB
 fish; fish; https://files.catbox.moe/6fg754.png; 1.9 MB
 flu,fly,sly;flu; https://files.catbox.moe/ar66v4.png; 0.6 MB
-fly,sly,slay; fly; https://files.catbox.moe/vefe3k.png; 0.9 MB
 fork,cattle,spoon; fork; https://files.catbox.moe/i9gxu2.png; 1.2 MB
 frying-pan,skillet; frying-pan; https://files.catbox.moe/449nx4.png; 0.8 MB
 goat; goat; https://files.catbox.moe/mnqy7z.png; 2.5 MB
@@ -68,7 +67,7 @@ mug; mug; 0.png
 murmur; murmur; 0.png
 next; next; 0.png
 next2; next2; 0.png
-norrow; norrow; 0.png
+narrow; narrow; 0.png
 obvious; obvious; 0.png
 obviously; obviously; 0.png
 persuade; persuade; 0.png
