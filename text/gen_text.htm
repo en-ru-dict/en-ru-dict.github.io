@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Генератор текста с учётом выученных слов</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:18px;background:#f7f8fb;color:#111}
+    header{display:flex;align-items:center;gap:12px}
+    h1{margin:0;color:brown}
+    .card{background:white;border-radius:10px;padding:14px;box-shadow:0 6px 18px rgba(20,30,50,0.06);margin-top:12px;font-size: 20px;}
+    a.resource{display:inline-block;margin-right:8px;margin-bottom:6px}
+    label{display:block;margin-top:8px}
+    textarea{width:100%;min-height:70px;padding:10px;border-radius:8px;border:1px solid #ddd;font-family:inherit}
+    input[type=file]{margin-top:6px}
+    .row{display:flex;gap:10px}
+    .col{flex:1}
+    button{padding:8px 12px;border-radius:8px;border:0;background:#2466f0;color:white;cursor:pointer}
+    button.secondary{background:#444}
+    .small{font-size:0.9rem;color:#555}
+    ul{margin:6px 0 0 18px}
+    pre{white-space:pre-wrap;background:#fcfcff;padding:10px;border-radius:8px;border:1px dashed #e6e9f8}
+    h3 {color: orangered;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Генератор английского текста (с учётом выученных слов)</h1>
+  </header>
+  <section class="card" id="hint1">
+	<h2>1) Режим чтения по уровням</h2>
+	Скачайте подходящий по уровню текст по ссылкам. Учите незнакомые слова в Анки и закрепляйте в текстах в разных значениях. Запоминайте выученные слова в список выученных слов, а если слово забылось, то можно удалить из списка выученных. Уровень словаря можно выбрать. Если много (??) Значит словарь надо вкл побольше или искать самим. Перевод может быть неточный. Есть приложение: Гугл переводчик, может работать офлайн, есть режим - плавающая кнопка. Переводит сносно. А если онлайн, то переводит очень хорошо, но помедленее. Ещё есть сайт translate.google.com/ Переводите там отдельные слова, предложения или весь текст. Потом можно сравнить как сами перевели и поняли смысл.
+  </section>
+  <section class="card" id="resources">
+    <h3>Где взять готовые тексты по уровням?</h3>
+    <p class="small">Ниже — официальные и общеизвестные ресурсы со списками слов по CEFR / уровням.</p>
+    <div>
+      <a class="resource" href="https://www.oxfordlearnersdictionaries.com/us/wordlist/american_english/oxford3000/" target="_blank">Oxford 3000 / Oxford Learner's</a><br>
+      <a class="resource" href="https://englishprofile.org/" target="_blank">English Profile / EVP (CEFR mapping)</a><br>
+      <a class="resource" href="https://learnenglish.britishcouncil.org/vocabulary/a1-a2-vocabulary" target="_blank">British Council — A1–A2 / B1–B2</a><br>
+      <a class="resource" href="https://www.cambridgeenglish.org/" target="_blank">Cambridge English — wordlists / exam lists (PDF)</a><br>
+      <a class="resource" href="https://www.englishclub.com/vocabulary/" target="_blank">EnglishClub — тематические и уровневые списки</a><br>
+      <a class="resource" href="https://quizlet.com/" target="_blank">Quizlet — множество пользовательских наборов (по уровням)</a><br>
+    </div>
+  </section>
+ <hr> 
+ <section class="card" id="hint">
+    <h2>2) Режим чтения по уровням + новые слова</h2>
+	Чем больше слов выучено, тем сложнее запоминать следующие. Вы уже знаете 1000-5000 слов. Они есть в списке выученных слов. Загрузите этот список в программу. Выучите 10-50 слов в Анки. Загрузите эти Активные слова 10-50 в программу и сюда. Нажмите «Сформировать промпт» — промпт вставит список слов в шаблон. Нажмите «Скопировать промпт» и вставьте в чат-бота (откройте чат-бот в новой вкладке). Он сделает текст где эти новые слова точно встречаются в разных вариантах, остальные слова знакомы (выбирайте правильно уровень) а незнакомых мало и перевод в скобках() чтобы не отвлекаться. Активные слова выделены красным. После тренировки можно добавить их в список выученных слов. Старайтесь учить слова по уровням, чтобы легче тексты искать/генерировать. Доучивайте незнакомые слова текущего уровня и потом переходите на следующий. Список выученных слов 1000+ в чат бот загрузить пока нельзя! (он столько много не понимает)
+ </section>
+
+
+  <section class="card" id="chatbots">
+    <h3>Чат-боты, которые умеют генерировать текст бесплатно</h3>
+    <p class="small">Открывайте в новой вкладке и вставляйте промпт (есть кнопка «Скопировать промпт» ниже).</p>
+    <div>
+<a class="resource" href="https://chat.openai.com/" target="_blank">ChatGPT5 (OpenAI)(надо впн+гугл акк)</a><br>
+<a class="resource" href="https://gemini.google.com/" target="_blank">Gemini (надо впн+гугл акк)</a><br>
+<a class="resource" href="https://grok.com" target="_blank">грок</a><br>
+<a class="resource" href="https://chat.mistral.ai/chat" target="_blank">мистраль (нужен новый браузер)</a><br>
+<a class="resource" href="https://chat.qwen.ai/" target="_blank">алибаба</a><br>
+<a class="resource" href="https://www.bing.com/chat" target="_blank">Bing Chat</a><br>
+<a class="resource" href="https://perplexity.ai/" target="_blank">Perplexity</a><br>
+<a class="resource" href="https://www.anthropic.com/" target="_blank">Claude(смс надо)</a><br>
+
+любой чат бот гпт3 (сечас навалом сайтов, приложений, есть в телеграм, везде бесплатно, но с лимитами и похуже чем гпт4)
+    </div>
+  </section>
+
+  <section class="card" id="promptArea">
+    <h3>Промпт для чат-бота и настройки генерации</h3>
+<textarea id="wordPreview" spellcheck="false" rows="3" placeholder="Загрузите сюда ваш список активных слов (разделитель ,;/n)"></textarea>
+    <label>Уровень:
+    <select id="levelInput">
+		<option value="A1" selected>A1</option>
+		<option value="A2">A2</option>
+		<option value="B1">B1</option>
+		<option value="B2">B2</option>
+	</select>
+	</label>
+    <label>Длина текста:
+    <select id="lengthSelect">
+		<option value="short" selected>короткий (50-100 слов)</option>
+		<option value="medium">средний (150-250 слов)</option>
+		<option value="long">длинный (300-500 слов)</option>
+	</select>
+	</label>
+
+    <textarea id="prompt" spellcheck="false" rows="5"></textarea>
+
+    <div class="row" style="margin-top:8px">
+      <div class="col">
+        <button id="generatePrompt1">промпт1 из списка</button>
+        <button id="generatePrompt2">промпт2 из списка</button>
+
+        <button class="secondary" id="copyPrompt">Скопировать промпт</button>
+      </div>
+    </div>
+
+    <p class="small" style="margin-top:8px">Шаблон промпта (пример):</p>
+<pre id="example1">
+Generate a {length} English text suitable for CEFR {level} learners that uses the following learned words:({words}). Keep sentences simple, include context so the words' meanings are clear, and produce a short glossary at the end with 1-2 translations or definitions for each word.
+</pre>
+<hr>
+<pre id="example2">
+You are an English text generator for language learners.  
+
+1. The learner already understands about 1000-5000 common English words (CEFR {level}).  
+2. They have {count} new active words to practice: ({words}).  
+3. Please write a {length} text at CEFR {level}.  
+4. The text must:
+   - Use ALL of the active words naturally in context, several times if possible.  
+   - Avoid rare or advanced vocabulary outside the learner’s known 1000-5000 words.  
+   - Be coherent, funny, interesting, and similar to real English usage.  
+5. At the end, provide:
+   - A short glossary (English → simple definition) for the {count} active words.  
+   - 3–5 comprehension questions in English.
+</pre>
+<hr>
+
+  </section>
+
+  
+<script>
+  const wordPreview = document.getElementById('wordPreview');
+  const promptEl = document.getElementById('prompt');
+  const generateBtn1 = document.getElementById('generatePrompt1');
+  const generateBtn2 = document.getElementById('generatePrompt2');
+  const copyBtn = document.getElementById('copyPrompt');
+  const levelInput = document.getElementById('levelInput');
+  const lengthSelect = document.getElementById('lengthSelect');
+  const example1 = document.getElementById('example1');
+  const example2 = document.getElementById('example2');
+
+  let words = [];
+
+  function replace_all(s,a,b){var s0=s+'',a0=a+'',b0=b+'',ms;//для небольших
+   if(s0.indexOf(a0)>=0){ms=s0.split(a0);s0=ms.join(b0);}
+   return s0;
+  }
+
+  function sanitizeAndSplit(text){
+   // replace Windows newlines, split on newlines or commas, remove empties
+   return text.replace(/\r/g,'').split(/[\n,;]+/).map(s=>s.trim()).filter(Boolean);
+  }
+
+  function renderPreview(k){
+    const text = wordPreview.value+'' || 'yes,no';
+    words = sanitizeAndSplit(text).map(w=>w.split(/\s+/)[0]); // take first token per cell
+    var len_w=words.length;
+    if(len_w===0){ alert('Список слов пуст.'); return; }
+    alert( `Найдено слов: ${len_w}\n Первые 50 слов:(${words.slice(0,50).join(', ')})`);
+    const level = levelInput.value || 'A1';
+    const len = lengthSelect.value === 'short' ? 'short (50-100 words)' : lengthSelect.value==='medium' ? 'medium (150-250 words)' : 'long (300-500 words)';
+    let useWords = words.slice(0,50);
+    words = useWords.join(', ');
+    var p='';
+    if(k==1) p = `Generate a ${len} English text suitable for CEFR ${level} learners that uses the following learned words:(${words}). Keep sentences simple, use the words in context so their meanings are clear, and include a 3-sentence comprehension question set at the end.`;
+    if(k==2){
+     p=example2.innerHTML;
+     p=replace_all(p,'{level}',level);
+     p=replace_all(p,'{length}',len);
+     p=replace_all(p,'{words}',words);
+     p=replace_all(p,'{count}',len_w);
+    }
+    promptEl.value = p;
+  }
+
+    generateBtn1.addEventListener('click', ()=>{renderPreview(1);});
+    generateBtn2.addEventListener('click', ()=>{renderPreview(2);});
+
+    copyBtn.addEventListener('click', async ()=>{
+      try{ await navigator.clipboard.writeText(promptEl.value); alert('Промпт скопирован в буфер обмена'); }
+      catch(e){ alert('Не удалось скопировать — выделите текст и нажмите Ctrl+C'); }
+    });
+
+
+
+    // fill example prompt into textarea on load
+    window.addEventListener('load', ()=>{
+      promptEl.value = example.textContent.replace('{level}','B1').replace('{length}','medium (150-250 words)').replace('{words}','apple, walk, happy');
+    });
+  </script>
+</body>
+</html>
