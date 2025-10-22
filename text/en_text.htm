@@ -1,63 +1,219 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>EngRead v2(Адаптивное чтение )</title>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EngRead v7 (Адаптивное чтение)</title>
 <style>
- :root { --bg:#0f172a; --card:#111827; --ink:#e5e7eb; --muted:cyan; --accent:#60a5fa; }
- html,body {height:100%;}
- body {margin:0; background:var(--bg); color:var(--ink); font:18px/1.4 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;}
- header {padding:10px 16px; border-bottom:1px solid #1f2937; display:flex; gap:8px; align-items:center;}
-header h1 {display:none}
- header .spacer {flex:1;}
- button, select {background:black; color:var(--ink); border:1px solid #374151; border-radius:10px; padding:8px 10px; cursor:pointer;}
- button:hover {border-color:red; background: darkgreen;}
- button[disabled]{opacity:.5; cursor:not-allowed}
- .grid {display:grid; grid-template-columns: 1fr 1fr; gap:12px; padding:12px;}
- .grid.full-right { grid-template-columns: 0 1fr; }
- .card {background:var(--card); border:1px solid #1f2937; border-radius:14px; padding:12px;}
- .toolbar {display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
- textarea {width:100%; min-height:120px; resize:vertical; background:#0b1220; color:var(--ink); border:1px solid #1f2937; border-radius:10px; padding:10px;}
- #id_text {height: 300px;font-size:18px;}
- #id_out {min-height:300px; white-space:pre-wrap; word-wrap:break-word;}
- .wb {padding:1px 2px; border-radius:6px; cursor:default;background:rgba(96,165,250,.14);}
- .uw {color:white;}
- .lw {color:greenyellow;}
- .aw {color:coral; }
- .nw {color:magenta;}
- .rw {color:deepskyblue;}
- .tr {color:gold; }
- .mrow {margin-bottom:6px;}
- .small {color:var(--muted); font-size:14px;}
- .pill {padding:2px 8px; border-radius:999px; border:1px dashed #374151;}
+/* Основные цвета и шрифт */
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --ink: #e5e7eb;
+  --muted: cyan;
+  --accent: #60a5fa;
+  --border: #1f2937;
+}
+html,body {  height: 100%;}
 
- .modal{position:fixed;left:0;right:0;top:0;bottom:0;display:flex; align-items:center;justify-content:center;background:rgba(0,0,0,.6)}
- .modal .box {background:#0b1220;border:1px solid #374151; padding:16px;border-radius:12px;width:420px;color:var(--ink)}
- .modal input, .modal textarea {width:100%;margin-top:8px; padding:8px; border-radius:8px; border:1px solid #374151; background:#071029;color:var(--ink)}
- .modal .row {display:flex; gap:8px; justify-content:flex-end; margin-top:12px}
+body {
+  margin:0; padding:0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 18px/1.4 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
 
- #id_wordsList {max-width:94%;margin-top:20px;margin-left:3%;}
- .word-block {margin:8px 0;padding:6px;border-bottom:1px solid #ccc;}
- .word-title {font-weight:bold;font-size: 1.1em;cursor: pointer;display:inline-block;margin-right:10px;color:aquamarine;}
- .word-title.lw {color:coral;}
- .word-tr {display:block;max-height:3em;overflow:hidden; transition:max-height 0.2s ease;margin-top:4px;}
- .word-tr.expanded {max-height: 1000px;}
- .btn-more {display:inline-block;margin-left:5px;font-size:0.9em; color:blue;cursor:pointer;text-decoration:underline;}
+/* Шапка */
+header {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+header h1 {  display: none;}
+header .spacer {  flex: 1;}
+
+/* Кнопки и элементы */
+button,select {
+  background: black;
+  color: var(--ink);
+  border: 1px solid #374151;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+button:hover {  border-color: red;  background: darkgreen;}
+button[disabled] {  opacity: 0.5;  cursor: not-allowed;}
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+  resize: vertical;
+  background: #0b1220;
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+}
+#id_text { height: 300px; font-size: 1.1em;}
+#id_out {
+  min-height: 300px;
+  font-size: 1.1em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+/* Карточки и сетка */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 12px;
+}
+.grid.full-right {  grid-template-columns: 0 1fr;}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+}
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Цветовые статусы слов */
+.wb {
+  padding: 1px 2px;
+  border-radius: 6px;
+  cursor: default;
+  background: rgba(96, 165, 250, 0.14);
+  color:grey;
+}
+
+/* Цвета по статусам */
+.wb.uw .ww { color: white; }    /* неизвестные */
+.wb.lw .ww { color: greenyellow; }   /* выученные */
+.wb.aw .ww { color: coral; }  /* активные */
+.wb.nw .ww { color: magenta; }     /* нет перевода */
+.wb.rw .ww { color: deepskyblue; }    /* редкие */
+.wb .tr {color: gold;}
+.hide-tr .lw .tr {display:none}
+.hide-tr .aw .tr {display:none}
+.hide {display:none}
+/* Прочее оформление */
+.mrow {  margin-bottom: 6px;}
+.small {  color: var(--muted);  font-size: 0.8em;}
+.pill {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px dashed #374151;
+}
+
+/* Прогресс бар */
+.progress-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+}
+.progress-box {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.bar-label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
+}
+.bar-frame {
+  width: 100%;
+  height: 25px;
+  background: #ddd;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-top: 10px,
+}
+.bar-fill {
+  width: 0%;
+  height: 100%;
+  background: #007bff;
+  transition: width 0.3s, background 0.3s;
+}
 </style>
-<script src='d3000.txt'></script>
 </head>
-
 <body>
 <noscript>
-<h1>....JS MUST BE ENABLE....</h1>
-<h1>....А БЕЗ СКРИПТОВ ТУТ НИЧЁ НЕ РАБОТАЕТ....</h1>
+  <div style="font-size:40px">JavaScript должен быть включён!</div>
 </noscript>
+<script src="d3000.txt"></script>
+
+<header>
+  <h1>EngRead v7 Учебная программа для адаптивного чтения и изучения иностранных слов</h1>
+  <button id="btnSpeak" title="Озвучить выделенный текст">Озвучить</button>
+
+  <label class="small">Меню:
+    <select id="id_tools">
+    <option value="loadLWL" selected>Загр список изуч.слов из ЛокСт</option>
+    <option value="loadLWF">Загр список выуч.слов из файла(замена)</option>
+    <option value="addLWF">Загр список выуч.слов из файла(добавить)</option>
+    <option value="saveLWF">Сохр список выуч.слов в файл</option>
+    <option value="addAWLW">Добавить все активные слова в список выуч.слов</option>
+    <option value="loadBigDict">Загр бол.словарь в IDB 7мб 1 раз (перезаписать)</option>
+    <option value="showWords" disabled>Показать перевод слов из бол.словаря</option>
+    <option value="genText">Генерировать текст через чат бота GPT</option>
+    </select>
+  </label>
+  <label class="small">Режим:
+    <select id="id_mode">
+    <option value="text">Перевод всего текста</option>
+    <option value="all">Все слова с переводом</option>
+    <option value="only" selected>Перевод только невыученных</option>
+    </select>
+  </label>
+  <label class="small">Словарь:
+    <select id="id_dict">
+    <option value="d600.txt">600 базовый А1</option>
+    <option value="d3000.txt" selected>NGSL-3000 А2</option>
+    <option value="d7000.txt">7000 (5k+формы) В2</option>
+    </select>
+  </label>
+  <button id="btnToggleLayout" title="Развернуть правую панель">↔</button>
+  <button onclick="window.open('README.md','_blank')" title="Подробное описание программы">Help</button>
+  <button onclick="" title="Русский" style="margin-left: auto;">RU</button>
+</header>
+
+<div class="grid" id="id_mainGrid">
+  <section class="card" id="id_leftCard">
+    <textarea id="id_text" placeholder="Вставьте английский текст сюда" spellcheck="false"></textarea>
+    <div class="small">Подсказка: двойной клик по слову → добавить в выученные. Выделение + озвучка.</div>
+    <textarea id="id_aw" placeholder="Активные слова (через запятую или перенос строки)" spellcheck="false"></textarea>
+  </section>
+  <section class="card">
+    <div class="toolbar mrow" id="id_rightCard">
+      <span class="pill small">Найдено: <span id="id_statAll">0</span></span>
+      <span class="pill small">Выученные: <span id="id_statLW">0</span></span>
+      <span class="pill small">Активные: <span id="id_statAW">0</span></span>
+      <span class="pill small">Редкие: <span id="id_statRW">0</span></span>
+    </div>
+    <div id="id_out" class="out hide-tr"></div>
+  </section>
+</div>
 
 <script>
-const RATE_SPEECH=0.95; //скорость озвучки меняем тут
-
 function checkCompatibility(){ //проверка браузера и пишем юзеру проблемы.
   const features = [
     { name: 'Map (ES6)', check: 'Map' in window },
@@ -76,617 +232,1131 @@ function checkCompatibility(){ //проверка браузера и пишем
   const screenWidth = window.innerWidth;
 
   let message = '';
-  if (unsupported.length > 0) {
+  if (unsupported.length > 0){
     message += 'Ваш браузер слишком старый или не поддерживает некоторые функции. Программа может работать с ошибками или не работать вовсе.\n\n';
     message += 'Неподдержанные функции: ' + unsupported.join(', ') + '.\n\n';
     message += 'Рекомендуем обновить браузер до:\n- Chrome 58+ (Android 58+)\n- Firefox 55+\n- Safari 12.1+ (iOS 12.2+)\n- Edge 79+\n- Opera 45+\n';
     message += 'Если это старый IE или Safari <10, обновите или используйте другой браузер.';
     alert(message);
-    // Можно добавить return false; чтобы остановить init(), но лучше позволить попробовать
   } else console.log('браузер потянет');
 
-  if (screenWidth < 600) {
+  if (screenWidth < 600){
     alert('Экран слишком маленький (ширина ' + screenWidth + 'px). Программа предназначена для ПК или планшетов. На телефоне может не влезть интерфейс — попробуйте повернуть устройство или использовать больший экран.');
   } else if (screenWidth < 768) {
-    console.warn('Экран маловат (' + screenWidth + 'px) — может быть тесно на планшете.');
+    alert('Экран маловат (' + screenWidth + 'px) — может всё не влезет.');
   }
 }
-checkCompatibility();
+function null_map() {return new Map();} //с массивами [] и объектами {} много проблем
+// ------------------- инициализация -------------------
+function init(){ console.log('init start');
+ checkCompatibility();
+ // ------------------- глобальные структуры -------------------
+ window.g_dict= window.g_dict || '';
+ window.g_words=window.g_words || '';
+ window.g_log_mode='';//'alert'/'none';
 
-</script>
+ window.gm_lw = null_map();  // выученные (0,1)
+ window.gm_aw = null_map();  // активные (0,1)
 
-<header>
-  <h1>EngLearner</h1>
-  <button id="btnSpeak" title="озвучить выделенный текст">Озвучить</button>
-  <label class="small">Меню:
-    <select id="id_tools">
-      <option value="load-lw-LS" selected>Загр список изуч.слов из ЛокСт</option>
-      <option value="load-lw-file">Загр список изуч.слов из файла(замена)</option>
-      <option value="add-lw-file">Загр список изуч.слов из файла(добавить)</option>
-      <option value="save-lw-file">Сохр список изуч.слов в файл</option>
-      <option value="add-aw">Добавить все активные слова в список изуч.слов</option>
-      <option value="load-big">Загр бол.словарь в inxDB 7мб (перезаписать)</option>
-      <option value="show-big" disabled>Показать перевод слов из бол.словаря</option>
-      <option value="gen-text">Генерировать текст через чат бота GPT</option>
-    </select>
-  </label>
-    <label class="small">Режим:
-    <select id="id_mode">
-      <option value="text">Перевод текста</option>
-      <option value="all">Слово+перевод (все)</option>
-      <option value="only" selected>Слово+перевод (невыученные)</option>
-    </select>
-  </label>
+ window.gm_dict  = null_map();  // малый словарь юзера (ключ → перевод)
+ window.gm_dict2 = null_map();  // кэш большого словаря для слов из текста
+ window.gm_words = null_map();  // актуальные слова текста
+ window.gm_sost  = null_map();  // составные слова look-for из малого словаря
+ window.gm_busy  = null_map();  // флаги занято
 
-  <label class="small">Уровень словаря:
-    <select id="id_dict">
-      <option value="d600.txt">600 базовый А1</option>
-      <option value="d3000.txt" selected>NGSL-3000 А2</option>
-      <option value="d7000.txt">7000 (5k+формы+инт) В2</option>
-    </select>
-  </label>
-  <button id="btnToggleLayout" title="Развернуть правую панель">↔</button>
-</header>
+ window.g_progress = {
+  el: null,
+  timer: null,
+  lastUpdate: 0,
+  hideDelay: 5000, // мс
+ };
+window.lastTapTime = 0;  //для тапов и кликов надо
+window.g_IDB = null; //глобальная перем indexedDB
+window.g_modal=null; //модалка для закрыть
+ //весь ввод юзера дебаунсим на 350мс для защиты от частых вызовов после ввода буквы
+window.loadAW=debounce(loadAW0,350); 
+window.render=debounce(render0,350);
+window.saveLWL=debounce(saveLWL0,300); 
 
-<div class="grid" id="id_mainGrid">
-  <section class="card" id="id_leftCard">
-    <textarea id="id_text" placeholder="Вставьте английский текст сюда" spellcheck="false"></textarea>
-    <div class="small">Подсказка: двойной клик по слову → добавить в выученные. Выделение + озвучка.</div>
-    <textarea id="id_aw" placeholder="Вставьте Активные слова. 10-50 штук, разделитель (,;/n)" spellcheck="false"></textarea>
-  </section>
+ el('btnSpeak').addEventListener('click',speakText);
+ el('id_mode').addEventListener('change',setModeTr);
+ el('id_tools').addEventListener('change',(e)=>{fTools(e.target.value);});
+ el('id_dict').addEventListener('change',(e)=>{loadScript(''+e.target.value,loadDict);});
+ el('id_text').addEventListener('input',render);
+ el('id_aw').addEventListener('input',loadAW);
 
-  <section class="card">
-    <div class="toolbar mrow" id="id_rightCard">
-      <span class="pill small">Найдено слов: <span id="id_statAll">0</span></span>
-      <span class="pill small">Выученные: <span id="id_statLW">0</span></span>
-      <span class="pill small">Активные: <span id="id_statAW">0</span></span>
-      <span class="pill small">Редкие: <span id="id_statRW">0</span></span>
-    </div>
-    <div id="id_out" class="out"></div>
-  </section>
-</div>
-<div id="id_modal" style="display:none" class="modal" aria-hidden="true">
-  <div class="box">
-    <div><strong id="id_modal-word">word</strong></div>
-    <div class="small">Введите перевод:</div>
-    <input id="id_modal-input" placeholder="перевод" />
-    <div class="row">
-      <button id="id_modal-cancel">Отмена</button>
-      <button id="id_modal-save">Сохранить</button>
-    </div>
-  </div>
-</div>
-<div id="id_wordsList"></div>
-<script>
+ el('btnToggleLayout').addEventListener('click',(e)=>{
+   const left = el('id_leftCard');
+   const grid = el('id_mainGrid');
+   if(left.style.display === 'none'){left.style.display = 'block';grid.style.gridTemplateColumns = '1fr 1fr';}
+   else {left.style.display = 'none'; grid.style.gridTemplateColumns = '1fr';}
+ });
+ // ошибки IndexedDB
+ window.addEventListener('error', (e)=>{
+    if(e.message.includes('IDB'))alert('IndexedDB повреждён. Очистите кеш сайта.');
+ });
 
-function null_dict(){ return Object.create(null); } //пока не нужен
-function null_map() { return new Map();}
-// new Map(), .set(k,v) .get(k) .has(k) .size .clear() /for([k,v] of m)log(k+'|'+v)
+ el('id_out').addEventListener('click', (e)=>{ //клики и тапы все тут
+  e.stopPropagation();
+  let wb = e.target.closest('.wb'); if(!wb) return;
+  tap(e,wb);
+ });
+ // "Контекстное меню" (Правая кнопка мыши на ПК / Долгое нажатие на Android)
+ el('id_out').addEventListener('contextmenu', function(e){
+  //e.preventDefault(); пока надо, вешаем ввод перевода?
+  log('Событие: Контекстное меню (ПК)');
+ });
 
-var gm_words = null_map(); //выученные=1 активные=2 невыуч=0
-var gm_dict = null_map(); //словарь юзера
-var gm_dict2 = null_map(); //перевод каждого слова получаем фоном из индБД или онлайн
-var gm_sost = null_map();//составные слова при загрузке маленького словаря
-var gm_busy = null_map();//флаги занято для всех
+ window.addEventListener('beforeunload',(e)=>{if(g_IDB)g_IDB.close();saveLWL0();});
 
-// утилиты упрощают код
-function log(s,obj){if(s)console.log(''+s);if(obj)console.log(obj);}
-function tm1(s){console.time('timer');}
-function tm2(s){console.timeEnd('timer');}
-function el(id){var e=document.getElementById(id);if(!e)log('el: нет id='+id);return e;}
-function put_t(id,text){var e=el(id);if(e)e.textContent=''+text;}//экранирует &<>
-function get_t(id){var e=el(id);if(e)return e.textContent; return '';}
-function len_obj(dd){var key,n=0; if(typeof(dd)=='object'){for(key in dd)n++;} return n;}
-function get_keys_map(dd){return Array.from(dd.keys());}
-function get_lw(){var k,v,m=[];for([k,v] of gm_words)if(v==1)m.push(k);return m;}
-function get_aw(){var k,v,m=[];for([k,v] of gm_words)if(v==2)m.push(k);return m;}
-function replace_all(s,a,b){s=''+s; a=''+a; b=''+b; //для небольших + числа
- if(s)if(a)if(b){return s.split(a).join(b);}
- return s;
+ loadDict(); // g_dict -> gm_dict
+ openIDB();  // открыть один раз для всех IndexedDB
+ countIDB(); // проверка что словарь есть если нет то алерт
+ loadLWL();  // загрузка изученных слов из ЛокСт
+ loadAW();   // загрузка активных слов из текст.поля
+
+ // примерный текст (необязательно)
+ loadScript('textA2.txt',(e)=>{el('id_text').value = ''+window.g_text;render();});
+log('init end');
+}
+
+// УНИВЕРСАЛЬНЫЙ ОБРАБОТЧИК КЛИКА/ТАПА
+function tap(e,wb){
+  const now = new Date().getTime();
+  const timeSinceLastTap = now - lastTapTime;
+
+  if(timeSinceLastTap < 300){   // --- ДВОЙНОЙ КЛИК / ДВОЙНОЙ ТАП ---
+    e.preventDefault(); // Предотвратить выделение текста (для ПК)
+    log('двойной клик был'); showModalTr(wb);
+    lastTapTime = 0; // Сброс
+  } else {
+    // --- ОДИНОЧНЫЙ КЛИК / ОДИНОЧНЫЙ ТАП ---
+    // Таймер для проверки, был ли это одиночный клик/тап (чтобы не сработать перед dblclick)
+    setTimeout(() => {
+      // Если lastTapTime не сброшен (т.е. dblclick не сработал), то это одиночный клик
+      if (lastTapTime !== 0) {
+          log('одиночный клик был');changeWordStatus(wb);
+      }
+      // На Android, для надежности, одиночный тап можно использовать для показа детального перевода
+      lastTapTime = 0; // Сброс после выполнения
+    }, 300);
+
+    lastTapTime = now;
+  }
+}
+
+// Меню действий
+  function fTools(p){
+   if(p=='loadLWL') loadLWL();
+   if(p=='loadLWF') loadFromFile(loadLWF);
+   if(p=='addLWF')  loadFromFile(addLWF2);
+   if(p=='saveLWF') saveToFile('my_words.txt','g_words=`\n' + getLW() + '`;');
+   if(p=='addAWLW') addAWLW();
+   if(p=='loadBigDict') {progressBar(1,100);loadScript('big_dict.txt',loaderBigDict);}
+   if(p=='showWords') showListWords();
+   if(p=='genText') window.open('gen_text.htm', '_blank');
+}
+// Набор утилит
+// - Описания функций на русском в начале каждой функции.
+// - Логи через функцию `log()` (можно перенастроить режим вывода).
+// - Глобальные переменные имеют префикс g_.
+// - Используем let вместо const, чтобы было проще править.
+// - Функции именованы читаемо (camelCase)
+// ================================================================
+
+// Функция log — единая точка логирования (можно менять режим вывода)
+// Универсальный лог: выводит в консоль, alert или ничего в зависимости от g_log_mode.
+// Используется во всём коде — не менять место вызова, менять только поведение в одном месте.
+function log(msg,obj){ msg=''+msg;
+  if(g_log_mode == 'none') return;
+  if(g_log_mode == 'alert'){ alert(msg+'/'+obj); return; }
+  console.log(msg); if(obj)console.log(obj); // default: console
+}
+// ===DOM helpers
+// Быстро возвращает элемент по id. Если нет — логирует и возвращает null.
+function el(id){
+  let e = document.getElementById(''+id);
+  if(!e) log('el: нет элемента id=' + id);
+  return e;
+}
+function elk(k){ //по классу CSS 1шт
+  let e = document.querySelector(''+k);
+  if(!e) log('el: нет элемента class=' + k);
+  return e;
+}
+
+// Безопасно пишет текст в элемент (textContent). Если элемента нет — молча логируем.
+function putText(id,text){
+  let e = el(id); if(!e)return 0;
+  e.textContent = ''+text; return 1;
+}
+// Возвращает textContent или ?.
+function getText(id){
+  let e = el(id); if(!e) return '?';
+  return ''+e.textContent;
+}
+// Таймеры (обёртка над console.time/timeEnd с ярлыком по имени функции)
+function timerStart(name) {
+  name = name || 'timer';
+  if (window.console)if(typeof console.time === 'function') console.time(''+name);
+}
+// Завершает соответствующий timer (console.timeEnd) по имени функции.
+function timerEnd(name) {
+  name = name || 'timer';
+  if (window.console)if(typeof console.timeEnd === 'function') console.timeEnd(''+name);
+}
+// Возвращает массив ключей Map или пустой массив.
+function keysOfMap(m){
+  if(!(m instanceof Map)){alert('keysOfMap:m не map массив');return [];}
+  return Array.from(m.keys());
+}
+// Возвращает массив слов из с указанным состоянием:
+// 1 — выученные, 2 — активные
+function getWordsByState(m){
+  let out=[]; for(let [key,val] of m)if(val)out.push(key);
+  return out.join('\n');
+}
+function getLW(){return getWordsByState(gm_lw);}
+function getAW(){return getWordsByState(gm_aw);}
+
+// Безопасная потоковая без split join замена всех вхождений s1 → s2 в строке str.
+function replaceAllSafe(str,s1,s2){ str = ''+str; s1 = ''+s1; s2 = ''+s2;
+  if(!str) { alert('replaceAllSafe: пустая str'); return ''; }
+  if(!s1) { alert('replaceAllSafe: пустой s1'); return str; }
+  if(typeof str.replaceAll === 'function') return str.replaceAll(s1,s2); //2021
+  let out='',i=0,p=0,le=s1.length;
+  while((p=str.indexOf(s1,i)) >= 0){out+=str.slice(i,p)+s2;i=p+le;}
+  return out + str.slice(i);//=substring
+}
+// Приводит ключ к нормализованной форме: строчные, trim, look for -> look-for
+function normKey(k){
+  if(!k)log('пустой ключ в normKey?');
+  k=''+k; k=k.trim().toLowerCase().replace(/\s+/g,'-');
+  return k.replace(/[^a-z-']/g,''); //убираем неправильные символы
+}
+// Разбивает текст на массив строк. разделители: (; \n \r) Убирает пустые строки и пробелы.
+function tSplit(text){ text = ''+text;
+  text = text.replace(/\r/g,'\n').replace(/\t/g,' ').replace(/;/g,'\n');
+  return text.split('\n').map(s => s.trim()).filter(s => s); // убираем пустые
+}
+// Возвращает строку с заглавной первой буквой.
+function firstUp(s){ s = ''+s;
+  if(!s){alert('firstUp пустая строка?');return '';}
+  return s.slice(0,1).toUpperCase() + s.slice(1);
+}
+// Приводит текст к нормальной форме: убирает диакритику, нормализует кавычки и тире
+// обрезает слишком длинные тексты, заменяет составные слова из gm_sost
+function normText(t){ t=''+t; t=t.trim();
+  if(!t)return '';
+  if(t.length > 50000){log('normText: текст длиннее 50k — обрезаю');t=t.slice(0,50000);}
+  t = replaceAllSafe(t, '\\', '/');
+  // замена диакритики (для слов типа café) для англ.яз только!
+  t=t.replace(/á|à|â|ä/g,'a').replace(/é|è|ê/g,'e').replace(/í|ì|î/g,'i');
+  t=t.replace(/ó|ò|ô|ö/g,'o').replace(/ú|ù|û|ü/g,'u').replace(/ñ/g,'n').replace(/ç/g,'c');
+  // кавычки, тире, пробелы
+  t=t.replace(/‘|’|‛|′|‵/g,"'");//\u2018|\u2019|\u201B|\u2032|\u2035
+  t=t.replace(/“|”|‟|″|‶/g,'"');//\u201C|\u201D|\u201F|\u2033|\u2036
+  t=t.replace(/–|—|‒|‐/g,'-');//\u2013|\u2014|\u2012|\u2010
+  t=t.replace(/\t/g,' ').replace(/\u00A0/g,' '); //хитрый пробел
+  t=t.replace(/\r/g,'\n').replace(/[ ]+/g,' ').replace(/[\n]+/g,'\n');
+
+  // заменяем составные слова через регулярку быстро
+  return replaceCompoundWords(t);
+
+  if(gm_sost.size > 0) {
+    for(let [k,v] of gm_sost){
+      v = k.replace(/-/g,' ');
+      t = replaceAllSafe(t, v, k);
+      t = replaceAllSafe(t,firstUp(v),firstUp(k));
+    }
+  }
+  return t;
+}
+// Заменяет составные слова в тексте  из словаря gm_sost
+// gm_sost: Map(key -> 1), key='look-for' (для поиска и перевода как одно слово)
+function replaceCompoundWords(text){
+ for(let [key,val] of gm_sost)if(key){
+  // key = key.toLowerCase().replace(/[^a-z-']/g, ''); //для регулярки уже сделано
+  // Регулярка: границы слова (\b), пробелы и переносы (\s+)
+  let re1 = new RegExp(`\\b${key.replace(/-/g,'\\s+')}\\b`,'g'); //\blook\s+for\b
+  text = text.replace(re1,key);// Заменяем маленькими буквами
+  key = key.charAt(0).toUpperCase() + key.slice(1);
+  let re2 = new RegExp(`\\b${key.replace(/-/g,'\\s+')}\\b`,'g');
+  text = text.replace(re2,key);// Заменяем с заглавной первой буквой
+ }
+ return text;
+}
+//!проверить как работает
+// Устанавливает флаг занятости. Возвращает 0, если уже занят.
+function startBusy(name,text,delay){ name=''+name; delay= delay || 0;
+  if(!name){alert('startBusy: пустое имя'); return 0;}
+  if(gm_busy.get(name)){gm_busy.set(name,2); log(name+' занято'); return 1; }
+  const now = Date.now();
+  lastCallTime=gm_busy.get(name+'_timer');
+  const timeSinceLastCall = now - lastCallTime;
+  let time1 = delay - timeSinceLastCall;
+  if(time1>0){
+    // Если прошло меньше delay, ставим статус "Отложенный вызов" (2)
+    // и планируем попытку запуска после истечения паузы.
+    gm_busy.set(name,2);
+    // Пытаемся запустить отложенный вызов после истечения задержки
+    log('через='+time1+',будет запуск2='+name);
+    let tm=gm_busy.get(name+'_tm');
+    if(tm)clearTimeout(tm);
+    tm=setTimeout((z)=>{log('запуск2='+name);gm_busy.set(name,0);window[name]();},time1);
+    gm_busy.set(name+'_tm',tm);
+    return 1;
+  }
+  gm_busy.set(name+'_timer',Date.now());//время начала
+  gm_busy.set(name, 1);
+  text='('+text+') ' || ''; log(text+name + ': начало работы, ставим флаг занято');
+  return 0;
+}
+// Сбрасывает флаг занятости. Если был вызов пока было занято, то запускает
+function endBusy(name,text){ name=''+name;
+  if(!name){alert('endBusy: пустое имя'); return 0; }
+  let t=gm_busy.get(name+'_timer') || 0;
+  if(!t){alert('таймер не был запущен!='+name);return;}
+  t=Date.now()-t;
+  text='('+text+') ' || '';log(text+name+': конец работы, время='+t+' сбросим флаг занято');
+  let s=gm_busy.get(name);gm_busy.set(name,0);
+  if(s==2){
+    log('был вызов пока было занято, запустим снова?');
+    setTimeout((z)=>{log('2-запускаем='+name);window[name]();},0);
+  }
+}
+function showTimer(name){
+  let t=gm_busy.get(name+'_timer') || 0;
+  if(!t){alert('таймер не был запущен!='+name);return;}
+  t=Date.now()-t; log(name+': Прошло времени='+t);
 }
 //задержка перед выполнением чтобы часто не запускалось
-function debounce(fn,wait){var t;return function(){var that = this; clearTimeout(t); t = setTimeout((e)=>fn.apply(that), wait);}
+function debounce(fn,wait){ //пригодится может быть потом
+  let tm;
+  return function(){
+    let that = this;
+    clearTimeout(tm);
+    tm = setTimeout((z)=>fn.apply(that),wait);}
 }
-function norm_key(k){k=''+k; k=k.trim().toLowerCase().replace(/ /g,'-');return k;}
-
-function t_split(t){ //список слов через ;/n
- t=''+t; t=t.trim();//antinull
- t=t.replace(/\r/g,'\n').replace(/\t/g,' ').replace(/[ ]+/g,' ').replace(/;/g,'\n');t=t.split('\n');
- return t.map((s)=>s.trim()).filter((s)=>s!='');
-}
-function firstUp(s){return s.charAt(0).toUpperCase()+s.substring(1);}
-
-function norm_text(t){var k,v;
- t=''+t; t=t.trim();//antinull
- if(t.length>50000){alert('текст больше 50к, обрезаю!');t=t.substring(0,50000);}
-
- //áàâä éèê íìî óòôö úùûü ñç (для слов типа café)
- t=t.replace(/á|à|â|ä/g,'a').replace(/é|è|ê/g,'e').replace(/í|ì|î/g,'i');
- t=t.replace(/ó|ò|ô|ö/g,'o').replace(/ú|ù|û|ü/g,'u').replace(/ñ/g,'n').replace(/ç/g,'c');
-
- t=t.replace(/‘|’|‛|′|‵/g,"'");//\u2018|\u2019|\u201B|\u2032|\u2035
- t=t.replace(/“|”|‟|″|‶/g,'"');//\u201C|\u201D|\u201F|\u2033|\u2036
- t=t.replace(/–|—|‒|‐/g,'-');//\u2013|\u2014|\u2012|\u2010
- t=t.replace(/\u00A0/g,' '); //хитрый пробел
- t=t.replace(/\r/g,'\n').replace(/\t/g,' ').replace(/[ ]+/g,' ').replace(/[\n]+/g,'\n');
- for([k,v] of gm_sost){ //k='look-for'; v='look for' /составные через - для ясности
-   if(t.indexOf(v)>=0)t=t.split(v).join(k);//=replace(/v/g,k)
-   v=firstUp(v); k=firstUp(k);
-   if(t.indexOf(v)>=0)t=t.split(v).join(k);//Look for -> Look-for
- }
- return t;
-}
-function get_mode(){return el('id_mode').value;}
-
-//динамическая загрузка скрипта только из надежных источников!
-//со своего сайта или локально, с внешних опасно! (вирусов накидают и хакнут)
-function loadScript(vPathScript, fCallBack, arg1, arg2){
-  if(gm_busy.get('load_script')==1)alert('loadScript: занято');
-  log('Загружаем скрипт='+vPathScript);gm_busy.set('load_script',1);
-  var script = document.createElement('script');
-  script.async = true;
-  script.onload = (e)=>{
-    log('Скрипт загружен:'+vPathScript); gm_busy.set('load_script',0);
-    if(fCallBack){setTimeout((e)=>{fCallBack(arg1,arg2);},0);}
+// Динамически загружает <script>
+function loadScript(vPath,fCallBack,args){ vPath = ''+vPath; //долгая
+  if(!vPath){alert('loadScript: пустой путь'); return 0}
+  log('загружаем скрипт='+vPath);
+  let script = document.createElement('script');
+  script.async = true; script.src = vPath;
+  script.onload = (z)=>{
+    log('скрипт загружен='+vPath);
+    if(typeof fCallBack === 'function') setTimeout(fCallBack,0,args);
   }
-  //нет этого файла, может удалили, флаг занято сбросим, но будет работать неправильно
-  script.onerror = (e)=>{alert('loadScript: Ошибка загрузки:'+vPathScript);gm_busy.set('load_script',0);}
-  script.src = vPathScript;
+  script.onerror = (e)=>{alert('loadScript: ошибка загрузки='+e);}
   document.head.appendChild(script);
 }
-function saveToFile(vFileName,vText){// сохр в файл (скачивание браузером в /downloads)
-  try{
-    var blob = new Blob([vText], { type: 'text/plain;charset=utf-8' });
-    var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-    a.download = vFileName; document.body.appendChild(a); a.click();
-    document.body.removeChild(a); URL.revokeObjectURL(a.href);
-    log('Файл сохранён на диск?');return 1;
-  }catch(e){alert('Ошибка сохранения файла: '+e); return 0;}
+// Сохраняет текст в файл через Blob и <a download>.
+function saveToFile(filename = 'file.txt',text = '//ничего нет') {
+  try {
+    let blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+    let a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = filename; a.style.display = 'none';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    URL.revokeObjectURL(a.href);
+    log('saveToFile: сохранён ' + filename);
+    return 1;
+  } catch (e){ log('saveToFile: ошибка='+e); return 0;}
 }
-function loadFromFile(fCallBack){//загрузка файла
-  // Скрытый input для выбора файла
-  var fileInput = document.createElement('input');
-  fileInput.type = 'file'; fileInput.accept='.txt'; //.js можно проще загрузить
-  fileInput.style.display = 'none';document.body.appendChild(fileInput);
-  fileInput.addEventListener('change', (e)=>{// Обработка выбранного файла
-    const f = e.target.files[0];
-    if(!f){alert('Файл не выбран');return;}
-    const reader = new FileReader();
-    reader.onerror = (e)=>{log('err load file='+e);}
-    reader.onload = (e)=>{
-      const v=''+e.target.result;
-      log('file loaded='+v.length);
-      if(fCallBack){setTimeout((e)=>{fCallBack(v);}, 0);}
+// Диалог выбора файла, чтение текста, вызов callback(content)
+function loadFromFile(fCallBack,accept){
+  if(typeof fCallBack !== 'function'){alert('loadFromFile: не функция');return 0;}
+  let input = document.createElement('input');
+  input.type = 'file'; input.accept = accept || '.txt'; input.style.display = 'none';
+  document.body.appendChild(input);
+  input.addEventListener('change', (e)=>{
+    let file = e.target.files[0];
+    if(!file){
+      log('loadFromFile: файл не выбран'); //передумали
+      document.body.removeChild(input);
+      return;
     }
-    reader.readAsText(f, "UTF-8");
+    let reader = new FileReader();
+    reader.onerror = (e)=>{log('loadFromFile: ошибка чтения='+e); document.body.removeChild(input);}
+    reader.onload = (e)=>{
+      let content = ''+e.target.result;
+      log('loadFromFile: файл загружен, длина=' + content.length);
+      setTimeout(fCallBack,0,content);
+      document.body.removeChild(input);
+    }
+    reader.readAsText(file, 'UTF-8');
   });
-  fileInput.click();
+  input.click();
 }
-function copy_cb(text){//копировать в буфер обмена по клику (async)
-  try{ navigator.clipboard.writeText(text).then((e)=>{alert('Текст скопирован в буфер обмена, вставьте в переводчик');});
-  } catch(e){alert('Не удалось скопировать — выделите текст и нажмите Ctrl+C '+e);}
+ //Копирует текст в буфер. navigator.clipboard + fallback.
+function copyToClipboard(text,fCallBack){ text = ''+text;
+  if(navigator)if(navigator.clipboard)if(navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text)
+      .then((e)=>{if(typeof fCallBack === 'function')fCallBack(e);})
+      .catch((e)=>{log('copy1 err='+e);});
+    return 1;
+  }
+  // fallback
+  let ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.left = '-10000px';
+  document.body.appendChild(ta); ta.select();
+  try {
+    let ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    if(ok){if(typeof fCallBack == 'function')fCallBack();}
+    else log('execCommand вернул false');
+  } catch (e){ document.body.removeChild(ta); log('copy2 err='+e);}
+  return 2;
 }
-// ===== TTS (Web Speech API) =====
-function text_speak(){
-  if('speechSynthesis' in window){
-  if(speechSynthesis.speaking){speechSynthesis.cancel();return;} //=stop
-    const sel = window.getSelection().toString().trim();
-    const txt = sel || el('id_text').value;
-    if(!txt) return alert('Нет текста для озвучки');
-    const u = new SpeechSynthesisUtterance(txt);
-    u.lang='en-US'; u.rate = RATE_SPEECH; u.pitch = 1.0; u.volume = 1.0;
-    speechSynthesis.cancel(); speechSynthesis.speak(u);
-  } else {alert('TTS озвучка не поддерживается');}
+//озвучка текста
+function speakText(opts){//долгая
+  if (!('speechSynthesis' in window)){alert('TTS не поддерживается');return 0;}
+  if(window.speechSynthesis.speaking){window.speechSynthesis.cancel();return 1;}//stop
+  let txt = window.getSelection().toString().trim();
+  let e = el('id_text'); if(!e){alert('нет id_text');return 0;}
+  txt = txt || ''+e.value;
+  if(!txt){log('Нет текста для озвучки'); return 0;}
+  try {
+    if(startBusy('speakText','начало озвучки ('+txt.length+' симв.',0))return 0;
+    opts = opts || {};
+    let utter = new SpeechSynthesisUtterance(txt);
+    utter.lang = opts.lang || 'en-US';
+    utter.rate = opts.rate || 1.0;
+    utter.pitch = opts.pitch || 1.0;
+    utter.volume = opts.volume || 1.0;
+//    if (speechSynthesis.speaking) speechSynthesis.cancel();
+    utter.onend = (e)=>{endBusy('speakText','конец озвучки');};
+    log('');
+    speechSynthesis.speak(utter);
+  } catch(e){alert('Ошибка озвучки='+e);endBusy('speakText');}
 }
-//===== indexedDB ======
-var g_IDB=null; //global
 
+//грузим мал.словарь уровня 1,2,3 (цель выучить его, если в тексте много слов не из него,
+//значит текст слишком сложный, надо искать для текущего уровня юзера)
+function loadDict(){let d,m,s,k,v; //на входе текст в g_dict= `word|tr/n`
+  if(!window.g_dict){alert('g_dict нет/пустой');return 0;}
+  m=g_dict.split('\n'); g_dict=null; //free mem
+  gm_dict.clear(); //можно не чистить, тогда догрузятся и перезапишут на новый перевод
+  for(s of m)if(s){
+    [k,v]=s.split('|'); k=normKey(k); v= v || '?'; v=v.trim();
+    if(k){
+      if(gm_dict.has(k))log('err dict? dubl_key='+k); else gm_dict.set(k,v); //уник массив ключ-знач, дубли надо объединять!
+      if(k.indexOf('-')>0)gm_sost.set(k,1); //wake-up возможны накладки, но так понятней что это одно слово по смыслу!
+    }
+  }
+  log('словарь загружен='+gm_dict.size);
+  setTimeout(render,0);//обновить разметку
+}
+//динамически загрузить выуч.слова из скрипта рядом my_words.txt
+function loadLWS(){log('loadLWS'); loadScript('my_words.txt',loadLW);}
+//калбек после выбора файла, текст из файла загружен
+function loadLWF(txt){txt=''+txt;
+  log('loadLWF='+txt.length);
+  txt=txt.replace('g_words=`','').replace('`;','');
+  window.g_words=txt;//если нет g_words, то создаем тут
+  loadLW(); //text->dict из файла или внеш.скрипта
+}
+//калбек после выбора файла, текст из файла загружен
+function addLWF(txt){txt=''+txt;
+  log('addLWF='+txt.length);
+  txt=txt.replace('g_words=`','').replace('`;','');
+  txt=txt+'\n'+getLW(); //добавляем
+  window.g_words=txt;//если нет g_words, то создаем тут
+  loadLW(); //text->dict из файла или внеш.скрипта
+}
+//загр списка выуч слов из файла/скрипта на входе g_words - строка , на выходе gm_lw
+function loadLW(){
+  if(!window.g_words){alert('ошибка: нет g_words');return;}
+  let m=tSplit(g_words); gm_lw.clear(); g_words=null;//free mem
+  for(let k of m){k=normKey(k); if(k)gm_lw.set(k,1);}//уник массив ключ-знач=1
+  log('выученные слова загружены='+gm_lw.size);
+  saveLWL();setTimeout(render,0);//обновить разметку
+}
+
+// загр активные слова из поля, можно запятые /был глюк hot h ho
+function loadAW0(){ //долгая
+  if(startBusy('loadAW','начало загрузки активных из поля',999))return 0;
+  gm_aw.clear();
+  let t=''+el('id_aw').value; t=t.replace(/,/g,';'); t=tSplit(t);
+  for(let k of t){k=normKey(k); if(k)gm_aw.set(k,1);}
+  log('активные слова загружены='+gm_aw.size); //+'/'+getAW());
+  endBusy('loadAW','конец загрузки активных из поля');
+  setTimeout(render,0);//обновить разметку
+}
+
+// пишем список изуч слов в локалсторе автоматически = gm_lw
+function saveLWL0(){
+ let t=getLW();if(t.length>100000)alert('слишком много слов знаешь, ЛокСт не резиновая!');
+ let m=t.split('\n');
+ try {localStorage.setItem('knownEnglishWords',t);log('Записано в ЛокСт='+t.length+'/'+m.length);}
+ catch(e){alert('saveLWL: ошибка или лимит localStorage!'+e);}
+}
+function loadLWL(){let t,k;//читаем из локалсторе (стираем текущие и активные)
+ gm_lw.clear();
+ try{
+  t=localStorage.getItem('knownEnglishWords');
+  if(t){t=t.split('\n');for(k of t)if(k)gm_lw.set(k,1);}//там точно norm-key/trim/lowcase
+  alert('Загружено из ЛокСт '+gm_lw.size+' выуч.слов');
+  setTimeout(render,0);//обновить разметку
+ } catch(e){alert('loadLWL: Ошибка чтения из ЛокСт='+e);}
+}
+function addAWLW(){//все активные в выученные и очистить поле
+ for(let [k,v] of gm_aw)if(k)gm_lw.set(k,1);
+ alert('Добавлено='+gm_aw.size+' слов+очистим');
+ gm_aw.clear(); el('id_aw').value='';
+ saveLWL();setTimeout(render,0);//обновить разметку
+}
+function getWordKey(wb){ return key=normKey(''+wb.children[0].textContent); }
+function getWordStatus(key){
+ if(gm_lw.get(key)) return 1;
+ if(gm_aw.get(key)) return 2;
+ if(gm_dict.get(key)) return 0;
+ return 3;//нет в словаре значит редкое
+}
+// ========== Смена статуса слова по дв.клику ==========
+function changeWordStatus(wb){ //по клику на слове
+  let key=getWordKey(wb);
+  let cur = getWordStatus(key);
+  let next = 1;
+  if(cur==1){gm_lw.set(key,0);next=0;}// забыли слово
+  if(cur==0){gm_lw.set(key,1);next=1;}// знаю это слово
+  if(cur==2){gm_lw.set(key,1);next=1;}// активное в выученные, но из поля снова перебьет?
+  if(cur==3){gm_lw.set(key,1);next=1;}// редкое или имя и знаю это слово
+  let classes = ['uw','lw','aw','rw'];
+  log(`changeWordStatus: ${key}: ${classes[cur]}→${classes[next]}`);
+  //обновим статус для всех слов
+  miniRender(key,'',classes[next]);
+}
+function miniRender(key,val,word_status){//мини рендер по слову
+  log('mini='+key+'/'+val+'/'+word_status); //val=tr
+  let class_key='w-'+key.replace(/[^a-z]/g,''); //убираем -'
+  if(val.length>30)val=val.slice(0,30)+'..';
+  document.querySelectorAll('#id_out .wb.'+class_key).forEach((wb) => {
+   if(word_status)wb.className='wb '+word_status+' '+class_key;
+   if(val){
+    wb.children[1].textContent = '('+val+')'; //tr
+    wb.children[0].title = escapeAttr(val); //tr
+   }
+  });
+  statWords(); saveLWL();
+}
+// ==================== render.js ====================
+// Основной модуль рендера текста, подсветки слов и редактирования переводов
+function escapeHTML(s){ s=''+s;
+ s=s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+ return s;
+}
+function escapeAttr(s){ s=''+s; //title
+ s=s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/["'`]/g,'/');
+ return s;
+}
+// ========== Получение перевода слова ==========
+function getTran(key){ //only for norm word (key)
+  let v = gm_dict.get(key); if(v)return v;
+  v = gm_dict2.get(key); if(v)return v.split(',').slice(0,3).join(',');
+  return '??';
+}
+function getModeTr(){return ''+el('id_mode').value;}
+function setModeTr(){
+  let mode_tr=getModeTr();
+  if(mode_tr=='only')el('id_out').classList.add('hide-tr');
+  if(mode_tr=='all')el('id_out').classList.remove('hide-tr');
+}
+function statWords(){
+  let lw=0,aw=0,rw=0,s=0;
+  for(let [k,v] of gm_words){
+    s = getWordStatus(k);
+    if(s == 1) lw++;
+    if(s == 2) aw++;
+    if(s == 3) rw++;
+  }
+  putText('id_statAll', gm_words.size);
+  putText('id_statLW', lw);
+  putText('id_statAW', aw);
+  putText('id_statRW', parseInt(100*rw/gm_words.size)+'%');
+}
+//главный быстрый рендер 70-90% слов должен найти в словаре юзера
+function render0(){
+ try{
+  let text = ''+el('id_text').value;
+  if(!text){el('id_out').innerHTML = '';return 0;}
+  text = normText(text);
+  if(getModeTr() == 'text'){
+    copyToClipboard(text); //offline
+    alert('текст скопирован в буфер обмена, для офлайн перевода, для онлайн пытаемся перевести через гугл переводчик');
+    let url='https://translate.google.com/?sl=en&tl=ru&text=' + encodeURIComponent(text);
+    window.open(url,'_blank');
+    return 1;
+  }
+//=======основной рендер
+  if(startBusy('render','начинаем рендер текста',999))return 0;
+  text=' '+text+' ';
+  let tokens = text.match(/([A-Za-z'-]+|[^A-Za-z'-]+)/g) || [];
+  let html = '';
+  let classMap = ['uw','lw','aw','rw'];
+  gm_words.clear(); //слова текста уникальные key norm
+  for(const t0 of tokens){
+    let t = t0;
+    let key = '';
+    if(t!='-')if(t!="'")if(t.match(/([A-Za-z'-]+)/g)!=null)key=normKey(t);
+    t = escapeHTML(t);
+    if(key){ //это слово в норм виде
+    gm_words.set(key,1);
+      let status = getWordStatus(key);
+      let tr = getTran(key);
+      let trShort = '(' + tr + ')';
+      let cls = classMap[status];
+      let class_key='wb '+cls+' w-'+key.replace(/[^a-z]/g,'');
+        t=`<span class="${class_key}"><span class="ww" title="${escapeAttr(tr)}">${t}`;
+        t+='</span>·<span class="tr">'+escapeHTML(trShort)+'</span></span>';
+      }
+      html += t;
+    }
+    el('id_out').innerHTML = html;
+    statWords();
+    log('render1 закончен, уник.слов='+gm_words.size);
+    showTimer('render');
+} catch(e){alert('Ошибка рендера1='+e); endBusy('render');}
+// ========== Рендер 2-го этапа ==========
+  log('начинаем render2, флаг занято уже стоит с рендера1');
+  //если в gm_dict2 есть перевод или ???, то повторно не ищем
+  let m=[];for( let [k,v] of gm_words)if(!gm_dict2.has(k))m.push(k);
+  if(m.length==0){endBusy('render','render2: нет слов'); return 1;}
+  readIDB(m).then((z)=>{ //читаем все слова из текста а не только nw
+    let unknowns = document.querySelectorAll('#id_out .wb.rw');
+    let replaced = 0;
+    for(let wb of unknowns){
+      let el_ww=wb.children[0];
+      let el_tr=wb.children[1];
+      let key = normKey(el_ww.textContent);
+      let tr = getTran(key);
+      if(tr !== '??'){
+        el_ww.title = escapeAttr(tr);
+        el_tr.textContent = '(' + tr + ')'; //=escapeHTML
+        replaced++;
+      }
+    }
+    endBusy('render','render2 закончен, заменено=' + replaced)
+  }).catch((e)=>{alert('Ошибка render2='+e);endBusy('render');});
+}
+
+// Управление базой данных IndexedDB и визуальный прогресс загрузки
+// ========== Открыть БД ==========
 async function openIDB(){
   return new Promise((ok,er)=>{
-    if(g_IDB){log('IDB уже открыта');ok(1);return;}
+    if(g_IDB){ok(1);return;}
     const r=indexedDB.open('MyDB',1);
-    r.onupgradeneeded= (e)=>{
-      const db=e.target.result;
-      if(!db.objectStoreNames.contains('store'))db.createObjectStore('store');
-    }
+    r.onupgradeneeded= (e)=>{const db=e.target.result;if(!db.objectStoreNames.contains('store'))db.createObjectStore('store');}
     r.onsuccess= (e)=>{g_IDB=e.target.result; ok(1);return;}  //=resolve
     r.onerror= (e)=>{alert('error openIDB='+e); er(0);return;} //=reject
   });
 }
-async function saveToIDB(key,val){//один раз
+// ========== Закрыть БД ==========
+function closeIDB(){if(g_IDB){g_IDB.close(); log('IndexedDB закрыт вручную');}}
+// == Очистить хранилище фоном ==========
+function clearIDB(){
+  openIDB().then((z)=>{
+   return new Promise((ok,er)=>{
+    const tx = g_IDB.transaction('store', 'readwrite');
+    const store = tx.objectStore('store');
+    const req = store.clear();
+    req.onsuccess = (z)=>{log('IndexedDB очищен');ok(1);}
+    req.onerror = (e)=>{alert('err1:'+e);er(0);}
+   });
+  }).catch((e)=>{alert('err2:'+e);});
+}
+// == Количество записей пишет кол-во в лог
+function countIDB(){
+  openIDB().then((z)=>{
+   return new Promise((ok,er)=>{
+    const tx = g_IDB.transaction('store', 'readonly');
+    const store = tx.objectStore('store');
+    const req = store.count();
+    req.onsuccess = (z)=>{
+    log('Найдено записей в IDB='+req.result);
+    if(req.result>0) el('id_tools').children[6].disabled=false;//разблокируем кнопку
+    else alert('Внимание! Нет большого словаря в indexedDB');
+    ok(1);
+  }
+    req.onerror = (e)=>{alert('err1:'+e);er(0);}
+   });
+  }).catch((e)=>{alert('err2:'+e);});
+}
+// == Записать одну пару
+function saveToIDB(key,val){
+  openIDB().then((z)=>{
+   return new Promise((ok,er)=>{
+    const tx = g_IDB.transaction('store', 'readwrite');
+    const store = tx.objectStore('store');
+    store.put(val,key);
+    tx.oncomplete =(z)=>{log(`записано в IDB=${key}/${val}`);ok(1);}
+    tx.onerror =(e)=>{alert('err1:'+e);er(0);}
+   });
+  }).catch((e)=>{alert('err2:'+e);});
+}
+// == Прочитать одну запись async
+async function readFromIDB(key){
+  await openIDB();
   return new Promise((ok,er)=>{
-    openIDB().then((e)=>{
-      var tx = g_IDB.transaction('store', 'readwrite');
-      var store = tx.objectStore('store');
-      var rq = store.put(val,key);
-      rq.onsuccess = (e)=>{log(key+'|'+val+' записано в IDB');ok(1);return;} //=resolve
-      rq.onerror = (e)=>{alert('ошибка1 записи в IDB'+e);er(0);return;} //=reject
-    }).catch((e)=>{alert('ошибка2 записи в IDB'+e);er(0);return;}); //=reject
+    const tx = g_IDB.transaction('store','readonly');
+    const store = tx.objectStore('store');
+    const req = store.get(key);
+    req.onsuccess = (z)=>ok(req.result);
+    req.onerror = (e)=>{alert('err1:'+e);er(0);}
   });
 }
-var g_num; //global
-async function readIDB(){ //gm_dict2 меньше 3к слов в тексте 10к/ ???-если тут не нашла
+// ========== Чтение пачкой в gm_dict2 флаги занято не надо вызывается рендером2
+async function readIDB(words){ // меньше 3к слов в тексте 10к/ ???-если тут не нашла
+  await openIDB();
   return new Promise((ok,er)=>{
-    if(gm_busy.get('readIDB')==1){log('readIDB: занято');er(0);return;}
-    log('начинаем чтение из IndexedDB');gm_busy.set('readIDB',1);
-    openIDB().then((e)=>{
-      var tx=g_IDB.transaction('store','readonly');
-      var store=tx.objectStore('store');g_num=0;
-      var k,v; for([k,v] of gm_dict2)if(v==''){//повторно не ищем
-        const rq=store.get(k); const key=k; //без этого не работает!
-        rq.onsuccess= (e)=>{gm_dict2.set(key,rq.result || '???'); g_num++;}
-        rq.onerror = (e)=>{alert('ошибка1 чтения в IDB='+e);er(0);return;} //=reject
-      }
-      tx.oncomplete= (e)=>{log('ok readIDB='+g_num); gm_busy.set('readIDB',0);ok(1);return;}
-      //при ошибке флаг занято не сбрасываем, чтобы больше не вызывали, надо разбираться
-      tx.onerror= (e)=>{alert('ошибка2 чтения в IDB='+e); er(0);return;} //=reject
-    }).catch((e)=>{alert('ошибка3 чтения в IDB'+e);er(0);return;}); //=reject
+    log('начинаем чтение из IndexedDB');timerStart('readIDB');
+    const tx=g_IDB.transaction('store','readonly');
+    const store=tx.objectStore('store');
+    let count=0;
+    for(let k of words){
+      const rq=store.get(k); const key=k; //без этого не работает!
+      rq.onsuccess= (e)=>{gm_dict2.set(key,rq.result || '???');count++;} //кэш бол.словаря
+      rq.onerror = (e)=>{alert('ошибка1 в readIDB='+e);er(0);}
+    }
+    tx.oncomplete= (e)=>{timerEnd('readIDB');log('readIDB прочитал='+count);ok(1);}
+    tx.onerror= (e)=>{alert('ошибка2 в readIDB='+e);er(0);}
   });
 }
-//=== словари и списки: загрузка/запись ===
-//грузим мал.словарь уровня 1,2,3 (цель выучить его, если в тексте много слов не из него, значит текст слишком сложный, надо искать для тек уровня)
-function load_dict(){var d,m,s,k,v; //на входе текст в g_dict= word|tr/n..
-  if(!window['g_dict']){alert('g_dict нет');return 0;}
-  m=g_dict.split('\n'); g_dict=null; //free mem
-  gm_dict.clear(); //можно не чистить, тогда догрузятся и перезапишут на новый перевод
-  for(s of m)if(s){
-    [k,v]=s.split('|'); k=norm_key(k); v= v.trim() || '?';
-    if(k){
-      if(gm_dict.has(k))log('err dict? dubl_key='+k); else gm_dict.set(k,v);//уник массив ключ-знач, дубли на объединять!
-      if(k.indexOf('-')>0){v=k.replace(/-/g,' ');gm_sost.set(k,v);}//wake-up возможны накладки, но так понятней что это одно слово по смыслу!
-    }
-  }
-  log('словарь загружен='+gm_dict.size); render();//обновить разметку
+// ========== Запись пачкой ==========
+async function writeBatchToIDB(batch) {
+  await openIDB();//log('пишем батч='+batch.length);
+  return new Promise((ok,er) => {
+    const tx = g_IDB.transaction('store', "readwrite");
+    const store = tx.objectStore('store');
+    for(const [k,v] of batch) store.put(v,k);
+    tx.oncomplete = (z)=>{ok(1);}
+    tx.onerror = (e)=>{alert('ошибка в writeBatchToIDB='+e);er(0);}
+  });
 }
-function load2_lw_file(txt){//текст из файла загружен
-  txt=''+txt; //=String() но короче
-  log('load2_lw_from_file='+txt.length);
-  txt=txt.replace('g_words=`','').replace('`;','');
-  if(gm_busy.get('gm_words')==1){txt+='\n'+get_lw().join('\n');} //добавляем
-  window['g_words']=txt;//если нет g_words, то создаем.
-  load_lw(); //text->dict из файла или внеш.скрипта
-}
-//загр списка выуч слов из файла/скрипта на входе g_words - строка , на выходе gm_words
-function load_lw(){var d,m,k,v,t;
-  if(!window['g_words']){alert('ошибка: нет g_words');return 0;}
-  m=t_split(g_words); gm_words.clear(); g_words=null;//free mem
-  for(k of m){k=norm_key(k); if(k)gm_words.set(k,1);}//уник массив ключ-знач=1
-  log('выученные слова загружены='+gm_words.size);
-  render();//обновить разметку
-  return 1;
-}
-function load_aw(){var d,m,k,v,t;// активные слова из поля, можно запятые
-  t=''+el('id_aw').value; t=t.replace(/,/g,';'); m=t_split(t);
-  v=0; for(k of m){k=norm_key(k); if(k)gm_words.set(k,2); v++;} //выученные 1->2
-  log('активные слова загружены='+v);
-  render();//обновить разметку
-}
-function lw_to_LS(){//пишем список изуч слов в локалсторе автоматически = gm_words
- var m=get_lw(); if(m.length>7000){alert('слишком много слов знаешь, ЛокСт не резиновая!');}
- try {localStorage.setItem('my_words',m.join('\n'));log('Записано в ЛокСт='+m.length);}
- catch(e){alert('lw_to_LS: ошибка или лимит localStorage!'+e);}
-}
-function lw_from_LS(){var t,m,w;//читаем из локалсторе (стираем текущие и активные)
- gm_words.clear();
- try{
-  t=localStorage.getItem('my_words');
-  if(t){m=t.split('\n');for(w of m)if(w)gm_words.set(w,1);}//уник ключ=1
-  alert('Загружено из ЛокСт '+gm_words.size+' выуч.слов');
-  render();//обновить разметку
- } catch(e){alert('lw_from_LS: Ошибка='+e);}
-}
-
-//===== рендер текста =======
-//textContent сам экранирует как надо, это для innerHTML, (кавычки менять не обязательно)
-function toHtml(s){return s.replace(/\&/g,"&amp;").replace(/\</g,"&lt;").replace(/\>/g,"&gt;").replace(/\"/g,"&quot;").replace(/\`/g, "'");}
-//для Title все кавычки убираем для безопасности title="text("+js+")text" в переводах может быть всё что угодно, словари скачаны из инета
-function toAttr(s){return s.replace(/\&/g,"&amp;").replace(/\</g,"&lt;").replace(/\>/g,"&gt;").replace(/\"|'|`/g,"/");}
-function get_tr(word){var v; // в словаре только маленькие + составные через -
-  v=gm_dict.get(word); if(v)return v;//словарь тек уровня юзера
-  v=gm_dict2.get(word); if(v){v=v.split(',').slice(0,3).join(','); if(v!='???')gm_dict.set(word,v);return v;} //из бол.словаря
-  return '??'; //сам ищи или надо вкл словарь уровня выше
-}
-function render1(){ var txt,htm,t,tt,key,p,pp,cs,i; //280ms
-  txt=''+el('id_text').value; if(!txt){el('id_out').innerHTML='';return 0;}
-  txt=' '+norm_text(txt)+' '; //замена составных через пробел на дефис
-  var tr_mode=get_mode();
-  if(tr_mode=='text'){//показать весь перевод если получен в фоне или открыть в гугл тр
-    put_t('id_out','общий перевод из прилож гугл-переводчик офлайн/онлайн(не сделано)');
-    copy_cb(txt);
-    if(window.navigator.onLine)alert('пробуем онлайн через сайт гугл переводчик');
-    window.open('https://translate.google.com/?sl=en&tl=ru&text='+encodeURIComponent(txt));
-    return;
-  }
-  if(gm_busy.get('render-1-2')){log('render-1-2 занят');return 0;}
-  gm_busy.set('render-1-2',1); //ставим занято на оба рендера
-  log('начинаем render1'); tm1();
-
- // Разбиваем, сохраняя знаки препинания и пробелы как отдельные токены
-  tt=txt.match(/([A-Za-z'-]+|[^A-Za-z'-]+)/g) || [];
-  htm='';
-  for(t of tt){
-    key='';if(t!='-')if(t!="'")if(t.match(/([A-Za-z'-]+)/g)!=null){key=norm_key(t);}
-    t=toHtml(t); //может там <>&
-    if(key){//это слово, тут норм ключ мал букв и сост -
-      p=get_tr(key); pp='('+p+')'; if(p=='??'){gm_words.set(key,3);}
-      if(!gm_dict2.has(key))gm_dict2.set(key,'');//все слова сюда если нету от прошлого рендера
-      cs='ww uw'; i=gm_words.get(key);
-      if(i==1){cs='ww lw'; if(tr_mode=='only')pp='';} //выуч
-      if(i==2){cs='ww aw'; if(tr_mode=='only')pp='';} //актив
-      if(i==3){cs='ww nw';}// ищем в бол.сл фоном (имя или редкое)
-      if(i==4){cs='ww rw';}
-      t='<span class="wb"><span class="'+cs+'" title="'+toAttr(p)+'">'+t+'</span>·<span class="tr">'+toHtml(pp)+'</span></span>';
-    }//проверить по быстродействию и с элементами
-    htm+=t;
-  }
-  el('id_out').innerHTML=htm;
-  //перевод пока пусто, после рендера2 3 слова или ???
-  //класс nw заменится на rw чтобы не искать снова, а ещё рендер1 на uw т.к перевод в кэше
-  log('render1 закончен, уникальных слов='+gm_dict2.size); tm2();
-  //запускаем фоном подробный перевод для всех слов из текста в gm_dict2
-  stat_words(); //статистика слов после рендера1 (неточная)
-  setTimeout(render2,500);//запускаем рендер 2 этап. флаг занято не сбрасываем!
-}
-function stat_words(){ var lw=0,aw=0,rw=0,k,v;
-  for([k,v] of gm_dict2){v=gm_words.get(k); if(v==1)lw++; if(v==2)aw++; if(v==4)rw++;}
-  put_t('id_statAll',gm_dict2.size);put_t('id_statLW',lw);put_t('id_statAW',aw);
-  put_t('id_statRW',rw);
-}
-//получить подр.перевод всех слов фоном, а когда придет, то найти все ?? подставить и разрешить кнопку показать список слов и подробный перевод.
-function render2(){
-  if(gm_dict2.size==0){log('gm_dict2 пустой?');gm_busy.set('render-1-2',0);return;}
-  log('начинаем render2');tm1();
-  readIDB().then((e)=>{var m,i,ew,w,key,p,pp,n=0;//счетчик
-    m=document.querySelectorAll('.ww.nw'); //непонятные - нет перевода в мал.словаре
-    for(i=0;i<m.length;i++){ew=m[i]; //forEach в старых не работает
-      w=''+ew.textContent; key=norm_key(w); p=get_tr(key);//если то ???
-      if(p!='??'){//меняем перевод и классы если нашел перевод
-        pp='('+p+')'; ew.title=toAttr(p); n++;
-        //проверять или try? блок: <s "wb"><s "ww uw">w</s>точка<s "tr">pp</s></s>
-        ew.parentElement.children[1].textContent=pp; //экранирует html
-        ew.className='ww rw';gm_words.set(key,4);//непонятные теперь редкие, не ищем снова
-      } else {log('?? попал в рендер2, это непонятно');}
-    }//end for
-    el('id_tools').children[6].disabled=false;//разблокируем кнопку
-     log('render2 закончен, заменил='+n); stat_words();// статистика
-     tm2(); gm_busy.set('render-1-2',0); //сбросим флаг на оба рендера
-  }).catch((e)=>{alert('render2:Ошибка='+e);}); //флаг занято не сбросим!
-}
-//список слов текста + подр.перевод из бол.словаря
-function showWords(){//gm_dict2 map:слово-перевод
-  tm1();
-  const container = el("id_wordsList");
-  container.innerHTML = '<button id="close-sw">закрыть</button><hr>';
-  var key,tr;
-  var keys=get_keys_map(gm_dict2); keys.sort(); //нужна сортировка
-  for(key of keys){tr=gm_dict2.get(key);
-    const learned=gm_words.get(key);
-    const block=document.createElement("div"); block.className= "word-block";
-    const title=document.createElement("div");title.className="word-title"+(learned ? " lw" : " uw"); title.textContent = key;
-    const transDiv=document.createElement("div");transDiv.className="word-tr"; transDiv.textContent=tr;
-    const moreBtn=document.createElement("span");moreBtn.className="btn-more"; moreBtn.textContent="ещё..";
-    moreBtn.addEventListener("click",(e)=>{
-      transDiv.classList.toggle("expanded");
-      moreBtn.textContent = transDiv.classList.contains("expanded") ? "свернуть" : "ещё..";
-    });
-    block.appendChild(title);block.appendChild(transDiv);block.appendChild(moreBtn);
-    container.appendChild(block);
-  }
-  el('id_mainGrid').style="display:none";
-  el('close-sw').addEventListener("click",(e)=>{container.innerHTML='';el('id_mainGrid').style="display:grid";});
-  tm2();
-}
-function dbl_click_word(el_w){var w,p,key,i;//двойной клик на слове
-  if(!el_w){log('dbl_click_word: нет элемента ww');return 0;}
-  w= ''+el_w.textContent;
-  if(!w){log('dbl_click_word: пустое слово');return 0;}
-  log('dblclick '+w);key=norm_key(w);
-  p=''+el_w.title;//тут кавычки на /
-  if(p=='???'){openAddTranslationModal(key);return 1;}// на ??? вводим перевод руками
-   i= gm_words.get(key) || 0;
-  if(i==0){gm_words.set(key,1);} //uw->lw
-  if(i==1){gm_words.set(key,0);} //lw->uw
-  if(i==2){gm_words.set(key,1);} //aw->lw
-  if(i==3){gm_words.set(key,1);} //nw->lw
-  if(i==4){gm_words.set(key,1);} //rw->lw
-  mini_render(key); lw_to_LS();//синхронизация с ЛокСт
-}
-// Modal for manual translation input
-function openAddTranslationModal(key){//если ??? то вводит перевод руками
-  const modal = el('id_modal');
-  el('id_modal-word').textContent = key;
-  el('id_modal-input').value = '';
-  modal.style.display= 'flex'; modal.setAttribute('aria-hidden','false');
-  el('id_modal-input').focus();
-  el('id_modal-cancel').addEventListener('click', onCancel);
-  el('id_modal-save').addEventListener('click', onSaveClick);
-  document.addEventListener('keydown', handler);
-  function handler(e){
-    if(e.key === 'Escape'){onCancel();}
-    if(e.key === 'Enter'){onSaveClick();}
-  }
-  function onCancel(){removeHandlers();}
-  function onSaveClick(){
-    const val= el('id_modal-input').value.trim();
-    if(!val){alert('Введите перевод'); return 0;}
-    gm_dict.set(key,val); mini_render(key); //все слова заменим
-    removeHandlers();
-    // save to indexedDB фоном
-    saveToIDB(key,val).then((e)=>{log('saveToIDB:ok='+e);}).catch((e)=>{alert('saveToIDB:err='+e);});
-  }
-  function removeHandlers(){
-    modal.style.display='none'; modal.setAttribute('aria-hidden','true');
-    el('id_modal-cancel').removeEventListener('click', onCancel);
-    el('id_modal-save').removeEventListener('click', onSaveClick);
-    document.removeEventListener('keydown', handler);
- }
-}
-function mini_render(key){var i,m,ew,w,p,pp,t,cs;//только по словам
-  log('начинаем мини рендер только слово');tm1();
-  m=document.querySelectorAll('.ww');
-  p=get_tr(key); if(p=='??')gm_words.set(key,3);//неизвестные
-  t=toAttr(p); pp='('+p+')';
-  if(m[0].title=='???')gm_words.set(key,4);//неизвестные теперь редкие
-
-  i=gm_words.get(key);
-  var tr_mode=get_mode();
-  cs='ww uw';
-  if(i==1){cs='ww lw';if(tr_mode=='only')pp='';}
-  if(i==2){cs='ww aw';if(tr_mode=='only')pp='';}
-  if(i==3){cs='ww nw';}
-  if(i==4){cs='ww rw';}
-
-  for(i=0;i<m.length;i++){
-    ew=m[i]; w=''+ew.textContent;
-    if(w.trim().toLowerCase()==key){
-     ew.title=t; ew.className=cs;
-     ew.parentElement.children[1].textContent=pp;//экр html
-    }
-  }
-  stat_words(); // статистика
-  log('мини рендер закончен');tm2();
-}
-
-//==меню=======
-function fTools(p){var k,v,n;
- if(p=='load-lw-LS')lw_from_LS();//Загр список изуч.слов из ЛокСт(замена)
- if(p=='load-lw-js')loadScript('my_words.txt',load_lw);//Загр список изуч.слов из скрипта рядом(замена)
- if(p=='load-lw-file'){gm_busy.set('gm_words',0);loadFromFile(load2_lw_file);}//Загр список изуч.слов из файла(замена)
- if(p== 'add-lw-file'){gm_busy.set('gm_words',1);loadFromFile(load2_lw_file);}//Загр список изуч.слов из файла(добавить)
- if(p=='save-lw-file'){saveToFile('my_words.txt','g_words=`\n'+get_lw().join('\n')+'`;');} //Сохр список изуч.слов в файл(как внеш скрипт, но можно откр в редакторе как текст)
- //формат json хуже, читать/править сложно из за кавычек, размер больше +4 симв на строку
- //Добавить все активные слова в список изуч.слов
- if(p=='add-aw'){n=0;for([k,v] of gm_words)if(k)if(v==2){n++;gm_words.set(k,1);} alert('добавлено '+n+' слов');}
- if(p=='load-big')loader_big_dict();//Загр бол.словарь в inxDB 5мб (перезаписать)
- if(p=='show-big'){showWords();}//Показать перевод (из бол.словаря) всех слов из текста
-//открывается стр. со ссылками где брать учебные тексты или создать с актив.словами
- if(p=='gen-text')window.open('gen_text.htm','_blank');//Генерировать текст через чат бота
-}
-var g_timer; //global
-function render(){if(g_timer)clearTimeout(g_timer); g_timer=setTimeout(render1,2000);}
-//если текст меняется во время render2 то через 2 сек начнется рендер1, а потом рендер2
-//у них один флаг занято, пока рендер2 не закончится, рендер1 не начнется.
-function init(){log('init1');
- el('id_mode').addEventListener('change', (e)=>{render();});
- el('id_tools').addEventListener('change', (e)=>{fTools(e.target.value);});
- el('id_dict').addEventListener('change', (e)=>{loadScript(e.target.value,load_dict);});
- el('id_text').addEventListener('input', (e)=>{render();});
- el('id_aw').addEventListener('input', (e)=>{load_aw();});
- el('id_out').addEventListener('dblclick', (e)=>{e.stopPropagation();var el_word = e.target.closest('.ww');if(el_word)dbl_click_word(el_word);});
- el('btnToggleLayout').addEventListener('click', (e)=>{
-   //el('id_mainGrid').classList.toggle('full-right');
-   /* Переключение левого столбца (развернуть правое) */
-   var left = el('id_leftCard'); var grid = el('id_mainGrid');
-  if(left.style.display === 'none'){left.style.display='block';grid.style.gridTemplateColumns='1fr 1fr';}
-  else {left.style.display='none';grid.style.gridTemplateColumns='1fr';}
- });
- el('btnSpeak').addEventListener('click', (e)=>{text_speak();});// speak button
-
- lw_from_LS(); //выученные читаем из Локст
- load_aw(); //активные читаем из поля
- load_dict(); //мал.словарь уровня (подключен вначале как скрипт g_dict=`word|tr`)
- openIDB(); //откр IBD один раз
- loadScript('textA2.txt',(e)=>{ //пример текста (необязательно)
-   if(window['g_text']){el('id_text').value=g_text; render();}
- });
- //сюда можно добавить загрузку выуч слов из скрипта my_words.txt
-}
-
-window.addEventListener('load', init);
-window.addEventListener('beforeunload',(e)=>{if(g_IDB)g_IDB.close();lw_to_LS();});//записать выуч в ЛокСт при выходе (синхронизация)
-
-//новая версия от Grok тоже 7мб за 9s, но наверно лучше :)
-var g_start = 0; //global
-function loader_big_dict2_fast(){
-  if(!('g_big_dict' in window)){
-    alert('Нет словаря g_big_dict для загрузки в IndexedDB');
-    return 0;
-  }
-  if(gm_busy.get('lbd2')){log('loader_big_dict2 занят'); return 0;}
-  gm_busy.set('lbd2', 1); log('Начинаем loader_big_dict2'); tm1();
-  if(!g_IDB){alert('IndexedDB не открыта'); gm_busy.set('lbd2', 0); return 0;}
-
-  const batchSize = 1000; // Обрабатываем по 1000 строк за транзакцию
-  g_num = 0; // Счётчик записей
-  let batch = [];
-  g_start=0;
-
-  function processBatch(){
-    const tx = g_IDB.transaction("store", "readwrite");
-    tx.onerror = (e)=>{alert('Ошибка записи бол.словаря в IndexedDB: ' + e);}
-    const store = tx.objectStore("store");
-    for(const [key,value] of batch){store.put(value,key);}
-    tx.oncomplete = (e)=>{
-      g_num += batch.length; batch = []; // Очищаем батник (пакет)
-      if(g_start<g_big_dict.length){setTimeout(processNextChunk,0);} //Продолжаем обработку
-      else {
-        tm2(); g_big_dict=null; alert('Добавлено в IndexedDB:'+g_num+' слов');
-        gm_busy.set('lbd2', 0); gm_dict2.clear(); render();
-      }
-    }
-  }
-  function processNextChunk(){
-    let end,line,key,val;
+// == Фоновая загрузка бол.словаря, если есть дубли, то будет только последнее значение!
+async function loaderBigDict(){//долгая и асинх
+  if(!window.g_big_dict){ alert('Нет g_big_dict'); return 0;}
+  if(startBusy('loaderBigDict','начало записи бол.словаря в IDB='+g_big_dict.length,1000))return 0;
+  try{
+    await openIDB();
+    log('открыли БД');
+    const BATCH = 3000;
+    let batch = [];
+    let done = 0;
+    let n1=0,n2=0,k,v,le=g_big_dict.length;
     while(1){
-      end = g_big_dict.indexOf('\n', g_start);
-      if(end<0)break; // если у последней нет \n то значит это мусор
-      line = g_big_dict.substring(g_start, end).trim();
-      g_start = end + 1;
-      if(line){
-        [key,val] = line.split('|');// |-может и не быть тогда val=undefined
-        if(key){// может строка начинается с | значит это дефект словаря
-          key = norm_key(key); val = val || '?'; batch.push([key,val.trim()]);
-          if(batch.length > batchSize)break;
-        }
+      n2=g_big_dict.indexOf('\n',n1);
+      if(n2>=0){
+       s=g_big_dict.substring(n1,n2); n1=n2+1;
+       [k,v] = s.split('|'); k = normKey(k); v = v || '?';
+       if(k)batch.push([k,v.trim()]);
       }
+      if(batch.length >= BATCH || n2<0){
+        await writeBatchToIDB(batch);
+        done += batch.length;
+        batch = [];
+        progressBar(n1,le);
+      }
+      if(n2<0)break;
     }
-    if(end<0)g_start= g_big_dict.length+1;
-    processBatch();
-    //если укорачивать g_big_dict то дольше в два раза!
+    endBusy('loaderBigDict','конец записи бол.словаря в IDB');
+    alert('В IndexedDB добавлено слов='+done);countIDB();
+    gm_dict2.clear(); //???-там везде на редких если не было этого словаря
+    g_big_dict = null; //free mem
+    setTimeout(render,0);//обновить разметку
   }
-  // Начинаем обработку
-  processNextChunk();
+  catch(e){alert('loaderBigDict error'+e);}
 }
-function loader_big_dict2_slow(){//7мб за 9s без split
- if(!('g_big_dict' in window)){alert('нет словаря g_big_dict для загрузки в IndexedDB');return 0;}
- if(gm_busy.get('lbd2')){log('loader_big_dict2 занят');return 0;}
- gm_busy.set('lbd2',1);log('начинаем loader_big_dict2');tm1();//ставим занято
-//уже открыта
-  log('Начало Записи 100000 ключ-значение за одну транзакцию, ~10сек');
-  if(g_IDB){
-    const tx = g_IDB.transaction("store", "readwrite");
-    tx.oncomplete= (e)=>{tm2();g_big_dict=null;alert('добавил в IDB='+g_num);gm_busy.set('lbd2',0);gm_dict2.clear();render();}
-    tx.onerror= (e)=>{alert('!Ошибка записи большого словаря'+e);} // занято не сбрасываем
-
-    const store = tx.objectStore("store");
-    var n=0,k,v,s,n1=0,n2=0; g_num=0;
-    while(1){
-      n2=g_big_dict.indexOf('\n',n1);if(n2<0)break;
-      s=g_big_dict.substring(n1,n2); n1=n2+1;
-      if(s.trim()=='')continue;
-      [k,v] = s.split("|"); // key=en, value=ru
-      k=norm_key(k); v= v || '?';
-      if(k){store.put(v.trim(),k); g_num++;}
-    }
-   } else alert('IDB не открыта?');
+// === Прогресс бар ========================================
+function progressBar(done, total) {
+  if(!total || total <= 0) total = 1;
+  const percent = Math.min(100, Math.floor((done / total) * 100));
+  const text = `${done}/${total} (${percent}%)`;
+  if(!g_progress.el) createProgressBar();
+  const bar = g_progress.el.querySelector('.bar-fill');
+  const label = g_progress.el.querySelector('.bar-label');
+  label.textContent = text;
+  bar.style.width = percent + '%';
+  bar.style.background = colorByPercent(percent);
+  g_progress.el.style.display = 'flex';
+  g_progress.lastUpdate = Date.now();
+  // Автоматически скрыть через 3 сек без обновлений
+  clearTimeout(g_progress.timer);
+  g_progress.timer = setTimeout((z)=>{
+    const dt = Date.now() - g_progress.lastUpdate;
+    if (dt > g_progress.hideDelay) hideProgressBar();
+  }, g_progress.hideDelay);
+  if (percent >= 100) setTimeout(hideProgressBar, 500);
+}
+function createProgressBar() {
+  const div = document.createElement('div');
+  div.className = 'progress-overlay';
+  div.innerHTML = '<div class="progress-box"><div class="bar-label">Загрузка...</div><div class="bar-frame"><div class="bar-fill"></div></div></div>';
+  document.body.appendChild(div);
+  g_progress.el = div;
+}
+function hideProgressBar(){if(g_progress.el)g_progress.el.style.display = "none";}
+function colorByPercent(p){
+ let color='black';
+ if(00<=p && p<=20) color= '#FF4D4D'; //Яркий красный
+ if(20<=p && p<=40) color= '#FF9933'; //Оранжево-красный
+ if(40<=p && p<=60) color= '#FFE600'; //Жёлтый
+ if(60<=p && p<=80) color= '#99CC33'; //Светло-зелёный
+ if(80<=p && p<=100) color= '#00CC66'; //Насыщенный зелёный
+ return color;
 }
 
-function loader_big_dict(){ //грузим1 большой словарь в indexedDB
-  loadScript('big_dict.txt',loader_big_dict2_fast); //можно поменять на старый загрузчик
+window.addEventListener('load', init);//тут надо переводчик запускать а он init
+function test_bd(){
+ loadScript('big_dict.txt',test2);
 }
-
-//!сравнить с текст1 и текст2 и потом со скриптом новым и проверить скорость
+async function test2(){
+  timerStart();
+  let s,k,v,v2,n=0;
+  g_big_dict=g_big_dict.split('\n');
+  alert(g_big_dict.length);
+  for(s of g_big_dict){n++;
+    if(s.trim()==''){alert(n+s);continue;}
+    [k,v]=s.split('|');
+    if(k.trim()=='')alert(n+s);
+    if(v.trim()=='')alert(n+s);
+    v2 = await readFromIDB(k);
+    if(v!=v2)alert(s);
+  }
+  timerEnd();
+  log('test_bd ok');
+}
+function test(){
+loadAW();loadAW();loadAW();
+setTimeout(loadAW,0);setTimeout(loadAW,500);setTimeout(loadAW,5000);
+}
 </script>
+
+<!-- модальное окно для показа большого перевода -->
+<style>
+/* Базовые стили для всех модальных окон */
+.modal-overlay {
+    /* Фиксируем на весь экран */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Делаем полупрозрачный фон и центрируем содержимое (Flexbox) */
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Изначально скрываем: Используем opacity и visibility для анимации */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    /* Гарантируем, что окно поверх всего */
+    z-index: 1000;
+}
+/* Стиль для видимого состояния */
+.modal-overlay.visible { opacity: 1; visibility: visible;}
+/* Стиль для блока с контентом */
+.modal-content {
+    background: wheat;
+    border-radius: 8px;
+    max-width: 98%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/* 1. Центрирование контейнера на экране */
+.center-screen {
+    display: flex;
+    justify-content: center; /* Центр по горизонтали */
+    align-items: center;     /* Центр по вертикали */
+    min-height: 100%;       /* Занять всю высоту экрана */
+}
+/* 2. Настройка блока текста: минимум места и перенос */
+.modal-text {
+    max-width: 90%; /* 65 ch */
+    /* Ключ к минимальному размеру: Контейнер сжимается по содержимому? */
+    width: fit-content;  width:-moz-fit-content;
+    /* Стиль для красивого вывода */
+    padding: 2%; /* Отступы вокруг текста */
+    line-height: 1.6; /* Улучшаем интервал между строками */
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Немного скругленные углы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  /* Если вдруг слово ОЧЕНЬ длинное (больше 65ch), разрешить принудительный перенос */
+    overflow-wrap: break-word;
+    margin-bottom: 1%;
+    background-color: var(--bg);
+    color:var(--ink);
+}
+.modal-title {padding:1%;min-width: 200px;}
+.modal-word {color:darkred; font-size:1.4em;margin-left:2%;}
+.modal-content button {float:right;margin-right:2%;}
+</style>
+<div id="id_show_big_tr" class="modal-overlay" onclick="if(event.target == g_modal)hideModal();">
+ <div class="modal-content">
+  <div class="modal-title">
+   <b class="modal-word">Заголовок</b>
+   <button onclick="hideModal()">Закрыть</button>
+  </div>
+  <div class="center-screen">
+    <div class="modal-text">
+     текст
+    </div>
+  </div>
+ </div>
+</div>
+<script>
+
+function show_msg_center(text){ //для экрана 1280*800 полосы прокрутки нет!
+ let w='50%', le=text.length;
+ if(le>500)w='70%';
+ if(le>1000)w='96%';
+ if(le>1500)text=text.slice(0,1500)+'(ещё..)';
+ elk('.modal-content').style.maxWidth=w;
+ elk('.modal-text').textContent=text;
+}
+function showModalTr(wb) {
+// Закрытие по клику на оверлей
+  let key=getWordKey(wb);
+  let text = gm_dict2.get(key) || '???';
+  log(key+'/'+text);
+  if(text=='???'){showModalEd(key);return 1;}
+  text=text.replace(/,/g,', ').replace(/[ ]+/g,' ');
+  show_msg_center(text);
+  elk('.modal-word').innerHTML=''+key;
+  g_modal=el('id_show_big_tr');
+  g_modal.classList.add('visible');
+  return 2;
+}
+function hideModal(){g_modal.classList.remove('visible');}
+</script>
+
+<!-- модальное окно редактирования перевода -->
+<style>
+.modal {
+    background-image: url('4.png');
+    background-blend-mode: darken; /* Смешиваем цвет с изображением */
+}
+.modal-box {
+  background: #0b1220;
+  border: 3px solid #374151;
+  padding: 16px;
+  border-radius: 12px;
+  width: 50%;
+  color: var(--ink);
+}
+#id_modal-input {
+  width: 98%;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background: #071029;
+  color: var(--ink);
+  font-size:1.2em;
+}
+.modal-row {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+</style>
+<div id="id_edit_big_tr" class="modal-overlay modal" onclick="if(event.target == g_modal)hideModal();">
+  <div class="modal-box">
+    <div id="id_modal-word">word</div>
+    <div class="small">Введите перевод:</div>
+    <input id="id_modal-input"/>
+    <div class="modal-row">
+      <button onclick="hideModal()">Отмена</button>
+      <button onclick="saveModalEd()">Сохранить</button>
+    </div>
+  </div>
+</div>
+<script>
+function showModalEd(key){
+  putText('id_modal-word',key);
+  el('id_modal-input').value=getTran(key);
+  g_modal=el('id_edit_big_tr');
+  g_modal.classList.add('visible');
+}
+function saveModalEd(){
+  let key = getText('id_modal-word'); key=normKey(key);
+  let val = ''+el('id_modal-input').value; val=normText(val);
+  if(key)if(val){
+    gm_dict2.set(key,val);
+    miniRender(key,val,'');
+    saveToIDB(key,val);
+  }
+  hideModal();
+}
+
+</script>
+<!-- список всех слов (подробный просмотр) -->
+<style>
+#id_dict_container {width:100%; background-color: aliceblue;}
+.dict-word {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 5px;
+
+  padding: 15px;
+  /* 1. Наша "фиксированная" высота */
+  max-height: 4em;
+  overflow: hidden;
+  /* 2. многострочность перевода */
+  white-space: pre-wrap;
+  word-wrap: break-word; /* Перенос длинных слов */
+  color: #333;
+}
+.dict-word b { /*word*/
+color: #132e51;
+font-size: 1.2em;
+margin-right: 8px;
+text-transform: capitalize;
+background-image: linear-gradient(45deg,#a1d296,#eab470);
+background-color: rgba(202, 115, 168, 0.17);
+border-radius: 0.5em;
+padding: 5px;
+}
+
+/* --- Стили для переполнения и раскрытия --- */
+/* 4. Если JS обнаружил переполнение, меняем фон */
+.dict-word.over {
+  background-color: #fef8e0;
+  border-color: #e6dbb9;
+  /*background: url("2.png") no-repeat;*/
+  cursor:pointer;
+}
+.dict-word.over::before {
+  content:'(показать весь текст) ';
+  border:1px solid red;
+  background-color: cyan;
+  padding: 0.3em;
+  margin-right: 1em;
+}
+/* 5. Когда на блок кликнули (добавлен класс .full) */
+.dict-word.full {
+  max-height: 1000px; /* Убираем ограничение высоты */
+}
+
+#id_search_container {
+  position: fixed;
+  top: 0;
+  right: 3%;
+  background: azure;;
+  padding: 10px;
+  z-index: 9999;
+}
+
+#id_wordsList {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto;
+}
+.dict-word.lw b { color: blue; }   /* выученные */
+</style>
+<div id="id_wordsList" class="hide">
+ <div id="id_search_container">
+  <input type="text" id="id_search_input" oninput="search_word()" placeholder="Введите слово...">
+  <button onclick="closeWordList()">Закрыть</button>
+ </div>
+ <div id="id_dict_container" onclick="container_click(event)"></div>
+</div>
+<script>
+//Выводит список слов из текста с подробным переводом из gm_dict2
+function closeWordList(){
+  el('id_dict_container').innerHTML='';
+  el('id_mainGrid').classList.remove('hide');
+  el('id_wordsList').classList.add('hide');
+}
+const container = el('id_dict_container');
+function showListWords(){ //долгая
+  if(startBusy('showListWords','начало рендера3='+gm_dict2.size,1000))return 0;
+  el('id_mainGrid').classList.add('hide');
+  el('id_wordsList').classList.remove('hide');
+
+  container.innerHTML='';
+  let keys=keysOfMap(gm_dict2); keys.sort(); //нужна сортировка
+// --- Рендерим все карточки
+  // --- Шаг 1: Массовая генерация HTML (ОПТИМИЗАЦИЯ №1) ---
+  // Собираем одну гигантскую строку вместо 2000+ вставок в DOM.
+  // Это самый большой прирост скорости.
+  // "магическая" длина для быстрой проверки. 200 - хорошее начало.
+  const OVERFLOW_CHECK_LENGTH = 200;
+  let htmlBatch = '';
+  container.className='dict-word';
+  let hb=container.clientHeight;
+  for(let key of keys){
+    const word = key;
+    const tran = gm_dict2.get(key);
+
+    let h=`<b>${word}<\/b>${tran}`;
+    let o='dict-word';
+    if(h.length > OVERFLOW_CHECK_LENGTH || h.includes('\n')){
+      container.innerHTML = h;
+      if(container.scrollHeight > hb)o='dict-word over';
+    }
+    if(gm_lw.get(key))o+=' lw';
+    h=`<div class="${o}">`+h+'</div>';
+    htmlBatch +=h ;
+  }
+  // --- Шаг 2: Единая вставка в DOM (ОПТИМИЗАЦИЯ №1) ---
+  container.className='';
+  container.innerHTML = htmlBatch;
+  // --- Шаг 3: Проверка переполнения (ОПТИМИЗАЦИЯ №2 и №3) ---
+ endBusy('showListWords','конец рендера3');
+}
+  // --- Шаг 4: Единый обработчик событий (ОПТИМИЗАЦИЯ №4 - Делегирование) ---
+  // Вешаем ОДИН клик на весь контейнер. Он будет ловить клики
+function container_click(event){
+	event.preventDefault();
+	const target = event.target;
+	// Ищем ближайшего родителя с классом .dict-entry
+	// Это и есть "карточка", на которую кликнули
+	const entry = target.closest('.dict-word');
+	// Если клик был мимо (например, по пустому месту в grid)
+	if(!entry) return;
+	// --- Логика кликов (ОПТИМИЗАЦИЯ 5) ---
+	if(entry.classList.contains('full')){
+      log('Случай 2: Клик по уже раскрытому полю (сворачивание)');
+			entry.classList.add('over');
+			entry.classList.remove('full');
+			return;
+	}
+	if(entry.classList.contains('over')){
+			log('случай 3: Клик по свернутому полю, но *не* по кнопке.');
+			entry.classList.add('full');
+			entry.classList.remove('over');
+			return;
+	}
+}
+ // Поиск и прокрутка
+ function search_word(){
+  const searchTerm = document.getElementById('id_search_input').value.toLowerCase();
+  if(!searchTerm)return;
+  const pairs = container.children;
+  for(let pair of pairs){
+    const word = pair.textContent.toLowerCase();
+    if(word.startsWith(searchTerm)){
+     //pair.scrollIntoView({ behavior: 'smooth' }); //плавно
+     pair.scrollIntoView();
+     pair.style.backgroundColor = 'aquamarine';
+     setTimeout(() => pair.style.backgroundColor = '', 2000);
+     break;
+    }
+  }
+ }
+function test_list(){
+ let t=` Здесь находится ваш текст. Браузер автоматически перенесет слова для оптимальной длины строки, а контейнер займет минимальное пространство на экране. Здесьнаходитсяваштекст.Браузеравтоматическиперенесетсловадляоптимальнойдлиныстроки,аконтейнерзайметминимальноепространствонаэкране. `;
+ //t=t+t;
+ for(let [k,v] of gm_dict2){v=v+t;let le=''+v.length;gm_dict2.set(k,le+v);}
+ showListWords();
+}
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
 
