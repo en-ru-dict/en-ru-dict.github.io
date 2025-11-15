@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="windows-1251"> <!-- специально НЕ UTF-8, чтобы проверить сущности! -->
+  <title>Translit1E — Новый транслит для русских букв</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .mode-btn { padding: 8px 16px; margin: 5px; font-size: 16px; }
+    .test-block { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+
+<h1 id="id_str">~Privet! Eto Translit1E. Dl9~ (No JS + No rus font)</h1>
+
+<button class="mode-btn" onclick="decode_text()"> decode t1e-rus</button>
+<button class="mode-btn" onclick="encode_text()"> encode rus-t1e</button>
+
+<button class="mode-btn" onclick="testAlert()"> test alert()</button>
+
+<h2>Здесь какой то обычный текст и он зависит от кодировки</h2>
+
+<div class="test-block">
+  <h3>unicode (any charset)</h3>
+  <p id="id_put1">1</p>
+</div>
+
+<div class="test-block">
+  <h3>html-znaki (any charset)</h3>
+  <p id="id_put2">2</p>
+</div>
+
+<div class="test-block">
+<textarea id="id_input" rows="3" cols="60">
+~Privet! 1N 1Exik, 1T 1Wuka i 1lQla1r ~~ kak xizn6? 13to 1L Translit1E: 14to za4em! 1Z~
+</textarea><br>
+</div>
+
+<script src="new_t1e.js"></script>
+
+<script>
+var input = document.getElementById('id_input');
+var put1 = document.getElementById('id_put1');
+var put2 = document.getElementById('id_put2');
+var str = document.getElementById('id_str');  
+str.textContent=gT1E.decode(str.textContent);
+
+function decode_text() {
+      // Кириллица через HTML-сущности (работает даже в windows-1251!)
+      let text=input.value;
+      let t=gT1E.decode(input.value,3);//t=t.replace(/\n/g,'\\n');
+      input.value=gT1E.decode(input.value,1);
+      try{put1.textContent = t+gT1E.json16(t);} catch(e){}
+      put2.innerHTML = gT1E.decode(input.value,2);
+}
+function encode_text() {
+      str.textContent= gT1E.encode(input.value,1);  //old
+      put1.textContent= gT1E.encode(input.value,2); //new
+      put2.textContent= gT1E.encode(input.value,3); //cut
+      input.value= gT1E.encode_text(input.value); 
+}
+
+  function testAlert() {
+    alert(gT1E.decode(input.value,1));
+  }
+
+
+</script>
+</body>
+</html>
