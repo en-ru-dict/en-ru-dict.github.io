@@ -1,0 +1,302 @@
+/* <style> Основные цвета и шрифт  */
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --ink: #e5e7eb;
+  --muted: cyan;
+  --accent: #60a5fa;
+  --border: #1f2937;
+}
+html,body {height: 100%;}
+
+body {
+  margin:0; padding:0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 18px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Шапка */
+header {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+header h1 {display: none;}
+header .spacer {flex: 1;}
+
+/* Кнопки и элементы */
+button,select {
+  background: black;
+  color: var(--ink);
+  border: 1px solid #374151;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+button:hover {border-color: red; background: darkgreen;}
+button[disabled] {opacity: 0.5; cursor: not-allowed;}
+
+textarea {
+  width: 96%;
+  min-height: 120px;
+  resize: vertical;
+  background: #0b1220;
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+}
+#id_text { height: 300px; font-size: 1.1em;}
+#id_out {
+  min-height: 300px;
+  font-size: 1.1em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+/* Карточки и сетка */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 12px;
+}
+.grid.full-right {grid-template-columns: 0 1fr;}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2%;
+}
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Цветовые статусы слов */
+.wb {
+  padding: 1px 2px;
+  border-radius: 6px;
+  cursor: default;
+  background: rgba(96, 165, 250, 0.14);
+  color:grey;
+}
+
+.wb.uw .ww { color: white; } /* неизвестные */
+.wb.lw .ww { color: greenyellow; } /* выученные */
+.wb.aw .ww { color: coral; } /* активные */
+.wb.nw .ww { color: magenta; } /* нет перевода */
+.wb.rw .ww { color: deepskyblue; } /* редкие */
+.wb .tr {color: gold;}
+.hide-tr .lw .tr {display:none;}
+.hide-tr .aw .tr {display:none;}
+.hide {display:none;}
+/* Прочее оформление */
+.mrow {margin-bottom: 6px;}
+.small {color: var(--muted); font-size: 0.8em;}
+.pill {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px dashed #374151;
+}
+
+/* Прогресс бар */
+.progress-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+}
+.progress-box {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.bar-label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: black;
+}
+.bar-frame {
+  width: 100%;
+  height: 25px;
+  background: #ddd;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.bar-fill {
+  width: 0%;
+  height: 100%;
+  background: #007bff;
+  transition: width 0.3s, background 0.3s;
+}
+
+/* Базовые стили для всех модальных окон */
+.modal-overlay {
+    /* Фиксируем на весь экран */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Делаем полупрозрачный фон и центрируем содержимое (Flexbox) */
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Изначально скрываем: Используем opacity и visibility для анимации */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    /* Гарантируем, что окно поверх всего */
+    z-index: 1000;
+}
+/* Стиль для видимого состояния */
+.modal-overlay.visible { opacity: 1; visibility: visible;}
+/* Стиль для блока с контентом */
+.modal-content {
+    background: wheat;
+    border-radius: 8px;
+    max-width: 98%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/* 1. Центрирование контейнера на экране */
+.center-screen {
+    display: flex;
+    justify-content: center; /* Центр по горизонтали */
+    align-items: center;     /* Центр по вертикали */
+    min-height: 100%;       /* Занять всю высоту экрана */
+}
+/* 2. Настройка блока текста: минимум места и перенос */
+.modal-text {
+    max-width: 90%; /* 65 ch */
+    /* Ключ к минимальному размеру: Контейнер сжимается по содержимому? */
+    width: fit-content;  width:-moz-fit-content;
+    /* Стиль для красивого вывода */
+    padding: 2%; /* Отступы вокруг текста */
+    line-height: 1.6; /* Улучшаем интервал между строками */
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Немного скругленные углы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  /* Если вдруг слово ОЧЕНЬ длинное (больше 65ch), разрешить принудительный перенос */
+    white-space: pre-wrap; 
+    overflow-wrap: break-word;
+    margin-bottom: 1%;
+    background-color: var(--bg);
+    color:var(--ink);
+}
+.modal-title {padding:1%;min-width: 200px;}
+.modal-word {color:darkred; font-size:1.4em;margin-left:2%;}
+.modal-content button {float:right;margin-right:2%;}
+
+/* модалка для редактирования первода */
+.modal {
+    background-image: url('4.png');
+    background-blend-mode: darken; /* Смешиваем цвет с изображением */
+}
+.modal-box {
+  background: #0b1220;
+  border: 3px solid #374151;
+  padding: 16px;
+  border-radius: 12px;
+  width: 50%;
+  color: var(--ink);
+}
+#id_modal-input {
+  width: 98%;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background: #071029;
+  color: var(--ink);
+  font-size:1.2em;
+}
+.modal-row {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+/* список всех слов (подробный просмотр) */
+#id_dict_container {width:100%; background-color: aliceblue;}
+.dict-word {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 5px;
+
+  padding: 15px;
+  /* 1. Наша "фиксированная" высота */
+  max-height: 4em;
+  overflow: hidden;
+  /* 2. многострочность перевода */
+  white-space: pre-wrap;
+  word-wrap: break-word; /* Перенос длинных слов */
+  color: #333;
+}
+.dict-word b { /*word*/
+color: #132e51;
+font-size: 1.2em;
+margin-right: 8px;
+text-transform: capitalize;
+background-image: linear-gradient(45deg,#a1d296,#eab470);
+background-color: rgba(202, 115, 168, 0.17);
+border-radius: 0.5em;
+padding: 5px;
+}
+
+/* --- Стили для переполнения и раскрытия --- */
+/* Если JS обнаружил переполнение, меняем фон */
+.dict-word.over {
+  background-color: #fef8e0;
+  border-color: #e6dbb9;
+  cursor:pointer;
+}
+.dict-word.over::before {
+  content:'(show all text) ';
+  border:1px solid red;
+  background-color: cyan;
+  padding: 0.3em;
+  margin-right: 1em;
+}
+/* Когда на блок кликнули (добавлен класс .full) */
+.dict-word.full {
+  max-height: 1000px; /* Убираем ограничение высоты */
+}
+
+#id_search_container {
+  position: fixed;
+  top: 0;
+  right: 3%;
+  background: azure;
+  padding: 10px;
+  z-index: 9999;
+}
+
+#id_wordsList {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto;
+}
+.dict-word.lw b { color: blue; }   /* выученные */
+
+
+  

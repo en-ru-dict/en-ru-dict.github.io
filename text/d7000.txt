@@ -2826,7 +2826,7 @@ unfair|несправедливый
 gender|пол
 journey|путешествие
 spy|шпион,шпионить
-on|шпион,шпионить-2
+spy-on|шпион,шпионить
 espionage|шпионаж
 ask out|пригласить сходить
 take out|взять сходить
@@ -3045,7 +3045,7 @@ steer|управлять,направлять
 steering wheel|руль
 casual|случайный
 tooth|зуб
-pl: teeth|зуб-2
+teeth|зубы
 toothpaste|зубная паста
 toothbrush|зубная щетка
 toothache|зубная боль
@@ -3063,7 +3063,7 @@ sit out|высидеть
 sit through|высидеть до конца
 cookie|печенье
 mold|плесень
-mould|плесень-2
+mould|плесень
 exhibit|выставлять,показывать
 exhibition|выставка
 character|персонаж
@@ -3214,7 +3214,7 @@ uniqueness|уникальность
 valley|долина
 court|игровая площадка
 fibre|волокно
-fiber|волокно-2
+fiber|волокно
 fibrous|волокнистый
 probe|датчик,зонд
 prison|тюрьма
@@ -3227,7 +3227,7 @@ exceptional|исключительный
 cap|кепка,шляпа,колпачок
 evil|злой,зло
 rest|отдых,отдыхать
-unrest|беспокойство,беспорядки
+unrest|беспокойство,беспорядки (=не отдых)
 firm|твёрдый
 firmness|твердость
 subsequent|последующий
@@ -3250,7 +3250,7 @@ definite|определённый
 definitely|определенно (вводн. слово)
 indefinite|неопределенный
 toward|по направлению к
-towards|по направлению к-2
+towards|по направлению к
 excellent|превосходный
 excellence|превосходство
 flip|переворачивать,перевёрнутый
@@ -3967,8 +3967,7 @@ leather|кожаный,кожа
 basement|подвал
 instance|пример,экземпляр
 for instance|например
-sheep|овца
-pl:sheep|овца-2
+sheep|овца,овцы
 sufficient|достаточный
 insufficient|недостаточный
 sufficiency|достаточность
@@ -4122,7 +4121,7 @@ rotation|вращение
 tape|лента,записывать на ленту
 shirt|рубашка
 t-shirt|футболка
-tee|футболка-2
+tee|футболка (=t-shirt)
 sweatshirt|свитшот
 shirtless|без майки
 turkey|индейка,индюк
