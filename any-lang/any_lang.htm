@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>[·EN Demo·]</title>
+  <style>
+    :root { --primary: #0066ff; --gray: #f0f2f5; }
+    body { font-family: 'Segoe UI', sans-serif; margin:0; background:var(--gray); color:#333; line-height:1.6; }
+    .lang-switch { position:absolute; top:15px; right:20px; }
+    select#id_lang { padding:8px 2px; font-size:16px; border:2px solid var(--primary); border-radius:8px; background:#fff; cursor:pointer; }
+    select#id_lang:focus { outline:none; box-shadow:0 0 0 3px rgba(0,102,255,.3); }
+    main { max-width:900px; margin:10px auto; padding:0 20px; }
+    .card { background: #fff;padding: 5px 5px 5px 25px;border-radius: 12px;box-shadow: 0 4px 15px rgba(0,0,0,.08);margin-bottom: 5px;}
+    h1, h2 { display: inline;color:var(--primary); } /*[·EN Demo·] test comment1 */
+    input, textarea { width:90%; padding:10px; margin:1px 0; border:1px solid #ccc; border-radius:8px; font-size:16px; }
+    button { background:cadetblue; color:white; border:none; padding:12px 24px; border-radius:8px; cursor:pointer; font-size:16px; }
+    footer { text-align:center; padding:0px; color:#777; font-size:14px; }
+    @media (max-width:600px) { .lang-switch { position:static; text-align:center; margin:10px 0; } }
+    .test::before {  content:'([·EN Demo·]) ';  border:1px solid red;}
+  </style>
+
+  <script>
+    console.log('--- "Родной" скрипт0 ЗАГРУЖЕН ---');
+    // Глобальные переменные для теста
+    // restart_js() должен будет "сломаться" об них.
+
+    window.TEST_CONST = 'ORIGINAL [·Send Message·] value';//const
+    window.g_let_counter = 1; //let
+
+    /**
+     * "Родной" обработчик событий
+     */
+    function native_event_handler() {
+      console.log(`--- СРАБОТАЛ NATIVE EVENT (click) ---`);
+      // Этот handler "видит" переменные из своей области видимости
+      console.log(`TEST_CONST = ${TEST_CONST}`);
+
+      // то эта функция будет инкрементить 'window.g_let_counter'
+      console.log(`g_let_counter (до инкремента) = ${g_let_counter}`);
+      g_let_counter++;
+      console.log(`g_let_counter (после инкремента) = ${g_let_counter}`);
+
+      // Добавляем видимый фидбек
+      const feedback = document.createElement('div');
+      feedback.style.color = 'red';
+      feedback.textContent = `Native event #${g_let_counter - 1} fired. const is: ${TEST_CONST}`;
+
+      // 'this' - это элемент #test-area
+      this.appendChild(feedback);
+    }
+
+    /**
+     * "Родная" функция init()
+     */
+    function init(){
+      alert('a0=[·Your Name·]');setTimeout(abc1,5000,'a5000=[·Your Name·]');
+
+      console.log("--- Вызвана ОРИГИНАЛЬНАЯ init() ---");
+      console.log(`init() видит TEST_CONST: ${TEST_CONST}`);
+      el('id_restart').textContent=g_AnyLang.config.restart;
+      el('id_replace').textContent=g_AnyLang.config.replace;
+      const testArea = document.getElementById('id_b1');
+      if (testArea) {
+        // Вешаем "родной" обработчик
+        console.log("init(): Вешаем 'native_event_handler' на #test-area");
+        testArea.addEventListener('click', native_event_handler);
+      }
+    }
+  </script>
+</head>
+
+<body>
+<header>
+  <div class="lang-switch">
+  <button onclick="abc1(1)">test1</button><button onclick="abc2()">test2</button>
+  <select disabled id="id_lang">
+    <option value="EN">EN</option>
+  </select>
+  </div>
+</header>
+
+<main id="id_main">
+  <div class="card test">
+  <h1>[·Welcome to AnyLang·]</h1>
+  <p>[·The easiest way to translate your site. No code. No server. Just text.·]</p>
+  </div>
+
+  <div class="card">
+  <h2>[·Why Choose AnyLang?·]</h2>//Alert=<h2 id="id_alert">text</h2>//
+  <ul>
+    <li>[·No npm, no build, no pain·]</li>
+    <li>[·Works on any hosting·]</li>
+    <li>[·Add language in 30 seconds·]</li>
+    <li>[·Translates everything: comments, titles, placeholders·]</li>
+  </ul>
+  </div>
+
+  <div class="card">
+  <h2>[·Live Stats·]:</h2>
+  <span>/[·Translated strings:·] <b id="id_replace">0</b></span>
+  <span>/[·Scripts restarted:·] <b id="id_restart">0</b></span>
+  </div>
+
+  <div class="card">
+  <h2>[·Get in Touch·]</h2>
+  <form>
+    <input type="text" placeholder="[·Your Name·]" title="[·Enter your full name·]" />
+    <input type="email" placeholder="[·Email Address·]" title="[·We will never spam·]" />
+    <textarea rows="2" placeholder="[·Your Message·]"></textarea>
+    <button id="id_b1" type="button">[·Send Message·]</button>
+  </form>
+  </div>
+</main>
+
+<footer>
+  <p>[·Made with using AnyLang — i18n for humans·]</p>
+</footer>
+
+
+
+<script>
+ console.log('--- "Родной" скрипт1 ЗАГРУЖЕН ---');
+ function abc1(s){alert(s+'[[·EN Demo·]]');}//[·EN Demo·] test comment3
+</script>
+
+<script>
+ console.log('--- "Родной" скрипт2 ЗАГРУЖЕН ---');
+ console.log('ANYlang_sToP_ReStArT');//если есть эта строка в секции, то её не перезапускает
+ alert=function(s){el('id_alert').innerHTML='<i style="color:red">'+s+'</i>';}
+ function abc2(){alert('[[[·EN Demo·]');} //этот не поменяется
+</script>
+
+
+<!-- AnyLang Engine [·EN Demo·] test comment2-->
+<script src="all_lang.txt"></script>
+<script src="any_lang.js"></script>
+<script>
+ console.log('--- "Родной" скрипт3 ЗАГРУЖЕН после загрузки any_lang ---');
+ if(!window.g_AnyLang){window.onload=init;} //если есть то запустит init после замены строк и рестарта скриптов
+
+  // Подсвечиваем, что перевод прошёл (хак)
+  g_AnyLang.config.onReplaceDone = function() {
+  if (g_AnyLang.config.replace > 0) {
+    document.body.style.transition = 'background 0.5s';
+    document.body.style.background = 'coral';
+    setTimeout(() => document.body.style.background = 'var(--gray)', 500);
+  }
+  }
+</script>
+</body>
+</html>

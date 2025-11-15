@@ -1,0 +1,87 @@
+console.log('--- all_lang.js Loaded --');
+
+window.g_all_lang = `
+### EN (english)
+1. EN Demo
+2. The easiest way to translate your site. No code. No server. Just text.
+3. Get in Touch
+4. Your Name
+5. Enter your full name
+6. Email Address
+7. We will never spam
+8. Your Message
+9. Send Message
+10. Why Choose AnyLang?
+11. No npm, no build, no pain
+12. Works on any hosting
+13. Add language in 30 seconds
+14. Translates everything: comments, titles, placeholders
+15. Live Stats
+16. Translated strings:
+17. Scripts restarted:
+18. Made with using AnyLang — i18n for humans
+19. Welcome to AnyLang
+
+### RU (русский)
+1. RU Демо
+2. Самый простой способ перевести сайт. Без кода. Без сервера. Только текст.
+3. Связаться с нами
+4. Ваше имя
+5. Введите полное имя
+6. Email
+7. Спам не шлём
+8. Ваше сообщение
+9. Отправить
+10. Почему AnyLang?
+11. Без npm, без сборки, без гимороя
+12. Работает на любом хостинге без сервера (без PHP, Python итд)
+13. Добавь язык за 30 секунд
+14. Переводит всё: комментарии, подсказки, плейсхолдеры, CSS, JS строки
+15. Статистика
+16. Переведено строк:
+17. Перезапущено скриптов:
+18. Сделано с на AnyLang — i18n для людей
+19. Добро пожаловать в AnyLang
+
+### FR (français)
+1. FR Démo
+2. La façon la plus simple de traduire votre site. Sans code. Sans serveur. Juste du texte.
+3. Contactez-nous
+4. Votre nom
+5. Entrez votre nom complet
+6. Adresse email
+7. Pas de spam, promis
+8. Votre message
+9. Envoyer
+10. Pourquoi choisir AnyLang ?
+11. Pas de npm, pas de build, pas de galère
+12. Fonctionne sur tout hébergement
+13. Ajoutez une langue en 30 secondes
+14. Traduit tout : commentaires, titres, placeholders
+15. Statistiques en direct
+16. Chaînes traduites :
+17. Scripts relancés :
+18. Fait avec grâce à AnyLang — i18n pour les humains
+19. Bienvenue sur AnyLang
+
+### DE (deutsch)
+1. DE Demo
+2. Der einfachste Weg, Ihre Website zu übersetzen. Kein Code. Kein Server. Nur Text.
+3. Kontakt
+4. Ihr Name
+5. Geben Sie Ihren vollständigen Namen ein
+6. E-Mail-Adresse
+7. Kein Spam, versprochen
+8. Ihre Nachricht
+9. Absenden
+10. Warum AnyLang wählen?
+11. Kein npm, kein Build, keine Probleme
+12. Funktioniert auf jedem Hosting
+13. Sprache in 30 Sekunden hinzufügen
+14. Übersetzt alles: Kommentare, Titel, Platzhalter
+15. Live-Statistiken
+16. Übersetzte Zeichenketten:
+17. Skripte neu gestartet:
+18. Mit gemacht mit AnyLang — i18n für Menschen
+19. Willkommen bei AnyLang
+`;
