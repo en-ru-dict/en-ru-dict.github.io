@@ -111,6 +111,7 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvet
    <input type="checkbox" name="neizv" id="id_mode" />
  </div>
  <a href="https://postimg.cc/gallery/SkHXgSw">(Галерея новая на фотохостинге)</a>
+__<a href="https://drive.google.com/file/d/1-3WABwdqZ5oXVrVFP4ruJqm3W2ZMaE1x/view?usp=drivesdk">Видеокарточки</a>
  <div class="spacer"></div>
 </div>
 
@@ -159,7 +160,7 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvet
     var parts = (line+';;').split(';');
     var name = parts[0].trim(); if(name=='')name='name_pic';
     var jpg  = parts[1].trim(); if(jpg=='')jpg='0'; jpg+='.jpg';
-    var png  = parts[2].trim(); if(png=='')png='0.png';
+    var png  = parts[2].trim(); if(png=='')png=jpg;if(png=='0.png')png=jpg;
     return { name:name, jpg:jpg, png:png };
   });
 
@@ -314,7 +315,7 @@ function loadPNG(i){
    cb.style.display='none';
    setTimeout(()=>{ib.style.display='none'},3000);
   };
-  big.onerror=()=>{ if(cancelled)return; clearInterval(int); ib.style.display='block'; it.textContent='Ошибка загрузки PNG'; isLoading=false; };
+  big.onerror=()=>{ if(cancelled)return; clearInterval(int); ib.style.display='block'; it.textContent='Ошибка загрузки '+png; isLoading=false; };
 }
 function closeFullscreen(){document.exitFullscreen();
   eid('fullscreen-view').style.display='none';
