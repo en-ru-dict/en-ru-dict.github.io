@@ -12,17 +12,16 @@
 <link rel="canonical" href="https://en-ru-dict.github.io">
 <style>
 img[src=''] {display:none;}
-body {overflow-x: hidden;min-width:350px;background:#E6E7E9;margin:0;padding:0;font-family:'Pontano Sans',Arial,Helvetica,sans-serif;font-size:16px;color:black;}
+body {overflow-x: hidden;min-width:350px;background:#E6E7E9;margin:0;padding:0;font-family:'Pontano Sans',Arial,Helvetica,sans-serif;font-size:16px;color:#000;}
 .container {position:relative;z-index:2;padding:10px;box-shadow:0 5px 5px 5px #CCCCCC;background-color:floralwhite;}
 center {background:#eeffee}
 p {background:azure;padding:10px;font-size:20px;}
-a { 
- color: white; font-size:1.2em; font-weight: 600; border: 1px dotted black;
+a {
+ color:#fff; font-size:1.2em; font-weight:600; border: 1px dotted #000;
  padding: 15px; text-decoration: none; border-radius:10px; display:inline-block;
- background: -webkit-gradient(linear, left top, left bottom, from(deepskyblue),to(black));
+ background: -webkit-gradient(linear, left top, left bottom, from(deepskyblue),to(#000));
  box-shadow:0px 1px 3px rgba(000,000,000,0.5),inset 0px 0px 1px rgba(255,255,255,0.5);
- text-shadow: 1px -1px 1px black,1px 1px 0px rgba(0, 0, 0, 0.5);
-  
+ text-shadow: 1px -1px 1px #000,1px 1px 0px rgba(0, 0, 0, 0.5);
 }
 .zerk {
   display: flex; align-items: center; justify-content: center; text-align: center;
@@ -30,10 +29,10 @@ a {
 }
 .t1{font-size:3em;position:relative;}
 .t1:after{content:"Ассоциации для 5000 английских слов";position:absolute;left:0;right:0;top:0;bottom:0;-webkit-text-stroke:2px deepskyblue;}
-.t1:before{content:"Ассоциации для 5000 английских слов";position:absolute;left:0;right:0;top:0;bottom:0;-webkit-text-stroke:3px black;}
+.t1:before{content:"Ассоциации для 5000 английских слов";position:absolute;left:0;right:0;top:0;bottom:0;-webkit-text-stroke:3px #000;}
 
 .t2{color:gold;font-size:2em;position:relative;}
-.t2:after{content:"быстро учим слова по смешным фонетическим ассоциациям";position:absolute;left:0;right:0;top:0;bottom:0;-webkit-text-stroke:1px black;}
+.t2:after{content:"быстро учим слова по смешным фонетическим ассоциациям";position:absolute;left:0;right:0;top:0;bottom:0;-webkit-text-stroke:1px #000;}
 
 h3 {margin: 1%;}
 #id_kn {position:absolute;right:0;top:0;z-index:3;}
@@ -52,41 +51,39 @@ h3 {margin: 1%;}
 .mf-title {font-size: 22px; font-weight: 700; margin-bottom: 6px;}
 .mf-sub {font-size: 15px; color: #444; margin-bottom: 12px; line-height: 1.4;}
 .mf-main-btn {
- display: block;
- text-align: center;text-decoration: none; font-size: 18px; font-weight: 700;
- background: linear-gradient(135deg, #ff9800, #ff5722); color: #fff;
- padding: 14px; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+ display:block; text-align:center; text-decoration:none; font-size:18px; font-weight:700;
+ background: linear-gradient(135deg, #ff9800, #ff5722); color:#fff;
+ padding:14px; border-radius:12px; box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 .mf-main-btn:active {transform: scale(0.97);}
 .mf-list-block {margin-top: 10px;}
 .mf-list-item {
- display: block; background: #f5f7fa; color: #000;
- border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.12);
- padding: 12px; margin-bottom: 10px; text-decoration: none;
+ display:block; background:#f5f7fa; color:#000; border-radius:12px; text-decoration:none;
+ box-shadow: 0 2px 6px rgba(0,0,0,0.12); padding:12px; margin-bottom:10px; 
 }
-.mf-list-item strong {display: block; font-size: 17px; margin-bottom: 6px;}
+.mf-list-item strong {display:block; font-size:17px; margin-bottom:6px;}
 .mf-links a {
- display: inline-block; margin: 4px 6px 0 0; padding: 6px 10px; text-decoration: none;
- background: #2b7cff; color: #fff; border-radius: 8px; font-size: 13px;
+ display:inline-block; margin: 4px 6px 0 0; padding: 6px 10px; text-decoration:none;
+ background:#2b7cff; color:#fff; border-radius: 8px; font-size: 13px;
 }
-.mf-links a.pdf { background:#9c27b0; }
-.mf-links a.txt { background:#607d8b; }
-.mf-links a.apkg { background:#009688; }
-.mf-media {display: flex;gap: 10px;flex-wrap: wrap;}
+.mf-links a.pdf {background:#9c27b0;}
+.mf-links a.txt {background:#607d8b;}
+.mf-links a.apkg {background:#009688;}
+.mf-media {display:flex; gap:10px; flex-wrap:wrap;}
 .mf-media a {
- flex: 1 1 140px; text-align: center; background: #111; color: #fff; padding: 14px;
+ flex: 1 1 140px; text-align:center; background:#111; color:#fff; padding: 14px;
  border-radius: 12px; text-decoration: none; font-weight: 600;
 }
-@media (min-width: 900px) { .mobile-facade { display: none; }}
+@media (min-width: 900px) { .mobile-facade {display:none;}}
 
-#id_cardLink { display: block; text-decoration: none; padding:0;}
+#id_cardLink { display:block; text-decoration:none; padding:0;}
 #id_pic {
- position: relative; width: 100%; min-height: 250px;
- overflow: hidden; perspective: 800px; transform-style: preserve-3d;
+ position:relative; width:100%;
+ overflow:hidden; perspective:800px; transform-style:preserve-3d;
 }
 #id_pic img {
-  margin-left: auto; margin-right: auto; min-width: 100%; max-height: 350px; display: block;
-  will-change: transform; animation: float3d 9s ease-in-out infinite;
+  width:100%; height:auto; max-height:350px; display:block;
+  will-change:transform; animation: float3d 9s ease-in-out infinite;
 }
 @keyframes float3d {
   0% {transform: rotateY(-2deg) rotateX(1deg) scale(1);}
@@ -96,24 +93,24 @@ h3 {margin: 1%;}
   100% {transform: rotateY(-2deg) rotateX(1deg) scale(1);}
 }
 #id_pic div {
- position: absolute; bottom: 1%; padding: 8px 14px; border-radius: 14px;
- background: rgba(0,0,0,0.55); color: #fff; font-size: 18px; font-weight: 600;
- letter-spacing: 0.4px; white-space: nowrap;
+ position:absolute; bottom:1%; padding: 8px 14px; border-radius:14px;
+ background: rgba(0,0,0,0.55); color:#fff; font-size:18px; font-weight:600;
+ letter-spacing:0.4px; white-space:nowrap;
  text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(255,160,80,0.6);
- box-shadow:  0 0 12px rgba(255,160,80,0.4), inset 0 0 10px rgba(255,200,120,0.2);
+ box-shadow: 0 0 12px rgba(255,160,80,0.4), inset 0 0 10px rgba(255,200,120,0.2);
  pointer-events: none;
 }
-@media (max-width: 900px) { #caption {font-size: 15px; padding: 6px 10px; border-radius: 12px; bottom: 1%;}}
-@media (max-width: 420px) { #caption { font-size: 13px; padding: 5px 9px; }}
+@media (max-width:900px){#caption {font-size:15px;padding:6px 10px;border-radius:12px;bottom:1%;}}
+@media (max-width:420px){#caption {font-size:13px; padding: 5px 9px;}}
 
 :root {
   --bg2: none;
   --bgo: none;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin:0; padding:0; box-sizing:border-box; }
 .fon2 {
-  display: flex; position: fixed; width: 100vw; height: 100vh; top:0; left:0;
-  z-index:1; pointer-events: none; background: fixed center; background-color: black;
+  display:flex; position:fixed; width:100vw; height:100vh; top:0; left:0;
+  z-index:1; pointer-events:none; background: fixed center; background-color:#000;
 }
 #id_content {
  position: relative; z-index:1; min-height: 100vh; min-width: 300px; color: #fff;
@@ -137,26 +134,22 @@ h3 {margin: 1%;}
 .zerk img {border-radius: 50%;object-fit: cover; position: absolute; top:0; left:0; width:100%; height:100%;}
 .zerk b {z-index:1; font-size: x-large; color: gold;}
 
-.controls { 
+.controls {
 	margin-bottom: 40px;
-  background: radial-gradient( black 50%, #ca20a7 80% );
+  background: radial-gradient( #000 50%, #ca20a7 80% );
   border: 2px solid #006633;border-radius: 2em;
-  min-width:50%; 
+  min-width:50%;
   }
 #id_btnBeauty {
- padding: 10px 14px; 
- border-radius: 2em; 
- cursor: pointer; 
+ padding: 10px 14px;
+ border-radius: 2em;
+ cursor: pointer;
   background: radial-gradient(blue, transparent 60%);
   height: 100%;width:100%;
   font-size:22px;
   text-align: center;
   font-weight: 600;
-  text-shadow:
-  0 0 2px black,
-  0 0 2px black,
-  0 0 2px black,
-  0 0 2px black;
+  text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000;
  animation: bb 4s linear infinite;
 }
 @keyframes bb {
@@ -251,7 +244,7 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 
 <a href="https://drive.google.com/drive/folders/1iCRufKm1ODMCN-ADjn9F9z8cjpWGzL2v" id="id_cardLink" target="_blank">
  <div id="id_pic">
-  <img src="al.jpg" alt="Видеокарточки">
+  <img src="al.jpg" alt="Видеокарточки" width="537" height="251">
   <div id="caption">▶ Смотреть Видео карточки 2026г</div>
  </div>
 </a>
@@ -280,7 +273,7 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 <div class="glade">
 <div class="sektorL">
 <a class="zerk" href="card/!gallery.htm">Весёлые картинки 100шт +видео из них</a>
-<a class="zerk" href="500/matr.txt">Метод Матрешка и Сцепка</a>
+<a class="zerk" href="500/matr.htm">Метод Матрешка и Сцепка</a>
 <a class="zerk" href="500/New-General-Word-List-(NGSL).txt">2800 слов New General Word List (NGSL) </a>
 </div>
 <div class="sektorR">
@@ -373,7 +366,7 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 <div class="sektorR">
 <a class="zerk" href="arfa.htm">Чудо мастерская для англо-русских фонетических ассоциаций</a>
 <a class="zerk" href="kak.htm">Как лучше и быстрее учить слова (лайфхак)</a>
-<a class="zerk" href="https://github.io/en-ru-dict">Как быстро и весело выучить 5000+ слов и не сойти с ума :)</a>
+<a class="zerk" href="https://github.com/en-ru-dict">Как быстро и весело выучить 5000+ слов и не сойти с ума :)</a>
 </div>
 </div>
 <p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
@@ -383,9 +376,9 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 <h1 class="title">Полезные сайты</h1>
 <div class="glade">
 <div class="sektorL">
-<a class="zerk" href="https://myefe.ru/cards#/">myefe.ru Забавные карточки с картинками для детей жаль мало)</a>
-<a class="zerk" href="http://www.barius.ru/english/">barius.ru Очень крутой сайт с ФА(мало) но много старых книг и журналов)</a>
-<a class="zerk" href="http://englspace.com/mnemo/">englspace.com 17к-ФА Поиск по слову, можно свои добавить)</a>
+<a class="zerk" href="https://myefe.ru/cards#/">myefe.ru Забавные карточки с картинками для детей жаль мало</a>
+<a class="zerk" href="http://www.barius.ru/english/">barius.ru Очень крутой сайт с ФА(мало) но много старых книг и журналов</a>
+<a class="zerk" href="http://englspace.com/mnemo/">englspace.com 17к-ФА Поиск по слову, можно свои добавить</a>
 </div>
 <div class="sektorR">
 <a class="zerk" href="http://mnemobank.chat.ru">mnemobank.chat.ru Старинный сайт с ФА(много) на чат.ру (заброшенный)</a>
@@ -426,8 +419,8 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 <br>
 <a href="index0.htm">Старая версия сайта (для ботов)</a>
 <span id="id999">
-<a href="http://www.24log.de" target="_blank"><img border="0" src="https://counter.24log.ru/buttons/cl4/48-0.gif" alt="html counter" title="" /></a>
-<a href="http://www.24log.ru" target="_blank"><img border="0" src="https://counter.24log.ru/count4_282346_48_1_6.pcx" alt="счетчик посетителей сайта" title="счетчик для сайта" /></a>
+<a href="http://www.24log.de" target="_blank"><img src="https://counter.24log.ru/buttons/cl4/48-0.gif"></a>
+<a href="http://www.24log.ru" target="_blank"><img src="https://counter.24log.ru/count4_282346_48_1_6.pcx"></a>
 </span>
 <h3>- Сайт работает 2023-2026г -</h3>
 </div>
@@ -445,7 +438,7 @@ function loadScript(url){
 }
 var g_mode=0;
 async function want_fancy(){//загрузка css js
- if(g_mode){ el('toggle-panel').checked = true; return;} //панель управления снизу
+ if(g_mode){ if(window['run_panel']) run_panel(); return;} //панель управления снизу
  g_mode=1;
  let r=await loadScript('fancy.js');
  if(!r) alert('что то пошло не так, приходите завтра!');
@@ -506,7 +499,7 @@ var g_h2=0;
 var g_h2t=document.querySelector('.t2');
 var g_color='orangered springgreen chocolate deeppink deepskyblue darkorange dodgerblue fuchsia tomato lime mediumseagreen'.split(' ');
 function h2color(){g_h2++;g_h2t.style='color:'+g_color[g_h2%11];if(g_h2<100)setTimeout(h2color,2500);}
-h2color();
+h2color(); // игра цветов через js
 </script>
 
 </body>

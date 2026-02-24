@@ -1,8 +1,8 @@
-//=============fancy.js===========
+//==========fancy.js====Xing*2026=======
 function els(s){return document.querySelectorAll(''+s);}
 function css_var(v,d){document.documentElement.style.setProperty(''+v,''+d);}
-function log(s,o){ return;
-  console.log(''+s,o);
+function log(s,o){ //для отладки
+  //console.log(''+s,o);
 }
 function getPerspectiveAngle(contW, contH, p){
   const w = contH / 2;// Половина ширины картинки (квадрат)
@@ -19,7 +19,7 @@ function getPerspectiveAngle(contW, contH, p){
 }
  function applyCalculatedAngle() {
   const p = 1000;
-  const targetSection = el('id_sl');// ширина LEFT секции, так как она жива всегда
+  const targetSection = el('id_sl');// ширина LEFT секции, она жива всегда
   const w = targetSection.offsetWidth;
   const h = targetSection.offsetHeight;
   const calculatedAngle = getPerspectiveAngle(w, h, p);
@@ -38,7 +38,7 @@ function debounceResize(){
  g_resizeTimer=setTimeout(applyCalculatedAngle,100)
 }
 window.addEventListener('resize',debounceResize)
-
+function is_vert(){return (window.innerHeight>window.innerWidth);}
 function set_o(s){document.body.className='oval v'+s;}
 function set_ef(n){
    applyCalculatedAngle();
@@ -50,36 +50,46 @@ function del_all_video(){ els('video').forEach(v=>{v.pause(); v.remove();});}
 function del_bg(v){
  if(v==1) css_var('--bg2','none');
  if(v==2) els('.fon2 img').forEach(b => b.remove());
- if(v==3) els('.fon2 video').forEach(b => b.remove());
+ if(v==3) els('.fon2 video').forEach(b => {b.pause();b.remove();});
 }
 var el_sr=el('id_sr');
 var el_sl=el('id_sl');
 var g_video='<video muted playsinline loop></video>';
 var g_img='<img src="" alt="" >';
 function set_bg(u){ var e; //фон2 бэкграунд, img video
- stopFairy();
- if(u==''){del_bg(1);del_bg(2);del_bg(3);return;}
+ if(u=='0'){del_bg(1);del_bg(2);del_bg(3);return;}
+ if(u=='1'){u='bg.png';css_var('--bg2s','auto');startFairy('');}
+ if(u=='2'){u='bg.jpg';css_var('--bg2s','auto');}
+ if(u=='3'){u='mir1.jpg';css_var('--bg2s','cover');}
+ if(u=='4'){u='mir2.jpg';css_var('--bg2s','cover');}
+ if(u=='5'){u='mir3.jpg';css_var('--bg2s','cover');}
+ if(u=='6'){u='mir4.jpg';css_var('--bg2s','cover');}
+ if(u=='7'){u='mir5.jpg';css_var('--bg2s','cover');}
+
   start_loading();
   if(u.endsWith('.mp4')){
-   el_sl.innerHTML=g_video; if(window.innerHeight<window.innerWidth) el_sr.innerHTML=g_video;  
+   el_sl.innerHTML=g_video; if(!is_vert()) el_sr.innerHTML=g_video;
    e = document.createElement('video');
-   e.muted = true;e.loop = true;e.playsInline = true;e.preload = 'auto';e.autoplay = true;
+   e.muted = true;e.loop = true;e.playsInline = true;e.preload = 'auto';
    e.onerror = (er)=> {alert('ошибка загрузки='+u); end_loading();}
-   e.oncanplaythrough = ()=>{ 
+   e.oncanplaythrough = ()=>{
      del_bg(1);del_bg(2);
-     els('.fon2 video').forEach(b=>{b.src=u; b.play();}); 
+     els('.fon2 video').forEach(b=>{b.src=u; b.play();});
      e.remove(); end_loading();
    }
-   e.src = u; e.load(); 
+   e.src = u; e.load();
    return;
   }
-  var n=1; 
-  if((u=='mir2') || (u=='mir4')) {
-    u=u+'.jpg'; n=2; //2img
-    el_sl.innerHTML=g_img; if(window.innerHeight<window.innerWidth) el_sr.innerHTML=g_img;
+  var n=1;
+  if((u=='8') || (u=='9')) {
+    n=2; //2img
+    if(u=='8')u='mir2.jpg';
+    if(u=='9')u='mir4.jpg';
+    el_sl.innerHTML=g_img; if(!is_vert()) el_sr.innerHTML=g_img;
   }
   e = new Image();
   e.onload = ()=>{
+    css_var('--wh',e.naturalWidth/e.naturalHeight);
     if(n==1){del_bg(2);del_bg(3); css_var('--bg2',`url("${u}")`);}
     if(n==2){del_bg(1);del_bg(3); els('.fon2 img').forEach(b=>b.src=u);}
     e.remove(); end_loading();
@@ -96,7 +106,7 @@ const videoObserver = new IntersectionObserver((entries) => {
       if(entry.isIntersecting) b.play().catch(() => {}); // Кнопка в кадре — запускаем
       else  b.pause(); // Кнопка ушла — стоп машина! (экономим CPU)
      }
-    }); 
+    });
     const g = entry.target.querySelectorAll('.zerk');
     g.forEach(b=>{
      if(entry.isIntersecting) show(b); // Кнопка в кадре — запускаем
@@ -117,7 +127,7 @@ function set_ov(u){ var e,n;
   start_loading();
   if(u.endsWith('.mp4')){
    e = document.createElement('video');
-   e.preload = 'auto';e.loop = true;e.muted = true;e.playsInline = true;
+   e.preload = 'auto';//e.loop = true;e.muted = true;e.playsInline = true;
    e.oncanplaythrough = ()=>{
     del_ov(1);del_ov(2); els('.zerk video').forEach(b=>{b.src=u; b.play();});
     e.remove(); end_loading();
@@ -160,10 +170,15 @@ function get_wh(){
   const orient = w > h ? 'landscape' : 'portrait';
   return ('w='+w+' h='+h+' :'+orient);
 }
-
-function set_weather(v){ el('id_weather').className=v;} // Смена погоды
+function set_weather(v){// Смена погоды
+ var s='';  
+ if(v=='1') s='snow';
+ if(v=='2') s='rain';
+ if(v=='3') s='fog';
+ el('id_weather').className=s;
+ if(v==0)set_w=function(){};
+}
 var g_css=`
-
 /* РЕЖИМ ОВАЛОВ (Волшебные зеркала) */
 .oval .zerk {
  position: absolute;
@@ -251,7 +266,7 @@ var g_css=`
 .fon2 {
   display: flex; position: fixed; width: 100vw; height: 100vh;
   z-index:1;pointer-events: none;
-  background: fixed center; background-size: cover; background-color: black;
+  background: fixed center; background-size: var(--bg2s,auto); background-color: black;
   background-image: var(--bg2,none);
 }
 .fon2 video {width:100%;height:100%;object-fit:cover;}
@@ -262,7 +277,7 @@ var g_css=`
 .left, .right { flex: 0 0 50%; }
 /* ТЕЛЕФОН: левая на весь экран */
 @media (orientation:portrait) {
-  .left { flex: 0 0 100%; }  
+  .left { flex: 0 0 100%; }
   .right { display: none; }
 }
 .section img {height: 100%; width: auto; position: absolute;left: 0;}
@@ -288,12 +303,12 @@ var g_css=`
 .v6 .section img {will-change: transform; animation: l5 8s linear infinite;}
 .v7 .fon2{
   background-repeat:repeat-x;
-  background-size: 100vw 100vh;
+  background-size: auto 100%;
   animation: moveBg 30s linear infinite;
 }
 @keyframes moveBg{
   from{background-position:0 0;}
-  to{background-position:100vw 0;}
+  to{background-position:calc(100vh*var(--wh,1)) 0;}
 }
 .v8 .section.left  img {will-change: transform; left: auto; transform-origin: center center;  animation: l8 8s linear infinite;}
 .v8 .section.right img {will-change: transform; left: auto; transform-origin: center center;  animation: r8 8s linear infinite;}
@@ -308,8 +323,8 @@ var g_css=`
 .v9 .section img {will-change: transform; left: auto; transform-origin: center center;  animation: l8 8s linear infinite;}
 
 .snow { opacity: 0.4; background-image:url("snow.gif");}
-.rain { opacity: 0.6 ;background-image:url("rain.gif"); animation:rain 10s linear infinite;}
-.fog { opacity: 0.2 ;background-image:url("fog.gif"); animation:fog 20s linear infinite;}
+.rain { opacity: 0.5 ;background-image:url("rain.gif"); animation:rain 10s linear infinite;}
+.fog { opacity: 0.3 ;background-image:url("fog.gif"); animation:fog 20s linear infinite;}
 @keyframes fog{ from{background-position:0 0} to{background-position:100vw 0}}
 @keyframes rain{ from{background-position:0 0} to{background-position:0 100vh}}
 
@@ -363,16 +378,18 @@ var g_html=`
  <div class="panel-content">
 
    <select onchange="set_bg(this.value)">
-    <option value="">Фон (нет)<\/option>
-    <option value="mir1.jpg">Поляна 280кб<\/option>
-    <option value="mir2.jpg">Сказка 150кб<\/option>
-    <option value="mir3.jpg">Тропинка 150кб<\/option>
-    <option value="mir4.jpg">Дорога 150кб<\/option>
-    <option value="mir5.jpg">Лес чудес 110кб<\/option>
-    <option value="mir4">Дорога 2х<\/option>
-    <option value="mir2">Сказка 2х<\/option>
-    <option value="bg.mp4">Фон1 видео 2,5мб<\/option>
-    <option value="bg7.mp4">Фон2 видео 7,5мб<\/option>
+    <option value="0">Фон (нет)<\/option>
+    <option value="1">Простой1<\/option>
+    <option value="2">Простой2<\/option>
+    <option value="3">Поляна 280кб<\/option>
+    <option value="4">Сказка 150кб<\/option>
+    <option value="5">Тропинка 150кб<\/option>
+    <option value="6">Дорога 150кб<\/option>
+    <option value="7">Лес чудес 110кб<\/option>
+    <option value="8">Сказка 2х<\/option>
+    <option value="9">Дорога 2х<\/option>
+    <option value="bg.mp4">Фон1 видео 1,5мб<\/option>
+    <option value="bg7.mp4">Фон2 видео 7мб<\/option>
    <\/select>
 
    <select onchange="set_ef(this.value)">
@@ -380,8 +397,8 @@ var g_html=`
     <option value="2">Центр<\/option>
     <option value="3">Слева<\/option>
     <option value="4">Справа<\/option>
-    <option value="5">→ Сдвиг-1<\/option>
-    <option value="6">← Сдвиг-2<\/option>
+    <option value="5">➡️ Сдвиг-1<\/option>
+    <option value="6">⬅️ Сдвиг-2<\/option>
     <option value="8">🔄 Поворот-1<\/option>
     <option value="9">🔄 Поворот-2<\/option>
     <option value="7">Панорама 1x<\/option>
@@ -389,16 +406,16 @@ var g_html=`
 
    <select onchange="set_ov(this.value)">
     <option value="">Вид зеркала (нет)<\/option>
-    <option value="mirror.png">Красивый 99кб<\/option>
+    <option value="mirror.png">Красивый 20кб<\/option>
     <option value="mirror.gif">Гифка 1.5мб<\/option>
     <option value="mirror.mp4">mp4? 350кб<\/option>
    <\/select>
 
    <select onchange="set_weather(this.value)">
-    <option value="">Погода (нет)<\/option>
-    <option value="snow">❄️ Снег<\/option>
-    <option value="rain">🌧️ Дождь<\/option>
-    <option value="fog">🌫 Туман<\/option>
+    <option value="0">Погода (нет)<\/option>
+    <option value="1">❄️ Снег ☃️<\/option>
+    <option value="2">⛈️ Дождь ☔ <\/option>
+    <option value="3">🌫 Туман ☁️<\/option>
    <\/select>
 
    <div class="actions">
@@ -421,7 +438,7 @@ function fly(){
   fairy = document.createElement('div');
   fairy.id = 'flyingFairy';
   Object.assign(fairy.style, {
-    position: 'fixed', top: '0', left: '0', width: '100px', height: '100px', zIndex: '9999',
+    position: 'fixed', top: '0', left: '0', width: '75px', height: '100px', zIndex: '9999',
     pointerEvents: 'none', backgroundSize: 'contain', backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center', backgroundImage: "url('fairy.gif')",
     transform: 'translate(0px, 0px)', filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.8))',
@@ -463,7 +480,6 @@ function fly(){
   state.isActive = true;
   if(!animationFrameId){ animate(); }
  }
-
  function stopFairy() {
   if(!state.isActive) return;
   state.isActive = false;
@@ -475,11 +491,9 @@ function fly(){
   }
   if(fairy){ fairy.remove(); fairy = null; }
  }
-
  // Экспортируем в глобальную область
  window.startFairy = startFairy;
  window.stopFairy  = stopFairy;
-
  console.log('Фея-помощница готова. Вызови startFairy() / stopFairy()');
 };
 function set_a(h){
@@ -491,21 +505,37 @@ function start_fancy(){
  els('.mobile-facade').forEach(b=>b.remove());
  els('#id_cardLink').forEach(b=>b.remove());
  window.scrollTo(0,0);
-  var st=document.createElement('style'); st.textContent=g_css; document.head.appendChild(st);
+ var st=document.createElement('style'); st.textContent=g_css; document.head.appendChild(st);
  document.body.insertAdjacentHTML('beforeend',g_html);
- set_o(0);//+oval
- els('.hint').forEach(b => b.classList.toggle('open'));
- var bb=el('id_btnBeauty');bb.innerText = "Панель управления сказкой";
- bb=bb.getClientRects()[0].top;window.scrollTo(0,bb);
- els('.zerk').forEach(b =>{b.classList.add('oo');b.innerHTML=set_a(''+b.textContent);});
+ set_o(0);// +oval ef0
+ els('.hint').forEach(b => b.classList.remove('open'));
+ var bb=el('id_btnBeauty'); bb.innerText = "Панель управления сказкой";
+ bb=bb.getClientRects()[0].top; window.scrollTo(0,bb);
+ els('.zerk').forEach(b =>{b.classList.add('oo'); b.innerHTML=set_a(''+b.textContent);});
  //after reload
  el('toggle-panel').checked = false;
  els('select').forEach(b => b.selectedIndex=0);
  if(navigator.hardwareConcurrency<4) alert('слабый девайс, будет тормозить');
 }
-start_fancy();
-fly();
-startFairy();
+function want_fs(){
+ var e=document.documentElement;
+ if(e.requestFullscreen)e.requestFullscreen().catch(()=>{});
+}
+function rnd(k) {
+ var n = Date.now();n=Math.floor(Math.random()*n); n=n%5;
+ if(n==0)n=10;
+ if(n==1)n=100;
+ if(n==2)n=1000;
+ if(n==3)n=10000;
+ if(n==4)n=100000;
+ n = Math.floor(Math.random() * n);  
+ return n % k;
+}
+function set_w(){set_weather(rnd(10));setTimeout(set_w,11111);}
+function run_panel(){log(window.innerWidth+':'+window.innerHeight);el('toggle-panel').checked = true; stopFairy();}
+start_fancy();want_fs();fly();startFairy();set_w();
+var v=rnd(10);set_bg(''+v);if(v==8)set_ef('6');if(v==9)set_ef('8');
+if(rnd(3)){set_ov('');set_ov('mirror.png');}
 
 console.log('красота загружена');
 //text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 10px aqua;
