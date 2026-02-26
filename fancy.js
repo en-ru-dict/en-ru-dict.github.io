@@ -469,7 +469,7 @@ function fly(){
   animationFrameId = requestAnimationFrame(animate);
  }
  function startFairy() {
-  if (state.isActive) return;
+  if(state.isActive) return;
   createFairy();
   // начальная позиция — центр экрана
   state.targetX = state.x = window.innerWidth / 2 - 50;
@@ -502,15 +502,13 @@ function set_a(h){
  return g_img+g_video+`<b title="${h}">${t}<\/b>`;
 }
 function start_fancy(){
- els('.mobile-facade').forEach(b=>b.remove());
- els('#id_cardLink').forEach(b=>b.remove());
- window.scrollTo(0,0);
+ els('.container')[0].remove(); window.scrollTo(0,0);
  var st=document.createElement('style'); st.textContent=g_css; document.head.appendChild(st);
  document.body.insertAdjacentHTML('beforeend',g_html);
  set_o(0);// +oval ef0
  els('.hint').forEach(b => b.classList.remove('open'));
  var bb=el('id_btnBeauty'); bb.innerText = "Панель управления сказкой";
- bb=bb.getClientRects()[0].top; window.scrollTo(0,bb);
+ //bb=bb.getClientRects()[0].top; window.scrollTo(0,bb);
  els('.zerk').forEach(b =>{b.classList.add('oo'); b.innerHTML=set_a(''+b.textContent);});
  //after reload
  el('toggle-panel').checked = false;
@@ -534,7 +532,7 @@ function rnd(k) {
 function set_w(){set_weather(rnd(10));setTimeout(set_w,11111);}
 function run_panel(){log(window.innerWidth+':'+window.innerHeight);el('toggle-panel').checked = true; stopFairy();}
 start_fancy();want_fs();fly();startFairy();set_w();
-var v=rnd(10);set_bg(''+v);if(v==8)set_ef('6');if(v==9)set_ef('8');
+var v=rnd(10);set_bg(''+v);if(v==8)set_ef('6');if(v==9)set_ef('8');if(v==4)set_ef('7');
 if(rnd(3)){set_ov('');set_ov('mirror.png');}
 
 console.log('красота загружена');

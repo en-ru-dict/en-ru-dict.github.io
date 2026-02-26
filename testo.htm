@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+
+<span id="id999">
+<a href="http://www.24log.de" rel="noopener noreferrer" target="_blank">
+ <img src="https://counter.24log.ru/buttons/cl4/48-0.gif" alt="Тут всегда 0" width="48" height="48" loading="lazy" >
+</a>
+<a href="http://www.24log.ru" rel="noopener noreferrer" target="_blank">
+ <img src="https://counter.24log.ru/count4_282346_48_1_6.pcx" alt="Какие-то левые цифры" width="48" height="48" loading="lazy">
+</a>
+</span>
+<script>
+setTimeout(function(){
+  try {
+    var span = document.getElementById('id999');
+var h=span.innerHTML;
+var le=h.length;
+var n=0;
+for(var i=0;i<le;i++)n+=h.charCodeAt(i);
+if(le==401 && n==58820)alert('ok');
+else alert('err:'+h);
+    
+    // 1. Проверяем наличие изображений
+    var imgs = span.querySelectorAll('img');
+    var hasValidImages = false;
+    
+    imgs.forEach(function(img) {
+      if(img.src && img.src.length > 10) {
+        hasValidImages = true;
+        // Принудительно показываем
+        img.style.cssText = 'display:inline-block !important; visibility:visible !important; opacity:1 !important; width:48px !important; height:48px !important;';
+      }
+    });
+    
+    // 2. Если нет - восстанавливаем через создание новых элементов
+    if(!hasValidImages || span.innerHTML.length < 50) {
+      var counters = [
+        { href: 'http://www.24log.de', src: 'https://counter.24log.ru/buttons/cl4/48-0.gif', alt: 'Счетчик посещений' },
+        { href: 'http://www.24log.ru', src: 'https://counter.24log.ru/count4_282346_48_1_6.pcx', alt: 'Счетчик визитов' }
+      ];
+      
+      span.innerHTML = '';
+      counters.forEach(function(c) {
+        var a = document.createElement('a');
+        a.href = c.href;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        
+        var img = document.createElement('img');
+        img.src = c.src;
+        img.alt = c.alt;
+        img.width = 48;
+        img.height = 48;
+        img.style.cssText = 'display:inline-block !important; margin:5px;';
+        
+        a.appendChild(img);
+        span.appendChild(a);
+      });
+    }
+    
+    alert('✓ Счетчики восстановлены');
+  } catch(e) {
+    alert('Ошибка восстановления: ' + e);
+  }
+}, 5000);
+</script>
