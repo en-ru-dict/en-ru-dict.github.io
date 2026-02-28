@@ -438,7 +438,7 @@ function fly(){
   fairy = document.createElement('div');
   fairy.id = 'flyingFairy';
   Object.assign(fairy.style, {
-    position: 'fixed', top: '0', left: '0', width: '75px', height: '100px', zIndex: '9999',
+    position: 'fixed', top: '0', left: '0', width: '120px', height: '160px', zIndex: '9999',
     pointerEvents: 'none', backgroundSize: 'contain', backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center', backgroundImage: "url('fairy.gif')",
     transform: 'translate(0px, 0px)', filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.8))',
