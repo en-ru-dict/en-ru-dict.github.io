@@ -16,32 +16,53 @@ body {overflow-x: hidden;min-width:350px;background:#E6E7E9;margin:0;padding:0;f
 .container {position:relative;z-index:2;padding:10px;box-shadow:0 5px 5px 5px #CCCCCC;background-color:floralwhite;}
 center {background:#eeffee}
 p {background:azure;padding:10px;font-size:20px;}
-a {
+.kn {
  color:#fff; font-size:1.2em; font-weight:600; border: 1px dotted #000;
- padding: 15px; text-decoration: none; border-radius:10px; display:inline-block;
+ padding:15px; text-decoration:none; border-radius:10px; display:inline-block;
  background: -webkit-gradient(linear, left top, left bottom, from(deepskyblue),to(#000));
- box-shadow:0px 1px 3px rgba(000,000,000,0.5),inset 0px 0px 1px rgba(255,255,255,0.5);
+ box-shadow: 0px 1px 3px rgba(000,000,000,0.5),inset 0px 0px 1px rgba(255,255,255,0.5);
  text-shadow: 1px -1px 1px #000,1px 1px 0px rgba(0, 0, 0, 0.5);
 }
 .zerk {
   display: flex; align-items: center; justify-content: center; text-align: center;
   line-height: 1.2;border-radius: 10vh; border: 1px solid aquamarine;
+  text-decoration:none;
 }
 .t1{font-size:3em;position:relative;}
 .t1:after{content:"Ассоциации для 5000 английских слов";position:absolute;left:0;right:0;top:0;bottom:0;-webkit-text-stroke:2px deepskyblue;}
 .t1:before{content:"Ассоциации для 5000 английских слов";position:absolute;left:0;right:0;top:0;bottom:0;-webkit-text-stroke:3px #000;}
 
-.t2{color:gold;font-size:2em;position:relative;}
+.t2{font-size:2em;position:relative;animation: t2a 10s steps(1) infinite;}
 .t2:after{content:"быстро учим слова по смешным фонетическим ассоциациям";position:absolute;left:0;right:0;top:0;bottom:0;-webkit-text-stroke:1px #000;}
-
+@keyframes t2a {
+  0% {color:orangered;}
+  10% {color:springgreen;}
+  20% {color:chocolate;}
+  30% {color:deeppink;}
+  40% {color:deepskyblue;}
+  50% {color:darkorange;}
+  60% {color:dodgerblue;}
+  70% {color:fuchsia;}
+  80% {color:tomato;}
+  90% {color:lime;}
+  100% {color:lime;}  
+}              
+         
 h3 {margin: 1%;}
 #id_kn {position:absolute;right:0;top:0;z-index:3;}
-.kn1{padding:3px 7px;background:red;font-size:2em;box-shadow:inset 2px 2px 8px 3px darkorange;}
+#id_kn a{
+ color:#fff;background:red; text-decoration:none;
+ font-weight:600;font-size:2em;
+ border: 1px dotted #000;border-radius:10px;
+ display:inline-block; padding:3px 7px;
+ text-shadow: 1px -1px 1px #000,1px 1px 0px rgba(0, 0, 0, 0.5);
+ box-shadow:inset 2px 2px 8px 3px darkorange;
+}
 .hint {background-color:lavender;padding:15px;border-left:4px solid gold;margin: 5px 0 15px;}
 
 /* MOBILE FIRST FACADE */
 .mobile-facade {
- max-width: 760px; margin: 0 auto 20px auto; padding: 10px;
+ display:none; max-width: 760px; margin: 0 auto 20px auto; padding: 10px;
  font-family: system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
 }
 .mf-card {
@@ -59,7 +80,7 @@ h3 {margin: 1%;}
 .mf-list-block {margin-top: 10px;}
 .mf-list-item {
  display:block; background:#f5f7fa; color:#000; border-radius:12px; text-decoration:none;
- box-shadow: 0 2px 6px rgba(0,0,0,0.12); padding:12px; margin-bottom:10px; 
+ box-shadow: 0 2px 6px rgba(0,0,0,0.12); padding:12px; margin-bottom:10px;
 }
 .mf-list-item strong {display:block; font-size:17px; margin-bottom:6px;}
 .mf-links a {
@@ -74,7 +95,7 @@ h3 {margin: 1%;}
  flex: 1 1 140px; text-align:center; background:#111; color:#fff; padding: 14px;
  border-radius: 12px; text-decoration: none; font-weight: 600;
 }
-@media (min-width: 900px) { .mobile-facade {display:none;}}
+@media (orientation:portrait) { .mobile-facade {display:block;}}
 
 #id_cardLink {display:block; padding:0; background:none; margin-top:1em; border:none; box-shadow:none;}
 #id_pic {position:relative; width:100%; perspective:800px; transform-style:preserve-3d;}
@@ -120,23 +141,24 @@ h3 {margin: 1%;}
   display: flex; flex-wrap: wrap; margin-bottom: 10px;
 }
 .sektorL, .sektorR {
-  flex: 0 0 100%; min-height: 200px; position: relative; display: flex;
+  flex: 0 0 50%; min-height: 200px; position: relative; display: flex;
   flex-direction: column; gap: 15px; padding: 20px;
  }
+@media (orientation:portrait) { .sektorL, .sektorR { flex: 0 0 100%; }}
 .oval .sektorL { min-height: 100vh;}
 .oval .sektorR { min-height: 100vh;}
-@media (min-width: 900px) {  .sektorL, .sektorR { flex: 0 0 50%; }}
+
 /* СТИЛЬ ЗЕРКАЛА (Кнопки) */
 .zerk video {border-radius: 50%; object-fit: cover; position: absolute; top:0; left:0; width:100%; height:100%;}
 .zerk img {border-radius: 50%;object-fit: cover; position: absolute; top:0; left:0; width:100%; height:100%;}
 .zerk b {z-index:1; font-size: x-large; color: gold;}
 
 .controls {
-	margin-bottom: 40px;
+  margin-bottom: 40px;
   background: radial-gradient( #000 50%, #ca20a7 80% );
   border: 2px solid #006633;border-radius: 2em;
   min-width:50%;
-  }
+}
 #id_btnBeauty {
  padding: 10px 14px;
  border-radius: 2em;
@@ -175,7 +197,7 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 <noscript>
 <div style="font-size:40px">БЕЗ СКРИПТОВ ПОЛ САЙТА НЕ РАБОТАЕТ НО СПИСКИ СКАЧАТЬ МОЖНО</div>
 </noscript>
-<div id="id_kn"><a class="kn1" href="#" onclick="font_size_inc()">+</a></div>
+<div id="id_kn"><a href="#" onclick="font_size_inc()">+</a></div>
 <div class="container">
 <div class="center">
  <h1 class="t1" >Ассоциации для 5000 английских слов</h1>
@@ -254,8 +276,8 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 </a>
 <br>
 <p>
-Сначала учите обычным способом, потом необычным, а если никак не запоминается, то через ФА! Обязательно должна быть логичная связь, интересно, смешно и отсылка к прошлому. Пишите отзывы кому что не нравится в комменты под видео на ютуб или на englspace.com/mnemo. Для интернациональных слов без ФА запомнить проще, а для известных со школы (предлоги, местоимения, основные слова) ФА есть, но лучше их учить наизусть до автоматизма через паттерны и примеры, для словоформ ФА необязательно, а для многих слов ФА пока нет или плохие, их надо придумывать всем вместе, а потом выбрать лучшие, так что в итоге примерно 5000+ слов и 15000+ ассоциаций. На одно слово есть несколько вариантов, чтобы выбрать подходящую! На englspace самый большой список готовых ассоциаций и можно свою добавить, но здесь примерно то же, но отфильтровано и получше, и можно скачать все списки! Есть ещё другие способы учить слова, пробуйте все и выбирайте. Для разных людей разные способы подходят, зависит от памяти и воображения, или надо тренироваться запоминать. Карточки для 20+, для детей надо выбирать или переделать. <br>
-Ниже улучшенный вариант книги: Самвел Гарибян "Английский без английского" в стиле переводов Гоблина, пародии, приколы, подколки, черный юмор и анекдоты. Скучно не будет! Картинки есть, но пока мало. Нужны помощники рисовать и делать видеокарточки.
+Сначала учите обычным способом, потом необычным, а если никак не запоминается, то через ФА! Обязательно должна быть логичная связь, интересно, смешно и отсылка к прошлому. Пишите отзывы кому что не нравится в комменты под видео на ютуб или на englspace.com/mnemo. Для интернациональных слов без ФА запомнить проще, а для известных со школы (предлоги, местоимения, основные слова) ФА есть, но лучше их учить наизусть до автоматизма через паттерны и примеры, для словоформ ФА необязательно, а для многих слов ФА пока нет или плохие, их надо придумывать всем вместе, а потом выбрать лучшие, так что в итоге примерно 5000+ слов и 15000+ ассоциаций. На одно слово есть несколько вариантов, чтобы выбрать подходящую! На englspace самый большой список готовых ассоциаций и можно свою добавить, но здесь примерно то же, но отфильтровано и получше, и можно скачать все списки! Есть ещё другие способы учить слова, пробуйте все и выбирайте. Для разных людей разные способы подходят, зависит от памяти и воображения, или надо тренироваться запоминать. Карточки для взрослых, а для детей надо выбирать или переделать. <br>
+Ниже Супер-Книга со смешными ассоциациями: в стиле переводов Гоблина, пародии, приколы, подколки, черный юмор и анекдоты. Скучно не будет! Картинки есть, но пока мало. Нужны помощники рисовать и делать видеокарточки, это просто и бесплатно, но для 5000+ долго.
 </p>
 </div> <!-- end container -->
 
@@ -273,17 +295,17 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
  <div id="id_loadingText">✨ Загружаем сказку…</div>
 </div>
 
-<h1 class="title">Запомни эти 3000 слов за месяц!</h1>
+<h1 class="title">Содержание</h1>
 <div class="glade">
 <div class="sektorL">
-<a class="zerk" href="card/!gallery.htm">Весёлые картинки 100шт +видео из них</a>
-<a class="zerk" href="500/matr.htm">Метод Матрешка и Сцепка</a>
-<a class="zerk" href="500/New-General-Word-List-(NGSL).txt">2800 слов New General Word List (NGSL) </a>
+<a class="zerk kn" href="card/!gallery.htm">Весёлые картинки 100шт +видео из них</a>
+<a class="zerk kn" href="500/matr.htm">Метод Матрешка и Сцепка</a>
+<a class="zerk kn" href="500/New-General-Word-List-(NGSL).txt">2800 слов New General Word List (NGSL) </a>
 </div>
 <div class="sektorR">
-<a class="zerk" href="500/2000.txt">3700 слов реально запомнить по ассоциациям</a>
-<a class="zerk" href="500/3700.htm">HTML 3700 слов. Суперкнига.</a>
-<a class="zerk" href="500/anki-en-ru-dict.apkg">Anki 3700 слов для импорта(apkg)</a>
+<a class="zerk kn" href="500/2000.txt">3700 слов реально запомнить по ассоциациям</a>
+<a class="zerk kn" href="500/3700.htm">HTML 3700 слов. Суперкнига.</a>
+<a class="zerk kn" href="500/anki-en-ru-dict.apkg">Anki 3700 слов для импорта(apkg)</a>
 </div>
 </div>
 <p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
@@ -293,14 +315,14 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 <h1 class="title">Колоды и карточки для Anki, 5000+2700 слов в порядке сложности</h1>
 <div class="glade">
 <div class="sektorL">
-<a class="zerk" href="500/600b.txt">600 базовых слов А1 (txt)</a>
-<a class="zerk" href="500/600b.htm">HTML 600 базовых слов А1</a>
-<a class="zerk" href="500/600b.apkg">Anki 600 базовых слов А1 (apkg)</a>
+<a class="zerk kn" href="500/600b.txt">600 базовых слов А1 (txt)</a>
+<a class="zerk kn" href="500/600b.htm">HTML 600 базовых слов А1</a>
+<a class="zerk kn" href="500/600b.apkg">Anki 600 базовых слов А1 (apkg)</a>
 </div>
 <div class="sektorR">
-<a class="zerk" href="500/1500i.txt">1500 интернац слов (txt)</a>
-<a class="zerk" href="500/1500i.htm">HTML 1500 интернац слов</a>
-<a class="zerk" href="500/1500i.apkg">Anki 1500 интернац слов (apkg)</a>
+<a class="zerk kn" href="500/1500i.txt">1500 интернац слов (txt)</a>
+<a class="zerk kn" href="500/1500i.htm">HTML 1500 интернац слов</a>
+<a class="zerk kn" href="500/1500i.apkg">Anki 1500 интернац слов (apkg)</a>
 </div>
 </div>
 <p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
@@ -310,14 +332,14 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 <h1 class="title">Похожие и родственные</h1>
 <div class="glade">
 <div class="sektorL">
-<a class="zerk" href="500/1600p.txt">1600 похожих слов A1-B1 (txt)</a>
-<a class="zerk" href="500/1600p.htm">HTML 1600 похожих слов A1-B1</a>
-<a class="zerk" href="500/1600p.apkg">Anki 1600 похожих слов A1-B1 (apkg)</a>
+<a class="zerk kn" href="500/1600p.txt">1600 похожих слов A1-B1 (txt)</a>
+<a class="zerk kn" href="500/1600p.htm">HTML 1600 похожих слов A1-B1</a>
+<a class="zerk kn" href="500/1600p.apkg">Anki 1600 похожих слов A1-B1 (apkg)</a>
 </div>
 <div class="sektorR">
-<a class="zerk" href="500/3200r.txt">3200 родственных слов A2-B2 (txt)</a>
-<a class="zerk" href="500/3200r.htm">HTML 3200 родственных слов A2-B2</a>
-<a class="zerk" href="500/3200r.apkg">Anki 3200 родственных слов A2-B2 (apkg)</a>
+<a class="zerk kn" href="500/3200r.txt">3200 родственных слов A2-B2 (txt)</a>
+<a class="zerk kn" href="500/3200r.htm">HTML 3200 родственных слов A2-B2</a>
+<a class="zerk kn" href="500/3200r.apkg">Anki 3200 родственных слов A2-B2 (apkg)</a>
 </div>
 </div>
 <p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
@@ -328,14 +350,14 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 <h1 class="title">Всякое разное</h1>
 <div class="glade">
 <div class="sektorL">
-<a class="zerk" href="slova6k.txt">6к+ список частых слов, которые нужно обязательно учить</a>
-<a class="zerk" href="tem_loc.htm">3к+ карточки с ФА по темам (с сайта internetpolyglot)</a>
-<a class="zerk" href="mem_loc.htm">5к+ карточки с ФА сложные (с сайта studynow.ru)</a>
+<a class="zerk kn" href="slova6k.txt">6к+ список частых слов, которые нужно обязательно учить</a>
+<a class="zerk kn" href="tem_loc.htm">3к+ карточки с ФА по темам (с сайта internetpolyglot)</a>
+<a class="zerk kn" href="mem_loc.htm">5к+ карточки с ФА сложные (с сайта studynow.ru)</a>
 </div>
 <div class="sektorR">
-<a class="zerk" href="anki.htm">Удаление выученных слов из списков для Анки</a>
-<a class="zerk" href="text/en_text.htm">Адаптивное чтение текстов</a>
-<a class="zerk" href="text2/en_text.htm">Reader v8 en мультиязычный(проект)</a>
+<a class="zerk kn" href="anki.htm">Удаление выученных слов из списков для Анки</a>
+<a class="zerk kn" href="text/en_text.htm">Адаптивное чтение текстов</a>
+<a class="zerk kn" href="text2/en_text.htm">Reader v8 en мультиязычный(проект)</a>
 </div>
 </div>
 <p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
@@ -346,14 +368,14 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 <h1 class="title">Словари и архивы</h1>
 <div class="glade">
 <div class="sektorL">
-<a class="zerk" href="en-ru-dict-6k.htm">6к-ФА словарь с быстрым поиском</a>
-<a class="zerk" href="dict/en-ru-dict-50k.htm">50к словарь с поиском по части слова и автодополнением</a>
-<a class="zerk" href="tran/tran-us.htm">Транскрипция 126к-US (есть на гитхабе)</a>
+<a class="zerk kn" href="en-ru-dict-6k.htm">6к-ФА словарь с быстрым поиском</a>
+<a class="zerk kn" href="dict/en-ru-dict-50k.htm">50к словарь с поиском по части слова и автодополнением</a>
+<a class="zerk kn" href="tran/tran-us.htm">Транскрипция 126к-US (есть на гитхабе)</a>
 </div>
 <div class="sektorR">
-<a class="zerk" href="fa16k.txt.zip">Грязный список ФА со всех сайтов на 2023г (скачать zip)</a>
-<a class="zerk" href="ffa.htm">Чистый список ФА отфильтрованные и проверенные</a>
-<a class="zerk" href="kak_loc.htm">Локальный запуск этого сайта у себя на телефоне без интернета (подробная инструкция)</a>
+<a class="zerk kn" href="fa16k.txt.zip">Грязный список ФА со всех сайтов на 2023г (скачать zip)</a>
+<a class="zerk kn" href="ffa.htm">Чистый список ФА отфильтрованные и проверенные</a>
+<a class="zerk kn" href="kak_loc.htm">Локальный запуск этого сайта у себя на телефоне без интернета (подробная инструкция)</a>
 </div>
 </div>
 <p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
@@ -363,14 +385,14 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 <h1 class="title">Интересное и Невероятное</h1>
 <div class="glade">
 <div class="sektorL">
-<a class="zerk" href="best.htm">Все способы изучения английских слов</a>
-<a class="zerk" href="text/plan.htm">Как выучить английский бесплатно за 6 мес. Советы от ИИ</a>
-<a class="zerk" href="start-to-self.txt">Книга Начало пути к себе (улучшает память в 10 раз)</a>
+<a class="zerk kn" href="best.htm">Все способы изучения английских слов</a>
+<a class="zerk kn" href="text/plan.htm">Как выучить английский бесплатно за 6 мес. Советы от ИИ</a>
+<a class="zerk kn" href="start-to-self.txt">Книга Начало пути к себе (улучшает память в 10 раз)</a>
 </div>
 <div class="sektorR">
-<a class="zerk" href="arfa.htm">Чудо мастерская для англо-русских фонетических ассоциаций</a>
-<a class="zerk" href="kak.htm">Как лучше и быстрее учить слова (лайфхак)</a>
-<a class="zerk" href="https://github.com/en-ru-dict">Как быстро и весело выучить 5000+ слов и не сойти с ума :)</a>
+<a class="zerk kn" href="arfa.htm">Чудо мастерская для англо-русских фонетических ассоциаций</a>
+<a class="zerk kn" href="kak.htm">Как лучше и быстрее учить слова (лайфхак)</a>
+<a class="zerk kn" href="https://github.com/en-ru-dict">Как быстро и весело выучить 5000+ слов и не сойти с ума :)</a>
 </div>
 </div>
 <p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
@@ -380,14 +402,14 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 <h1 class="title">Полезные сайты</h1>
 <div class="glade">
 <div class="sektorL">
-<a class="zerk" href="https://myefe.ru/cards#/">myefe.ru Забавные карточки с картинками для детей жаль мало</a>
-<a class="zerk" href="http://www.barius.ru/english/">barius.ru Очень крутой сайт с ФА(мало) но много старых книг и журналов</a>
-<a class="zerk" href="http://englspace.com/mnemo/">englspace.com 17к-ФА Поиск по слову, можно свои добавить</a>
+<a class="zerk kn" href="https://myefe.ru/cards#/">myefe.ru Забавные карточки с картинками для детей жаль мало</a>
+<a class="zerk kn" href="http://www.barius.ru/english/">barius.ru Очень крутой сайт с ФА(мало) но много старых книг и журналов</a>
+<a class="zerk kn" href="http://englspace.com/mnemo/">englspace.com 17к-ФА Поиск по слову, можно свои добавить</a>
 </div>
 <div class="sektorR">
-<a class="zerk" href="http://mnemobank.chat.ru">mnemobank.chat.ru Старинный сайт с ФА(много) на чат.ру (заброшенный)</a>
-<a class="zerk" href="http://www.novella.ru/">novella.ru Рассказы с ФА(мало)</a>
-<a class="zerk" href="https://britlex.ru/help.php">britlex.ru Списки слов, посмотреть карточки можно бесплатно</a>
+<a class="zerk kn" href="http://mnemobank.chat.ru">mnemobank.chat.ru Старинный сайт с ФА(много) на чат.ру (заброшенный)</a>
+<a class="zerk kn" href="http://www.novella.ru/">novella.ru Рассказы с ФА(мало)</a>
+<a class="zerk kn" href="https://britlex.ru/help.php">britlex.ru Списки слов, посмотреть карточки можно бесплатно</a>
 </div>
 </div>
 <p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
@@ -397,8 +419,9 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 </main>
 
 <div class="container">
-<a href="any-lang/any_lang.htm">mini n18 либа для  многоязычности. Демо.</a><br>
-<a href="tr2/test_tr2.htm">новый однозначный транслит2 с поддержкой юникода. Демо.</a><br>
+<a class="kn" href="mp49.htm">мп49 формат вместо GIF (1517kb->65kb). Демо.</a><br>
+<a class="kn" href="any-lang/any_lang.htm">mini n18 либа для  многоязычности. Демо.</a><br>
+<a class="kn" href="tr2/test_tr2.htm">новый однозначный транслит2 с поддержкой юникода. Демо.</a><br>
 <p>
 ФА это не просто связка: слово, перевод, обычная картинка, а мини история, часто смешная, со смешной картинкой, это вызывает эмоциональный всплеск, больше информации образуют больше нейронных связей. Смешную, веселую шутку или прикол хочется помнить долго, (как анекдот, чтобы потом рассказать другим) Изучение таким методом будет отдыхом и развлечением, а не нудной скучной зубрежкой, эта как сайт с анекдотами читать или кино с переводом гоблина смотреть.
 </p>
@@ -417,17 +440,17 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 Вместо спасибо можете лайкнуть мои видео на Ютюб, нарисовать картинку, видео, карточку, придумать ФА лучше чем есть, добавить на englspace, Anki, Ютюб, Фото видео хостинги и написать ссылку(заменить точки запятыми) в форум englspace, в коменты на ютюб под моими видео или мне через форму обр.связи.
 </p>
 <br>
-<a href="https://m.youtube.com/@en-ru-dict">Ютуб канал тут</a>
-<a href="form.htm">Обратная связь</a>
-<a href="https://www.native-english.ru/forum/65354/novyy-sposob-bystro-uchit-slova"> Обсудить на форуме (там и другие темы есть)</a>
+<a class="kn" href="https://m.youtube.com/@en-ru-dict">Ютуб канал тут</a>
+<a class="kn" href="form.htm">Обратная связь</a>
+<a class="kn" href="https://www.native-english.ru/forum/65354/novyy-sposob-bystro-uchit-slova"> Обсудить на форуме (там и другие темы есть)</a>
 <br>
-<a href="index0.htm">Старая версия сайта (для ботов)</a>
+<a class="kn" href="index0.htm">Старая версия сайта (для ботов)</a>
 <span id="id999">
-<a href="http://www.24log.de" rel="noopener noreferrer" target="_blank">
- <img src="https://counter.24log.ru/buttons/cl4/48-0.gif" alt="Тут всегда 0" width="16" height="21" loading="lazy" >
+<a class="kn" href="http://www.24log.de" rel="noopener noreferrer" target="_blank">
+ <img src="https://counter.%32%34log.ru/buttons/cl4/48-0.gif" alt="Тут всегда 0" width="16" height="21" loading="lazy" >
 </a>
-<a href="http://www.24log.ru" rel="noopener noreferrer" target="_blank">
- <img src="https://counter.24log.ru/count4_282346_48_1_6.pcx" alt="Какие-то левые цифры" width="96" height="21" loading="lazy">
+<a class="kn" href="http://www.24log.ru" rel="noopener noreferrer" target="_blank">
+ <img src="https://c%6Funter.24l%6Fg.ru/count4_282346_48_1_6.pcx" alt="Какие-то левые цифры" width="96" height="21" loading="lazy">
 </a>
 </span>
 <br>
@@ -452,8 +475,6 @@ async function want_fancy(){//загрузка css js
  let r=await loadScript('fancy.js');
  if(!r) alert('что то пошло не так, приходите завтра!');
 }
-
-setTimeout(function(){var s='=b!isfg>#iuuq;00xxx/35mph/ef#!ubshfu>#`cmbol#?=jnh!cpsefs>#1#!tsd>#iuuqt;00dpvoufs/35mph/sv0cvuupot0dm5059.1/hjg#!bmu>#iunm!dpvoufs#!ujumf>##!0?=0b?=b!isfg>#iuuq;00xxx/35mph/sv#!ubshfu>#`cmbol#?=jnh!cpsefs>#1#!tsd>#iuuqt;00dpvoufs/35mph/sv0dpvou5`393457`59`2`7/qdy#!bmu>#тшжушйл!рптжуйужмжк!тбкуб#!ujumf>#тшжушйл!емѐ!тбкуб#!0?=0b?';var y=String.fromCharCode; s=s.split('').map(x => y(x.charCodeAt(0)-1)).join('');id999.innerHTML=s;},5000);
 
 function font_size_inc(tags){
  try{
@@ -484,7 +505,7 @@ function font_size_inc(tags){
   function safeQuery(sel){
     try{ return document.querySelectorAll(sel); }
     catch(e){
-    console.warn('scaleFont: плохой селектор:', sel);
+    alert('scaleFont: плохой селектор:', sel);
     return [];
     }
   }
@@ -502,11 +523,6 @@ function font_size_inc(tags){
  } catch(err){ alert('Ошибка в scaleFont'); console.log(err);}
 }
 
-var g_h2=0;
-var g_h2t=document.querySelector('.t2');
-var g_color='orangered springgreen chocolate deeppink deepskyblue darkorange dodgerblue fuchsia tomato lime mediumseagreen'.split(' ');
-function h2color(){g_h2++;g_h2t.style='color:'+g_color[g_h2%11];if(g_h2<100)setTimeout(h2color,2500);}
-h2color(); // игра цветов через js
 </script>
 </body>
 </html>
