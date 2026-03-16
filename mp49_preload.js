@@ -2,6 +2,11 @@ let g_mp4_status='idle'; // busy/ok/error
 let g_spriteBlob=null;    // готовый blob спрайта (глобальный)
 let g_webpSupport=null;   // кэш поддержки webp-encode
 let g_preloadCallback=null;
+
+function log(t,o){ if(!o) o='';
+ if(window['g_log']) g_log+= t+'/'+o+'\n';
+ if(o)console.log(''+t,o);else console.log(''+t);
+}
 function getMaxTextureSize(){ // макс размер текстуры WebGL (или 4096)
   let c=document.createElement('canvas');
   let gl=c.getContext('webgl')||c.getContext('experimental-webgl');
@@ -16,10 +21,10 @@ async function isWebpEncodeSupported(){ // проверка именно код�
   });
 }
 function getUserDeviceParams(){ // просто лог устройства (для отладки)
-  console.log('device: maxTex='+getMaxTextureSize()+' memGB='+(navigator.deviceMemory||'??'));
+  log('device: maxTex='+getMaxTextureSize()+' memGB='+(navigator.deviceMemory||'??'));
 }
 async function load_js(name){
-  console.log('load_js: началась загрузка ' + name);
+  log('load_js: началась загрузка ' + name);
   const scriptLoaded = await new Promise(r => {
     const s = document.createElement('script');
     s.onload = () => r(1);
@@ -29,10 +34,42 @@ async function load_js(name){
   });
   return scriptLoaded;
 }
+//ожидание и рисовалка
+async function wait_draw(t,video,n){
+  video.currentTime=t+0.02;
+  await Promise.race([
+  new Promise(ok => video.onseeked = ok),
+ //new Promise(ok => video.ontimeupdate=ok),
+   new Promise((_, err) => setTimeout(() => err(new Error('Seek timeout')), 500))
+ ]).catch(e => {
+  log('error:seeked/timeupdate failed:'+n, e);
+});
+}
+
+async function wait_draw2(t,video,n){//slow 5s
+ while(1){
+  video.play();
+  await new Promise(r=>video.ontimeupdate=r);
+  video.pause();
+  if(video.currentTime>t)break;
+ } 
+}
+
+var g_prev=[1];
+function test_dubli(ctx,ww,hh,w,h,n){
+ last=ctx.getImageData(ww,hh,w,h).data;
+ var i,d=1;
+ for(i=0;i<g_prev.length;i++)if(g_prev[i]!==last[i]){d=0;break;}
+ if(d){log('DUPLICATE FRAME='+n);g_dubli++;}
+ g_prev=ctx.getImageData(ww,hh,w,h).data;
+}
+
+//=============================================
+var g_dubli;
 async function preload(name,cols,rows,scale=1,bg=''){ // ОСНОВНАЯ ФУНКЦИЯ
   const start = performance.now();
-  g_mp4_status='busy';
-  console.log('preload start='+name);
+  g_mp4_status='busy';g_dubli=0;
+  log('preload start='+name);
   getUserDeviceParams();
   let video=null;
 
@@ -41,19 +78,26 @@ async function preload(name,cols,rows,scale=1,bg=''){ // ОСНОВНАЯ ФУН
      document.body.appendChild(video);
     if(location.protocol==='file:'){ // file:// режим: грузим .js с base64
       name+='.js';
-      console.log('локальный режим file://, грузим запасной mp4.js');
+      log('локальный режим file://, грузим запасной mp4.js');
       var rr=await load_js(name);
       if(!rr){alert('нет скрипта='+name); g_mp4_status = 'error'; return 0;}
       if(!window['g_mp4']){alert('нет внутри g_mp4');g_mp4_status = 'error'; return 0;}
       video.src=window['g_mp4'];window['g_mp4']=null;
     } else video.src=name; // обычный http/https
-    video.onerror=(e)=>alert('video error'+e);
+log('readyState1='+video.readyState);
+   video.onerror=(e)=>alert('video error'+e);
+    video.onloadedmetadata=()=>log('video onloadedmetadata');    
+    video.onloadeddata=()=>log('video onloadeddata');    
+    video.onloadend=()=>log('video onloadend');    
     video.load();
+log('readyState2='+video.readyState);
     await video.play().catch(()=>{});
+log('readyState3='+video.readyState);
     await new Promise(res=>{ if(video.readyState>=2) res(); else video.onloadeddata=res;});
     await video.pause();
+log('readyState4='+video.readyState);
     if(!video.videoWidth){alert('error videoWidth=0'); g_mp4_status = 'error'; return 0;}
-    console.log('video loaded '+video.videoWidth+'×'+video.videoHeight+' time='+video.duration);
+    log('video loaded '+video.videoWidth+'×'+video.videoHeight+' time='+video.duration);
    
     let fW=video.videoWidth,fH=video.videoHeight;
     let frames=cols*rows;
@@ -65,50 +109,42 @@ async function preload(name,cols,rows,scale=1,bg=''){ // ОСНОВНАЯ ФУН
     let maxT=getMaxTextureSize();
     if(sW>maxT||sH>maxT){
       let newS=Math.min(maxT/(cols*fW),maxT/(rows*fH),scale);
-      console.log('scale reduced '+scale+'→'+newS+' (texture limit)');
+      log('scale reduced '+scale+'→'+newS+' (texture limit)');
       effScale=newS;effFW=Math.floor(fW*effScale);effFH=Math.floor(fH*effScale);
       sW=cols*effFW;sH=rows*effFH;
     }
-console.log('sW='+sW+' sH='+sH);
+log('sW='+sW+' sH='+sH);
     let canvas=document.createElement('canvas');
     canvas.width=sW;canvas.height=sH;
     let ctx=canvas.getContext('2d');
     if(!ctx){alert('no 2d context'); g_mp4_status = 'error'; return 0;}
 
     let dur=video.duration;
-    let step=frames>1?dur/(frames-1):0;
-console.log('step='+step);
+    let step=frames>1?dur/(frames):0;
+log('step='+step);
+
     let col,row,i,j,t,last,d,prev=[1];
     col=0;row=0;
     for(i=0;i<frames;i++){progressBar(i,frames);
-     t=i*step;video.currentTime=t;
-     await new Promise(r=>video.onseeked=r);
+     t=i*step;
+     await wait_draw(t,video,i);
+log(t,video.currentTime);
      ctx.drawImage(video,0,0,fW,fH,col*effFW,row*effFH,effFW,effFH);
+
 //проверка дублей кадров
- last=ctx.getImageData(col*effFW,row*effFH,effFW,effFH).data;
- d=1;
- for(j=0;j<prev.length;j++)if(prev[j]!==last[j]){d=0;break;}
- if(d)console.log('DUPLICATE FRAME='+i);
- prev=ctx.getImageData(col*effFW,row*effFH,effFW,effFH).data;
-
-	 document.title=i;
-	 col++;if(col==cols){row++;col=0;}
+     test_dubli(ctx,col*effFW,row*effFH,effFW,effFH,i);
+     col++;if(col==cols){row++;col=0;}
     }
-console.log('all frames ready');progressBar(frames,frames);
-
-    // chroma-key rgb (если передан bg) если webp не поддерживает то лучше сетку грузить
-    if(bg){
-      console.log('chroma-key '+bg);
-      let r=0,g=0,b=0,tol=10;
-      if(bg.startsWith('rgb')){let m=bg.match(/rgb\((\d+),(\d+),(\d+)\)/);if(m){r=+m[1];g=+m[2];b=+m[3];}}
-      else if(bg[0]==='#'){let h=bg.slice(1);r=parseInt(h.slice(0,2),16)||0;g=parseInt(h.slice(2,4),16)||0;b=parseInt(h.slice(4,6),16)||0;}
-      else if(bg.includes(',')){let p=bg.split(',');r=+p[0]||0;g=+p[1]||0;b=+p[2]||0;if(p[3])tol=+p[3];}
-      let id=ctx.getImageData(0,0,sW,sH);
-      let d=id.data;
-      for(let j=0;j<d.length;j+=4){
-        if(Math.abs(d[j]-r)<=tol&&Math.abs(d[j+1]-g)<=tol&&Math.abs(d[j+2]-b)<=tol)d[j+3]=0;
-      }
-      ctx.putImageData(id,0,0);
+log('all frames ready='+frames);progressBar(frames,frames);
+log('дублей кадров='+g_dubli);
+if(g_dubli<=3){
+    // chroma-key rgb (если передан bg) если webp не поддерживает то лучше сетка
+    if(bg){  
+      log('замена='+bg+' на прозрачный цвет');
+      let r=255,g=255,b=255,tol=10;
+      if(bg[0]==='#'){let h=bg.slice(1);r=parseInt(h.slice(0,2),16)||0;g=parseInt(h.slice(2,4),16)||0;b=parseInt(h.slice(4,6),16)||0;}
+      
+      removeBgHSV(ctx, sW, sH, r,g,b); 
     }
 
     // выбираем лучший формат
@@ -119,15 +155,16 @@ console.log('all frames ready');progressBar(frames,frames);
     g_spriteBlob=await new Promise((ok,err)=>{
       canvas.toBlob(b=>b?ok(b):err(new Error('toBlob fail')),mime,qual);
     });
-console.log('sprite ready '+g_spriteBlob.type+' '+Math.round(g_spriteBlob.size/1024)+'кб');
-    // очистка
+log('sprite ready '+g_spriteBlob.type+' '+Math.round(g_spriteBlob.size/1024)+'кб');
+}    // очистка
     del_video(video); del_canvas(canvas); g_mp4_status='ok';
     const end = performance.now();
-    alert(`Время: ${(end-start).toFixed(0)}ms`);
+    log(`Время: ${(end-start).toFixed(0)}ms`);
 
     if(typeof g_preloadCallback==='function')g_preloadCallback();
-    return 1;
-
+    if(g_dubli>3) return 16;//надо грузить спрайт 4*4
+    return get_url();//ok
+ 
   }catch(e){
     alert('PRELOAD ERROR:'+e);
     del_video(video); del_canvas(canvas); g_mp4_status='error';
@@ -136,7 +173,7 @@ console.log('sprite ready '+g_spriteBlob.type+' '+Math.round(g_spriteBlob.size/1
 } //end preload
 
 function del_video(e){ // Уничтожаем видеоэлемент
- try{e.removeAttribute('src'); e.load(); e = null;} // Принудительная выгрузка
+ try{e.removeAttribute('src'); e.load(); e.remove(); e = null;} // Принудительная выгрузка
  catch(e){}
 }
 function del_canvas(e){ // Очищаем холст
@@ -165,21 +202,15 @@ function gen_css_grid(nx,ny){
 
  css+=`
 }
-.mp49 {
-  position: absolute; width: var(--wz); height: var(--hz); overflow: hidden;
-}
+.mp49 {position:absolute; width: var(--wz); height: var(--hz); overflow:hidden;}
 .mp49 img {
-  position: absolute; width: ${nx*100}%; height:${ny*100}%; 
+  position:absolute; width: ${nx*100}%; height:${ny*100}%; 
   animation: tr${nx*ny} var(--time) steps(1) infinite alternate;
 }
 .mp49 img[src='']{animation:none;}
 `;
-
- var frames=nx*ny;
- var step=100/frames;
-
+ var frames=nx*ny, step=100/frames,x=0,y=0,s='';
  css+='@keyframes tr'+frames +' {\n';
- var x=0,y=0,s='';
  for(i=0;i<frames;i++){
   s=`%  {transform: translate(var(--w${x}), var(--h${y}));}\n`;
   css+=' '+Math.round(i*step)+s;
@@ -192,8 +223,7 @@ function gen_css_grid(nx,ny){
  return (css);
 }
 function load_css_htm(t){
- var st=document.createElement('style');
- st.textContent=t;
+ var st=document.createElement('style'); st.textContent=t;
  document.head.appendChild(st);
 }
 
@@ -246,18 +276,60 @@ function colorByPercent(p) {
   if (80 < p && p <= 100) color = '#00CC66';  // strong green
   return color;
 }
-// Create a visual progress bar overlay
+// Create a visual progress.
 function createProgressBar() {
   const div = document.createElement('div');
   div.className = 'progress-overlay';
   div.innerHTML = `
     <div class="progress-box">
-      <div class="bar-label">[·Loading...·]</div>
+      <div class="bar-label">[·Loading...·]<\/div>
       <div class="bar-frame">
-        <div class="bar-fill"></div>
-      </div>
-    </div>
+        <div class="bar-fill"><\/div>
+      <\/div>
+    <\/div>
   `;
   document.body.appendChild(div);
   g_progress.el = div;
+}
+function rgbToHsl(r,g,b){
+  r/=255;g/=255;b/=255;
+  let max=Math.max(r,g,b),min=Math.min(r,g,b);
+  let h,s,l=(max+min)/2;
+  if(max===min){h=s=0}else{
+    let d=max-min;
+    s=l>0.5?d/(2-max-min):d/(max+min);
+    switch(max){
+      case r:h=(g-b)/d+(g<b?6:0);break;
+      case g:h=(b-r)/d+2;break;
+      case b:h=(r-g)/d+4;
+    }h/=6;
+  }
+  return[h*360,s*100,l*100];
+}
+
+function removeBgHSV(ctx, w, h, r,g,b) {
+//hsl(27,76,79),
+ var [th,ts,tl]=rgbToHsl(r,g,b);
+log('hsl='+th+'/'+ts+'/'+tl);
+ var tolH=12,tolS=25,tolL=25;
+  const img = ctx.getImageData(0,0,w,h);
+  const src = img.data;
+
+ for(let i=0;i<src.length;i+=4){
+    const r=src[i],g=src[i+1],b=src[i+2];
+  
+    const [ph,ps,pl] = rgbToHsl(r,g,b);
+    const dh = Math.min(Math.abs(ph-th), 360-Math.abs(ph-th));
+    if(dh<=tolH && Math.abs(ps-ts)<=tolS && Math.abs(pl-tl)<=tolL) src[i+3]=0;
+  //гладкие края?
+//    if(dh<12 && ps>0.2){const alpha = 1 - (dh / 12); src[i+3] *= (1 - alpha);}
+  }
+  ctx.putImageData(img,0,0);
+}
+function rgb3(bg){
+ let h=bg.slice(1);
+ r=parseInt(h.slice(0,2),16)||0;
+ g=parseInt(h.slice(2,4),16)||0;
+ b=parseInt(h.slice(4,6),16)||0;
+ return [r,g,b];
 }

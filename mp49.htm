@@ -67,7 +67,7 @@
   background: #007bff;
   transition: width 0.3s, background 0.3s;
 }
-h1, button {font-size:2em;}
+h1, button, textarea {font-size:2em;}
 </style>
 <script src="mp49_preload.js"></script>
 <h3>GIF гифки до сих живы! Для мп4 нужен видеопроигрыватель, куча настроек, не юзабельно. 
@@ -85,8 +85,18 @@ FPS=10, 5*5=25 2.5 сек, 7*7=49 4.9 сек,
 <h1>Гифка 1.5мб/ Видео источник 49 кадров 65кб</h1>
 <img src="mirror.gif"><video src="mirror.mp4" controls></video>
 <hr>
-<button onclick="run1()">Загрузить мп49 спрайт из видео</button>
+<button onclick="run1('mirror',7,7,1)">Загрузить мп49 спрайт из видео</button>
 <hr>
+<h1>Гифка 200кб/ Видео источник 35 кадров 80кб. Большая + прозрачный фон</h1>
+<img src="fairy.gif" width="184" height="240"><video src="f.mp4" controls></video>
+<hr>
+<button onclick="run1('f',7,5,1,'#f2c59e')">Загрузить мп49 спрайт из видео</button>
+<hr>
+<button onclick="bg('green')">green</button>
+<button onclick="bg('blue')">blue</button>
+<button onclick="set_css_grid(184,240,1);">fast</button>
+<button onclick="set_css_grid(184,240,5);">slow</button>
+
 <h1>IMG + transform + реверс туда сюда</h1>
 <div class="mp49"><img src="" alt=""></div>
 <div class="mp49"><img src="" alt=""></div>
@@ -97,25 +107,33 @@ FPS=10, 5*5=25 2.5 сек, 7*7=49 4.9 сек,
 <div class="mp49"><img src="" alt=""></div>
 
 <hr>
-<h1> Background + position Две анимации (иногда рассинхронизация)</h1> 
+<h1> Background + position Две анимации для 7*7 (иногда рассинхронизация)</h1> 
 <div class="sprite"></div><div class="sprite"></div><div class="sprite"></div>
 <hr>
 <div class="sprite"></div><div class="sprite"></div><div class="sprite"></div>
-
+<hr>
+<img id="id_i0" src=''>
+<textarea cols="80" rows="10" id="id_t0"></textarea>
 <script>
 function els(s){return document.querySelectorAll(''+s);}
 function css_var(v,d){document.documentElement.style.setProperty(''+v,''+d);}
+function bg(x){document.body.style.backgroundColor=x;}
+window.g_log='>';
+async function run1(name,x,y,z,bg){
 
+ var url=await preload(name+'.mp4',x,y,z,bg);
+ if(url===0)return 0;//error
+ if(url===16){url=name+'_g16.jpg';x=4,y=4;log('много дублей, грузим запасной спрайт16');}
+ var t=gen_css_grid(x,y); load_css_htm(t); 
+set_css_grid(184,240,3);
 
-async function run1(){
- var t=gen_css_grid(7,7);
- load_css_htm(t);
- set_css_grid(184,240,3);
-
- var url=await preload('mirror.mp4',7,7);
- if(url)url=get_url(); else return 0;
- css_var('--url','url("'+url+'")');
  els('.mp49 img').forEach(b=>b.src=url);
+ els('#id_i0')[0].src=url;
+ els('#id_t0')[0].textContent=g_log;
+ var u='';
+ if(x==7 && y==7)u=url;
+ css_var('--url','url("'+u+'")');
+ alert('ok');
 }
 
 //URL.revokeObjectURL(url);

@@ -1,9 +1,16 @@
 //==========fancy.js====Xing*2026=======
+let g_mp4_status='idle'; // busy/ok/error
 function els(s){return document.querySelectorAll(''+s);}
 function css_var(v,d){document.documentElement.style.setProperty(''+v,''+d);}
-function log(s,o){ //для отладки
-  //console.log(''+s,o);
+
+function get_wh(){//служебная
+  var w = window.innerWidth, h = window.innerHeight;
+  const orient = w > h ? 'landscape' : 'portrait';
+  return ('w='+w+' h='+h+' :'+orient);
 }
+function hide(e){e.classList.add('hidden');}
+function show(e){e.classList.remove('hidden');}
+function is_vert(){return (window.innerHeight>window.innerWidth);}
 function getPerspectiveAngle(contW, contH, p){
   const w = contH / 2;// Половина ширины картинки (квадрат)
   const d = contW / 2;// Половина ширины видимого окна
@@ -17,33 +24,38 @@ function getPerspectiveAngle(contW, contH, p){
   let angleDeg = angleRad * (180/Math.PI);
   return Math.max(0, Math.floor(angleDeg));
 }
- function applyCalculatedAngle() {
+function resizer() {
   const p = 1000;
   const targetSection = el('id_sl');// ширина LEFT секции, она жива всегда
-  const w = targetSection.offsetWidth;
-  const h = targetSection.offsetHeight;
+  var w = targetSection.offsetWidth;
+  var h = targetSection.offsetHeight;
   const calculatedAngle = getPerspectiveAngle(w, h, p);
   css_var('--angle1',       calculatedAngle + 'deg');
   css_var('--angle2', '-' + calculatedAngle + 'deg');
   console.log(`Ширина окна: ${w}px, Угол: ${calculatedAngle} гр`);
   const r = targetSection.offsetWidth - targetSection.offsetHeight;
   const q = Math.floor(r/2);
-  css_var('--shift1', r + 'px');  css_var('--shift2', q + 'px');
+  css_var('--shift1', r + 'px'); css_var('--shift2', q + 'px');
   console.log(`Ширина сдвига: ${r}px`);
- }
+  //зеркало 184*240 33%
+  w=Math.floor(w/3); if(w<92)w=92; if(w>368)w=368;
+  h=Math.floor(h/3); if(h<120)w=120; if(w>480)w=480;
+  css_var('--wz',w+'px'); css_var('--hz',h+'px');
+  var v=is_vert();
+  console.log(`Вертикальный: ${v} овал w=${w} h=${h}`);
+  o_resizer();
+}
 // Слушаем изменение размера и ориентации
 var g_resizeTimer=null;
 function debounceResize(){
- clearTimeout(g_resizeTimer)
- g_resizeTimer=setTimeout(applyCalculatedAngle,100)
+ clearTimeout(g_resizeTimer); g_resizeTimer=setTimeout(resizer,500);
 }
 window.addEventListener('resize',debounceResize)
-function is_vert(){return (window.innerHeight>window.innerWidth);}
+
 function set_o(s){document.body.className='oval v'+s;}
 function set_ef(n){
-   applyCalculatedAngle();
-   if(n>4)set_o(1);//синхронизация половинок для анимации
-   setTimeout(set_o,100,n);
+  if(n>4)set_o(1);//синхронизация половинок для анимации
+  setTimeout(set_o,100,n);
 }
 function del_v(e){try{e.pause();e.src=null;e.removeAttribute('src');e.load();} catch(e){}}
 function del_all_video(){ els('video').forEach(v=>{v.pause(); v.remove();});}
@@ -57,14 +69,14 @@ var el_sl=el('id_sl');
 var g_video='<video muted playsinline loop></video>';
 var g_img='<img src="" alt="" >';
 function set_bg(u){ var e; //фон2 бэкграунд, img video
- if(u=='0'){del_bg(1);del_bg(2);del_bg(3);return;}
- if(u=='1'){u='bg.png';css_var('--bg2s','auto');startFairy('');}
- if(u=='2'){u='bg.jpg';css_var('--bg2s','auto');}
- if(u=='3'){u='mir1.jpg';css_var('--bg2s','cover');}
- if(u=='4'){u='mir2.jpg';css_var('--bg2s','cover');}
- if(u=='5'){u='mir3.jpg';css_var('--bg2s','cover');}
- if(u=='6'){u='mir4.jpg';css_var('--bg2s','cover');}
- if(u=='7'){u='mir5.jpg';css_var('--bg2s','cover');}
+  if(u=='0'){del_bg(1);del_bg(2);del_bg(3);return;}
+  if(u=='1'){u='bg.png';css_var('--bg2s','auto');startFairy('');}
+  if(u=='2'){u='bg.jpg';css_var('--bg2s','auto');}
+  if(u=='3'){u='mir1.jpg';css_var('--bg2s','cover');}
+  if(u=='4'){u='mir2.jpg';css_var('--bg2s','cover');}
+  if(u=='5'){u='mir3.jpg';css_var('--bg2s','cover');}
+  if(u=='6'){u='mir4.jpg';css_var('--bg2s','cover');}
+  if(u=='7'){u='mir5.jpg';css_var('--bg2s','cover');}
 
   start_loading();
   if(u.endsWith('.mp4')){
@@ -96,67 +108,76 @@ function set_bg(u){ var e; //фон2 бэкграунд, img video
   }
   e.src = u;
 }
-// 1. Инициализируем Наблюдателя (Intersection Observer)
-// Он будет включать видео только когда кнопка видна на экране
-const videoObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    const v = entry.target.querySelectorAll('video');
-    v.forEach(b=>{
-   if(b.src){
-      if(entry.isIntersecting) b.play().catch(() => {}); // Кнопка в кадре — запускаем
-      else  b.pause(); // Кнопка ушла — стоп машина! (экономим CPU)
-     }
-    });
-    const g = entry.target.querySelectorAll('.zerk');
-    g.forEach(b=>{
-     if(entry.isIntersecting) show(b); // Кнопка в кадре — запускаем
-     else  hide(b); // Кнопка ушла — стоп машина! (экономим CPU)
-    });
-  });
-}, { threshold: 0.1 });// Сработает если видно хотя бы 10% кнопки
-// Привязываем все кнопки к наблюдателю
-els('.glade').forEach(b => videoObserver.observe(b));
+
+//new observer
+var o_busy=0;
+var o_items = [];
+function o_update(){var i,m,top,bottom;
+ if(o_busy)return; o_busy=1;
+ m=Math.ceil(window.innerHeight * 0.1);
+ top = window.scrollY + m; bottom = window.scrollY + window.innerHeight - m;
+ for(i of o_items) i.e.style.display = (i.bottom > top && i.top < bottom)? '' : 'none';
+}
+function o_resizer(){
+ o_busy=1;
+ o_items=[];console.log('o_resizer');
+ els(".zerk").forEach(e => {
+  e.style.display='';
+  const r = e.getBoundingClientRect();
+  const top = r.top + window.scrollY;
+  o_items.push({ e:e, top:top, bottom: top + r.height });
+ });
+ o_busy=0;
+ o_update();
+}
+function o_run(){
+ o_resizer();
+ setInterval(o_update,500);
+ window.addEventListener("scroll",()=>o_busy=0);
+}
+
 function del_ov(v){
  if(v==1) css_var('--bgo','none');
  if(v==2) els('.zerk img').forEach(b => b.src='');
- if(v==3) els('.zerk video').forEach(b => {b.pause();b.removeAttribute('src');b.load();});
 }
 function set_ov(u){ var e,n;
- els('.zerk').forEach(b => {b.style.backgroundColor='transparent'; b.classList.toggle('oo');});
- if(u==''){del_ov(1);del_ov(2);del_ov(3);return;}
+ els('.zerk').forEach(b => {b.classList.remove('ooo','g49','g25'); b.classList.toggle('oo');});
+
+ if(u==''){del_ov(1);del_ov(2);els('.zerk').forEach(b => b.classList.add('ooo'));return;}
   start_loading();
   if(u.endsWith('.mp4')){
-   e = document.createElement('video');
-   e.preload = 'auto';//e.loop = true;e.muted = true;e.playsInline = true;
-   e.oncanplaythrough = ()=>{
-    del_ov(1);del_ov(2); els('.zerk video').forEach(b=>{b.src=u; b.play();});
-    e.remove(); end_loading();
-   }
-   e.onerror = (er)=> {alert('ошибка загрузки1='+u); end_loading();}
-   e.src = u; e.load();
-   return;
+	run_mp49('mirror',7,7).then(url=>{
+     console.log('g_mp4_status='+g_mp4_status);
+     del_ov(1); els('.zerk img').forEach(b=>b.src=url); del_blob(url);
+     els('.zerk').forEach(b=>b.classList.add('g49'));
+     end_loading();
+    });
+    return;
   }
-  n=1; if(u.endsWith('.gif')) n=2;
+  //картинки шмартинки
   e = new Image();
   e.onload = ()=>{
-    if(n==1){del_ov(2);del_ov(3);css_var('--bgo',`url("${u}")`);}
-    if(n==2){del_ov(1);del_ov(3);els('.zerk img').forEach(b=>b.src=u);}
+    if(u=='mirror.png'){del_ov(2);css_var('--bgo',`url("${u}")`);}
+    if(u=='mirror.gif'){del_ov(1);els('.zerk img').forEach(b=>b.src=u);}
+    if(u=='g25.jpg'){
+	  del_ov(1); els('.zerk img').forEach(b=>b.src=u);
+	  gen_css_grid(5,5,'g25');
+	  els('.zerk').forEach(b=>b.classList.add('g25'));
+	}
     e.remove(); end_loading();
   }
   e.onerror = (er)=> {alert('ошибка загрузки2='+u); end_loading();}
   e.src = u;
 }
-function hide(e){e.classList.add('hidden');log('hide=',e);}
-function show(e){e.classList.remove('hidden');log('show=',e);}
 
 var g_timer=null;
 var g_text=0;
 var el_loadBox = els('.loadingBox')[0];
 function start_loading(){
  show(el_loadBox);
- g_text = 0;  clearInterval(g_timer);
- g_timer = setInterval(show_fokus, 300);
- setTimeout(end_loading,6000);
+ g_text = 0; clearInterval(g_timer);
+ g_timer = setInterval(show_fokus, 500);
+ setTimeout(end_loading,15000);
 }
 function show_fokus(){
  var steps = ["✨ Колдуем..", "✨ Красим фон..", "✨ Ставим зеркала.."];
@@ -164,56 +185,51 @@ function show_fokus(){
  g_text++;
 }
 function end_loading(){ clearInterval(g_timer); hide(el_loadBox);}
-function get_wh(){
-  const w = window.innerWidth;
-  const h = window.innerHeight;
-  const orient = w > h ? 'landscape' : 'portrait';
-  return ('w='+w+' h='+h+' :'+orient);
-}
 function set_weather(v){// Смена погоды
- var s='';  
- if(v=='1') s='snow';
- if(v=='2') s='rain';
- if(v=='3') s='fog';
+ var s=''; if(v=='1') s='snow'; if(v=='2') s='rain'; if(v=='3') s='fog';
  el('id_weather').className=s;
- if(v==0)set_w=function(){};
+ if(v=='0')set_w=()=>{console.log('погода выключена');};
 }
-var g_css=`
+function load_css_htm(){
+ var st=document.createElement('style');
+ st.textContent=`
 /* РЕЖИМ ОВАЛОВ (Волшебные зеркала) */
 .oval .zerk {
  position: absolute;
- width: 200px; height: 240px;
- width: clamp(100px, 37%, 200px); height: clamp(120px, 40%, 240px);
+ width: 184px; height: 240px;
+ width: var(--wz,184px); height: var(--hz,240px);
  background-repeat: no-repeat; background-position: center; background-size: contain;
  background-image: var(--bgo,none);
 }
+.oo {
+ border: 2px solid cyan; border-radius: 50%;
+ box-shadow: 0 0 15px aqua,0 0 15px aqua, inset 0 0 15px #000;
+}
+.ooo {background: #000633;}
 .oo.zerk::before{
   content:""; position:absolute; z-index:1; inset:10%; border-radius:50%;
-  border:5px solid aqua; filter:blur(5px); animation:colors 4s linear infinite;
+  border:5px solid aqua; filter:blur(5px); animation:colors 5s linear infinite;
 }
-@keyframes spin { 100%{ transform:rotate(360deg); }}
 @keyframes colors {
-0% { border:5px solid aqua;}
-50% { border:5px solid magenta;}
-100% { transform:rotate(360deg); }
+ 0% { border-color: aqua;}
+ 50% { border-color: magenta;}
+ 100% { transform:rotate(360deg); }
 }
 
 /* ПОЗИЦИИ НА ПК (Треугольники вдоль дороги) */
-@media (min-width: 900px) {
-  /* Левая сторона (зеркала 1, 2, 3) */
-  .oval .sektorL .zerk:nth-child(1) { top: 5%;  left: 1%; }
-  .oval .sektorL .zerk:nth-child(2) { top: 35%; left: 45%; }
-  .oval .sektorL .zerk:nth-child(3) { top: 65%; left: 1%; }
+/* Левая сторона (зеркала 1, 2, 3) */
+.oval .sektorL .zerk:nth-child(1) { top: 5%;  left: 1%; }
+.oval .sektorL .zerk:nth-child(2) { top: 35%; left: 45%; }
+.oval .sektorL .zerk:nth-child(3) { top: 65%; left: 1%; }
 
-  /* Правая сторона (зеркала 4, 5, 6) */
-  .oval .sektorR .zerk:nth-child(1) { top: 5%;  right: 1%; }
-  .oval .sektorR .zerk:nth-child(2) { top: 35%; right: 45%; }
-  .oval .sektorR .zerk:nth-child(3) { top: 65%; right: 1%; }
-  .hint.open {font-size:1.5em;}
-}
+/* Правая сторона (зеркала 4, 5, 6) */
+.oval .sektorR .zerk:nth-child(1) { top: 5%;  right: 1%; }
+.oval .sektorR .zerk:nth-child(2) { top: 35%; right: 45%; }
+.oval .sektorR .zerk:nth-child(3) { top: 65%; right: 1%; }
+.hint.open {font-size:1.5em;}
 
 /* ПОЗИЦИИ НА ТЕЛЕФОНЕ (Зигзаг по бокам) */
-@media (max-width: 899px) {
+@media (orientation:portrait) {
   .oval .sektorL { min-height: 100vh; }
   .oval .sektorR { min-height: 100vh; }
 
@@ -254,10 +270,6 @@ var g_css=`
    0 0 4px black,  0 0 4px black,  0 0 4px black,  0 0 4px black, 0 0 4px black,
    0 0 10px coral;
  }
-.oo {
- background: #000633; border: 2px solid cyan; border-radius: 50%;
- box-shadow: 0 0 15px aqua, inset 0 0 20px rgba(0,0,0,0.8);
-}
 #id_weather {
  position: fixed; z-index: 1; top: 0; left: 0; width: 100%; height: 100%;
  background-repeat: repeat; pointer-events: none;
@@ -369,10 +381,11 @@ select, .action-btn {
   border: none; border-radius: 50px;
 }
 /* Мобильная адаптация */
-@media (max-width: 500px) {  .control-panel { padding: 30px 20px 20px; }}
+@media (orientation:portrait) { .control-panel { padding: 30px 20px 20px; }}
 `;
+document.head.appendChild(st);
 
-var g_html=`
+var htm=`
 <input type="checkbox" id="toggle-panel">
 <div class="control-panel">
  <div class="panel-content">
@@ -406,9 +419,10 @@ var g_html=`
 
    <select onchange="set_ov(this.value)">
     <option value="">Вид зеркала (нет)<\/option>
-    <option value="mirror.png">Красивый 20кб<\/option>
-    <option value="mirror.gif">Гифка 1.5мб<\/option>
-    <option value="mirror.mp4">mp4? 350кб<\/option>
+    <option value="mirror.png">PNG rbga 20кб<\/option>
+    <option value="g25.jpg">JPG-25? 600кб<\/option>
+    <option value="mirror.gif">GIF-A? 1.5мб<\/option>
+    <option value="mirror.mp4">MP49! 65кб<\/option>
    <\/select>
 
    <select onchange="set_weather(this.value)">
@@ -426,7 +440,8 @@ var g_html=`
  <\/div>
 <\/div>
 `;
-
+ document.body.insertAdjacentHTML('beforeend',htm);
+}
 // flying-fairy.js
 function fly(){
  let fairy = null;
@@ -456,15 +471,19 @@ function fly(){
   state.targetX = e.touches[0].clientX - 50;
   state.targetY = e.touches[0].clientY - 50;
  }
+ function min_max(vmax,v,vmin){if(v<vmin)v=vmin;if(v>vmax)v=vmax;return v;}
  function animate() {
   if(!state.isActive || !fairy){ animationFrameId = null; return; }
   // Плавное движение
-  state.x += (state.targetX - state.x) * 0.1;
-  state.y += (state.targetY - state.y) * 0.1;
+  state.x += (state.targetX - state.x) * 0.01;
+  state.y += (state.targetY - state.y) * 0.01;
   // Ограничение по краям экрана
-  const margin = 20;
-  state.x = Math.max(margin, Math.min(window.innerWidth - 100 - margin, state.x));
-  state.y = Math.max(margin, Math.min(window.innerHeight - 100 - margin, state.y));
+  const margin = 50;
+//  state.x = Math.max(margin, Math.min(window.innerWidth - 100 - margin, state.x));
+//  state.y = Math.max(margin, Math.min(window.innerHeight - 100 - margin, state.y));
+  state.x = min_max(window.innerWidth - 100 - margin, state.x, margin);
+  state.y = min_max(window.innerHeight - 100 - margin, state.y, margin);
+
   fairy.style.transform = `translate(${state.x}px, ${state.y}px)`;
   animationFrameId = requestAnimationFrame(animate);
  }
@@ -499,20 +518,20 @@ function fly(){
 function set_a(h){
  var t = h.trim().split(' ');
  t = (t.length==1)? t[0] : t[0]+'<br>'+t[1];
- return g_img+g_video+`<b title="${h}">${t}<\/b>`;
+ return g_img+`<b title="${h}">${t}<\/b>`;
 }
 function start_fancy(){
  els('.container')[0].remove(); window.scrollTo(0,0);
- var st=document.createElement('style'); st.textContent=g_css; document.head.appendChild(st);
- document.body.insertAdjacentHTML('beforeend',g_html);
+ load_css_htm();
  set_o(0);// +oval ef0
  els('.hint').forEach(b => b.classList.remove('open'));
  var bb=el('id_btnBeauty'); bb.innerText = "Панель управления сказкой";
  //bb=bb.getClientRects()[0].top; window.scrollTo(0,bb);
- els('.zerk').forEach(b =>{b.classList.add('oo'); b.innerHTML=set_a(''+b.textContent);});
+ els('.zerk').forEach(b =>{b.className='zerk oo ooo'; b.innerHTML=set_a(''+b.textContent);});
  //after reload
  el('toggle-panel').checked = false;
  els('select').forEach(b => b.selectedIndex=0);
+ o_run();//крутой обсервер для кнопок зеркал
  if(navigator.hardwareConcurrency<4) alert('слабый девайс, будет тормозить');
 }
 function want_fs(){
@@ -526,14 +545,252 @@ function rnd(k) {
  if(n==2)n=1000;
  if(n==3)n=10000;
  if(n==4)n=100000;
- n = Math.floor(Math.random() * n);  
+ n = Math.floor(Math.random() * n);
  return n % k;
 }
 function set_w(){set_weather(rnd(10));setTimeout(set_w,11111);}
 function run_panel(){log(window.innerWidth+':'+window.innerHeight);el('toggle-panel').checked = true; stopFairy();}
-start_fancy();want_fs();fly();startFairy();set_w();
+
+resizer(); start_fancy(); fly();
+want_fs();startFairy();set_w();
 var v=rnd(10);set_bg(''+v);if(v==8)set_ef('6');if(v==9)set_ef('8');if(v==4)set_ef('7');
 if(rnd(3)){set_ov('');set_ov('mirror.png');}
-
+resizer();
 console.log('красота загружена');
 //text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 10px aqua;
+
+//mp49 вместо гифок
+
+window.g_log='>';//вкл лог
+async function run_mp49(name,x,y){
+ var url=await preload(name+'.mp4',x,y);//зеркало 49 кадров
+ if(url===0)return 0;//error
+ if(url===16){url=name+'_g16.jpg';x=4,y=4;log('много дублей, грузим запасной спрайт16');}
+ gen_css_grid(x,y,'g49'); 
+ set_css_grid(184,240,3);
+ set_img(url);
+ if(window.g_log)set_log();
+ return url;
+}
+
+function set_css_grid(w,h,t){
+ css_var('--wz',w+'px'); 
+ css_var('--hz',h+'px');
+ css_var('--time',t+'s');
+}
+var g_css_grid=[];
+function gen_css_grid(nx,ny,classCSS){
+ if(g_css_grid[classCSS]){console.log('css grid уже есть='+classCSS);return;}
+ g_css_grid[classCSS]=1;//чтобы один раз делать
+ var i;
+ var css=`
+:root {
+  --time:2s;
+`;
+ for(i=1;i<nx;i++){ css+=`--w${i}: calc(var(--wz) * -${i});\n`;}
+ for(i=1;i<ny;i++){ css+=`--h${i}: calc(var(--hz) * -${i});\n`;}
+
+ css+=`
+}
+.${classCSS} {overflow:hidden; border:none;}
+.${classCSS} img {
+  object-fit:unset; width: ${nx*100}%; height:${ny*100}%; border-radius:0; 
+  will-change: transform; animation: tr${nx*ny} var(--time) steps(1) infinite alternate;
+}
+.${classCSS} img[src='']{animation:none;}
+`;
+
+ var frames=nx*ny;
+ var step=100/frames;
+
+ css+='@keyframes tr'+frames +' {\n';
+ var x=0,y=0,s='';
+ for(i=0;i<frames;i++){
+  s=`%  {transform: translate(var(--w${x}), var(--h${y}));}\n`;
+  css+=' '+Math.round(i*step)+s;
+  x++;if(x==nx){y++;x=0;css+='\n';}
+ }
+ css+= '100'+s;
+ css+='}\n';
+ css=css.replace(/var\(--w0\)/g,0);
+ css=css.replace(/var\(--h0\)/g,0);
+ var st=document.createElement('style');
+ st.textContent=css;
+ document.head.appendChild(st);
+}
+
+let g_spriteBlob=null;    // готовый blob спрайта (глобальный)
+let g_webpSupport=null;   // кэш поддержки webp-encode
+
+function log(t,o){ if(!o) o='';
+ if(window['g_log']) g_log+= t+'/'+o+'\n';
+// if(o)console.log(''+t,o);else console.log(''+t);
+}
+function getMaxTextureSize(){ // макс размер текстуры WebGL (или 4096)
+  let c=document.createElement('canvas');
+  let gl=c.getContext('webgl')||c.getContext('experimental-webgl');
+  return gl?gl.getParameter(gl.MAX_TEXTURE_SIZE)||4096:4096;
+}
+async function isWebpEncodeSupported(){ // проверка именно кодирования webp (не только показа)
+  if(g_webpSupport!==null)return g_webpSupport;
+  let tc=document.createElement('canvas');tc.width=tc.height=1;
+  let tctx=tc.getContext('2d');tctx.fillStyle='#f00';tctx.fillRect(0,0,1,1);
+  return new Promise(r=>{
+    tc.toBlob(b=>{g_webpSupport=!!(b&&b.type==='image/webp');r(g_webpSupport);},'image/webp',0.5);
+  });
+}
+function getUserDeviceParams(){ // просто лог устройства (для отладки)
+  log('device: maxTex='+getMaxTextureSize()+' memGB='+(navigator.deviceMemory||'??'));
+}
+async function load_js(name){
+  log('load_js: началась загрузка ' + name);
+  const scriptLoaded = await new Promise(r => {
+    const s = document.createElement('script');
+    s.onload = () => r(1);
+    s.onerror = () => r(0);
+    s.src = name;
+    document.head.appendChild(s);
+  });
+  return scriptLoaded;
+}
+
+var g_prev=[1];
+function test_dubli(ctx,ww,hh,w,h,n){
+ last=ctx.getImageData(ww,hh,w,h).data;
+ var i,d=1;
+ for(i=0;i<g_prev.length;i++)if(g_prev[i]!==last[i]){d=0;break;}
+ if(d){log('DUPLICATE FRAME='+n);g_dubli++;}
+ g_prev=ctx.getImageData(ww,hh,w,h).data;
+}
+
+//=============================================
+var g_dubli;
+async function preload(name,cols,rows,scale=1,bg=''){ // ОСНОВНАЯ ФУНКЦИЯ
+  const start = performance.now();
+  g_mp4_status='busy';g_dubli=0;
+  log('preload start='+name);
+  getUserDeviceParams();
+  let video=null;
+
+  try{
+    video=document.createElement('video'); video.muted=true; video.playsInline=true;
+     document.body.appendChild(video);
+    if(location.protocol==='file:'){ // file:// режим: грузим .js с base64
+      name+='.js';
+      log('локальный режим file://, грузим запасной mp4.js');
+      var rr=await load_js(name);
+      if(!rr){alert('нет скрипта='+name); g_mp4_status = 'error'; return 0;}
+      if(!window['g_mp4']){alert('нет внутри g_mp4');g_mp4_status = 'error'; return 0;}
+      video.src=window['g_mp4'];window['g_mp4']=null;
+    } else video.src=name; // обычный http/https
+log('readyState1='+video.readyState);
+   video.onerror=(e)=>alert('video error'+e);
+    video.onloadedmetadata=()=>log('video onloadedmetadata');    
+    video.onloadeddata=()=>log('video onloadeddata');    
+    video.onloadend=()=>log('video onloadend');    
+    video.load();
+log('readyState2='+video.readyState);
+    await video.play().catch(()=>{});
+log('readyState3='+video.readyState);
+    await new Promise(res=>{ if(video.readyState>=2) res(); else video.onloadeddata=res;});
+    await video.pause();
+log('readyState4='+video.readyState);
+    if(!video.videoWidth){alert('error videoWidth=0'); g_mp4_status = 'error'; return 0;}
+    log('video loaded '+video.videoWidth+'×'+video.videoHeight+' time='+video.duration);
+   
+    let fW=video.videoWidth,fH=video.videoHeight;
+    let frames=cols*rows;
+
+    let effScale=scale;
+    let effFW=Math.floor(fW*effScale),effFH=Math.floor(fH*effScale);
+    let sW=cols*effFW,sH=rows*effFH;
+
+    let maxT=getMaxTextureSize();
+    if(sW>maxT||sH>maxT){
+      let newS=Math.min(maxT/(cols*fW),maxT/(rows*fH),scale);
+      log('scale reduced '+scale+'→'+newS+' (texture limit)');
+      effScale=newS;effFW=Math.floor(fW*effScale);effFH=Math.floor(fH*effScale);
+      sW=cols*effFW;sH=rows*effFH;
+    }
+log('sW='+sW+' sH='+sH);
+    let canvas=document.createElement('canvas');
+    canvas.width=sW;canvas.height=sH;
+    let ctx=canvas.getContext('2d');
+    if(!ctx){alert('no 2d context'); g_mp4_status = 'error'; return 0;}
+
+    let dur=video.duration;
+    let step=frames>1?dur/(frames):0;
+log('step='+step);
+
+    let col,row,i,j,t,last,d,prev=[1];
+    col=0;row=0;
+    for(i=0;i<frames;i++){//progressBar(i,frames);
+     t=i*step;
+
+ await wait_draw(t,video,i);
+log(t,video.currentTime);
+ctx.drawImage(video,0,0,fW,fH,col*effFW,row*effFH,effFW,effFH);
+
+//проверка дублей кадров
+ test_dubli(ctx,col*effFW,row*effFH,effFW,effFH,i);
+
+ col++;if(col==cols){row++;col=0;}
+}
+log('all frames ready='+frames);//progressBar(frames,frames);
+log('дублей кадров='+g_dubli);
+if(g_dubli<=3){  
+     // выбираем лучший формат
+    let mime='image/png',qual=1;
+    if(!bg){mime='image/jpeg';qual=0.92;}
+    else if(await isWebpEncodeSupported()){mime='image/webp';qual=0.85;}
+
+    g_spriteBlob=await new Promise((ok,err)=>{
+      canvas.toBlob(b=>b?ok(b):err(new Error('toBlob fail')),mime,qual);
+    });
+log('sprite ready '+g_spriteBlob.type+' '+Math.round(g_spriteBlob.size/1024)+'кб');
+}    // очистка
+    del_video(video); del_canvas(canvas); g_mp4_status='ok';
+    const end = performance.now();
+    log(`Время: ${(end-start).toFixed(0)}ms`);
+
+    if(g_dubli>3) return 16;//надо грузить спрайт 4*4
+    return get_url();//ok
+ 
+  }catch(e){
+    alert('PRELOAD ERROR:'+e);
+    del_video(video); del_canvas(canvas); g_mp4_status='error';
+  }
+
+} //end preload
+
+function del_video(e){ // Уничтожаем видеоэлемент
+ try{e.removeAttribute('src'); e.load(); e.remove(); e = null;} // Принудительная выгрузка
+ catch(e){}
+}
+function del_canvas(e){ // Очищаем холст
+ try{e.width = 0; e.height = 0; e.remove();}
+ catch(e){}
+}
+//Освобождаем Blob URL
+function del_blob(url){try{URL.revokeObjectURL(url);} catch(e){}}
+function get_url(){return URL.createObjectURL(g_spriteBlob);}
+
+//ожидание и рисовалка
+async function wait_draw(t,video,n){
+  video.currentTime=t+0.02;
+  await Promise.race([
+ //new Promise(ok => video.onseeked = ok),
+ new Promise(ok => video.ontimeupdate=ok),
+   new Promise((_, err) => setTimeout(() => err(new Error('Seek timeout')), 1000))
+ ]).catch(e => {
+  log('error:seeked/timeupdate failed:'+n, e);
+ });
+}
+async function wait_draw3(t,video,n){//slow 7,0
+ while(1){
+  video.play();
+  await new Promise(r=>video.ontimeupdate=r);
+  video.pause();
+  if(video.currentTime>t)break;
+ } 
+}

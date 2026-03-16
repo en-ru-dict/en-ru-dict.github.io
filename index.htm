@@ -522,7 +522,17 @@ function font_size_inc(tags){
   return changed;
  } catch(err){ alert('Ошибка в scaleFont'); console.log(err);}
 }
-
+function set_img(url){
+ el('id_i0').src=url;
+}
+function set_log(){
+ el('id_t0').textContent=g_log;
+}
 </script>
+<hr>
+<div style="position: absolute;z-index:999;">
+ <img style="height:0;" id="id_i0" src=''><br>
+ <textarea cols="50" rows="10" id="id_t0"></textarea>
+</div>
 </body>
 </html>
