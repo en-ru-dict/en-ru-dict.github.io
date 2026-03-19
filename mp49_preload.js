@@ -5,9 +5,9 @@ let g_preloadCallback=null;
 
 function log(t,o){ if(!o) o='';
  if(window['g_log']) g_log+= t+'/'+o+'\n';
- if(o)console.log(''+t,o);else console.log(''+t);
+ //if(o)console.log(''+t,o);else console.log(''+t);
 }
-function getMaxTextureSize(){ // макс размер текстуры WebGL (или 4096)
+function getMaxTextureSize(){// макс размер текстуры WebGL (или 4096)
   let c=document.createElement('canvas');
   let gl=c.getContext('webgl')||c.getContext('experimental-webgl');
   return gl?gl.getParameter(gl.MAX_TEXTURE_SIZE)||4096:4096;
@@ -34,48 +34,65 @@ async function load_js(name){
   });
   return scriptLoaded;
 }
-//ожидание и рисовалка
-async function wait_draw(t,video,n){
-  video.currentTime=t+0.02;
-  await Promise.race([
-  new Promise(ok => video.onseeked = ok),
- //new Promise(ok => video.ontimeupdate=ok),
-   new Promise((_, err) => setTimeout(() => err(new Error('Seek timeout')), 500))
- ]).catch(e => {
-  log('error:seeked/timeupdate failed:'+n, e);
-});
+var g_url='';
+function get_url(){ //blob
+ try {URL.revokeObjectURL(g_url);} catch(e){}
+ g_url=URL.createObjectURL(g_spriteBlob);
+ return g_url;
 }
 
-async function wait_draw2(t,video,n){//slow 5s
- while(1){
-  video.play();
-  await new Promise(r=>video.ontimeupdate=r);
-  video.pause();
-  if(video.currentTime>t)break;
- } 
+function fullCompare(a, b){//для четных длинн! у нечетных последний не сравнивается
+  if(a.length !== b.length) return false;
+  let i,q=a.length >> 1,qq=q+q; //делим на 2
+  for(i = q; i < qq ; i++){
+    if(a[i] !== b[i]) return false;
+    if(a[qq-i] !== b[qq-i]) return false;
+  }  
+  return true;//одинаковые
 }
-
-var g_prev=[1];
-function test_dubli(ctx,ww,hh,w,h,n){
- last=ctx.getImageData(ww,hh,w,h).data;
- var i,d=1;
- for(i=0;i<g_prev.length;i++)if(g_prev[i]!==last[i]){d=0;break;}
- if(d){log('DUPLICATE FRAME='+n);g_dubli++;}
- g_prev=ctx.getImageData(ww,hh,w,h).data;
+  // --- быстрый hash (ещё дешевле)
+function fastHash(data) {
+ let h = 0;
+ const len = data.length;
+ const step = 13;//(len / 64) | 0;
+ for(let i = 0; i < len; i += step) {  h = ((h << 5) - h + data[i]) | 0; }
+ return h;
 }
-
+function isEmptyFrame(data) {
+ for(let i = 0; i < data.length; i += 257) if(data[i] !== 0) return false; 
+ return true;
+}
+ // --- ПРАВИЛЬНЫЙ waitSeek
+var g_seek_timer=null;
+function waitSeekSafe(targetTime,el_video) {
+  return new Promise(resolve => {
+    let done = false;
+    const finish = () => {
+      if(done) return;
+      done = true;
+      el_video.removeEventListener('seeked', onSeeked);
+      clearTimeout(g_seek_timer);
+      resolve();
+    };
+    const onSeeked = () => {finish();};
+    el_video.addEventListener('seeked', onSeeked, { once: true });
+    el_video.currentTime = targetTime; 
+    g_seek_timer=setTimeout(()=>{log('seek_timeout='+targetTime);finish();}, 500);
+  });
+}
 //=============================================
-var g_dubli;
-async function preload(name,cols,rows,scale=1,bg=''){ // ОСНОВНАЯ ФУНКЦИЯ
-  const start = performance.now();
-  g_mp4_status='busy';g_dubli=0;
-  log('preload start='+name);
+var g_timer_start=0;
+async function sprite_preload(name,cols,rows,scale=1,bg=''){ // ОСНОВНАЯ ФУНКЦИЯ
+  g_timer_start = performance.now();
+  g_mp4_status='busy';
+  log('preload-start='+name);
   getUserDeviceParams();
   let video=null;
 
   try{
-    video=document.createElement('video'); video.muted=true; video.playsInline=true;
-     document.body.appendChild(video);
+    video=els('video')[0];//document.createElement('video'); 
+    video.muted=true; video.playsInline=true;
+     //document.body.appendChild(video);
     if(location.protocol==='file:'){ // file:// режим: грузим .js с base64
       name+='.js';
       log('локальный режим file://, грузим запасной mp4.js');
@@ -84,90 +101,130 @@ async function preload(name,cols,rows,scale=1,bg=''){ // ОСНОВНАЯ ФУН
       if(!window['g_mp4']){alert('нет внутри g_mp4');g_mp4_status = 'error'; return 0;}
       video.src=window['g_mp4'];window['g_mp4']=null;
     } else video.src=name; // обычный http/https
-log('readyState1='+video.readyState);
-   video.onerror=(e)=>alert('video error'+e);
+
+    video.onerror=(e)=>log('video error',e);
     video.onloadedmetadata=()=>log('video onloadedmetadata');    
     video.onloadeddata=()=>log('video onloadeddata');    
     video.onloadend=()=>log('video onloadend');    
     video.load();
-log('readyState2='+video.readyState);
+
     await video.play().catch(()=>{});
-log('readyState3='+video.readyState);
     await new Promise(res=>{ if(video.readyState>=2) res(); else video.onloadeddata=res;});
     await video.pause();
 log('readyState4='+video.readyState);
     if(!video.videoWidth){alert('error videoWidth=0'); g_mp4_status = 'error'; return 0;}
     log('video loaded '+video.videoWidth+'×'+video.videoHeight+' time='+video.duration);
-   
+//уменьшение размеров спрайта для слабых телефонов
     let fW=video.videoWidth,fH=video.videoHeight;
-    let frames=cols*rows;
-
-    let effScale=scale;
-    let effFW=Math.floor(fW*effScale),effFH=Math.floor(fH*effScale);
-    let sW=cols*effFW,sH=rows*effFH;
+    fW=Math.floor(fW*scale); fH=Math.floor(fH*scale);
+    let sW=cols*fW,sH=rows*fH;
 
     let maxT=getMaxTextureSize();
     if(sW>maxT||sH>maxT){
-      let newS=Math.min(maxT/(cols*fW),maxT/(rows*fH),scale);
-      log('scale reduced '+scale+'→'+newS+' (texture limit)');
-      effScale=newS;effFW=Math.floor(fW*effScale);effFH=Math.floor(fH*effScale);
-      sW=cols*effFW;sH=rows*effFH;
+      let newS=Math.min(maxT/sW,maxT/sH);
+      log('scale reduced '+scale+'x'+newS+' (texture limit)');
+      fW=Math.floor(fW*newS);fH=Math.floor(fH*newS);
+      sW=cols*fW;sH=rows*fH;
     }
-log('sW='+sW+' sH='+sH);
-    let canvas=document.createElement('canvas');
-    canvas.width=sW;canvas.height=sH;
-    let ctx=canvas.getContext('2d');
-    if(!ctx){alert('no 2d context'); g_mp4_status = 'error'; return 0;}
+log('итоговый размер спрайта sW='+sW+'/sH='+sH+'/fW='+fW+'/fH='+fH);
 
-    let dur=video.duration;
-    let step=frames>1?dur/(frames):0;
+//extractVideoFramesV2 
+  video.pause();
+  let canvas = document.createElement('canvas');
+  let ctx = canvas.getContext('2d', { willReadFrequently: true });
+  if(!ctx){alert('no 2d context'); g_mp4_status = 'error'; return 0;}
+  canvas.width=sW;canvas.height=sH;
+  let frames=cols*rows;
+  let step=video.duration/frames || 0.1;
 log('step='+step);
+  let rawFrames = []; // для финальной проверки
+  let prevHash = 0;
+  let maxAttempts = 10;
+  let dynamicDelay = 10;
+ 
+for(let t = 0; t < frames; t++){progressBar(t,frames);
+    const targetTime = step*t + 0.02; //поправка
+    await waitSeekSafe(targetTime,video);
 
-    let col,row,i,j,t,last,d,prev=[1];
-    col=0;row=0;
-    for(i=0;i<frames;i++){progressBar(i,frames);
-     t=i*step;
-     await wait_draw(t,video,i);
-log(t,video.currentTime);
-     ctx.drawImage(video,0,0,fW,fH,col*effFW,row*effFH,effFW,effFH);
+    let attempts = 0;
+    let success = false;
 
-//проверка дублей кадров
-     test_dubli(ctx,col*effFW,row*effFH,effFW,effFH,i);
-     col++;if(col==cols){row++;col=0;}
+    while(attempts < maxAttempts && !success) {
+      attempts++;
+      await new Promise(r => setTimeout(r, dynamicDelay));//=sleep=pause
+      ctx.drawImage(video, 0, 0, fW, fH);
+      const data = ctx.getImageData(0, 0, fW, fH).data;
+      if(isEmptyFrame(data)){
+        log('pusto='+t); 
+        dynamicDelay += 10;
+        continue;
+      }
+      const hash = fastHash(data);
+      if(hash === prevHash){
+        log('dubl='+t);
+        dynamicDelay += 10;
+        continue;
+      }
+      success = true;//ура нашли
+      prevHash = hash; dynamicDelay = Math.max(5, dynamicDelay - 1);
+      rawFrames.push(data);
+    } //end while
+  }//end for
+  const end = performance.now();
+log(`кадры нашла: ${(end - g_timer_start).toFixed(0)}ms/`+rawFrames.length);
+  // --- очистка
+  //del_video(video); 
+  del_canvas(canvas); ctx=null;
+
+  let finalRaw=[];
+  finalRaw.push(rawFrames[0]);
+  for (let i = 1; i < rawFrames.length; i++) {
+    let duplicate = false;
+    if(fullCompare(rawFrames[i], rawFrames[i-1])) {
+        duplicate = true;log('dubl='+i);
+        break;
     }
-log('all frames ready='+frames);progressBar(frames,frames);
-log('дублей кадров='+g_dubli);
-if(g_dubli<=3){
+    if(!duplicate) finalRaw.push(rawFrames[i]);
+  }
+  rawFrames=[];
+log('После полной проверки кадров=', finalRaw.length);
+if(finalRaw.length<frames)alert('были дубли или пусто');
+
+  const spriteCanvas = document.createElement('canvas');
+  ctx = spriteCanvas.getContext('2d');
+  spriteCanvas.width = fW * cols; 
+  spriteCanvas.height = fH * rows;
+  let x=0,y=0;
+  for(let i=0; i < finalRaw.length; i++){
+    const imgData = new ImageData(finalRaw[i], fW, fH);
+    ctx.putImageData(imgData, fW*x, fH*y);
+    x++; if(x==cols){y++;x=0;}
+  }
+  finalRaw=[];
+log('спрайт готов='+frames);progressBar(frames,frames);
+
     // chroma-key rgb (если передан bg) если webp не поддерживает то лучше сетка
-    if(bg){  
+  if(bg){  
       log('замена='+bg+' на прозрачный цвет');
       let r=255,g=255,b=255,tol=10;
       if(bg[0]==='#'){let h=bg.slice(1);r=parseInt(h.slice(0,2),16)||0;g=parseInt(h.slice(2,4),16)||0;b=parseInt(h.slice(4,6),16)||0;}
-      
       removeBgHSV(ctx, sW, sH, r,g,b); 
-    }
+  }
+  // выбираем лучший формат
+  let mime='image/png',qual=1;
+  if(!bg){mime='image/jpeg';qual=0.92;}
+  else if(await isWebpEncodeSupported()){mime='image/webp';qual=0.85;}
 
-    // выбираем лучший формат
-    let mime='image/png',qual=1;
-    if(!bg){mime='image/jpeg';qual=0.92;}
-    else if(await isWebpEncodeSupported()){mime='image/webp';qual=0.85;}
-
-    g_spriteBlob=await new Promise((ok,err)=>{
-      canvas.toBlob(b=>b?ok(b):err(new Error('toBlob fail')),mime,qual);
-    });
+  g_spriteBlob=await new Promise(res=>spriteCanvas.toBlob(res,mime,qual));
+  del_canvas(spriteCanvas);
 log('sprite ready '+g_spriteBlob.type+' '+Math.round(g_spriteBlob.size/1024)+'кб');
-}    // очистка
-    del_video(video); del_canvas(canvas); g_mp4_status='ok';
-    const end = performance.now();
-    log(`Время: ${(end-start).toFixed(0)}ms`);
-
-    if(typeof g_preloadCallback==='function')g_preloadCallback();
-    if(g_dubli>3) return 16;//надо грузить спрайт 4*4
+    g_mp4_status='ok';
+    const end2 = performance.now();
+    log(`Общее Время: ${(end2 - g_timer_start).toFixed(0)}ms`);
     return get_url();//ok
- 
   }catch(e){
     alert('PRELOAD ERROR:'+e);
-    del_video(video); del_canvas(canvas); g_mp4_status='error';
+    g_mp4_status='error';
   }
 
 } //end preload
@@ -182,14 +239,13 @@ function del_canvas(e){ // Очищаем холст
 }
 //Освобождаем Blob URL
 function del_blob(url){URL.revokeObjectURL(url);}
-function get_url(){return URL.createObjectURL(g_spriteBlob);}
 
 function set_css_grid(w,h,t){
  css_var('--wz',w+'px'); 
  css_var('--hz',h+'px');
  css_var('--time',t+'s');
 }
-
+//document.documentElement.style.getPropertyValue('--wz')
 function gen_css_grid(nx,ny){
  var i;
  var css=`
@@ -333,3 +389,128 @@ function rgb3(bg){
  b=parseInt(h.slice(4,6),16)||0;
  return [r,g,b];
 }
+
+// Запусти это ДО preload() чтобы понять, что происходит
+async function diagnose_video_api(videoFile) {
+  console.log('=== VIDEO API DIAGNOSIS ===');
+  
+  const video = document.createElement('video');
+  video.muted = true;
+  video.crossOrigin = 'anonymous';
+  //document.body.appendChild(video);
+  
+  // 1. Проверяем поддержку кодеков
+  console.log('📹 Supported Codecs:');
+  const codecs = {
+    'video/mp4': video.canPlayType('video/mp4; codecs="avc1.42E01E"'),
+    'video/mp4 (h265)': video.canPlayType('video/mp4; codecs="hev1.1.6.L93.B0"'),
+    'video/webm': video.canPlayType('video/webm; codecs="vp9"'),
+    'video/webm (vp8)': video.canPlayType('video/webm; codecs="vp8"'),
+    'video/ogg': video.canPlayType('video/ogg; codecs="theora"')
+  };
+  Object.entries(codecs).forEach(([name, support]) => {
+    console.log(`  ${name}: ${support || 'NOT SUPPORTED'}`);
+  });
+  
+  // 2. Проверяем readyState
+  console.log('\n📊 Video ReadyState:');
+  console.log('  HAVE_NOTHING:', video.HAVE_NOTHING);
+  console.log('  HAVE_METADATA:', video.HAVE_METADATA);
+  console.log('  HAVE_CURRENT_DATA:', video.HAVE_CURRENT_DATA);
+  console.log('  HAVE_FUTURE_DATA:', video.HAVE_FUTURE_DATA);
+  console.log('  HAVE_ENOUGH_DATA:', video.HAVE_ENOUGH_DATA);
+  
+  // 3. Загружаем видео и смотрим события
+  console.log('\n⏱️ Event Timeline:');
+  const eventLog = [];
+  
+  const logEvent = (e) => {
+    const time = performance.now();
+    console.log(`  [${time.toFixed(0)}ms] ${e.type} | readyState=${video.readyState} | currentTime=${video.currentTime.toFixed(3)}`);
+    eventLog.push({ type: e.type, time, readyState: video.readyState });
+  };
+  
+  ['loadstart', 'progress', 'loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough', 'playing', 'pause', 'seeking', 'seeked', 'timeupdate'].forEach(evt => {
+    video.addEventListener(evt, logEvent);
+  });
+  
+  video.src = videoFile;
+  video.load();
+  
+  // 4. Ждём loadedmetadata и проверяем видео
+  await new Promise(r => video.addEventListener('loadedmetadata', r));
+  
+  console.log('\n🎬 Video Properties:');
+  console.log(`  Duration: ${video.duration.toFixed(2)}s`);
+  console.log(`  Width x Height: ${video.videoWidth} x ${video.videoHeight}`);
+  console.log(`  ReadyState: ${video.readyState}`);
+  console.log(`  NetworkState: ${video.networkState}`);
+  console.log(`  Buffered: ${video.buffered.length} ranges`);
+  
+  // 5. Тестируем seek на разные позиции
+  console.log('\n🎯 Seek Test (50ms intents):');
+  for(let t = 0.1; t <= Math.min(1, video.duration - 0.2); t += 0.3) {
+    console.log(`\n  → Seeking to ${t.toFixed(2)}s:`);
+    video.currentTime = t;
+    
+    // Ждём события
+    let seeked = false;
+    const seekTimeout = new Promise(r => {
+      const onSeeked = () => {
+        console.log(`    ✅ seeked event at ${video.currentTime.toFixed(3)}s`);
+        seeked = true;
+        video.removeEventListener('seeked', onSeeked);
+        r();
+      };
+      video.addEventListener('seeked', onSeeked, { once: true });
+      setTimeout(() => {
+        if(!seeked) {
+          console.log(`    ⏱️  timeout, currentTime is ${video.currentTime.toFixed(3)}s`);
+          video.removeEventListener('seeked', onSeeked);
+          r();
+        }
+      }, 500);
+    });
+    
+    await seekTimeout;
+  }
+  
+  // 6. Тестируем draw в canvas
+  console.log('\n🖼️ Canvas Draw Test:');
+  const canvas = document.createElement('canvas');
+  canvas.width = 100;
+  canvas.height = 100;
+  const ctx = canvas.getContext('2d');
+  
+  video.currentTime = 0.5;
+  await new Promise(r => setTimeout(r, 100));
+  
+  try {
+    ctx.drawImage(video, 0, 0, 100, 100);
+    const imageData = ctx.getImageData(0, 0, 10, 10).data;
+    const hasPixels = imageData.some(p => p > 0);
+    console.log(`  ✅ Draw successful, has pixels: ${hasPixels}`);
+    console.log(`  First 4 pixels (RGBA): ${Array.from(imageData.slice(0, 4)).join(',')}`);
+  } catch(e) {
+    console.log(`  ❌ Draw failed: ${e.message}`);
+  }
+  
+  // 7. Система
+  console.log('\n💻 System Info:');
+  console.log(`  UserAgent: ${navigator.userAgent}`);
+  console.log(`  Platform: ${navigator.platform}`);
+  console.log(`  HW Concurrency: ${navigator.hardwareConcurrency}`);
+  console.log(`  Device Memory: ${navigator.deviceMemory}GB`);
+  console.log(`  Connection: ${navigator.connection?.effectiveType || 'unknown'}`);
+  console.log(`  Screen: ${window.innerWidth}x${window.innerHeight}`);
+  
+
+  document.body.removeChild(canvas);
+  
+  return { eventLog, videoProps: { duration: video.duration, width: video.videoWidth, height: video.videoHeight } };
+}
+
+// Запускаем диагностику
+//diagnose_video_api('mirror.mp4');
+
+async function pause(t){await new Promise(r => setTimeout(r, t));}

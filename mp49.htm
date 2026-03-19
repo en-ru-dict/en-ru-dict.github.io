@@ -33,10 +33,10 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.1);
   display: flex;
-  align-items: center;
-  justify-content: center;
+align-items: start;
+justify-content: center;
   z-index: 9998;
 }
 .progress-box {
@@ -82,15 +82,13 @@ FPS=10, 5*5=25 2.5 сек, 7*7=49 4.9 сек,
 Вобщем немного гимороя и размер анимашки будет в 20раз меньше! 1000->100->50
 </h3>
 
-<h1>Гифка 1.5мб/ Видео источник 49 кадров 65кб</h1>
-<img src="mirror.gif"><video src="mirror.mp4" controls></video>
+<h1>1. Гифка 1.5мб/ Видео источник 49 кадров 65кб</h1>
+<h1>2. Гифка 2мб/ Видео источник 35 кадров 80кб. Большая + прозрачный фон</h1>
+<img src="mirror.gif"><img src="fairy.gif" width="184" height="240">
+<video src="mirror.mp4" controls></video>
 <hr>
-<button onclick="run1('mirror',7,7,1)">Загрузить мп49 спрайт из видео</button>
-<hr>
-<h1>Гифка 200кб/ Видео источник 35 кадров 80кб. Большая + прозрачный фон</h1>
-<img src="fairy.gif" width="184" height="240"><video src="f.mp4" controls></video>
-<hr>
-<button onclick="run1('f',7,5,1,'#f2c59e')">Загрузить мп49 спрайт из видео</button>
+<button onclick="run1('mirror',7,7,1)">Загрузить мп49 спрайт1 из видео</button>
+<button onclick="run1('f',7,5,0.5,'#f2c59e')">Загрузить мп49 спрайт2 из видео</button>
 <hr>
 <button onclick="bg('green')">green</button>
 <button onclick="bg('blue')">blue</button>
@@ -121,9 +119,8 @@ function bg(x){document.body.style.backgroundColor=x;}
 window.g_log='>';
 async function run1(name,x,y,z,bg){
 
- var url=await preload(name+'.mp4',x,y,z,bg);
+ var url=await sprite_preload(name+'.mp4',x,y,z,bg);
  if(url===0)return 0;//error
- if(url===16){url=name+'_g16.jpg';x=4,y=4;log('много дублей, грузим запасной спрайт16');}
  var t=gen_css_grid(x,y); load_css_htm(t); 
 set_css_grid(184,240,3);
 

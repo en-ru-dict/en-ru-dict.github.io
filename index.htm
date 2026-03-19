@@ -12,7 +12,7 @@
 <link rel="canonical" href="https://en-ru-dict.github.io">
 <style>
 img[src=''] {display:none;}
-body {overflow-x: hidden;min-width:350px;background:#E6E7E9;margin:0;padding:0;font-family:'Pontano Sans',Arial,Helvetica,sans-serif;font-size:16px;color:#000;}
+body {overflow-x:hidden;min-width:350px;background:#E6E7E9;margin:0;padding:0;font-family:'Pontano Sans',Arial,Helvetica,sans-serif;font-size:16px;color:#000;}
 .container {position:relative;z-index:2;padding:10px;box-shadow:0 5px 5px 5px #CCCCCC;background-color:floralwhite;}
 center {background:#eeffee}
 p {background:azure;padding:10px;font-size:20px;}
@@ -24,8 +24,8 @@ p {background:azure;padding:10px;font-size:20px;}
  text-shadow: 1px -1px 1px #000,1px 1px 0px rgba(0, 0, 0, 0.5);
 }
 .zerk {
-  display: flex; align-items: center; justify-content: center; text-align: center;
-  line-height: 1.2;border-radius: 10vh; border: 1px solid aquamarine;
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  line-height:1.2; border-radius:10vh; border: 1px solid aquamarine;
   text-decoration:none;
 }
 .t1{font-size:3em;position:relative;}
@@ -48,53 +48,36 @@ p {background:azure;padding:10px;font-size:20px;}
   100% {color:lime;}  
 }              
          
-h3 {margin: 1%;}
+h3 {margin:1%;}
 #id_kn {position:absolute;right:0;top:0;z-index:3;}
 #id_kn a{
  color:#fff;background:red; text-decoration:none;
- font-weight:600;font-size:2em;
- border: 1px dotted #000;border-radius:10px;
- display:inline-block; padding:3px 7px;
+ font-weight:600;font-size:2em; border: 1px dotted #000;border-radius:10px;
+ display:inline-block; padding: 3px 7px;
  text-shadow: 1px -1px 1px #000,1px 1px 0px rgba(0, 0, 0, 0.5);
- box-shadow:inset 2px 2px 8px 3px darkorange;
+ box-shadow: inset 2px 2px 8px 3px darkorange;
 }
-.hint {background-color:lavender;padding:15px;border-left:4px solid gold;margin: 5px 0 15px;}
+.hint {background-color:lavender; padding:15px; border-left: 4px solid gold; margin: 5px 0 15px;}
 
 /* MOBILE FIRST FACADE */
 .mobile-facade {
- display:none; max-width: 760px; margin: 0 auto 20px auto; padding: 10px;
+ display:none; max-width:760px; margin: 0 auto 20px auto; padding:10px;
  font-family: system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
 }
-.mf-card {
- background: #ffffff; border-radius: 14px; box-shadow: 0 4px 14px rgba(0,0,0,0.12);
- padding: 14px; margin-bottom: 14px;
-}
-.mf-title {font-size: 22px; font-weight: 700; margin-bottom: 6px;}
-.mf-sub {font-size: 15px; color: #444; margin-bottom: 12px; line-height: 1.4;}
-.mf-main-btn {
- display:block; text-align:center; text-decoration:none; font-size:18px; font-weight:700;
- background: linear-gradient(135deg, #ff9800, #ff5722); color:#fff;
- padding:14px; border-radius:12px; box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-}
-.mf-main-btn:active {transform: scale(0.97);}
-.mf-list-block {margin-top: 10px;}
-.mf-list-item {
- display:block; background:#f5f7fa; color:#000; border-radius:12px; text-decoration:none;
- box-shadow: 0 2px 6px rgba(0,0,0,0.12); padding:12px; margin-bottom:10px;
-}
+.mf-card {background:#ffffff; border-radius:14px; box-shadow: 0 4px 14px rgba(0,0,0,0.12); padding:14px; margin-bottom:14px;}
+.mf-title {font-size:22px; font-weight:700; margin-bottom:6px;}
+.mf-sub {font-size:15px; color:#444; margin-bottom:12px; line-height:1.4;}
+.mf-main-btn {display:block; text-align:center; text-decoration:none; font-size:18px; font-weight:700; background: linear-gradient(135deg, #ff9800, #ff5722); color:#fff; padding:14px; border-radius:12px; box-shadow: 0 6px 16px rgba(0,0,0,0.25);}
+.mf-main-btn:active {transform:scale(0.97);}
+.mf-list-block {margin-top:10px;}
+.mf-list-item {display:block; background:#f5f7fa; color:#000; border-radius:12px; text-decoration:none; box-shadow: 0 2px 6px rgba(0,0,0,0.12); padding:12px; margin-bottom:10px;}
 .mf-list-item strong {display:block; font-size:17px; margin-bottom:6px;}
-.mf-links a {
- display:inline-block; margin: 4px 6px 0 0; padding: 6px 10px; text-decoration:none;
- background:#2b7cff; color:#fff; border-radius: 8px; font-size: 13px;
-}
+.mf-links a {display:inline-block; margin: 4px 6px 0 0; padding: 6px 10px; text-decoration:none; background:#2b7cff; color:#fff; border-radius:8px; font-size:13px;}
 .mf-links a.pdf {background:#9c27b0;}
 .mf-links a.txt {background:#607d8b;}
 .mf-links a.apkg {background:#009688;}
 .mf-media {display:flex; gap:10px; flex-wrap:wrap;}
-.mf-media a {
- flex: 1 1 140px; text-align:center; background:#111; color:#fff; padding: 14px;
- border-radius: 12px; text-decoration: none; font-weight: 600;
-}
+.mf-media a {flex: 1 1 140px; text-align:center; background:#111; color:#fff; padding:14px; border-radius:12px; text-decoration:none; font-weight:600;}
 @media (orientation:portrait) { .mobile-facade {display:block;}}
 
 #id_cardLink {display:block; padding:0; background:none; margin-top:1em; border:none; box-shadow:none;}
@@ -113,10 +96,9 @@ h3 {margin: 1%;}
 #id_pic div {
  position:absolute; bottom:1%; padding: 8px 14px; border-radius:14px;
  background: rgba(0,0,0,0.55); color:#fff; font-size:18px; font-weight:600;
- letter-spacing:0.4px; white-space:nowrap;
+ letter-spacing:0.4px; white-space:nowrap; pointer-events:none;
  text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 8px rgba(255,160,80,0.6);
  box-shadow: 0 0 12px rgba(255,160,80,0.4), inset 0 0 10px rgba(255,200,120,0.2);
- pointer-events: none;
 }
 @media (max-width:900px){#caption {font-size:15px;padding:6px 10px;border-radius:12px;bottom:1%;}}
 @media (max-width:420px){#caption {font-size:13px; padding: 5px 9px;}}
@@ -197,7 +179,7 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
 <noscript>
 <div style="font-size:40px">БЕЗ СКРИПТОВ ПОЛ САЙТА НЕ РАБОТАЕТ НО СПИСКИ СКАЧАТЬ МОЖНО</div>
 </noscript>
-<div id="id_kn"><a href="#" onclick="font_size_inc()">+</a></div>
+<div id="id_kn"><a href="#" onclick="font_size_inc();return false;">+</a></div>
 <div class="container">
 <div class="center">
  <h1 class="t1" >Ассоциации для 5000 английских слов</h1>
@@ -215,7 +197,7 @@ hr {width:100%; height:5px; color:red; background-color:gold; margin:10px; borde
   <div class="mf-sub">
    Только для телефонов кнопки ссылки, на ПК не видно.
   </div>
-  <a class="mf-main-btn" href="#" onclick="document.getElementsByClassName('mobile-facade')[0].hidden=true">
+  <a class="mf-main-btn" href="#" onclick="document.getElementsByClassName('mobile-facade')[0].remove();return false;">
    👉 Закрыть и перейти на сайт.
   </a>
  </div>
@@ -529,10 +511,9 @@ function set_log(){
  el('id_t0').textContent=g_log;
 }
 </script>
-<hr>
-<div style="position: absolute;z-index:999;">
- <img style="height:0;" id="id_i0" src=''><br>
- <textarea cols="50" rows="10" id="id_t0"></textarea>
+<div style="position:relative;z-index:999;margin-top: -20px;">
+ <img style="height:1px;" id="id_i0" src=''>
+ <textarea id="id_t0" style="width:100vw;min-height:10vh"></textarea>
 </div>
 </body>
 </html>
