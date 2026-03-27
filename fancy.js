@@ -1,6 +1,9 @@
 //==========fancy.js====Xing*2026=======
+function el(id){var e=document.getElementById(''+id);if(!e)alert('нет элемента='+id); return e;}
 function els(s){return document.querySelectorAll(''+s);}
 function css_var(v,d){document.documentElement.style.setProperty(''+v,''+d);}
+function set_img(url){el('id_i0').src=url;}
+function set_log(){el('id_t0').textContent=g_log;}
 function min_max(v,vmin,vmax){if(v<vmin)v=vmin;if(v>vmax)v=vmax;return v;}
 function get_wh(){//служебная
   var w = window.innerWidth, h = window.innerHeight;
@@ -35,11 +38,11 @@ function resizer() {
   const r = targetSection.offsetWidth - targetSection.offsetHeight;
   const q = Math.floor(r/2);
   css_var('--shift1', r + 'px'); css_var('--shift2', q + 'px');
-  console.log(`Ширина сдвига: ${r}px`);
+  console.log(`Ширина сдвига: ${r}px, ${q}px`);
   //зеркало 184*240 33%
-  w=min_max(Math.floor(w/3),92,368);
-  h=min_max(Math.floor(h/3),120,480);
-  css_var('--wz',w+'px'); css_var('--hz',h+'px');
+  w=min_max(Math.floor(w/3),92,368); css_var('--wz',w+'px');
+  h=min_max(Math.floor(h/3),120,480); css_var('--hz',h+'px');
+  
   var v=is_vert();
   console.log(`Вертикальный: ${v} овал w=${w} h=${h}`);
   o_resizer();
@@ -149,7 +152,7 @@ function set_ov(u){ var e,n;
   start_loading();
   if(u=='mirror.mp4'){
 	run_mp49('mirror',7,7).then(url=>{
-     console.log('g_mp4_status='+g_mp4_status);
+     console.log('g_mp4_status='+g_mp4_status);css_var('--time','4.9s');
      del_ov(1); els('.zerk img').forEach(b=>b.src=url);
      els('.zerk').forEach(b=>b.classList.add('g49'));
      end_loading();
@@ -162,14 +165,19 @@ function set_ov(u){ var e,n;
   //картинки шмартинки
   e = new Image();
   e.onload = ()=>{
-    if(u=='mirror.png'){del_ov(2);css_var('--bgo',`url("${u}")`);}
-    if(u=='mirror.gif'){del_ov(1);els('.zerk img').forEach(b=>b.src=u);}
-    if(u=='g25.jpg'){
-	  del_ov(1); els('.zerk img').forEach(b=>b.src=u);
-	  gen_css_grid(5,5,'g25');
-	  els('.zerk').forEach(b=>b.classList.add('g25'));
-	}
-    e.remove(); end_loading();
+   if(u=='mirror.png'){del_ov(2);css_var('--bgo',`url("${u}")`);}
+   if(u=='mirror.gif'){del_ov(1);els('.zerk img').forEach(b=>b.src=u);}
+   if(u=='g16.jpg'){
+    del_ov(1); els('.zerk img').forEach(b=>b.src=u);
+    gen_css_grid(4,4,'g16'); css_var('--time','1.6s');
+    els('.zerk').forEach(b=>b.classList.add('g16'));
+   }
+   if(u=='g25.jpg'){
+    del_ov(1); els('.zerk img').forEach(b=>b.src=u);
+    gen_css_grid(5,5,'g25'); css_var('--time','2.5s');
+     els('.zerk').forEach(b=>b.classList.add('g25'));
+   }
+   e.remove(); end_loading();
   }
   e.onerror = (er)=> {alert('ошибка загрузки2='+u); end_loading();}
   e.src = u;
@@ -198,6 +206,15 @@ function set_weather(v){// Смена погоды
 function load_css_htm(){
  var st=document.createElement('style');
  st.textContent=`
+:root {
+  --bg2: none;
+  --bgo: none;
+}
+img[src=''] {display:none;}
+/* СТИЛЬ ЗЕРКАЛА (Кнопки) */
+.zerk img {border-radius: 50%;object-fit: cover; position: absolute; top:0; left:0; width:100%; height:100%;}
+.zerk b {z-index:1; font-size: x-large; color: gold;}
+
 /* РЕЖИМ ОВАЛОВ (Волшебные зеркала) */
 .oval .zerk {
  position: absolute;
@@ -425,9 +442,10 @@ var htm=`
    <select onchange="set_ov(this.value)">
     <option value="">Вид зеркала (нет)<\/option>
     <option value="mirror.png">PNG rbga 20кб<\/option>
+    <option value="g16.jpg">JPG-16? 390кб<\/option>
     <option value="g25.jpg">JPG-25? 600кб<\/option>
     <option value="mirror.gif">GIF-A? 1.5мб<\/option>
-    <option value="mirror.mp4">MP49! 65кб<\/option>
+    <option value="mirror.mp4">MP49! 32кб<\/option>
    <\/select>
 
    <select onchange="set_weather(this.value)">
@@ -568,7 +586,7 @@ console.log('красота загружена');
 
 window.g_log='>';//вкл лог
 async function run_mp49(name,x,y){
- var url=await sprite_preload(name+'.mp4',x,y,0.7);//зеркало 49 кадров
+ var url=await sprite_preload(name+'.mp4',x,y,1);//зеркало 49 кадров
  if(url===0)return 0;//error
  gen_css_grid(x,y,'g49');
  set_img(url);

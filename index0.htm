@@ -41,7 +41,7 @@ h2:after{content:attr(data-content);position:absolute;left:0;right:0;top:0;botto
 	100%{-webkit-transform: rotate3d(0,1,0, -2deg); transform: rotate3d(0,1,0, -2deg);}}
 #id2{overflow:hidden;perspective:500px;transform-style:preserve-3d; height:200px;width:100%;}
 
-#id_kn {position:absolute;right:0;top:0}
+#id_kn {position:fixed;right:0;top:0}
 #id_kn a{padding:3px 7px;background:red;font-size:2em;box-shadow:inset 2px 2px 8px 3px darkorange;}
 </style>
 <script src="500/test.js"></script>
@@ -51,7 +51,7 @@ h2:after{content:attr(data-content);position:absolute;left:0;right:0;top:0;botto
 <noscript>
 <div style="font-size:40px">БЕЗ СКРИПТОВ ПОЛ САЙТА НЕ РАБОТАЕТ НО СПИСКИ СКАЧАТЬ МОЖНО</div>
 </noscript>
-<div id="id_kn"><a href="#" onclick="font_size_mob()">+</a></div>
+<div id="id_kn"><a href="#" onclick="font_size_inc();return false;">+</a></div>
 <div id="container">
 <center>
 <h1 data-content="Ассоциации для 5000 английских слов" class="st1">Ассоциации для 5000 английских слов</h1>
@@ -119,26 +119,30 @@ h2:after{content:attr(data-content);position:absolute;left:0;right:0;top:0;botto
 <p>Все материалы на сайте бесплатны и доступны для использования. Международный английский это базовая потребность всех людей в мире и все должны иметь равный доступ. Помогите всем сделать обучение лучше!
 Если вам нравится этот сайт, расскажите о нём друзьям и знакомым! Чем больше людей будет пользоваться нашим ресурсом, тем медленее он будет работать (шутка) Тем больше новых ассоциаций и картинок они добавят и другим раскажут что есть такое чудо чудное. Вместе мы сделаем изучение английского языка проще и эффективнее!
 Не тратьте деньги зря на платные курсы и программы пока не попробуйте наш бесплатный сыр :)<br><br>
-(Текст сайта писал чат бот геними, получилось прикольно но посещаемость сайта резко упала, для людей слишком слащаво и сказки, в реале замучайтесь учить один! ин.язык, а 2-5 это уже для гениев 0.1%, поэтому убрал от греха подальше для поисковых роботов сойдёт и эта чешуя)
+(Этот текст страницы писал чат бот, получилось прикольно но посещаемость сайта резко упала, для людей слишком слащаво и сказки, в реале замучайтесь учить один! ин.язык, а 2-5 это уже для гениев, поэтому убрал подальше, для поисковых роботов сойдёт)
 </p>
 </div>
 <hr>
 <a href="https://m.youtube.com/@en-ru-dict">
 Ютюб канал тут. Можете писать коменты под видео</a>
-<h3>- Сайт работает 2023-2025г -</h3>
+<h3>- Сайт работает 2023-2026г -</h3>
 <a href="index.htm">новая версия сайта</a>
 <a href="http://www.24log.de" target="_blank"><img border="0" src="http://counter.24log.ru/buttons/cl4/48-0.gif" alt="html counter" title="" /></a>
 <a href="http://www.24log.ru" target="_blank">
 <img border="0" src="http://counter.24log.ru/count4_282346_48_1_6.pcx" alt="счетчик посетителей сайта" title="счетчик для сайта" /></a>
 ..Тут типа счетчик посещений, но блокировщики рекламы его убирают..<br>
 <script>
-var g_font_size=20;
-function font_size_mob(){var p,i;
- g_font_size+=2; p=document.getElementsByTagName('p');
- for(i=0;i<p.length;i++)p[i].style='font-size:'+g_font_size+'px;';
+function getPx(elm){
+  var cs = getComputedStyle(elm); if(!cs) return 0;
+  var curPx = parseFloat(cs.fontSize); if(!isFinite(curPx)) return 0;
+  return curPx;
 }
-
-</script>
+function font_size_inc(){
+  var i=0,px=[],n=0,all=document.querySelectorAll('*');
+  for(i=0;i<all.length;i++) px.push(2+getPx(all[i]));
+  for(i=0;i<all.length;i++) if(px[i]>2){n++;all[i].style.fontSize=px[i]+'px';}
+  console.log('Увеличен шрифт на 2px у '+n+' элементов.');
+}</script>
 
 </body>
 </html>
