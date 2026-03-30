@@ -260,7 +260,7 @@ function gen_css_grid(nx,ny){
 }
 .mp49 {position:absolute; width: var(--wz); height: var(--hz); overflow:hidden;}
 .mp49 img {
-  position:absolute; width: ${nx*100}%; height:${ny*100}%; 
+  position:absolute; width: ${nx*100}%; height:${ny*100}%; border:0;
   animation: tr${nx*ny} var(--time) steps(1) infinite alternate;
 }
 .mp49 img[src='']{animation:none;}
