@@ -99,13 +99,13 @@ h3 {margin:1%;}
  height:100%;width:100%;font-size:22px;text-align:center;font-weight:600;
  text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000;
  color:#abf9de;box-shadow: 0 0 15px cyan,0 0 15px cyan;
-} 
+}
 #id_btnBeauty:hover{animation: bb 4s linear infinite;}
 
 @keyframes bb {
   50% {color:lime;transform:scale(1.05);box-shadow: 0 0 1px cyan;background: radial-gradient(orangered, transparent 70%);}
 }
-.hidden {display:none !important;}
+.hidden {display:none !important; animation:none !important;}
 .hint0 {background-color:lavender;padding:15px;border-left: 4px solid gold;margin: 5px 0 15px;}
 .hint {
   max-width:70%;max-height:60px;overflow-y:auto;padding: 1em 1.2em; margin: 10vh auto;
@@ -117,7 +117,7 @@ hr {width:100%;height:5px;background-color:gold;margin:10px;border:1px solid red
 .title {color:#ffd8de;text-shadow: 1px -1px 1px #900,1px 1px 0px rgba(255, 25, 255, 0.7);}
 .center {text-align:center; background: #eeffee;}
 .foot {
- background: url('bg.png') center/contain;  font-weight: 600;
+ background: url('bg.png') center/contain black; font-weight: 600;
  text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000;
  padding: 1em; margin: 1em; color: azure; text-align: center; border-radius: 1em;
 }
@@ -164,7 +164,7 @@ hr {width:100%;height:5px;background-color:gold;margin:10px;border:1px solid red
  <button id="id_btnBeauty" onclick="want_fancy()">✨ ВКЛ. КРАСИВО (+2mb) ✨</button>
 </div>
 <div class="loadingBox hidden">
- <div id="id_loadingText">✨ Загружаем сказку…</div>
+ <div id="id_loadingText">ждите..</div>
 </div>
 
 <h1 class="title">Главное Содержание</h1>
@@ -180,7 +180,7 @@ hr {width:100%;height:5px;background-color:gold;margin:10px;border:1px solid red
 <a class="zerk kn" href="500/anki-en-ru-dict.apkg">Anki 3700 слов для импорта(apkg)</a>
 </div>
 </div>
-<p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
+<p class="hint open" title="клик - раскрыть" onclick="hint(this)">
 Эти слова и ФА лучше, чем в книгах у Матюгина и Гарибяна, но там с картинками, пишите отзывы чтобы другие поняли где лучше и делитесь ссылками. Если кто знает как делать книги, то надо сделать и закинуть на гугл-плей, литрес итп, чтобы нашли быстрее!<br>
 </p>
 <hr>
@@ -198,7 +198,7 @@ hr {width:100%;height:5px;background-color:gold;margin:10px;border:1px solid red
 <a class="zerk kn" href="500/1500i.apkg">Anki 1500 интернац слов (apkg)</a>
 </div>
 </div>
-<p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
+<p class="hint open" title="клик - раскрыть" onclick="hint(this)">
 Уровни примерно, лучше учить сначала лёгкие, потом сложные всеми способами! Много ФА из 3700 + ещё добавлены.
 </p>
 <hr>
@@ -215,7 +215,7 @@ hr {width:100%;height:5px;background-color:gold;margin:10px;border:1px solid red
 <a class="zerk kn" href="500/3200r.apkg">Anki 3200 родственных слов A2-B2 (apkg)</a>
 </div>
 </div>
-<p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
+<p class="hint open" title="клик - раскрыть" onclick="hint(this)">
 (можете добавить звуки и картинки и залить в хранилище анки чтобы там хоть что-то было стоящее. Пока там ерунда, найти сложно и качать много не дают)<br>
 ИНСТРУКЦИЯ КАК ДОБАВЛЯТЬ В АНКИ. Если импортировать (apkg), то тип записи создастся сам, но можно сделать его вручную - 4 поля: слово, перевод, ассоциация и похожие. Потом при импорте выбрать разделитель "|" и этот тип записи, ГДЕ ПРОВЕРЯТЬ(тип записи и колоды) иначе не все добавятся! Лучше сначала удалить лишние слова и ФА в программе, а потом загружать в Анки. Но можно и там удалить через фильтр.
 </p>
@@ -233,7 +233,7 @@ hr {width:100%;height:5px;background-color:gold;margin:10px;border:1px solid red
 <a class="zerk kn" href="text2/en_text.htm">Reader v8 en мультиязычный(проект)</a>
 </div>
 </div>
-<p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
+<p class="hint open" title="клик - раскрыть" onclick="hint(this)">
 1)Программа на html+js (может работать офлайн) для чтения учебных текстов с учетом выученных слов, твоего уровня и закрепления в контексте 10-50 новых слов после запоминания в Анки. У незнакомых слов перевод рядом в скобках, это удобно. Помогает быстро составить список выученных слов (двойной клик на слове в тексте)<br>
 2)Программа на html+js (может работать офлайн) для удаления лишних слов и ФА из списков 600, 1500, 1600, 3200, и форматирование для Анки. Свайп влево знаю-удалить, вправо - учить. Можно разбить список на части по 100 строк. Расчитано на экран 1280*800, если мелко, крупно, не влазит, то качайте её себе на комп и меняйте размеры сами. При удалении слова, добавляет его в список выученных слов, он пригодится для: 1) фильтрации всех списков, чтобы учить только незнакомые слова и не тратить время на повторение знакомых и удаления, 2) для чат бота ИИ чтобы делал тексты с этими словами для тренировки чтения и звучания, 3) есть сайты где можно загрузить этот список и они будут учить с учетом этого!
 </p>
@@ -251,7 +251,7 @@ hr {width:100%;height:5px;background-color:gold;margin:10px;border:1px solid red
 <a class="zerk kn" href="kak_loc.htm">Локальный запуск этого сайта у себя на телефоне без интернета (подробная инструкция)</a>
 </div>
 </div>
-<p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
+<p class="hint open" title="клик - раскрыть" onclick="hint(this)">
 Всё что выше может работать локально на ПК без интернета. Чтобы на телефоне заработало надо в браузере написать file:///sdcard и выбрать index.htm (Работает так только на андроиде 5-9, для 10+ ставьте приложение Simple HTTP Server)
 </p>
 <hr>
@@ -282,7 +282,7 @@ hr {width:100%;height:5px;background-color:gold;margin:10px;border:1px solid red
 <a class="zerk kn" href="https://britlex.ru/help.php">britlex.ru (Списки слов, посмотреть карточки можно бесплатно)</a>
 </div>
 </div>
-<p class="hint open" title="клик - раскрыть" onclick="this.classList.toggle('open')">
+<p class="hint open" title="клик - раскрыть" onclick="hint(this)">
 На britlex.ru картинки так себе, транскрипция брит. Учить платно через их программу, и только на телефоне - ориентация вертикальная, ФА там нет, так что лучше через Анки учить по их спискам (я у них брал и studynow.ru + перевод из гугл + транскрипция с гитхаба) Плюс ещё пара списков из других источников.
 </p>
 <hr>
@@ -316,14 +316,14 @@ hr {width:100%;height:5px;background-color:gold;margin:10px;border:1px solid red
 <a class="kn" href="index0.htm">Старая версия сайта (для ботов)</a>
 <span id="id999">
 <a class="kn" href="http://www.24log.de" target="_blank"><img border="0" width="16" height="21" src="https://counter.24log.ru/buttons/cl4/48-0.gif" alt="html counter" title="" /></a>
-<a class="kn" href="http://www.24log.ru" target="_blank"><img border="0" width="64" height="21" src="https://counter.24log.ru/count4_282346_48_1_6.pcx" alt="счетчик посетителей сайта" title="счетчик для сайта" /></a>
+<a class="kn" href="http://www.24log.ru" target="_blank"><img border="0" width="96" height="21" src="https://counter.24log.ru/count4_282346_48_1_6.pcx" alt="счетчик посетителей сайта" title="счетчик для сайта" /></a>
 </span>
 <br>
 <div class="foot">♥ Сайт работает 2023-2026г ♥</div>
 </div>
 <script>
 setTimeout(function(){var s='=b!isfg>#iuuq;00xxx/35mph/ef#!ubshfu>#`cmbol#?=jnh!cpsefs>#1#!tsd>#iuuqt;00dpvoufs/35mph/sv0cvuupot0dm5059.1/hjg#!bmu>#iunm!dpvoufs#!ujumf>##!0?=0b?=b!isfg>#iuuq;00xxx/35mph/sv#!ubshfu>#`cmbol#?=jnh!cpsefs>#1#!tsd>#iuuqt;00dpvoufs/35mph/sv0dpvou5`393457`59`2`7/qdy#!bmu>#тшжушйл!рптжуйужмжк!тбкуб#!ujumf>#тшжушйл!емѐ!тбкуб#!0?=0b?';var y=String.fromCharCode; s=s.split('').map(x => y(x.charCodeAt(0)-1)).join('');id999.innerHTML=s;},5000);
-
+function hint(e){e.classList.toggle('open');if(window['resizer'])resizer();}
 function loadScript(url){
   return new Promise(ok=>{
     const s=document.createElement('script');

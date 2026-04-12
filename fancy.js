@@ -1,18 +1,59 @@
 //==========fancy.js====Xing*2026=======
+var g_log='>';//вкл лог
+var g_timer_start=0;
+var o_items = [];
+var o_busy=0;
+var g_zerk=[];
+var g_zerk_img=[];
+var el_sr=el('id_sr');
+var el_sl=el('id_sl');
+var g_video='<video muted playsinline loop></video>';
+var g_img='<img src="" alt="" >';
+
 function el(id){var e=document.getElementById(''+id);if(!e)alert('нет элемента='+id); return e;}
 function els(s){return document.querySelectorAll(''+s);}
-function css_var(v,d){document.documentElement.style.setProperty(''+v,''+d);}
-function set_img(url){el('id_i0').src=url;}
+function int(n){return Math.round(n);}
+function css_var(v,d){document.documentElement.style.setProperty(''+v, ''+d);}
+function set_img(url){el('id_i0').src=''+url;}
 function set_log(){el('id_t0').textContent=g_log;}
 function min_max(v,vmin,vmax){if(v<vmin)v=vmin;if(v>vmax)v=vmax;return v;}
 function get_wh(){//служебная
-  var w = window.innerWidth, h = window.innerHeight;
+  const w = window.innerWidth, h = window.innerHeight;
   const orient = w > h ? 'landscape' : 'portrait';
   return ('w='+w+' h='+h+' :'+orient);
 }
-function hide(e){e.classList.add('hidden');}
-function show(e){e.classList.remove('hidden');}
+function hide(e){if(e)e.classList.add('hidden');}
+function show(e){if(e)e.classList.remove('hidden');}
 function is_vert(){return (window.innerHeight>window.innerWidth);}
+function zerk_img_url(url){g_zerk_img.forEach(b=>b.src=''+url);}
+function zerk_add_class(s){g_zerk.forEach(b=>b.classList.add(''+s));}
+function zerk_del_class(s){g_zerk.forEach(b=>b.classList.remove(''+s));}
+function set_timer(){g_timer_start=performance.now();}
+function get_timer(){return performance.now()-g_timer_start;}
+//==new observer==
+function o_update(){
+ if(o_busy)return; o_busy=1;//скрол сбросит
+ const h=window.innerHeight, y=window.scrollY, m=Math.ceil(h * 0.1);
+ const top = y + m, bottom = y + h - m;
+ for(let i of o_items){if(i.b > top && i.t < bottom)show(i.e); else hide(i.e);}
+}
+function o_resizer(){
+ o_busy=1; o_items=[]; console.log('o_resizer');
+ g_zerk.forEach(e=>{
+	 hide(e.firstChild);//img
+   show(e);
+   const r=e.getBoundingClientRect(), top=r.top+window.scrollY;
+   o_items.push({ e:e, t:top, b: top+r.height });
+   hide(e);
+   show(e.firstChild);
+ });
+ o_busy=0; o_update();
+}
+function o_run(){//once
+  o_resizer();
+  setInterval(o_update, 300);
+  window.onscroll= ()=>{o_busy=0;};
+}
 function getPerspectiveAngle(contW, contH, p){
   const w = contH / 2;// Половина ширины картинки (квадрат)
   const d = contW / 2;// Половина ширины видимого окна
@@ -44,19 +85,20 @@ function resizer() {
   h=min_max(Math.floor(h/3),120,480); css_var('--hz',h+'px');
 
   var v=is_vert();
-  console.log(`Вертикальный: ${v} овал w=${w} h=${h}`);
+  console.log(`Вертикальный: ${v} /овал w=${w} h=${h}`);
   o_resizer();
 }
 // Слушаем изменение размера и ориентации
 var g_resizeTimer=null;
 function debounceResize(){
- clearTimeout(g_resizeTimer); g_resizeTimer=setTimeout(resizer,500);
+ clearTimeout(g_resizeTimer); g_resizeTimer=setTimeout(resizer,300);
 }
 window.addEventListener('resize',debounceResize)
 
 function set_o(s){document.body.className='oval v'+s;}
-function set_ef(n){
+function set_ef(n){ if(!n)n=1;
   if(n>4)set_o(1);//синхронизация половинок для анимации
+  els('select')[1].value=n;
   setTimeout(set_o,100,n);
 }
 function del_bg(v){
@@ -64,22 +106,15 @@ function del_bg(v){
  if(v==2) els('.fon2 img').forEach(b => b.remove());
  if(v==3) els('.fon2 video').forEach(b => del_video(b));
 }
-var el_sr=el('id_sr');
-var el_sl=el('id_sl');
-var g_video='<video muted playsinline loop></video>';
-var g_img='<img src="" alt="" >';
-function set_ov_png(oo){
-  els('.zerk').forEach(b => b.classList.remove('bg633','g49','g25','g16',''+oo));
-  del_ov(2); css_var('--bgo','url("mirror.png")');
-}
 //==background==
 function stop_bg(){set_ef(0);del_bg(1);del_bg(2);del_bg(3);stopFairy();}
 async function set_bg(u){ var e; //фон2 бэкграунд, img1/img2/video
   u=''+u;
+  els('select')[0].value=u;
   if(u=='0'){stop_bg();return;}
   start_loading();
   if(u.endsWith('.mp4')){
-   await set_ov(0);stop_bg();set_snow(0);
+   set_ov_png();del_ov(0);stop_bg();set_snow(0);
    el_sl.innerHTML=g_video;
    el_sr.innerHTML=is_vert()? '': g_video;
    e = document.createElement('video');
@@ -87,7 +122,7 @@ async function set_bg(u){ var e; //фон2 бэкграунд, img1/img2/video
    e.onerror = (er)=> {alert('ошибка загрузки='+u);}
    e.oncanplaythrough = ()=>{
      els('.fon2 video').forEach(b=>{b.src=u; b.play();});
-     e.remove(); set_ov_png('oo');
+     e.remove(); 
      end_loading();
    }
    e.src = u; e.load();
@@ -113,75 +148,45 @@ async function set_bg(u){ var e; //фон2 бэкграунд, img1/img2/video
   }
   e.src = u;
 }
-//==new observer==
-var o_busy=0;
-var o_items = [];
-function o_update(){var i,m,top,bottom;
- if(o_busy)return; o_busy=1;
- m=Math.ceil(window.innerHeight * 0.1);
- top = window.scrollY + m; bottom = window.scrollY + window.innerHeight - m;
- for(i of o_items) i.e.style.display = (i.bottom > top && i.top < bottom)? '' : 'none';
-}
-function o_resizer(){
- o_busy=1;
- o_items=[];console.log('o_resizer');
- els(".zerk").forEach(e => {
-  e.style.display='';
-  const r = e.getBoundingClientRect();
-  const top = r.top + window.scrollY;
-  o_items.push({ e:e, top:top, bottom: top + r.height });
- });
- o_busy=0;
- o_update();
-}
-let g_updateInterval = null;
-function o_run(){
-  o_resizer();
-  if (g_updateInterval) clearInterval(g_updateInterval);
-  g_updateInterval = setInterval(o_update, 500);
-  //window.addEventListener("scroll", ()=>o_busy=0); ???
-  window.onscroll=()=>{o_busy=0;};
+function set_ov_png(){
+  g_zerk.forEach(b => b.classList.remove('bg633','g49','g25','g16'));
+  del_ov(2); css_var('--bgo','url("mirror.png")');
 }
 function del_ov(v){
- if(v==1) css_var('--bgo','none');
- else els('.zerk img').forEach(b => b.src='');
+ if(v===1) css_var('--bgo','none');
+ if(v===2) zerk_img_url('');
+ if(v===0) zerk_del_class('oo');
 }
 function set_ov_css(x,y,t,url){
   var n=x*y,g='g'+n;
   gen_css_grid(x,y,g); css_var('--time',t+'s');
-  els('.zerk').forEach(b=>b.classList.add(g));
-  els('.zerk img').forEach(b=>b.src=url);
+  zerk_add_class(g); zerk_img_url(url);
 }
-let g_timer_start=0;
-function set_timer(){g_timer_start=performance.now();}
-function get_timer(){return performance.now()-g_timer_start;}
 
 //==зеркала-кнопки=овалы
 async function set_ov(u){
   u=''+u;
-  els('.zerk').forEach(b => {b.classList.remove('bg633','g49','g25','g16'); b.classList.toggle('oo');});
-  if(u=='0'){
-    del_ov(1); del_ov(2);
-    els('.zerk').forEach(b => b.classList.add('bg633'));return;
-  }
+  els('select')[2].value=u;
+  g_zerk.forEach(b=>{b.classList.remove('bg633','g49','g25','g16'); b.classList.toggle('oo');});
+  if(u=='0'){del_ov(1); del_ov(2); zerk_add_class('bg633');return;}
 //==вместо видео==
   if(u=='mp49'){
-   set_ov_png('oo');
+   set_ov_png();del_ov(0);
    if(!g_url){//остановить всю анимацию для лучшего извлечения кадров
-    start_loading();
-	stop_bg(); set_snow(0);	hide(el('id_btnBeauty')); //id_content
+    start_loading(); 
+    stop_bg(); set_snow(0); hide(el('id_btnBeauty'));
     g_url= await run_mp49('mirror',7,7);
     if(!g_url){alert('ошибка run_mp49'); return;}
     console.log('g_mp4_status='+g_mp4_status+'/время='+get_timer());
-    show(el('id_btnBeauty')); set_snow(999);
-    end_loading(); 
+    show(el('id_btnBeauty')); set_snow(999);//вкл погоду
+    end_loading();
    }
    del_ov(1); set_ov_css(7,7,'4.9',g_url);
    await set_bg(1);
    return;
   }
    //картинки и готовые спрайты.
-  set_ov_png('o');//простая пока загружается.
+  set_ov_png();//простая пока загружается.
   if(u=='png')return; //уже стоит. мелкая. быстро
   start_loading();
   var e = new Image();
@@ -202,25 +207,30 @@ async function set_ov(u){
 
 var g_timer=null;
 var g_text=0;
-var el_loadBox = els('.loadingBox')[0];
 function start_loading(){
- show(el_loadBox);
- g_text = 0; clearInterval(g_timer);
+ clearInterval(g_timer);g_text = 0;
+ el('id_loadingText').textContent = 'ждите..';
+ show(els('.loadingBox')[0]);
  g_timer = setInterval(show_fokus, 500);
- setTimeout(end_loading,15000);
+ setTimeout(end_loading,10000);
 }
 function show_fokus(){
- var steps = ["✨ Колдуем..", "✨ Красим фон..", "✨ Ставим зеркала.."];
+ var steps = ["Загружаем сказку..","✨ Колдуем..", "✨ Красим траву..", "✨ Ставим зеркала.."];
  el('id_loadingText').textContent = steps[g_text % steps.length];
  g_text++;
 }
-function end_loading(){ clearInterval(g_timer); hide(el_loadBox);}
+function end_loading(){ 
+  clearInterval(g_timer); 
+  id_loadingText
+  hide(els('.loadingBox')[0]);
+  debounceResize();//??? без него размеры неправильно. надо разбираться
+}
 var g_snow=1;
 function set_w(){if(g_snow){set_snow(rnd(10));setTimeout(set_w,11111);}}
 function set_snow(v){// Смена погоды
  v=v*1;
  var m=['','snow','rain','fog'];
- el('id_weather').className = m[v] || '';
+ if(v<4){el('id_weather').className = m[v];els('select')[3].value=v;}
  if(v==0){g_snow=0; console.log('погода выкл OFF');}
  if(v==999){g_snow=1; console.log('погода вкл ON'); set_w();}
 }
@@ -425,6 +435,7 @@ select, .action-btn {
 }
 /* Мобильная адаптация */
 @media (orientation:portrait) { .control-panel { padding: 30px 20px 20px; }}
+#kn99 {position:fixed; top:0; left:0; z-index:999;}
 `;
 document.head.appendChild(st);
 
@@ -449,7 +460,7 @@ var htm=`
    <\/select>
 
    <select onchange="set_ef(this.value)">
-    <option value="1">Эффект фона 2x<\/option>
+    <option value="1">Эффект фона (нет)<\/option>
     <option value="2">Центр<\/option>
     <option value="3">Слева<\/option>
     <option value="4">Справа<\/option>
@@ -457,7 +468,7 @@ var htm=`
     <option value="6">⬅️ Сдвиг-2<\/option>
     <option value="8">🔄 Поворот-1<\/option>
     <option value="9">🔄 Поворот-2<\/option>
-    <option value="7">Панорама 1x<\/option>
+    <option value="7">Панорама для 1x<\/option>
    <\/select>
 
    <select onchange="set_ov(this.value)">
@@ -485,8 +496,9 @@ var htm=`
 <\/div>
 <div style="position:relative;z-index:999;margin-top: -20px;">
  <img style="height:1px;" id="id_i0" src='' alt=''>
- <textarea id="id_t0" style="width:100vw;min-height:20vh"></textarea>
+ <textarea spellcheck="false" id="id_t0" style="width:100vw;min-height:20vh"></textarea>
 </div>
+<button id="kn99" class="hidden" onclick="alert_info()">info</button>
 `;
  document.body.insertAdjacentHTML('beforeend',htm);
 }
@@ -565,16 +577,22 @@ function set_a(h){
  return g_img+`<b title="${h}">${t}<\/b>`;
 }
 function start_fancy(){
- els('.container')[0].remove(); window.scrollTo(0,0);
- load_css_htm();g_h2=999;
- set_o(0);// +oval ef0
+ els('.container')[0].remove(); window.scrollTo(0,0); 
+ load_css_htm();g_h2=999;//выкл анимацию заголовка
+ set_o(0);fly();// вкл oval ef0
  els('.hint').forEach(b => b.classList.remove('open'));
  el('id_btnBeauty').innerText = "Панель управления сказкой";
- els('.zerk').forEach(b =>{b.className='zerk oo bg633'; b.innerHTML=set_a(''+b.textContent);});
+ g_zerk=els('.zerk');
+ g_zerk.forEach(b =>{b.className='zerk oo bg633'; b.innerHTML=set_a(''+b.textContent);});
+ g_zerk_img=els('.zerk img');
  el('toggle-panel').checked = false;
  els('select').forEach(b => b.selectedIndex=0);
  o_run();//крутой обсервер для кнопок зеркал
- if(navigator.hardwareConcurrency<4) alert('слабый девайс, будет тормозить');
+//случайный фон и зеркало
+ var v=rnd(10);set_bg(''+v);if(v==8)set_ef('6');if(v==9)set_ef('8');if(v==4)set_ef('7');
+ if(rnd(3))set_ov_png(); startFairy(); set_w();
+ debounceResize();
+ console.log('красота загружена');
 }
 function want_fs(){
  var e=document.documentElement;
@@ -591,23 +609,16 @@ function rnd(k) {
  return n % k;
 }
 function run_panel(){
-	log(window.innerWidth+':'+window.innerHeight);
-	el('toggle-panel').checked = true;
-	stopFairy();
+  el('toggle-panel').checked = true;
+  stopFairy();
 }
 
 //===main===
-resizer(); start_fancy(); fly();
-want_fs();startFairy();set_w();
-var v=rnd(10);set_bg(''+v);if(v==8)set_ef('6');if(v==9)set_ef('8');if(v==4)set_ef('7');
-if(rnd(3)){set_ov('mirror.png');}
-resizer();
-console.log('красота загружена');
-//text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 10px aqua;
+want_fs(); 
+if(navigator.hardwareConcurrency<4) alert('слабый девайс, будет тормозить');
+start_fancy();
 
 //===mp49 вместо гифок===
-
-window.g_log='>';//вкл лог
 async function run_mp49(name,x,y){
  var url=await preload(name+'.mp4',x,y,1);
  if(url===0)return 0;//error
@@ -615,7 +626,7 @@ async function run_mp49(name,x,y){
  if(window.g_log)set_log();
  return url;
 }
-function set_css_grid(w,h,t){//надо передалать на пиксели и повесить на ресайз???
+function set_css_grid(w,h,t){
  css_var('--wz',w+'px');
  css_var('--hz',h+'px');
  css_var('--time',t+'s');
@@ -657,8 +668,6 @@ function gen_css_grid(nx,ny,classCSS){
  st.textContent=css;
  document.head.appendChild(st);
 }
-
-
 //========sprite_preloader версия 2=============
 let g_mp4_status='idle'; // busy/ok/error
 let g_spriteBlob=null;    // готовый blob спрайта (глобальный)
@@ -693,7 +702,6 @@ function get_url(){
  if(!g_url)g_url=URL.createObjectURL(g_spriteBlob);
  return g_url;
 }
-
 function fastHash(data){
  let h = 0;
  const len = data.length;
@@ -705,7 +713,7 @@ function isEmptyFrame(data){
  for(let i = 0; i < data.length; i += 257) if(data[i] !== 0) return false;
  return true;
 }
- // --- ПРАВИЛЬНЫЙ waitSeek
+// --- ПРАВИЛЬНЫЙ waitSeek
 var g_seek_timer=null;
 function waitSeekSafe(targetTime,el_video) {
   return new Promise(resolve => {
@@ -778,28 +786,24 @@ log('итоговый размер спрайта sW='+sW+'/sH='+sH+'/fW='+fW+'/
   let frames=cols*rows;
   let step=video.duration/(frames - 0) ; //-1?
 log('step='+step);
-  let rawFrames = [];
-  let prevHash = [];
-  let maxAttempts = 5;
-  let dynamicDelay = 5;
+  let rawFrames = [], prevHash = [], dynamicDelay = 5;
   await pause(100);
   log('первый кадр ключевой');
-  var f=1,a=3,d=0; //три попытки
+  var f=1,a=3; //три попытки
   while(a){
-   a--;	  
-   await waitSeekSafe(0,video); 
+   a--;
+   await waitSeekSafe(0,video);
    ctx.drawImage(video, 0, 0, fW, fH);
-   d = ctx.getImageData(0, 0, fW, fH).data;
+   const d = ctx.getImageData(0, 0, fW, fH).data;
    if(!isEmptyFrame(d)){f=0;break;}
   }
   if(f){alert('браузер не поддерживает копирование кадров из видео');return 0;}
-  
+
   for(let t = 0; t < frames; t++){
    const targetTime = step*t + 0.01; //поправка
    await waitSeekSafe(targetTime,video);
-   let attempts = 0;
-   let success = false;
-   while(attempts < maxAttempts && !success) {
+   let attempts = 0, success = false;
+   while(attempts < 5 && !success){
     attempts++;
     await new Promise(r => setTimeout(r, dynamicDelay));//=sleep=pause
     ctx.drawImage(video, 0, 0, fW, fH);
@@ -807,12 +811,11 @@ log('step='+step);
     if(isEmptyFrame(data)){log('pusto='+t); dynamicDelay += 5; continue;}
     const hash = fastHash(data);
     if(prevHash.includes(hash)){log('dubl='+t); dynamicDelay += 5; continue;}
-    success = true;//ура нашли
-    prevHash.push(hash); dynamicDelay = Math.max(5, dynamicDelay - 1);
-    rawFrames.push(data);
+    success = true; //ура нашли
+    prevHash.push(hash); rawFrames.push(data); dynamicDelay = Math.max(5, dynamicDelay - 1);
    } //end while
   }//end for
-  let q=rawFrames.length; 
+  let q=rawFrames.length;
 log(`кадры нашла: ${get_timer()}ms/${q}`); if(q<49) log('мало кадров='+q);
   // --- очистка
   del_video(video); del_canvas(canvas); ctx=null;
@@ -822,7 +825,7 @@ log(`кадры нашла: ${get_timer()}ms/${q}`); if(q<49) log('мало ка
   spriteCanvas.height = fH * rows;
   let x=0,y=0,z=0;
   for(let i=0; i < frames; i++){
-	z=(i<q)? i:q-1; //последний кадр дублируем
+    z=(i<q)? i:q-1; //последний кадр дублируем, но можно новую сетку 
     const imgData = new ImageData(rawFrames[z], fW, fH);
     ctx.putImageData(imgData, fW*x, fH*y);
     x++; if(x==cols){y++;x=0;}
@@ -851,3 +854,14 @@ function del_canvas(e){ // Очищаем холст
 //Освобождаем Blob URL
 function del_blob(url){URL.revokeObjectURL(url);}
 async function pause(t){await new Promise(r => setTimeout(r, t));}
+
+function alert_info(){
+  var w=window.innerWidth;
+  var h=window.innerHeight;
+  var wz=document.documentElement.style.getPropertyValue('--wz');
+  var hz=document.documentElement.style.getPropertyValue('--hz');
+  var s=`w=${w}/h=${h}/wz=${wz}/hz=${hz}\n`+window.scrollY+'\n';;
+  var n=1;
+  for (let o of o_items){s+=n+'/'+int(o.t)+'/'+int(o.b)+'/'+o.e.children[1].title+'\n';n++;}
+  el('id_t0').textContent=(s);
+}
