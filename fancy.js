@@ -80,11 +80,11 @@ function resizer() {
   const q = Math.floor(r/2);
   css_var('--shift1', r + 'px'); css_var('--shift2', q + 'px');
   console.log(`Ширина сдвига: ${r}px, ${q}px`);
-  //зеркало 184*240 33%
-  w=min_max(Math.floor(w/3),92,368); css_var('--wz',w+'px');
-  h=min_max(Math.floor(h/3),120,480); css_var('--hz',h+'px');
-
+  //зеркало 184*240 33% 50%
   var v=is_vert();
+  var wz=v? w/2.3 : w/3;
+  w=min_max(Math.floor(wz),92,368); css_var('--wz',w+'px');
+  h=min_max(Math.floor(h/3),120,480); css_var('--hz',h+'px');
   console.log(`Вертикальный: ${v} /овал w=${w} h=${h}`);
   o_resizer();
 }
@@ -274,6 +274,7 @@ img[src=''] {display:none;}
 }
 
 /* ПОЗИЦИИ НА ПК (Треугольники вдоль дороги) */
+@media (orientation:landscape) {
 /* Левая сторона (зеркала 1, 2, 3) */
 .oval .sektorL .zerk:nth-child(1) { top: 5%;  left: 1%; }
 .oval .sektorL .zerk:nth-child(2) { top: 35%; left: 45%; }
@@ -284,7 +285,7 @@ img[src=''] {display:none;}
 .oval .sektorR .zerk:nth-child(2) { top: 35%; right: 45%; }
 .oval .sektorR .zerk:nth-child(3) { top: 65%; right: 1%; }
 .hint.open {font-size:1.5em;}
-
+}
 /* ПОЗИЦИИ НА ТЕЛЕФОНЕ (Зигзаг по бокам) */
 @media (orientation:portrait) {
   .oval .sektorL { min-height: 100vh; }
