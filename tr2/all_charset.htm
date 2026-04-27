@@ -8,23 +8,289 @@
   body{font-family:Arial,Helvetica,sans-serif;margin:12px}
   .controls{display:flex;gap:8px;align-items:center;margin-bottom:10px}
   .iframes{display:flex;flex-wrap:wrap;gap:12px;width:98%}
-  .frame-box{border:1px solid #ddd;padding:8px;width:100%;background:#fff}
+  .frame-box{border:2px solid magenta;padding:8px;width:100%;background:#fff}
   .frame-box h4{margin:0 0 8px 0;font-size:14px}
   .small{font-size:13px;color:#444}
   button{padding:6px 8px}
 </style>
-<script src='htm.js'></script>
+<script>
+g_htm=`
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="windows-1251"> <!-- специально НЕ UTF-8, чтобы проверить сущности! -->
+<title>Translit1E — Новый транслит для русских букв<\/title>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; }
+body { background-color: aliceblue;}
+.mode-btn { padding: 8px 16px; margin: 5px; font-size: 16px; }
+.test-block { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+.hidden {display:none;}
+<\/style>
+<\/head>
+<body>
+
+<h1 id="id_str">~3to Translit-1E.~/3to Translit-1E. (No JS + No rus font)<\/h1>
+<h2>Это любой текст. Зависит от кодировки!<\/h2>
+<textarea spellcheck="false" id="id_input" rows="3" cols="100">
+~Proverka: Privet! 1N 1Exik, 1T 1Wuka i 1lQla1r ~~ kak xizn6? 13to 1L Translit1E! 1Z~
+<\/textarea>
+<br>
+<button class="mode-btn" onclick="decode_text()"> decode t1e-rus<\/button>
+<button class="mode-btn" onclick="encode_text()"> encode rus-t1e<\/button>
+<button class="mode-btn" onclick="testAlert()"> test alert()<\/button><br>
+
+<div class="test-block">
+  <h3>js-unicode (any charset)<\/h3>
+  <p id="id_put1">1<\/p>
+<\/div>
+
+<div class="test-block">
+  <h3>html-znaki (any charset)<\/h3>
+  <p id="id_put2">2<\/p>
+<\/div>
+
+<div class="test-block">
+  <h3>encode from textarea (en+rus)<\/h3>
+  <p id="id_put3">3<\/p>
+<\/div>
+<noscript>
+translit is reading!
+<\/noscript>
+<script>
+var gT1E = (function(){
+var en1 ='A B V G D E ZH Z I J K L M N O P R S T U F H TS CH SH SHCH \` Y \` E YU YA';
+var en2 ='A B V G D E X Z I J K L M N O P R S T U F H C 14 W 1W 15 Y 16 13 Q 19';
+var en3={};
+var zn=String.fromCharCode(126);
+var zn2=zn+zn;
+var os=String.fromCharCode(92);
+var s1,s2,m,i,n1,n2;
+
+m=en1.split(' ');
+en1={};for(i=0;i<32;i++){s=m[i];en1[0x0410+i]=s;en1[0x0430+i]=s.toLowerCase();}
+en1[0x0401]='YO';en1[0x0451]='yo';
+m=en2.split(' ');en2={};
+for(i=0;i<32;i++){
+ s1=m[i]; s2=s1.toLowerCase();
+ if(s1=='13')s2='3';
+ if(s1=='14')s2='4';
+ if(s1=='15')s2='5';
+ if(s1=='16')s2='6';
+ if(s1=='19')s2='9';
+ if(s1=='1W')s2='1w';
+ n1=0x0410+i;
+ n2=0x0430+i;
+ en2[n1]=s1; en2[n2]=s2;
+}
+en2[0x0401]='1E'; en2[0x0451]='1e';
+en2[0x000A]='10';
+en2[0x005C]='12';
+
+en2[0x20AC]='1O';
+en2[0x00B0]='1o';
+en2[0x00A3]='1F';
+en2[0x00A5]='1Y';
+en2[0x20BD]='1P';
+en2[0x00A7]='1p';
+en2[0x00A9]='1C';
+en2[0x00AE]='1c';
+en2[0x260E]='1T';
+en2[0x2014]='1t';
+en2[0x2709]='1M';
+en2[0x2026]='1m';
+en2[0x2022]='1s';
+en2[0x2606]='1S';
+en2[0x2190]='1L';
+en2[0x00AB]='1l';
+en2[0x2191]='1U';
+en2[0x2194]='1u';
+en2[0x2192]='1R';
+en2[0x00BB]='1r';
+en2[0x2193]='1D';
+en2[0x2195]='1d';
+en2[0x2714]='1V';
+en2[0x2665]='1v';
+en2[0x2718]='1X';
+en2[0x00D7]='1x';
+en2[0x2661]='1H';
+en2[0x00BD]='1h';
+en2[0x2116]='1N';
+en2[0x2260]='1n';
+en2[0x2248]='1A';
+en2[0x00B1]='1a';
+en2[0x2265]='1G';
+en2[0x2264]='1g';
+en2[0x00B2]='1K';
+en2[0x221A]='1k';
+en2[0x221E]='18';
+en2[0x00BC]='1Q';
+en2[0x201E]='1q';
+en2[0x00B3]='1B';
+en2[0x00BE]='1b';
+en2[0x00F7]='1Z';
+
+var de2=kv(en2);
+for(var k in en2)en3[k]=en2[k];
+i=de2['13'];de2['0']=i;en3[i]='0';
+i=de2['14'];de2['8']=i;en3[i]='8';
+i=de2['19'];de2['2']=i;en3[i]='2';
+
+i=de2['15'];en3[i]='5';
+i=de2['16'];en3[i]='6';
+
+i=de2['1W'];de2['17']=i;en3[i]='7';
+i=de2['1w'];de2['7']=i; en3[i]='7';
+
+i=de2['1E'];en3[i]='E';
+i=de2['1e'];en3[i]='e';
+
+function charType(ch){
+ var c = ch.charCodeAt(0);
+ if(c>127)return 3;
+ if(c >= 48 && c <= 57) return 1;
+ if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)) return 2;
+ if ((c >= 0x0410 && c <= 0x044F) || c == 0x0401 || c == 0x0451) return 3;
+ return 0;
+}
+function kv(m){
+ var out={};
+ for(var k in m)if(m.hasOwnProperty(k))if(m[k])out[m[k]]=k;
+ return out;
+}
+function hex4(d){return Number(d).toString(16).padStart(4,0);}
+function d1(n){return String.fromCharCode(n);}
+function d2(n){return '&#'+n+';';}
+function d3(n){return os+'u'+hex4(n);}
+
+function decode(text,mode){
+  var o='',ft=0, f1=0, le=text.length,c1,c2,i,ff;
+  ff=d1;
+  if(mode==2)ff=d2;
+  if(mode==3)ff=d3;
+  for(i=0;i<le;i++){
+   c1 = text.charAt(i); c2 = text.substring(i,i+2);
+   if(c2 == zn2){o+=zn;i++;continue;}
+   if(c1 == zn){ft= ft? 0:1;f1=0;continue;}
+   if(!ft){o += c1;continue;}
+      if(c1 == '1'){f1=1; continue;}
+   if(f1){
+    f1=0;
+    if(c1=='u'){
+      c2='0x'+text.substring(i+1,i+5);i+=4;
+      if(c2*1)o+=String.fromCharCode(c2*1);
+      continue;
+    }
+    c2='1'+c1;
+    if(de2.hasOwnProperty(c2))c2=ff(de2[c2]);
+    o+=c2;
+    continue;
+  }
+   c2=c1;if(de2.hasOwnProperty(c2))c2=ff(de2[c2]);o+=c2;
+  }
+   o=o.split('. ');for(i=0;i<o.length;i++)o[i]=firstUp(o[i]);o=o.join('. ');
+   o=o.split('! ');for(i=0;i<o.length;i++)o[i]=firstUp(o[i]);o=o.join('! ');
+   o=o.split('? ');for(i=0;i<o.length;i++)o[i]=firstUp(o[i]);o=o.join('? ');
+  return o;
+}
+function firstUp(s){return s.substring(0,1).toUpperCase()+s.substring(1);}
+function encode(text,mode){
+  let o='',s,ft=0,i,t,m,c1,le=text.length;
+  m=en3;
+  if(mode==1)m=en1;
+  if(mode==2)m=en2;
+
+  for(i=0;i<le;i++){
+   s=text.charAt(i);
+   if(s==zn){o+=zn2;continue;}
+   t=charType(s);
+   if(t==3){
+    if(!ft){ft=1;o+=zn;}
+    c1=s.charCodeAt(0);
+    s = m.hasOwnProperty(c1)? m[c1]: '[1u'+hex4(c1)+']';
+   }
+   if(t==1 || t==2)if(ft){ft=0;o+=zn;}
+   o+=s;
+  }
+  if(ft)o+=zn;
+  return o;
+}
+function json16(s){
+ s=s.split(String.fromCharCode(9)).join(os+os+'t');
+ s=s.split(String.fromCharCode(10)).join(os+os+'n');
+ return JSON.parse('"'+s+'"');
+}
+function encode_text(t){
+  var i,n=String.fromCharCode(10);
+  t=t.split(n);
+  for(i=0;i<t.length;i++)t[i]=encode(t[i],2);
+  return t.join(n);
+}
+return {
+  encode:encode,
+  decode:decode,
+  json16:json16,
+  encode_text:encode_text
+}
+})();
+
+
+
+function el(id){var e=document.getElementById(''+id);if(!e)alert('нет элемента='+id); return e;}
+function els(s){return document.querySelectorAll(''+s);}
+
+var input = el('id_input');
+var put1 = el('id_put1');
+var put2 = el('id_put2');
+var put3 = el('id_put3');
+var str = el('id_str');
+
+str.textContent=gT1E.decode(str.textContent);
+function hide_p(e){e.parentElement.classList.add('hidden');}
+function show_p(e){e.parentElement.classList.remove('hidden');}
+
+function decode_text() {
+
+ let text=input.value;show_p(put1);show_p(put2);hide_p(put3);
+ input.value=gT1E.decode(text,1);
+ put1.textContent = gT1E.decode(text,3);
+ setTimeout(()=>{put1.textContent=gT1E.json16(put1.textContent);},1000);
+ put2.textContent = gT1E.decode(text,2);
+ setTimeout(()=>{put2.innerHTML=gT1E.decode(text,2);},1000);
+}
+function encode_text() {
+ hide_p(put1);hide_p(put2);show_p(put3);
+ var s1=gT1E.encode(input.value,1);
+ var s2=gT1E.encode(input.value,2);
+ var s3=gT1E.encode(input.value,3);
+ put3.innerHTML='||old=||'+s1+'<br>||new=||'+s2+'<br>||fast=||'+s3;
+ input.value= gT1E.encode_text(input.value);
+
+}
+
+function testAlert() {
+ hide_p(put1);hide_p(put2);hide_p(put3);
+ alert(gT1E.decode(input.value,1));
+}
+
+
+<\/script>
+<\/body>
+<\/html>
+
+`;
+</script>
 </head>
 <body>
 Пример во всех кодировках!
 <div class="iframes" id="framesContainer"></div>
 <script>
 var charsets = [
-  {name:'UTF-8', label:'utf-8'},
-  {name:'Windows-1251', label:'windows-1251'},
-  {name:'KOI8-R', label:'koi8-r'},
-  {name:'ISO-8859-5', label:'iso-8859-5'},
-  {name:'CP866', label:'cp866'}
+  {name:'UTF-8', label:'utf-8',color:'aliceblue'},
+  {name:'Windows-1251', label:'windows-1251',color:'beige'},
+  {name:'KOI8-R', label:'koi8-r',color:'bisque'},
+  {name:'ISO-8859-5', label:'iso-8859-5',color:'honeydew'},
+  {name:'CP866', label:'cp866',color:'lavender'}
 ];
 
 var container = document.getElementById('framesContainer');
@@ -41,7 +307,7 @@ function makeFrameBox(charset, htmlContent){
   box.appendChild(frame);
 
   // Create blob with explicit charset
-  var blob = new Blob([htmlContent], {type: 'text/html;charset=' + charset.label});
+  var blob = new Blob([htmlContent.replace('aliceblue',charset.color)], {type: 'text/html;charset=' + charset.label});
   var url = URL.createObjectURL(blob);
   frame.src = url;
 
