@@ -1,17 +1,15 @@
 //==========fancy.js====Xing*2026=======
+//function el(id){var e=document.getElementById(''+id);if(!e)alert('нет элемента='+id); return e;}
+//function els(s){return document.querySelectorAll(''+s);}
+
 var g_log='>';//вкл лог
 var g_timer_start=0;
-var o_items = [];
-var o_busy=0;
-var g_zerk=[];
-var g_zerk_img=[];
 var el_sr=el('id_sr');
 var el_sl=el('id_sl');
 var g_video='<video muted playsinline loop></video>';
 var g_img='<img src="" alt="" >';
+var g_zerk=els('.zerk');
 
-function el(id){var e=document.getElementById(''+id);if(!e)alert('нет элемента='+id); return e;}
-function els(s){return document.querySelectorAll(''+s);}
 function int(n){return Math.round(n);}
 function css_var(v,d){document.documentElement.style.setProperty(''+v, ''+d);}
 function set_img(url){el('id_i0').src=''+url;}
@@ -22,38 +20,79 @@ function get_wh(){//служебная
   const orient = w > h ? 'landscape' : 'portrait';
   return ('w='+w+' h='+h+' :'+orient);
 }
-function hide(e){if(e)e.classList.add('hidden');}
-function show(e){if(e)e.classList.remove('hidden');}
 function is_vert(){return (window.innerHeight>window.innerWidth);}
-function zerk_img_url(url){g_zerk_img.forEach(b=>b.src=''+url);}
+function zerk_img_url(url){els('.zerk img').forEach(b=>b.src=''+url);}
 function zerk_add_class(s){g_zerk.forEach(b=>b.classList.add(''+s));}
 function zerk_del_class(s){g_zerk.forEach(b=>b.classList.remove(''+s));}
 function set_timer(){g_timer_start=performance.now();}
 function get_timer(){return performance.now()-g_timer_start;}
-//==new observer==
+async function load_js(name){
+ console.log('load_js: началась загрузка ' + name);
+ const scriptLoaded = await new Promise(r => {
+  const s = document.createElement('script');
+  s.onload = () => r(1);
+  s.onerror = () => r(0);
+  s.src = ''+name;
+  document.head.appendChild(s);
+ });
+ return scriptLoaded;
+}
+//==cool observer==
+var o_scroll_h=1;
+var o_scroll_y=1;
+var o_yy = [];
+var o_busy=0;
+
+function all_dim(v){document.body.style= v? 'opacity:'+v :'';}
 function o_update(){
- if(o_busy)return; o_busy=1;//скрол сбросит
- const h=window.innerHeight, y=window.scrollY, m=Math.ceil(h * 0.1);
- const top = y + m, bottom = y + h - m;
- for(let i of o_items){if(i.b > top && i.t < bottom)show(i.e); else hide(i.e);}
+ if(o_busy)return; 
+ if(window.scrollY===o_scroll_y)if(document.body.scrollHeight===o_scroll_h)return;
+ o_busy=1;
+ if(document.body.scrollHeight!=o_scroll_h)o_resizer();
+ o_scroll_y=window.scrollY; o_scroll_h=document.body.scrollHeight;
+ o_show();
+ o_busy=0;
+}
+function o_show(){
+ var h,y,i,y1,y2,z;
+ h=window.innerHeight; y=window.scrollY; i=int(h * 0.1); y1=y+i; y2=h+y-i;
+ for(i=0;i<g_zerk.length;i++){  
+  if(o_yy[i][1] > y1 && o_yy[i][0] < y2) show(g_zerk[i]); 
+  else hide(g_zerk[i]);
+ }
 }
 function o_resizer(){
- o_busy=1; o_items=[]; console.log('o_resizer');
- g_zerk.forEach(e=>{
-	 hide(e.firstChild);//img
-   show(e);
-   const r=e.getBoundingClientRect(), top=r.top+window.scrollY;
-   o_items.push({ e:e, t:top, b: top+r.height });
-   hide(e);
-   show(e.firstChild);
- });
- o_busy=0; o_update();
+ all_dim(0.8); setTimeout(all_dim,700);
+ console.log('o_resizer');
+ var i,j,e,r,y1,y2,f,le;
+ f=0; le=g_zerk.length;
+ for(i=0;i<le;i++){
+   j=le-1-i;//с конца
+   e=g_zerk[j];
+   hide(e.firstChild); show(e); //img+e
+   r=e.getBoundingClientRect();
+   y1=int(r.top+window.scrollY);
+   y2=int(y1+r.height);
+   if(o_yy[j][0]==y1 && o_yy[j][1]==y2 )f=1;
+   hide(e); show(e.firstChild); //e+img
+   if(f)break;//не поменялось?
+   o_yy[j]=[y1,y2];
+ }
 }
-function o_run(){//once
-  o_resizer();
-  setInterval(o_update, 300);
-  window.onscroll= ()=>{o_busy=0;};
+function o_resizer0(){
+ var i,e,r,y1,y2,le;
+ o_yy=[]; le=g_zerk.length;
+ for(i=0;i<le;i++){
+   e=g_zerk[i];
+   hide(e.firstChild); show(e); //img+e
+   r=e.getBoundingClientRect();
+   y1=int(r.top+window.scrollY);
+   y2=int(y1+r.height);
+   hide(e); show(e.firstChild); //e+img
+   o_yy.push([y1,y2]);
+ }
 }
+
 function getPerspectiveAngle(contW, contH, p){
   const w = contH / 2;// Половина ширины картинки (квадрат)
   const d = contW / 2;// Половина ширины видимого окна
@@ -81,12 +120,11 @@ function resizer() {
   css_var('--shift1', r + 'px'); css_var('--shift2', q + 'px');
   console.log(`Ширина сдвига: ${r}px, ${q}px`);
   //зеркало 184*240 33% 50%
-  var v=is_vert();
-  var wz=v? w/2.3 : w/3;
-  w=min_max(Math.floor(wz),92,368); css_var('--wz',w+'px');
-  h=min_max(Math.floor(h/3),120,480); css_var('--hz',h+'px');
-  console.log(`Вертикальный: ${v} /овал w=${w} h=${h}`);
-  o_resizer();
+  var v=is_vert(), wz=w/3, hz=v? 0.9*h/3 : h/3;
+  wz=min_max(int(wz),100,300); css_var('--wz',wz+'px');
+  hz=min_max(int(hz),100,300); css_var('--hz',hz+'px');
+  console.log(`секция=${w}*${h} /овал=${wz}*${hz}`);
+  o_scroll_y++;
 }
 // Слушаем изменение размера и ориентации
 var g_resizeTimer=null;
@@ -163,15 +201,14 @@ function enable_ef(u){//u=3-7 1x 0,8/ u=8-9 2x 0-7/
 function del_ov(v){
  if(v===1) css_var('--bgo','none');
  if(v===2) zerk_img_url('');
- if(v===0) zerk_del_class('oo');
+ if(v===0) {zerk_del_class('oo');}
 }
 function set_ov_css(x,y,t,url){
-  var n=x*y,g='g'+n;
+  var n=x*y, g='g'+n;
   gen_css_grid(x,y,g); css_var('--time',t+'s');
   zerk_add_class(g); zerk_img_url(url);
 }
 async function set_ov_mp49(){ //вместо видео
-   del_ov(0);
    if(!g_url){//остановить всю анимацию для лучшего извлечения кадров
     start_loading();
     stop_bg(); set_snow(0); hide(el('id_btnBeauty'));
@@ -182,17 +219,18 @@ async function set_ov_mp49(){ //вместо видео
     end_loading();
    }
    set_ov_css(7,7,'4.9',g_url);
-   o_resizer(); set_bg(rnd(3)+4);
+   set_bg(rnd(3)+4);
 }
 
 function set_ov(u){ //картинки и готовые спрайты
   u=''+u;
   els('select')[2].value=u;
-  g_zerk.forEach(b=>{b.classList.remove('bg633','g49','g25','g16'); b.classList.toggle('oo');});
   del_ov(1); del_ov(2);//пусто пока загружается.
-  if(u==='mp49'){setTimeout(set_ov_mp49,10);return;}
-  if(u==='0'){zerk_add_class('bg633'); o_resizer(); return;}
-  if(u==='png'){css_var('--bgo','url("mirror.png")'); o_resizer();; return;}
+  if(u==='0'){g_zerk.forEach(b=>{b.className='zerk oo bg633';});return;}
+  g_zerk.forEach(b=>{b.classList.remove('bg633','g49','g25','g16');});
+  if(u==='mp49'){del_ov(0);setTimeout(set_ov_mp49,10);return;}
+  g_zerk.forEach(b=>b.classList.toggle('oo'));//переключить
+  if(u==='png'){css_var('--bgo','url("mirror.png")');return;}
 
   start_loading(); // эти большие. долго
   var e = new Image();
@@ -205,7 +243,6 @@ function set_ov(u){ //картинки и готовые спрайты
    if(u==='g16.jpg') set_ov_css(4,4,'1.6',u);
    if(u==='g25.jpg') set_ov_css(5,5,'2.5',u);
    e.remove();
-   o_resizer();//?? без него размеры неправильно. надо разбираться
    end_loading();
   }
   e.src = u;
@@ -237,6 +274,7 @@ function set_snow(v){// Смена погоды
  if(v<4){el('id_weather').className = m[v];els('select')[3].value=v;}
  if(v==0){g_snow=0; console.log('погода выкл OFF');}
  if(v==999){g_snow=1; console.log('погода вкл ON'); set_w();}
+ if(v==666)want_fs();
 }
 function load_css_htm(){
  var st=document.createElement('style');
@@ -244,29 +282,37 @@ function load_css_htm(){
 :root {
   --bg2: none;
   --bgo: none;
+  --wz: 17vw;
+  --hz: 33vh;
 }
-img[src=''] {display:none;}
-/* СТИЛЬ ЗЕРКАЛА (Кнопки) */
-.zerk img {border-radius: 50%;object-fit: cover; position: absolute; top:0; left:0; width:100%; height:100%;}
-.zerk b {z-index:1; font-size: x-large; color: gold;}
+@media (orientation:portrait) { :root { --wz: 33vw; --hz: 28vh;} }
 
-/* РЕЖИМ ОВАЛОВ (Волшебные зеркала) */
+.oval #id_main {font-family: "Segoe Print","Comic Sans MS";}
+.oval .sektorL {min-height: 90vh;}
+.oval .sektorR {min-height: 90vh;}
+img[src=''] {display:none;}
+
+/* СТИЛЬ ЗЕРКАЛА (Кнопки) */
 .oval .zerk {
- position: absolute;
- width: 184px; height: 240px;
- width: var(--wz,184px); height: var(--hz,240px);
+ position: absolute; width: var(--wz,100px); height: var(--hz,100px);
  background-repeat: no-repeat; background-position: center; background-size: contain;
  background-image: var(--bgo,none);
+}
+.zerk img {border-radius: 50%;object-fit: cover; position: absolute; top:0; left:0; width:100%; height:100%;}
+.zerk b{
+  font-weight:bold; color:gold; z-index:1; font-size: x-large;
+  text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black,
+  0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 10px cyan;
 }
 .oo {
  border: 2px solid cyan; border-radius: 50%;
  box-shadow: 0 0 15px aqua,0 0 15px aqua, inset 0 0 15px #000;
 }
-.bg633 {background: #000633;}
 .oo.zerk::before{
   content:""; position:absolute; z-index:1; inset:10%; border-radius:50%;
   border:5px solid aqua; filter:blur(5px); animation:colors 3s linear infinite;
 }
+.bg633 {background: #000633;}
 @keyframes colors {
  0% { border-color: aqua;}
  50% { border-color: magenta;}
@@ -274,7 +320,6 @@ img[src=''] {display:none;}
 }
 
 /* ПОЗИЦИИ НА ПК (Треугольники вдоль дороги) */
-@media (orientation:landscape) {
 /* Левая сторона (зеркала 1, 2, 3) */
 .oval .sektorL .zerk:nth-child(1) { top: 5%;  left: 1%; }
 .oval .sektorL .zerk:nth-child(2) { top: 35%; left: 45%; }
@@ -285,21 +330,18 @@ img[src=''] {display:none;}
 .oval .sektorR .zerk:nth-child(2) { top: 35%; right: 45%; }
 .oval .sektorR .zerk:nth-child(3) { top: 65%; right: 1%; }
 .hint.open {font-size:1.5em;}
-}
+
 /* ПОЗИЦИИ НА ТЕЛЕФОНЕ (Зигзаг по бокам) */
 @media (orientation:portrait) {
-  .oval .sektorL { min-height: 100vh; }
-  .oval .sektorR { min-height: 100vh; }
-
   /* Левая сторона (зеркала 1, 2, 3) */
-  .oval .sektorL .zerk:nth-child(1) { top: 0%;  left: 5%; }
-  .oval .sektorL .zerk:nth-child(2) { top: 30%; right: 5%; }
-  .oval .sektorL .zerk:nth-child(3) { top: 60%; left: 5%; }
+  .oval .sektorL .zerk:nth-child(1) { left: 5%; }
+  .oval .sektorL .zerk:nth-child(2) { left: unset; right: 5%; }
+  .oval .sektorL .zerk:nth-child(3) { left: 5%; }
 
   /* Правая сторона (зеркала 4, 5, 6) */
-  .oval .sektorR .zerk:nth-child(1) { top: 0%;  right: 5%; }
-  .oval .sektorR .zerk:nth-child(2) { top: 30%; left: 5%; }
-  .oval .sektorR .zerk:nth-child(3) { top: 60%; right: 5%; }
+  .oval .sektorR .zerk:nth-child(1) { right: 5%; }
+  .oval .sektorR .zerk:nth-child(2) { left: 5%; right:unset; }
+  .oval .sektorR .zerk:nth-child(3) { right: 5%; }
   .hint.open {font-size:1.2em;}
 }
 .loadingBox {
@@ -313,12 +355,6 @@ img[src=''] {display:none;}
   border-radius: 14px;
   z-index: 90;
   font-size: 28px;
-}
-.zerk b{
-  font-weight:bold; color:gold;
-  text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black,
-   0 0 4px black,  0 0 4px black,  0 0 4px black,  0 0 4px black, 0 0 4px black,
-   0 0 10px cyan;
 }
 .title {
   display: inline-block; padding: 0.6em 1em; background: rgba(54, 97, 51, 0.5);;
@@ -488,6 +524,7 @@ var htm=`
     <option value="1">❄️ Снег ☃️<\/option>
     <option value="2">⛈️ Дождь ☔ <\/option>
     <option value="3">🌫 Туман ☁️<\/option>
+    <option value="666">!полный экран!️<\/option>
    <\/select>
 
    <div class="actions">
@@ -580,26 +617,19 @@ function set_a(h){
  return g_img+`<b title="${h}">${t}<\/b>`;
 }
 function start_fancy(){
- els('.container')[0].remove(); window.scrollTo(0,0);
- load_css_htm();g_h2=999;//выкл анимацию заголовка
- set_o(0);fly();// вкл oval ef0
- els('.hint').forEach(b => b.classList.remove('open'));
- el('id_btnBeauty').innerText = "Панель управления сказкой";
- g_zerk=els('.zerk');
- g_zerk.forEach(b =>{b.className='zerk oo bg633'; b.innerHTML=set_a(''+b.textContent);});
- g_zerk_img=els('.zerk img');
- el('toggle-panel').checked = false;
- els('select').forEach(b => b.selectedIndex=0);
- o_run();//крутой обсервер для кнопок зеркал
+ load_css_htm(); fly(); els('.hint').forEach(b => b.classList.remove('open'));
+ set_o(0);// вкл oval ef0
+ g_zerk.forEach(b =>{b.innerHTML=set_a(''+b.textContent);});
+ el('toggle-panel').checked = false; els('select').forEach(b => b.selectedIndex=0);
 //случайный фон и зеркало
  var v=rnd(10);set_bg(''+v);if(v==8)set_ef('5');if(v==9)set_ef('7');if(v==4)set_ef('8');
- if(rnd(3))set_ov('png'); startFairy(); set_w();
- debounceResize();
+ if(rnd(3))set_ov('png');
+ else set_ov(0); 
+ startFairy(); set_w(); el('id_btnBeauty').innerText = "Панель управления сказкой";
  console.log('красота загружена');
-}
-function want_fs(){
- var e=document.documentElement;
- if(e.requestFullscreen)e.requestFullscreen().catch(()=>{});
+ if(navigator.hardwareConcurrency<4) alert('слабый девайс, будет тормозить');
+ resizer(); o_resizer0();
+ setInterval(o_update, 300);//new observer
 }
 function rnd(k) {
  var n = Date.now();n=Math.floor(Math.random()*n); n=n%5;
@@ -616,10 +646,6 @@ function run_panel(){
   stopFairy();
 }
 
-//===main===
-want_fs();
-if(navigator.hardwareConcurrency<4) alert('слабый девайс, будет тормозить');
-start_fancy();
 
 //===mp49 вместо гифок===
 async function run_mp49(name,x,y){
@@ -689,17 +715,7 @@ function getMaxTextureSize(){// макс размер текстуры WebGL (и
 function getUserDeviceParams(){ // просто лог устройства (для отладки)
   log('device: maxTex='+getMaxTextureSize()+' memGB='+(navigator.deviceMemory||'??'));
 }
-async function load_js(name){
-  log('load_js: началась загрузка ' + name);
-  const scriptLoaded = await new Promise(r => {
-    const s = document.createElement('script');
-    s.onload = () => r(1);
-    s.onerror = () => r(0);
-    s.src = name;
-    document.head.appendChild(s);
-  });
-  return scriptLoaded;
-}
+
 var g_url='';
 function get_url(){
  if(!g_url)g_url=URL.createObjectURL(g_spriteBlob);
@@ -868,3 +884,6 @@ function alert_info(){
   for (let o of o_items){s+=n+'/'+int(o.t)+'/'+int(o.b)+'/'+o.e.children[1].title+'\n';n++;}
   el('id_t0').textContent=(s);
 }
+//===main===
+els('.container')[0].remove(); window.scrollTo(0,0);
+timer1s(start_fancy);

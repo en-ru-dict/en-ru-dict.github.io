@@ -11,7 +11,7 @@
 <link rel="icon" type="image/ico" href="favicon.ico">
 <link rel="canonical" href="https://en-ru-dict.github.io">
 <style>
-body {overflow-x:hidden;min-width:350px;background:#E6E7E9;margin:0;padding:0;font-family:'Pontano Sans',Arial,Helvetica,sans-serif;font-size:16px;color:#000;}
+body {overflow-x:hidden;min-width:350px;background:green;margin:0;padding:0;font-family:'Pontano Sans',Arial,Helvetica,sans-serif;font-size:16px;color:#000;}
 .container {position:relative;z-index:2;padding:10px;box-shadow:0 5px 5px 5px #CCCCCC;background-color:floralwhite;}
 center {background:#eeffee}
 p {background:azure;padding:10px;font-size:20px;margin-top:5px;border: 1px solid lime;}
@@ -70,11 +70,11 @@ h3 {margin:1%;}
   display:flex; position:fixed; width:100vw; height:100vh; top:0; left:0;
   z-index:1; pointer-events:none; background-position: center; background-color:#000;
 }
-#id_content {
+#id_main {
  position: relative; z-index:1; min-height: 100vh; min-width: 300px; color: #fff;
  font-family: sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px;
 }
-.oval #id_content {font-family: "Segoe Print","Comic Sans MS";}
+
 /* ОСНОВНОЙ БЛОК (6 кнопок-зеркал) */
 .glade {
   position: relative; width: 100%; max-width: 1900px;
@@ -85,11 +85,9 @@ h3 {margin:1%;}
   flex-direction:column; gap:15px; padding:20px;
  }
 @media (orientation:portrait) { .sektorL, .sektorR { flex: 0 0 100%; }}
-.oval .sektorL {min-height: 100vh;}
-.oval .sektorR {min-height: 100vh;}
 
 .controls {
-  margin-bottom:40px;min-width:50%;
+  margin-bottom:40px;min-width:50%;min-height:60px;
   background: radial-gradient( #000 50%, #ca20a7 80% );
   border: 2px solid #006633;border-radius: 2em;
 }
@@ -159,7 +157,7 @@ hr {width:100%;height:5px;background-color:gold;margin:10px;border:1px solid red
 </div>
 <div id="id_weather"></div>
 
-<main id="id_content">
+<main id="id_main">
 <div class="controls">
  <button id="id_btnBeauty" onclick="want_fancy()">✨ ВКЛ. КРАСИВО (+2mb) ✨</button>
 </div>
@@ -289,7 +287,7 @@ hr {width:100%;height:5px;background-color:gold;margin:10px;border:1px solid red
 </main>
 
 <div class="container">
-<a class="kn" href="mp49.htm">мп49 формат вместо GIF (1500kb->30kb). Демо.</a><br>
+<a class="kn" href="mp49/mp49.htm">мп49 формат вместо GIF (1500kb->30kb). Демо.</a><br>
 <a class="kn" href="any-lang/any_lang.htm">mini n18 либа для  многоязычности. Демо.</a><br>
 <a class="kn" href="tr2/test_tr2.htm">новый однозначный транслит2 с поддержкой юникода. Демо.</a><br>
 <p>
@@ -328,25 +326,31 @@ hr {width:100%;height:5px;background-color:gold;margin:10px;border:1px solid red
 <br>
 <div class="foot">♥ Сайт работает 2023-2026г ♥</div>
 </div>
+
 <script>
-setTimeout(function(){var s='=b!isfg>#iuuq;00xxx/35mph/ef#!ubshfu>#`cmbol#?=jnh!cpsefs>#1#!tsd>#iuuqt;00dpvoufs/35mph/sv0cvuupot0dm5059.1/hjg#!bmu>#iunm!dpvoufs#!ujumf>##!0?=0b?=b!isfg>#iuuq;00xxx/35mph/sv#!ubshfu>#`cmbol#?=jnh!cpsefs>#1#!tsd>#iuuqt;00dpvoufs/35mph/sv0dpvou5`393457`59`2`7/qdy#!bmu>#тшжушйл!рптжуйужмжк!тбкуб#!ujumf>#тшжушйл!емѐ!тбкуб#!0?=0b?';var y=String.fromCharCode; s=s.split('').map(x => y(x.charCodeAt(0)-1)).join('');id999.innerHTML=s;},5000);
-function hint(e){e.classList.toggle('open');if(window['resizer'])resizer();}
-function loadScript(url){
-  return new Promise(ok=>{
-    const s=document.createElement('script');
-    s.async=true;
-    s.onload= e=>ok(1);
-    s.onerror= e=>ok(0);
-    s.src=''+url;
-    document.body.appendChild(s);
-  });
+function el(id){var e=document.getElementById(''+id);if(!e)alert('нет элемента='+id); return e;}
+function els(s){return document.querySelectorAll(''+s);}
+function hint(e){if(e)e.classList.toggle('open');}
+function timer1s(f){setTimeout(f,800);}
+function hide(e){if(e)e.classList.add('hidden');}
+function show(e){if(e)e.classList.remove('hidden');}
+function load_fancy_js(){
+  var s = document.createElement('script');
+  s.async = true;
+  s.onerror = () => alert('ошибка загрузки скрипта=fancy.js');
+  s.src = 'fancy.js'; document.head.appendChild(s);
 }
-var g_mode=0;
-async function want_fancy(){//загрузка css js
- if(g_mode){if(window['run_panel']) run_panel(); return;} //панель управления снизу
- g_mode=1;
- let r=await loadScript('fancy.js');
- if(!r) alert('что то пошло не так, приходите завтра!');
+function want_fs(){
+ var e=document.documentElement;
+ if(e.requestFullscreen)e.requestFullscreen().catch(()=>{});
+}
+var g_fancy=0;
+async function want_fancy(){
+ if(g_fancy){if(window['run_panel']) run_panel(); return;} //панель управления снизу
+ g_fancy=1; g_h2=999;//выкл анимацию заголовка
+ hide(document.body); 
+ want_fs();//full screen
+ timer1s(load_fancy_js);
 }
 function getPx(elm){
   var cs = getComputedStyle(elm); if(!cs) return 0;
@@ -354,13 +358,13 @@ function getPx(elm){
   return curPx;
 }
 function font_size_inc(){
-  var i=0,px=[],n=0,all=document.querySelectorAll('*');
+  var i=0,px=[],n=0,all=els('*');
   for(i=0;i<all.length;i++) px.push(2+getPx(all[i]));
   for(i=0;i<all.length;i++) if(px[i]>2){n++;all[i].style.fontSize=px[i]+'px';}
   console.log('шрифт увеличен на 2px у '+n+' элементов.');
 }
 var g_h2=0;
-var g_h2t=document.querySelector('.t2');
+var g_h2t=els('.t2')[0];
 var g_color='orangered springgreen chocolate deeppink deepskyblue darkorange dodgerblue fuchsia tomato lime mediumseagreen'.split(' ');
 function h2color(){g_h2++;g_h2t.style.color=g_color[g_h2%11];if(g_h2<100)setTimeout(h2color,2500);}
 h2color();
