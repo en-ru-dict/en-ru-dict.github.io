@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+
+<style>
+h2 {border: 2px solid red; padding: 5px; border-radius: 10px;}
+#id_i0 {width: 50%;}
+.hide {display:none;}
+:root {
+ --url:none;
+ --wz:184px;/*any size*/
+ --hz:240px;
+ --x:7;
+ --y:7;
+ --wt:calc(var(--wz) * var(--x) * -1);
+ --ht:calc(var(--hz) * var(--y) * -1);
+}
+.sprite {
+  display: inline-flex;
+  width: var(--wz); height: var(--hz); background: var(--url);
+  background-size: calc(var(--x)*100%) calc(var(--y)*100%); /* x-ширина y-высота */
+  will-change: background-position;
+  animation: gx 1s steps(var(--x)) infinite, gy calc(var(--y)*1s) steps(var(--y)) infinite;
+}
+@keyframes gx {  to { background-position-x: var(--wt); }}
+@keyframes gy {  to { background-position-y: var(--ht); }}
+.mp49 {display:inline-flex ; position: relative !important;}
+h1 {color:darkred}
+button, textarea,p {font-size:1.5em;}
+</style>
+<h1>GIF гифкам пора на пенсию..</h1>
+<p>
+Турбо режим раскадровки. Быстро, но пропускает пару кадров, но это исправляется. Если надо быстро, то этот режим, а потом неспеша фоном - обычный режим и заменить. Можно попробовать восстановить пропущеные кадры, но где пропущены определить невозможно, пока нет хорошего алгоритма, время захвата кадра неточное, но где есть сильное отличие от среднего то возможно там пропущено, это пока в разработке. Сильно зависит от нагрузки, если на странице крутится видео или гифки, то турбо режим пропускает много, надо всё останавливать и скрывать (display:none) . На мобильных и айфонах в разных браузерах по разному и может не работать или очень много ошибок, тогда грузите jpg сетку-16 с сервера, чтобы хоть что-то было, а не пусто или рывками.
+</p>
+<h2 id="id_info">info text</h2>
+<div id="vse">
+ <h1>1. Гифка 1.5мб/ Видео источник 49 кадров 32кб</h1>
+ <img src="mirror.gif"><video src="mirror.mp4" controls></video>
+ <div id="id_video"></div>
+ <hr>
+
+ <button onclick="run_fast('mirror2',7,7,1)">Турбо mp49 спрайт1 (экспериментальный)</button><br>
+ <hr>
+ <button onclick="set_css_grid(184,240,1);">fast</button>
+ <button onclick="set_css_grid(184,240,15);">slow</button>
+
+ <h1>IMG + transform + реверс туда сюда</h1>
+ <div class="mp49"><img src="" alt=""></div>
+ <div class="mp49"><img src="" alt=""></div>
+ <div class="mp49"><img src="" alt=""></div>
+ <h1> Background + position Две анимации (иногда бывает рассинхронизация)</h1>
+ <div class="sprite"></div><div class="sprite"></div><div class="sprite"></div>
+ <hr>
+ <img id="id_i0" src=''>
+ <textarea spellcheck="false" cols="80" rows="10" id="id_t0"></textarea>
+</div>
+
+<script src="mp49lib.js"></script>
+<script src="mp49fast.js"></script>
+<script src="loader_video.js"></script>
+<script src="css_grid.js"></script>
+</body>
+</html>

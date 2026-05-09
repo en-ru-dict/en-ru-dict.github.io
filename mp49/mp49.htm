@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+
+<style>
+h2 {border: 2px solid red; padding: 5px; border-radius: 10px;}
+#id_i0 {width: 50%;}
+.hide {display:none;}
+:root {
+ --url:none;
+ --wz:184px;/*any size*/
+ --hz:240px;
+ --x:7;
+ --y:7;
+ --wt:calc(var(--wz) * var(--x) * -1);
+ --ht:calc(var(--hz) * var(--y) * -1);
+}
+.sprite {
+  display: inline-flex;
+  width: var(--wz);
+  height: var(--hz);
+  background: var(--url);
+  background-size: calc(var(--x)*100%) calc(var(--y)*100%); /* x-ширина y-высота */
+   will-change:background-position;
+  animation: gx 1s steps(var(--x)) infinite, gy calc(var(--y)*1s) steps(var(--y)) infinite;
+}
+
+@keyframes gx {  to { background-position-x: var(--wt); }}
+@keyframes gy {  to { background-position-y: var(--ht); }}
+
+.mp49 {display:inline-flex ; position: relative !important;}
+
+h1 {color:darkred}
+button, textarea,p,a,span {font-size:1.5em;padding:5px;margin:5px;}
+</style>
+<h1>GIF гифки до сих живы!</h1>
+<a href="mp49fast.htm">турбо режим (быстро но пару кадров пропускает)</a><br>
+<p> Для mp4 нужен видеопроигрыватель, куча настроек, не юзабельно.
+webp плохо поддерживаеся, jpg/png спрайты-сетка 7*7 больше мп4 в 2-10 раз + нужна правильная CSS,
+а гифки - проблем ноль, но весят тонну. <br>
+<b>Это замена.</b> 1. ffmpeg подготовка 2. подключить эту либу, там всё есть/ источник видео: FPS=35 7*5, FPS=49 7*7.<br>
+Форматы от 2*2 до 9*9 можно и варианты img+transform/bg+position, оптимально для плавной анимации: fps=10, 49 кадров это 4,9сек. 81 это 8,1 сек, но размер спрайта ограничен видеобуфером, он должен быть максимально квадратным и меньше 4096*4096. Можно также грузить сетку jpg/webp напрямую, это быстрее, но размер будет больше в 5 раз. Локально тоже работает! Надо сделать js base64 строку через форму-helper (внизу) Но с сервера грузится исходник и js образ не нужен, только локально из-за CORS. Хотя для универсальности и обхода фильтров на видео, и чтобы одна копия видео была, можно делать всегда в js, размер немного больше (base64 +30%) или (base112 +7% затем в blob+url) но для 50-70кб это немного. Данные в js передавать опасно, но локально json+fetch не работают из за CORS! <br>
+<b>Вобщем немножко сложнее, но размер анимашки будет в 20раз МЕНЬШЕ!!</b> 1000->200->50 кб<br>
+Название mp49 от mp4 + 49 кадров (оптимально для 5 сек анимации + исправление ошибок)<br>
+Если размер критичен и анимашка статичная, то этот формат лучше гифки, но для анимации фона не подходит, ещё иногда сбивается размер и шаги анимации и картинка "плывёт" а не меняет кадры.
+<h2>Для того чтобы размер мп4 был минимальный, надо собрать его из кадров, 1 кадр ключевой.</h2>
+<textarea spellcheck="false" cols="80" rows="10">
+Подготовка видео. опции влияют по разному, выбирайте лучший размер и качество.
+
+//звук выкл, обрезать, масштаб и быстрый декодер:
+ffmpeg -i input.mp4 -an -t 3.5 -vf "scale=120:160" -tune fastdecode output.mp4
+ffmpeg -i input.mp4 -vf "format=rgba, fps=24" frames/f-%02d.png
+ffmpeg -i frames/f-%02d.png -vf "scale=120:160:flags=lanczos,boxblur=1:1" -pix_fmt rgba frames/f-%02d.png
+==========================================
+//сделать из фреймов гифку:
+ffmpeg -i frames/f-%02d.png -vf "palettegen=stats_mode=diff:max_colors=128" pal.png
+ffmpeg -i frames/f%02d.png -i pal.png -filter_complex "paletteuse=dither=bayer:bayer_scale=2:alpha_threshold=128" out.gif
+==========================================
+
+ffmpeg -i input.mp4 -vf "fps=14,scale=120:160" -frames:v 49 -c:v libx264 -g 1 -tune stillimage -crf 30 -preset veryslow -an sprite.mp4
+ffmpeg -i output.mp4 -map_metadata -1 -c copy clean.mp4
+
+//35 кадров 7*5 1 сек
+ffmpeg -framerate 35 -i frames/f-%02d.png -c:v libx264 -preset veryslow -tune animation -crf 32 -g 35 -keyint_min 35 -sc_threshold 0 -x264-params ref=1:bframes=0:me=dia:merange=8 -pix_fmt yuv420p -an -tune fastdecode output.mp4
+//49 кадров 7*7 1 сек
+ffmpeg -framerate 49 -i frames/f-%02d.png -c:v libx264 -preset veryslow -tune animation -crf 32 -g 49 -keyint_min 49 -sc_threshold 0 -x264-params ref=1:bframes=0:me=dia:merange=8 -pix_fmt yuv420p -an -tune fastdecode output.mp4
+==========================================
+//исходник 6сек в 49 кадров 7*7
+ffmpeg -i mirror.mp4 -vf "format=rgba, fps=8.1" frames/f_%02d.png 
+//сборка с хорошим качеством, размер немного больше
+ffmpeg -framerate 49 -i frames/f_%02d.png -c:v libx264 -preset veryslow -tune animation -g 49 -keyint_min 49 -sc_threshold 0 -x264-params ref=1:bframes=0:me=dia:merange=8 -pix_fmt yuv420p -an -tune fastdecode output.mp4
+</textarea>
+
+</p>
+
+<div id="vse">
+<h3>1. Гифка 1.5мб/ Видео источник 49 кадров 32кб</h3>
+<button onclick="run_slow('mirror2',7,7,1)">Загрузить mp49 спрайт1 из видео</button>/<span id="id_info49">info text</span><br>
+<img src="mirror.gif"><video src="mirror.mp4" controls></video>
+
+<hr>
+<h3>2. Гифка 2мб/ Видео источник 35 кадров 82кб. Большая + прозрачный фон</h3>
+<button onclick="run_slow('fairy',7,5,1,'#f2c59e')">Загрузить mp49 спрайт2 из видео</button><input id="id_pf"type="checkbox">ПРОЗРАЧНЫЙ ФОН /<span id="id_info35">info text</span><br><br>
+<img src="fairy.gif" width="240" ><video src="fairy.mp4" controls width="240"></video>
+<div id="id_video"></div>
+<hr>
+
+<button onclick="bg('green')">green</button><button onclick="bg('blue')">blue</button>
+<button onclick="set_css_grid(184,240,1);">fast</button><button onclick="set_css_grid(184,240,5);">slow</button>
+
+<h1>IMG + transform + реверс туда сюда</h1>
+<div class="mp49"><img src="" alt=""></div>
+<div class="mp49"><img src="" alt=""></div>
+<div class="mp49"><img src="" alt=""></div>
+<h1> Background + position Две анимации (иногда бывает рассинхронизация)</h1>
+<div class="sprite"></div><div class="sprite"></div><div class="sprite"></div>
+<hr>
+<img id="id_i0" src=''>
+<textarea spellcheck="false" cols="80" rows="10" id="id_t0"></textarea>
+</div>
+<script src="mp49lib.js"></script>
+<script src="mp49.js"></script>
+<script src="loader_video.js"></script>
+<script src="remove_bg.js"></script>
+<script src="progress_bar.js"></script>
+<script src="css_grid.js"></script>
+
+<hr><hr>
+    <h1>Помощник для видео</h1>
+    
+    <!-- Кнопка для выбора видео -->
+    <input type="file" id="videoInput" accept="video/*">
+    <button onclick="convertToBase64()">Конвертировать в Base64</button>
+    <button onclick="createJsScript()" id="createJsBtn" disabled>Создать внешний JS-скрипт</button>
+    
+    <p id="status"></p>
+    <textarea spellcheck="false" id="base64Output" cols="80" rows="10" placeholder="Base64 будет здесь..."></textarea>
+    
+    <script>
+        let base64Data = ''; // Переменная для хранения Base64
+
+        // Функция конвертации видео в Base64
+        function convertToBase64() {
+            const fileInput = document.getElementById('videoInput');
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('Выберите видео файл!');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const arrayBuffer = event.target.result;
+                base64Data = arrayBufferToBase64(arrayBuffer);
+                document.getElementById('base64Output').value = `data:video/mp4;base64,${base64Data}`;
+                document.getElementById('status').textContent = 'Конвертация завершена!';
+                document.getElementById('createJsBtn').disabled = false; // Активируем кнопку создания JS
+            };
+            reader.onerror = function() {
+                alert('Ошибка чтения файла!');
+            };
+            reader.readAsArrayBuffer(file); // Читаем как ArrayBuffer для бинарных данных
+        }
+
+        // Вспомогательная функция: ArrayBuffer в Base64
+        function arrayBufferToBase64(buffer) {
+            let binary = '';
+            const bytes = new Uint8Array(buffer);
+            const len = bytes.byteLength;
+            for (let i = 0; i < len; i++) {
+                binary += String.fromCharCode(bytes[i]);
+            }
+            return window.btoa(binary);
+        }
+
+        // Функция создания и скачивания JS-скрипта
+        function createJsScript() {
+            if (!base64Data) {
+                alert('Сначала конвертируйте видео!');
+                return;
+            }
+            const jsContent = `var g_mp4 = 'data:video/mp4;base64,${base64Data}';`;
+            const blob = new Blob([jsContent], { type: 'application/javascript' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 1+'.js';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            document.getElementById('status').textContent = 'JS-скрипт создан и скачан!';
+        }
+    </script>
+</body>
+</html>
