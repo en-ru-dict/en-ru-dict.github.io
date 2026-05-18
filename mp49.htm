@@ -439,9 +439,9 @@ function rgbToHsl(r,g,b){
   return[h*360,s*100,l*100];
 }
 
-function removeBgHSV(ctx, w, h, r,g,b) {
+function removeBgHSV(ctx, w, h, r0,g0,b0) {
 //hsl(27,76,79),
- var [th,ts,tl]=rgbToHsl(r,g,b);
+ var [th,ts,tl]=rgbToHsl(r0,g0,b0);
 log('hsl='+th+'/'+ts+'/'+tl);
  var tolH=12,tolS=25,tolL=25;
   const img = ctx.getImageData(0,0,w,h);
@@ -449,7 +449,6 @@ log('hsl='+th+'/'+ts+'/'+tl);
 
  for(let i=0;i<src.length;i+=4){
     const r=src[i],g=src[i+1],b=src[i+2];
-
     const [ph,ps,pl] = rgbToHsl(r,g,b);
     const dh = Math.min(Math.abs(ph-th), 360-Math.abs(ph-th));
     if(dh<=tolH && Math.abs(ps-ts)<=tolS && Math.abs(pl-tl)<=tolL) src[i+3]=0;
@@ -618,7 +617,7 @@ async function loader_video(name,id,flagFile){ // загрузка'id_video'
       log('локальный режим file://, грузим запасной mp4.js');
       let r=await load_js(name);
       if(!r){alert('нет скрипта='+name); g.mp4_status = 'error'; return 0;}
-      if(!window['g_mp4']){alert('нет внутри g_mp4');g.mp4_status = 'error'; return 0;}
+      if(!window['g_mp4']){alert('нет внутри g_mp4=base64');g.mp4_status = 'error'; return 0;}
       g.video.src=g_mp4; g_mp4=null;
     } else g.video.src=name; // обычный http/https
 
@@ -785,16 +784,16 @@ function grid49(n){
  if(n==49){return [49,7,7];}
  if(n==48){return [48,8,6];}
  if(n==47){add0();return [48,8,6];}
- if(n==46){del25();return [45,9,5];}
+ if(n==46){delN(23);return [45,9,5];}
  if(n==45){return [45,9,5];}
  if(n==44){add0();return [45,9,5];}
- if(n==43){del25();return [42,7,6];}
+ if(n==43){delN(21);return [42,7,6];}
  if(n==42){return [42,7,6];}
- if(n==41){del25();return [40,8,5];}
+ if(n==41){delN(20);return [40,8,5];}
  if(n==40){return [40,8,5];}
-   //нужен seek метод
+   //равномерно удалять нет смысла, там как попало пропускает
  if(n>=36){cut36();return [36,6,6];}
- if(n>=25){cut25();return [25,5,5];}  //удалить равномерно?
+ if(n>=25){cut25();return [25,5,5];}  
  return [1,1,1];//error грузим сетку16 300кб с сервера
 }
 function add0(){
@@ -803,14 +802,14 @@ function add0(){
  for(let i=0;i<g.num_frame;i++)m.push(g.rawFrames[i]);
  g.rawFrames=m; g.num_frame++;
 }
-function del25(){
+function delN(n){
  let m=[];
- for(let i=0;i<g.num_frame;i++)if(i!=25)m.push(g.rawFrames[i]);
+ for(let i=0;i<g.num_frame;i++)if(i!=n)m.push(g.rawFrames[i]);
  g.rawFrames=m; g.num_frame--;
 }
 function cut36(){
  let m=[];
- let n=g.num_frame-25; n=n>>1;
+ let n=g.num_frame-36; n=n>>1;
  for(let i=0;i<36;i++)m.push(g.rawFrames[n+i]);
  g.rawFrames=m; g.num_frame=36;
 }

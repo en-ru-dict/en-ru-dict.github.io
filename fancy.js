@@ -61,7 +61,7 @@ function o_update(){
  o_busy=0;
 }
 function o_resizer(v){
- all_dim(0.8); setTimeout(all_dim,700);
+ //all_dim(0.8); setTimeout(all_dim,700);
  console.log('o_resizer');
  var i,e,r,y1,y2,le,s;
  le=g_zerk.length; s=el_main.className; el_main.className='';//del mp49,oo,g366
@@ -260,8 +260,8 @@ function set_snow(v){// Смена погоды
  var m=['','snow','rain','fog'];
  if(v<4){el('id_weather').className = m[v];els('select')[3].value=v;}
  if(v==0){g_snow=0; console.log('погода выкл OFF');}
+ if(v==666){want_fs();v=999;} 
  if(v==999){g_snow=1; console.log('погода вкл ON'); set_w();}
- if(v==666)want_fs();
 }
 function load_css_htm(){
  var st=document.createElement('style');

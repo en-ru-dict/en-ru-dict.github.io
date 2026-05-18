@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="Список легких слов для изучения английского языка с помощью фонетических ассоциаций (ФА).">
+<meta name="description" content="Список лёгких слов для изучения английского языка с помощью фонетических ассоциаций (ФА).">
 <title>Фонетические Ассоциации, Списки и карточки (tem)</title>
 <body>
 <noscript>
  Для работы меню включите скрипты! <br>
- please turn on javascripts!
 </noscript>
 <style>
 @import url('bootstrap.min.css');
 
-a { outline: none; font-weight: 700;}
-ul li a[aria-controls="profile"]:hover{ color:red;}
+a {outline: none; font-weight: 700;}
+ul li a[aria-controls="profile"]:hover{color:red;}
+li {background-color:aliceblue; font-weight:600;font-size:20px;}
 .ot2 {margin: 2px 1px;}
 i {color: red;}
 #id_but3 {float: right;}
 #id_p0 {margin-left: 10px;}
 #id_p3 {max-width:100%; width:auto}
-#id_p5,#id_p6 {font-size: 18px;}
+#id_p5,#id_p6 {font-size: 20px;}
 hr {margin-top: 5px; margin-bottom: 5px;}
 .mag {border-top: 1px solid #428bca;}
 </style>
 <script>
-if(window['g_api']!=undefined)alert('g_api?');
-var g_api='error';//global
+var g_api='error_tem';//global
 var g_page='tem1';//global
 var g_word=0;//global
 var g_pic='0.png';
@@ -37,7 +36,7 @@ var g_pic='0.png';
   <!-- Навигация -->
   <ul class="nav nav-tabs" role="tablist">
     <li class="active"><a href="#tem" aria-controls="tem" role="tab" data-toggle="tab">главная</a></li>
-    <li><a href="#tem1" aria-controls="tem1" role="tab" data-toggle="tab" title="1" onclick="load_g_api_from_Loc();">списки</a></li>
+    <li><a href="#tem1" aria-controls="tem1" role="tab" data-toggle="tab" title="1" onclick=";">списки</a></li>
     <li><a href="#tem2" aria-controls="tem2" role="tab" data-toggle="tab" title="2" onclick="load_card();">карточки</a></li>
   </ul>
 
@@ -49,231 +48,161 @@ var g_pic='0.png';
     <div class="panel-heading"><h3 >ТАБЛИЦА ПО ТЕМАМ (tem)</h3></div>
    </div>
 
-<p>
-Проект для изучения английского языка по ассоциациям.
-Открытый. Бесплатный.Использование в комерческих целях запрещено. <br>
-Помощь в развитии сайта и БД приветствуется. Пишите в телеграм чат EnglSpaceChat
-</p>
+<h1>Изучение английских слов по ассоциациям (мнемотехника)</h1>
 <hr>
 <textarea id='id_text1' cols="80" rows="20">
 слова по 42 темам из полиглота, бывают повторения.
-с транскрипцией us/uk, переводом и мини ассоциацей, сами придумывайте из нее мини рассказ
+с транскрипцией us/uk, переводом и мини ассоциацей, сами придумывайте из неё мини рассказ
 и выделяйте где звуки, а где перевод, ФА могут быть по звучанию, по написанию или оба
-Это минимальный словарный запас, что бы хоть что то понимать!
-Эта версия может работать локально без интернета.
+Это минимальный словарный запас, что бы хоть что то понимать! Эта версия лучше работает локально. Через инет возможно тормоза, грузит много скриптов и БД для каждой карточки, если они не кэшируются то будет медленно. Здесь ФА старые, в 3700 и для анки 600,1600,3200 новые и получше. Лучше через Анки учить и удалять знакомые слова перед импортом, т.к там внутри удалять неудобно.
+(Если вкл доп.перевод и асоц. то будет показывать внизу если есть. Оптимизировано для 1280х800, если у кого что не влазит, качайте весь сайт к себе и меняйте размеры под свой экран)
 
 tem1
  Animals - Животные 52 слов
  Buildings, Organizations - Строения, организации 40 слов
- Car - Автомобиль 24 слов
+ Car - Автомобиль 24 слова
  City, Streets, Transportation - Город, улицы, транспорт 75 слов
- Clothing 1 - Одежда1 43 слов
- Clothing 2 - Одежда2 43 слов
+ Clothing 1 - Одежда1 43 слова
+ Clothing 2 - Одежда2 43 слова
 
 tem2
  Colors - Цвета 26 слов
  Education 1 - Образование1 49 слов
  Education 2 - Образование2 49 слов
- Entertainment, Art, Music - Развлечения, искусство, музыка 71 слов
- Family - Семья 43 слов
+ Entertainment, Art, Music - Развлечения, искусство, музыка 71 слово
+ Family - Семья 43 слова
  Feelings, Senses - Чувства, ощущения 29 слов
 
 tem3
  Food, Restaurants, Kitchen 1 - Еда, рестораны, кухня1 69 слов
  Food, Restaurants, Kitchen 2 - Еда, рестораны, кухня2 76 слов
  Geography: Countries, Cities... - География: страны, города... 49 слов
- Greetings, Requests, Welcomes, Farewells - Приветствия, обращения, прощания 73 слов
+ Greetings, Requests, Welcomes, Farewells - Приветствия, обращения, прощания 73 слова
  Health, Medicine, Hygiene - Здоровье, медицина, гигиена 67 слов
- House, Furniture, and Household Objects - Дом, мебель, домашние предметы 71 слов
+ House, Furniture, and Household Objects - Дом, мебель, домашние предметы 71 слово
 
 tem4
  Human Body Parts - Части тела 40 слов
- Human Characteristics 1 - Человеческие качества1 42 слов
- Human Characteristics 2 - Человеческие качества2 44 слов
+ Human Characteristics 1 - Человеческие качества1 42 слова
+ Human Characteristics 2 - Человеческие качества2 44 слова
  Life, Age - Жизнь, возраст 15 слов
- Materials, Substances, Objects, Tools - Материалы, вещества, предметы 42 слов
- Measures, Measurements - Измерения 32 слов
+ Materials, Substances, Objects, Tools - Материалы, вещества, предметы 42 слова
+ Measures, Measurements - Измерения 32 слова
 
 tem5
- Money, Shopping - Деньги, покупки 42 слов
- Movement, Directions - Движение, направления 44 слов
- Nature - Природа 31 слов
- Numbers - Числа 31 слов
- People: Relatives, Friends, Enemies... - Люди: родственники, друзья, враги... 42 слов
+ Money, Shopping - Деньги, покупки 42 слова
+ Movement, Directions - Движение, направления 44 слова
+ Nature - Природа 31 слово
+ Numbers - Числа 31 слово
+ People: Relatives, Friends, Enemies... - Люди: родственники, друзья, враги... 42 слова
  Plants - Растения 36 слов
 
 tem6
  Profession - Профессия 48 слов
  Pronouns, Conjunctions, Prepositions - Местоимения, союзы, предлоги 65 слов
- Religion, Politics, Military, Science - Религия, политика, армия, наука 62 слов
- Sports, Games, Hobbies - Спорт, игры, хобби 34 слов
- Time 1 - Время 1 53 слов
- Time 2 - Время 2 22 слов
-
+ Religion, Politics, Military, Science - Религия, политика, армия, наука 62 слова
+ Sports, Games, Hobbies - Спорт, игры, хобби 34 слова
+ Time 1 - Время 1 53 слова
+ Time 2 - Время 2 22 слова
 
 tem7
  Tools - Инструменты 17 слов
- Various Adjectives - Различные прилагательные 24 слов
+ Various Adjectives - Различные прилагательные 24 слова
  Various Adverbs 1 - Различные наречия1 48 слов
  Various Adverbs 2 - Различные наречия2 50 слов
  Various Verbs 1 - Различные глаголы1 69 слов
  Various Verbs 2 - Различные глаголы2 66 слов
  Weather - Погода 20 слов
- Work, Business, Office - Работа, бизнес, офис 44 слов
-
-
+ Work, Business, Office - Работа, бизнес, офис 44 слова
 </textarea>
 <hr>
 </div>
 
-
-<div role="tabpanel" class="tab-pane fade" id="tem1" >
-<br>
-  <div class="panel-group">
-
-   <div class="panel panel-primary">
-    <div class="panel-body">
-      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(1);">1</button>
-      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(2);">2</button>
-      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(3);">3</button>
-      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(4);">4</button>
-      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(5);">5</button>
-      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(6);">6</button>
-      <button type="button" class="btn btn-primary btn-md ot2" onclick="load_g_api_from_Loc(7);">7</button>
-      ||
-      <button type="button" class="btn btn-success btn-md ot2" onclick="load_All();">Загрузить полный список из лок БД</button>
-      <button type="button" class="btn btn-danger btn-md ot2" onclick="save_g_api_to_Loc();">Запомнить юзер список в LocalStore</button>
-      <button type="button" class="btn btn-danger btn-md ot2" onclick="del_Loc();">Очистить LocalStore</button>
-
-
-    </div>
+<div role="tabpanel" class="tab-pane fade" id="tem1">
+ <br>
+ <div class="panel-group">
+  <div class="panel panel-primary">
+   <div class="panel-body">
+    <button type="button" class="btn btn-primary btn-md ot2" onclick="load_vu_from_Loc(1);">1</button>
+    <button type="button" class="btn btn-primary btn-md ot2" onclick="load_vu_from_Loc(2);">2</button>
+    <button type="button" class="btn btn-primary btn-md ot2" onclick="load_vu_from_Loc(3);">3</button>
+    <button type="button" class="btn btn-primary btn-md ot2" onclick="load_vu_from_Loc(4);">4</button>
+    <button type="button" class="btn btn-primary btn-md ot2" onclick="load_vu_from_Loc(5);">5</button>
+    <button type="button" class="btn btn-primary btn-md ot2" onclick="load_vu_from_Loc(6);">6</button>
+    <button type="button" class="btn btn-primary btn-md ot2" onclick="load_vu_from_Loc(7);">7</button>
+    ||
+    <button type="button" class="btn btn-success btn-md ot2" onclick="load_All();">Загр. список из БД</button>
+    <button type="button" class="btn btn-danger btn-md ot2" onclick="save_vu_to_Loc();">Сохр. список в LS</button>
+    <button type="button" class="btn btn-danger btn-md ot2" onclick="del_Loc();">Очистить LS</button>
+    <button type="button" class="btn btn-primary btn-md ot2" onclick="del_known();">Удалить лишние слова</button>
    </div>
-
-   <div class="panel panel-success">
-<div class="panel-heading">Текущий список=<span id="id_list0">?</span></div>
-
-    <div class="panel-body">
-     <div id="app" >
+  </div>
+  <div class="panel panel-success">
+   <div class="panel-heading">Список=<span id="id_list0">?</span> . <span id="id_info">?</span></div>
+   <div class="panel-body">
+    <div id="app">
       <input v-model="newTodo" v-on:keyup.enter="addTodo" style="width:500px">
-      <p></p>
       <ul>
-        <li v-for="todo in todos" class="alert alert-info" role="alert">
+        <li v-for="todo in todos" class="alert" role="alert">
           <span>{{ todo.text }}</span>
           <button type="button" class="btn btn-danger btn-xs" v-on:click="removeTodo($index)">[X]</button>
         </li>
       </ul>
-     </div>
     </div>
-
- </div>
-
+   </div>
+  </div>
  </div>
 </div>
-<script>
-vu=new Vue({
-  el: '#app',
-  data: {
-    newTodo: '',
-    todos: [ { text: 'номер| слово - перевод, крестик удалить' }]
-  },
-
-  methods: {
-    addTodo: function () {
-      var text = this.newTodo.trim()
-      if (text) {
-        this.todos.push({ text: text })
-        this.newTodo = ''
-        //save_vu_to_Loc()
-      }
-    },
-    removeTodo: function (index) {var s='',ms;
-         s=''+this.todos[index].text;
-         console.log('del card='+s);
-         delete(g_api[s+'[']);//удаляем карточку если есть
-     this.todos.splice(index, 1);
-     //save_vu_to_Loc()
-    }
-
-  }
-})
-
-</script>
 
 
 <div role="tabpanel" class="tab-pane fade" id="tem2">
-  <div class="panel-group">
-<div id="id_tek_word">Загружаем карточки..</div>
-   <div class="panel panel-primary">
-
-    <div class="panel-body">
-      <button id="id_but1" type="button" class="btn btn-primary btn-md ot2" onclick="load_card();">HOME</button>
-       ||
-      <button id="id_but2" type="button" class="btn btn-success btn-md ot2" onclick="prev_word();">PREV</button>
-      ||
-      <button type="button" class="btn btn-primary btn-md ot2" onclick="next_word(20);">NEXT-20</button>
-      ||||
-      <button type="button" class="btn btn-primary btn-md ot2" onclick="g_pic='0.gif';"> список=<span id="id_list">?</span> номер слова=<span id="id_word">?</span> </button>
-      ||||
-      <button type="button" id="id_dp" class="btn btn-primary btn-md ot2" onclick="load_dp()"> Включить доп.перевод </button>
-      <button type="button" id="id_da" class="btn btn-primary btn-md ot2" onclick="load_da()"> Включить доп.асоц. </button>
-      <button id="id_but3" type="button" class="btn btn-success btn-md ot2" onclick="next_word(1);">NEXT</button>
-    </div>
+ <div class="panel-group">
+  <div id="id_tek_word">Загружаем карточки..</div>
+  <div class="panel panel-primary">
+   <div class="panel-body">
+     <button id="id_but1" type="button" class="btn btn-primary btn-md ot2" onclick="load_card()">HOME</button>
+     ||
+     <button id="id_but2" type="button" class="btn btn-success btn-md ot2" onclick="prev_word()">PREV</button>
+     ||
+     <button type="button" class="btn btn-primary btn-md ot2" onclick="next_word(20)">NEXT-20</button>
+     ||
+     <button type="button" class="btn btn-primary btn-md ot2" onclick=";"> список=<span id="id_list">?</span> слово=<span id="id_word">?</span> </button>
+     ||
+     <button type="button" id="id_dp"    class="btn btn-primary btn-md ot2" onclick="load_dp()"> Вкл. доп.перевод </button>
+     <button type="button" id="id_da"    class="btn btn-primary btn-md ot2" onclick="load_da()"> Вкл. доп.асоц.</button>
+     <button id="id_info"  type="button" class="btn btn-danger  btn-md ot2" onclick="del_word()">Del</button>
+     <button id="id_vkl"   type="button" class="btn btn-success btn-md ot2" onclick="vkl_swipe()">Swipe on</button>
+     <button id="id_but3"  type="button" class="btn btn-success btn-md ot2" onclick="next_word(1)">NEXT</button>
    </div>
-
-   <div class="panel panel-success">
-     <h3> <b id="id_p0">слово - перевод</b> <span id="id_p1" class="">транскрипция 3 шт</span></h3>
-   </div>
-
-   <div class="panel panel-primary">
-    <div  class="panel-body">
-     <div class="row">
-       <div class="col-sm-6 col-md-4">
-        <img id="id_p3" src="" >
-       </div>
-       <div class="col-sm-6 col-md-8" >
-        <h3 id="id_p2" >fa</h3>
-<hr>
-        <h4 id="id_p4" >dp</h4>
-       </div>
-      </div>
+  </div>
+  <div class="panel panel-success">
+     <h3><b id="id_p0">слово - перевод</b> <span id="id_p1" class="">транскрипция 3 шт</span></h3>
+  </div>
+  <div class="panel panel-primary">
+   <div class="panel-body">
+    <div class="row">
+     <div class="col-sm-6 col-md-4">
+        <img id="id_p3" src="">
      </div>
-   </div>
-
-   <div class="panel panel-primary">
-    <div id="id_p5" class="panel-body">
-доп асоц
+     <div class="col-sm-6 col-md-8">
+      <h3 id="id_p2" >fa</h3>
+      <hr>
+      <h4 id="id_p4" >dp</h4>
+     </div>
     </div>
    </div>
-
-   <div class="panel panel-primary">
-    <div id="id_p6" class="panel-body">
-примеры
-    </div>
-   </div>
-
- </div>
-</div>
-
+  </div>
+  <div class="panel panel-primary">
+   <div id="id_p5" class="panel-body">доп асоц</div>
+  </div>
+  <div class="panel panel-primary">
+   <div id="id_p6" class="panel-body">примеры</div>
+  </div>
  </div>
 </div>
 </div>
 </div>
-<script>
-document.addEventListener('touchstart',handleTouchStart,false);// Вешаем на прикосновение
-document.addEventListener('touchmove',handleTouchMove,false);// на движение пальцем по экрану
-
-var xDown = null, yDown = null, gBus=0; //global var
-function handleTouchStart(evt){xDown=evt.touches[0].clientX; yDown=evt.touches[0].clientY;}
-function handleTouchMove(evt){var xUp,yUp,xDiff,yDiff;
- if(gBus)return;gBus=1;//занято
- if(!xDown || !yDown){gBus=0; return;}
- xUp=evt.touches[0].clientX; yUp=evt.touches[0].clientY;
- xDiff=xDown - xUp; yDiff=yDown - yUp;
- if(Math.abs(xDiff) > Math.abs(yDiff)){
-  if(xDiff > 5){document.title="==>>";setTimeout(next_word,200);} // left swipe
-  if(xDiff < -5){document.title="<<==";setTimeout(prev_word,200);} // right swipe
- }
- xDown = null; yDown = null; gBus=0; return;
-}
-</script>
+</div>
+</div>
 </body>
+</html>
