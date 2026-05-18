@@ -52,10 +52,10 @@ horse; horse; https://files.catbox.moe/w4dfzq.png; 2.4 MB
 husband; husband; https://files.catbox.moe/seejgs.png; 1 MB
 kitchen,kitten; kitchen; https://files.catbox.moe/fnt2uk.png; 0.9 MB
 knife,knave; knife; https://files.catbox.moe/r9ne19.png; 1.2 MB
-lake,leak; lake; png/lake.png
-lake2; lake2; png/lake2.jpeg
-length; length; 0.png
-lesson,listen; lesson; 0.png
+lake,leak; lake; 
+lake2; lake2;
+length; length;
+lesson,listen; lesson;
 luck; luck; 0.png
 mad,mud,mood; mad; 0.png
 map; map; 0.png
@@ -64,6 +64,7 @@ mirror; mirror; 0.png
 monk,monkey; monk; 0.png
 most,majority; most; 0.png
 mug; mug; 0.png
+mug2; mug2; 0.png
 murmur; murmur; 0.png
 next; next; 0.png
 next2; next2; 0.png
