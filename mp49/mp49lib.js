@@ -1,3 +1,24 @@
+//общая либа для всех режимов
+let g={};
+g.mp4_status='idle'; // busy/ok/error
+g.rawFrames=[];
+g.num_frame=0;
+g.prevHash=[];
+g.dubli=0;
+g.speed=0;
+g.video=null;
+g.step=0;
+g.rows=0;
+g.cols=0;
+g.frames=0;
+g.canvas=null;
+g.ctx=null;
+g.w=0;
+g.h=0;
+let g_spriteBlob=null;    // готовый blob спрайта (глобальный)
+var g_time=[];
+
+
 function elv(id,v,d){
 	var e=document.getElementById(''+id);
 	if(!e){
@@ -80,4 +101,89 @@ function fastHash(data) {
  if(s == 0) return 0;
  return h;
 }
+function make_canvas(){//для скорости делаем заранее
+  for(let i=0;i<=g.frames;i++){
+   let c = document.createElement('canvas');
+   c.width=g.w; c.height=g.h;
+   g.rawFrames.push(c);
+  }
+}
+function grab_frame(){
+      g.ctx.drawImage(g.video, 0, 0, g.w, g.h);
+      const data = g.ctx.getImageData(0, 0, g.w, g.h).data;
+      const hash = fastHash(data);
+      if(hash == 0){ log('pusto='+g.video.currentTime); return 0; }
+      if(g.prevHash.includes(hash)){ g.dubli++; g.speed++; return 0; }
+      //ура нашли
+      g.prevHash.push(hash);g_time.push(g.video.currentTime);
+      g.rawFrames[g.num_frame].getContext('2d').drawImage(g.canvas, 0, 0, g.w, g.h);
+      g.speed--;
+      g.num_frame++;
+      return 1;
+}
+// --- ПРАВИЛЬНЫЙ waitSeek
+var g_seek_timer=null;
+function waitSeekSafe(targetTime){
+  return new Promise(resolve => {
+    let done = false;
+    const finish = () => {
+      if(done) return;
+      done = true;
+      g.video.removeEventListener('seeked', onSeeked);
+      clearTimeout(g_seek_timer);
+      resolve();
+    };
+    const onSeeked = () => {finish();};
+    g.video.addEventListener('seeked', onSeeked, { once: true });
+    g.video.currentTime = targetTime;
+    g_seek_timer=setTimeout(()=>{log('seek_timeout='+targetTime);finish();}, 500);
+  });
+}
+async function seek_frames(frames,v=1){
+  let ctx = g.canvas.getContext('2d', { willReadFrequently: true });
+  if(!ctx){alert('no 2d context'); g.mp4_status = 'error'; return 0;}
+  g.canvas.width=g.w; g.canvas.height=g.h;
+  
+  log('step='+g.step);
+  
+  g.rawFrames = []; 
+  g.prevHash = [];
+  let maxAttempts = 10;
+  let dynamicDelay = 10;
 
+  for(let t = 0; t < frames; t++){
+	if(v)progressBar(t,frames);
+    await waitSeekSafe(g.step*t + 0.01);//поправка
+
+    let attempts = 0;
+    let success = false;
+
+    while(attempts < maxAttempts && !success) {
+      attempts++;
+      await new Promise(r => setTimeout(r, dynamicDelay));//=sleep=pause
+      ctx.drawImage(g.video,0,0,g.w,g.h);
+      const data = ctx.getImageData(0,0,g.w,g.h).data;
+      const hash = fastHash(data);     
+      if(hash==0){ log('pusto='+t); dynamicDelay += 10; continue;}
+      if(g.prevHash.includes(hash)){ log('dubl='+t); dynamicDelay += 10; continue;}
+      success = true;//ура нашли
+      g.prevHash.push(hash);dynamicDelay = Math.max(5, dynamicDelay - 1);
+      g.rawFrames.push(data);
+    } //end while
+  }//end for
+}
+function best_size(scale){
+  //уменьшение размеров спрайта для слабых телефонов
+  let fW=g.video.videoWidth,fH=g.video.videoHeight;
+  fW=Math.floor(fW*scale); fH=Math.floor(fH*scale);
+  let sW=g.cols*fW,sH=g.rows*fH;
+  let maxT=getMaxTextureSize();
+  if(sW>maxT||sH>maxT){
+    let newS=Math.min(maxT/sW,maxT/sH);
+    log('scale reduced '+scale+'x'+newS+' (texture limit)');
+    fW=Math.floor(fW*newS); fH=Math.floor(fH*newS);
+    sW=g.cols*fW; sH=g.rows*fH;
+  }
+  log('итоговый размер спрайта sW='+sW+'/sH='+sH+'/fW='+fW+'/fH='+fH);
+  g.w=fW; g.h=fH;
+}

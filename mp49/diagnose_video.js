@@ -1,4 +1,4 @@
-// Запусти это ДО preload() чтобы понять, что происходит
+// Запусти это ДО preload() чтобы понять, что происходит/ наверно надо
 async function diagnose_video_api(videoFile) {
   console.log('=== VIDEO API DIAGNOSIS ===');
 
