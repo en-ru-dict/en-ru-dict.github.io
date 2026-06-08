@@ -28,17 +28,17 @@ function show_perevod() {var w,t,o,d,n1,n2,da;//ищем слово в слов�
   w=w.toLowerCase();
   w=w.trim();
   w=replace_all(w,' ','-');
-    n1=g_dict.indexOf('\n'+w+'[');
-    if(n1<0){
-	elv('id_output','t','нет такого слова (если глючит - перезагрузите стр)');
-	elv('id_txt','h','*');
-	return;
-    }
-    n2=n1+1;
-    while(1){ // добавляем примеры к слову
-     n2=g_dict.indexOf('\n',n2+1);
-     if(g_dict.charAt(n2+1)!='#')break;
-    }
+  n1=g_dict.indexOf('\n'+w+'[');
+  if(n1<0){
+    elv('id_output','t','нет такого слова (если глючит - перезагрузите стр)');
+    elv('id_txt','h','*');
+    return;
+  }
+  n2=n1+1;
+  while(1){ // добавляем примеры к слову
+    n2=g_dict.indexOf('\n',n2+1);
+    if(g_dict.charAt(n2+1)!='#')break;
+  }
   o=g_dict.substring(n1+1,n2);
   o=replace_all(o,';','; ');
   o=replace_all(o,'[','</b> <a>[');
@@ -49,11 +49,11 @@ function show_perevod() {var w,t,o,d,n1,n2,da;//ищем слово в слов�
   elv('id_txt','h',get_fa(w));
 }
 function loader3(){
-   log('словарь загружен, делаем keys'); 	
-   lang = "en";
-   var v=get_keys2();
-   log('keys сделаны='+v); 
-   suggest_entry();
+  log('словарь загружен, делаем keys');  
+  lang = "en";
+  var v=get_keys2();
+  log('keys сделаны='+v); 
+  suggest_entry();
 }
 function suggest_entry() {
   var demo1 = new autoComplete({
