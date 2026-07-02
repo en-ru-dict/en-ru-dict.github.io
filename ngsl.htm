@@ -7,27 +7,35 @@
  <meta name="description" content="NGSL список самых частых английских слов. Учим быстро по смешной мнемотехнике!">
 <title>NGSL список</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<noscript><h1>Без скриптов не работают ФА</h1></noscript>
 <style>
- input {margin-left:15px;padding:5px;font-size:1.1em;}
- button {font-size:1em;}
- <style>
-* {box-sizing: border-box;}
-body {font-family: Arial, sans-serif; margin: 0; padding:10px;font-size: 24px}
-i {color:darkgreen;}
-a {color:mediumblue;}
-b {color:indigo; font-size:1.1em; cursor:pointer;}
+html {font-size:20px;}
+body {
+ min-width:350px; margin:0; padding:0; line-height:1.6;
+ font-family:Arial,Helvetica,sans-serif;
+ background:#E6E7E9; color:#000;
+ font-size:1rem; word-wrap:break-word;
+}
+p {background:azure;padding:0.5rem;font-size:1.2rem;}
+#container {width:96%;margin:0.5rem auto;padding:0.5rem;box-shadow:0 5px 5px 5px #CCCCCC;background-color:#fff;}
+h3 {color:blue}
+h2 {font-size:4vh;}
+h1 {font-size:5vh;}
+
+* {box-sizing: border-box;}	
+input {margin-left:0.8rem;padding:0.4rem;font-size:1.1rem;}
+button {font-size:1.1rem;}
+i {color:darkgreen; font-size:1rem}
+b {color:indigo; font-size:1.1rem; cursor:pointer;}
 .title {
-  font-weight:bold; text-align:center;
+  font-weight:bold; color: aliceblue;
   text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black,
    0 0 4px black,  0 0 4px black,  0 0 4px black,  0 0 4px black, 0 0 4px black,
-   0 0 10px coral;
-}
-h1 {color:aquamarine;}
-h2 {color:gold;}
-</style>
-<noscript><h1>Без скриптов не работают ФА</h1></noscript>
-<script src="get_fa.js"></script>
-<style>
+   0 0 10px lime;
+ }
+.aquamarine {color:aquamarine;}
+.gold {color:gold;}
+
 /* Базовые стили для всех модальных окон */
 .modal-overlay {
   position:fixed; top:0; left:0; width:100%; height:100%;
@@ -62,10 +70,16 @@ h2 {color:gold;}
   /* Если вдруг слово ОЧЕНЬ длинное (больше 65ch), разрешить принудительный перенос */
     overflow-wrap: break-word;
 }
-.modal-text i {color:red; font-size:1.1em; font-weight:700;}
-.modal-title {color:darkblue; font-size:1.4em; margin-left:20px; font-weight:800}
-.modal-content button {float:right;margin-right:20px;}
+.modal-text i {color:red; font-size:1.2rem; font-weight:bold;}
+.modal-text a {color:blue; font-size:1.2rem; font-weight:bold;}
+.modal-text b {color:green; font-size:1rem;cursor:not-allowed;}
+.modal-title {color:darkblue; font-size:1.4rem; margin-left:1rem; font-weight:800}
+.modal-content button {float:right;margin-right:1rem;}
 </style>
+</head>
+
+<body>
+
 <div class="modal-overlay hidden">
  <div class="modal-content">
   <span class="modal-title">Заголовок</span>
@@ -77,50 +91,11 @@ h2 {color:gold;}
   </div>
  </div>
 </div>
-
-<script>
-const g_modal = document.querySelector('.modal-overlay');
-const g_modal_title = document.querySelector('.modal-title');
-const g_modal_text = document.querySelector('.modal-text');
-function showModal(z,t) {
- let w='70vw'; if(t.length>500)w='100vw';
- g_modal_text.style.maxWidth=w;
- g_modal_text.innerHTML=t;
- g_modal_title.innerHTML=z;
- g_modal.classList.remove('hidden');
- // отключить прокрутку основного контента
- g_modal_text.scrollTop=0;
- document.body.style.overflow = 'hidden';
-}
-function hideModal() {  // Удаляем класс, который скрывает окно
-    g_modal.classList.add('hidden');
-    document.body.style.overflow = 'auto'; // Возвращаем прокрутку
-}
-function aaa(){var w=elv('id_word','v');if(w)showModal(w,get_fa(w));}
-async function start(){var s,m,out,t,w;
- await load_fa();
- document.addEventListener('click', (event) => {
- event.preventDefault();
- const target = event.target;
- // Если клик произошел именно по оверлею (не по контенту внутри)
- if (event.target === g_modal) { hideModal(); }
- // Ищем ближайшего родителя с классом .dict-entry/ Это и есть "карточка", на которую кликнули
- const entry = target.closest('b');
- if(!entry) return; // Если клик был мимо (например, по пустому месту в grid)
- let w=entry.innerHTML;
- showModal(w,get_fa(w));
-});
- alert('Все ФА загружены, нажмите на слово чтобы увидеть');
-}
-
-window.onload=start;
-</script>
-</head>
-
-<body>
+<div id="id_info"></div>
+<div id="container">
 <h1 class="title aquamarine center">NGSL список 2800 самых частых английских слов</h1>
 <h2 class="title gold center">Учим быстро и весело за пару недель по мнемотехнике!</h2>
-<input id="id_word" type="text"><button onclick="aaa()">найти ФА</button>
+<input id="id_input" type="text" onkeydown="if(event.key=='Enter')aaa()"><button onclick="aaa()">найти ФА</button>
 <hr>
 1. <b>the</b> [Зэ][Зэ][Зи] | (артикль)-этот<br>
 2. <b>be</b> [би][би] | быть<br>
@@ -8491,5 +8466,58 @@ window.onload=start;
 <i>thirsted</i> [??] | жаждал<br>
 <i>thirsting</i> [СэрстиН] | жаждущий<br>
 <i>thirsts</i> [Сэрстс] | жаждет<br>
+<hr>
+</div>
+
+<script>
+const g_modal = document.querySelector('.modal-overlay');
+const g_modal_title = document.querySelector('.modal-title');
+const g_modal_text = document.querySelector('.modal-text');
+var g_busy_modal=0;
+
+function get_fa2(w){return w;} //заглушка
+function showModal(w){var n,t;
+ if(g_busy_modal)return; 
+ g_busy_modal=1; //занято
+ t=get_fa2(w);
+ n='70vw'; if(t.length>500)n='100vw';
+ g_modal_text.style.maxWidth=n;
+ t=replace_all(t,'</','<@');
+ t=replace_all(t,'/',' / ');
+ t=replace_all(t,'|',' | ');
+ t=replace_all(t,'[',' [');
+ t=replace_all(t,']','] ');
+ t=replace_all(t,',',', ');
+ t=replace_all(t,'<@','</');
+ t=one_sp(t);t=zv(t);t=zagl(t);
+ g_modal_text.innerHTML=t;
+ g_modal_title.innerHTML=w;
+ g_modal_text.scrollTop=0;
+ g_modal.classList.remove('hidden');
+ // отключить прокрутку основного контента? тормозит.
+ //document.body.style.overflow = 'hidden';
+}
+
+function hideModal() {
+ g_modal.classList.add('hidden');
+ g_busy_modal=0;
+ //document.body.style.overflow = 'auto'; // Возвращаем прокрутку
+}
+
+function aaa(){var w=el('id_input').value;if(w)showModal(w);}
+
+document.addEventListener('click', (event) => {
+ event.preventDefault();
+ const target = event.target;
+ // Если клик произошел именно по оверлею (не по контенту внутри)
+ if(target === g_modal){ hideModal(); return; }
+ // Ищем ближайшего родителя 
+ const entry = target.closest('b');
+ if(!entry) return; // Если клик был мимо 
+ var w=entry.innerHTML;
+ if(w)showModal(w);
+});
+</script>
+<script src="tran/get_fa2.js"></script>
 </body>
 </html>

@@ -1,13 +1,7 @@
-function getPx(elm){
-  var cs = getComputedStyle(elm); if(!cs) return 0;
-  var curPx = parseFloat(cs.fontSize); if(!isFinite(curPx)) return 0;
-  return curPx;
-}
 function inc_font(){
-  var i=0,px=[],n=0,all=document.querySelectorAll('*');
-  for(i=0;i<all.length;i++) px.push(2+getPx(all[i]));
-  for(i=0;i<all.length;i++) if(px[i]>2){n++;all[i].style.fontSize=px[i]+'px';}
-  console.log('шрифт увеличен у '+n+' элементов.');
+  var n=document.documentElement.style.fontSize;
+  if(!n)n=22; else n=Number.parseInt(n)+2;
+  document.documentElement.style.fontSize=n+'px';
 }
 function add_inc_font(){
 var htm=`
@@ -16,7 +10,7 @@ var htm=`
   font-weight:bold; color: aliceblue;
   text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black,
    0 0 4px black,  0 0 4px black,  0 0 4px black,  0 0 4px black, 0 0 4px black,
-   0 0 10px coral;
+   0 0 10px lime;
  }
 .aquamarine {color:aquamarine;}
 .gold {color:gold;}

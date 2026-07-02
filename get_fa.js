@@ -1,6 +1,7 @@
 //get FA from 3700 600 1500 1600 3200 old
 var g_txt='';
 var g_old='';
+
 function elv(id,v,d){
   var e=document.getElementById(''+id);
   if(!e){
@@ -25,7 +26,7 @@ function replace_all(s,a,b){var s0=s+'',a0=a+'', b0=b+'', ms;
 function one_sp(s){return s.replace(/[ ]+/g,' ');}
 
 async function load_js(name){
-  console.log('load_js: началась загрузка ' + name);
+  msg('load_js: началась загрузка ' + name);
   var id='id_js_fa';
   els('#'+id,'del');
   const scriptLoaded = await new Promise(r => {
@@ -36,9 +37,16 @@ async function load_js(name){
     s.src = name;
     document.head.appendChild(s);
   });
-  console.log('load_js: конец загрузки ' + (scriptLoaded?'ok':'err'));
+  msg('load_js: конец загрузки ' + (scriptLoaded?'ok':'err'));
   return scriptLoaded;
 }
+function msg(s){ var e=elv('id_info');if(e)e.innerHTML+=''+s+'<br>';console.log(s);}
+function hide_msg(){elv('id_info','htm','');}
+var g_timer_start=0;
+function set_timer(){g_timer_start = performance.now();}
+function get_timer(){return performance.now()-g_timer_start;}
+
+//===========
 function fa0(t,w,r){var out,n,k,s,t;
   out='';n=0;k=0;t=t+'\n';
   while(1){
@@ -92,7 +100,7 @@ function get_fa(w){var s,out;
   s=get_fa1(w); if(s)out+=s+'<hr>';
   s=get_fa2(w); if(s)out+=s+'<hr>';
   //old
-  s=get_fa0(w); if(s)out+='==Старинные ФА (хуже)==\n'+s;
+  s=get_fa0(w); if(s)out+='==Старинные ФА (хуже и дубли)==\n'+s;
   s=out.trim();
   s=replace_all(s,';','; ');
   s=replace_all(s,',',', ');
@@ -113,6 +121,7 @@ function get_fa(w){var s,out;
 }
 
 async function load_fa(){var f,m;
+  set_timer();
   g_txt='';window['g_fa']='';window['g_mfa']='';
   f='500/600b.txt';  n=await load_js(f); if(!n)alert('нет файла:'+f);else g_txt+=g_fa+'\n';
   f='500/1500i.txt'; n=await load_js(f); if(!n)alert('нет файла:'+f);else g_txt+=g_fa+'\n';
@@ -124,7 +133,8 @@ async function load_fa(){var f,m;
   g_old='';m='abcdefghijklmnopqrstuvwyz'.split('');
   for(let b of m){n=await load_js('fa/'+b+'-fa.txt');if(n)g_old+=g_fa+'\n';};
   f='500/500.txt';   n=await load_js(f); if(!n)alert('нет файла:'+f);//g_fa
-  console.log('все загружены');
+  msg('все загружены='+get_timer()+'ms');
+  setTimeout(hide_msg,5000);
 }
 function del_dubli(s){var m,i,j,x,y,out;
   m=s.split('\n');

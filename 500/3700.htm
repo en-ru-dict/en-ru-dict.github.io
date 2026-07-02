@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style>
+html {font-size:20px;}
 * {box-sizing:border-box;}
-body {font-family:Arial,sans-serif;margin:0;padding:10px;font-size:var(--fs,22px);word-wrap:break-word;}
-b {color:indigo; font-size:1.1em;}
-i {color:red;}
+body {font-family:Arial,sans-serif;margin:0;padding:0.4rem;font-size:1rem;word-wrap:break-word;}
+b {color:indigo; font-size:1.1rem;}
+i {color:red; font-size:1.1rem;}
 hr {color:#eff4f9;}
-div {font-size:0.8em;}
-button {font-size:26px;padding:10px;border-radius:20px;border-color:goldenrod;}
+div {font-size:0.8rem;}
+button {cursor:pointer;font-size:1.2rem;padding:0.4rem;border-radius:1rem;border-color:goldenrod;}
 </style>
 <script>
-async function pause(t){await new Promise(r => setTimeout(r, t));}
-var g_font_size=22;
-async function fb(){
-	let e=document.getElementsByTagName('button')[0];
-	e.disabled=true;
-	await pause(99); 
-	g_font_size+=2;
-	document.body.style.setProperty('--fs',g_font_size+'px');
-	await pause(999); 
-	e.innerHTML='шрифт больше /'+g_font_size;
-	e.disabled=false;
+function fb(){
+  var n=document.documentElement.style.fontSize;
+  if(!n)n=22; else n=Number.parseInt(n)+2;
+  document.documentElement.style.fontSize=n+'px';
+  var e=document.getElementsByTagName('button')[0];
+  e.innerHTML='шрифт больше /'+n;
 }
 </script>
-
 <body>
 <button onclick="fb()">шрифт больше</button><hr>
 <h1>3700 английских слов по ассоциациям (мнемоника)</h1>
@@ -130,7 +125,7 @@ un- противоположное действие, unfold-развернуть
 ШОПЕН *<i>открыл</i>(open~оупен) *<i>магазин</i>(shop~шоп) оперы и балета<hr>
 ОПЕНгеймер был геймер и *<i>открыл</i>(open~оупэн) атомную бомбу и доигрался<hr>
 СКАРЛЕТ йохансон прекрасна в *<i>алом</i> платье (scarlet~скарлит)<hr>
-джеймс ФОНДа была *<i>любящая</i> и *<i>нежная</i> в кино (fond~фонд)<hr>
+джейн ФОНДа была *<i>любящая</i> и *<i>нежная</i> в кино (fond~фонд)<hr>
 КОПЕРфильд показал фокус и *<i>медные</i>(copper~копэР) *<i>поля</i>(field~филд) накрылись медным тазом!<hr>
 жанна ДАРК *<i>темноволосая</i> жила в *<i>темные</i> времена (dark~дарк)<hr>
 ева БРАУН носит *<i>коричневый</i>(brown~браун) БРАУНинг и *<i>брови</i>(brow~брау)<hr>

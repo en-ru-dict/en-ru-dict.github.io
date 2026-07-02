@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Метод Матрёшка (расшифровка) - Свайпай и учи!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="matr.txt"></script>
+    <style>
+        :root {
+            --bg-grad-1: #0f172a;
+            --bg-grad-2: #241435;
+            --bg-grad-3: #131130;
+            --accent: #00f2fe;
+            --accent-glow: rgba(0, 242, 254, 0.5);
+            --success: #10b981;
+            --fail: #ef4444;
+            --card-border: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Outfit', 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--bg-grad-1), var(--bg-grad-2), var(--bg-grad-3));
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            -webkit-animation: gradientBG 15s ease infinite;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @-webkit-keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px var(--accent-glow);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .progress-container {
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            height: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            width: 0%;
+            transition: width 0.4s ease;
+            -webkit-transition: width 0.4s ease;
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .stats {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .buttons-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: inherit;
+            font-weight: 500;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            transition: all 0.2s ease;
+            -webkit-transition: all 0.2s ease;
+            font-size: 13px;
+        }
+
+        .glass-btn:hover, .glass-btn:active {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+        }
+
+        #card-area {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            perspective: 1500px;
+            -webkit-perspective: 1500px;
+            padding: 10px;
+        }
+
+        .card {
+            width: 90%;
+            max-width: 380px;
+            height: 65vh;
+            max-height: 500px;
+            position: absolute;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            border-radius: 24px;
+        }
+
+        .card.swiping {
+            transition: none;
+            -webkit-transition: none;
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 24px;
+            background: #1e1e38;
+            background: linear-gradient(145deg, #251d3a 0%, #171026 100%);
+            border: 2px solid var(--card-border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+            text-align: center;
+            overflow: hidden;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+            -webkit-transition: border-color 0.3s ease;
+        }
+
+        .card:hover .card-face {
+            border-color: rgba(0, 242, 254, 0.25);
+        }
+
+        .card-front {
+            z-index: 2;
+            transform: rotateY(0deg);
+            -webkit-transform: rotateY(0deg);
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+            background: linear-gradient(145deg, #1b162e 0%, #0d081b 100%);
+            justify-content: flex-start;
+            overflow-y: auto;
+        }
+
+        /* Safe centering container for scrollable area */
+        .card-back-content {
+            margin: auto 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        /* Thin scrollbar for card back */
+        .card-back::-webkit-scrollbar {
+            width: 4px;
+        }
+        .card-back::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .card-back::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        .card.is-flipped {
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+        }
+
+        .word-ru {
+            font-size: 38px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            line-height: 1.2;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            word-break: break-word;
+            width: 100%;
+            color: #ffffff;
+        }
+        
+        .tap-hint {
+            position: absolute;
+            bottom: 25px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+            animation: pulse 2s infinite;
+            -webkit-animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+        @-webkit-keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Parsed English block styles */
+        .en-main {
+            font-size: 32px;
+            font-weight: 800;
+            color: #00f2fe;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+            display: inline-block;
+            vertical-align: middle;
+            word-wrap: break-word;
+            word-break: break-word;
+        }
+
+        .en-ipa {
+            font-size: 18px;
+            color: #fcd34d;
+            font-weight: 500;
+            margin-left: 8px;
+            vertical-align: middle;
+            display: inline-block;
+            background: rgba(252, 211, 77, 0.1);
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        .en-trans {
+            font-size: 20px;
+            color: #e2e8f0;
+            margin-top: 12px;
+            font-weight: 600;
+            line-height: 1.4;
+            padding: 0 10px;
+        }
+
+        .word-mn {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #cbd5e1;
+            font-weight: 400;
+            margin-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 15px;
+            width: 100%;
+        }
+
+        .highlight-eng {
+            color: #fcd34d;
+            font-weight: 700;
+            background: rgba(252, 211, 77, 0.1);
+            padding: 2px 6px;
+            border-radius: 6px;
+        }
+
+        .controls {
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            z-index: 10;
+        }
+
+        .circle-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 26px;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .btn-fail {
+            border: 2px solid var(--fail);
+            color: var(--fail);
+        }
+        .btn-fail:active { background: rgba(239, 68, 68, 0.2); transform: scale(0.9); -webkit-transform: scale(0.9); }
+
+        .btn-success {
+            border: 2px solid var(--success);
+            color: var(--success);
+        }
+        .btn-success:active { background: rgba(16, 185, 129, 0.2); transform: scale(0.9); -webkit-transform: scale(0.9); }
+
+        /* Stamp Styles - placed inside card-face to prevent mirroring on rotation */
+        .stamp {
+            position: absolute;
+            top: 35px;
+            font-size: 32px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border: 4px solid;
+            border-radius: 10px;
+            padding: 4px 12px;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 100;
+            transition: opacity 0.15s ease;
+            -webkit-transition: opacity 0.15s ease;
+        }
+
+        .stamp-nope { 
+            color: var(--fail); 
+            border-color: var(--fail); 
+            right: 20px; 
+            transform: rotate(15deg);
+            -webkit-transform: rotate(15deg);
+        }
+        .stamp-yeah { 
+            color: var(--success); 
+            border-color: var(--success); 
+            left: 20px; 
+            transform: rotate(-15deg);
+            -webkit-transform: rotate(-15deg);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: #0f172a;
+            z-index: 999;
+            display: none;
+            overflow-y: auto;
+        }
+        .modal-overlay.active { display: block; }
+        
+        .modal-content {
+            background: #1e293b;
+            min-height: 100vh;
+            width: 100%;
+            padding: 40px 24px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .close-modal {
+            background: none; 
+            border: none;
+            color: #94a3b8; 
+            font-size: 28px; 
+            cursor: pointer;
+            transition: color 0.2s;
+            -webkit-transition: color 0.2s;
+        }
+        .close-modal:hover {
+            color: white;
+        }
+
+        .modal-content h3 { color: #00f2fe; margin-top: 25px; margin-bottom: 10px;}
+        .modal-content p { color: #cbd5e1; font-size: 16px; line-height: 1.6; margin-bottom: 15px;}
+        .modal-content ul { color: #cbd5e1; padding-left: 20px; margin-bottom: 20px; line-height: 1.6;}
+        .modal-content hr { border-color: rgba(255,255,255,0.1); margin: 25px 0; width: 100%;}
+
+        /* Confetti Canvas */
+        #confetti {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .end-screen {
+            text-align: center;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="confetti"></canvas>
+
+    <header>
+        <div class="title">Метод Матрёшка (расшифровка)</div>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="stats"><span id="knownCount">0</span> / <span id="totalCount">0</span> изучено</div>
+        <div class="buttons-row">
+            <button class="glass-btn" onclick="openModal('theoryModal')">📖 Теория</button>
+            <button class="glass-btn" onclick="downloadList()">📥 Скачать список</button>
+            <button class="glass-btn" onclick="resetProgress()" style="border-color: rgba(239, 68, 68, 0.4);">🔄 Сброс</button>
+        </div>
+    </header>
+
+    <div id="card-area">
+        <div id="card" class="card">
+            <!-- Front Face -->
+            <div class="card-face card-front">
+                <div class="stamp stamp-yeah">ЗНАЮ</div>
+                <div class="stamp stamp-nope">УЧИТЬ</div>
+                <div class="word-ru" id="ruWord">ЗАГРУЗКА...</div>
+                <div class="tap-hint">Нажми, чтобы перевернуть</div>
+            </div>
+            
+            <!-- Back Face -->
+            <div class="card-face card-back">
+                <div class="stamp stamp-yeah">ЗНАЮ</div>
+                <div class="stamp stamp-nope">УЧИТЬ</div>
+                <div class="card-back-content">
+                    <div style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 15px; width: 100%; flex-wrap: wrap;">
+                        <div id="enWordContainer">
+                            <span class="en-main" id="enWord">Loading...</span>
+                        </div>
+                        <button onclick="event.stopPropagation(); speakWord();" class="glass-btn" style="padding: 5px; border-radius: 50%; font-size: 18px; line-height: 1; min-width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.08);" title="Озвучить">🔊</button>
+                    </div>
+                    <div class="word-mn" id="mnWord">Пожалуйста, подождите.</div>
+                </div>
+            </div>
+        </div>
+        <div class="end-screen" id="endScreen">
+            <div class="title" style="font-size: 40px;">ПОБЕДА! 🎉</div>
+            <p style="color: #cbd5e1;">Вы выучили все слова из списка!</p>
+            <button class="glass-btn" onclick="resetProgress()" style="margin-top: 20px; font-size: 18px; padding: 12px 28px;">Начать заново</button>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="circle-btn btn-fail" onclick="triggerSwipe('left')" id="btnLeft">✖</button>
+        <button class="circle-btn btn-success" onclick="triggerSwipe('right')" id="btnRight">✔</button>
+    </div>
+
+    <!-- Полноекранная Теория Модалка -->
+    <div class="modal-overlay" id="theoryModal">
+        <div class="modal-content">
+            <div style="max-width: 600px; width: 100%; position: relative;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <div class="title" style="font-size: 22px; margin-bottom: 0; text-align: left;">Методы Матрёшка и Сцепка</div>
+                    <button class="close-modal" onclick="closeModal('theoryModal')">✖</button>
+                </div>
+                
+                <div style="margin: 20px 0; text-align: center;">
+                    <a href="https://www.youtube.com/watch?v=Pj1525iL724" target="_blank" class="glass-btn" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4); font-size: 15px; padding: 12px 22px; border-radius: 24px;">
+                        <svg style="width: 20px; height: 20px; fill: currentColor; vertical-align: middle;" viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        Смотреть инструкцию на YouTube
+                    </a>
+                </div>
+
+                <p>Все привыкли думать, что английский — это сложно и нужно зубрить тысячи новых слов.</p>
+                <p>Но сейчас я открою по секрету секретный секрет... Американский язык — это почти английский, а русский тоже наполовину английский. Перестаньте бояться английского, так как он уже давно «внутри» русского!</p>
+                <hr>
+                <h3>➤ Метод МАТРЕШКА 🎯</h3>
+                <p>В русском слове спрятано 1-2 английских слова (=расшифровка). Если похоже и по смыслу подходит, считаем что от англ. — так проще запомнить! Торшер (torch - факел), Шорты (short - короткие), Лоджия (large - большой).</p>
+                <h3>➤ Метод СЦЕПКА 🔗</h3>
+                <p>Если слово никак не запоминается, используем Фонетические Ассоциации (Мнемотехнику). Находим созвучные русские слова и придумываем интересную историю, вызывающую эмоции.</p>
+                <p><b>Пример:</b> DANGER (дангер/дейнджер). Похоже на "танкер" и "рейнджер". Дырявый ТАНКЕР тонет, Рейнджеры спешат на помощь.</p>
+                <hr>
+                <h3>Как учить в этом приложении:</h3>
+                <ul>
+                    <li>Смотрите на русское слово. Вспомнили английское? Отлично!</li>
+                    <li>Не вспомнили? Нажмите на карточку, чтобы перевернуть.</li>
+                    <li>Прочитайте ассоциацию и ярко представьте картинку в голове!</li>
+                    <li>Свайп <b>вправо (Зеленая кнопка)</b> — слово выучено, оно больше не появится.</li>
+                    <li>Свайп <b>влево (Красная кнопка)</b> — слово отправляется в конец колоды для повторения.</li>
+                </ul>
+                
+                <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                    <button class="glass-btn" onclick="closeModal('theoryModal')" style="font-size: 18px; padding: 12px 36px; border-radius: 30px; background: var(--accent); color: #0f172a; font-weight: 800; border: none; box-shadow: 0 0 20px var(--accent-glow); cursor: pointer;">
+                        Поехали! 🚀
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- State Management ---
+        let knownWords = JSON.parse(localStorage.getItem('matr_known') || '[]');
+        let matrWords = [];
+        let deck = [];
+        let isFlipped = false;
+        
+        const cardEl = document.getElementById('card');
+        const ruWordEl = document.getElementById('ruWord');
+        const enWordContainer = document.getElementById('enWordContainer');
+        const mnWordEl = document.getElementById('mnWord');
+        const endScreen = document.getElementById('endScreen');
+
+        // --- Data Parsing ---
+        function parseMatrText(text) {
+            return text.split('\n')
+                .map(line => {
+                    line = line.trim();
+                    if (!line || line.startsWith('const') || line.startsWith('`') || line.endsWith('`;')) return null;
+                    const parts = line.split('/');
+                    if (parts.length < 2) return null;
+                    const ru = parts[0].trim();
+                    const en = parts[1].trim();
+                    const mn = parts.slice(2).join('/').trim();
+                    return { ru, en, mn };
+                })
+                .filter(Boolean);
+        }
+
+        // Initialize matrWords from raw script variable if loaded
+        if (typeof matrWordsRaw !== 'undefined') {
+            matrWords = parseMatrText(matrWordsRaw);
+        }
+
+        // --- Initialization ---
+        function initDeck() {
+            if (matrWords.length === 0) {
+                // Try fetching matr.txt in case script loading didn't run (e.g. CORS/local files depending on setup)
+                fetch('matr.txt')
+                    .then(r => r.text())
+                    .then(text => {
+                        let rawText = text;
+                        if (text.includes('const matrWordsRaw = `')) {
+                            const start = text.indexOf('`') + 1;
+                            const end = text.lastIndexOf('`');
+                            if (start > 0 && end > start) {
+                                rawText = text.substring(start, end);
+                            }
+                        }
+                        matrWords = parseMatrText(rawText);
+                        if (matrWords.length > 0) {
+                            startDeck();
+                        } else {
+                            showError();
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Failed to load matr.txt:', err);
+                        showError();
+                    });
+            } else {
+                startDeck();
+            }
+        }
+
+        function showError() {
+            ruWordEl.innerText = 'ОШИБКА';
+            enWordContainer.innerHTML = '<span class="en-main">matr.txt не загружен</span>';
+            mnWordEl.innerHTML = 'Пожалуйста, проверьте наличие файла matr.txt в той же папке.';
+        }
+
+        function startDeck() {
+            document.getElementById('totalCount').innerText = matrWords.length;
+            
+            // Filter out known words and shuffle
+            deck = matrWords.filter(w => !knownWords.includes(w.ru));
+            shuffle(deck);
+            
+            updateProgress();
+            
+            if (deck.length > 0) {
+                loadCard(deck[0]);
+                cardEl.style.display = 'block';
+                endScreen.style.display = 'none';
+                document.querySelector('.controls').style.display = 'flex';
+            } else {
+                showEndScreen();
+            }
+        }
+
+        function loadCard(wordObj) {
+            isFlipped = false;
+            cardEl.classList.remove('is-flipped');
+            cardEl.style.transform = '';
+            
+            // Reset scroll position on the card back
+            document.querySelector('.card-back').scrollTop = 0;
+            
+            // Auto size adjustment for long Russian words (e.g., Видеохостинг is 12 chars)
+            let fontSize = '42px';
+            if (wordObj.ru.length > 12) {
+                fontSize = '24px';
+            } else if (wordObj.ru.length > 8) {
+                fontSize = '32px';
+            }
+            ruWordEl.style.fontSize = fontSize;
+            ruWordEl.innerText = wordObj.ru;
+            
+            // Parse English word, transcription, and translation dynamically
+            const enText = wordObj.en;
+            let englishWord = enText;
+            let transcription = '';
+            let translation = '';
+            
+            const transMatch = enText.match(/\[(.*?)\]/);
+            if (transMatch) {
+                transcription = transMatch[0];
+                englishWord = enText.substring(0, transMatch.index).trim();
+                translation = enText.substring(transMatch.index + transMatch[0].length).trim();
+            } else {
+                const cyrillicMatch = enText.search(/[а-яА-ЯёЁ]/);
+                if (cyrillicMatch !== -1) {
+                    englishWord = enText.substring(0, cyrillicMatch).trim().replace(/[,;\s\-]+$/, '');
+                    translation = enText.substring(cyrillicMatch).trim();
+                }
+            }
+            
+            let html = `<span class="en-main">${englishWord}</span>`;
+            if (transcription) {
+                html += ` <span class="en-ipa">${transcription}</span>`;
+            }
+            if (translation) {
+                let cleanTrans = translation.replace(/^[:\s,;\-]+/, '').trim();
+                if (cleanTrans) {
+                    html += `<div class="en-trans">${cleanTrans}</div>`;
+                }
+            }
+            enWordContainer.innerHTML = html;
+            
+            // Highlight english words in mnemonic
+            let mnText = wordObj.mn;
+            mnText = mnText.replace(/([A-Za-z]+)/g, '<span class="highlight-eng">$1</span>');
+            mnWordEl.innerHTML = mnText;
+        }
+
+        // --- Interaction Logic ---
+        let wasDragged = false;
+        let dragDistance = 0;
+
+        cardEl.addEventListener('click', (e) => {
+            if (wasDragged || dragDistance > 10) return;
+            if (e.target.closest('button')) return;
+            
+            isFlipped = !isFlipped;
+            cardEl.classList.toggle('is-flipped', isFlipped);
+        });
+
+        function handleAnswer(knowIt) {
+            if (deck.length === 0) return;
+            const word = deck.shift(); // Remove from front
+            
+            if (knowIt) {
+                knownWords.push(word.ru);
+                localStorage.setItem('matr_known', JSON.stringify(knownWords));
+                
+                // Milestone confetti (every 10 words, or if finished)
+                if (knownWords.length % 10 === 0) fireConfetti();
+            } else {
+                // Put back in deck randomly in the second half so it doesn't appear immediately
+                const insertPos = Math.floor(deck.length / 2) + Math.floor(Math.random() * (deck.length / 2));
+                deck.splice(insertPos, 0, word);
+            }
+            
+            updateProgress();
+            
+            if (deck.length > 0) {
+                loadCard(deck[0]);
+            } else {
+                fireConfetti();
+                showEndScreen();
+            }
+        }
+
+        function updateProgress() {
+            const total = matrWords.length;
+            if (total === 0) return;
+            const known = knownWords.length;
+            document.getElementById('knownCount').innerText = known;
+            const percent = (known / total) * 100;
+            document.getElementById('progressBar').style.width = percent + '%';
+        }
+
+        function resetProgress() {
+            if (confirm('Вы уверены, что хотите сбросить весь прогресс (выучено ' + knownWords.length + ' слов)?')) {
+                knownWords = [];
+                localStorage.removeItem('matr_known');
+                startDeck();
+            }
+        }
+
+        function showEndScreen() {
+            cardEl.style.display = 'none';
+            document.querySelector('.controls').style.display = 'none';
+            endScreen.style.display = 'flex';
+        }
+
+        // --- Speech Synthesis ---
+        function speakWord() {
+            if ('speechSynthesis' in window) {
+                if (!deck[0]) return;
+                const enText = deck[0].en;
+                let cleanWord = enText.split('[')[0].split(',')[0].split(';')[0].trim();
+                cleanWord = cleanWord.replace(/[^a-zA-Z\s\-]/g, '').trim();
+                
+                const utterance = new SpeechSynthesisUtterance(cleanWord);
+                utterance.lang = 'en-US';
+                
+                const voices = window.speechSynthesis.getVoices();
+                const enVoice = voices.find(v => v.lang.startsWith('en'));
+                if (enVoice) utterance.voice = enVoice;
+                
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+        
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.getVoices();
+        }
+
+        // --- Download List ---
+        function downloadList() {
+            let textContent = "const matrWordsRaw = `\n";
+            matrWords.forEach(w => {
+                textContent += `${w.ru} / ${w.en} / ${w.mn}\n`;
+            });
+            textContent += "`;\n";
+            
+            const blob = new Blob([textContent], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'matr.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // --- Swipe Logic ---
+        let startX = 0;
+        let startY = 0;
+        let currentX = 0;
+        let currentY = 0;
+        let isDragging = false;
+        const threshold = 100; // pixels to trigger swipe
+
+        cardEl.addEventListener('mousedown', dragStart);
+        cardEl.addEventListener('touchstart', dragStart, {passive: true});
+        document.addEventListener('mousemove', dragMove);
+        document.addEventListener('touchmove', dragMove, {passive: false});
+        document.addEventListener('mouseup', dragEnd);
+        document.addEventListener('touchend', dragEnd);
+
+        function dragStart(e) {
+            if (e.target.closest('.close-modal') || e.target.closest('button')) return;
+            isDragging = true;
+            wasDragged = false;
+            dragDistance = 0;
+            cardEl.classList.add('swiping');
+            startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+            startY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+        }
+
+        function dragMove(e) {
+            if (!isDragging) return;
+            const x = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+            const y = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+            currentX = x - startX;
+            currentY = y - startY;
+            
+            dragDistance = Math.sqrt(currentX * currentX + currentY * currentY);
+            if (dragDistance > 10) {
+                wasDragged = true;
+            }
+            
+            // Prevent scrolling while swiping horizontally
+            if (Math.abs(currentX) > Math.abs(currentY)) {
+                if (e.cancelable) e.preventDefault();
+            }
+            
+            const rotate = currentX * 0.05;
+            let transform = `translate(${currentX}px, ${currentY}px) rotate(${rotate}deg)`;
+            if(isFlipped) transform += ' rotateY(180deg)';
+            
+            cardEl.style.transform = transform;
+            
+            // Stamp opacity (set on both front and back faces)
+            const yeahStamps = document.querySelectorAll('.stamp-yeah');
+            const nopeStamps = document.querySelectorAll('.stamp-nope');
+            
+            if(currentX > 30) {
+                const opacity = Math.min(1, (currentX - 30)/120);
+                yeahStamps.forEach(el => el.style.opacity = opacity);
+                nopeStamps.forEach(el => el.style.opacity = 0);
+            } else if(currentX < -30) {
+                const opacity = Math.min(1, (Math.abs(currentX) - 30)/120);
+                nopeStamps.forEach(el => el.style.opacity = opacity);
+                yeahStamps.forEach(el => el.style.opacity = 0);
+            } else {
+                nopeStamps.forEach(el => el.style.opacity = 0);
+                yeahStamps.forEach(el => el.style.opacity = 0);
+            }
+        }
+
+        function dragEnd(e) {
+            if (!isDragging) return;
+            isDragging = false;
+            cardEl.classList.remove('swiping');
+            
+            const yeahStamps = document.querySelectorAll('.stamp-yeah');
+            const nopeStamps = document.querySelectorAll('.stamp-nope');
+            
+            // Reset stamps opacity
+            setTimeout(() => {
+                if (!isDragging) {
+                    yeahStamps.forEach(el => el.style.opacity = 0);
+                    nopeStamps.forEach(el => el.style.opacity = 0);
+                }
+            }, 50);
+            
+            if (currentX > threshold) {
+                animateSwipeOut(window.innerWidth, currentY, true);
+            } else if (currentX < -threshold) {
+                animateSwipeOut(-window.innerWidth, currentY, false);
+            } else {
+                // Snap back
+                cardEl.style.transform = isFlipped ? 'rotateY(180deg)' : '';
+            }
+            currentX = 0;
+            currentY = 0;
+        }
+
+        function triggerSwipe(dir) {
+            const x = dir === 'right' ? window.innerWidth : -window.innerWidth;
+            animateSwipeOut(x, 0, dir === 'right');
+        }
+
+        function animateSwipeOut(x, y, knowIt) {
+            const rotate = x * 0.05;
+            let transform = `translate(${x}px, ${y + 100}px) rotate(${rotate}deg)`;
+            if(isFlipped) transform += ' rotateY(180deg)';
+            cardEl.style.transform = transform;
+            
+            // Show stamps on swipe out transition
+            const yeahStamps = document.querySelectorAll('.stamp-yeah');
+            const nopeStamps = document.querySelectorAll('.stamp-nope');
+            if (knowIt) {
+                yeahStamps.forEach(el => el.style.opacity = 1);
+            } else {
+                nopeStamps.forEach(el => el.style.opacity = 1);
+            }
+            
+            setTimeout(() => {
+                handleAnswer(knowIt);
+                yeahStamps.forEach(el => el.style.opacity = 0);
+                nopeStamps.forEach(el => el.style.opacity = 0);
+            }, 300);
+        }
+
+        // --- Utilities ---
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function openModal(id) { 
+            document.getElementById(id).classList.add('active'); 
+        }
+        function closeModal(id) { 
+            document.getElementById(id).classList.remove('active'); 
+            // Save state so we know theory has been seen in this session if needed,
+            // but for now simple modal closing is fine.
+        }
+
+        // --- Simple Confetti ---
+        const canvas = document.getElementById('confetti');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function fireConfetti() {
+            particles = [];
+            const colors = ['#00f2fe', '#4facfe', '#fcd34d', '#10b981', '#ef4444'];
+            for(let i=0; i<80; i++) {
+                particles.push({
+                    x: canvas.width / 2,
+                    y: canvas.height,
+                    vx: (Math.random() - 0.5) * 16,
+                    vy: (Math.random() - 1) * 16 - 4,
+                    size: Math.random() * 8 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    rot: Math.random() * 360,
+                    rs: (Math.random() - 0.5) * 8
+                });
+            }
+            animateConfetti();
+        }
+
+        function animateConfetti() {
+            if(particles.length === 0) {
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                return;
+            }
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
+                p.vy += 0.4; // gravity
+                p.rot += p.rs;
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.rot * Math.PI / 180);
+                ctx.fillStyle = p.color;
+                ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+                ctx.restore();
+                
+                if(p.y > canvas.height) {
+                    particles.splice(i, 1);
+                }
+            }
+            requestAnimationFrame(animateConfetti);
+        }
+
+        // Start
+        window.onload = function() {
+            initDeck();
+            // Show theory modal on startup
+            openModal('theoryModal');
+        };
+    </script>
+</body>
+</html>

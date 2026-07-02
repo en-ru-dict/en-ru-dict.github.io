@@ -95,15 +95,12 @@ var autoComplete=function(){function e(e){function t(e,t){return e.classList?e.c
 async function start(){var s,m,out,t,w;
  loader3();
  var d=document.getElementById('id_input');d.focus();
- setTimeout("document.getElementById('id_info').remove()",9000);
  await load_fa();
-
- log('Все ФА загружены, нажмите на слово чтобы увидеть');
+ alert('Все ФА загружены, ура');
  document.getElementById("id_input").style.backgroundColor='honeydew';//aquamarine';
 }
 window.onload=start;
 </script>
 
-<script 0src="inc_font.js"></script>
 </body>
 </html>

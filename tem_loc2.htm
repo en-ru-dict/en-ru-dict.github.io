@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренажер ФА - Изучение слов</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --success: #2ecc71;
+            --danger: #e74c3c;
+            --warning: #f1c40f;
+            --bg: #f8f9fa;
+            --text: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #fff;
+            padding: 10px 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-btns {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-success { background: var(--success); color: white; }
+        .btn-danger { background: var(--danger); color: white; }
+        .btn-warning { background: var(--warning); color: white; }
+        .btn:disabled { opacity: 0.5; cursor: default; }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        /* View Sections */
+        .view { display: none; }
+        .view.active { display: block; }
+
+        /* Welcome View */
+        .topic-list {
+            display: grid;
+            gap: 10px;
+        }
+        .topic-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            cursor: pointer;
+            border-left: 5px solid var(--primary);
+        }
+
+        /* Card View */
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 20px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .word { font-size: 32px; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
+        .transcription { color: #7f8c8d; font-size: 18px; margin-bottom: 15px; }
+        .translation { font-size: 24px; font-weight: 600; margin-bottom: 20px; }
+        
+        .fa-box {
+            background: #fff9e6;
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 5px solid var(--warning);
+            text-align: left;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        .fa-extra {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #7f8c8d;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            text-align: left;
+        }
+
+        /* Quiz View */
+        .quiz-options {
+            display: grid;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .option {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #eee;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .option:hover { border-color: var(--primary); }
+        .option.correct { background: var(--success); color: white; border-color: var(--success); }
+        .option.wrong { background: var(--danger); color: white; border-color: var(--danger); }
+
+        .progress-bar {
+            height: 6px;
+            background: #eee;
+            border-radius: 3px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--success);
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .controls {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .extra-controls {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .extra-controls .btn { font-size: 12px; padding: 6px 10px; }
+
+        .footer-info {
+            text-align: center;
+            font-size: 12px;
+            color: #95a5a6;
+            margin-top: 40px;
+        }
+
+        i { color: var(--danger); font-style: normal; font-weight: bold; }
+        hr { border: none; border-top: 1px solid #eee; margin: 15px 0; }
+
+        /* Flip card */
+        .card { cursor: pointer; }
+        .card-hidden { display: none !important; }
+        .card-hint { color: #bdc3c7; font-size: 14px; margin-top: 10px; }
+
+        /* Toast */
+        .toast {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            background: var(--text); color: white; padding: 12px 24px;
+            border-radius: 10px; font-size: 14px; z-index: 1000;
+            opacity: 0; transition: opacity 0.3s; pointer-events: none;
+        }
+        .toast.show { opacity: 1; }
+
+        /* Swipe indicator */
+        .swipe-indicator {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            font-size: 48px; opacity: 0; transition: opacity 0.15s; pointer-events: none; z-index: 200;
+        }
+
+        /* Quiz score */
+        .quiz-score { text-align: center; font-size: 14px; color: var(--text); margin-bottom: 10px; }
+
+        /* Topic word count */
+        .topic-count { float: right; font-size: 13px; color: #95a5a6; }
+
+        @media (max-width: 480px) {
+            .word { font-size: 28px; }
+            .translation { font-size: 20px; }
+            .btn { padding: 12px 10px; font-size: 15px; min-height: 44px; }
+            .option { padding: 14px; min-height: 44px; }
+        }
+    </style>
+</head>
+<body>
+<div id="id_info"></div>
+<div class="header">
+    <div id="id_stats" style="font-weight: bold; color: var(--primary)">Темы</div>
+    <div class="nav-btns">
+        <button class="btn btn-primary" onclick="showView('topics')">Списки</button>
+        <button id="btn_quiz" class="btn btn-warning" onclick="toggleQuizMode()" disabled>Тест</button>
+        <button id="btn_swipe" class="btn" style="background:#95a5a6;color:white" onclick="toggleSwipe()">👆</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="progress-bar"><div id="id_progress" class="progress-fill"></div></div>
+
+    <!-- Topics View -->
+    <div id="view_topics" class="view active">
+        <div style="text-align: center; margin-bottom: 15px;">
+            <button class="btn btn-primary" onclick="setListMode('tem')">Темы</button>
+            <button class="btn" style="background:#9b59b6; color:white;" onclick="setListMode('mem')">Частые (5000 слов)</button>
+        </div>
+        <h3 id="id_list_title">Выберите тему:</h3>
+        <div class="topic-list" id="id_topic_list">
+            <!-- Will be filled by JS -->
+        </div>
+        <div style="margin-top: 20px; text-align: center;">
+            <button class="btn btn-danger" onclick="clear_known()">Сбросить выученные слова</button>
+        </div>
+
+        <div style="margin-top: 15px; padding: 15px; background: #fff; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <div style="font-weight: 600; margin-bottom: 10px; color: var(--text);">📋 Управление списком известных слов:</div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <button class="btn btn-primary" id="btn_upload_file">📂 Загрузить из файла (txt, разделители: ; , tab \n)</button>
+                <button class="btn btn-primary" onclick="loadWordsFromJS()">📥 Загрузить из english_words.js</button>
+                <button class="btn btn-success" onclick="saveWordsToFile()">💾 Сохранить список на диск (english_words.js)</button>
+                <div id="id_import_info" style="font-size: 13px; color: #7f8c8d; text-align: center;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Learning View -->
+    <div id="view_learn" class="view">
+        <div id="id_pos" style="text-align: center; font-size: 12px; margin-bottom: 5px;">0 / 0</div>
+        <div class="card">
+            <div id="card_front">
+                <div id="id_word" class="word">Word</div>
+                <div id="id_transcription" class="transcription">[trans]</div>
+            </div>
+            <div id="card_back">
+                <div id="id_translation" class="translation">Перевод</div>
+                <div id="id_fa" class="fa-box">Ассоциация</div>
+                <div id="id_fa_extra" class="fa-extra"></div>
+            </div>
+        </div>
+
+        <div id="quiz_options" class="quiz-options" style="display: none;">
+            <!-- Quiz buttons -->
+        </div>
+
+        <div id="quiz_score" class="quiz-score" style="display:none"></div>
+
+        <div class="controls">
+            <button id="btn_prev" class="btn btn-primary" onclick="prevCard()">❮ Назад</button>
+            <button id="btn_next" class="btn btn-primary" onclick="nextCard()">Далее ❯</button>
+            <button id="btn_dont_know" class="btn btn-warning" onclick="dontKnow()" style="grid-column: span 2; display: none;">Не помню (в конец очереди)</button>
+            <button id="btn_known" class="btn btn-success" onclick="markKnown()" style="grid-column: span 2;">Я знаю это слово (удалить)</button>
+        </div>
+        <div class="extra-controls">
+            <button class="btn" style="background:#9b59b6;color:white" onclick="shuffleCards()">🔀 Перемешать</button>
+            <button class="btn" style="background:#1abc9c;color:white" onclick="skip20()">⏭ +20</button>
+        </div>
+    </div>
+
+    <div class="footer-info">
+        Xing Soft 2026 | Система Phonetic Associations
+    </div>
+</div>
+
+<div class="toast" id="id_toast"></div>
+<div class="swipe-indicator" id="id_swipe_ind"></div>
+
+<script src="get_fa.js"></script>
+<script>
+    // Configuration & State
+    let g_data = []; // Current list of words
+    let g_index = 0;
+    let g_is_quiz = false;
+    let g_quiz_locked = false; // блокировка клика в квизе
+    let g_quiz_correct = 0;
+    let g_quiz_wrong = 0;
+    let g_known_words = new Set();
+    let g_swipe = false;
+    let g_card_revealed = false; // flip-карточка
+    const CACHE_KEY = 'knownEnglishWords';
+
+    const TOPICS = [
+        { id: 'tem1', name: 'Животные, Город, Одежда', type: 'tem' },
+        { id: 'tem2', name: 'Цвета, Образование, Семья', type: 'tem' },
+        { id: 'tem3', name: 'Еда, География, Дом', type: 'tem' },
+        { id: 'tem4', name: 'Тело, Качества, Материалы', type: 'tem' },
+        { id: 'tem5', name: 'Деньги, Природа, Люди', type: 'tem' },
+        { id: 'tem6', name: 'Профессии, Спорт, Время', type: 'tem' },
+        { id: 'tem7', name: 'Глаголы, Наречия, Погода', type: 'tem' },
+        
+        { id: 'mem1', name: 'Известные со школы', type: 'mem' },
+        { id: 'mem2', name: 'Слова 2', type: 'mem' },
+        { id: 'mem3', name: 'Слова 3', type: 'mem' },
+        { id: 'mem4', name: 'Слова 4', type: 'mem' },
+        { id: 'mem5', name: 'Слова 5', type: 'mem' },
+        { id: 'mem6', name: 'Слова 6', type: 'mem' },
+        { id: 'mem7', name: 'Слова 7', type: 'mem' },
+        { id: 'mem8', name: 'Слова 8', type: 'mem' },
+        { id: 'mem9', name: 'Слова 9', type: 'mem' },
+        { id: 'mem10', name: 'Слова 10', type: 'mem' },
+        { id: 'mem11', name: 'Слова 11', type: 'mem' },
+        { id: 'mem12', name: 'Слова 12', type: 'mem' },
+        { id: 'mem13', name: 'Слова 13', type: 'mem' },
+        { id: 'mem14', name: 'Слова 14', type: 'mem' }
+    ];
+
+    let g_list_mode = 'tem';
+
+    function setListMode(mode) {
+        g_list_mode = mode;
+        document.getElementById('id_list_title').innerText = mode === 'tem' ? 'Выберите тему:' : 'Выберите список частотных слов:';
+        renderTopics();
+    }
+
+    // Initialization
+    function init() {
+        loadKnownWords();
+        setListMode('tem');
+        if(window.load_fa) load_fa(); // Load Association DB
+        updateStats();
+    }
+
+    function loadKnownWords() {
+        const stored = localStorage.getItem(CACHE_KEY);
+        if (stored) {
+            stored.split('\n').forEach(w => {
+                if(w.trim()) g_known_words.add(w.trim().toLowerCase());
+            });
+        }
+    }
+
+    function saveKnownWords() {
+        localStorage.setItem(CACHE_KEY, Array.from(g_known_words).join('\n'));
+        updateStats();
+    }
+
+    function updateStats() {
+        document.getElementById('id_stats').innerText = `Выучено: ${g_known_words.size}`;
+    }
+
+    function renderTopics() {
+        const list = document.getElementById('id_topic_list');
+        const filtered = TOPICS.filter(t => t.type === g_list_mode);
+        list.innerHTML = filtered.map(t => {
+            const count = getTopicWordCount(t.id);
+            const countHtml = count !== null ? `<span class="topic-count">${count} слов</span>` : '';
+            return `
+            <div class="topic-item" onclick="loadTopic('${t.id}', '${t.type}')">
+                <strong>${t.id.toUpperCase()}</strong>: ${t.name} ${countHtml}
+            </div>`;
+        }).join('');
+    }
+
+    // Подсчёт неизученных слов в теме (кэшированный)
+    let g_topic_counts = {};
+    function getTopicWordCount(topicId) {
+        return g_topic_counts[topicId] !== undefined ? g_topic_counts[topicId] : null;
+    }
+
+    function showView(viewId) {
+        document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+        document.getElementById('view_' + viewId).classList.add('active');
+    }
+
+    // Data Loading
+    async function loadTopic(topicId, type) {
+        showView('learn');
+        document.getElementById('id_pos').innerText = "Загрузка...";
+        
+        try {
+            let dataText = '';
+            const path = `${type}/${topicId}.txt`;
+            
+            if (location.protocol === 'file:') {
+                // Load using script tag for file:// compatibility
+                const scriptId = 'id_js_topic';
+                const existing = document.getElementById(scriptId);
+                if (existing) existing.remove();
+                
+                window.g_api = undefined; // Clear global variable
+                
+                await new Promise((resolve, reject) => {
+                    const s = document.createElement('script');
+                    s.id = scriptId;
+                    s.src = path;
+                    s.onload = () => resolve();
+                    s.onerror = () => reject(new Error('Script failed to load'));
+                    document.head.appendChild(s);
+                });
+                
+                if (window.g_api) {
+                    dataText = window.g_api;
+                    window.g_api = undefined; // Cleanup
+                } else {
+                    throw new Error("Variable g_api was not set by script");
+                }
+            } else {
+                // Normal fetch mode
+                const response = await fetch(path);
+                const text = await response.text();
+                
+                // Extract content from g_api=`...`
+                const match = text.match(/`([\s\S]*)`/);
+                if (!match) throw new Error("Invalid format");
+                dataText = match[1];
+            }
+            
+            parseData(dataText);
+            g_index = 0;
+            g_is_quiz = false;
+            updateUI();
+        } catch (e) {
+            console.error(e);
+            alert("Ошибка загрузки темы. Убедитесь, что файлы в папке /tem доступны.");
+            showView('topics');
+        }
+    }
+
+    function parseData(raw) {
+        const lines = raw.split('\n');
+        g_data = [];
+        
+        lines.forEach(line => {
+            if (!line.includes('[') || !line.includes(']')) return;
+            
+            const parts = line.split('|');
+            const main = parts[0];
+            const wordMatch = main.match(/([^\[]+)\[([^\]]+)\](.*)/);
+            
+            if (wordMatch) {
+                let english = wordMatch[1].trim();
+                // Clean common prefixes
+                english = english.replace(/^(a|an|to)\s+/i, '');
+                // Clean numbers
+                english = english.replace(/^\d+\.?\s*/, '');
+                
+                const wordKey = english.toLowerCase().replace(/\s+/g, '-');
+                
+                // Skip if already known
+                if (g_known_words.has(wordKey)) return;
+
+                g_data.push({
+                    key: wordKey,
+                    word: english,
+                    transcription: wordMatch[2],
+                    translation: wordMatch[3].trim(),
+                    fa: parts[1] || ''
+                });
+            }
+        });
+
+        if (g_data.length === 0) {
+            alert("Все слова в этой теме уже выучены!");
+            showView('topics');
+        } else {
+            document.getElementById('btn_quiz').disabled = false;
+        }
+    }
+
+    // Navigation & UI
+    function updateUI() {
+        if (g_data.length === 0) {
+            showToast("Все слова выучены! 🎉");
+            renderTopics(); // обновить счётчики
+            showView('topics');
+            return;
+        }
+        
+        const item = g_data[g_index];
+        document.getElementById('id_word').innerText = item.word;
+        document.getElementById('id_transcription').innerText = `[${item.transcription}]`;
+        document.getElementById('id_translation').innerHTML = `<i>${item.translation}</i>`;
+        
+        // Show FA from list
+        let faText = formatFA(item.fa);
+        document.getElementById('id_fa').innerHTML = faText || "Ассоциация не найдена";
+        
+        // Extra associations from Global DB
+        let extra = "";
+        if (window.get_fa) {
+            extra = window.get_fa(item.word.toLowerCase());
+        }
+        document.getElementById('id_fa_extra').innerHTML = extra ? `<hr><strong>Из базы 6к:</strong><br>${extra}` : "";
+
+        // Progress
+        const total = g_data.length;
+        document.getElementById('id_pos').innerText = `${g_index + 1} / ${total}`;
+        document.getElementById('id_progress').style.width = `${((g_index + 1) / total) * 100}%`;
+
+        if (g_is_quiz) {
+            document.getElementById('card_back').style.display = 'none';
+            document.getElementById('quiz_options').style.display = 'grid';
+            document.getElementById('btn_dont_know').style.display = 'block';
+            document.getElementById('btn_known').style.display = 'none';
+            document.getElementById('quiz_score').style.display = 'block';
+            document.getElementById('quiz_score').innerText = `✅ ${g_quiz_correct}  ❌ ${g_quiz_wrong}`;
+            g_quiz_locked = false;
+            generateQuizOptions();
+        } else {
+            // Flip-card: скрываем ответ до клика
+            g_card_revealed = false;
+            document.getElementById('card_back').classList.add('card-hidden');
+            // убираем старую подсказку если была
+            const oldHint = document.getElementById('card_hint');
+            if (oldHint) oldHint.remove();
+            // добавляем подсказку
+            const hint = document.createElement('div');
+            hint.id = 'card_hint';
+            hint.className = 'card-hint';
+            hint.innerText = '👆 нажмите чтобы увидеть ответ';
+            document.querySelector('.card').appendChild(hint);
+
+            document.getElementById('quiz_options').style.display = 'none';
+            document.getElementById('btn_dont_know').style.display = 'none';
+            document.getElementById('btn_known').style.display = 'block';
+            document.getElementById('quiz_score').style.display = 'none';
+        }
+    }
+
+    // Flip card — клик по карточке
+    function revealCard() {
+        if (g_is_quiz) return; // в квизе не переворачиваем
+        g_card_revealed = true;
+        document.getElementById('card_back').classList.remove('card-hidden');
+        const hint = document.getElementById('card_hint');
+        if (hint) hint.remove();
+    }
+
+    function formatFA(fa) {
+        if (!fa) return "";
+        // Extract from |...| format if needed
+        let s = fa.split('|').pop() || fa;
+        // *слово → <i>слово</i> (останавливается на пробеле/знаках)
+        s = s.replace(/\*([а-яА-ЯёЁa-zA-Z-]+)/g, '<i>$1</i>');
+        s = s.replace(/\//g, '<br>');
+        return s;
+    }
+
+    function nextCard() {
+        if (g_index < g_data.length - 1) {
+            g_index++;
+            updateUI();
+        } else {
+            showToast("Конец списка! Осталось " + g_data.length + " слов");
+        }
+    }
+
+    function prevCard() {
+        if (g_index > 0) {
+            g_index--;
+            updateUI();
+        }
+    }
+
+    function skip20() {
+        g_index = Math.min(g_index + 20, g_data.length - 1);
+        updateUI();
+    }
+
+    function shuffleCards() {
+        // Fisher-Yates shuffle
+        for (let i = g_data.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [g_data[i], g_data[j]] = [g_data[j], g_data[i]];
+        }
+        g_index = 0;
+        updateUI();
+        showToast("🔀 Слова перемешаны!");
+    }
+
+    function markKnown() {
+        const item = g_data[g_index];
+        g_known_words.add(item.key);
+        saveKnownWords();
+        
+        g_data.splice(g_index, 1);
+        if (g_index >= g_data.length) g_index = Math.max(0, g_data.length - 1);
+        updateUI();
+    }
+
+    // Quiz Mode
+    function toggleQuizMode() {
+        g_is_quiz = !g_is_quiz;
+        g_quiz_correct = 0;
+        g_quiz_wrong = 0;
+        document.getElementById('btn_quiz').innerText = g_is_quiz ? "Карточки" : "Тест";
+        updateUI();
+    }
+
+    function generateQuizOptions() {
+        const correct = g_data[g_index];
+        let options = [correct];
+        
+        // Get distractors from the same list
+        let pool = g_data.filter(i => i.key !== correct.key);
+        pool.sort(() => Math.random() - 0.5);
+        
+        // Гарантируем минимум 3 варианта если возможно
+        const distractors = pool.slice(0, Math.min(3, pool.length));
+        options = options.concat(distractors);
+        options.sort(() => Math.random() - 0.5);
+
+        const container = document.getElementById('quiz_options');
+        container.innerHTML = options.map((opt, idx) => `
+            <div class="option" data-correct="${opt.key === correct.key}" onclick="checkAnswer(this)">
+                ${opt.translation.split(',')[0]}
+            </div>
+        `).join('');
+    }
+
+    function checkAnswer(el) {
+        if (g_quiz_locked) return; // блокировка повторного клика
+        g_quiz_locked = true;
+
+        const isCorrect = el.getAttribute('data-correct') === 'true';
+        
+        if (isCorrect) {
+            el.classList.add('correct');
+            g_quiz_correct++;
+            // Показать ответ и автопереход
+            setTimeout(() => {
+                document.getElementById('card_back').style.display = 'block';
+            }, 200);
+            setTimeout(() => {
+                if (g_index < g_data.length - 1) {
+                    g_index++;
+                    updateUI();
+                } else {
+                    showToast(`Тест завершён! ✅${g_quiz_correct} ❌${g_quiz_wrong}`);
+                }
+            }, 1500);
+        } else {
+            el.classList.add('wrong');
+            g_quiz_wrong++;
+            // Показать правильный ответ через data-correct
+            document.querySelectorAll('.option').forEach(opt => {
+                if (opt.getAttribute('data-correct') === 'true') opt.classList.add('correct');
+            });
+            // Показать ФА для запоминания
+            setTimeout(() => {
+                document.getElementById('card_back').style.display = 'block';
+            }, 500);
+        }
+        document.getElementById('quiz_score').innerText = `✅ ${g_quiz_correct}  ❌ ${g_quiz_wrong}`;
+    }
+
+    function dontKnow() {
+        // Move to end of queue
+        const item = g_data.splice(g_index, 1)[0];
+        g_data.push(item);
+        // Если были на последнем — сдвигаем индекс
+        if (g_index >= g_data.length) g_index = 0;
+        updateUI();
+    }
+
+    function clear_known() {
+        if(confirm("Вы уверены, что хотите сбросить весь прогресс (список выученных слов)?")) {
+            localStorage.removeItem(CACHE_KEY);
+            g_known_words.clear();
+            updateStats();
+            renderTopics();
+        }
+    }
+
+    // === Импорт/Экспорт списка известных слов (совместимо с anki.htm) ===
+
+    function replace_all(s, a, b) {
+        return s.split(a).join(b);
+    }
+
+    function importInfo(msg) {
+        const el = document.getElementById('id_import_info');
+        if (el) el.innerText = msg;
+    }
+
+    // Загрузить из файла (txt, csv, js — любой формат со словами)
+    function setupFileUpload() {
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = '.txt,.js,.csv';
+        fileInput.style.display = 'none';
+        document.body.appendChild(fileInput);
+
+        document.getElementById('btn_upload_file').addEventListener('click', (e) => {
+            e.preventDefault();
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onerror = () => importInfo('Ошибка чтения файла');
+            reader.onload = (evt) => {
+                let v = evt.target.result + '';
+                // Убираем обёртку g_words=`...`; если есть
+                v = v.replace(/g_words\s*=\s*`/, '').replace(/`;\s*$/, '');
+                // Нормализуем разделители
+                v = replace_all(v, ', ', ',');
+                v = replace_all(v, ',', '\n');
+                v = replace_all(v, '; ', ';');
+                v = replace_all(v, ';', '\n');
+                v = replace_all(v, '\t', '\n');
+                v = v.toLowerCase();
+
+                const words = v.split('\n')
+                    .map(w => w.trim())
+                    .filter(w => w)
+                    .map(w => replace_all(w, ' ', '-'))  // составные через дефис
+                    .filter((w, i, arr) => arr.indexOf(w) === i); // уникальные
+
+                // Мержим с существующими
+                words.forEach(w => g_known_words.add(w));
+                saveKnownWords();
+                importInfo(`✅ Загружено ${words.length} слов. Всего известных: ${g_known_words.size}`);
+            };
+            reader.readAsText(file, 'UTF-8');
+            fileInput.value = ''; // сброс чтобы можно было загрузить тот же файл
+        });
+    }
+
+    // Загрузить из english_words.js (через <script> тег)
+    async function loadWordsFromJS() {
+        try {
+            importInfo('Загружаем english_words.js...');
+            // Удаляем старый скрипт если был
+            const old = document.getElementById('id_js_eng_words');
+            if (old) old.remove();
+            window.g_words = undefined;
+
+            await new Promise((resolve, reject) => {
+                const s = document.createElement('script');
+                s.id = 'id_js_eng_words';
+                s.src = 'english_words.js';
+                s.onload = () => resolve();
+                s.onerror = () => reject(new Error('Не удалось загрузить english_words.js'));
+                document.head.appendChild(s);
+            });
+
+            if (window.g_words) {
+                const words = window.g_words.split('\n')
+                    .map(w => w.trim())
+                    .filter(w => w);
+                words.forEach(w => g_known_words.add(w));
+                saveKnownWords();
+                window.g_words = undefined;
+                importInfo(`✅ Загружено ${words.length} слов из english_words.js. Всего: ${g_known_words.size}`);
+            } else {
+                importInfo('❌ Переменная g_words не найдена в файле');
+            }
+        } catch (e) {
+            importInfo('❌ ' + e.message);
+        }
+    }
+
+    // Сохранить список известных слов на диск
+    function saveWordsToFile(filename = 'english_words.js') {
+        const words = Array.from(g_known_words);
+        if (words.length === 0) {
+            importInfo('Список пуст, нечего сохранять');
+            return;
+        }
+        const text = 'g_words=`\n' + words.join('\n') + '\n`;';
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+        importInfo(`💾 Сохранено ${words.length} слов в ${filename}`);
+    }
+
+    // === Toast (вместо alert) ===
+    function showToast(msg, ms = 2500) {
+        const t = document.getElementById('id_toast');
+        t.innerText = msg;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), ms);
+    }
+
+    // === Свайпы для мобильных ===
+    let xDown = null, yDown = null;
+    function toggleSwipe() {
+        g_swipe = !g_swipe;
+        const btn = document.getElementById('btn_swipe');
+        btn.style.background = g_swipe ? '#27ae60' : '#95a5a6';
+        btn.innerText = g_swipe ? '👆✓' : '👆';
+        showToast(g_swipe ? 'Свайпы ВКЛ (← далее, → удалить)' : 'Свайпы ВЫКЛ');
+    }
+
+    document.addEventListener('touchstart', function(e) {
+        xDown = e.touches[0].clientX;
+        yDown = e.touches[0].clientY;
+    }, false);
+
+    document.addEventListener('touchmove', function(e) {
+        if (!xDown || !yDown || !g_swipe) return;
+        const xDiff = xDown - e.touches[0].clientX;
+        const yDiff = yDown - e.touches[0].clientY;
+        if (Math.abs(xDiff) > Math.abs(yDiff) && Math.abs(xDiff) > 30) {
+            const ind = document.getElementById('id_swipe_ind');
+            if (xDiff > 0) {
+                // Свайп влево → далее
+                ind.innerText = '➡️';
+                ind.style.opacity = '1';
+                setTimeout(() => { ind.style.opacity = '0'; nextCard(); }, 150);
+            } else {
+                // Свайп вправо → знаю / удалить
+                ind.innerText = '✅';
+                ind.style.opacity = '1';
+                setTimeout(() => { ind.style.opacity = '0'; markKnown(); }, 150);
+            }
+            xDown = null; yDown = null;
+        }
+    }, false);
+
+    // === Клавиатурные сокращения ===
+    document.addEventListener('keydown', function(e) {
+        if (document.querySelector('.view.active')?.id !== 'view_learn') return;
+        switch(e.key) {
+            case 'ArrowRight': nextCard(); e.preventDefault(); break;
+            case 'ArrowLeft': prevCard(); e.preventDefault(); break;
+            case ' ':  // пробел — перевернуть карточку
+                e.preventDefault();
+                if (!g_card_revealed) revealCard();
+                else nextCard();
+                break;
+            case 'Delete': markKnown(); e.preventDefault(); break;
+            case 'PageDown': skip20(); e.preventDefault(); break;
+        }
+    });
+
+    // Клик по карточке для flip
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.card') && !e.target.closest('.option')) {
+            revealCard();
+        }
+    });
+
+    window.onload = () => {
+        init();
+        setupFileUpload();
+    };
+</script>
+</body>
+</html>
