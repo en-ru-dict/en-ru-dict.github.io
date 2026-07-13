@@ -41,7 +41,7 @@ function end_dict(){
 
 function start_load(){
  set_timer();
- var p='tran/';
+ var p=getLibPath('get_tran');
  msg('/Загружается словарь us <b>Ждите..</b>');
  g_tran_us='';load_js(p+'tran_us.txt',end_us);
  msg('/Загружается словарь uk <b>Ждите..</b>');
@@ -54,7 +54,7 @@ function end_load(){
   var t='всё загружено успешно='+get_timer()+'ms';
   msg('<hr>'+t);
   document.getElementById('id_input').focus();
-  if(window['suggest_entry'])suggest_entry();
+  if(window['suggest_entry'])suggest_entry2();
   setTimeout(hide_msg,5000);
  }
 }
@@ -69,7 +69,7 @@ function get_dict(w,p){var n,k,t='';
  if(p){
  t+='<hr>\n';
   while(1){
-   if(g_dict.charAt(k+1)!='#')break; 
+   if(g_dict.charAt(k+1)!='#')break;
    n=k+1;
    k=g_dict.indexOf('\n',n);if(k<0)alert('get_dict err2='+w);
    t+=g_dict.substring(n,k+1);
@@ -92,14 +92,22 @@ function norm_tran(s){
   s=replace_all(s,'ɝ',"ər");
   return s;
 }
+g_tabl_tr='';
 function tran_rus(s){var m,i,w,out,z,n;
+ s=s.trim();
+ if(!s)return '';
+ s=replace_all(s,'əː','@');
+ if(!g_tabl_tr){
+  g_tabl_tr=new Map();
+  m="@/ё|ʤ/дж|ʒ/ж|ɑ/а|ː/:|ˈ/'|ˌ/.|ʧ/ч|ʃ/ш|ə/э|ɔ/о|ŋ/Н|θ/С|ð/З|w/В|æ/Э|ʌ/А|ɐ/э|e/е|r/р|t/т|u/у|i/и|o/о|p/п|a/а|s/с|d/д|f/ф|g/г|h/х|j/й|k/к|l/л|z/з|v/в|b/б|n/н|m/м";
+  m=m.split('|');for(i=0;i<m.length;i++){w=m[i].split('/');g_tabl_tr.set(w[0],w[1]);}
+  g_tabl_tr.set('/','/');
+ }
  out='';
- m=" |ʒ/ж|ɑ/а|ː/:|ˈ/'|ˌ/.|ʧ/ч|ʃ/ш|ə/э|əː/ё|ɔ/о|ŋ/Н|θ/С|ð/З|w/В|æ/Э|ʌ/А|ɐ/э|e/е|r/р|t/т|u/у|i/и|o/о|p/п|a/а|s/с|d/д|f/ф|g/г|h/х|j/й|k/к|l/л|z/з|v/в|b/б|n/н|m/м";
- if(s)for(i=0;i<s.length;i++){
-	 w=s.charAt(i);z='';
-	 if(w==='ʤ')z='дж';if(w==='/')z='/';
-	 n=m.indexOf('|'+w+'/');if(n>0)z=m.charAt(n+3);
-	 if(z=='')alert('непонятная транскрипция='+s);
+ for(i=0;i<s.length;i++){
+	 w=s.charAt(i);
+     z=g_tabl_tr.get(w);
+	 if(!z)alert('непонятная транскрипция='+s);
 	 out+=z;
  }
  out=replace_all(out,'йу','ю');
@@ -108,6 +116,7 @@ function tran_rus(s){var m,i,w,out,z,n;
  out=replace_all(out,'йэ','ьэ');
  return out;
 }
+
 function del_tran_simv(ss){
 	var s=ss.trim();
 	s=replace_all(s,':','');s=replace_all(s,'ː','');
@@ -141,5 +150,62 @@ function get_tran(w){var n,k,us,uk,ru;
  return '['+us+']['+uk+']['+ru+']';
 }
 
+
+// Компактная база замен: звук|замена
+const rawMap ="əː|ё|ʤ|дж|ʧ|ч|ʒ|ж|ɑ|а|ː|:|ˈ|'|ˌ|.|ʃ|ш|ə|э|ɔ|о|ŋ|н|θ|с|ð|з|w|в|æ|э|ʌ|а|ɐ|э|e|е|r|р|t|т|u|у|i|и|o|о|p|п|a|а|s|с|d|д|f|ф|g|г|h|х|j|й|k|к|l|л|z|з|v|в|b|б|n|н|m|м";
+ // Один раз при загрузке создаем массив пар, отсортированный по длине (важно!)
+ const tranPairs = rawMap.split('|').reduce((acc, val, i, arr) => {
+    if(i % 2 === 0) acc.push([val, arr[i+1]]);
+     return acc;
+ }, []).sort((a, b) => b[0].length - a[0].length); // Сначала длинные (əː), потом короткие (ə)
+
+function tran_rus_v3(s){
+  if(!s) return '';
+  let out = s.toLowerCase();
+  // 1. Массовая замена по словарю
+  tranPairs.forEach(([sound, ru]) => {
+   if(out.indexOf(sound) >= 0)out = out.split(sound).join(ru);
+  });
+
+  // 2. Финальная «шлифовка» гласных
+  const fixes = "йу|ю|йо|ё|йа|я|йэ|ьэ".split('|');
+  for(let i=0;i<fixes.length;i+=2) out = out.split(fixes[i]).join(fixes[i+1]);
+  return out;
+}
+
+ function suggest_entry2() {
+   new autoComplete({
+     selector: '#id_input',
+     minChars: 3,
+     source: function(term, suggest) {
+       // Так как в файле всё в нижнем регистре, term.toLowerCase() делаем один раз
+       var query = '\n' + term.toLowerCase();
+       var suggestions = [];
+       var n = -1;
+
+       // Ищем первые 15 совпадений прямо в гигантской строке
+       while (suggestions.length < 15) {
+         n = g_tran_us.indexOf(query, n + 1);
+         if (n < 0) break;
+
+         // Нашли начало строки, теперь берем слово до разделителя '[' или '|'
+         var start = n + 1;
+         var end = g_tran_us.indexOf('|', start);
+         if (end > start) {
+           suggestions.push(g_tran_us.substring(start, end));
+         }
+       }
+       suggest(suggestions);
+     }
+   });
+ }
+function getLibPath(name){var ss,i,s;
+ ss=document.getElementsByTagName('script');
+ for(i=0;i<ss.length;i++){
+  s=''+ss[i].src;
+  if(s.indexOf('/'+name+'.js')>0) return s.substring(0,s.lastIndexOf('/')+1);
+ }
+ return '';
+}
 
 start_load();

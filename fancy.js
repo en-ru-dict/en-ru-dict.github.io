@@ -226,8 +226,8 @@ function set_ov(u){ //картинки и готовые спрайты
   e.onerror = (er)=> {alert('ошибка загрузки2='+u);}
   e.onload = ()=>{
    if(u==='mirror.gif'){if(bg) css_var('--bgo',`url("${u}")`); else zerk_img_url(u);}
-   if(u==='g16.jpg') set_ov_css(4,4,'1.6',u);
-   if(u==='g25.jpg') set_ov_css(5,5,'2.5',u);
+   if(u==='g16.jpg') set_ov_css(4,4,'1.6s',u);
+   if(u==='g25.jpg') set_ov_css(5,5,'2.5s',u);
    e.remove();
    end_loading();
   }
@@ -264,107 +264,104 @@ function set_snow(v){// Смена погоды
 function load_css_htm(){
  var st=document.createElement('style');
  st.textContent=`
-:root {
-  --bg2: none;
-  --bgo: none;
-  --wz: 17vw;
-  --hz: 33vh;
+:root{
+ --bg2:none;
+ --bgo:none;
+ --wz:17vw;
+ --hz:33vh;
 }
-@media (orientation:portrait) { :root { --wz: 33vw; --hz: 28vh;} }
+@media (orientation:portrait) { :root { --wz:33vw; --hz:28vh;} }
 
-.oval #id_main {font-family: "Segoe Print","Comic Sans MS";}
-.oval .sektorL {min-height: 90vh;}
-.oval .sektorR {min-height: 90vh;}
+.oval #id_main {font-family:"Segoe Print","Comic Sans MS";}
+.oval .sektorL {min-height:90vh;}
+.oval .sektorR {min-height:90vh;}
 img[src=''] {display:none;}
 
 /* СТИЛЬ ЗЕРКАЛА (Кнопки) */
 .oval .zerk {
- position: absolute; width: var(--wz,100px); height: var(--hz,100px);
- background-repeat: no-repeat; background-position: center; background-size: contain;
- background-image: var(--bgo,none);
+ position:absolute;width:var(--wz,100px);height:var(--hz,100px);
+ background-repeat:no-repeat;background-position:center;background-size:contain;
+ background-image:var(--bgo,none);
 }
-.zerk img {border-radius: 50%;object-fit: cover; position: absolute; top:0; left:0; width:100%; height:100%;}
+.zerk img {border-radius:50%;object-fit:cover;position:absolute;top:0;left:0;width:100%;height:100%;}
 .zerk b{
-  font-weight:bold; color:gold; z-index:1; font-size: x-large;
-  text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black,
-  0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 10px cyan;
+ font-weight:bold;color:gold;z-index:1;font-size:x-large;
+ text-shadow:0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 10px cyan;
 }
-.oo .zerk {
- border: 2px solid cyan; border-radius: 50%;
- box-shadow: 0 0 0.75rem aqua,0 0 0.75rem aqua, inset 0 0 0.75rem #000;
+.oo .zerk{
+ border:2px solid cyan;border-radius:50%;
+ box-shadow:0 0 0.75rem aqua,0 0 0.75rem aqua,inset 0 0 0.75rem #000;
 }
 .oo .zerk::before{
-  content:""; position:absolute; z-index:1; inset:10%; border-radius:50%;
-  border:5px solid aqua; filter:blur(5px);
-  will-change: transform, border-color; animation:colors 3s linear infinite;
+  content:"";position:absolute;z-index:1;inset:10%;border-radius:50%;
+  border:5px solid aqua;filter:blur(5px);
+  will-change:transform,border-color;animation:colors 3s linear infinite;
 }
 
 .oo.low .zerk::before{
-  will-change:unset; animation:none;
+  will-change:unset;animation:none;
 }
-.bg633 .zerk {background-color: #000633;}
-@keyframes colors {
- 0% { border-color: aqua;}
- 50% { border-color: magenta;}
- 100% { transform: rotate(360deg); }
+.bg633 .zerk{background-color:#000633;}
+@keyframes colors{
+ 0%   {border-color:aqua;}
+ 50%  {border-color:magenta;}
+ 100% {transform:rotate(360deg);}
 }
 
 /* ПОЗИЦИИ НА ПК (Треугольники вдоль дороги) */
 /* Левая сторона (зеркала 1, 2, 3) */
-.oval .sektorL .zerk:nth-child(1) { top: 5%;  left: 1%; }
-.oval .sektorL .zerk:nth-child(2) { top: 35%; left: 45%; }
-.oval .sektorL .zerk:nth-child(3) { top: 65%; left: 1%; }
+.oval .sektorL .zerk:nth-child(1) {top:5%; left:1%;}
+.oval .sektorL .zerk:nth-child(2) {top:35%;left:45%;}
+.oval .sektorL .zerk:nth-child(3) {top:65%;left:1%;}
 
 /* Правая сторона (зеркала 4, 5, 6) */
-.oval .sektorR .zerk:nth-child(1) { top: 5%;  right: 1%; }
-.oval .sektorR .zerk:nth-child(2) { top: 35%; right: 45%; }
-.oval .sektorR .zerk:nth-child(3) { top: 65%; right: 1%; }
-.hint.open {font-size:1.4rem;}
+.oval .sektorR .zerk:nth-child(1) {top:5%; right:1%;}
+.oval .sektorR .zerk:nth-child(2) {top:35%;right:45%;}
+.oval .sektorR .zerk:nth-child(3) {top:65%;right:1%;}
+.hint.open {font-size:1.2rem;}
 
 /* ПОЗИЦИИ НА ТЕЛЕФОНЕ (Зигзаг по бокам) */
 @media (orientation:portrait) {
   /* Левая сторона (зеркала 1, 2, 3) */
-  .oval .sektorL .zerk:nth-child(1) { left: 5%; }
-  .oval .sektorL .zerk:nth-child(2) { left: unset; right: 5%; }
-  .oval .sektorL .zerk:nth-child(3) { left: 5%; }
+  .oval .sektorL .zerk:nth-child(1) {left:5%;}
+  .oval .sektorL .zerk:nth-child(2) {left:unset;right:5%;}
+  .oval .sektorL .zerk:nth-child(3) {left:5%;}
 
   /* Правая сторона (зеркала 4, 5, 6) */
-  .oval .sektorR .zerk:nth-child(1) { right: 5%; }
-  .oval .sektorR .zerk:nth-child(2) { left: 5%; right:unset; }
-  .oval .sektorR .zerk:nth-child(3) { right: 5%; }
-  .hint.open {font-size:1.2rem;}
+  .oval .sektorR .zerk:nth-child(1) {right:5%;}
+  .oval .sektorR .zerk:nth-child(2) {left:5%;right:unset;}
+  .oval .sektorR .zerk:nth-child(3) {right:5%;}
+  .hint.open {font-size:1rem;}
 }
 
-.title {
-  display: inline-block; padding: 0.6rem 1rem; background: rgba(54, 97, 51, 0.5);
-  font-size: 1.2rem; border: 1px solid aqua; border-radius: 1.5rem; margin: 5vh auto 5vh 0;
-  font-weight:bold; color: aliceblue;
-  text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black,
-   0 0 4px black,  0 0 4px black,  0 0 4px black,  0 0 4px black, 0 0 4px black,
-   0 0 10px coral;
- }
+.title{
+ display:inline-block;padding:0.6rem 1rem;background:rgba(54,97,51,0.5);
+ font-size:1.2rem;border:1px solid aqua;border-radius:1.5rem;margin:5vh auto 5vh 0;
+ font-weight:bold;color:aliceblue;
+ text-shadow:0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 4px black,0 0 10px coral;
+}
 
 /* эффекты фона2 */
-.fon2 {
-  display: flex; position: fixed; width: 100vw; height: 100vh;
-  z-index:1;pointer-events: none;
-  background: fixed center; background-size: var(--bg2s,auto); background-color: black;
-  background-image: var(--bg2,none);
+.fon2{
+ display:flex;position:fixed;width:100vw;height:100vh;
+ z-index:1;pointer-events:none;
+ background:fixed center;background-size:var(--bg2s,auto);background-color:black;
+ background-image:var(--bg2,none);
 }
 .fon2 video {width:100%;height:100%;object-fit:cover;}
 .section {
-  height:100%; overflow:hidden; display:flex; justify-content:center; perspective:1000px;
+  height:100%;overflow:hidden;display:flex;justify-content:center;perspective:1000px;
 }
 /* ПК: 50/50 */
-.left, .right { flex: 0 0 50%; }
+.left, .right {flex:0 0 50%;}
 /* ТЕЛЕФОН: левая на весь экран */
 @media (orientation:portrait) {
-  .left { flex: 0 0 100%; }
-  .right { display: none; }
+  .left  {flex:0 0 100%;}
+  .right {display:none;}
 }
-.section img {height: 100%; width: auto; position: absolute;left: 0;}
+.section img {height:100%;width:auto;position:absolute;left:0;}
 
-.v0 .section img {width: 100%;  height: 100%; object-fit: contain;}
+.v0 .section img {width: 100%; height: 100%; object-fit: contain;}
 .v1 .section img {transform: translateX(var(--shift2,0)) translateZ(1px);}
 .v2 .section.left  img {transform: translateX(0) translateZ(1px);}
 .v2 .section.right img {transform: translateX(var(--shift1,0)) translateZ(1px);}
@@ -403,50 +400,50 @@ img[src=''] {display:none;}
   to{background-position:calc(100vh*var(--wh,1)) 0;}
 }
 .snow { opacity: 0.4; background-image:url("snow.gif");}
-.rain { opacity: 0.5 ;background-image:url("rain.gif"); animation:rain 10s linear infinite;}
-.fog { opacity: 0.3 ;background-image:url("fog.gif"); animation:fog 20s linear infinite;}
-@keyframes fog{ from{background-position:0 0} to{background-position:100vw 0}}
+.rain { opacity: 0.5; background-image:url("rain.gif"); animation:rain 10s linear infinite;}
+.fog  { opacity: 0.3; background-image:url("fog.gif"); animation:fog 20s linear infinite;}
+@keyframes fog { from{background-position:0 0} to{background-position:100vw 0}}
 @keyframes rain{ from{background-position:0 0} to{background-position:0 100vh}}
 
-#toggle-panel {display: none;}
-.control-panel {
-  position: fixed; bottom: 0; left: 0; right: 0;
-  max-width: 600px; margin: 0 auto;
-  background: rgba(20, 20, 40, 0.85);
-  border-top: 2px solid rgba(0, 240, 255, 0.4);
-  border-radius: 24px 24px 0 0; padding: 40px 30px 30px;
-  color: #e0e0ff; opacity: 0; pointer-events: none; z-index: 5;
-  transform: translateY(100%); /* спрятано снизу */
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6);
+#toggle-panel{display:none;}
+.control-panel{
+ position:fixed;bottom:0;left:0;right:0;
+ max-width:600px;margin:0 auto;
+ background:rgba(20,20,40,0.85);
+ border-top:2px solid rgba(0,240,255,0.4);
+ border-radius:24px 24px 0 0;padding:40px 30px 30px;
+ color:#e0e0ff;opacity:0;pointer-events:none;z-index:5;
+ transform:translateY(100%); /* спрятано снизу */
+ transition:all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+ box-shadow:0 -10px 40px rgba(0, 0, 0, 0.6);
 }
 /* Когда открыто */
-#toggle-panel:checked ~ .control-panel {
-  transform: translateY(0);
-  opacity: 1; pointer-events: auto;
+#toggle-panel:checked ~ .control-panel{
+ transform:translateY(0);
+ opacity:1;pointer-events:auto;
 }
 /* Анимация выезда (только где поддерживается) */
 @supports (transform: translateY(0)) and (transition-timing-function: cubic-bezier(0,0,0,0)) {
-  #toggle-panel:checked ~ .control-panel {
-  animation: panel-emerge 0.7s ease-out forwards;
-  }
+ #toggle-panel:checked ~ .control-panel{
+  animation:panel-emerge 0.7s ease-out forwards;
+ }
 }
-@keyframes panel-emerge {
-  0%   { transform: translateY(100%) scale(0.92); opacity:0;}
-  60%  { transform: translateY(0) scale(1.04); opacity:1;}
-  100% { transform: translateY(0) scale(1.00); opacity:1;}
+@keyframes panel-emerge{
+ 0%   {transform:translateY(100%) scale(0.92);opacity:0;}
+ 60%  {transform:translateY(0) scale(1.04);opacity:1;}
+ 100% {transform:translateY(0) scale(1.00);opacity:1;}
 }
 /* Контент панели */
-.panel-content {display: grid;  gap: 24px;}
-select, .action-btn {
-  padding: 12px 16px;  font-size: 1.1rem;  background: black;  color: white;
-  border: 1px solid rgba(0, 240, 255, 0.3);  border-radius: 12px;  outline: none;
+.panel-content{display:grid;gap:24px;}
+select, .action-btn{
+ padding:12px 16px;font-size:0.9rem;background:black;color:white;
+ border:1px solid rgba(0,240,255,0.3);border-radius:12px;outline:none;
 }
-.actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;}
-.action-btn {
-  padding: 14px 32px; font-weight: bold; cursor: pointer;
-  background: linear-gradient(135deg, #00f0ff, #7c3aed);color: #000;
-  border: none; border-radius: 50px;
+.actions{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+.action-btn{
+ padding:14px 32px;font-weight:bold;cursor:pointer;
+ background:linear-gradient(135deg, #00f0ff, #7c3aed);color:#000;
+ border:none;border-radius:50px;
 }
 /* Мобильная адаптация */
 @media (orientation:portrait) { .control-panel { padding: 30px 20px 20px; }}
@@ -458,57 +455,56 @@ var htm=`
 <div class="control-panel">
  <div class="panel-content">
 
-   <select onchange="set_bg(this.value)">
-    <option value="0">Фон (нет)<\/option>
-    <option value="1">Простой1+<\/option>
-    <option value="2">Простой2-<\/option>
-    <option value="3">Поляна 280кб<\/option>
-    <option value="4">Сказка 150кб<\/option>
-    <option value="5">Тропинка 150кб<\/option>
-    <option value="6">Дорога 150кб<\/option>
-    <option value="7">Лес чудес 110кб<\/option>
-    <option value="8">Сказка 2х<\/option>
-    <option value="9">Дорога 2х<\/option>
-    <option value="bg.mp4">Фон1 видео 1,5мб<\/option>
-    <option value="bg7.mp4">Фон2 видео 7мб<\/option>
-   <\/select>
+  <select onchange="set_bg(this.value)">
+   <option value="0">Фон (нет)<\/option>
+   <option value="1">Простой1+<\/option>
+   <option value="2">Простой2-<\/option>
+   <option value="3">Поляна 280кб<\/option>
+   <option value="4">Сказка 150кб<\/option>
+   <option value="5">Тропинка 150кб<\/option>
+   <option value="6">Дорога 150кб<\/option>
+   <option value="7">Лес чудес 110кб<\/option>
+   <option value="8">Сказка 2х<\/option>
+   <option value="9">Дорога 2х<\/option>
+   <option value="bg.mp4">Фон1 видео 1,5мб<\/option>
+   <option value="bg7.mp4">Фон2 видео 7мб<\/option>
+  <\/select>
 
-   <select id="id_ef" onchange="set_ef(this.value)">
-    <option value="0">Эффект фона (нет)<\/option>
-    <option value="1">Центр<\/option>
-    <option value="2">Слева<\/option>
-    <option value="3">Справа<\/option>
-    <option value="4">➡️ Сдвиг-1<\/option>
-    <option value="5">⬅️ Сдвиг-2<\/option>
-    <option value="6">🔄 Поворот-1<\/option>
-    <option value="7">🔄 Поворот-2<\/option>
-    <option value="8">Панорама для 1x<\/option>
-   <\/select>
+  <select id="id_ef" onchange="set_ef(this.value)">
+   <option value="0">Эффект фона (нет)<\/option>
+   <option value="1">Центр<\/option>
+   <option value="2">Слева<\/option>
+   <option value="3">Справа<\/option>
+   <option value="4">➡️ Сдвиг-1<\/option>
+   <option value="5">⬅️ Сдвиг-2<\/option>
+   <option value="6">🔄 Поворот-1<\/option>
+   <option value="7">🔄 Поворот-2<\/option>
+   <option value="8">Панорама для 1x<\/option>
+  <\/select>
 
-   <select onchange="set_ov(this.value)">
-    <option value="0">Вид зеркала (нет)<\/option>
-    <option value="png">PNG rbga 20кб<\/option>
-    <option value="g16">JPG-16? 390кб<\/option>
-    <option value="g25">JPG-25? 600кб<\/option>
-    <option value="gif bg">GIF-A bg? 1.5мб<\/option>
-    <option value="gif">GIF-A? 1.5мб<\/option>
-    <option value="mp49 bg">MP49 bg ❌ <\/option>
-    <option value="mp49">MP49! 32кб ✔<\/option>
-   <\/select>
+  <select onchange="set_ov(this.value)">
+   <option value="0">Вид зеркала (нет)<\/option>
+   <option value="png">PNG rbga 20кб<\/option>
+   <option value="g16">JPG-16? 390кб<\/option>
+   <option value="g25">JPG-25? 600кб<\/option>
+   <option value="gif bg">GIF-A bg? 1.5мб<\/option>
+   <option value="gif">GIF-A? 1.5мб<\/option>
+   <option value="mp49 bg">MP49 bg ❌ <\/option>
+   <option value="mp49">MP49! 32кб ✔<\/option>
+  <\/select>
 
-   <select onchange="set_snow(this.value)">
-    <option value="0">Погода (нет)<\/option>
-    <option value="1">❄️ Снег ☃️<\/option>
-    <option value="2">⛈️ Дождь ☔ <\/option>
-    <option value="3">🌫 Туман ☁️<\/option>
-    <option value="666">!полный экран!️<\/option>
-   <\/select>
+  <select onchange="set_snow(this.value)">
+   <option value="0">Погода (нет)<\/option>
+   <option value="1">❄️ Снег ☃️<\/option>
+   <option value="2">⛈️ Дождь ☔ <\/option>
+   <option value="3">🌫 Туман ☁️<\/option>
+   <option value="666">!полный экран!️<\/option>
+  <\/select>
 
-   <div class="actions">
-    <button class="action-btn" onclick="location.reload();" style="background:linear-gradient(135deg, #00ff9d, #00bfff);">Выход<\/button>
-    <button class="action-btn" onclick="el('toggle-panel').checked = false;" style="background:linear-gradient(135deg, #ff4d4d, #ff8c00);">Закрыть<\/button>
-   <\/div>
-
+  <div class="actions">
+   <button class="action-btn" onclick="location.reload();" style="background:linear-gradient(135deg, #00ff9d, #00bfff);">Выход<\/button>
+   <button class="action-btn" onclick="el('toggle-panel').checked = false;" style="background:linear-gradient(135deg, #ff4d4d, #ff8c00);">Закрыть<\/button>
+  <\/div>
  <\/div>
 <\/div>
 <div style="position:relative;z-index:999;margin-top: -20px;">
@@ -525,7 +521,7 @@ function fly(){
  let state = { x: 0, y: 0, targetX: 0, targetY: 0, isActive: false };
 
  function createFairy() {
-  if (fairy) return; // уже создана
+  if(fairy) return; // уже создана
   fairy = document.createElement('div');
   fairy.id = 'flyingFairy';
   Object.assign(fairy.style, {
@@ -888,18 +884,25 @@ function load_lst(name_el){
 }
 
 
-function start_fancy(){
+function start_fancy(){var v,ov,bg,ef,s;
  load_css_htm(); fly(); els('.hint').forEach(b => b.classList.remove('open'));
  set_o(0);// вкл oval ef0
  g_zerk.forEach(b =>{b.classList.remove('kn');b.innerHTML=set_a(''+b.textContent);});
  el('toggle-panel').checked = false; els('select').forEach(b => b.selectedIndex=0);
 //случайный фон и зеркало
- var v=load_lst('fancy');if(!v)v=0;v=v*1;
- save_lst('fancy',v+1),ov='png',bg=0,ef=0;
- if(v==0){bg=8;ef=4;}
- if(v==1){bg=4;ef=8;}
- if(v==2){bg='bg.mp4';ef=0;}
- if(v>2){
+ ov='png'; bg=0; ef=0;
+ s=load_lst('fancy'); if(!s)s=''; 
+ if(s.length<3){
+  v=rnd(3);
+  if(s.indexOf(''+v)>=0){v=(v+1)%3;}
+  if(s.indexOf(''+v)>=0){v=(v+1)%3;}
+  save_lst('fancy',s+v);
+  console.log('выбор='+v+'/'+s);
+  if(v==0){bg=8; ef=4;}
+  if(v==1){bg=9; ef=6; ov='g16';}
+  if(v==2){bg='bg.mp4'; ef=0;}
+ }
+ else{
   if(!rnd(3))ov=0;
   bg=rnd(10);
   if(bg==8)ef=5;
@@ -915,7 +918,6 @@ function start_fancy(){
  setTimeout(checkPerformance,3000);
  set_w(); info();timer1s(startFairy);
  console.log('красота загружена');
-// if(v==1)load_js('muz.js');
 }
 
 //===main===

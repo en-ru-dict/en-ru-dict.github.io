@@ -41,7 +41,7 @@ function end_old(){
 
 function start_load_fa(){
  set_timer();
- var p='tran/';
+ var p=getLibPath('get_fa2');
  msg('/Загружается словарь 6k <b>Ждите..</b>');
  g_dict='';load_js(p+'dict_6k.txt',end_dict);
  msg('/Загружаются fa new <b>Ждите..</b>');
@@ -161,6 +161,15 @@ function zagl(s){var n,k,ww,i,w,ss,f//заглавные рус.буквы ок�
   ww+=w;
  }
  return ww.trim();
+}
+
+function getLibPath(name){var ss,i,s;
+ ss=document.getElementsByTagName('script');
+ for(i=0;i<ss.length;i++){
+  s=''+ss[i].src;
+  if(s.indexOf('/'+name+'.js')>0) return s.substring(0,s.lastIndexOf('/')+1);
+ }
+ return '';
 }
 
 start_load_fa();

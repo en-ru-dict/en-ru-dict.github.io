@@ -20,6 +20,14 @@ hr {margin-top: 5px; margin-bottom: 5px}
 .mag {border-top: 1px solid #428bca}
 textarea {width:100%;background-color:mintcream;}
 #id_b1,#id_b2 {float:right}
+.kn {
+ color:#fff;font-weight:600;border: 1px dotted #000; margin: 0.5em;
+ padding:0.75em;text-decoration:none;border-radius:0.5em;display:inline-block;
+ background: linear-gradient(to bottom,deepskyblue,#000);
+ box-shadow: 0px 1px 3px rgba(0,0,0,0.5),inset 0px 0px 1px rgba(255,255,255,0.5);
+ text-shadow: 1px -1px 1px #000,1px 1px 0px rgba(0,0,0,0.5);
+}
+.kn:hover{color:aqua;}
 </style>
 <script src='jquery.min.js'></script>
 <script src='bootstrap.min.js'></script>
@@ -35,7 +43,7 @@ textarea {width:100%;background-color:mintcream;}
 
 <div role="tabpanel" class="tab-pane fade in active" id="tem" align="">
  <div class="panel panel-primary">
-<a href="anki2.htm">*Новая версия от ИИ, но с ошибками*</a><br>
+<a class="kn" href="anki2.htm">*Новая версия от ИИ, но с ошибками*</a><br>
   <div class="panel-heading">
    <h1>Вступление и Описание</h1>
   </div>
