@@ -349,19 +349,14 @@ img[src=''] {display:none;}
  background-image:var(--bg2,none);
 }
 .fon2 video {width:100%;height:100%;object-fit:cover;}
-.section {
-  height:100%;overflow:hidden;display:flex;justify-content:center;perspective:1000px;
-}
+.section{height:100%;overflow:hidden;display:flex;justify-content:center;perspective:1000px;}
 /* ПК: 50/50 */
 .left, .right {flex:0 0 50%;}
 /* ТЕЛЕФОН: левая на весь экран */
-@media (orientation:portrait) {
-  .left  {flex:0 0 100%;}
-  .right {display:none;}
-}
+@media (orientation:portrait) {.left  {flex:0 0 100%;} .right {display:none;}}
 .section img {height:100%;width:auto;position:absolute;left:0;}
 
-.v0 .section img {width: 100%; height: 100%; object-fit: contain;}
+.v0 .section img {width:100%;height:100%;object-fit:contain;}
 .v1 .section img {transform: translateX(var(--shift2,0)) translateZ(1px);}
 .v2 .section.left  img {transform: translateX(0) translateZ(1px);}
 .v2 .section.right img {transform: translateX(var(--shift1,0)) translateZ(1px);}
@@ -392,18 +387,18 @@ img[src=''] {display:none;}
 }
 .v7 .section img {will-change: transform; left: auto; transform-origin: center center;  animation: l6 8s linear infinite;}
 .v8 .fon2{
-  background-repeat:repeat-x; background-size: auto 100%;
+  background-repeat:repeat-x;background-size:auto 100%;
   animation: moveBg 30s linear infinite;
 }
 @keyframes moveBg{
   from{background-position:0 0;}
   to{background-position:calc(100vh*var(--wh,1)) 0;}
 }
-.snow { opacity: 0.4; background-image:url("snow.gif");}
-.rain { opacity: 0.5; background-image:url("rain.gif"); animation:rain 10s linear infinite;}
-.fog  { opacity: 0.3; background-image:url("fog.gif"); animation:fog 20s linear infinite;}
-@keyframes fog { from{background-position:0 0} to{background-position:100vw 0}}
-@keyframes rain{ from{background-position:0 0} to{background-position:0 100vh}}
+.snow{opacity:0.4;background-image:url("snow.gif");}
+.rain{opacity:0.5;background-image:url("rain.gif");animation:rain 10s linear infinite;}
+.fog{opacity:0.3;background-image:url("fog.gif");animation:fog 20s linear infinite;}
+@keyframes fog {from{background-position:0 0} to{background-position:100vw 0}}
+@keyframes rain{from{background-position:0 0} to{background-position:0 100vh}}
 
 #toggle-panel{display:none;}
 .control-panel{
@@ -414,8 +409,8 @@ img[src=''] {display:none;}
  border-radius:24px 24px 0 0;padding:40px 30px 30px;
  color:#e0e0ff;opacity:0;pointer-events:none;z-index:5;
  transform:translateY(100%); /* спрятано снизу */
- transition:all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
- box-shadow:0 -10px 40px rgba(0, 0, 0, 0.6);
+ transition:all 0.6s cubic-bezier(0.23,1,0.32,1);
+ box-shadow:0 -10px 40px rgba(0,0,0,0.6);
 }
 /* Когда открыто */
 #toggle-panel:checked ~ .control-panel{
@@ -508,7 +503,7 @@ var htm=`
  <\/div>
 <\/div>
 <div style="position:relative;z-index:999;margin-top: -20px;">
- <img style="height:1px;" id="id_i0" src='' alt=''>
+ <img style="height:1px;" id="id_i0" src="" alt="">
  <textarea spellcheck="false" id="id_t0" style="width:0;height:0"></textarea>
 </div>
 `;
@@ -891,7 +886,7 @@ function start_fancy(){var v,ov,bg,ef,s;
  el('toggle-panel').checked = false; els('select').forEach(b => b.selectedIndex=0);
 //случайный фон и зеркало
  ov='png'; bg=0; ef=0;
- s=load_lst('fancy'); if(!s)s=''; 
+ s=load_lst('fancy');  
  if(s.length<3){
   v=rnd(3);
   if(s.indexOf(''+v)>=0){v=(v+1)%3;}
@@ -909,7 +904,7 @@ function start_fancy(){var v,ov,bg,ef,s;
   if(bg==9)ef=7;
   if(3<=bg && bg<=6)if(!rnd(2))ef=8;
  }
- set_ov(ov);set_bg(bg);set_ef(ef);
+ set_ov(ov);set_bg(bg);set_ef(ef);if(v==0)load_js('muz.js');
  el('id_weather').innerHTML='';
  show(els('main')[0]); show(els('footer')[0]);
  resizer(); o_resizer(1);
@@ -921,6 +916,5 @@ function start_fancy(){var v,ov,bg,ef,s;
 }
 
 //===main===
-g_fancy=1;
 el('id_kn').textContent="?";
 timer1s(start_fancy);

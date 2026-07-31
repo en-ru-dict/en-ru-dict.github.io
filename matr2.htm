@@ -1,461 +1,499 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Метод Матрёшка (расшифровка)</title>
-  <script src="matr.txt"></script>
-  <style>
-    :root {
-      --bg-grad-1: #0f172a;
-      --bg-grad-2: #241435;
-      --bg-grad-3: #131130;
-      --accent: #00f2fe;
-      --accent-glow: rgba(0, 242, 254, 0.5);
-      --success: #10b981;
-      --fail: #ef4444;
-      --card-border: rgba(255, 255, 255, 0.08);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Метод Матрёшка (расшифровка)</title>
+<style>
+:root {
+  --accent: #00f2fe;
+  --accent-glow: rgba(0, 242, 254, 0.5);
+  --success: #10b981;
+  --fail: #ef4444;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-fs: 2rem;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color:black; color:white;
+  min-height:100vh;
+  display:flex; flex-direction:column;
+  overflow: hidden;
+}
+.buttons-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.glass-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  font-size: 13px;
+}
+.glass-btn:hover, .glass-btn:active {
+  background: rgba(255, 255, 255, 0.15);
+}
+#card-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  perspective: 1500px;
+  -webkit-perspective: 1500px;
+  padding: 10px;
+}
+.card {
+  width: 90%;
+  max-width: 1000px;
+  height: 65vh;
+  max-height: 500px;
+  position: absolute;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  border-radius: 24px;
+}
+.card.swiping {
+  transition: none;
+  -webkit-transition: none;
+}
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 24px;
+  background: #1e1e38;
+  background: radial-gradient(#061e79 0%, #01081c 100%);
+  border: 2px solid var(--card-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: border-color 0.5s ease;
+  -webkit-transition: border-color 0.5s ease;
+}
+.card:hover .card-face {
+  border-color: rgba(0, 242, 254, 0.25);
+}
+.card-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  cursor: pointer;
+}
+.card-back {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  background: black;
+  justify-content: flex-start;
+  padding:10px;
+  overflow-y: auto;
+  word-wrap:break-word;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+.card-back-content {
+  margin: auto 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;      
+  font-size: var(--card-fs);
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      user-select: none;
-      -webkit-user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
+.card.is-flipped {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+.word-ru {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  line-height: 1.2;
+  width: 100%;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, var(--bg-grad-1), var(--bg-grad-2), var(--bg-grad-3));
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      -webkit-animation: gradientBG 15s ease infinite;
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
+.tap-hint {
+  position: absolute;
+  bottom: 25px;
+  color: rgba(255,255,255,0.4);
+  animation: pulse 2s infinite;
+  -webkit-animation: pulse 2s infinite;
+}
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    @-webkit-keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.9; }
+}
+@-webkit-keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.9; }
+}
 
-    header {
-      padding: 15px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 10;
-    }
-
-    .title {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: 0.5px;
-      background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 20px var(--accent-glow);
-      margin-bottom: 10px;
-      text-align: center;
-    }
-
-    .progress-container {
-      width: 100%;
-      max-width: 400px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      height: 12px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .progress-bar {
-      height: 100%;
-      background: linear-gradient(to right, #4facfe, #00f2fe);
-      width: 0%;
-      transition: width 0.4s ease;
-      -webkit-transition: width 0.4s ease;
-      box-shadow: 0 0 10px var(--accent-glow);
-    }
-
-    .stats {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #94a3b8;
-      font-weight: 500;
-    }
-
-    .buttons-row {
-      display: flex;
-      gap: 10px;
-      margin-top: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .glass-btn {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-family: inherit;
-      font-weight: 500;
-      cursor: pointer;
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      transition: all 0.2s ease;
-      -webkit-transition: all 0.2s ease;
-      font-size: 13px;
-    }
-
-    .glass-btn:hover, .glass-btn:active {
-      background: rgba(255, 255, 255, 0.15);
-      transform: scale(1.05);
-      -webkit-transform: scale(1.05);
-    }
-
-    #card-area {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      perspective: 1500px;
-      -webkit-perspective: 1500px;
-      padding: 10px;
-    }
-
-    .card {
-      width: 90%;
-      max-width: 800px;
-      height: 65vh;
-      max-height: 500px;
-      position: absolute;
-      transform-style: preserve-3d;
-      -webkit-transform-style: preserve-3d;
-      transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      cursor: pointer;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-      border-radius: 24px;
-    }
-
-    .card.swiping {
-      transition: none;
-      -webkit-transition: none;
-    }
-
-    .card-face {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      border-radius: 24px;
-      background: #1e1e38;
-      background: linear-gradient(145deg, #251d3a 0%, #171026 100%);
-      border: 2px solid var(--card-border);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 24px;
-      text-align: center;
-      overflow: hidden;
-      box-sizing: border-box;
-      transition: border-color 0.3s ease;
-      -webkit-transition: border-color 0.3s ease;
-    }
-
-    .card:hover .card-face {
-      border-color: rgba(0, 242, 254, 0.25);
-    }
-
-    .card-front {
-      z-index: 2;
-      transform: rotateY(0deg);
-      -webkit-transform: rotateY(0deg);
-    }
-
-    .card-back {
-      transform: rotateY(180deg);
-      -webkit-transform: rotateY(180deg);
-      background: linear-gradient(145deg, #1b162e 0%, #0d081b 100%);
-      justify-content: flex-start;
-      overflow-y: auto;
-    }
-
-    /* Safe centering container for scrollable area */
-    .card-back-content {
-      margin: auto 0;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 0;
-    }
-
-    /* Thin scrollbar for card back */
-    .card-back::-webkit-scrollbar {
-      width: 4px;
-    }
-    .card-back::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    .card-back::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
-    }
-
-    .card.is-flipped {
-      transform: rotateY(180deg);
-      -webkit-transform: rotateY(180deg);
-    }
-
-    .word-ru {
-      font-size: 38px;
-      font-weight: 900;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.6);
-      line-height: 1.2;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      word-break: break-word;
-      width: 100%;
-      color: #ffffff;
-    }
-
-    .tap-hint {
-      position: absolute;
-      bottom: 25px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.4);
-      animation: pulse 2s infinite;
-      -webkit-animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.8; }
-    }
-    @-webkit-keyframes pulse {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.8; }
-    }
-
-    /* Parsed English block styles */
-    .en-main {
-      font-size: 32px;
-      font-weight: 800;
-      color: #00f2fe;
-      text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
-      display: inline-block;
-      vertical-align: middle;
-      word-wrap: break-word;
-      word-break: break-word;
-    }
-
-    .en-ipa {
-      font-size: 18px;
-      color: #fcd34d;
-      font-weight: 500;
-      margin-left: 8px;
-      vertical-align: middle;
-      display: inline-block;
-      background: rgba(252, 211, 77, 0.1);
-      padding: 2px 8px;
-      border-radius: 6px;
-    }
-
-    .en-trans {
-      font-size: 20px;
-      color: #e2e8f0;
-      margin-top: 12px;
-      font-weight: 600;
-      line-height: 1.4;
-      padding: 0 10px;
-    }
-
-    .word-mn {
-      font-size: 18px;
-      line-height: 1.5;
-      color: #cbd5e1;
-      font-weight: 400;
-      margin-top: 15px;
-      border-top: 1px solid blueviolet;
-      padding-top: 15px;
-      width: 100%;
-    }
-
-    .highlight-eng {
-      color: #fcd34d;
-      font-weight: 700;
-      background: rgba(252, 211, 77, 0.1);
-      padding: 2px 6px;
-      border-radius: 6px;
-    }
-
-    .controls {
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      z-index: 10;
-    }
-
-    .circle-btn {
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      border: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 26px;
-      cursor: pointer;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-      transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .btn-fail {
-      border: 2px solid var(--fail);
-      color: var(--fail);
-    }
-    .btn-fail:active { background: rgba(239, 68, 68, 0.2); transform: scale(0.9); -webkit-transform: scale(0.9); }
-
-    .btn-success {
-      border: 2px solid var(--success);
-      color: var(--success);
-    }
-    .btn-success:active { background: rgba(16, 185, 129, 0.2); transform: scale(0.9); -webkit-transform: scale(0.9); }
-
-    /* Stamp Styles - placed inside card-face to prevent mirroring on rotation */
-    .stamp {
-      position: absolute;
-      top: 35px;
-      font-size: 32px;
-      font-weight: 900;
-      text-transform: uppercase;
-      border: 4px solid;
-      border-radius: 10px;
-      padding: 4px 12px;
-      opacity: 0;
-      pointer-events: none;
-      z-index: 100;
-      transition: opacity 0.15s ease;
-      -webkit-transition: opacity 0.15s ease;
-    }
-
-    .stamp-nope {
-      color: var(--fail);
-      border-color: var(--fail);
-      right: 20px;
-      transform: rotate(15deg);
-      -webkit-transform: rotate(15deg);
-    }
-    .stamp-yeah {
-      color: var(--success);
-      border-color: var(--success);
-      left: 20px;
-      transform: rotate(-15deg);
-      -webkit-transform: rotate(-15deg);
-    }
-
-    /* Modal Styles */
-    .modal-overlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: #0f172a;
-      z-index: 999;
-      display: none;
-      overflow-y: auto;
-    }
-    .modal-overlay.active { display: block; }
-
-    .modal-content {
-      background: #1e293b;
-      min-height: 100vh;
-      width: 100%;
-      padding: 40px 24px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .close-modal {
-      background: none;
-      border: none;
-      color: #94a3b8;
-      font-size: 28px;
-      cursor: pointer;
-      transition: color 0.2s;
-      -webkit-transition: color 0.2s;
-    }
-    .close-modal:hover {
-      color: white;
-    }
-
-    .modal-content h3 { color: #00f2fe; margin-top: 25px; margin-bottom: 10px;}
-    .modal-content p { color: #cbd5e1; font-size: 16px; line-height: 1.6; margin-bottom: 15px;}
-    .modal-content ul { color: #cbd5e1; padding-left: 20px; margin-bottom: 20px; line-height: 1.6;}
-    .modal-content hr { border-color: rgba(255,255,255,0.1); margin: 25px 0; width: 100%;}
-
-    /* Confetti Canvas */
-    #confetti {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 1000;
-    }
-
-    .end-screen {
-      text-align: center;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 20px;
-    }
-#ruWord2 {color:blueviolet;}
-.card-back-content a { color: #60a5fa; font-weight: bold; cursor: pointer; font-size: 1.4rem; display: inline-block; padding: 2px 4px; }
+#ruWord1{color: linen;overflow-y:hidden;overflow-x:hidden;overflow-wrap:normal;word-break:normal;}
+#ruWord2{color:blueviolet;font-size:1.5em;}
+.card-back-content a { font-size:1.2em; color: #60a5fa; font-weight: bold; cursor: pointer; text-decoration: none; }
 .card-back-content b { color: #4ade80; font-weight: bold; }
 .card-back-content i { color: #f87171; font-style: normal; font-weight: bold; }
 .card-back-content span { color: #facc15; }
-hr {border: 1px dotted purple;margin: 10px;}
-  </style>
+#enWordContainer{width:100%;text-align:left;border-left:5px solid blue;padding-left:10px;}
+.word-mn {
+  line-height: 1.5;
+  color: #cbd5e1;
+  font-weight: 400;
+  margin-top: 15px;
+  border-top: 1px solid blueviolet;
+  padding-top: 15px;
+  width: 100%;
+}
+.controls {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  z-index: 10;
+}
+.circle-btn {
+  width: 65px; height: 65px; border-radius: 50%; border: none;
+  display: flex; justify-content: center; align-items: center;
+  font-size: 26px; cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+.btn-fail { border: 2px solid var(--fail); color: var(--fail);}
+.btn-fail:active { background: rgba(239, 68, 68, 0.2); transform: scale(0.9); -webkit-transform: scale(0.9); }
+.btn-success { border: 2px solid var(--success); color: var(--success);}
+.btn-success:active { background: rgba(16, 185, 129, 0.2); transform: scale(0.9); -webkit-transform: scale(0.9); }
+/* Stamp Styles - placed inside card-face to prevent mirroring on rotation */
+.stamp {
+  position: absolute;
+  top: 35px;
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 4px solid;
+  border-radius: 10px;
+  padding: 4px 12px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  transition: opacity 0.15s ease;
+  -webkit-transition: opacity 0.15s ease;
+}
+.stamp-nope {
+  color: var(--fail); border-color: var(--fail); right: 20px;
+  transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+}
+.stamp-yeah {
+  color: var(--success); border-color: var(--success); left: 20px;
+  transform: rotate(-15deg);
+  -webkit-transform: rotate(-15deg);
+}
+
+/* Confetti Canvas */
+#confetti { position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 1000;
+}
+.end-screen {
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+hr {border: 1px dotted purple;margin: 10px 0 10px 0;width: 100%;}
+
+/* ── Header ── */
+header {
+  padding: 10px 16px 6px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+  z-index: 10;
+  gap: 10px;
+}
+.header-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  font-size:3rem; font-weight:900; color:orangered;;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.progress-container {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  width: 0%;
+  transition: width 0.4s ease;
+  -webkit-transition: width 0.4s ease;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+.stats {
+  margin-top: 8px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+/* ── Hamburger Button ── */
+.hamburger-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: background 0.2s ease;
+  -webkit-transition: background 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.hamburger-btn:hover, .hamburger-btn:active {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ── Side Menu Overlay ── */
+#menu-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 500;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  -webkit-transition: opacity 0.25s ease;
+}
+#menu-overlay.open {
+  display: block;
+  opacity: 1;
+}
+#side-menu {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: 300px;
+  max-width: 88vw;
+  background: rgba(22, 15, 45, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 600;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+  transform: translateX(110%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+#side-menu.open {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+}
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+.menu-title {
+  font-size: 18px;
+  font-weight: 800;
+  background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.menu-close {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 26px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  transition: color 0.2s;
+  -webkit-transition: color 0.2s;
+}
+.menu-close:hover { color: white; }
+.menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 56px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  margin-bottom: 10px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  -webkit-transition: background 0.2s ease, border-color 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.menu-btn:hover, .menu-btn:active {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.menu-btn .btn-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.menu-btn .btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.menu-btn .btn-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+.menu-btn .btn-desc {
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.3;
+}
+.menu-btn.btn-danger {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+.menu-btn.btn-danger:hover {
+  border-color: rgba(239, 68, 68, 0.6);
+  background: rgba(239, 68, 68, 0.1);
+}
+.menu-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  margin: 6px 0 14px;
+}
+</style>
 </head>
 <body>
   <canvas id="confetti"></canvas>
+  <div id="menu-overlay" onclick="closeMenu()"></div>
+  <div id="side-menu">
+    <div class="menu-header">
+      <span class="menu-title">☰ Меню</span>
+      <button class="menu-close" onclick="closeMenu()">✕</button>
+    </div>
 
+    <button class="menu-btn btn-danger" id="btnResetProgress" onclick="resetProgress()">
+      <span class="btn-icon">🔄</span>
+      <span class="btn-text">
+        <span class="btn-label">Сброс прогресса</span>
+        <span class="btn-desc">Очистить список изученных русских слов в этом сеансе (localStorage)</span>
+      </span>
+    </button>
+
+    <hr class="menu-divider">
+
+    <button class="menu-btn" id="btnDownloadList" onclick="downloadList(); closeMenu()">
+      <span class="btn-icon">📋</span>
+      <span class="btn-text">
+        <span class="btn-label">Скачать список матрёшек</span>
+        <span class="btn-desc">Экспорт текущего набора слов из matr.txt в текстовый файл</span>
+      </span>
+    </button>
+
+    <button class="menu-btn" id="btnLoadFile" onclick="el('load_file_input').click()">
+      <span class="btn-icon">📂</span>
+      <span class="btn-text">
+        <span class="btn-label">Загрузить выученные слова</span>
+        <span class="btn-desc">Выбрать любой файл .txt или .js через диалог браузера</span>
+      </span>
+    </button>
+
+    <button class="menu-btn" id="btnAutoLoad" onclick="autoLoadMyWords()">
+      <span class="btn-icon">⚡</span>
+      <span class="btn-text">
+        <span class="btn-label">Загрузить my_words.js.txt (Авто)</span>
+        <span class="btn-desc">Попытка загрузить my_words.js.txt из той же папки автоматически</span>
+      </span>
+    </button>
+
+    <button class="menu-btn" id="btnSaveWords" onclick="saveWords(); closeMenu()">
+      <span class="btn-icon">💾</span>
+      <span class="btn-text">
+        <span class="btn-label">Сохранить выученные слова</span>
+        <span class="btn-desc">Скачать my_words.js.txt с актуальным списком knownEnglishWords</span>
+      </span>
+    </button>
+
+    <input type="file" id="load_file_input" accept=".txt,.js" style="display:none;">
+  </div>
+
+  <!-- ── Header ── -->
   <header>
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar"></div>
+    <div class="header-center">
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="stats"><span id="knownCount">0</span> / <span id="totalCount">0</span> изучено</div>
     </div>
-    <div class="stats"><span id="knownCount">0</span> / <span id="totalCount">0</span> изучено</div>
-    <div class="buttons-row">
-      <button class="glass-btn" onclick="downloadList()">📥 Скачать список</button>
-      <button class="glass-btn" onclick="resetProgress()" style="border-color: rgba(239, 68, 68, 0.4);">🔄 Сброс</button>
-    </div>
+    <button class="hamburger-btn" id="btnMenu" onclick="openMenu()">☰</button>
   </header>
 
   <div id="card-area">
@@ -464,7 +502,7 @@ hr {border: 1px dotted purple;margin: 10px;}
       <div class="card-face card-front">
         <div class="stamp stamp-yeah">ЗНАЮ</div>
         <div class="stamp stamp-nope">УЧИТЬ</div>
-        <div class="word-ru" id="ruWord">ЗАГРУЗКА...</div>
+        <div class="word-ru" id="ruWord1">ЗАГРУЗКА...</div>
         <div class="tap-hint">Нажми, чтобы перевернуть</div>
       </div>
 
@@ -472,20 +510,17 @@ hr {border: 1px dotted purple;margin: 10px;}
       <div class="card-face card-back">
         <div class="stamp stamp-yeah">ЗНАЮ</div>
         <div class="stamp stamp-nope">УЧИТЬ</div>
-        <div class="word-ru" id="ruWord2" >?</div>
-
         <div class="card-back-content">
-          <div style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 15px; width: 100%; flex-wrap: wrap;">
-            <div id="enWordContainer">
-            </div>
-          </div>
-          <div class="word-mn" id="mnWord">Пожалуйста, подождите.</div>
+          <div class="word-ru" id="ruWord2" >?</div>
+          <hr>
+          <div id="enWordContainer">расшифровка</div>
+          <div class="word-mn" id="mnWord">дополнительно</div>
         </div>
       </div>
     </div>
     <div class="end-screen" id="endScreen">
-      <div class="title" style="font-size: 40px;">ПОБЕДА! 🎉</div>
-      <p style="color: #cbd5e1;">Вы выучили все слова из списка!</p>
+      <div class="title" >ПОБЕДА! 🎉</div>
+      <p>Вы выучили все слова из списка!</p>
       <button class="glass-btn" onclick="resetProgress()" style="margin-top: 20px; font-size: 18px; padding: 12px 28px;">Начать заново</button>
     </div>
   </div>
@@ -494,478 +529,629 @@ hr {border: 1px dotted purple;margin: 10px;}
     <button class="circle-btn btn-fail" onclick="triggerSwipe('left')" id="btnLeft">✖</button>
     <button class="circle-btn btn-success" onclick="triggerSwipe('right')" id="btnRight">✔</button>
   </div>
+<script src="matr.txt"></script>
 
+<script>
+//=========matr.js========
+// --- Simple Confetti ---
+var g_canvas = document.getElementById('confetti');
+if(!g_canvas){alert('нет канваса');}
+var g_ctx = g_canvas.getContext('2d');
+var g_cubs = [];
 
-  <script>
-    // --- State Management ---
-    let knownWords = JSON.parse(localStorage.getItem('matr_known') || '[]');
-    let matrWords = [];
-    let deck = [];
-    let isFlipped = false;
+function resizeCanvas() {
+  g_canvas.width = window.innerWidth; g_canvas.height = window.innerHeight;
+}
+//main
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
 
-    const cardEl = document.getElementById('card');
-    const ruWordEl = document.getElementById('ruWord');
-    const ruWordEl2 = document.getElementById('ruWord2');
-    const enWordContainer = document.getElementById('enWordContainer');
-    const mnWordEl = document.getElementById('mnWord');
-    const endScreen = document.getElementById('endScreen');
-
-    // --- Data Parsing ---
-    function parseMatrText(text) {
-      return text.split('\n')
-        .map(line => {
-          line = line.trim();
-          if (!line || line.startsWith('const') || line.startsWith('`') || line.endsWith('`;')) return null;
-          var parts = line.split('/');
-          if (parts.length < 2) return null;
-          var ru = ''+parts.shift();ru=replace_all(ru,',',', ');ru=one_sp(ru);ru=ru.trim();
-          var en = ''+parts.shift();en=en.trim();
-          var mn = parts.join('/');mn=mn.trim();
-          return { ru, en, mn };
-        })
-        .filter(Boolean);
-    }
-
-    // Initialize matrWords from raw script variable if loaded
-    if (typeof matrWordsRaw !== 'undefined') {
-      matrWords = parseMatrText(matrWordsRaw);
-    }
-
-
-    function showError() {
-      ruWordEl.innerText = 'ОШИБКА';
-      enWordContainer.innerHTML = '<span class="en-main">matr.txt не загружен</span>';
-      mnWordEl.innerHTML = 'Пожалуйста, проверьте наличие файла matr.txt в той же папке.';
-    }
-
-    function startDeck() {
-      document.getElementById('totalCount').innerText = matrWords.length;
-
-      // Filter out known words and shuffle
-      deck = matrWords.filter(w => !knownWords.includes(w.ru));
-      shuffle(deck);
-
-      updateProgress();
-
-      if (deck.length > 0) {
-        loadCard(deck[0]);
-        cardEl.style.display = 'block';
-        endScreen.style.display = 'none';
-        document.querySelector('.controls').style.display = 'flex';
-      } else {
-        showEndScreen();
-      }
-    }
-
-    function loadCard(wordObj) {
-      isFlipped = false;
-      cardEl.classList.remove('is-flipped');
-      cardEl.style.transform = '';
-
-      // Reset scroll position on the card back
-      document.querySelector('.card-back').scrollTop = 0;
-
-      // Auto size adjustment for long Russian words (e.g., Видеохостинг is 12 chars)
-      let fontSize = '42px';
-      if (wordObj.ru.length > 12) {
-        fontSize = '24px';
-      } else if (wordObj.ru.length > 8) {
-        fontSize = '32px';
-      }
-      ruWordEl.style.fontSize = fontSize;
-      ruWordEl.innerText = wordObj.ru;
-      ruWordEl2.style.fontSize = fontSize;
-      ruWordEl2.innerText = wordObj.ru;
-
-      // Parse English word, transcription, and translation dynamically
-      var en = zv_zagl(wordObj.en);
-      en=replace_all(en,'+',' + <br>');
-      en=replace_all(en,';','; <br>');
-      enWordContainer.innerHTML = en;
-
-      // Highlight english words in mnemonic
-      mn = wordObj.mn;
-      mn=replace_all(mn,'/','@');
-      mn=zv_zagl(mn);
-      mn=replace_all(mn,'@','<hr>');
-      mnWordEl.innerHTML = mn;
-    }
-
-    // --- Interaction Logic ---
-    let wasDragged = false;
-    let dragDistance = 0;
-
-    cardEl.addEventListener('click', (e) => {
-      if (wasDragged || dragDistance > 10) return;
-      if (e.target.closest('button')) return;
-
-      isFlipped = !isFlipped;
-      cardEl.classList.toggle('is-flipped', isFlipped);
+function fireConfetti() {
+  g_cubs = [];
+  const colors = ['#00f2fe', '#4facfe', '#fcd34d', '#10b981', '#ef4444'];
+  for(let i=0; i<80; i++) {
+    g_cubs.push({
+      x: g_canvas.width / 2,
+      y: g_canvas.height,
+      vx: (Math.random() - 0.5) * 16,
+      vy: (Math.random() - 1) * 16 - 4,
+      size: Math.random() * 8 + 4,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      rot: Math.random() * 360,
+      rs: (Math.random() - 0.5) * 8
     });
-
-    function handleAnswer(knowIt) {
-      if (deck.length === 0) return;
-      const word = deck.shift(); // Remove from front
-
-      if (knowIt) {
-        knownWords.push(word.ru);
-        localStorage.setItem('matr_known', JSON.stringify(knownWords));
-
-        // Milestone confetti (every 10 words, or if finished)
-        if (knownWords.length % 10 === 0) fireConfetti();
-      } else {
-        // Put back in deck randomly in the second half so it doesn't appear immediately
-        const insertPos = Math.floor(deck.length / 2) + Math.floor(Math.random() * (deck.length / 2));
-        deck.splice(insertPos, 0, word);
-      }
-
-      updateProgress();
-
-      if (deck.length > 0) {
-        loadCard(deck[0]);
-      } else {
-        fireConfetti();
-        showEndScreen();
-      }
-    }
-
-    function updateProgress() {
-      const total = matrWords.length;
-      if (total === 0) return;
-      const known = knownWords.length;
-      document.getElementById('knownCount').innerText = known;
-      const percent = (known / total) * 100;
-      document.getElementById('progressBar').style.width = percent + '%';
-    }
-
-    function resetProgress() {
-      if (confirm('Вы уверены, что хотите сбросить весь прогресс (выучено ' + knownWords.length + ' слов)?')) {
-        knownWords = [];
-        localStorage.removeItem('matr_known');
-        startDeck();
-      }
-    }
-
-    function showEndScreen() {
-      cardEl.style.display = 'none';
-      document.querySelector('.controls').style.display = 'none';
-      endScreen.style.display = 'flex';
-    }
-
-    // --- Speech Synthesis ---
-    function speakWord() {
-      if ('speechSynthesis' in window) {
-        if (!deck[0]) return;
-        const enText = deck[0].en;
-        let cleanWord = enText.split('[')[0].split(',')[0].split(';')[0].trim();
-        cleanWord = cleanWord.replace(/[^a-zA-Z\s\-]/g, '').trim();
-
-        const utterance = new SpeechSynthesisUtterance(cleanWord);
-        utterance.lang = 'en-US';
-
-        const voices = window.speechSynthesis.getVoices();
-        const enVoice = voices.find(v => v.lang.startsWith('en'));
-        if (enVoice) utterance.voice = enVoice;
-
-        window.speechSynthesis.speak(utterance);
-      }
-    }
-
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.getVoices();
-    }
-
-    // --- Download List ---
-    function downloadList() {
-      let textContent = "const matrWordsRaw = `\n";
-      matrWords.forEach(w => {
-        textContent += `${w.ru} / ${w.en} / ${w.mn}\n`;
-      });
-      textContent += "`;\n";
-
-      const blob = new Blob([textContent], { type: 'text/plain;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'matr.txt';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    }
-
-    // --- Swipe Logic ---
-    let startX = 0;
-    let startY = 0;
-    let currentX = 0;
-    let currentY = 0;
-    let isDragging = false;
-    const threshold = 100; // pixels to trigger swipe
-
-    cardEl.addEventListener('mousedown', dragStart);
-    cardEl.addEventListener('touchstart', dragStart, {passive: true});
-    document.addEventListener('mousemove', dragMove);
-    document.addEventListener('touchmove', dragMove, {passive: false});
-    document.addEventListener('mouseup', dragEnd);
-    document.addEventListener('touchend', dragEnd);
-
-    function dragStart(e) {
-      if (e.target.closest('.close-modal') || e.target.closest('button')) return;
-      isDragging = true;
-      wasDragged = false;
-      dragDistance = 0;
-      cardEl.classList.add('swiping');
-      startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-      startY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
-    }
-
-    function dragMove(e) {
-      if (!isDragging) return;
-      const x = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
-      const y = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
-      currentX = x - startX;
-      currentY = y - startY;
-
-      dragDistance = Math.sqrt(currentX * currentX + currentY * currentY);
-      if (dragDistance > 10) {
-        wasDragged = true;
-      }
-
-      // Prevent scrolling while swiping horizontally
-      if (Math.abs(currentX) > Math.abs(currentY)) {
-        if (e.cancelable) e.preventDefault();
-      }
-
-      const rotate = currentX * 0.05;
-      let transform = `translate(${currentX}px, ${currentY}px) rotate(${rotate}deg)`;
-      if(isFlipped) transform += ' rotateY(180deg)';
-
-      cardEl.style.transform = transform;
-
-      // Stamp opacity (set on both front and back faces)
-      const yeahStamps = document.querySelectorAll('.stamp-yeah');
-      const nopeStamps = document.querySelectorAll('.stamp-nope');
-
-      if(currentX > 30) {
-        const opacity = Math.min(1, (currentX - 30)/120);
-        yeahStamps.forEach(el => el.style.opacity = opacity);
-        nopeStamps.forEach(el => el.style.opacity = 0);
-      } else if(currentX < -30) {
-        const opacity = Math.min(1, (Math.abs(currentX) - 30)/120);
-        nopeStamps.forEach(el => el.style.opacity = opacity);
-        yeahStamps.forEach(el => el.style.opacity = 0);
-      } else {
-        nopeStamps.forEach(el => el.style.opacity = 0);
-        yeahStamps.forEach(el => el.style.opacity = 0);
-      }
-    }
-
-    function dragEnd(e) {
-      if (!isDragging) return;
-      isDragging = false;
-      cardEl.classList.remove('swiping');
-
-      const yeahStamps = document.querySelectorAll('.stamp-yeah');
-      const nopeStamps = document.querySelectorAll('.stamp-nope');
-
-      // Reset stamps opacity
-      setTimeout(() => {
-        if (!isDragging) {
-          yeahStamps.forEach(el => el.style.opacity = 0);
-          nopeStamps.forEach(el => el.style.opacity = 0);
-        }
-      }, 50);
-
-      if (currentX > threshold) {
-        animateSwipeOut(window.innerWidth, currentY, true);
-      } else if (currentX < -threshold) {
-        animateSwipeOut(-window.innerWidth, currentY, false);
-      } else {
-        // Snap back
-        cardEl.style.transform = isFlipped ? 'rotateY(180deg)' : '';
-      }
-      currentX = 0;
-      currentY = 0;
-    }
-
-    function triggerSwipe(dir) {
-      const x = dir === 'right' ? window.innerWidth : -window.innerWidth;
-      animateSwipeOut(x, 0, dir === 'right');
-    }
-
-    function animateSwipeOut(x, y, knowIt) {
-      const rotate = x * 0.05;
-      let transform = `translate(${x}px, ${y + 100}px) rotate(${rotate}deg)`;
-      if(isFlipped) transform += ' rotateY(180deg)';
-      cardEl.style.transform = transform;
-
-      // Show stamps on swipe out transition
-      const yeahStamps = document.querySelectorAll('.stamp-yeah');
-      const nopeStamps = document.querySelectorAll('.stamp-nope');
-      if (knowIt) {
-        yeahStamps.forEach(el => el.style.opacity = 1);
-      } else {
-        nopeStamps.forEach(el => el.style.opacity = 1);
-      }
-
-      setTimeout(() => {
-        handleAnswer(knowIt);
-        yeahStamps.forEach(el => el.style.opacity = 0);
-        nopeStamps.forEach(el => el.style.opacity = 0);
-      }, 300);
-    }
-
-    // --- Utilities ---
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-    }
-
-
-    // --- Simple Confetti ---
-    const canvas = document.getElementById('confetti');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    function fireConfetti() {
-      particles = [];
-      const colors = ['#00f2fe', '#4facfe', '#fcd34d', '#10b981', '#ef4444'];
-      for(let i=0; i<80; i++) {
-        particles.push({
-          x: canvas.width / 2,
-          y: canvas.height,
-          vx: (Math.random() - 0.5) * 16,
-          vy: (Math.random() - 1) * 16 - 4,
-          size: Math.random() * 8 + 4,
-          color: colors[Math.floor(Math.random() * colors.length)],
-          rot: Math.random() * 360,
-          rs: (Math.random() - 0.5) * 8
-        });
-      }
-      animateConfetti();
-    }
-
-    function animateConfetti() {
-      if(particles.length === 0) {
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        return;
-      }
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      for (let i = particles.length - 1; i >= 0; i--) {
-        const p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
-        p.vy += 0.4; // gravity
-        p.rot += p.rs;
-        ctx.save();
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.rot * Math.PI / 180);
-        ctx.fillStyle = p.color;
-        ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
-        ctx.restore();
-
-        if(p.y > canvas.height) {
-          particles.splice(i, 1);
-        }
-      }
-      requestAnimationFrame(animateConfetti);
-    }
-
-    // Start
-    window.onload = function() {
-      startDeck();
-    };
+  }
+  animateConfetti();
+}
+function animateConfetti() {
+  if(g_cubs.length === 0){g_ctx.clearRect(0,0,g_canvas.width,g_canvas.height); return;}
+  g_ctx.clearRect(0,0,g_canvas.width,g_canvas.height);
+  for (let i = g_cubs.length - 1; i >= 0; i--) {
+    const p = g_cubs[i];
+    p.x += p.vx; p.y += p.vy; p.vy += 0.4; p.rot += p.rs;// gravity
+    g_ctx.save();
+    g_ctx.translate(p.x, p.y);
+    g_ctx.rotate(p.rot * Math.PI / 180);
+    g_ctx.fillStyle = p.color;
+    g_ctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+    g_ctx.restore();
+    if(p.y > g_canvas.height){g_cubs.splice(i, 1);}
+  }
+  requestAnimationFrame(animateConfetti);
+}
 //подсветка слова тр перевода и звуков
-function one_sp(s){return s.replace(/[ ]+/g,' ');}
-function replace_all(s,a,b){return (''+s).split(''+a).join(''+b);}
-
-//заглавные рус.буквы окружаем тегом b
-//.,;! -пробел после. ([{}])
 function zv_zagl(s,a){var le,i,w,out;
- s=replace_all(s,'.','. ');
+ s=''+s;
+ //s=replace_all(s,'.','. ');
  s=replace_all(s,',',', ');
  s=replace_all(s,';','; ');
  s=replace_all(s,'!','! ');
- 
+
  s=replace_all(s,'(',' (');
  s=replace_all(s,'[',' [');
  s=replace_all(s,'{',' {');
- 
+
  s=replace_all(s,')',') ');
  s=replace_all(s,']','] ');
  s=replace_all(s,'}','} ');
- 
+
  var ru1='-йцукенгшщзхъфывапролджэячсмитьбюё'
  var ru2='-ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮЁ';
  var ru3=ru1+ru2;
  var en1='-qwertyuiopasdfghjklzxcvbnm';
  var en2='-QWERTYUIOPASDFGHJKLZXCVBNM';
  var en3=en1+en2;
-  
+
  s=s+' ';le=s.length;out='';
  var f_a=0,f_b=0,f_i=0,f_en=0,f_tr1=0,f_tr2=0;
  if(a){out='<a>';f_a=1;}//первое слово выделяем
- 
+
  for(i=0;i<le;i++){
   w=s.charAt(i);
   if(f_a){
    if(' /|'.indexOf(w)>=0){f_a=0;out+='</a>'+w;continue;}
    out+=w; continue; //остальное игнорим
   }
-  
-  
   if(!f_tr1)if(w==='['){f_tr1=1;out+='<span>[';continue;}
   if(f_tr1){//транскрипция внутри ФА []
    if(w===']'){f_tr1=0;out+=']</span>';continue;}
    out+=w; continue; //остальное игнорим
-  } 
+  }
   if(!f_tr2)if(w==='~'){f_tr2=1;out+='<span>~';continue;}
   if(f_tr2){//транскрипция внутри ФА ~)
    if(' )/|'.indexOf(w)>=0){f_tr2=0;out+='</span>'+w;continue;}
    out+=w; continue; //остальное игнорим
   }
-  
   if(!f_en)if(en3.indexOf(w)>0){f_en=1;out+='<a>'+w;continue;}
   if(f_en){//англ слово внутри ФА
    if(en3.indexOf(w)<0){f_en=0;out+='</a>'+w;continue;}
    out+=w; continue; //остальное игнорим
   }
-
   if(!f_b)if(ru2.indexOf(w)>0){f_b=1;out+='<b>'+w;continue;}
   if(f_b){//загл рус внутри ФА это звуки
    if(ru2.indexOf(w)<0){f_b=0;out+='</b>'+w;continue;}
    out+=w; continue; //остальное игнорим
   }
-
   if(!f_i)if(w==='*'){f_i=1;out+='<i>*';continue;}
   if(f_i){//перевод внутри ФА *
    if(ru3.indexOf(w)<0){f_i=0;out+='</i>';}
   }
-  
-  out+=w; 
+  out+=w;
  }
-// out=replace_all(out,'<a>-</a>','-');
  out=one_sp(out);
  return out.trim();
 }
-function getKnownWords() {
- const storedWords = localStorage.getItem('knownEnglishWords');
- return storedWords ? storedWords.split('\n') : [];
+
+// ═══════════════════════════════════════════════════
+//  УТИЛИТЫ
+// ═══════════════════════════════════════════════════
+function el(id){var e=document.getElementById(''+id);if(!e)alert('нет элемента='+id); return e;}
+function in_str(s,w){return (s.indexOf(w)<0)? 0:1;}
+function in_arr(m,w){return (m.includes(w))? 1:0;}
+function replace_all(s,a,b){return (''+s).split(''+a).join(''+b);}
+function one_sp(s){return s.replace(/[ ]+/g,' ');}
+function clear_arr(m){var s,i,out=[];
+ for(i=0;i<m.length;i++){s=m[i].trim();if(s) out.push(s);}
+ return out;
 }
-function saveKnownWords(words) {
+async function pause(t){await new Promise(r => setTimeout(r, t));}
+function normWord(w){ return ('' + w).trim().toLowerCase().replace(/ /g, '-');}
+// knownEnglishWords — глобальный список (\n), lowercase + дефис вместо пробела
+function loadKnownWords(){
+ var v = localStorage.getItem('knownEnglishWords'); return (v)? v.split('\n') : [];
+}
+function saveKnownWords(words){
  try {localStorage.setItem('knownEnglishWords', words.join('\n'));}
- catch(e) { alert('limit localStorage='+e);}
+ catch(er){alert('limit localStorage='+er);}
+}
+function addKnownWord(word){
+ var w = normWord(w); if(!w)return 0;
+ var m=loadKnownWords();if(in_arr(m,w))return 0; 
+ m.push(w);saveKnownWords(m); return 1;
+}
+function delKnownWord(word){var i,m,out;
+ m=loadKnownWords();
+ out=[];
+ for(i=0;i<m.length;i++)if(m[i]!==word)out.push(m[i]);
+ saveKnownWords(out);
+}
+function loadMatrKnown(){
+  var v = localStorage.getItem('matr_known'); return (v)? v.split('\n') : [];
+}
+function saveMatrKnown(m){
+  try {localStorage.setItem('matr_known', m.join('\n')); }
+  catch(er){ alert('Ошибка localStorage:'+er); }
 }
 
-  </script>
+// ═══════════════════════════════════════════════════
+//  ПАРСИНГ ДАННЫХ
+// ═══════════════════════════════════════════════════
+function parseMatrText(txt) {var m,out=[],i,s,p,ru,en,mn;
+  m = txt.split('\n');
+  for(i=0; i < m.length; i++) {
+    s=m[i].trim(); if(!s) continue; if(in_str(s,'`')) continue;
+    p=s.split('/'); if(p.length < 2) continue;
+    ru = p.shift(); ru=replace_all(ru,',',', '); ru=one_sp(ru);
+    en = p.shift().trim();
+    mn = p.join('/').trim();
+    if(ru && en) out.push({ ru: ru, en: en, mn: mn });
+  }
+  return out;
+}
+
+// Назначаем onclick на все <a> внутри контейнера
+function attachSpeechToLinks(container) {
+  var links = container.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    (function(elm) {
+      elm.onclick = function(e) {
+        e.stopPropagation();
+        var txt = elm.textContent || elm.innerText || '';
+        speakWord(txt.trim());
+      };
+    })(links[i]);
+  }
+}
+
+// ═══════════════════════════════════════════════════
+//  ОЗВУЧКА
+// ═══════════════════════════════════════════════════
+// --- Speech Synthesis ---
+function speakWord(enText){
+  if (!('speechSynthesis' in window)) return;
+  let cleanWord = enText.split('[')[0].split(',')[0].split(';')[0].trim();
+  cleanWord = cleanWord.replace(/[^a-zA-Z\s\-]/g, '').trim();
+  if(!cleanWord) return;
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(cleanWord);
+  utterance.lang = 'en-US';
+  const voices = window.speechSynthesis.getVoices();
+  const enVoice = voices.find(v => v.lang.startsWith('en'));
+  if(enVoice) utterance.voice = enVoice;
+  window.speechSynthesis.speak(utterance);
+}
+if('speechSynthesis' in window){
+  window.speechSynthesis.getVoices();
+  if(window.speechSynthesis.onvoiceschanged !== undefined){
+    window.speechSynthesis.onvoiceschanged = function(){
+      window.speechSynthesis.getVoices();
+    };
+  }
+}
+
+// ═══════════════════════════════════════════════════
+//  СКАЧАТЬ СПИСОК (matr.txt)
+// ═══════════════════════════════════════════════════
+function downloadList() {
+  var text = 'const matrWordsRaw = `\n';
+  for (var i = 0; i < matrWords.length; i++) {
+    var w = matrWords[i];
+    text += w.ru + ' / ' + w.en + ' / ' + w.mn + '\n';
+  }
+  text += '`;\n';
+  var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'matr.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// ═══════════════════════════════════════════════════
+//  СОХРАНИТЬ ВЫУЧЕННЫЕ СЛОВА → my_words.js.txt
+// ═══════════════════════════════════════════════════
+function saveWords() {
+  var arr = loadKnownWords();
+  if(!arr){alert('пустой список');return 0;}
+  var text = 'var g_words = `\n' + arr.join('\n') + '\n`;\n';
+  var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'my_words.js.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  g_newLearned = false;
+}
+
+// ═══════════════════════════════════════════════════
+//  АВТОЗАГРУЗКА my_words.js.txt через <script>
+// ═══════════════════════════════════════════════════
+function autoLoadMyWords() {
+  closeMenu();
+  var old = el('__mywords_script');
+  if (old) old.parentNode.removeChild(old);
+
+  var scr = document.createElement('script');
+  scr.id = '__mywords_script';
+  // Без cache-bust для локальных файлов, чтобы не ломать file://
+  var isFile = window.location.protocol === 'file:';
+  scr.src = 'my_words.js.txt' + (isFile ? '' : '?' + Date.now()); 
+  
+  scr.onload = function() {
+    if(typeof g_words !== 'undefined' && g_words) {
+      var lines = ('' + g_words).split('\n');
+      var arr = loadKnownWords();
+      var changed = false, addedCount = 0;
+      for(var i = 0; i < lines.length; i++) {
+        var w = normWord(lines[i]); if(!w) continue;
+        if(!in_arr(arr,w)){arr.push(w); changed = true; addedCount++; }
+      }
+      if(changed) {
+        saveKnownWords(arr);
+        alert('Загружено из my_words.js.txt: ' + addedCount + ' слов.');
+      } else {alert('Файл my_words.js.txt загружен, новых слов не найдено.');}
+    } else {alert('Файл загружен, но переменная g_words не найдена.');}
+  };
+  scr.onerror = function(){alert('Файл my_words.js.txt не найден рядом с HTML.');};
+  document.head.appendChild(scr);
+}
+
+// ═══════════════════════════════════════════════════
+//  ИМПОРТ ФАЙЛА ВЫУЧЕННЫХ СЛОВ (через диалог)
+// ═══════════════════════════════════════════════════
+function initFileUpload() {
+  var fileInput = document.getElementById('load_file_input');
+  if(!fileInput) return;
+  fileInput.addEventListener('change', function(e){
+    closeMenu();
+    var file = e.target.files[0]; if(!file) return;
+    var reader = new FileReader();
+    reader.onload = function(evt){var txt,m,i,w,words=[],addedCount=0;
+      txt = evt.target.result + ''; txt = replace_all(txt,'\r','\n');
+      m = content.split('\n');
+      for(i = 0; i < m.length; i++) {
+        w=m[i].trim(); if(!w) continue; if(in_str(w,'`')) continue;
+        w=normWord(w); words.push(w);
+      }
+      m = loadKnownWords();
+      for(i=0; i < words.length; i++) {
+        w=words[i]; if(!w) continue;
+        if(!in_arr(m,w)){m.push(w); addedCount++;}
+      }
+      if(addedCount){saveKnownWords(m); alert('Загружено слов: ' + addedCount);} 
+      else {alert('Новых слов для загрузки не найдено.'); }
+      e.target.value = '';
+    };
+    reader.readAsText(file, 'UTF-8');
+  });
+}
+
+// ═══════════════════════════════════════════════════
+//  ПЕРЕМЕШАТЬ массив случайно
+// ═══════════════════════════════════════════════════
+function shuffle(array){var i,j,s;
+  for (i = array.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    s = array[i]; array[i] = array[j]; array[j] = s;
+  }
+}
+
+function find_en_words(txt,f){var i,j,m,s,out=[];
+ var en='-qwertyuiopasdfghjklzxcvbnm';
+ txt=replace_all(txt,';','\n');
+ txt=replace_all(txt,'+','\n');
+ m=txt.split('\n');
+ for(i=0;i<m.length;i++){
+   s=m[i].toLowerCase().trim(); 
+   for(j=0; j<s.length; j++)if(!in_str(en,s.charAt(j)))break;
+   s=s.substring(0,j);
+   if(s && s!=='-')out.push(s);
+ }
+ if(f==='add'){//добавим в выученные слова
+   m=loadKnownWords();j=m.length;
+   for(i=0;i<out.length;i++)if(!in_arr(m,out[i]))m.push(out[i]);
+   if(m.length>j)saveKnownWords(m);
+ }
+ if(f==='del'){//удалим из выученных слов
+   m=loadKnownWords();j=m.length;
+   for(i=0;i<m.length;i++)if(in_arr(out,m[i]))m[i]='';
+   m=clear_arr(m);
+   if(m.length<j)saveKnownWords(m);
+ }
+  
+ return out;
+}
+
+// --- State Management ---
+let matrKnown = [];
+let matrWords = [];
+let g_deck = [];
+let isFlipped = false;
+function el(id){var e=document.getElementById(''+id);if(!e)alert('нет элемента='+id); return e;}
+
+const e_card = el('card');
+const e_ruWord = el('ruWord1');
+const e_ruWord2 = el('ruWord2');
+const e_enWord = el('enWordContainer');
+const e_mnWord = el('mnWord');
+const e_end = el('endScreen');
+var g_otkat='';
+
+// Initialize matrWords from raw script variable if loaded
+if (typeof matrWordsRaw !== 'undefined') {
+  matrWords = parseMatrText(matrWordsRaw);
+}
+
+function showError() {
+  e_ruWord.innerText = 'ОШИБКА';
+  e_enWord.innerHTML = '<span >matr.txt не загружен</span>';
+  e_mnWord.innerHTML = 'Пожалуйста, проверьте наличие файла matr.txt в той же папке.';
+}
+function startDeck() {
+  el('totalCount').innerText = matrWords.length;
+  // Filter out known words and shuffle
+  g_deck = matrWords.filter(w => !matrKnown.includes(w.ru));
+  shuffle(g_deck);
+  updateProgress();
+  if(g_deck.length > 0){
+    loadCard(g_deck[0]);
+    e_card.style.display = 'block';
+    e_end.style.display = 'none';
+    document.querySelector('.controls').style.display = 'flex';
+  } else showEndScreen();
+}
+
+function loadCard(wordObj){
+  isFlipped = false;
+  e_card.classList.remove('is-flipped');
+  e_card.style.transform = '';
+  // Reset scroll position on the card back
+  document.querySelector('.card-back').scrollTop = 0;
+  e_ruWord.innerText = wordObj.ru;
+  e_ruWord2.innerText = wordObj.ru;
+  find_size_font1();
+  // Parse English word, transcription, and translation dynamically
+  var en = zv_zagl(wordObj.en);
+  en=replace_all(en,'+',' + <br>');
+  en=replace_all(en,';','<br>');
+  e_enWord.innerHTML = en; attachSpeechToLinks(e_enWord);
+
+  // Highlight english words in mnemonic
+  mn = wordObj.mn;
+  mn=replace_all(mn,'/','@');
+  mn=zv_zagl(mn);
+  mn=replace_all(mn,'@','<hr>');
+  e_mnWord.innerHTML = mn;
+  setTimeout(find_size_font2,10);
+}
+
+// --- Interaction Logic ---
+let wasDragged = false;
+let dragDistance = 0;
+
+e_card.addEventListener('click', (e) => {
+  if (wasDragged || dragDistance > 10) return;
+  if (e.target.closest('button')) return;
+  e_card.classList.add('is-flipped');
+});
+
+function handleAnswer(knowIt) {
+  if (g_deck.length === 0) return;
+  const word = g_deck.shift(); // Remove from front
+
+  if(knowIt){
+    matrKnown.push(word.ru); find_en_words(word.en,'add');
+    localStorage.setItem('matr_known', matrKnown.join('\n'));
+// Milestone confetti (every 10 words, or if finished)
+    if(matrKnown.length % 10 === 0) fireConfetti();
+  } else g_deck.push(word); //в конец колоды
+  g_otkat=[word,knowIt];//для отката на шаг назад
+  updateProgress();
+  if(g_deck.length > 0) loadCard(g_deck[0]);
+  else {fireConfetti(); showEndScreen();}
+}
+function updateProgress() {
+  const total = matrWords.length;
+  if (total === 0) return;
+  const known = matrKnown.length;
+  el('knownCount').innerText = known;
+  const percent = (known / total) * 100;
+  el('progressBar').style.width = percent + '%';
+}
+function resetProgress(){
+  closeMenu();
+  if(confirm('Вы уверены, что хотите сбросить весь прогресс (выучено ' + matrKnown.length + ' слов)?')) {
+    matrKnown = [];
+    localStorage.removeItem('matr_known');
+    startDeck();
+  }
+}
+function showEndScreen() {
+  e_card.style.display = 'none';
+  document.querySelector('.controls').style.display = 'none';
+  e_end.style.display = 'flex';
+}
+
+// --- Swipe Logic ---
+let startX = 0;
+let startY = 0;
+let currentX = 0;
+let currentY = 0;
+let isDragging = false;
+const threshold = 100; // pixels to trigger swipe
+
+e_card.addEventListener('mousedown', dragStart);
+e_card.addEventListener('touchstart', dragStart, {passive: true});
+document.addEventListener('mousemove', dragMove);
+document.addEventListener('touchmove', dragMove, {passive: false});
+document.addEventListener('mouseup', dragEnd);
+document.addEventListener('touchend', dragEnd);
+
+function dragStart(e) {
+  if (e.target.closest('.close-modal') || e.target.closest('button')) return;
+  isDragging = true;
+  wasDragged = false;
+  dragDistance = 0;
+  e_card.classList.add('swiping');
+  startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+  startY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+}
+
+function dragMove(e) {
+  if (!isDragging) return;
+  const x = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+  const y = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
+  currentX = x - startX;
+  currentY = y - startY;
+
+  dragDistance = Math.sqrt(currentX * currentX + currentY * currentY);
+  if (dragDistance > 10) {
+    wasDragged = true;
+  }
+
+  // Prevent scrolling while swiping horizontally
+  if (Math.abs(currentX) > Math.abs(currentY)) {
+    if (e.cancelable) e.preventDefault();
+  }
+
+  const rotate = currentX * 0.05;
+  let transform = `translate(${currentX}px, ${currentY}px) rotate(${rotate}deg)`;
+  if(isFlipped) transform += ' rotateY(180deg)';
+
+  e_card.style.transform = transform;
+
+  // Stamp opacity (set on both front and back faces)
+  const yeahStamps = document.querySelectorAll('.stamp-yeah');
+  const nopeStamps = document.querySelectorAll('.stamp-nope');
+
+  if(currentX > 30) {
+    const opacity = Math.min(1, (currentX - 30)/120);
+    yeahStamps.forEach(el => el.style.opacity = opacity);
+    nopeStamps.forEach(el => el.style.opacity = 0);
+  } else if(currentX < -30) {
+    const opacity = Math.min(1, (Math.abs(currentX) - 30)/120);
+    nopeStamps.forEach(el => el.style.opacity = opacity);
+    yeahStamps.forEach(el => el.style.opacity = 0);
+  } else {
+    nopeStamps.forEach(el => el.style.opacity = 0);
+    yeahStamps.forEach(el => el.style.opacity = 0);
+  }
+}
+
+function dragEnd(e){
+  if (!isDragging) return;
+  isDragging = false;
+  e_card.classList.remove('swiping');
+
+  const yeahStamps = document.querySelectorAll('.stamp-yeah');
+  const nopeStamps = document.querySelectorAll('.stamp-nope');
+
+  // Reset stamps opacity
+  setTimeout(() => {
+    if (!isDragging) {
+      yeahStamps.forEach(el => el.style.opacity = 0);
+      nopeStamps.forEach(el => el.style.opacity = 0);
+    }
+  }, 50);
+
+  if (currentX > threshold) {
+    animateSwipeOut(window.innerWidth, currentY, true);
+  } else if (currentX < -threshold) {
+    animateSwipeOut(-window.innerWidth, currentY, false);
+  } else {
+    // Snap back
+    e_card.style.transform = isFlipped ? 'rotateY(180deg)' : '';
+  }
+  currentX = 0;
+  currentY = 0;
+}
+
+function triggerSwipe(dir) {
+  const x = dir === 'right' ? window.innerWidth : -window.innerWidth;
+  animateSwipeOut(x, 0, dir === 'right');
+}
+
+function animateSwipeOut(x, y, knowIt) {
+  const rotate = x * 0.05;
+  let transform = `translate(${x}px, ${y + 100}px) rotate(${rotate}deg)`;
+  if(isFlipped) transform += ' rotateY(180deg)';
+  e_card.style.transform = transform;
+
+  // Show stamps on swipe out transition
+  const yeahStamps = document.querySelectorAll('.stamp-yeah');
+  const nopeStamps = document.querySelectorAll('.stamp-nope');
+  if (knowIt) {
+    yeahStamps.forEach(el => el.style.opacity = 1);
+  } else {
+    nopeStamps.forEach(el => el.style.opacity = 1);
+  }
+
+  setTimeout(() => {
+    handleAnswer(knowIt);
+    yeahStamps.forEach(el => el.style.opacity = 0);
+    nopeStamps.forEach(el => el.style.opacity = 0);
+  }, 300);
+}
+function find_size_font1(){var w,k,n;
+  k=document.querySelector('.card-front');
+  w=document.querySelector('#ruWord1');
+  k.style.visibility = 'hidden';
+  for(n=140;n>20;n=n-2){
+   e_ruWord.style.fontSize = n+'px';
+   //console.log('1font='+n);
+   if((k.scrollHeight-48) >= w.scrollHeight)if((k.scrollWidth -48) >= w.scrollWidth)break;
+  }
+  k.style.visibility = '';
+}
+
+function find_size_font2(){
+  const k = document.querySelector('.card-back');
+  const w = document.querySelector('.card-back-content');
+  w.style.overflow = 'hidden';
+  let low = 20, high = 100, best = 20;
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+    k.style.setProperty('--card-fs', mid + 'px'); 
+    //console.log('2font='+mid);
+    if ((k.clientHeight - 20) >= w.scrollHeight){ best = mid; low = mid + 1;} 
+    else high = mid - 1;
+  }
+  k.style.setProperty('--card-fs', best + 'px');
+  w.style.overflow = 'auto';
+}
+
+function openMenu() {
+  el('menu-overlay').classList.add('open');
+  el('side-menu').classList.add('open');
+}
+function closeMenu() {
+  el('menu-overlay').classList.remove('open');
+  el('side-menu').classList.remove('open');
+}
+var len_KnownWords=0;
+window.onload = function(){
+  if(!matrWords || matrWords.length === 0) {showError(); return 0;}
+  var m=loadKnownWords();len_KnownWords=m.length;//запомним сколько слов было выучено.
+  matrKnown=loadMatrKnown();
+  startDeck();
+};
+
+</script>
 </body>
 </html>

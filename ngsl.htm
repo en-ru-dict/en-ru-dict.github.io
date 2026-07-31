@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <noscript><h1>Без скриптов не работают ФА</h1></noscript>
 <style>
-* {box-sizing: border-box;}	
+* {box-sizing: border-box;}
 html {font-size:20px;}
 body {
  min-width:350px; margin:0; padding:0; line-height:1.6;
@@ -134,46 +134,49 @@ b {color:indigo; font-size:1.1rem; cursor:pointer;}
 <div class="dashboard" id="indicatorPanel"></div>
 <h2 class="title aquamarine nop">Пока загружается список. Учебный анекдот.</h2>
 <style>
-.slider-container{position:relative;height:80vh;overflow:hidden;}
+.slider-container{position:relative;height:70vh;overflow-x:hidden;}
 .slider-wrapper {
   position: absolute;top: 50%;left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%; max-width: 1200px;
-  height: 60%; max-height: 700px;
-  display: flex; justify-content: center; align-items: center;
-  gap: 20px;
-}
-.slide {
-position: absolute; width: 70vw;
-height:70vh;display:flex;align-items:center;
-transition: all 0.8s ease-in-out;
-border-radius: 15px;
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-padding: 10px;font-size:30px; background-color: aliceblue;text-align:center;
+  width: 80vw; height:70vh;
+  display: flex; flex-direction:column;
 }
 .slide.active { opacity: 1; z-index: 10;}
 .slide.left {  transform: translateX(-50%) scale(0.8);  opacity: 0.5;}
 .slide.right {  transform: translateX(50%) scale(0.8);  opacity: 0.5;}
 .slide.center {  transform: translateX(0) scale(1);  opacity: 1;}
-.btn { position: absolute; top:0; opacity:0; height:100%; width:50%;cursor:pointer;}
-prev {left:0;} .next {right:0;}
+.slide {
+ position: absolute; width: 80vw; height:70vh; overflow-y:auto;
+ display:flex; flex-direction:column; text-align:center;
+ margin:auto; padding:20px;
+ transition: all 0.6s ease-in-out;
+ border-radius: 15px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ font-size: 2rem; background-color: aliceblue;  overflow-wrap: break-word;
+}
+@media (max-width: 480px){ .slide {font-size: 1.5rem;}}
+
+.btn { position: absolute; top:0; opacity:0; height:100%; width:40%;cursor:pointer;}
+.prev {left:0;} 
+.next {right:0;}
 </style>
 <div class="slider-container">
 <div class="slider-wrapper">
 <div class="slide left" >
 DWARF гном/ *гном ДРОВосек ночью стучится в дом на краю деревни:
 "Во ДВОРе трава, на траве - ДРОВа, а вам ДРОВа нужны?"
-Хозяева спросонья отвечают: "НЕТ!" Утром просыпаются - ДРОВ нет..
-"ААА, Украли!" <br> *гном ВОР обчистил ДВОР!
+Хозяева спросонья отвечают: "НЕТ!"<br>
+Утром просыпаются - ДРОВ нет..<br>
+ААА, Украли! *гном ВОР обчистил ДВОР!
 </div>
 <div class="slide center active" >
+<br>
 REMAIN оставаться/ тебя били РЕМНЕМ за то что украл серебряные ложечки<br>
-их нашли но осадочек *остался..<br>
+их нашли но осадочек *остался..
 </div>
 <div class="slide right">
 CRY плакать,*КРИчать/ моя хата с КРАЮ и я *плачу что ничего не знаю..<br>
 ---------<br>
-LESS менее/ чем *меньше ЛЕС, тем толще партизаны.. 
+LESS менее/ чем *меньше ЛЕС, тем толще партизаны..
 </div>
 </div>
 <div class="btn prev"></div>
@@ -187,14 +190,12 @@ LESS менее/ чем *меньше ЛЕС, тем толще партизан
    this.currentIndex = 1; // Начинаем со среднего слайда
    this.totalSlides = this.slides.length;
    this.init();
+   var n=100*Math.random();if(n<33)this.prevSlide();if(n>66)this.nextSlide();
   }
-
-  init() {   this.updateSlides();   this.setupEventListeners();  }
-
+  init(){this.updateSlides();this.setupEventListeners();}
   updateSlides() {
    this.slides.forEach((slide, index) => {
     slide.classList.remove('left', 'center', 'right', 'active');
-    
     if (index === this.currentIndex) {
      slide.classList.add('center', 'active');
     } else if (index === (this.currentIndex - 1 + this.totalSlides) % this.totalSlides) {
@@ -212,37 +213,23 @@ LESS менее/ чем *меньше ЛЕС, тем толще партизан
    this.updateSlides();
   }
   setupEventListeners() {
-   document.querySelector('.next').addEventListener('click', () => {
-    this.nextSlide();
-   });
-   document.querySelector('.prev').addEventListener('click', () => {
-    this.prevSlide();
-   });
-
+   document.querySelector('.next').addEventListener('click', ()=>{this.nextSlide();});
+   document.querySelector('.prev').addEventListener('click', ()=>{this.prevSlide();});
    // Добавляем свайп для мобильных устройств
    let touchStartX = 0;
    let touchEndX = 0;
-
    document.querySelector('.slider-wrapper').addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
    });
-
    document.querySelector('.slider-wrapper').addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
     this.handleSwipe();
    });
   }
-
   handleSwipe() {
    const swipeThreshold = 50;
-   if (touchEndX < touchStartX - swipeThreshold) {
-    this.nextSlide();
-    this.resetAutoSlide();
-   }
-   if (touchEndX > touchStartX + swipeThreshold) {
-    this.prevSlide();
-    this.resetAutoSlide();
-   }
+   if(touchEndX < touchStartX - swipeThreshold){this.nextSlide();}
+   if(touchEndX > touchStartX + swipeThreshold){this.prevSlide();}
   }
 
  }
@@ -262,7 +249,7 @@ LESS менее/ чем *меньше ЛЕС, тем толще партизан
 </div>
 <script>
 //==светофор загрузки скриптов и списков==
-function el(id){return document.getElementById('' + id);}  
+function el(id){return document.getElementById('' + id);}
 const g_Names = ["/dict6k загружен=", "/fa new загружены=", "/fa old загружены=", "/ngsl.txt загружен="];
 const g_panel = el('indicatorPanel');
 const g_logArea = el('id_info');
@@ -282,7 +269,7 @@ function initDashboard() {
 function updateDotColor(name, status){
  const dot = el(`dot-${name}`);
  if(!dot) return;
- if(status == 'success'){dot.classList.add('success');dot.classList.remove('error');} 
+ if(status == 'success'){dot.classList.add('success');dot.classList.remove('error');}
  else if(status == 'error'){dot.classList.add('error');dot.classList.remove('success');}
 }
 // Анализ текста логов
@@ -291,7 +278,7 @@ function parseLogs(text) {var e;
  if(text.indexOf(name)>=0)g_statuses[i]='success';
  //if(text.indexOf(name)>=0)g_statuses[i]='error';
   });
-  
+
   // Применяем новые статусы и проверяем общую готовность
   let allGreen = 1;
   g_Names.forEach((name,i)=>{
@@ -300,7 +287,7 @@ function parseLogs(text) {var e;
   });
 
   if(allGreen){
-   g_panel.innerHTML=`Ура списки загружены! Можно закрыть это окно 
+   g_panel.innerHTML=`Ура списки загружены! Можно закрыть это окно
    <button onclick="el('id_an').remove();">❌<\/button>`;
   }
 }
@@ -314,7 +301,7 @@ const g_modal_title = document.querySelector('.modal-title');
 const g_modal_text = document.querySelector('.modal-text');
 var g_busy_modal=0;
 function showModal(w){var n,t;
- if(g_busy_modal)return; 
+ if(g_busy_modal)return;
  g_busy_modal=1; //занято
  t=get_fa2(w);
  n='70vw'; if(t.length>500)n='100vw';
@@ -345,9 +332,9 @@ document.addEventListener('click', (event) => {
  const target = event.target;
  // Если клик произошел именно по оверлею (не по контенту внутри)
  if(target === g_modal){ hideModal(); return; }
- // Ищем ближайшего родителя 
+ // Ищем ближайшего родителя
  const entry = target.closest('b');
- if(!entry) return; // Если клик был мимо 
+ if(!entry) return; // Если клик был мимо
  var w=entry.innerHTML;
  if(w)showModal(w);
 });
@@ -363,7 +350,7 @@ function ngsl(t){var i,m,s,w;
  return m.join('\n');
 }
 function start(){
- msg('/ngsl.txt загружен='+g_fa.length);  
+ msg('/ngsl.txt загружен='+g_fa.length);
  var t=ngsl(g_fa);g_fa=0;
  var e=el('container');e.innerHTML+=t;
  e.classList.remove('hidden');

@@ -1,7 +1,19 @@
+var fontZoomTimeout = null;
+var targetFontSize = 0;
 function inc_font(){
-  var n=document.documentElement.style.fontSize;
-  if(!n)n=22; else n=Number.parseInt(n)+2;
-  document.documentElement.style.fontSize=n+'px';
+  var cur = document.documentElement.style.fontSize;
+  var n = cur ? Number.parseInt(cur) : 20;
+  if (targetFontSize === 0) targetFontSize = n;
+  targetFontSize += 2;
+  var e = document.getElementById('id_inc_font');
+  if (e) e.innerHTML = '...' + targetFontSize;
+  if (fontZoomTimeout) clearTimeout(fontZoomTimeout);
+  fontZoomTimeout = setTimeout(function(){
+    document.documentElement.style.fontSize = targetFontSize + 'px';
+    if (e) e.innerHTML = '+';
+    fontZoomTimeout = null;
+    targetFontSize = 0;
+  }, 150);
 }
 function add_inc_font(){
 var htm=`

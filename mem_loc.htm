@@ -1,11 +1,9 @@
 <!DOCTYPE html>
+<html lang="ru">
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="Список сложных слов для изучения английского языка с помощью фонетических ассоциаций (ФА).">
 <title>Фонетические Ассоциации, Списки и карточки (mem)</title>
-<body>
-<noscript>
- Для работы меню включите скрипты! <br>
-</noscript>
 <style>
 @import url('bootstrap.min.css');
 
@@ -27,13 +25,16 @@ var g_page='mem1';//global
 var g_word=0;//global
 var g_pic='0.gif';
 </script>
-<script src='jquery.min.js'></script>
-<script src='bootstrap.min.js'></script>
-<script src='vue.js'></script>
-<script src='tem_loc.js'></script>
-
-
-  <!-- Навигация -->
+<script src="jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="vue.js"></script>
+<script src="tem_loc.js"></script>
+</head>
+<body>
+<noscript>
+ Для работы меню включите скрипты! <br>
+</noscript>
+<!-- Навигация -->
   <ul class="nav nav-tabs" role="tablist">
     <li class="active"><a href="#tem" aria-controls="tem" role="tab" data-toggle="tab">главная</a></li>
     <li><a href="#tem1" aria-controls="tem1" role="tab" data-toggle="tab" title="1" onclick=";">списки</a></li>
@@ -50,7 +51,7 @@ var g_pic='0.gif';
 
 <h1>Изучение английских слов по ассоциациям (мнемотехника)</h1>
 <hr>
-<textarea id='id_text1' cols="80" rows="20">
+<textarea id="id_text1" cols="80" rows="20">
 
 Если в день учить по 50 слов, то за сто дней(3 мес) можно выучить, потом иногда повторять..
 
@@ -119,7 +120,7 @@ var g_pic='0.gif';
      ||
      <button type="button" id="id_dp" class="btn btn-primary btn-md ot2" onclick="load_dp()"> Вкл. доп.перевод </button>
      <button type="button" id="id_da" class="btn btn-primary btn-md ot2" onclick="load_da()"> Вкл. доп.асоц. </button>
-     <button id="id_info" type="button" class="btn btn-danger btn-md ot2" onclick="del_word();">Del</button>
+     <button id="id_del_btn" type="button" class="btn btn-danger btn-md ot2" onclick="del_word();">Del</button>
      <button id="id_vkl"   type="button" class="btn btn-success btn-md ot2" onclick="vkl_swipe();">Swipe on</button>
      <button id="id_but3" type="button" class="btn btn-success btn-md ot2" onclick="next_word(1);">NEXT</button>
    </div>
@@ -148,9 +149,6 @@ var g_pic='0.gif';
    <div id="id_p6" class="panel-body">примеры</div>
   </div>
  </div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </body>

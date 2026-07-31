@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>3700 английских слов по ассоциациям</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style>
 html {font-size:20px;}
@@ -11,16 +14,34 @@ div {font-size:0.8rem;}
 button {cursor:pointer;font-size:1.2rem;padding:0.4rem;border-radius:1rem;border-color:goldenrod;}
 </style>
 <script>
-function fb(){
-  var n=document.documentElement.style.fontSize;
-  if(!n)n=22; else n=Number.parseInt(n)+2;
-  document.documentElement.style.fontSize=n+'px';
-  var e=document.getElementsByTagName('button')[0];
-  e.innerHTML='шрифт больше /'+n;
+var fontZoomTimeout = null;
+var targetFontSize = 0;
+var g_busy=0;
+function change_font(delta) {
+ if(g_busy)return;g_busy=1;
+ var btnInc = document.getElementsByTagName('button')[0];
+ var btnDec = document.getElementsByTagName('button')[1];
+
+  btnInc.disabled=true;btnDec.disabled=true;
+  var cur = document.documentElement.style.fontSize;
+  var n = cur ? Number.parseInt(cur) : 20;
+  if(targetFontSize === 0) targetFontSize = n;
+  targetFontSize += delta;
+  btnInc.innerHTML = 'шрифт / ' + targetFontSize + 'px (ждите...)';
+  if(fontZoomTimeout) clearTimeout(fontZoomTimeout);
+  fontZoomTimeout = setTimeout(function(){
+    document.documentElement.style.fontSize = targetFontSize + 'px';
+    btnInc.innerHTML = 'шрифт больше / ' + targetFontSize;
+    fontZoomTimeout = null; targetFontSize = 0;   
+    btnInc.disabled=false;btnDec.disabled=false;g_busy=0;
+  }, 150);
 }
+function fb(){ change_font(2); }
+function fm(){ change_font(-2); }
 </script>
+</head>
 <body>
-<button onclick="fb()">шрифт больше</button><hr>
+<button onclick="fb()">шрифт больше</button> <button onclick="fm()">шрифт меньше</button><hr>
 <h1>3700 английских слов по ассоциациям (мнемоника)</h1>
 Авторских прав нет, если кто что возьмёт отсюда, то пишите ссылку на этот сайт. Знакомые слова и лишние ФА удаляйте сразу, потом учите!
 Списки слов отсюда britlex.ru/help.php + гугл перевод + амер транскрипция + ФА. Иногда есть повторы. Учить лучше через АнкиДроид. Картинки делать надо, их пока мало.
@@ -1392,7 +1413,7 @@ WILDberies магазин - *<i>дикие</i>(wild~Вайлд) *<i>ягоды</
 <b>dose</b>~доус досе / *<i>ДОЗА</i> *<i>порция</i> *<i>прием</i> *<i>доля</i> (похоже) (doze дремать от дозы)<hr>
 <b>dot</b>~дот / ДОТ это огневая *<i>точка</i> (dotted точечный)<hr>
 <b>double</b>~дабэл доубле / от слова ДУБЛЬ - *<i>двойной</i> / *<i>двойник</i> *<i>дубликат</i> *<i>повторение</i><hr>
-<b>down</b>~даун довн / ДАУНы без мозгов *<i>внизу</i> на соц.леснице / при локДАУНе заперли всех ДАУНов *<i>внизу</i> в подвале без еды, сказали самоизоляция или штраф, через год нашли их скелеты (downer зануда)<hr>
+<b>down</b>~даун довн / нокДАУН, локДАУН / *<i>внизу</i> *<i>вниз</i> (downer зануда)<hr>
 <b>dowry</b>~дауэри доври / (=dower) *<i>приданое</i> ДАРИ невесте, а то сбежит<hr>
 <b>dozen</b>~дазен дозен / (замена о-ю z-ж) *<i>ДЮЖЕНа</i> / ДОЗА Наркомана *<i>дюжина</i> таблеток<hr>
 <b>drain</b>~дрейн драин / *<i>слив</i> и *<i>водосток</i> для *<i>ДРЕНажной</i> системы / *<i>сушить</i> dry-сухой<hr>
@@ -3670,7 +3691,7 @@ WILDberies магазин - *<i>дикие</i>(wild~Вайлд) *<i>ягоды</
 <b>tow</b>~тоу тов / *<i>эвакуатор</i> *<i>буксирует</i> ТОВарный вагон<hr>
 <b>towel</b>~тауэл товел / *<i>полотенце</i> осТАВИЛ в бане через дорогу раздевалка<hr>
 <b>tower</b>~тауэр товер / на *<i>башне</i> тауэр был ТрАУР - колобок повесился / в ТАВЕРне *<i>башню</i> сносит от цен на три корочки хлеба<hr>
-<b>town</b>~таун товн / в *<i>городке</i> кейпТАУН есть даунТАУН - *<i>центр-города</i> кишит даунами<hr>
+<b>town</b>~таун товн / в *<i>городке</i> кейпТАУН есть даунТАУН - *<i>центр-города</i><hr>
 <b>toy</b>~той тои / ТОЙ *<i>игрушке</i> лапу оторвали! и уронили мишку на пол, всё равно его не брошу потому что я хороший<hr>
 <b>trace</b>~трейс трасе / *<i>прослеживать</i> *<i>след</i> ТРАСирующих пуль, их видно!<hr>
 <b>track</b>~трэк трацк / *<i>выслеживать</i> по *<i>ТРЕКу</i> посылку с али целый год, она обошла вокруг света три раза / *<i>след</i> *<i>колея</i> *<i>курс</i> *<i>путь</i> по ТРАКту<hr>
@@ -4039,3 +4060,4 @@ WILDberies магазин - *<i>дикие</i>(wild~Вайлд) *<i>ягоды</
 <b>zipper</b>~зипэр зиппер / в архив ZIP сжали файлы и *<i>застегнули</i> *<i>застёжкой-молнией</i><hr>
 <b>zoo</b>~зу зоо / *<i>ЗООпарк</i> с ЗУбастиками, укусят - мало не покажется<hr>
 </body>
+</html>
