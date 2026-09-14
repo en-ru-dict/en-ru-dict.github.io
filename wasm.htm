@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>WASM Sidecar Test</title>
+    <script src="loc_fetch.js"></script>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #eef2f7; line-height: 1.6; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .controls { display: grid; gap: 10px; margin-top: 20px; }
+        button { padding: 12px; cursor: pointer; border: none; border-radius: 6px; background: #4a90e2; color: white; font-weight: bold; }
+        button:hover { background: #357abd; }
+        #log { margin-top: 20px; padding: 15px; background: #1e1e1e; color: #d4d4d4; border-radius: 6px; font-family: 'Courier New', Courier, monospace; min-height: 150px; white-space: pre-wrap; }
+        .success { color: #4ec9b0; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+<h1>WASM Sidecar Test 2026</h1>
+<p>Тест загрузки WASM через <b>LocalFetch v7</b></p>
+<p>В режиме сети (http://) он будет искать test.wasm и менять тип mime в зависимости от расширения, но если надо вызвать оригинальный, то вызывать fetch(new Request(url)) </p>
+<p>В режиме (localhost) он будет искать test.wasm но всегда менять тип mime так как там иногда неправильно</p>
+<p>
+В локальном режиме (file://) он будет искать test.wasm.js который надо сделать в <a href="fetch_sidecar_js.htm">fetch_sidecar_js</a><br>
+Три формата сжатия: base64 для любителей ZIP (работает везде, можно вставить в src)/ base85 для любителей RAR, жмет получше, работает быстро/ base122 для фанатов 7z, жмет отлично, но можно еще лучше, только зачем? это локально с диска, не по сети, скорость=0сек. Но для режима - один источник sidecar.js для сети и локально - выгодно.
+Включается глобальным флагом. Тогда вместо двух file.wasm + file.wasm.js только один, он чуть больше, но зато не два. (экономия места и править в одном файле)
+Осторожно! base122 использует Юникод, а это не везде поддерживается полностью.
+</p>
+<p>
+Как в 2026г сделать бесплатно wasm , загрузить в html и выполнить через js?
+Надо завести гугл акк, зайти в гугл облако терминал, запустить чат ИИ gemini,
+попросить его поставить нужные программы чтобы делать wasm, написать ему ТЗ
+или дать код на Си, он всё перепишет и скомпилирует, сразу будет готовый wasm.
+Если надо пример на js как вызывать и передавать массивы, то тоже он напишет.
+Раньше это было сложно и много знать надо, а теперь просто и быстро.
+</p>
+    
+    <div class="controls">
+        <button id="loadWasm">1. Загрузить и запустить WASM</button>
+        <button id="calcAdd">2. Вызвать add(+)</button>
+        <button id="calcMult">3. Вызвать multiply(*)</button>
+    </div>
+
+    <div id="log">Ожидание действий...</div>
+</div>
+
+<script>
+    const logDiv = document.getElementById('log');
+    function log(msg, type = '') {
+        const span = document.createElement('span');
+        if (type) span.className = type;
+        span.innerText = `> ${msg}\n`;
+        logDiv.appendChild(span);
+        logDiv.scrollTop = logDiv.scrollHeight;
+    }
+
+    let wasmInstance = null;
+
+    document.getElementById('loadWasm').addEventListener('click', async () => {
+        log('Загрузка test.wasm...');
+        try {
+            // LocFetch теперь перехватывает нативный fetch!
+            // WebAssembly.instantiateStreaming использует fetch под капотом.
+            const obj = await WebAssembly.instantiateStreaming(fetch('test.wasm'));
+            wasmInstance = obj.instance;
+            log('WASM модуль успешно инициализирован!', 'success');
+            console.log('Exports:', wasmInstance.exports);
+        } catch (e) {
+            log('Ошибка загрузки: ' + e, 'error');
+            console.error(e);
+        }
+    });
+
+    document.getElementById('calcAdd').addEventListener('click', () => {
+        if (!wasmInstance) return log('Сначала загрузите WASM!');
+        const res = wasmInstance.exports.add(15, 987);
+        log(`Результат add(15, 987) = ${res}`, 'success');
+    });
+
+    document.getElementById('calcMult').addEventListener('click', () => {
+        if (!wasmInstance) return log('Сначала загрузите WASM!');
+        const res = wasmInstance.exports.multiply(159, 574);
+        log(`Результат multiply(159, 574) = ${res}`, 'success');
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+* {box-sizing: border-box;}
+html {font-size:20px;}
+body {
+ min-width:350px; margin:0; padding:0; line-height:1.6;
+ font-family:Arial,Helvetica,sans-serif;
+ background:#E6E7E9; color:#000;
+ font-size:1rem; word-wrap:break-word;
+}
+#id_an {width:100%;padding:0.5rem;}
+#id_an {background-color: beige;position: absolute;top:0; z-index: 9999;}
+.abs {position: absolute;left: 50%; transform: translateX(-50%);}
+.nop {margin:0;text-align:center;}
+
+.slider-container{position:relative;height:90vh;overflow-x:hidden; perspective: 1000px;}
+.slider-wrapper {
+  position: absolute;top: 50%;left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw; height:80vh;
+  display: flex; flex-direction:column;
+  transform-style: preserve-3d;
+}
+.slide.left {  transform: translateX(-50%) scale(0.8); opacity: 0.5; background-color:aquamarine; border: 3px solid black; z-index: 5;}
+.slide.right {  transform: translateX(50%) scale(0.8); opacity: 0.5; background-color:deepskyblue; border: 3px solid black; z-index: 5;}
+.slide.center {  transform: translateX(0) scale(1);  opacity: 1; z-index: 10; border: 5px solid coral;}
+.slide {
+ position:absolute; width:80vw; height:70vh; overflow-y:auto;
+ display:flex; flex-direction:column; text-align:center; justify-content:center;
+ margin:auto; padding:20px; overflow:hidden;
+ transition: all 0.6s;
+ border-radius:15px; box-shadow:0 5px 15px rgba(0, 0, 0, 0.2);
+ font-size:2rem; background-color:aliceblue;
+ user-select: none; -webkit-user-select: none;
+
+}
+.btn { position: absolute; top:0; opacity:0; height:100%; width:40%;cursor:pointer;}
+.prev {left:0;}
+.next {right:0;}
+
+</style>
+
+</head>
+
+<body>
+<div id="id_an">
+ <div class="dashboard" id="indicatorPanel"></div>
+<h2 class="title aquamarine nop">Пока загружается список. Учебный анекдот.</h2>
+ <div class="slider-container">
+  <div class="slider-wrapper">
+   <div class="slide left" >text1</div>
+   <div class="slide center" >text2</div>
+   <div class="slide right">test3</div>
+  </div>
+  <div class="btn prev"></div>
+  <div class="btn next"></div>
+ </div>
+</div>
+
+<script>
+if(!window.g_text) window.g_text=`
+DWARF гном|*гном ДРОВосек ночью стучится в дом на краю деревни: Во ДВОРе трава, на траве - ДРОВа, а вам ДРОВа нужны?|Хозяева спросонья отвечают: "НЕТ!"|Утром просыпаются - ДРОВ нет..|*гном обчистил ДВОР! (анекдот)
+REMAIN оставаться|тебя били РЕМНЕМ за то, что украл серебряные ложечки. Их нашли, но осадочек *остался.. (анекдот)
+CRY плакать,КРИчать|моя хата с КРАЮ и я *плачу что ничего не знаю.. (меньше знаешь - лучше спишь)
+LESS менее|чем *меньше ЛЕС, тем толще партизаны.. (анекдот)
+SUCH такой|ты *такой САЧок, когда пилиш СУЧок на котором сидишь..|ААА (падая с дерева)
+FEEL чувствовать|штирлиц шёл по лесу и вдруг *почувствовал на себе чей-то взгляд, ФИЛин - подумал штирлиц, сам ты ФИЛин- подумал мюллер
+BECOME стать| быть + приходить|*станешь БЫКОМ если будешь ходить к тёлкам (м/ф рога и копыта)
+BEG просить|ох и трудная это работа из болота тащить БЕГемота, *просим большой(big) трактор (стишок)
+ELEPHANT слон|катя, возьми тЕЛЕФОН. алё, кто говорит? *слон! (из песни)
+BRAKE тормоз|БРАКованный *тормоз сломался(break). Поезд мчится в пропасть.. ААА, мы все умрём! (из кино)
+PERCEIVE осознавать|они *поняли что ПАССИВность это смерть и умерли
+DEATH смерть|к злому как собака ДЕСпоту пришла *смерть с косой, собаке собачья *смерть
+EGG яйцо|ЕГОр на горе объЕГОрил птеродактеля и стащил *яйцо из гнезда (кино)
+ENTRANCE вход|ЕНот оставил свой ТРАНСпорт у *входа в ракету, вернулся а колес нет (мстители украли)
+FRYING-PAN *сковородка|жарящая кастрюля|ФРАУ идёт к ПАНи на разборки со *сковородой, будет махач, СКЕЛЕТ(skillet сковородка-с-ручкой) бежит рядом, тоже хочет посмотреть..
+GRASS трава|перед приездом Генерала, дембеля КРАСят *траву в зелёный в части, чтобы похвалил
+GROOM конюх,жених|ГРОМадный *конюх-жених был уГРЮМ - невеста страшная как лошадь
+HARE заяц|*заяц безбилетник с наглой ХАРЕй не платит(fare плата-за-проезд) и едет нахаляву, лови его!
+HUSBAND муж|*муж - ХОЗяин БАНДы спиногрызов - объелся груш
+TRIBE племя|*племя людоедов попало под ТРИБунал и их самих съели
+LISTEN слушать|ЛИСЁНок *слушает урок(lesson) ЛИСы в ЛЕСу|В одно ухо влетает - из другого вылетает|Смотрит в книгу - а видит фигу
+MIRROR зеркало|в МИРЕ кРивых *зеркал Оля встретила Яло и всех спасла от попугая и жабы
+MOST наиболее|*большинство(majority) МАЖОРИТАрных мажоров - обжоры и ходят через *самый-длинный МОСТ на работу, а остальные через широкий(broad) БРОД с крокодилами - так короче.
+NARROW узкий|в НОРЕ У кролика *Узко, не влазит моё пузко! Сказал винипух и застрял
+OBVIOUS очевидный|*очевидный ОБВЕС в ларьке|Пока ты считал ворон и пялился на красоток - тебя ОБВЕСили и обсчитали, ты взял сдачу и ушел, забыв взять свои огурцы, которые купил. (НУ ТЫ И ЛОХ)
+PERSUADE уломать|чтобы *убедить женщину, надо ПОСмотреть в ВЕДро и сделать всё наоборот! 
+PORK свинина|в ПАРКе горького ПИГмеи привязали свиней(pig) к колышку(peg) и пока бегали за пивом, одну украли.. ПОРКа орка и его свиногрызов за то что украли *свинину, устроили пикник и *насвинячили
+TOP вершина|двое хоббитов и ТРИ говорящих дерева(tree) устроили поТОП до *верхушки останкинской башни, САУРон с кислой(sour) рожей недоволен - весь его гадюшник смыло..
+TREASURE клад|ТРЕзвый муЖ - настоящеЕ *сокровище для жены алкоголички
+PROPER надлежащий|*правильный ПРАПОР тащит из части всё что плохо лежит и не прикручено, лови его!|improper *неподходящие ИМ ПРАПОР выдал сапоги, все ноги в мазолях и болят
+PUDDLE лужа|ты ПАДАЛ в *лужу с крокодилами и кричал что плавать не умеешь..
+RAIN дождь|в РАЙоНе деревни гадюкино всегда идут *дожди (юмор от Хазанова)
+CHASE погоня,гнаться|ЧЕЙ Заяц *преследует волка в овечей шкуре? Это наш агент под прикрытием!
+COUNTRY страна|*стране нужен КОНТРОль за КОНТРОлерами (из анекдота)
+REBEL мятежник,восставать|*повстанцы в РЕаБИЛитации лежат в гипсе.. (восстание недовольных драконовскими налогами подавили на их же деньги)
+SLICE кусок|на ёлке сидит ворона с *ломтиком сыра в клюве, внизу лиса кричит СЛАЗь СЛАЗь и отдавай сыр, ворона берет сыр под мышку и кричит - размечталась (из анекдота)
+SLY хитрый|ты прибил(slay) *коварную *ловкую  муху(fly) которая тебя достала..
+SMOOTH однородный,мягкий|ты С МУСором в мешке гулял по *гладкой свалке мимо *спокойных крыс людоедов, и они тебя съели..
+SPIDER паук|*паук быстро(speed) убегает С ПОмИДОРом в зубах по потолку, мухи попадали со смеху
+SHOVEL лопата|ты ехал ночью по ШОссе на ВЕЛеке копать ЩАВЕЛь на колхозном поле, там тебя и поймали, велек отобрали, *лопатой по башке настучали, чужое брать нехорошо
+STRUGGLE борьба|ты СТРОГАЛ дерявянных солдат для *битвы чтобы *биться с ведьмой за изумрудный город, ещё волшебный порошок надо где то стырить
+STUMBLE запнуться|в СТАМБУЛе *споткнулся, упал, очнулся гипс. Сеня береги руку!
+THOUGHT мысль|созрела *мысль спилить ночью несколько СОТовых вышек 5G и спасти мир
+THROUGH насквозь|СРУбил просеку *через заколдованный лес и всякая нечисть поперла..
+WOULD бы|знала *бы бабка ВУДу, была *бы дедкой
+WORSE хуже|отВЕРСтие *хуже чем дырка (не путай с WORTH-ценности украли через дырку в полу)
+WORTH ценности|приВЁЗ знакомиться с родителями *достойную женщину, а она оказалась мужиком
+WHILE в-то-время-как|*пока ВАлИЛ лес, ВОЛки пришли посмотреть, даже(yet) ЙЕТи вылез позырить, что за шум а драки нет
+MEAT мясо|на МИТинге голодные орут *мяса! *мяса! и встречаются(meet) с МИЛицией(meal еда)
+`;
+var g_size=[];
+var g_tm=0;
+var g_num=0;
+var g_slides=document.querySelectorAll('.slide');
+var g_idx=0;
+function set_timer(){g_timer_start=performance.now();}
+function get_timer(){return performance.now()-g_timer_start;}
+function rnd(k){return window.crypto.getRandomValues(new Uint32Array(1)) % k;}
+
+function start(){
+  g_text=g_text.replace(/\|/g,'<br>').split('\n').map(z=>z.trim()).filter(z=>z);
+  precalc(); g_num=rnd(g_text.length); g_idx = 1;
+  updateSlides();
+  setupEventListeners();
+}
+function updateSlides(){
+  g_slides.forEach((slide,index)=>{var v;
+    slide.classList.remove('left','center','right');
+    slide.style.overflow='hidden';
+    if(index === idx_prev()){
+      v=txt_prev();
+      slide.innerHTML=g_text[v];
+      slide.style.fontSize=g_size[v]+'px';
+      slide.classList.add('left');
+    }
+    if(index === g_idx){
+      slide.classList.add('center');
+      slide.innerHTML=g_text[g_num];
+      v=g_size[g_num];
+      slide.style.fontSize=v+'px';
+      document.title=v;
+    }
+    if(index === idx_next()){
+      v=txt_next();
+      slide.innerHTML=g_text[v];
+      slide.style.fontSize=g_size[v]+'px';
+      slide.classList.add('right');
+    }
+  });
+  clearTimeout(g_tm);
+  g_tm=setTimeout(txt_over,1500);
+}
+function nextSlide(){ g_idx = idx_next(); g_num = txt_next(); updateSlides();}
+function prevSlide(){ g_idx = idx_prev(); g_num = txt_prev(); updateSlides();}
+function idx_prev(){var v=g_idx-1;if(v<0)v=3-1;return v;}
+function idx_next(){var v=g_idx+1;if(v>=3)v=0;return v;}
+function txt_prev(){var v=g_num-1;if(v<0)v=g_text.length-1;return v;}
+function txt_next(){var v=g_num+1;if(v>=g_text.length)v=0;return v;}
+function txt_over(){var e_sl = document.querySelector('.slide.center');e_sl.style.overflow='auto';}
+
+function precalc(){
+  var v,i,e = document.querySelector('.slide.center');
+  e.style.transition='none'; // all 1s;'
+  for(i=0;i<g_text.length;i++){v=g_text[i]; v=find_size_font(e,v); g_size.push(v);}
+  e.style.transition='';
+}
+function find_size_font(e,txt){var low=30, high=150, best=30, mid, n, h, w;
+  e.innerHTML=txt; h = e.clientHeight; w = e.clientWidth;
+  while(low <= high){
+    mid = Math.floor((low + high) / 2);
+    e.style.fontSize = mid + 'px';
+    if(e.scrollHeight <= h && e.scrollWidth <= w){ best = mid; low = mid + 1;}
+    else { high = mid - 1; }
+  }
+  for(n=best; n>20; n--){
+    e.style.fontSize = n + 'px';
+    if(e.scrollHeight <= h && e.scrollWidth <= w) return n;
+  }
+  return 20;//min
+}
+function setupEventListeners(){
+  document.querySelector('.next').addEventListener('click', ()=>{nextSlide();});
+  document.querySelector('.prev').addEventListener('click', ()=>{prevSlide();});
+  let touchStartX = 0;
+  let touchEndX = 0;
+  document.querySelector('.slider-wrapper').addEventListener('touchstart', (e)=>{
+   touchStartX = e.changedTouches[0].screenX;
+  });
+  document.querySelector('.slider-wrapper').addEventListener('touchend', (e)=>{
+   touchEndX = e.changedTouches[0].screenX; handleSwipe();
+  });
+}
+function handleSwipe(){
+  const swipeThreshold = 50;
+  if(touchEndX < touchStartX - swipeThreshold){nextSlide();}
+  if(touchEndX > touchStartX + swipeThreshold){prevSlide();}
+}
+start();
+
+//добавить светофор из 24 сверху - крестик закрывает все сразу если загрузка завершена.
+//крестик закрывает только слайдер если загрузка ещё идет (не хотят читать) под ним видно лог
+//и когда загрузка завершается, сфетофор и лог скрываются через 3 секунды.
+//светофор на 1-10 скриптов, 10 максимум -алерт если больше. создается динамически.
+//обновляется после записи в лог о конце загрузки какого-то скрипта
+//когда все завершены то вместо светофора - надпись /УРА загрузка завершена, закрыть слайдер/
+//список урл скриптов это входной параметр светофора, обязательный и опционально список текстов для слайдера
+</script>
+</body>
+</html>

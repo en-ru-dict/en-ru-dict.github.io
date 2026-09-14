@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Метод Матрёшка (расшифровка)</title>
 <style>
+
 :root {
   --accent: #00f2fe;
   --accent-glow: rgba(0, 242, 254, 0.5);
   --success: #10b981;
   --fail: #ef4444;
   --card-border: rgba(255, 255, 255, 0.08);
-  --card-fs: 2rem;
 }
 * {
   box-sizing: border-box;
@@ -45,10 +45,17 @@ body {
   cursor: pointer;
   transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
-  font-size: 13px;
+  font-size: 18px;
+  border: 1px solid aqua;
 }
 .glass-btn:hover, .glass-btn:active {
   background: rgba(255, 255, 255, 0.15);
+}
+.glass-btn:disabled {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+  color: #555;
+  cursor: default;
 }
 #card-area {
   flex: 1;
@@ -91,7 +98,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; /*обрезает если не влезло */
   padding: 24px;
   text-align: center;
   overflow: hidden;
@@ -99,11 +106,8 @@ body {
   transition: border-color 0.5s ease;
   -webkit-transition: border-color 0.5s ease;
 }
-.card:hover .card-face {
-  border-color: rgba(0, 242, 254, 0.25);
-}
+
 .card-front {
-  z-index: 2;
   transform: rotateY(0deg);
   -webkit-transform: rotateY(0deg);
   cursor: pointer;
@@ -125,10 +129,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 0;      
-  font-size: var(--card-fs);
+  padding: 10px 0;
 }
-
 .card.is-flipped {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
@@ -137,20 +139,17 @@ body {
   font-size: 2rem;
   font-weight: 900;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
   text-shadow: 0 4px 15px rgba(0,0,0,0.6);
   line-height: 1.2;
   width: 100%;
 }
 
 .tap-hint {
-  position: absolute;
-  bottom: 25px;
+  position: absolute; bottom: 25px; font-size:16px;
   color: rgba(255,255,255,0.4);
   animation: pulse 2s infinite;
   -webkit-animation: pulse 2s infinite;
 }
-
 @keyframes pulse {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.9; }
@@ -159,8 +158,7 @@ body {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 0.9; }
 }
-
-#ruWord1{color: linen;overflow-y:hidden;overflow-x:hidden;overflow-wrap:normal;word-break:normal;}
+#ruWord1{font-size:1em; color:linen; overflow-wrap:normal; word-break:normal;}
 #ruWord2{color:blueviolet;font-size:1.5em;}
 .card-back-content a { font-size:1.2em; color: #60a5fa; font-weight: bold; cursor: pointer; text-decoration: none; }
 .card-back-content b { color: #4ade80; font-weight: bold; }
@@ -237,7 +235,7 @@ body {
 }
 hr {border: 1px dotted purple;margin: 10px 0 10px 0;width: 100%;}
 
-/* ── Header ── */
+/* Header */
 header {
   padding: 10px 16px 6px;
   display: flex;
@@ -269,7 +267,6 @@ header {
   height: 10px;
   overflow: hidden;
 }
-
 .progress-bar {
   height: 100%;
   background: linear-gradient(to right, #4facfe, #00f2fe);
@@ -283,7 +280,7 @@ header {
   color: #94a3b8;
   font-weight: 500;
 }
-/* ── Hamburger Button ── */
+/* Hamburger Button */
 .hamburger-btn {
   width: 44px;
   height: 44px;
@@ -308,7 +305,7 @@ header {
   background: rgba(255, 255, 255, 0.18);
 }
 
-/* ── Side Menu Overlay ── */
+/* Side Menu Overlay */
 #menu-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -414,7 +411,7 @@ header {
 }
 .menu-btn .btn-desc {
   font-size: 11px;
-  color: #64748b;
+  color: beige;
   line-height: 1.3;
 }
 .menu-btn.btn-danger {
@@ -429,11 +426,15 @@ header {
   border-top: 1px solid rgba(255, 255, 255, 0.07);
   margin: 6px 0 14px;
 }
+#id_log {width:100vw;position:fixed;top:0;left:0;height:0;z-index:9999;font-size:28px;}
 </style>
 </head>
 <body>
+  <textarea id="id_log"></textarea>
   <canvas id="confetti"></canvas>
-  <div id="menu-overlay" onclick="closeMenu()"></div>
+
+
+  <div id="menu-overlay" onclick="show_log();"></div>
   <div id="side-menu">
     <div class="menu-header">
       <span class="menu-title">☰ Меню</span>
@@ -458,7 +459,7 @@ header {
       </span>
     </button>
 
-    <button class="menu-btn" id="btnLoadFile" onclick="el('load_file_input').click()">
+    <button class="menu-btn" id="btnLoadFile" onclick="kw_load_file()">
       <span class="btn-icon">📂</span>
       <span class="btn-text">
         <span class="btn-label">Загрузить выученные слова</span>
@@ -474,18 +475,16 @@ header {
       </span>
     </button>
 
-    <button class="menu-btn" id="btnSaveWords" onclick="saveWords(); closeMenu()">
+    <button class="menu-btn" id="btnSaveWords" onclick="save_to_my_words_js_txt(); closeMenu()">
       <span class="btn-icon">💾</span>
       <span class="btn-text">
-        <span class="btn-label">Сохранить выученные слова</span>
+        <span class="btn-label">Сохранить выученные слова на диск</span>
         <span class="btn-desc">Скачать my_words.js.txt с актуальным списком knownEnglishWords</span>
       </span>
     </button>
-
-    <input type="file" id="load_file_input" accept=".txt,.js" style="display:none;">
   </div>
 
-  <!-- ── Header ── -->
+  <!-- Header -->
   <header>
     <div class="header-center">
       <div class="progress-container">
@@ -508,8 +507,6 @@ header {
 
       <!-- Back Face -->
       <div class="card-face card-back">
-        <div class="stamp stamp-yeah">ЗНАЮ</div>
-        <div class="stamp stamp-nope">УЧИТЬ</div>
         <div class="card-back-content">
           <div class="word-ru" id="ruWord2" >?</div>
           <hr>
@@ -526,23 +523,62 @@ header {
   </div>
 
   <div class="controls">
+    <button class="glass-btn" onclick="undoLastAction()" id="btnUndo" disabled>Отмена</button>
     <button class="circle-btn btn-fail" onclick="triggerSwipe('left')" id="btnLeft">✖</button>
     <button class="circle-btn btn-success" onclick="triggerSwipe('right')" id="btnRight">✔</button>
+    <button class="glass-btn" onclick="pgdn()" id="id_pgdn">PgDn</button>
+
   </div>
 <script src="matr.txt"></script>
-
+<script src="lib_known.js"></script>
 <script>
-//=========matr.js========
+var g_test=1;
+var g_log='/';
+var g_scroll=0;
+function log(s){g_log+=s+'\n';}
+function show_log(){var e=el('id_log');e.style.height='100vh';e.innerHTML=g_log;}  
+function pgdn(f){var e,v,p='PgUp',y=999;
+  e=el("id_pgdn"); v=''+e.innerHTML;
+  if(f || v==p){p='PgDn'; y = 0;}
+  e.innerHTML=p; e_cb.scrollTop = y;
+}
+// ═══════════════════════════════════════════════════
+//  УНИВЕРСАЛЬНЫЕ УТИЛИТЫ
+// ═══════════════════════════════════════════════════
+function in_str(s,w){return (s.indexOf(w)<0)? 0:1;}
+function in_arr(m,w){return (m.includes(w))? 1:0;}
+function is_str(s){return ((typeof s) === 'string')? 1:0;}
+function replace_all(s,a,b){s=''+s;return s.split(''+a).join(''+b);}
+function one_sp(s){return s.replace(/[ ]+/g,' ');} //один пробел вместо 2+
+async function pause(t){await new Promise(ok => setTimeout(ok,t));}
+function el(id){var e,s;
+  e=document.getElementById(''+id);
+  if(!e){s='нет элемента='+id; if(g_test) alert(s); else console.log(s);}
+  return e;
+}
+// --- State Management ---
+let matrKnown = [];
+let matrWords = [];
+let g_deck = [];
+let isFlipped = false;
+  
+const e_card = el('card');
+const e_ruWord = el('ruWord1');
+const e_ruWord2 = el('ruWord2');
+const e_enWord = el('enWordContainer');
+const e_mnWord = el('mnWord');
+const e_end = el('endScreen');
+var g_lastAction = null;
+const e_cf= document.querySelector('.card-front');
+const e_cb= document.querySelector('.card-back');
+const e_cbc = document.querySelector('.card-back-content');
 // --- Simple Confetti ---
 var g_canvas = document.getElementById('confetti');
 if(!g_canvas){alert('нет канваса');}
 var g_ctx = g_canvas.getContext('2d');
 var g_cubs = [];
 
-function resizeCanvas() {
-  g_canvas.width = window.innerWidth; g_canvas.height = window.innerHeight;
-}
-//main
+function resizeCanvas(){ g_canvas.width = window.innerWidth; g_canvas.height = window.innerHeight;}
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
@@ -582,18 +618,11 @@ function animateConfetti() {
 //подсветка слова тр перевода и звуков
 function zv_zagl(s,a){var le,i,w,out;
  s=''+s;
- //s=replace_all(s,'.','. ');
- s=replace_all(s,',',', ');
- s=replace_all(s,';','; ');
- s=replace_all(s,'!','! ');
-
- s=replace_all(s,'(',' (');
- s=replace_all(s,'[',' [');
- s=replace_all(s,'{',' {');
-
- s=replace_all(s,')',') ');
- s=replace_all(s,']','] ');
- s=replace_all(s,'}','} ');
+ s=replace_all(s,',',', '); s=replace_all(s,';','; ');
+ s=replace_all(s,'!','! ');//s=replace_all(s,'.','. ');
+ s=replace_all(s,'(',' ('); s=replace_all(s,')',') ');
+ s=replace_all(s,'[',' ['); s=replace_all(s,']','] ');
+ s=replace_all(s,'{',' {'); s=replace_all(s,'}','} ');
 
  var ru1='-йцукенгшщзхъфывапролджэячсмитьбюё'
  var ru2='-ЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮЁ';
@@ -608,72 +637,26 @@ function zv_zagl(s,a){var le,i,w,out;
 
  for(i=0;i<le;i++){
   w=s.charAt(i);
-  if(f_a){
-   if(' /|'.indexOf(w)>=0){f_a=0;out+='</a>'+w;continue;}
-   out+=w; continue; //остальное игнорим
-  }
+  if(f_a){ if(' /|'.indexOf(w)>=0){f_a=0;out+='</a>'+w;continue;} out+=w; continue;} //остальное игнорим
+  //транскрипция внутри ФА []
   if(!f_tr1)if(w==='['){f_tr1=1;out+='<span>[';continue;}
-  if(f_tr1){//транскрипция внутри ФА []
-   if(w===']'){f_tr1=0;out+=']</span>';continue;}
-   out+=w; continue; //остальное игнорим
-  }
+  if(f_tr1){ if(w===']'){f_tr1=0;out+=']</span>';continue;} out+=w; continue;} //остальное игнорим
+  //транскрипция внутри ФА ~)
   if(!f_tr2)if(w==='~'){f_tr2=1;out+='<span>~';continue;}
-  if(f_tr2){//транскрипция внутри ФА ~)
-   if(' )/|'.indexOf(w)>=0){f_tr2=0;out+='</span>'+w;continue;}
-   out+=w; continue; //остальное игнорим
-  }
+  if(f_tr2){ if(' )/|'.indexOf(w)>=0){f_tr2=0;out+='</span>'+w;continue;} out+=w; continue;}//остальное игнорим
+  //англ слово внутри ФА
   if(!f_en)if(en3.indexOf(w)>0){f_en=1;out+='<a>'+w;continue;}
-  if(f_en){//англ слово внутри ФА
-   if(en3.indexOf(w)<0){f_en=0;out+='</a>'+w;continue;}
-   out+=w; continue; //остальное игнорим
-  }
+  if(f_en){ if(en3.indexOf(w)<0){f_en=0;out+='</a>'+w;continue;} out+=w; continue;} //остальное игнорим
+  //загл рус внутри ФА это звуки
   if(!f_b)if(ru2.indexOf(w)>0){f_b=1;out+='<b>'+w;continue;}
-  if(f_b){//загл рус внутри ФА это звуки
-   if(ru2.indexOf(w)<0){f_b=0;out+='</b>'+w;continue;}
-   out+=w; continue; //остальное игнорим
-  }
+  if(f_b){ if(ru2.indexOf(w)<0){f_b=0;out+='</b>'+w;continue;} out+=w; continue;} //остальное игнорим
+  //перевод внутри ФА *Рус но внутри могут быть звуки
   if(!f_i)if(w==='*'){f_i=1;out+='<i>*';continue;}
-  if(f_i){//перевод внутри ФА *
-   if(ru3.indexOf(w)<0){f_i=0;out+='</i>';}
-  }
+  if(f_i){ if(ru3.indexOf(w)<0){f_i=0;out+='</i>';}}
   out+=w;
  }
  out=one_sp(out);
  return out.trim();
-}
-
-// ═══════════════════════════════════════════════════
-//  УТИЛИТЫ
-// ═══════════════════════════════════════════════════
-function el(id){var e=document.getElementById(''+id);if(!e)alert('нет элемента='+id); return e;}
-function in_str(s,w){return (s.indexOf(w)<0)? 0:1;}
-function in_arr(m,w){return (m.includes(w))? 1:0;}
-function replace_all(s,a,b){return (''+s).split(''+a).join(''+b);}
-function one_sp(s){return s.replace(/[ ]+/g,' ');}
-function clear_arr(m){var s,i,out=[];
- for(i=0;i<m.length;i++){s=m[i].trim();if(s) out.push(s);}
- return out;
-}
-async function pause(t){await new Promise(r => setTimeout(r, t));}
-function normWord(w){ return ('' + w).trim().toLowerCase().replace(/ /g, '-');}
-// knownEnglishWords — глобальный список (\n), lowercase + дефис вместо пробела
-function loadKnownWords(){
- var v = localStorage.getItem('knownEnglishWords'); return (v)? v.split('\n') : [];
-}
-function saveKnownWords(words){
- try {localStorage.setItem('knownEnglishWords', words.join('\n'));}
- catch(er){alert('limit localStorage='+er);}
-}
-function addKnownWord(word){
- var w = normWord(w); if(!w)return 0;
- var m=loadKnownWords();if(in_arr(m,w))return 0; 
- m.push(w);saveKnownWords(m); return 1;
-}
-function delKnownWord(word){var i,m,out;
- m=loadKnownWords();
- out=[];
- for(i=0;i<m.length;i++)if(m[i]!==word)out.push(m[i]);
- saveKnownWords(out);
 }
 function loadMatrKnown(){
   var v = localStorage.getItem('matr_known'); return (v)? v.split('\n') : [];
@@ -682,10 +665,7 @@ function saveMatrKnown(m){
   try {localStorage.setItem('matr_known', m.join('\n')); }
   catch(er){ alert('Ошибка localStorage:'+er); }
 }
-
-// ═══════════════════════════════════════════════════
-//  ПАРСИНГ ДАННЫХ
-// ═══════════════════════════════════════════════════
+//== ПАРСИНГ ДАННЫХ
 function parseMatrText(txt) {var m,out=[],i,s,p,ru,en,mn;
   m = txt.split('\n');
   for(i=0; i < m.length; i++) {
@@ -698,7 +678,6 @@ function parseMatrText(txt) {var m,out=[],i,s,p,ru,en,mn;
   }
   return out;
 }
-
 // Назначаем onclick на все <a> внутри контейнера
 function attachSpeechToLinks(container) {
   var links = container.getElementsByTagName('a');
@@ -712,11 +691,7 @@ function attachSpeechToLinks(container) {
     })(links[i]);
   }
 }
-
-// ═══════════════════════════════════════════════════
-//  ОЗВУЧКА
-// ═══════════════════════════════════════════════════
-// --- Speech Synthesis ---
+//== ОЗВУЧКА Speech Synthesis
 function speakWord(enText){
   if (!('speechSynthesis' in window)) return;
   let cleanWord = enText.split('[')[0].split(',')[0].split(';')[0].trim();
@@ -738,12 +713,9 @@ if('speechSynthesis' in window){
     };
   }
 }
-
-// ═══════════════════════════════════════════════════
-//  СКАЧАТЬ СПИСОК (matr.txt)
-// ═══════════════════════════════════════════════════
+//== СКАЧАТЬ СПИСОК (matr.txt)
 function downloadList() {
-  var text = 'const matrWordsRaw = `\n';
+  var text = 'var g_matrWords = `\n';
   for (var i = 0; i < matrWords.length; i++) {
     var w = matrWords[i];
     text += w.ru + ' / ' + w.en + ' / ' + w.mn + '\n';
@@ -759,154 +731,37 @@ function downloadList() {
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
-
-// ═══════════════════════════════════════════════════
-//  СОХРАНИТЬ ВЫУЧЕННЫЕ СЛОВА → my_words.js.txt
-// ═══════════════════════════════════════════════════
-function saveWords() {
-  var arr = loadKnownWords();
-  if(!arr){alert('пустой список');return 0;}
-  var text = 'var g_words = `\n' + arr.join('\n') + '\n`;\n';
-  var blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-  var url = URL.createObjectURL(blob);
-  var a = document.createElement('a');
-  a.href = url;
-  a.download = 'my_words.js.txt';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-  g_newLearned = false;
-}
-
-// ═══════════════════════════════════════════════════
-//  АВТОЗАГРУЗКА my_words.js.txt через <script>
-// ═══════════════════════════════════════════════════
-function autoLoadMyWords() {
-  closeMenu();
-  var old = el('__mywords_script');
-  if (old) old.parentNode.removeChild(old);
-
-  var scr = document.createElement('script');
-  scr.id = '__mywords_script';
-  // Без cache-bust для локальных файлов, чтобы не ломать file://
-  var isFile = window.location.protocol === 'file:';
-  scr.src = 'my_words.js.txt' + (isFile ? '' : '?' + Date.now()); 
-  
-  scr.onload = function() {
-    if(typeof g_words !== 'undefined' && g_words) {
-      var lines = ('' + g_words).split('\n');
-      var arr = loadKnownWords();
-      var changed = false, addedCount = 0;
-      for(var i = 0; i < lines.length; i++) {
-        var w = normWord(lines[i]); if(!w) continue;
-        if(!in_arr(arr,w)){arr.push(w); changed = true; addedCount++; }
-      }
-      if(changed) {
-        saveKnownWords(arr);
-        alert('Загружено из my_words.js.txt: ' + addedCount + ' слов.');
-      } else {alert('Файл my_words.js.txt загружен, новых слов не найдено.');}
-    } else {alert('Файл загружен, но переменная g_words не найдена.');}
-  };
-  scr.onerror = function(){alert('Файл my_words.js.txt не найден рядом с HTML.');};
-  document.head.appendChild(scr);
-}
-
-// ═══════════════════════════════════════════════════
-//  ИМПОРТ ФАЙЛА ВЫУЧЕННЫХ СЛОВ (через диалог)
-// ═══════════════════════════════════════════════════
-function initFileUpload() {
-  var fileInput = document.getElementById('load_file_input');
-  if(!fileInput) return;
-  fileInput.addEventListener('change', function(e){
-    closeMenu();
-    var file = e.target.files[0]; if(!file) return;
-    var reader = new FileReader();
-    reader.onload = function(evt){var txt,m,i,w,words=[],addedCount=0;
-      txt = evt.target.result + ''; txt = replace_all(txt,'\r','\n');
-      m = content.split('\n');
-      for(i = 0; i < m.length; i++) {
-        w=m[i].trim(); if(!w) continue; if(in_str(w,'`')) continue;
-        w=normWord(w); words.push(w);
-      }
-      m = loadKnownWords();
-      for(i=0; i < words.length; i++) {
-        w=words[i]; if(!w) continue;
-        if(!in_arr(m,w)){m.push(w); addedCount++;}
-      }
-      if(addedCount){saveKnownWords(m); alert('Загружено слов: ' + addedCount);} 
-      else {alert('Новых слов для загрузки не найдено.'); }
-      e.target.value = '';
-    };
-    reader.readAsText(file, 'UTF-8');
-  });
-}
-
-// ═══════════════════════════════════════════════════
-//  ПЕРЕМЕШАТЬ массив случайно
-// ═══════════════════════════════════════════════════
+//== ПЕРЕМЕШАТЬ массив случайно
 function shuffle(array){var i,j,s;
   for (i = array.length - 1; i > 0; i--) {
     j = Math.floor(Math.random() * (i + 1));
     s = array[i]; array[i] = array[j]; array[j] = s;
   }
 }
-
+//== Найти англ слова в секции-2
 function find_en_words(txt,f){var i,j,m,s,out=[];
  var en='-qwertyuiopasdfghjklzxcvbnm';
- txt=replace_all(txt,';','\n');
- txt=replace_all(txt,'+','\n');
+ txt=replace_all(txt,';','\n'); txt=replace_all(txt,'+','\n');
  m=txt.split('\n');
  for(i=0;i<m.length;i++){
-   s=m[i].toLowerCase().trim(); 
+   s=m[i].toLowerCase().trim();
    for(j=0; j<s.length; j++)if(!in_str(en,s.charAt(j)))break;
    s=s.substring(0,j);
    if(s && s!=='-')out.push(s);
  }
- if(f==='add'){//добавим в выученные слова
-   m=loadKnownWords();j=m.length;
-   for(i=0;i<out.length;i++)if(!in_arr(m,out[i]))m.push(out[i]);
-   if(m.length>j)saveKnownWords(m);
- }
- if(f==='del'){//удалим из выученных слов
-   m=loadKnownWords();j=m.length;
-   for(i=0;i<m.length;i++)if(in_arr(out,m[i]))m[i]='';
-   m=clear_arr(m);
-   if(m.length<j)saveKnownWords(m);
- }
-  
+ if(f==='add'){for(i=0;i<out.length;i++) addKnownWord(out[i]);}
+ if(f==='del'){for(i=0;i<out.length;i++) delKnownWord(out[i]);}
  return out;
 }
-
-// --- State Management ---
-let matrKnown = [];
-let matrWords = [];
-let g_deck = [];
-let isFlipped = false;
-function el(id){var e=document.getElementById(''+id);if(!e)alert('нет элемента='+id); return e;}
-
-const e_card = el('card');
-const e_ruWord = el('ruWord1');
-const e_ruWord2 = el('ruWord2');
-const e_enWord = el('enWordContainer');
-const e_mnWord = el('mnWord');
-const e_end = el('endScreen');
-var g_otkat='';
-
-// Initialize matrWords from raw script variable if loaded
-if (typeof matrWordsRaw !== 'undefined') {
-  matrWords = parseMatrText(matrWordsRaw);
-}
-
 function showError() {
   e_ruWord.innerText = 'ОШИБКА';
   e_enWord.innerHTML = '<span >matr.txt не загружен</span>';
-  e_mnWord.innerHTML = 'Пожалуйста, проверьте наличие файла matr.txt в той же папке.';
+  e_mnWord.innerHTML = 'проверьте файл matr.txt в той же папке.';
 }
 function startDeck() {
   el('totalCount').innerText = matrWords.length;
   // Filter out known words and shuffle
-  g_deck = matrWords.filter(w => !matrKnown.includes(w.ru));
+  g_deck = matrWords.filter(w => !in_arr(matrKnown,w.ru));
   shuffle(g_deck);
   updateProgress();
   if(g_deck.length > 0){
@@ -914,18 +769,19 @@ function startDeck() {
     e_card.style.display = 'block';
     e_end.style.display = 'none';
     document.querySelector('.controls').style.display = 'flex';
-  } else showEndScreen();
+  } 
+  else showEndScreen();
 }
 
 function loadCard(wordObj){
   isFlipped = false;
   e_card.classList.remove('is-flipped');
   e_card.style.transform = '';
-  // Reset scroll position on the card back
-  document.querySelector('.card-back').scrollTop = 0;
-  e_ruWord.innerText = wordObj.ru;
+  pgdn(1);// Reset scroll position on the card back
+  el('id_pgdn').disabled=true;
   e_ruWord2.innerText = wordObj.ru;
-  find_size_font1();
+  e_card.offsetHeight;//display:block+
+  find_size_font1(wordObj.ru);
   // Parse English word, transcription, and translation dynamically
   var en = zv_zagl(wordObj.en);
   en=replace_all(en,'+',' + <br>');
@@ -933,7 +789,7 @@ function loadCard(wordObj){
   e_enWord.innerHTML = en; attachSpeechToLinks(e_enWord);
 
   // Highlight english words in mnemonic
-  mn = wordObj.mn;
+  var mn = wordObj.mn;
   mn=replace_all(mn,'/','@');
   mn=zv_zagl(mn);
   mn=replace_all(mn,'@','<hr>');
@@ -949,37 +805,47 @@ e_card.addEventListener('click', (e) => {
   if (wasDragged || dragDistance > 10) return;
   if (e.target.closest('button')) return;
   e_card.classList.add('is-flipped');
+  if(g_scroll) el('id_pgdn').disabled=false;
 });
-
 function handleAnswer(knowIt) {
   if (g_deck.length === 0) return;
-  const word = g_deck.shift(); // Remove from front
-
+  const word = g_deck.shift();
+  g_lastAction = { word: word, knowIt: knowIt };
+  el('btnUndo').disabled = false;
   if(knowIt){
-    matrKnown.push(word.ru); find_en_words(word.en,'add');
-    localStorage.setItem('matr_known', matrKnown.join('\n'));
-// Milestone confetti (every 10 words, or if finished)
+    if(!in_arr(matrKnown,word.ru)) matrKnown.push(word.ru);
+    find_en_words(word.en,'add');
+    saveMatrKnown(matrKnown);
     if(matrKnown.length % 10 === 0) fireConfetti();
-  } else g_deck.push(word); //в конец колоды
-  g_otkat=[word,knowIt];//для отката на шаг назад
+  } else g_deck.push(word);
   updateProgress();
   if(g_deck.length > 0) loadCard(g_deck[0]);
-  else {fireConfetti(); showEndScreen();}
+  else {fireConfetti(); el('btnUndo').remove(); showEndScreen();}//победа
 }
-function updateProgress() {
-  const total = matrWords.length;
-  if (total === 0) return;
-  const known = matrKnown.length;
-  el('knownCount').innerText = known;
-  const percent = (known / total) * 100;
-  el('progressBar').style.width = percent + '%';
+function undoLastAction(){ //new!
+  if(!g_lastAction) return;
+  const { word, knowIt } = g_lastAction;
+  if(knowIt){
+    matrKnown = matrKnown.filter(w => w !== word.ru);//del word
+    saveMatrKnown(matrKnown); find_en_words(word.en,'del');
+  }
+  else {if(g_deck.length > 0 && g_deck[g_deck.length-1].ru === word.ru) g_deck.pop();}
+  g_deck.unshift(word);
+  g_lastAction = null;
+  el('btnUndo').disabled = true;
+  loadCard(g_deck[0]);
+  updateProgress();
+}
+function updateProgress(){
+  const total = matrWords.length; if(total === 0) return;
+  const known = matrKnown.length; el('knownCount').innerText = known;
+  const percent = (known / total) * 100; el('progressBar').style.width = percent + '%';
 }
 function resetProgress(){
   closeMenu();
   if(confirm('Вы уверены, что хотите сбросить весь прогресс (выучено ' + matrKnown.length + ' слов)?')) {
-    matrKnown = [];
-    localStorage.removeItem('matr_known');
-    startDeck();
+    matrKnown = []; saveMatrKnown(matrKnown);
+    location.reload();//перезагрузить. 
   }
 }
 function showEndScreen() {
@@ -995,7 +861,6 @@ let currentX = 0;
 let currentY = 0;
 let isDragging = false;
 const threshold = 100; // pixels to trigger swipe
-
 e_card.addEventListener('mousedown', dragStart);
 e_card.addEventListener('touchstart', dragStart, {passive: true});
 document.addEventListener('mousemove', dragMove);
@@ -1004,64 +869,44 @@ document.addEventListener('mouseup', dragEnd);
 document.addEventListener('touchend', dragEnd);
 
 function dragStart(e) {
-  if (e.target.closest('.close-modal') || e.target.closest('button')) return;
-  isDragging = true;
-  wasDragged = false;
-  dragDistance = 0;
+  if(e.target.closest('.close-modal') || e.target.closest('button')) return;
+  isDragging = true; wasDragged = false; dragDistance = 0;
   e_card.classList.add('swiping');
   startX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
   startY = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
 }
-
 function dragMove(e) {
-  if (!isDragging) return;
+  if(!isDragging) return;
   const x = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
   const y = e.type.includes('mouse') ? e.clientY : e.touches[0].clientY;
-  currentX = x - startX;
-  currentY = y - startY;
-
+  currentX = x - startX; currentY = y - startY;
   dragDistance = Math.sqrt(currentX * currentX + currentY * currentY);
-  if (dragDistance > 10) {
-    wasDragged = true;
-  }
-
+  if(dragDistance > 10){wasDragged = true;}
   // Prevent scrolling while swiping horizontally
-  if (Math.abs(currentX) > Math.abs(currentY)) {
-    if (e.cancelable) e.preventDefault();
-  }
-
+  if(Math.abs(currentX) > Math.abs(currentY)){ if(e.cancelable) e.preventDefault(); }
   const rotate = currentX * 0.05;
   let transform = `translate(${currentX}px, ${currentY}px) rotate(${rotate}deg)`;
   if(isFlipped) transform += ' rotateY(180deg)';
-
   e_card.style.transform = transform;
-
   // Stamp opacity (set on both front and back faces)
   const yeahStamps = document.querySelectorAll('.stamp-yeah');
   const nopeStamps = document.querySelectorAll('.stamp-nope');
-
   if(currentX > 30) {
     const opacity = Math.min(1, (currentX - 30)/120);
-    yeahStamps.forEach(el => el.style.opacity = opacity);
-    nopeStamps.forEach(el => el.style.opacity = 0);
+    yeahStamps.forEach(el => el.style.opacity = opacity); nopeStamps.forEach(el => el.style.opacity = 0);
   } else if(currentX < -30) {
     const opacity = Math.min(1, (Math.abs(currentX) - 30)/120);
-    nopeStamps.forEach(el => el.style.opacity = opacity);
-    yeahStamps.forEach(el => el.style.opacity = 0);
+    nopeStamps.forEach(el => el.style.opacity = opacity); yeahStamps.forEach(el => el.style.opacity = 0);
   } else {
-    nopeStamps.forEach(el => el.style.opacity = 0);
-    yeahStamps.forEach(el => el.style.opacity = 0);
+    nopeStamps.forEach(el => el.style.opacity = 0); yeahStamps.forEach(el => el.style.opacity = 0);
   }
 }
-
 function dragEnd(e){
   if (!isDragging) return;
   isDragging = false;
   e_card.classList.remove('swiping');
-
   const yeahStamps = document.querySelectorAll('.stamp-yeah');
   const nopeStamps = document.querySelectorAll('.stamp-nope');
-
   // Reset stamps opacity
   setTimeout(() => {
     if (!isDragging) {
@@ -1069,8 +914,7 @@ function dragEnd(e){
       nopeStamps.forEach(el => el.style.opacity = 0);
     }
   }, 50);
-
-  if (currentX > threshold) {
+  if (currentX > threshold){
     animateSwipeOut(window.innerWidth, currentY, true);
   } else if (currentX < -threshold) {
     animateSwipeOut(-window.innerWidth, currentY, false);
@@ -1078,15 +922,12 @@ function dragEnd(e){
     // Snap back
     e_card.style.transform = isFlipped ? 'rotateY(180deg)' : '';
   }
-  currentX = 0;
-  currentY = 0;
+  currentX = 0; currentY = 0;
 }
-
 function triggerSwipe(dir) {
   const x = dir === 'right' ? window.innerWidth : -window.innerWidth;
   animateSwipeOut(x, 0, dir === 'right');
 }
-
 function animateSwipeOut(x, y, knowIt) {
   const rotate = x * 0.05;
   let transform = `translate(${x}px, ${y + 100}px) rotate(${rotate}deg)`;
@@ -1101,39 +942,48 @@ function animateSwipeOut(x, y, knowIt) {
   } else {
     nopeStamps.forEach(el => el.style.opacity = 1);
   }
-
   setTimeout(() => {
     handleAnswer(knowIt);
     yeahStamps.forEach(el => el.style.opacity = 0);
     nopeStamps.forEach(el => el.style.opacity = 0);
   }, 300);
 }
-function find_size_font1(){var w,k,n;
-  k=document.querySelector('.card-front');
-  w=document.querySelector('#ruWord1');
-  k.style.visibility = 'hidden';
-  for(n=140;n>20;n=n-2){
-   e_ruWord.style.fontSize = n+'px';
-   //console.log('1font='+n);
-   if((k.scrollHeight-48) >= w.scrollHeight)if((k.scrollWidth -48) >= w.scrollWidth)break;
-  }
-  k.style.visibility = '';
-}
-
-function find_size_font2(){
-  const k = document.querySelector('.card-back');
-  const w = document.querySelector('.card-back-content');
-  w.style.overflow = 'hidden';
-  let low = 20, high = 100, best = 20;
-  while (low <= high) {
-    let mid = Math.floor((low + high) / 2);
-    k.style.setProperty('--card-fs', mid + 'px'); 
-    //console.log('2font='+mid);
-    if ((k.clientHeight - 20) >= w.scrollHeight){ best = mid; low = mid + 1;} 
+function find_size_font1(txt){var k,h,w,n;
+  k=e_cf; k.style.overflow = 'hidden'; k.style.fontSize =16+'px';
+  t=e_ruWord; t.innerHTML='A';
+  h=k.clientHeight-48; w=t.clientWidth;
+  t.innerHTML=''+txt.toUpperCase();
+  log('h1='+h+'/w1='+w);
+  let low = 30, high = 240, best = 30, mid;
+  while(low <= high){
+    mid = Math.floor((low + high) / 2); k.style.fontSize = mid+'px'; 
+    log(mid+'='+t.scrollHeight+'/'+t.scrollWidth);
+    if(h >= t.scrollHeight && w >= t.scrollWidth){ best = mid; low = mid + 1;}
     else high = mid - 1;
   }
-  k.style.setProperty('--card-fs', best + 'px');
-  w.style.overflow = 'auto';
+  for(n=best;n>16;n--){
+    k.style.fontSize = n+'px'; 
+    log(n+'+'+t.scrollHeight+'/'+t.scrollWidth);
+    if(h >= t.scrollHeight && w >= t.scrollWidth)break;
+  }
+}
+function find_size_font2(){var k,t,h,w,n;
+  k = e_cb; k.style.overflow = 'hidden'; 
+  t= e_cbc;
+  h=k.clientHeight-20;
+  let low = 30, high = 100, best = 30, mid;
+  while(low <= high){
+    mid = Math.floor((low + high) / 2); k.style.fontSize = mid+'px';
+    if(h >= t.scrollHeight){ best = mid; low = mid + 1;}
+    else high = mid - 1;
+  }
+  for(n=best;n>24;n--){
+    k.style.fontSize = n+'px'; 
+    if(h >= t.scrollHeight)break;
+  }
+  k.style.overflow = 'auto'; 
+  g_scroll=(h < t.scrollHeight)?1:0;
+  if(k.scrollHeight===k.clientHeight)g_scroll=0;
 }
 
 function openMenu() {
@@ -1144,10 +994,11 @@ function closeMenu() {
   el('menu-overlay').classList.remove('open');
   el('side-menu').classList.remove('open');
 }
-var len_KnownWords=0;
+
 window.onload = function(){
+  // Initialize matrWords from raw script variable if loaded
+  if(is_str(g_matrWords)){matrWords = parseMatrText(g_matrWords); g_matrWords=null;}
   if(!matrWords || matrWords.length === 0) {showError(); return 0;}
-  var m=loadKnownWords();len_KnownWords=m.length;//запомним сколько слов было выучено.
   matrKnown=loadMatrKnown();
   startDeck();
 };

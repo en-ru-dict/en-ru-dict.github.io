@@ -894,7 +894,7 @@ function start_fancy(){var v,ov,bg,ef,s;
   save_lst('fancy',s+v);
   console.log('выбор='+v+'/'+s);
   if(v==0){bg=8; ef=4;}
-  if(v==1){bg=9; ef=6; ov='g16';}
+  if(v==1){bg=3; ef=0; ov='g16';}
   if(v==2){bg='bg.mp4'; ef=0;}
  }
  else{

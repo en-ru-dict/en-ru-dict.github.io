@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+ <title>local_fetch_helper v7</title>
+ <style>
+  :root { --primary: #00f2fe; --secondary: #4facfe; --bg: #0f172a; --card: rgba(255, 255, 255, 0.05); }
+  body { font-family: sans-serif; background: var(--bg); color: white; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+  .container { background: var(--card); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 24px; width: 480px; text-align: center; }
+  .btn { display: inline-block; padding: 10px 15px; border-radius: 10px; border: none; cursor: pointer; font-weight: 600; transition: all 0.3s; margin: 3px; font-size: 13px; }
+  .btn[disabled] {cursor: not-allowed;}
+  .btn-select { background: rgba(255,255,255,0.1); color: white; border: 1px dashed rgba(255,255,255,0.3); width: 100%; box-sizing: border-box; }
+  .btn-encode { flex: 1; background: linear-gradient(135deg, var(--secondary), var(--primary)); color: #0f172a; }
+  .btn-save { background: #10b981; color: white; width: 100%; display: none; margin-top: 15px; }
+  #id_status { margin-top: 20px; color: #38bdf8; font-size: 14px; }
+  input[type="file"] { display: none; }
+ </style>
+</head>
+<body>
+<div class="container">
+ <h1>Помощник для локального FETCH()</h1>
+ <label for="id_fp" class="btn btn-select" id="id_fl">📎 Выбрать файл</label>
+ <input type="file" id="id_fp">
+ <div style="display:flex; margin-top:20px; flex-wrap: wrap;">
+  <button class="btn btn-encode" id="e64" disabled>Base64</button>
+  <button class="btn btn-encode" id="e85" disabled>Base85</button>
+  <button class="btn btn-encode" id="e122" disabled style="background: linear-gradient(135deg, #ff0080, #7928ca); color: white;">Base122 (Turbo)</button>
+ </div>
+ <div id="id_status"></div>
+ <button class="btn btn-save" id="id_sb">💾 Сохранить .js файл</button>
+</div>
+
+<script>
+function el(id){return document.getElementById(id);}
+const fP=el('id_fp'), fL=el('id_fl'), sT=el('id_status'), sB=el('id_sb');
+var g_buf=null;
+var g_file_name="";
+var g_res="";
+var g_mode="";
+
+ function fch_enc85(u8) {
+  const C = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:+=^!/*?&<>()[]{}@%$#".split('');
+  let r=u8.length%4, p=new Uint8Array(u8.length+(r?4-r:0)); p.set(u8);
+  let dv=new DataView(p.buffer), o="";
+  for(let i=0;i<p.length;i+=4){
+   let v=dv.getUint32(i);
+   o+=C[v/52200625|0]+C[(v/614125|0)%85]+C[(v/7225|0)%85]+C[(v/85|0)%85]+C[v%85];
+  }
+  return r?o.slice(0,r-4):o;
+ }
+
+ function fch_enc122(u8) {
+  var fch_M = new Uint8Array(128).fill(255); 
+  [0,10,13,34,38,92].forEach((v,i)=>fch_M[v]=i);
+  let bitBuf=0, bitCount=0, p=0, out="";
+  const get7=()=>{
+   if(bitCount<7){
+    if(p<u8.length){bitBuf=(bitBuf<<8)|u8[p++]; bitCount+=8;}
+    else if(bitCount>0){let r=(bitBuf<<(7-bitCount))&127; bitCount=0; return r;}
+    else return -1;
+   }
+   bitCount-=7; let r=(bitBuf>>>bitCount)&127; bitBuf&=(1<<bitCount)-1; return r;
+  };
+  while(true){
+   let b1=get7(); if(b1===-1)break;
+   if(fch_M[b1]!==255){
+    let b2=get7();
+    if(b2===-1) out+=String.fromCharCode(1920|b1);
+    else out+=String.fromCharCode((fch_M[b1]<<8)|128|b2);
+   } else out+=String.fromCharCode(b1);
+  }
+  return out;
+ }
+
+ fP.onchange=e=>{
+  const f=e.target.files[0]; if(!f)return;
+  g_file_name=f.name; fL.innerText="📄 "+g_file_name; sT.innerText="Чтение...";
+  const r=new FileReader();
+  r.onload=ev=>{
+   g_buf=new Uint8Array(ev.target.result);
+   el('e64').disabled=false;
+   el('e85').disabled=false;
+   el('e122').disabled=false;
+   sT.innerText="Готов. Размер: "+g_buf.length+" байт";
+  };
+  r.readAsArrayBuffer(f);
+ };
+ 
+ el('e64').onclick = ()=>encode('64');
+ el('e85').onclick = ()=>encode('85');
+ el('e122').onclick = ()=>encode('122');
+
+// Расчет Rolling Hash контрольной суммы.
+function fch_ks(u8){var s,i,le; //на входе массив UINT8
+  s = 0; le = u8.length;
+  for(i = 0; i < le; i++){s = (s * 31 + u8[i]) & 255;}
+  return s & 255;
+}
+// Проверка КС и отрезание последнего байта.
+function fch_check_ks(u8,mode){var res,ks;
+  try{ if(u8.length < 1) alert('err fch_check_ks1');} catch(e){alert('err fch_check_ks2');}
+  res = u8.slice(0, -1); ks = u8[u8.length - 1];
+  if(fch_ks(res) !== ks){ fch_err('KS ERROR v3 (' + mode); return 0; }
+  alert('декодировал правильно ' + mode + ' | байт: ' + res.length);
+  return res;
+}
+function cmp_arr(m1,m2){var i;
+  if(m1.length!=m2.length)alert('ERR: длина разная');
+  for(i=0;i<m1.length;i++)if(m1[i]!==m2[i])alert('ERR: массивы разные='+i);
+  alert('ОК. массивы одинаковые');
+}  
+function encode(m){
+  g_mode=m; sT.innerText="Кодирование...";
+  setTimeout(()=>{ var sum,data,b,i;
+   sum=fch_ks(g_buf);
+   data=new Uint8Array(g_buf.length+1); data.set(g_buf); data[g_buf.length]=sum;
+   if(g_mode==='64'){
+     b=''; for(i=0;i<data.length;i++) b+=String.fromCharCode(data[i]); g_res=btoa(b); 
+     b=fch_dec64(g_res);b=fch_check_ks(b,64);cmp_arr(b,g_buf);
+   } 
+   if(g_mode==='85'){ 
+     g_res=fch_enc85(data); 
+     b=fch_dec85(g_res);b=fch_check_ks(b,85);cmp_arr(b,g_buf);
+   } 
+   if(g_mode==='122'){
+     g_res=fch_enc122(data);
+     b=fch_dec122(g_res);b=fch_check_ks(b,122);cmp_arr(b,g_buf);
+   }
+   sT.innerText="Готово!="+m; sB.style.display="block";
+  },50);
+}
+
+ sB.onclick=()=>{
+  const v='g_base'+g_mode;
+  const c=`window.${v}="${g_res}";`;
+  const b=new Blob([c],{type:'text/javascript'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(b); a.download=g_file_name+".js"; a.click();
+ };
+ 
+ // --- Секция: Декодеры ---
+function fch_dec64(s){var b,le,u,i;
+  b = atob(s); le = b.length; u = new Uint8Array(le);
+  for(i = 0; i < le; i++) u[i] = b.charCodeAt(i);
+  return u;
+}
+function fch_dec85(s){ var i,j,m,r,o,dv,p,t;
+  t = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:+=^!/*?&<>()[]{}@%$#";
+  m = new Uint8Array(128); for(i=0;i<85;i++) m[t.charCodeAt(i)]=i;
+  r = s.length % 5; p = s + (r ? "#".repeat(5 - r) : "");
+  o = new Uint8Array(p.length / 5 * 4); dv = new DataView(o.buffer);
+  for(i=0,j=0; i < p.length; i+=5,j+=4) dv.setUint32(j, m[p.charCodeAt(i)] * 52200625 + m[p.charCodeAt(i + 1)] * 614125 + m[p.charCodeAt(i + 2)] * 7225 + m[p.charCodeAt(i + 3)] * 85 + m[p.charCodeAt(i + 4)]);
+  return r ? o.slice(0, r-5) : o;
+}
+function fch_dec122(s){var i,p,d,di,bb,bc,c,il,m;
+  m = new Uint8Array([0,10,13,34,38,92]); 
+  d = new Uint8Array(s.length * 2); 
+  di = 0; bb = 0; bc = 0; 
+  p = (b)=>{ bb = (bb << 7) | b; bc += 7; if(bc >= 8){ bc -= 8; d[di++] = (bb >>> bc) & 255; bb &= (1 << bc) - 1; } };
+  for(i = 0; i < s.length; i++){ c = s.charCodeAt(i); if(c > 127){ il = (c >>> 8) & 7; if(il !== 7) p(m[il]); p(c & 127); } else p(c); }
+  return d.slice(0,di);
+}
+</script>
+</body>
+</html>
